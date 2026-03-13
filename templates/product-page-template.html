@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LumiBear — דף מוצר v5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===========================
+       CSS CUSTOM PROPERTIES
+    =========================== */
+    :root {
+      --bg:               #FFFDF9;
+      --text:             #1A1A1A;
+
+      --brand-green:      #2F7D32;
+      --brand-green-dark: #1B5E20;
+      --sage-light:       #E8F5E9;
+
+      /* backward-compat aliases */
+      --accent:           #2F7D32;
+      --accent-dark:      #1B5E20;
+      --accent-light:     #E8F5E9;
+
+      --cream:            #FFF8F2;
+      --warm-beige:       #F5EFE6;
+      --gold-soft:        #D4A853;
+
+      --muted:            #757575;
+      --border:           #E7E2DA;
+      --white:            #FFFFFF;
+      --urgent:           #C62828;
+      --card-shadow:      0 2px 12px rgba(0,0,0,0.06);
+      --card-radius:      14px;
+    }
+
+    /* ===========================
+       RESET & BASE
+    =========================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      direction: rtl;
+      text-align: right;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .bm-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ===========================
+       ANIMATIONS
+    =========================== */
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to   { transform: translateY(0);     opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+
+    @keyframes bounceIn {
+      0%   { transform: scale(0.8); opacity: 0; }
+      60%  { transform: scale(1.05); }
+      100% { transform: scale(1);   opacity: 1; }
+    }
+
+    /* ===========================
+       SECTION SPACING
+    =========================== */
+    .bm-section {
+      margin-bottom: 52px;
+      animation: fadeIn 0.5s ease both;
+    }
+
+    .bm-section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .bm-section-title::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 64px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      opacity: 0.85;
+    }
+
+    /* ===========================
+       GIFT BANNER
+    =========================== */
+    .bm-gift-banner {
+      background: var(--cream);
+      border-top: 3px solid var(--brand-green);
+      border-radius: 0 0 var(--card-radius) var(--card-radius);
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent-dark);
+      animation: slideDown 0.4s ease both;
+      margin-bottom: 28px;
+    }
+
+    /* ===========================
+       OPENING QUESTION — STEP 1 (PROBLEM)
+    =========================== */
+    .bm-opening {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFFFFF 70%);
+      border: 1px solid #E8E1D8;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: 28px 24px;
+      margin-bottom: 32px;
+    }
+
+    .bm-opening-question {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .bm-opening-body {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ===========================
+       1. TRUST BAR
+    =========================== */
+    .bm-trust-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 24px 0;
+      animation: fadeIn 0.4s ease both;
+    }
+
+    .bm-trust-item {
+      flex: 1;
+      min-width: 160px;
+      background: linear-gradient(180deg, var(--cream) 0%, #FFFFFF 70%);
+      border: 1px solid #E8E1D8;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: 18px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .bm-trust-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--warm-beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .bm-trust-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .bm-trust-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ===========================
+       2. BENEFITS GRID — STEP 2 (SOLUTION)
+    =========================== */
+    .bm-benefits-intro {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .bm-benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .bm-benefit-card {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFFFFF 70%);
+      border: 1px solid #E8E1D8;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: 22px 20px;
+      animation: fadeIn 0.5s ease both;
+    }
+
+    .bm-benefit-card:nth-child(1) { animation-delay: 0.05s; }
+    .bm-benefit-card:nth-child(2) { animation-delay: 0.10s; }
+    .bm-benefit-card:nth-child(3) { animation-delay: 0.15s; }
+    .bm-benefit-card:nth-child(4) { animation-delay: 0.20s; }
+    .bm-benefit-card:nth-child(5) { animation-delay: 0.25s; }
+    .bm-benefit-card:nth-child(6) { animation-delay: 0.30s; }
+
+    .bm-benefit-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+      display: block;
+      line-height: 1;
+    }
+
+    .bm-benefit-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .bm-benefit-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .bm-benefit-chain {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 8px;
+      border-top: 1px solid var(--accent-light);
+      padding-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ===========================
+       3. FABRIC STORY — STEP 3 (DREAM)
+    =========================== */
+    .bm-fabric-card {
+      background: linear-gradient(180deg, #F3FAF4 0%, #FFFFFF 100%);
+      border: 1px solid #B9DCC0;
+      border-radius: var(--card-radius);
+      padding: 28px 24px;
+    }
+
+    .bm-fabric-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 12px;
+    }
+
+    .bm-fabric-body {
+      font-size: 15px;
+      color: #2E4D2F;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .bm-fabric-dream {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent-dark);
+      line-height: 1.6;
+      border-right: 3px solid var(--accent);
+      padding-right: 14px;
+      margin-bottom: 20px;
+    }
+
+    .bm-fabric-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .bm-fabric-tag {
+      background: var(--white);
+      border: 1px solid #A5D6A7;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ===========================
+       4. SIZE TABLE
+    =========================== */
+    .bm-size-table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+    }
+
+    .bm-size-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      font-size: 14px;
+    }
+
+    .bm-size-table thead tr {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .bm-size-table thead th {
+      padding: 14px 18px;
+      font-weight: 600;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .bm-size-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .bm-size-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .bm-size-table tbody tr:hover {
+      background: var(--accent-light);
+    }
+
+    .bm-size-table tbody td {
+      padding: 13px 18px;
+      color: var(--text);
+      text-align: right;
+    }
+
+    .bm-size-table tbody td:first-child {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .bm-size-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* ===========================
+       5. SPECS
+    =========================== */
+    .bm-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .bm-spec-card {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFFFFF 70%);
+      border: 1px solid #E8E1D8;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: 20px 18px;
+    }
+
+    .bm-spec-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .bm-spec-card-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .bm-wash-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .bm-wash-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bm-wash-list li:last-child {
+      border-bottom: none;
+    }
+
+    .bm-wash-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ===========================
+       ACCORDION (reusable)
+    =========================== */
+    .bm-accordion {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFFFFF 70%);
+      border: 1px solid #E8E1D8;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .bm-accordion input[type="checkbox"] {
+      display: none;
+    }
+
+    .bm-accordion-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      user-select: none;
+      transition: background 0.2s;
+    }
+
+    .bm-accordion-label:hover {
+      background: #F6FBF7;
+    }
+
+    .bm-accordion-arrow {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      fill: var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .bm-accordion input[type="checkbox"]:checked + .bm-accordion-label .bm-accordion-arrow {
+      transform: rotate(180deg);
+    }
+
+    .bm-accordion input[type="checkbox"]:checked + .bm-accordion-label {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .bm-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .bm-accordion input[type="checkbox"]:checked ~ .bm-accordion-body {
+      max-height: 600px;
+    }
+
+    .bm-accordion-body-inner {
+      padding: 0 20px 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    /* ===========================
+       6. FAQ ACCORDION — STEP 4 (OBJECTIONS)
+    =========================== */
+    .bm-faq-intro {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .bm-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bm-faq-item {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFFFFF 70%);
+      border: 1px solid #E8E1D8;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+
+    .bm-faq-item input[type="checkbox"] {
+      display: none;
+    }
+
+    .bm-faq-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      user-select: none;
+      transition: background 0.2s;
+    }
+
+    .bm-faq-label:hover {
+      background: #F6FBF7;
+    }
+
+    .bm-faq-arrow {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      fill: var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .bm-faq-item input[type="checkbox"]:checked + .bm-faq-label .bm-faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .bm-faq-item input[type="checkbox"]:checked + .bm-faq-label {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .bm-faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .bm-faq-item input[type="checkbox"]:checked ~ .bm-faq-body {
+      max-height: 320px;
+    }
+
+    .bm-faq-body-inner {
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    /* ===========================
+       7. CTA — STEP 5 (CALL TO ACTION)
+    =========================== */
+    .bm-cta-section {
+      background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+      border-radius: var(--card-radius);
+      padding: 36px 28px;
+      text-align: center;
+      color: var(--white);
+      box-shadow: 0 12px 30px rgba(47, 125, 50, 0.25);
+    }
+
+    .bm-cta-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .bm-cta-sub {
+      font-size: 15px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+
+    .bm-cta-gift-note {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .bm-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--accent);
+      font-family: 'Heebo', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin: 6px;
+      animation: bounceIn 0.5s ease both;
+    }
+
+    .bm-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    }
+
+    .bm-cta-btn.bm-btn-wa {
+      background: #25D366;
+      color: var(--white);
+    }
+
+    .bm-cta-btn.bm-btn-wa:hover {
+      background: #20BA58;
+    }
+
+    .bm-cta-divider {
+      font-size: 13px;
+      opacity: 0.7;
+      margin: 18px 0 8px;
+    }
+
+    .bm-wa-note {
+      font-size: 13px;
+      opacity: 0.75;
+      margin-top: 14px;
+    }
+
+    /* ===========================
+       8. SOCIAL PROOF PLACEHOLDERS
+    =========================== */
+    .bm-social-proof {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFFFFF 70%);
+      border: 1px solid #E8E1D8;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: 28px 24px;
+    }
+
+    .bm-stars-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .bm-stars {
+      font-size: 22px;
+      color: var(--gold-soft);
+      letter-spacing: 2px;
+    }
+
+    .bm-rating-num {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .bm-review-count {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .bm-review-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .bm-review-item {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    .bm-review-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .bm-reviewer-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .bm-review-stars {
+      font-size: 14px;
+      color: var(--gold-soft);
+    }
+
+    .bm-review-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* TODO placeholder styling */
+    .bm-todo-placeholder {
+      background: #FFF3E0;
+      border: 2px dashed #FFB74D;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #E65100;
+      font-style: italic;
+    }
+
+    /* ===========================
+       MOBILE RESPONSIVE
+    =========================== */
+    @media (max-width: 520px) {
+      .bm-trust-bar {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .bm-trust-item {
+        min-width: unset;
+      }
+
+      .bm-benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bm-specs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bm-cta-section {
+        padding: 28px 18px;
+      }
+
+      .bm-cta-title {
+        font-size: 19px;
+      }
+
+      .bm-cta-btn {
+        width: 100%;
+        margin: 6px 0;
+      }
+
+      .bm-size-table thead th,
+      .bm-size-table tbody td {
+        padding: 10px 12px;
+      }
+
+      .bm-section-title {
+        font-size: 19px;
+      }
+
+      .bm-opening-question {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<main class="bm-page" role="main">
+
+  <!-- ============================================================
+       GIFT BANNER
+       כלל: "קנייה מעל 299 ₪ כוללת מתנה מיוחדת — נוספת אוטומטית להזמנה"
+       אין לציין מה המתנה. אין להזכיר קוד קופון.
+  ============================================================ -->
+  <div class="bm-gift-banner" role="banner" aria-label="מבצע מתנה">
+    קנייה מעל 299 ₪ כוללת מתנה מיוחדת — נוספת אוטומטית להזמנה
+  </div>
+
+  <!-- ============================================================
+       STEP 1 — PROBLEM
+       פתח בשאלה או כאב שההורה מכיר
+  ============================================================ -->
+  <div class="bm-opening" role="region" aria-label="פתיחה">
+    <p class="bm-opening-question"><!-- TODO: שאלת פתיחה לפי המוצר --></p>
+    <p class="bm-opening-body"><!-- TODO: תיאור הבעיה וכיצד המוצר פותר אותה --></p>
+  </div>
+
+  <!-- ============================================================
+       SECTION 1: TRUST BAR
+       משלוח חינם לכל הארץ (ללא תנאי סכום), החזרה 14 יום, תשלום מאובטח
+  ============================================================ -->
+  <section class="bm-section bm-trust-bar" aria-label="יתרונות הקנייה">
+
+    <div class="bm-trust-item" role="img" aria-label="משלוח חינם">
+      <div class="bm-trust-icon" aria-hidden="true">🚚</div>
+      <div>
+        <div class="bm-trust-label">משלוח חינם</div>
+        <div class="bm-trust-sub">לכל הארץ · מספר מעקב · אחריות משלוח</div>
+      </div>
+    </div>
+
+    <div class="bm-trust-item" role="img" aria-label="החזרה עד 14 יום">
+      <div class="bm-trust-icon" aria-hidden="true">↩️</div>
+      <div>
+        <div class="bm-trust-label">החזרה עד 14 יום</div>
+        <div class="bm-trust-sub">ממועד קבלת המוצר</div>
+      </div>
+    </div>
+
+    <div class="bm-trust-item" role="img" aria-label="תשלום מאובטח">
+      <div class="bm-trust-icon" aria-hidden="true">🔒</div>
+      <div>
+        <div class="bm-trust-label">תשלום מאובטח</div>
+        <div class="bm-trust-sub">הצפנה מלאה SSL</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       SECTION 2: BENEFITS GRID — STEP 2 (SOLUTION)
+       פיצ'ר → יתרון → יתרון של היתרון
+  ============================================================ -->
+  <section class="bm-section" aria-labelledby="benefits-title">
+    <h2 class="bm-section-title" id="benefits-title"><!-- TODO: כותרת יתרונות --></h2>
+    <p class="bm-benefits-intro"><!-- TODO: פסקת מבוא ליתרונות --></p>
+
+    <div class="bm-benefits-grid" role="list">
+      <!-- TODO: 6 benefit cards — כל אחד עם icon + title + desc + chain -->
+      <!-- דוגמה:
+      <article class="bm-benefit-card" role="listitem">
+        <span class="bm-benefit-icon" aria-hidden="true">🌿</span>
+        <div class="bm-benefit-title">שם היתרון</div>
+        <p class="bm-benefit-desc">תיאור הפיצ'ר.</p>
+        <p class="bm-benefit-chain">פיצ'ר → יתרון → יתרון של היתרון.</p>
+      </article>
+      -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: FABRIC STORY — STEP 3 (DREAM)
+       חבר לרגש: תינוק רגוע, הורה שקט
+  ============================================================ -->
+  <section class="bm-section" aria-labelledby="fabric-title">
+    <div class="bm-fabric-card">
+      <h2 class="bm-fabric-title" id="fabric-title"><!-- TODO: כותרת רגשית --></h2>
+      <p class="bm-fabric-dream"><!-- TODO: משפט חלום/ציטוט --></p>
+      <p class="bm-fabric-body"><!-- TODO: תיאור הבד/המוצר --></p>
+      <div class="bm-fabric-tags" role="list" aria-label="תגיות בד">
+        <!-- TODO: תגיות לפי המוצר בלבד — אל תמציא -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: SIZE TABLE (accordion)
+  ============================================================ -->
+  <section class="bm-section" aria-labelledby="size-title">
+    <div class="bm-accordion">
+      <input type="checkbox" id="size-toggle">
+      <label class="bm-accordion-label" for="size-toggle">
+        <span>📏 מדריך מידות — לחצו לפתיחה</span>
+        <svg class="bm-accordion-arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 10l5 5 5-5z"/>
+        </svg>
+      </label>
+      <div class="bm-accordion-body">
+        <div class="bm-accordion-body-inner">
+          <div class="bm-size-table-wrapper">
+            <table class="bm-size-table" role="table" aria-label="טבלת מידות">
+              <thead>
+                <tr>
+                  <th scope="col">מידה</th>
+                  <th scope="col">גיל מומלץ</th>
+                  <th scope="col">גובה (ס"מ)</th>
+                  <th scope="col">משקל (ק"ג)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- TODO: שורות לפי מידות המוצר בלבד -->
+              </tbody>
+            </table>
+          </div>
+          <p class="bm-size-note">המידות מבוססות על ממוצע. לתינוקות גבוהים לגילם — מומלץ לבחור מידה אחת מעלה.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5: SPECS
+  ============================================================ -->
+  <section class="bm-section" aria-labelledby="specs-title">
+    <h2 class="bm-section-title" id="specs-title">מפרט טכני</h2>
+    <div class="bm-specs-grid">
+
+      <div class="bm-spec-card">
+        <div class="bm-spec-card-title">הרכב הבד</div>
+        <div class="bm-spec-card-value"><!-- TODO: הרכב לפי נתוני המוצר --></div>
+      </div>
+
+      <div class="bm-spec-card">
+        <div class="bm-spec-card-title">סגירה</div>
+        <div class="bm-spec-card-value"><!-- TODO: סוג סגירה --></div>
+      </div>
+
+      <div class="bm-accordion" style="grid-column: 1 / -1;">
+        <input type="checkbox" id="wash-toggle">
+        <label class="bm-accordion-label" for="wash-toggle">
+          <span>🧺 הוראות כביסה — לחצו לפתיחה</span>
+          <svg class="bm-accordion-arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </label>
+        <div class="bm-accordion-body">
+          <div class="bm-accordion-body-inner">
+            <ul class="bm-wash-list" role="list" aria-label="הוראות כביסה">
+              <!-- TODO: הוראות כביסה לפי המוצר -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST BLOCK — "נעים לתינוק. נוח להורים." (או שווה ערך)
+  ============================================================ -->
+  <section class="bm-section" aria-label="בלוק אמון">
+    <div class="bm-opening" role="region">
+      <p class="bm-opening-question"><!-- TODO: כותרת בלוק אמון --></p>
+      <p class="bm-opening-body"><!-- TODO: 2-3 משפטים על שימוש יומיומי אמיתי --></p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6: FAQ — STEP 4 (OBJECTIONS)
+       מחיר / אמון / תזמון / מתנה
+  ============================================================ -->
+  <section class="bm-section" aria-labelledby="faq-title">
+    <h2 class="bm-section-title" id="faq-title">שאלות שהורים שואלים לפני שמזמינים</h2>
+    <p class="bm-faq-intro">רוב ההורים שמגיעים לכאן מסיימים לקרוא ורוצים להזמין — אבל יש כמה שאלות שחוזרות על עצמן. ריכזנו אותן כאן.</p>
+
+    <div class="bm-faq-list" role="list">
+
+      <!-- FAQ מחיר — חובה לכלול -->
+      <div class="bm-faq-item" role="listitem">
+        <input type="checkbox" id="faq1" aria-controls="faq1-body">
+        <label class="bm-faq-label" for="faq1" aria-expanded="false">
+          <span>המחיר נראה גבוה לבגד לתינוק — זה באמת משתלם?</span>
+          <svg class="bm-faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </label>
+        <div class="bm-faq-body" id="faq1-body" role="region" aria-labelledby="faq1">
+          <div class="bm-faq-body-inner">
+            <!-- TODO: תשובה — לכלול אזכור הנחה/ערך אם רלוונטי -->
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ בד/עור רגיש — חובה לכלול -->
+      <div class="bm-faq-item" role="listitem">
+        <input type="checkbox" id="faq2" aria-controls="faq2-body">
+        <label class="bm-faq-label" for="faq2" aria-expanded="false">
+          <span>האם הבד בטוח לעור רגיש?</span>
+          <svg class="bm-faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </label>
+        <div class="bm-faq-body" id="faq2-body" role="region" aria-labelledby="faq2">
+          <div class="bm-faq-body-inner"><!-- TODO --></div>
+        </div>
+      </div>
+
+      <!-- FAQ החזרות -->
+      <div class="bm-faq-item" role="listitem">
+        <input type="checkbox" id="faq3" aria-controls="faq3-body">
+        <label class="bm-faq-label" for="faq3" aria-expanded="false">
+          <span>מה אם הבגד לא מתאים — אפשר להחזיר?</span>
+          <svg class="bm-faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </label>
+        <div class="bm-faq-body" id="faq3-body" role="region" aria-labelledby="faq3">
+          <div class="bm-faq-body-inner">בהחלט. ניתן להחזיר עד 14 יום ממועד קבלת החבילה, בתנאי שהמוצר לא נעשה בו שימוש ונמצא באריזתו המקורית. אם צריך להחליף מידה, עלות השליח להחלפה היא 30 ש"ח בלבד. פנו אלינו בוואטסאפ ונסדר את הכל.</div>
+        </div>
+      </div>
+
+      <!-- FAQ מידות -->
+      <div class="bm-faq-item" role="listitem">
+        <input type="checkbox" id="faq4" aria-controls="faq4-body">
+        <label class="bm-faq-label" for="faq4" aria-expanded="false">
+          <span>איך אדע איזו מידה לבחור?</span>
+          <svg class="bm-faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </label>
+        <div class="bm-faq-body" id="faq4-body" role="region" aria-labelledby="faq4">
+          <div class="bm-faq-body-inner">בדקו בטבלת המידות למעלה לפי גיל, גובה ומשקל. לתינוקות גבוהים לגילם — עדיף לקחת מידה אחת מעלה. אם מתלבטים — כתבו לנו בוואטסאפ.</div>
+        </div>
+      </div>
+
+      <!-- FAQ משלוח -->
+      <div class="bm-faq-item" role="listitem">
+        <input type="checkbox" id="faq5" aria-controls="faq5-body">
+        <label class="bm-faq-label" for="faq5" aria-expanded="false">
+          <span>כמה זמן לוקח המשלוח?</span>
+          <svg class="bm-faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </label>
+        <div class="bm-faq-body" id="faq5-body" role="region" aria-labelledby="faq5">
+          <div class="bm-faq-body-inner">המשלוח מגיע בדרך כלל תוך 5–10 ימי עסקים. תקבלו הודעת SMS עם מספר מעקב ברגע שהחבילה יוצאת מאצלנו.</div>
+        </div>
+      </div>
+
+      <!-- FAQ מתנה — חובה לכלול, אין לציין מה המתנה -->
+      <div class="bm-faq-item" role="listitem">
+        <input type="checkbox" id="faq6" aria-controls="faq6-body">
+        <label class="bm-faq-label" for="faq6" aria-expanded="false">
+          <span>מה המתנה שמצטרפת להזמנה מעל 299 ₪?</span>
+          <svg class="bm-faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </label>
+        <div class="bm-faq-body" id="faq6-body" role="region" aria-labelledby="faq6">
+          <div class="bm-faq-body-inner">
+            בהזמנה מעל 299 ₪ נוספת מתנה אוטומטית להזמנה.<br>אין צורך בקוד קופון או פעולה נוספת — המערכת מוסיפה אותה לעגלה באופן אוטומטי.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7: CTA + WHATSAPP — STEP 5 (CALL TO ACTION)
+       כלל: משלוח חינם לכל הארץ (ללא תנאי)
+       כלל: מתנה מעל 299 ₪ — אין לציין מה המתנה
+  ============================================================ -->
+  <section class="bm-section" aria-labelledby="cta-title">
+    <div class="bm-cta-section">
+      <h2 class="bm-cta-title" id="cta-title"><!-- TODO: כותרת CTA --></h2>
+      <p class="bm-cta-sub">משלוח חינם לכל הארץ · החזרה עד 14 יום · <!-- TODO: יתרון נוסף --></p>
+
+      <div class="bm-cta-gift-note" aria-label="מבצע מתנה">
+        בהזמנה מעל 299 ₪ נוספת מתנה אוטומטית להזמנה
+      </div>
+
+      <a href="#product-form" class="bm-cta-btn" role="button" aria-label="הוסיפו לסל">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.1 17 7 17h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.43 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+        הוסיפו לסל
+      </a>
+
+      <div class="bm-cta-divider">שאלה לפני ההזמנה?</div>
+
+      <a
+        href="https://wa.me/972XXXXXXXXX"
+        class="bm-cta-btn bm-btn-wa"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="צרו קשר בוואטסאפ"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        דברו איתנו
+      </a>
+
+      <p class="bm-wa-note">זמינים ראשון עד חמישי, 09:00–17:00</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 8: SOCIAL PROOF (PLACEHOLDERS)
+       — לא למלא בנתונים מומצאים —
+  ============================================================ -->
+  <!-- TODO: להוסיף ביקורות אמיתיות כאן לאחר קבלת נתונים מבעל החנות -->
+
+</main>
+</body>
+</html>

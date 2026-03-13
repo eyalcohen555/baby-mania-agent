@@ -1,0 +1,265 @@
+<p style="text-align: right;"><meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&amp;display=swap" rel="stylesheet"></p>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAF7F4;
+    --warm: #F2EBE2;
+    --brown: #7D5A3C;
+    --dark: #1E1510;
+    --text: #3A2E25;
+    --muted: #9A8878;
+    --accent: #C4876A;
+    --green: #6B9970;
+    --radius: 18px;
+  }
+  body { font-family: 'Heebo', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.85; }
+
+  /* HERO VIDEO */
+  .hero { position: relative; height: 560px; overflow: hidden; }
+  .hero video { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(30,21,16,0.05) 0%, rgba(30,21,16,0.65) 100%); }
+  .hero-content { position: absolute; bottom: 0; right: 0; left: 0; padding: 44px 52px; color: white; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600; letter-spacing: 2.5px; padding: 7px 18px; border-radius: 3px; margin-bottom: 16px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.2); }
+  .hero h1 { font-size: clamp(28px, 4.5vw, 46px); font-weight: 900; line-height: 1.2; margin-bottom: 14px; text-shadow: 0 2px 20px rgba(0,0,0,0.3); max-width: 700px; }
+  .hero-meta { font-size: 13px; opacity: 0.8; display: flex; gap: 22px; flex-wrap: wrap; }
+
+  /* LAYOUT */
+  .page-wrap { max-width: 800px; margin: 0 auto; padding: 0 24px 100px; }
+
+  /* INTRO */
+  .intro-box { background: white; border-radius: var(--radius); padding: 30px 36px; margin: 44px 0 32px; border-right: 5px solid var(--accent); box-shadow: 0 4px 24px rgba(196,135,106,0.10); }
+  .intro-box p { font-size: 18px; line-height: 1.8; }
+
+  /* TOC */
+  .toc { background: var(--warm); border-radius: var(--radius); padding: 26px 32px; margin: 0 0 40px; }
+  .toc-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+  .toc ol { padding-right: 20px; }
+  .toc li { margin-bottom: 9px; font-size: 15px; }
+  .toc a { color: var(--brown); text-decoration: none; font-weight: 500; }
+
+  /* HEADINGS */
+  .article-body h2 { font-size: 25px; font-weight: 800; color: var(--dark); margin: 52px 0 18px; display: flex; align-items: center; gap: 10px; }
+  .article-body h2::before { content: ''; display: inline-block; width: 5px; height: 26px; background: var(--accent); border-radius: 3px; flex-shrink: 0; }
+  .article-body h3 { font-size: 18px; font-weight: 700; color: var(--brown); margin: 26px 0 10px; }
+  .article-body p { margin-bottom: 18px; }
+  .article-body ul { padding-right: 22px; margin-bottom: 20px; }
+  .article-body li { margin-bottom: 9px; }
+  .article-body strong { color: var(--dark); }
+
+  /* TIP */
+  .tip-box { background: #EDF6EE; border-right: 4px solid var(--green); border-radius: var(--radius); padding: 20px 26px; margin: 28px 0; display: flex; gap: 14px; align-items: flex-start; }
+  .tip-icon { font-size: 22px; flex-shrink: 0; }
+  .tip-box p { margin: 0; font-size: 16px; color: #2A4A2E; line-height: 1.7; }
+
+  /* WARNING */
+  .warning-box { background: #FFF6EE; border-right: 4px solid var(--accent); border-radius: var(--radius); padding: 20px 26px; margin: 28px 0; display: flex; gap: 14px; align-items: flex-start; }
+  .warning-box p { margin: 0; font-size: 16px; color: #6B3E1E; line-height: 1.7; }
+
+  /* IMAGES */
+  .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 36px 0; }
+  .img-grid img { width: 100%; height: 340px; object-fit: cover; object-position: center top; border-radius: 14px; display: block; }
+  .article-image { border-radius: var(--radius); overflow: hidden; margin: 36px 0; box-shadow: 0 10px 40px rgba(0,0,0,0.10); }
+  .article-image img { width: 100%; height: 420px; object-fit: cover; object-position: center top; display: block; }
+  .article-image figcaption { background: white; padding: 13px 20px; font-size: 13px; color: var(--muted); text-align: center; font-style: italic; }
+
+  /* PRODUCT MENTION - no image */
+  .product-mention {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 16px 0 24px;
+    border: 1px solid var(--warm);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .product-mention-info { flex: 1; }
+  .product-mention-name { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+  .product-mention-price { font-size: 13px; color: var(--muted); }
+  .product-mention-price strong { color: var(--brown); font-size: 15px; }
+  .product-mention-price s { font-size: 12px; color: #ccc; }
+  .product-mention-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1px solid var(--accent);
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .product-mention-link:hover { background: var(--accent); color: white; }
+
+  /* CTA */
+  .cta-banner { background: linear-gradient(135deg, #5C3D28 0%, var(--accent) 100%); border-radius: var(--radius); padding: 40px 44px; margin: 48px 0; color: white; text-align: center; position: relative; overflow: hidden; }
+  .cta-banner::before { content: '👶'; position: absolute; font-size: 120px; opacity: 0.06; top: -20px; left: -20px; line-height: 1; }
+  .cta-banner h3 { font-size: 22px; font-weight: 900; margin-bottom: 10px; color: white; position: relative; }
+  .cta-banner p { font-size: 15px; opacity: 0.88; margin-bottom: 20px; color: white; position: relative; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .cta-btn { display: inline-block; background: white; color: var(--brown); font-weight: 800; font-size: 15px; padding: 13px 28px; border-radius: 50px; text-decoration: none; transition: all 0.25s; font-family: 'Heebo', sans-serif; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .cta-btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.6); }
+  .cta-btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+  /* FAQ */
+  .faq-title { font-size: 25px; font-weight: 800; color: var(--dark); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+  .faq-title::before { content: ''; display: inline-block; width: 5px; height: 26px; background: var(--accent); border-radius: 3px; }
+  details { background: white; border-radius: 14px; margin-bottom: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); overflow: hidden; }
+  details summary { padding: 19px 24px; font-weight: 700; font-size: 16px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--dark); }
+  details summary:hover { background: var(--warm); }
+  details summary::after { content: '▾'; color: var(--accent); font-size: 16px; }
+  details[open] summary::after { content: '▴'; }
+  details p { padding: 16px 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--warm); margin: 0; }
+
+  /* TAGS */
+  .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 52px; padding-top: 28px; border-top: 1px solid var(--warm); }
+  .tag { background: var(--warm); color: var(--brown); font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 20px; }
+
+  @media (max-width: 600px) {
+    .hero { height: 420px; }
+    .hero-content { padding: 24px 20px; }
+    .page-wrap { padding: 0 16px 60px; }
+    .img-grid { grid-template-columns: 1fr; }
+    .cta-banner { padding: 30px 22px; }
+  }
+</style>
+<!-- HERO VIDEO -->
+<div class="hero" style="text-align: right;">
+<video playsinline="" loop="loop" muted="" autoplay="autoplay">
+    <source type="video/mp4" src="https://cdn.shopify.com/videos/c/o/v/6114e25fe4aa492f8f3690b659f46f15.mp4"></video>
+<div class="hero-overlay"><br></div>
+<div class="hero-content">
+<span class="hero-tag">✦ מדריך הורים</span>
+<h1>רשימת קניות לתינוק — כל מה שצריך לפני הלידה</h1>
+<div class="hero-meta">
+<span>⏱️ 5 דקות קריאה</span> <span>📅 עודכן פברואר 2026</span> <span>✅ מדריך מלא ומעודכן</span>
+</div>
+</div>
+</div>
+<div class="page-wrap">
+<div class="intro-box" style="text-align: right;">
+<p>ההריון מתקדם, הבטן גדלה, ומתחיל הלחץ: מה בעצם צריך לקנות לפני שהתינוק מגיע? רשימת הציוד לתינוק יכולה להרגיש מבלבלת — אבל עם הכוונה הנכונה, זה הרבה פחות מסובך ממה שנדמה.</p>
+</div>
+<div class="toc" style="text-align: right;">
+<div class="toc-title">📋 במדריך הזה תמצאו</div>
+<ol>
+<li><a href="#bgadim">בגדי תינוקות — מה לקנות ובאיזו כמות</a></li>
+<li><a href="#avizarim">אביזרי לידה שאי אפשר בלעדיהם</a></li>
+<li><a href="#shina">שינה בטוחה — מה שכל הורה חייב לדעת</a></li>
+<li><a href="#tipuach">מוצרי טיפוח ובריאות</a></li>
+<li><a href="#achar">מה אפשר לחכות אחרי הלידה</a></li>
+<li><a href="#faq">שאלות נפוצות</a></li>
+</ol>
+</div>
+<div class="article-body" style="text-align: right;">
+<h2 id="bgadim">בגדי תינוקות — מה לקנות ובאיזו כמות?</h2>
+<p>בגדים הם הדבר הראשון שכולם ממהרים לקנות, אבל הטעות הנפוצה ביותר היא לקנות יותר מדי במידות קטנות. תינוקות גדלים מהר מאוד — לפעמים בתוך שבועות בלבד.</p>
+<div class="warning-box">
+<span class="tip-icon">⚠️</span>
+<p><strong>טעות נפוצה:</strong> אל תקנו יותר מדי מידת ניו בורן — תינוקות רבים עוברים אותה תוך שבועיים בלבד. קנו בעיקר מידות 3-6 ו-6-12 חודשים.</p>
+</div>
+<ul>
+<li>6-7 בגדי גוף עם סגירה בתחתית — המוצר השימושי ביותר בחודשים הראשונים</li>
+<li>3-5 פיג'מות עם רוכסן — נוח הרבה יותר מכפתורים בהחתלות לילה</li>
+<li>2-3 חליפות או סטים לאירועים</li>
+<li>5-6 זוגות גרביים וכובעים</li>
+<li>ג'קט אחד לפי עונת הלידה</li>
+</ul>
+<div class="img-grid">
+<img alt="בגדי תינוקות חורף" src="https://cdn.shopify.com/s/files/1/0864/9677/2409/files/ChatGPT_Image_Feb_8_2026_09_56_48_AM.png?v=1770538099"> <img alt="בגדי תינוקות קיץ" src="https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Gemini_Generated_Image_nbnn8nnbnn8nnbnn.png?v=1770536358">
+</div>
+<div class="tip-box">
+<span class="tip-icon">💡</span>
+<p><strong>טיפ חוסך כסף:</strong> קנו מידה אחת גדולה יותר ממה שצריך עכשיו — בגדים גדולים מעט לא מזיקים, ובגדים קטנים אי אפשר ללבוש בכלל.</p>
+</div>
+<h2 id="avizarim">אביזרי לידה שאי אפשר בלעדיהם</h2>
+<p>מעבר לבגדים, יש מוצרים קטנים שרוב ההורים מגלים רק כשהם כבר צריכים אותם בדחיפות — בדרך כלל ב-2 בלילה.</p>
+<figure class="article-image"><img alt="אביזרי תינוקות" src="https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sa20037070c8244d0b0c21bf4f9e88e4dd_b8ed8e5c-f014-4db9-9714-75a8a8b80925.webp?v=1769523493">
+<figcaption>אביזרים נכונים הופכים את החודשים הראשונים לקלים הרבה יותר</figcaption>
+</figure>
+<h3>שואב נזלת — המוצר שכולם שוכחים לקנות מראש</h3>
+<p>כשתינוק סתום באף הוא לא יכול לנשום, לאכול ולא לישון. שואב נזלת חשמלי מסיר את ההפרשות תוך שניות, בשקט ובלי להפחיד את התינוק. כדאי לקנות אחד לפני הלידה ולא להמתין לרגע הצורך.</p>
+<div class="product-mention">
+<div class="product-mention-info">
+<div class="product-mention-name">שואב נזלת חשמלי Dr.Isla</div>
+<div class="product-mention-price">
+<strong>189₪</strong>  <s>269₪</s>
+</div>
+</div>
+<a class="product-mention-link" href="https://www.babymania-il.com/products/dr-isla-baby-nose-cleaner-silicone-adjustable-suction-electric-child-nasal-aspirator-safety-convenient-low-noise">לרכישה ←</a>
+</div>
+<h3>שמיכת עיטוף — איך להרגיע תינוק בוכה תוך שניות</h3>
+<p>עיטוף נכון מדמה תחושת רחם ומרגיע תינוקות מיד. צריך לפחות 2-3 שמיכות עיטוף רכות — הן נרטבות ומתכבסות הרבה.</p>
+<div class="product-mention">
+<div class="product-mention-info">
+<div class="product-mention-name">סט שמיכות עיטוף בגוונים חומים</div>
+<div class="product-mention-price">
+<strong>140₪</strong> — סט של 3</div>
+</div>
+<a class="product-mention-link" href="https://www.babymania-il.com/collections/%D7%A9%D7%9E%D7%99%D7%9B%D7%95%D7%AA-%D7%A2%D7%99%D7%98%D7%95%D7%A3-%D7%95%D7%A9%D7%A7%D7%99-%D7%A9%D7%99%D7%A0%D7%94">לרכישה ←</a>
+</div>
+<h2 id="shina">שינה בטוחה — מה שכל הורה חייב לדעת</h2>
+<p>שמיכה רגילה בעריסה עלולה להוות סיכון בטיחותי לתינוקות. ההמלצה של רופאי ילדים היום ברורה: שק שינה במקום שמיכה, עד גיל שנה לפחות.</p>
+<div class="product-mention">
+<div class="product-mention-info">
+<div class="product-mention-name">שק שינה פינגווין</div>
+<div class="product-mention-price"><strong>119₪</strong></div>
+</div>
+<a class="product-mention-link" href="https://www.babymania-il.com/products/%D7%A9%D7%A7-%D7%A9%D7%99%D7%A0%D7%94-%D7%A4%D7%99%D7%A0%D7%92%D7%95%D7%95%D7%99%D7%9F">לרכישה ←</a>
+</div>
+<p>בעיה נפוצה נוספת: תינוקות שמתעוררים ברגע שמניחים אותם. הבובה הנושמת מדמה קצב נשימה אנושי ועוזרת לתינוקות לעבור לשינה עצמאית.</p>
+<div class="product-mention">
+<div class="product-mention-info">
+<div class="product-mention-name">בובה נושמת לוטרה — Baby Mania™</div>
+<div class="product-mention-price">
+<strong>159₪</strong>  <s>299₪</s>
+</div>
+</div>
+<a class="product-mention-link" href="https://www.babymania-il.com/products/babyz-%D7%91%D7%95%D7%91%D7%AA-%D7%9C%D7%95%D7%98%D7%A8%D7%94-%D7%A0%D7%95%D7%A9%D7%9E%D7%AA">לרכישה ←</a>
+</div>
+<p><br></p>
+<div class="cta-banner">
+<h3>מחפשים בגדי תינוקות?</h3>
+<p>ב-Baby Mania מאות פריטים לתינוקות 0-3 שנים — משלוח מהיר לכל הארץ</p>
+<div class="cta-buttons">
+<a class="cta-btn" href="https://www.babymania-il.com/collections/%D7%91%D7%92%D7%93%D7%99-%D7%91%D7%A0%D7%95%D7%AA?page=2">בגדי בנות 👧</a> <a class="cta-btn cta-btn-outline" href="https://www.babymania-il.com/collections/%D7%91%D7%92%D7%93%D7%99-%D7%91%D7%A0%D7%99%D7%9D">בגדי בנים 👦</a> <a class="cta-btn cta-btn-outline" href="https://www.babymania-il.com/collections/%D7%9C%D7%99%D7%93%D7%94-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%A0%D7%9C%D7%95%D7%95%D7%99%D7%9D">אביזרי לידה 🍼</a>
+</div>
+</div>
+<h2 id="achar">מה אפשר לחכות לקנות אחרי הלידה?</h2>
+<p>לא הכל חייבים לפני. כיסא בטיחות לרכב, עגלה ומיטת תינוק — מומלץ לבחור בעצמכם בלי לחץ. הדגש לפני הלידה הוא על בגדים, היגיינה ואביזרים בסיסיים.</p>
+<div class="tip-box">
+<span class="tip-icon">✅</span>
+<p>רשימה בסיסית של בגדים ואביזרים חיוניים עולה בדרך כלל בין 500 ל-800 שקלים — הרבה פחות ממה שרוב ההורים מצפים.</p>
+</div>
+</div>
+<div style="margin-top: 52px; text-align: right;" id="faq">
+<div class="faq-title">שאלות נפוצות</div>
+<details>
+<summary>מתי להתחיל לקנות לתינוק?</summary>
+<p>בדרך כלל מהשבוע ה-20 להריון — אחרי שיודעים את המין ואחרי שחולפת תקופת הסיכון הגדולה.</p>
+</details>
+<details>
+<summary>האם מותר על פי ההלכה לקנות לפני הלידה?</summary>
+<p>יש שמחמירים ויש שמקלים — הנושא תלוי ברב ובמסורת המשפחתית. רבים קונים ומסמנים הצד.</p>
+</details>
+<details>
+<summary>כמה כסף צריך להשקיע ברשימת הקניות?</summary>
+<p>רשימה בסיסית עולה בדרך כלל בין 500 ל-800 שקלים. עם ציוד לשינה ועגלה — הרבה יותר.</p>
+</details>
+<details>
+<summary>מה הדבר הכי חשוב לקנות לתינוק ראשון?</summary>
+<p>בגד גוף ופיג'מות נוחות — אלה המוצרים שמשתמשים בהם הכי הרבה בחודשים הראשונים.</p>
+</details>
+<details>
+<summary>האם כדאי לקנות בגדי תינוקות משומשים?</summary>
+<p>בגדים — כן, אם הם נקיים ותקינים. אביזרי בטיחות כמו כיסא בטיחות — לא מומלץ.</p>
+</details>
+</div>
+<div class="article-tags" style="text-align: right;">
+<span class="tag">רשימת קניות לתינוק</span> <span class="tag">מה לקנות לפני לידה</span> <span class="tag">בגדי תינוקות</span> <span class="tag">אביזרי לידה</span> <span class="tag">מדריך הורים</span> <span class="tag">תינוק ראשון 2026</span>
+</div>
+</div>

@@ -1,0 +1,42 @@
+description_raw: "\n\n\n  \n  \n  LumiBear — דף מוצר v5\n  \n  \n    /* ===========================\n\
+  \       CSS CUSTOM PROPERTIES\n    =========================== */\n    :root {\n\
+  \      --bg:               #FFFDF9;\n      --text:             #1A1A1A;\n\n    \
+  \  --brand-green:      #8B6347;\n      --brand-green-dark: #6B4C35;\n      --sage-light:\
+  \       #F5EDE4;\n\n      /* backward-compat aliases */\n      --accent:       \
+  \    #8B6347;\n      --accent-dark:      #6B4C35;\n      --accent-light:     #F5EDE4;\n\
+  \n      --cream:            #FFF8F2;\n      --warm-beige:       #F5EFE6;\n     \
+  \ --gold-soft:        #D4A853;\n\n      --muted:            #757575;\n      --border:\
+  \           #E7E2DA;\n      --white:            #FFFFFF;\n      --urgent:      \
+  \     #C62828;\n      --card-shadow:      0 2px 12px rgba(0,0,0,0.06);\n      --card-radius:\
+  \      14px;\n    }\n\n    /* ===========================\n       RESET & BASE\n\
+  \    =========================== */\n    *, *::before, *::after {\n      box-sizing:\
+  \ border-box;\n      margin: 0;\n      padding: 0;\n    }\n\n    body {\n      font-family:\
+  \ 'Heebo', sans-serif;\n      direction: rtl;\n      text-align: right;\n      background:\
+  \ var(--bg);\n      color: var(--text);\n      font-size: 16px;\n      line-height:\
+  \ 1.7;\n    }\n\n    .bm-page {\n      max-width: 800px;\n      margin: 0 auto;\n\
+  \      padding: 0 16px;\n    }\n\n    /* ===========================\n       ANIMATIONS\n\
+  \    =========================== */\n    @keyframes slideDown {\n      from { transform:\
+  \ translateY(-100%); opacity: 0; }\n      to   { transform: translateY(0);     opacity:\
+  \ 1; }\n    }\n\n    @keyframes fadeIn {\n      from { opacity: 0; transform: translateY(16px);\
+  \ }\n      to   { opacity: 1; transform: translateY(0);    }\n    }\n\n    @keyframes\
+  \ pulse {\n      0%, 100% { opacity: 1; }\n      50%       { opacity: 0.4; }\n \
+  \   }\n\n    @keyframes shimmer {\n      0%   { background-position: -200% center;\
+  \ }\n      100% { background-position:  200% center; }\n    }\n\n    @keyframes\
+  \ bounceIn {\n      0%   { transform: scale(0.8); opacity: 0; }\n      60%  { transfo"
+fabric_type: ''
+fetched_at: '2026-03-09T09:41:09.817092'
+generated:
+  published: true
+  template_key: templates/product.3-24-months-newborn-baby-boy-winter-clothing-set-lattice-plush-long-sleeved-hooded-jumpsuit-fashion-cute-romper-warm-daily-wear.json
+  template_suffix: 3-24-months-newborn-baby-boy-winter-clothing-set-lattice-plush-long-sleeved-hooded-jumpsuit-fashion-cute-romper-warm-daily-wear
+  validated: false
+main_use: ''
+price: '159.00'
+product_handle: 3-24-months-newborn-baby-boy-winter-clothing-set-lattice-plush-long-sleeved-hooded-jumpsuit-fashion-cute-romper-warm-daily-wear
+product_id: '10029648970041'
+product_title: LumiBear™ חליפת פרמיום לחורף
+product_type: ''
+tags: []
+target_age: ''
+template_suffix_current: ''
+variants_count: 5

@@ -1,0 +1,273 @@
+# BabyMania Content Bank
+# שכבת ידע לסוכני תוכן — לא לשנות ישירות, לשימוש ע"י content generators בלבד
+# version: 1.0 | date: 2026-03-12
+
+# ─────────────────────────────────────────
+# A. BENEFITS BANK
+# ─────────────────────────────────────────
+benefits:
+
+  comfort_daily:
+    benefit_key: comfort_daily
+    headline: "נוח לאורך כל היום"
+    supporting: "גזרה שמאפשרת תנועה חופשית — מהמשחק עד השינה."
+    use_when:
+      - season_signal is winter or all-season
+      - fit_impression is relaxed or loose
+      - target_use_cases includes daily
+    do_not_use_when:
+      - occasion_signals is formal or gift_only
+
+  free_movement:
+    benefit_key: free_movement
+    headline: "תנועה חופשית בכל פוזיציה"
+    supporting: "הגזרה לא מגבילה — גם כשהתינוק זוחל, יושב או משחק."
+    use_when:
+      - silhouette includes relaxed or wide
+      - leg_type includes full or wide
+    do_not_use_when:
+      - fit_impression is tight or fitted
+
+  easy_dressing:
+    benefit_key: easy_dressing
+    headline: "קל ללבישה ולהחלפה"
+    supporting: "פתיחה נגישה — פחות מאמץ לשניכם."
+    use_when:
+      - closure_signals includes snaps or zipper or buttons
+    do_not_use_when:
+      - closure_signals is empty and no visible closure
+
+  neat_look:
+    benefit_key: neat_look
+    headline: "מראה מסודר גם אחרי שעות"
+    supporting: "שומר על צורתו גם אחרי כביסות ולבישה חוזרת."
+    use_when:
+      - style_keywords includes clean or structured
+      - occasion_signals includes outing or event
+    do_not_use_when:
+      - no visual signal for shape retention
+
+  soft_touch:
+    benefit_key: soft_touch
+    headline: "נעים למגע על עור רגיש"
+    supporting: "תחושת רכות שמתאימה לעור עדין של תינוקות."
+    use_when:
+      - softness_impression is high or visible
+      - texture_signals includes plush or knit or fleece
+    do_not_use_when:
+      - fabric_composition is unknown AND no texture signal visible
+
+  versatile_use:
+    benefit_key: versatile_use
+    headline: "מתאים לבית ולחוץ"
+    supporting: "לא צריך להחליף — עובר מהמשחק בבית לטיול בחוץ."
+    use_when:
+      - target_use_cases includes daily AND outing
+      - style is casual or smart-casual
+    do_not_use_when:
+      - occasion_signals is formal_only
+
+  gift_worthy:
+    benefit_key: gift_worthy
+    headline: "נראה כמו מתנה, מרגיש כמו בית"
+    supporting: "עיצוב שמתאים לאירוע — נוחות שמתאימה לכל יום."
+    use_when:
+      - premium_signals is not empty
+      - occasion_signals includes gift or event
+    do_not_use_when:
+      - style is plain or minimal with no premium signals
+
+  layering:
+    benefit_key: layering
+    headline: "שכבה שעובדת עם כל הארון"
+    supporting: "קל לשלב עם פריטים נוספים בכל עונה."
+    use_when:
+      - season_signal is spring-autumn or all-season
+      - is_set_or_single is single
+    do_not_use_when:
+      - is_set_or_single is set (כי אז הסט עצמו הוא הסיפור)
+
+# ─────────────────────────────────────────
+# B. FAQ BANK
+# ─────────────────────────────────────────
+faq:
+
+  global:
+    - key: size_guide
+      question: "איך בוחרים מידה?"
+      answer: "מומלץ לבחור לפי גיל ומשקל התינוק. אם בספק — עולים מידה."
+      trigger: always
+      safe: true
+
+    - key: washing_general
+      question: "איך לכבס?"
+      answer: "כביסה בטמפרטורה נמוכה לפי הוראות התווית. מומלץ לייבש בצל."
+      trigger: always
+      safe: true
+
+    - key: age_fit
+      question: "לאיזה גיל מתאים?"
+      answer: "הגדלים מותאמים לגיל המצוין — תינוקות גדלים בקצב שונה, כדאי לבדוק את טבלת המידות."
+      trigger: always
+      safe: true
+
+    - key: gift_option
+      question: "האם מתאים כמתנה?"
+      answer: "בהחלט — הדגם עשוי ברמה גבוהה ונראה יפה גם באריזה."
+      trigger: premium_signals is not empty OR occasion includes gift
+      safe: true
+
+  visual_triggered:
+    - key: set_pieces
+      question: "מה כולל הסט?"
+      answer: "הסט כולל את הפריטים המופיעים בתמונה — ראו תיאור המוצר לפירוט מדויק."
+      trigger: is_set_or_single is set
+      safe: true
+
+    - key: winter_warmth
+      question: "האם חם מספיק לחורף?"
+      answer: "הדגם מיועד לחורף — ניתן להוסיף שכבה פנימית בימים קרים במיוחד."
+      trigger: season_signal is winter AND thickness_signals is thick
+      safe: true
+
+    - key: summer_light
+      question: "האם קליל לקיץ?"
+      answer: "הגזרה קלילה ומאווררת — מתאימה לימי קיץ חמים."
+      trigger: season_signal is summer AND thickness_signals is thin
+      safe: true
+
+    - key: unisex_use
+      question: "מתאים לבן וגם לבת?"
+      answer: "הדגם מעוצב בסגנון ניטרלי שמתאים לשניהם."
+      trigger: gender_styling_signal is unisex
+      safe: true
+
+  restricted:
+    - key: fabric_exact
+      question: "מה הרכב הבד?"
+      answer: "ראו פרטים מלאים בתווית המוצר."
+      trigger: fabric_composition is known
+      safe: false
+      note: "לא לשלוח בלי data אמיתי מ-Shopify. אם fabric_type ריק — לדלג."
+
+    - key: care_specific
+      question: "האם ניתן לייבש במייבש?"
+      answer: "ראו הוראות התווית — לא מומלץ לייבש במייבש חשמלי לרוב בגדי תינוקות."
+      trigger: care_instructions exist in product data
+      safe: false
+      note: "להשתמש רק כשיש data מ-Shopify. לא לנחש."
+
+# ─────────────────────────────────────────
+# C. FABRIC STORY TEMPLATES
+# ─────────────────────────────────────────
+fabric_story:
+
+  with_composition:
+    note: "להשתמש רק כשיש fabric_type אמיתי מ-Shopify"
+    title_template: "בד {fabric_name} — {key_benefit}"
+    body_template: "{fabric_name} שנבחר לעור עדין. {texture_feel}."
+    body_2_template: "מתאים לשגרה היומיומית — {use_context}."
+    highlight_template: "{emotional_line}"
+
+  without_composition:
+    note: "להשתמש כשfabric_type ריק — מבוסס על visual signals בלבד"
+    title_options:
+      - "נוח על העור, נעים ללבישה"
+      - "תחושה רכה לאורך כל היום"
+      - "עיצוב רך לשגרה יומיומית"
+    body_options:
+      - "הלבוש מרגיש נעים על עור רגיש — גם אחרי שעות ארוכות."
+      - "גזרה שמאפשרת תנועה חופשית ותחושת נוחות לאורך היום."
+      - "קל ונוח — מתאים לשגרה היומיומית מהבוקר עד הערב."
+    body_2_options:
+      - "קל לכביסה ומחזיר את צורתו."
+      - "שומר על מראה נקי ואסתטי לאורך זמן."
+      - ""
+    highlight_options:
+      - "כי הנוחות של התינוק מתחילה בבחירה הנכונה."
+      - "פשוט נעים — כמו שצריך להיות."
+      - "שגרה נוחה מתחילה בבגד שמרגיש טוב."
+
+  visual_texture_additions:
+    plush_or_fleece:
+      extra_body: "המרקם הרך מוסיף תחושת חמימות — מושלם לעונות הקרות."
+    knit:
+      extra_body: "סריג גמיש שנמתח עם התינוק ולא מגביל תנועה."
+    smooth:
+      extra_body: "מרקם חלק ונעים — לא מגרה ולא מצמיד."
+
+# ─────────────────────────────────────────
+# D. EMOTIONAL REASSURANCE BANK
+# ─────────────────────────────────────────
+emotional_reassurance:
+
+  general:
+    - "בחרתם משהו שהתינוק ירצה ללבוש — וגם יראה יפה בתמונות."
+    - "לפעמים הפרט הקטן הוא מה שהופך את היום לנעים יותר."
+    - "בגד שנוח לתינוק — יום רגוע יותר לכולם."
+    - "כי גם הבגד יכול להיות חלק מהטקסים הקטנים שאוהבים."
+
+  gift_context:
+    - "מתנה שמרגישה מיוחדת — ונוחה כמו בגד יומיומי."
+    - "נראה כמו מתנה, מרגיש כמו בית."
+
+  winter_context:
+    - "חמים מבפנים, מסודר מבחוץ — בדיוק מה שצריך."
+    - "כי בחורף, הנוחות היא לא פשרה."
+
+  summer_context:
+    - "קליל, נקי, נעים — גם כשחם בחוץ."
+
+  first_months:
+    - "בחודשים הראשונים כל פרט קטן חשוב — גם הבגד."
+
+# ─────────────────────────────────────────
+# E. WHAT'S SPECIAL — WRITING ANGLES
+# ─────────────────────────────────────────
+whats_special:
+
+  pattern_based:
+    solid:
+      angle: "צבע אחד נקי שמתאים לכל שילוב."
+      note: "להדגיש versatility ו-style פשוט"
+    print_animals:
+      angle: "הדפס חיות שמוסיף חיוך — בלי להפריע לנוחות."
+    print_geometric:
+      angle: "עיצוב נקי עם אופי — כמו מותג קטן."
+    print_floral:
+      angle: "פרחוני ועדין — לרגעים שמצלמים."
+    stripes:
+      angle: "פסים קלאסיים שלא יצאו מהאופנה."
+
+  silhouette_based:
+    coverall_full:
+      angle: "פריט אחד שמכסה הכל — פחות להרכיב, יותר לשחק."
+    two_piece:
+      angle: "סט מתואם — מוכן להכל בלי מאמץ."
+    top_only:
+      angle: "קל לשלב עם כל מכנס — גמישות בארון."
+
+  color_based:
+    neutral:
+      angle: "ניטרלי שמתאים לכולם ועובד עם כל הארון."
+    bold:
+      angle: "צבע שבולט — כי לפעמים כיף להיות קצת פואטי."
+    pastel:
+      angle: "פסטל רך שמרגיש כמו בגד תינוקות — כמו שצריך."
+
+  occasion_based:
+    daily:
+      angle: "לשגרה — אבל ברמה שגורמת להורים להתגאות."
+    outing:
+      angle: "נוח בפנים, מסודר בחוץ — עובד לשניהם."
+    gift:
+      angle: "קונים כמתנה, נשארים כאהוב."
+    cozy:
+      angle: "לרגעים של קאדל — בבית, רגוע, נעים."
+
+  set_vs_single:
+    set:
+      angle: "סט מתואם — כל מה שצריך בפריט אחד."
+      note: "להדגיש שנחסכת התלבטות של שילוב"
+    single:
+      angle: "פריט אחד שעובד עם כל מה שכבר יש בארון."

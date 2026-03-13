@@ -1,0 +1,169 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# BabyMania Team Lead — Agent Output Contracts
+#
+# Binding schema for every agent's output.
+# Orchestrator validates each stage output BEFORE passing to the next stage.
+# Contract violation → stage fails → pipeline stops (no silent fallthrough).
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Stage 1: Analyzer ─────────────────────────────────────────────────────────
+analyzer:
+  output_format: yaml_code_block       # must be inside ```yaml ... ```
+  required_fields:
+    product_id:            { type: string, not_empty: true }
+    product_handle:        { type: string, not_empty: true }
+    product_title:         { type: string, not_empty: true }
+    product_type:          { type: string, not_empty: false }   # can be empty
+    product_template_type: { type: enum, values: [clothing, shoes, accessories], not_empty: true }
+    fabric_type:           { type: string, not_empty: false }   # can be empty
+    target_age:            { type: string, not_empty: false }   # can be empty
+    main_use:              { type: string, not_empty: true }
+    size_note:             { type: string, not_empty: false }   # can be empty
+    price:                 { type: string, not_empty: true }
+    variants_count:        { type: integer, min: 0 }
+    tags:                  { type: list }
+    fetched_at:            { type: string, not_empty: true }
+    description_raw:       { type: string, not_empty: false, max_chars: 2000 }
+  optional_fields:
+    special_feature:  { type: string, not_empty: false }
+    fallback_flags:
+      type: object
+      fields:
+        fabric_empty:   { type: boolean }
+        age_empty:      { type: boolean }
+        feature_empty:  { type: boolean }
+        gift_unknown:   { type: boolean }
+    variant_count:    { type: integer, min: 0 }
+    has_reviews:      { type: boolean }
+    has_stock_data:   { type: boolean }
+
+# ── Stage 2: Fabric Story ─────────────────────────────────────────────────────
+fabric_story:
+  output_format: freeform_text
+  section_key: fabric_story
+  required_fields:
+    title:
+      type: string
+      not_empty: true
+      max_words: 6
+    body:
+      type: string
+      not_empty: true
+      max_sentences: 2
+  optional_fields:
+    body_2:
+      type: string
+      max_sentences: 1
+    highlight_quote:
+      type: string
+    tags:
+      type: pipe_separated_list     # "[tag1] | [tag2] | [tag3]"
+      min_count: 1
+      max_count: 4
+  parse_pattern: |
+    title: {title}
+    body: {body}
+    body_2: {body_2}
+    highlight_quote: {highlight_quote}
+    tags: {tags}
+
+# ── Stage 3: Benefits ─────────────────────────────────────────────────────────
+benefits:
+  output_format: freeform_list
+  section_key: benefits
+  item_format: "- {emoji} | {title} | {description}"
+  separator: "|"
+  parts_per_item: 3
+  part_names: [icon, title, description]
+  constraints:
+    count:
+      min: 4
+      max: 6
+    title:
+      max_words: 4
+      unique: true             # no two benefits with same title
+    description:
+      max_sentences: 1
+      not_empty: true
+
+# ── Stage 4: FAQ ─────────────────────────────────────────────────────────────
+faq:
+  output_format: freeform_qa
+  section_key: faq
+  question_prefix: "Q:"
+  answer_prefix: "A:"
+  part_names: [question, answer]
+  constraints:
+    count:
+      min: 3
+      max: 4
+    answer:
+      max_sentences: 2
+      not_empty: true
+    question:
+      ends_with: "?"
+      not_empty: true
+
+# ── Stage 5: Care Instructions ────────────────────────────────────────────────
+care_instructions:
+  output_format: freeform_list
+  section_key: care_instructions
+  item_format: "- {icon_type} | {card_title} | {card_text}"
+  separator: "|"
+  parts_per_item: 3
+  part_names: [icon_type, card_title, card_text]
+  constraints:
+    count:
+      min: 3
+      max: 5
+    icon_type:
+      type: enum
+      values: [wash_60, sun_dry, iron, no_bleach, repeat, no_tumble_dry, hand_wash]
+    card_title:
+      not_empty: true
+    card_text:
+      not_empty: true
+
+# ── Stage 6: Validator ────────────────────────────────────────────────────────
+validator:
+  output_format: status_text
+  pass_token: "STATUS: PASS"
+  fail_token: "STATUS: FAIL"
+  destination_token: "destination: metafields"
+  error_line_prefix: "✗"
+  # When FAIL, validator may include corrected versions of sections
+  # using the same format as the original stage output.
+  corrections_section_keys:
+    - fabric_story
+    - whats_special
+    - benefits
+    - emotional_reassurance
+    - faq
+    - care_instructions
+
+# ── Stage 7: Publisher ────────────────────────────────────────────────────────
+publisher:
+  output_format: json_code_block       # must be inside ```json ... ```
+  required_fields:
+    product_id:            { type: string, not_empty: true }
+    product_handle:        { type: string, not_empty: true }
+    product_template_type: { type: enum, values: [clothing, shoes, accessories] }
+    template_action:       { type: enum, values: [set_suffix_clothing, no_change, protected_abort] }
+    body_html_clear:       { type: boolean }
+    metafields:
+      type: object
+      required_keys:
+        hero_eyebrow:          { type: string }
+        hero_headline:         { type: string, not_empty: true }
+        hero_subheadline:      { type: string }
+        fabric_title:          { type: string, not_empty: true }
+        fabric_body:           { type: string, not_empty: true }
+        fabric_body_2:         { type: string }           # can be empty
+        fabric_highlight:      { type: string }
+        fabric_tags:           { type: list, min_count: 1 }
+        whats_special:         { type: string, not_empty: true }
+        benefits:              { type: list, item_fields: [icon, title, description], min_count: 4, max_count: 6 }
+        emotional_reassurance: { type: string, not_empty: true }
+        size_note:             { type: string }           # can be empty
+        care_instructions:     { type: list, item_fields: [icon_type, card_title, card_text], min_count: 3, max_count: 5 }
+        faq:                   { type: list, item_fields: [question, answer], min_count: 3, max_count: 4 }

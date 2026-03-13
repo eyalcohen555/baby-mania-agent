@@ -1,0 +1,145 @@
+{
+  "analysis_meta": {
+    "product_id": "9688934940985",
+    "product_title": "אוברול בייבי לתינוק – Baby Bear Cozy Set",
+    "analyzed_image": "https://cdn.shopify.com/s/files/.../baby-bear-1.jpg",
+    "total_images_reviewed": 3,
+    "main_subject_identified": true,
+    "ambiguity_flag": false,
+    "ambiguity_reason": "",
+    "analysis_scope": "main_garment_only",
+    "confidence_overall": 0.88
+  },
+  "primary_subject": {
+    "main_garment_type": "אוברול",
+    "is_set_or_single": "single",
+    "piece_count_estimate": null,
+    "set_pieces_description": [],
+    "main_garment_only_analysis": true,
+    "analysis_confidence": 0.95
+  },
+  "visual_structure": {
+    "silhouette": ["one-piece", "wide-leg"],
+    "neckline": "crew-neck",
+    "sleeve_type": "long",
+    "leg_type": "full-length",
+    "fit_impression": "relaxed",
+    "closure_signals": ["snap-buttons"],
+    "length_signals": "full-body",
+    "confidence": 0.9
+  },
+  "color_palette": {
+    "primary_colors": ["חום", "בז'"],
+    "secondary_colors": ["לבן"],
+    "contrast_level": "low",
+    "overall_palette_mood": "earthy",
+    "confidence": 0.95
+  },
+  "pattern_and_design": {
+    "pattern_type": "solid",
+    "pattern_description": "בגד אחיד בגוון חום-בז', ללא הדפס",
+    "decorative_elements": ["ears-on-hood", "pocket"],
+    "visible_graphics_or_motifs": ["bear"],
+    "confidence": 0.87
+  },
+  "texture_and_season_signals": {
+    "visible_texture_signals": ["plush", "fleece-like"],
+    "thickness_signals": "thick",
+    "softness_impression": "very-soft-looking",
+    "season_signal": "winter",
+    "confidence": 0.82
+  },
+  "style_interpretation": {
+    "style_keywords": ["cozy", "casual", "playful", "scandinavian"],
+    "mood_keywords": ["warm", "soft", "cheerful"],
+    "target_use_cases": ["everyday", "gift"],
+    "occasion_signals": ["gifting-ready", "daily-wear"],
+    "premium_signals": ["clean-cut", "detailed-stitching-visible"],
+    "confidence": 0.8
+  },
+  "audience_signals": {
+    "gender_styling_signal": "unisex",
+    "age_stage_signal": "0-12m",
+    "confidence": 0.65
+  },
+  "distinctive_features": {
+    "top_5_visual_features": [
+      "כובע משולב עם אוזני דוב — חלק מהבגד עצמו, לא אביזר נפרד",
+      "כפתורי לחיצה (snap) נראים לאורך הגב/מפשעה — רלוונטי ל-benefits: קל להחלפת חיתול",
+      "בד נראה עבה ורך (plush/fleece) — רלוונטי לחורף ולסיגנל חום",
+      "גזרה רחבה ורפויה — רלוונטי לנוחות תנועה",
+      "גוון חום-בז' ניטרלי — מתאים לכל מגדר, רלוונטי ל-unisex copy"
+    ],
+    "most_content_useful_details": [
+      "אוזני הדוב — אלמנט עיצובי ייחודי שניתן להדגיש ב-hero ובbenefits",
+      "בד עבה נראה חם — ניתן לבנות narrative של חורף / חמימות סביב זה (בזהירות — לא לטעון הרכב בד)",
+      "snap-buttons — יתרון פונקציונלי ברור שניתן להשתמש ב-FAQ ובbenefits",
+      "גוון ניטרלי — מתאים לכל מגדר, שימושי כ-copy angle"
+    ],
+    "confidence": 0.85
+  },
+  "ignored_context": {
+    "ignored_context_items": [
+      "גרביים לבנות שנראות בתמונה — לא חלק מהמוצר",
+      "שמיכה/רקע בהיר בצד — prop צילום",
+      "קישוט עץ עץ בצד — prop סצנה"
+    ],
+    "possible_non_product_items": [
+      "גרביים",
+      "אלמנט רקע לבן"
+    ],
+    "included_only_if_part_of_product": [
+      "כובע עם אוזני דוב — כלול כי נראה חלק אינטגרלי מהאוברול (מחובר לצווארון)"
+    ]
+  },
+  "content_guidance": {
+    "safe_angles_for_copy": [
+      "עיצוב אוזני דוב",
+      "צבע ניטרלי מתאים לכל מגדר",
+      "כפתורי לחיצה לנוחות הורה",
+      "גזרה רחבה לנוחות תנועה",
+      "מראה חם עבור חורף"
+    ],
+    "useful_benefit_directions": [
+      "snap-buttons → החלפת חיתול מהירה ללא הסרת הבגד",
+      "כובע משולב → לא צריך לחפש כובע נפרד",
+      "גזרה רחבה → חופש תנועה לתינוק",
+      "צבע ניטרלי → מתאים לבן ולבת, גם כמתנה"
+    ],
+    "useful_faq_directions": [
+      "האם הכובע נשאר על הראש? (נראה מחובר לבגד)",
+      "האם יש כפתורים קדמיים או אחוריים?",
+      "האם מתאים לשינה?",
+      "כמה חלקים בסט? (שאלה שתצוץ כי נראה one-piece)"
+    ],
+    "useful_hero_directions": [
+      "הדגש את אוזני הדוב כ-signature visual element",
+      "בנה על narrative של חמימות ורכות לחורף",
+      "הדגש ניטרליות צבע כמתנה מושלמת בלי לדעת מגדר"
+    ],
+    "unsafe_claims_to_avoid": [
+      "לא לכתוב 'כותנה' — הרכב הבד לא נראה ולא ידוע",
+      "לא לכתוב '100% רך' — זו טענה מדידה",
+      "לא לכתוב 'עמיד בכביסה' — לא ניתן לדעת מהתמונה",
+      "לא לכלול גרביים בתיאור המוצר — לא חלק ממה שנמכר",
+      "לא לכתוב 'תקן בטיחות' — לא נראה בתמונה"
+    ],
+    "fallback_content_signals": [
+      "אם metafields ריקים — ניתן לכתוב hero סביב 'אוזני דוב + צבע ניטרלי + snap-buttons' בלבד",
+      "אם fabric_type ריק — להשתמש בניסוח 'נראה רך ועבה' ולא 'מבד X'"
+    ]
+  },
+  "hard_limits": {
+    "do_not_claim_as_fact": [
+      "exact fabric composition",
+      "certifications",
+      "care instructions",
+      "exact measurements",
+      "medical or safety guarantees"
+    ]
+  },
+  "summary": {
+    "plain_visual_summary": "אוברול one-piece לתינוק בגוון חום-בז', עם כובע משולב ואוזני דוב, שרוולים ארוכים, גזרה רחבה, ומראה עבה ורך המתאים לחורף.",
+    "content_team_summary": "אוברול חורפי עם אוזני דוב — אלמנט עיצובי ייחודי וברור שניתן לבנות סביבו hero ו-benefits. snap-buttons נראים ויוצרים angle לנוחות הורה. צבע ניטרלי מאפשר copy לכל מגדר ולמתנה. אל תטענו הרכב בד — אין מידע."
+  }
+}

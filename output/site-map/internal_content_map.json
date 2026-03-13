@@ -1,0 +1,883 @@
+{
+  "generated_by": "07-organic-content-mapper",
+  "generated_at": "2026-03-10T10:00:00Z",
+  "last_updated_at": "2026-03-12T01:50:34+02:00",
+  "last_updated_by": "HUB-4 Sensitive Baby Skin — 5 articles PUBLISHED to Shopify (Pillar + C1-C4, QA v1.1 PASS)",
+  "site_map_version": "3.2",
+  "hubs": [
+    {
+      "hub_id": "HUB-2",
+      "hub_name": "Newborn Clothing",
+      "hub_status": "active",
+      "hub_product_ids": [
+        "9688934940985",
+        "10029649133881"
+      ],
+      "pillar_article": {
+        "cluster_id": "HUB-2-Pillar",
+        "title": "כמה בגדים תינוק חדש באמת צריך",
+        "target_keyword": "כמה בגדים תינוק חדש צריך",
+        "url_slug": "how-many-clothes-does-a-newborn-need",
+        "full_url": "https://babymania-il.com/blogs/news/how-many-clothes-does-a-newborn-need",
+        "article_type": "tofu",
+        "cluster_role": "pillar",
+        "status": "published",
+        "shopify_article_id": 681333621049,
+        "shopify_url": "https://babymania-il.com/blogs/news/how-many-clothes-does-a-newborn-need",
+        "published_at": "2026-03-10T12:59:08+02:00",
+        "tags": "newborn-clothing",
+        "file": "HUB2_pillar_blog_article.html",
+        "http_verified": true,
+        "http_verified_at": "2026-03-10T15:00:00Z",
+        "internal_links_out": [
+          {
+            "link_id": "AL-HUB2P-001",
+            "target_slug": "how-to-help-baby-sleep-through-the-night",
+            "target_hub": "HUB-1",
+            "anchor_text": "המדריך המלא לשינת תינוקות בלילה",
+            "placement": "H2#layers — הלבשה לשינה paragraph",
+            "status": "active"
+          }
+        ],
+        "product_links_out": [
+          {
+            "link_id": "PL-HUB2P-001",
+            "product_id": "9688934940985",
+            "product_handle": "baby-bear-cozy-set",
+            "cta_text": "לעמוד המוצר"
+          },
+          {
+            "link_id": "PL-HUB2P-002",
+            "product_id": "10029649133881",
+            "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes",
+            "cta_text": "לעמוד המוצר"
+          }
+        ]
+      },
+      "supporting_articles": [
+        {
+          "rank": 1,
+          "cluster_id": "HUB-2-C1",
+          "title": "איזה בד הכי טוב לעור תינוק",
+          "target_keyword": "איזה בד הכי טוב לעור תינוק",
+          "url_slug": "best-fabric-for-baby-skin",
+          "full_url": "https://babymania-il.com/blogs/news/best-fabric-for-baby-skin",
+          "article_type": "tofu",
+          "cluster_role": "supporting",
+          "status": "published",
+          "shopify_article_id": 681348792633,
+          "shopify_url": "https://babymania-il.com/blogs/news/best-fabric-for-baby-skin",
+          "published_at": "2026-03-10T14:02:12+02:00",
+          "tags": "newborn-clothing",
+          "file": "HUB2_C1_blog_article.html",
+          "http_verified": true,
+          "http_verified_at": "2026-03-10T15:05:00Z",
+          "internal_links_out": [
+            {
+              "link_id": "AL-HUB2C1-001",
+              "target_slug": "how-many-clothes-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "המדריך המלא לכמות הבגדים שתינוק חדש צריך",
+              "placement": "H2#how-to-choose — paragraph",
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C1-002",
+              "target_slug": "how-to-care-for-sensitive-baby-skin",
+              "target_hub": "HUB-4",
+              "anchor_text": "איך לטפל בעור רגיש של יילודים",
+              "placement": "H2#before-buying — cross-hub link",
+              "status": "ready-to-activate — HUB-4 published 2026-03-12",
+              "target_shopify_id": 681481797945
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-HUB2C1-001",
+              "product_id": "10029649133881",
+              "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes",
+              "cta_text": "לצפייה במוצר"
+            },
+            {
+              "link_id": "PL-HUB2C1-002",
+              "product_id": "9688934940985",
+              "product_handle": "baby-bear-cozy-set",
+              "cta_text": "לצפייה במוצר"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "cluster_id": "HUB-2-C2",
+          "title": "צ׳קליסט ביגוד לתינוק — מה לקנות לפני הלידה",
+          "target_keyword": "צ׳קליסט ביגוד לתינוק",
+          "url_slug": "newborn-clothes-checklist",
+          "full_url": "https://babymania-il.com/blogs/news/newborn-clothes-checklist",
+          "article_type": "tofu",
+          "cluster_role": "supporting",
+          "status": "published",
+          "shopify_article_id": 681356132665,
+          "shopify_url": "https://babymania-il.com/blogs/news/newborn-clothes-checklist",
+          "published_at": "2026-03-10T14:45:47+02:00",
+          "tags": "newborn-clothing",
+          "file": "HUB2_C2_blog_article.html",
+          "http_verified": true,
+          "http_verified_at": "2026-03-10T15:30:00Z",
+          "unique_element": "checklist-summary CSS grid — 8 items with large quantity numbers",
+          "internal_links_out": [
+            {
+              "link_id": "AL-HUB2C2-001",
+              "target_slug": "how-many-clothes-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "המדריך המלא לכמות הבגדים שתינוק חדש צריך",
+              "placement": "body — pillar cross-link",
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C2-002",
+              "target_slug": "best-fabric-for-baby-skin",
+              "target_hub": "HUB-2",
+              "anchor_text": "איזה בד הכי טוב לעור תינוק",
+              "placement": "body — C1 cross-link",
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C2-003",
+              "target_slug": "how-to-dress-a-newborn-for-sleep",
+              "target_hub": "HUB-2",
+              "anchor_text": "איך להלביש תינוק לשינה",
+              "placement": "H2#day-night — end of last paragraph (appended cross-link sentence)",
+              "counts_for_density": true,
+              "status": "active",
+              "activated_at": "2026-03-10T19:25:41+02:00",
+              "method": "appended cross-link sentence — C3 was deferred at C2 generation time"
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-HUB2C2-001",
+              "product_id": "9688934940985",
+              "product_handle": "baby-bear-cozy-set",
+              "cta_text": "לעמוד המוצר"
+            },
+            {
+              "link_id": "PL-HUB2C2-002",
+              "product_id": "10029649133881",
+              "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes",
+              "cta_text": "לעמוד המוצר"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "cluster_id": "HUB-2-C3",
+          "title": "איך להלביש תינוק לשינה",
+          "target_keyword": "איך להלביש תינוק לשינה",
+          "url_slug": "how-to-dress-a-newborn-for-sleep",
+          "full_url": "https://babymania-il.com/blogs/news/how-to-dress-a-newborn-for-sleep",
+          "article_type": "tofu",
+          "cluster_role": "supporting",
+          "status": "published",
+          "shopify_article_id": 681362456889,
+          "shopify_url": "https://babymania-il.com/blogs/news/how-to-dress-a-newborn-for-sleep",
+          "published_at": "2026-03-10T19:10:59+02:00",
+          "tags": "newborn-clothing",
+          "file": "HUB2_C3_blog_article.html",
+          "http_verified": true,
+          "http_verified_at": "2026-03-10T19:10:59+02:00",
+          "internal_links_out": [
+            {
+              "link_id": "AL-HUB2C3-001",
+              "target_slug": "best-fabric-for-baby-skin",
+              "target_hub": "HUB-2",
+              "anchor_text": "איזה בד הכי מתאים לעור רגיש של יילוד",
+              "placement": "paragraph in H2#room-temp — טמפרטורת החדר וסולם ההלבשה",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C3-002",
+              "target_slug": "newborn-clothes-checklist",
+              "target_hub": "HUB-2",
+              "anchor_text": "את הצ'קליסט המלא לביגוד תינוק לפני הלידה",
+              "placement": "paragraph in H2#room-temp — טמפרטורת החדר וסולם ההלבשה",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C3-003",
+              "target_slug": "how-many-clothes-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "כמה פריטי שינה כדאי להכין לתינוק",
+              "placement": "paragraph in H2#safety — מה אסור ללבוש על תינוק בשינה",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C3-004",
+              "target_slug": "how-many-clothes-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "למדריך המלא",
+              "placement": "cta-banner secondary button (class: cta-btn-outline)",
+              "counts_for_density": false,
+              "status": "active",
+              "note": "Structural CTA — same target as AL-HUB2C3-003. Approved CTA wording."
+            },
+            {
+              "link_id": "AL-HUB2C3-005",
+              "target_slug": "how-many-onesies-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "כמה בגדי גוף לתינוק חדש כדאי להכין",
+              "placement": "H2#room-temp — last paragraph (appended cross-link sentence after C4 publish)",
+              "counts_for_density": true,
+              "status": "active",
+              "activated_at": "2026-03-10T19:47:08+02:00",
+              "method": "appended cross-link sentence — C4 was deferred at C3 generation time"
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-HUB2C3-001",
+              "product_id": "9688934940985",
+              "product_handle": "baby-bear-cozy-set",
+              "cta_text": "לצפייה במוצר"
+            },
+            {
+              "link_id": "PL-HUB2C3-002",
+              "product_id": "10029649133881",
+              "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes",
+              "cta_text": "לצפייה במוצר"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "cluster_id": "HUB-2-C4",
+          "title": "כמה בגדי גוף צריך לתינוק חדש",
+          "target_keyword": "כמה בגדי גוף צריך לתינוק",
+          "url_slug": "how-many-onesies-does-a-newborn-need",
+          "full_url": "https://babymania-il.com/blogs/news/how-many-onesies-does-a-newborn-need",
+          "article_type": "aeo",
+          "cluster_role": "supporting",
+          "status": "published",
+          "shopify_article_id": 681363439929,
+          "shopify_url": "https://babymania-il.com/blogs/news/how-many-onesies-does-a-newborn-need",
+          "published_at": "2026-03-10T19:45:23+02:00",
+          "tags": "newborn-clothing,aeo,HUB-2,C4",
+          "file": "HUB2_C4_blog_article.html",
+          "http_verified": true,
+          "http_verified_at": "2026-03-10T19:45:23+02:00",
+          "internal_links_out": [
+            {
+              "link_id": "AL-HUB2C4-001",
+              "target_slug": "how-many-clothes-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "רשימת ביגוד מלאה לתינוק חדש",
+              "placement": "H2#how-many — paragraph 2",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C4-002",
+              "target_slug": "how-to-dress-a-newborn-for-sleep",
+              "target_hub": "HUB-2",
+              "anchor_text": "המדריך להלבשת תינוק לשינה לפי עונה",
+              "placement": "H2#by-season — paragraph 1",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C4-003",
+              "target_slug": "best-fabric-for-baby-skin",
+              "target_hub": "HUB-2",
+              "anchor_text": "בחירת הבד המתאים לעור רגיש של תינוק",
+              "placement": "H2#choosing — paragraph 1",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C4-004",
+              "target_slug": "newborn-clothes-checklist",
+              "target_hub": "HUB-2",
+              "anchor_text": "את הצ'קליסט המלא לביגוד תינוק לפני הלידה",
+              "placement": "H2#choosing — last paragraph",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C4-005",
+              "target_slug": "how-many-clothes-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "למדריך המלא",
+              "placement": "cta-banner outline button (structural)",
+              "counts_for_density": false,
+              "status": "active",
+              "note": "Structural CTA — same target as AL-HUB2C4-001. Approved CTA wording."
+            },
+            {
+              "link_id": "AL-HUB2C4-006",
+              "target_slug": "mistakes-parents-make-when-buying-newborn-clothes",
+              "target_hub": "HUB-2",
+              "anchor_text": "הטעויות הנפוצות ביותר בקניית בגדים לתינוק",
+              "placement": "H2#choosing — last paragraph (appended cross-link sentence after C5 publish)",
+              "counts_for_density": true,
+              "status": "active",
+              "activated_at": "2026-03-10T19:53:52+02:00",
+              "method": "appended cross-link sentence — C5 was deferred at C4 generation time"
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-HUB2C4-001",
+              "product_id": "9688934940985",
+              "product_handle": "baby-bear-cozy-set",
+              "cta_text": "לצפייה במוצר",
+              "placement": "product-mention card"
+            },
+            {
+              "link_id": "PL-HUB2C4-002",
+              "product_id": "9688934940985",
+              "product_handle": "baby-bear-cozy-set",
+              "cta_text": "לצפייה במוצר",
+              "placement": "cta-banner primary button"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "cluster_id": "HUB-2-C5",
+          "title": "הטעויות הכי נפוצות בקניית בגדים לתינוק חדש",
+          "target_keyword": "טעויות בקניית בגדים לתינוק",
+          "url_slug": "mistakes-parents-make-when-buying-newborn-clothes",
+          "full_url": "https://babymania-il.com/blogs/news/mistakes-parents-make-when-buying-newborn-clothes",
+          "article_type": "tofu",
+          "cluster_role": "authority",
+          "status": "published",
+          "shopify_article_id": 681363472697,
+          "shopify_url": "https://babymania-il.com/blogs/news/mistakes-parents-make-when-buying-newborn-clothes",
+          "published_at": "2026-03-10T19:52:22+02:00",
+          "tags": "newborn-clothing,listicle,authority,HUB-2,C5",
+          "file": "HUB2_C5_blog_article.html",
+          "http_verified": true,
+          "http_verified_at": "2026-03-10T19:52:22+02:00",
+          "internal_links_out": [
+            {
+              "link_id": "AL-HUB2C5-001",
+              "target_slug": "how-many-clothes-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "כמה בגדים תינוק חדש באמת צריך",
+              "placement": "H2#mistake-size — paragraph 2",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C5-002",
+              "target_slug": "best-fabric-for-baby-skin",
+              "target_hub": "HUB-2",
+              "anchor_text": "איזה בד הכי טוב לעור תינוק",
+              "placement": "H2#mistake-fabric — paragraph 2",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C5-003",
+              "target_slug": "how-many-onesies-does-a-newborn-need",
+              "target_hub": "HUB-2",
+              "anchor_text": "כמה בגדי גוף לתינוק חדש כדאי להכין",
+              "placement": "H2#mistake-quantity — paragraph 2",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C5-004",
+              "target_slug": "newborn-clothes-checklist",
+              "target_hub": "HUB-2",
+              "anchor_text": "הצ'קליסט המלא לביגוד תינוק לפני הלידה",
+              "placement": "H2#smart-buying — paragraph 1",
+              "counts_for_density": true,
+              "status": "active"
+            },
+            {
+              "link_id": "AL-HUB2C5-005",
+              "target_slug": "newborn-clothes-checklist",
+              "target_hub": "HUB-2",
+              "anchor_text": "לצ'קליסט המלא",
+              "placement": "cta-banner outline button (structural)",
+              "counts_for_density": false,
+              "status": "active",
+              "note": "Structural CTA — same target as AL-HUB2C5-004."
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-HUB2C5-001",
+              "product_id": "9688934940985",
+              "product_handle": "baby-bear-cozy-set",
+              "cta_text": "לצפייה במוצר",
+              "placement": "product-mention card 1"
+            },
+            {
+              "link_id": "PL-HUB2C5-002",
+              "product_id": "10029649133881",
+              "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes",
+              "cta_text": "לצפייה במוצר",
+              "placement": "product-mention card 2"
+            },
+            {
+              "link_id": "PL-HUB2C5-003",
+              "product_id": "9688934940985",
+              "product_handle": "baby-bear-cozy-set",
+              "cta_text": "לצפייה במוצר",
+              "placement": "cta-banner primary button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hub_id": "HUB-1",
+      "hub_name": "Baby Sleep",
+      "hub_product_id": "9839252472121",
+      "hub_product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+      "hub_product_url": "https://babymania-il.com/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+      "hub_product_note": "BabySleep Pro (ID: 9839252472121) — verified HTTP 200 on 2026-03-10. DO NOT USE /products/easy-sleep (HTTP 404). See shared/product-context/babysleep-pro.yaml",
+      "hub_status": "active",
+      "pillar_article": {
+        "article_id": "10085913231673_blog_article_1",
+        "title": "איך לעזור לתינוק לישון בלילה — המדריך המלא להורים עייפים",
+        "target_keyword": "how to help baby sleep through the night",
+        "url_slug": "how-to-help-baby-sleep-through-the-night",
+        "full_url": "https://babymania-il.com/blogs/news/how-to-help-baby-sleep-through-the-night",
+        "article_type": "tofu",
+        "cluster_role": "pillar",
+        "status": "published",
+        "shopify_article_id": 681270837561,
+        "shopify_url": "https://babymania-il.com/blogs/news/how-to-help-baby-sleep-through-the-night",
+        "published_at": "2026-03-10T08:19:56+02:00",
+        "file": "10085913231673_blog_article_1.html",
+        "h2_anchors": [
+          {
+            "id": "why-babies-wake",
+            "text": "למה תינוקות מתעוררים בלילה?"
+          },
+          {
+            "id": "sleep-routine",
+            "text": "שגרת שינה: המפתח לשינה רצופה"
+          },
+          {
+            "id": "white-noise",
+            "text": "רעש לבן לתינוקות: האם זה באמת עובד?"
+          },
+          {
+            "id": "environment",
+            "text": "סביבת שינה נכונה — אור, טמפרטורה, ביטחון"
+          },
+          {
+            "id": "self-soothing",
+            "text": "עצמאות שינה: ללמד תינוק להירגע לבד"
+          }
+        ],
+        "internal_links_out": [
+          {
+            "link_id": "AL-P-001",
+            "target_slug": "white-noise-for-babies",
+            "anchor_text": "רעש לבן לתינוקות משפיע על שינה",
+            "placement": "tip-box after H2#white-noise",
+            "status": "active"
+          },
+          {
+            "link_id": "AL-P-002",
+            "target_slug": "baby-sleep-routine",
+            "anchor_text": "מדריך שגרת שינה לתינוק",
+            "placement": "cta-banner secondary button",
+            "status": "active"
+          }
+        ],
+        "product_links_out": [
+          {
+            "link_id": "PL-P-001",
+            "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+            "placement": "product-mention card after H2#white-noise",
+            "cta_text": "לרכישת EasySleep™"
+          },
+          {
+            "link_id": "PL-P-002",
+            "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+            "placement": "cta-banner primary button",
+            "cta_text": "לצפייה במוצר"
+          }
+        ]
+      },
+      "supporting_articles": [
+        {
+          "rank": 2,
+          "cluster_id": "HUB-1-C1",
+          "title": "רעש לבן לתינוקות: האם זה באמת עובד?",
+          "target_keyword": "white noise for babies",
+          "url_slug": "white-noise-for-babies",
+          "full_url": "https://babymania-il.com/blogs/news/white-noise-for-babies",
+          "article_type": "aeo",
+          "cluster_role": "supporting",
+          "status": "published",
+          "shopify_article_id": 681272115513,
+          "shopify_url": "https://babymania-il.com/blogs/news/white-noise-for-babies",
+          "published_at": "2026-03-10T11:15:00+02:00",
+          "file": "10085913231673_blog_article_2.html",
+          "updated_at": "2026-03-10T11:15:00Z",
+          "internal_links_out": [
+            {
+              "link_id": "AL-C1-001",
+              "target_slug": "how-to-help-baby-sleep-through-the-night",
+              "anchor_text": "מדריך המלא לשינת תינוקות בלילה",
+              "placement": "H2#dependency — last paragraph",
+              "status": "active",
+              "activated_at": "2026-03-10T11:30:00Z",
+              "method": "wrapped — ב prefix kept outside anchor"
+            },
+            {
+              "link_id": "AL-C1-002",
+              "target_slug": "baby-sleep-routine",
+              "anchor_text": "שגרת שינה קבועה ועקבית",
+              "placement": "H2#dependency — second paragraph",
+              "status": "active",
+              "activated_at": "2026-03-10T11:25:00Z",
+              "method": "wrapped"
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-C1-001",
+              "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+              "placement": "product-mention card after H2#types",
+              "cta_text": "לרכישת EasySleep™"
+            },
+            {
+              "link_id": "PL-C1-002",
+              "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+              "placement": "cta-banner primary button",
+              "cta_text": "לצפייה במוצר"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "cluster_id": "HUB-1-C4",
+          "hidden_diamond": true,
+          "title": "פתרון שינה all-in-one לתינוק — מה לחפש?",
+          "target_keyword": "all in one baby sleep solution",
+          "url_slug": "all-in-one-baby-sleep-solution",
+          "full_url": "https://babymania-il.com/blogs/news/all-in-one-baby-sleep-solution",
+          "article_type": "bofu",
+          "cluster_role": "cluster-expansion",
+          "status": "published",
+          "shopify_article_id": 681272246585,
+          "shopify_url": "https://babymania-il.com/blogs/news/all-in-one-baby-sleep-solution",
+          "published_at": "2026-03-10T11:17:00+02:00",
+          "file": "10085913231673_blog_article_3.html",
+          "updated_at": "2026-03-10T11:17:00Z",
+          "internal_links_out": [
+            {
+              "link_id": "AL-C4-001",
+              "target_slug": "how-to-help-baby-sleep-through-the-night",
+              "anchor_text": "מדריך המלא לשינת תינוקות בלילה",
+              "placement": "before H2#criteria — inserted paragraph",
+              "status": "active",
+              "activated_at": "2026-03-10T11:32:00Z",
+              "method": "inserted new <p> with link before H2#criteria"
+            },
+            {
+              "link_id": "AL-C4-002",
+              "target_slug": "white-noise-for-babies",
+              "anchor_text": "רעש לבן לתינוקות — האם זה עובד?",
+              "placement": "H2#criteria — criteria item 1 <p> appended",
+              "status": "active",
+              "activated_at": "2026-03-10T11:32:00Z",
+              "method": "appended cross-link sentence to criteria item 1 paragraph"
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-C4-001",
+              "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+              "placement": "product-mention card in H2#recommendation",
+              "cta_text": "לרכישת EasySleep™"
+            },
+            {
+              "link_id": "PL-C4-002",
+              "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+              "placement": "cta-banner primary button",
+              "cta_text": "לצפייה במוצר"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "cluster_id": "HUB-1-C2",
+          "title": "שגרת שינה לתינוק — מדריך צעד אחר צעד להורים חדשים",
+          "target_keyword": "baby sleep routine",
+          "url_slug": "baby-sleep-routine",
+          "full_url": "https://babymania-il.com/blogs/news/baby-sleep-routine",
+          "article_type": "tofu",
+          "cluster_role": "supporting",
+          "status": "published",
+          "shopify_article_id": 681272181049,
+          "shopify_url": "https://babymania-il.com/blogs/news/baby-sleep-routine",
+          "published_at": "2026-03-10T11:16:00+02:00",
+          "file": "10085913231673_blog_article_4.html",
+          "updated_at": "2026-03-10T11:16:00Z",
+          "internal_links_out": [
+            {
+              "link_id": "AL-C2-001",
+              "target_slug": "how-to-help-baby-sleep-through-the-night",
+              "anchor_text": "המדריך המלא לשינת תינוקות בלילה",
+              "placement": "H2#troubleshoot — TIP BOX last sentence",
+              "status": "active",
+              "activated_at": "2026-03-10T11:16:00Z"
+            },
+            {
+              "link_id": "AL-C2-002",
+              "target_slug": "white-noise-for-babies",
+              "anchor_text": "רעש לבן לתינוקות — האם זה עובד?",
+              "placement": "H2#environment — white noise bullet",
+              "status": "active",
+              "activated_at": "2026-03-10T11:16:00Z"
+            },
+            {
+              "link_id": "AL-C2-003",
+              "target_slug": "how-to-help-baby-sleep-through-the-night",
+              "anchor_text": "למדריך המלא",
+              "placement": "cta-banner secondary button (structural)",
+              "counts_for_density": false,
+              "status": "active",
+              "activated_at": "2026-03-10T11:16:00Z"
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-C2-001",
+              "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+              "placement": "product-mention card in H2#environment",
+              "cta_text": "לרכישת EasySleep™"
+            },
+            {
+              "link_id": "PL-C2-002",
+              "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+              "placement": "cta-banner primary button",
+              "cta_text": "לצפייה במוצר"
+            }
+          ],
+          "resolves_deferred_links": [
+            {
+              "link_id": "AL-C1-002",
+              "from_article": "blog_article_2.html",
+              "anchor_text": "שגרת שינה קבועה ועקבית"
+            },
+            {
+              "from_article": "blog_article_1.html (pillar CTA secondary)",
+              "anchor_text": "מדריך שגרת שינה לתינוק"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "cluster_id": "HUB-1-C3",
+          "title": "תאורת לילה לתינוק — המדריך המלא לבחירה נכונה",
+          "target_keyword": "baby night light guide",
+          "url_slug": "baby-night-light-guide",
+          "full_url": "https://babymania-il.com/blogs/news/baby-night-light-guide",
+          "article_type": "bofu",
+          "cluster_role": "cluster-expansion",
+          "status": "published",
+          "shopify_article_id": 681312452921,
+          "shopify_url": "https://babymania-il.com/blogs/news/baby-night-light-guide",
+          "published_at": "2026-03-10T13:00:00+02:00",
+          "file": "9688934940985_blog_article_c3.html",
+          "updated_at": "2026-03-10T13:00:00Z",
+          "slug_fix_note": "Original deferred placeholder was 'best-baby-night-light' — corrected to actual published handle 'baby-night-light-guide' on 2026-03-10",
+          "internal_links_out": [
+            {
+              "link_id": "AL-C3-001",
+              "target_slug": "how-to-help-baby-sleep-through-the-night",
+              "anchor_text": "המדריך המלא לשינת תינוקות בלילה",
+              "placement": "intro section / body",
+              "status": "active",
+              "activated_at": "2026-03-10T13:00:00Z"
+            },
+            {
+              "link_id": "AL-C3-002",
+              "target_slug": "white-noise-for-babies",
+              "anchor_text": "רעש לבן לתינוקות",
+              "placement": "body / related section",
+              "status": "active",
+              "activated_at": "2026-03-10T13:00:00Z"
+            }
+          ],
+          "product_links_out": [
+            {
+              "link_id": "PL-C3-001",
+              "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+              "placement": "product-mention card / CTA",
+              "cta_text": "לרכישת EasySleep™"
+            },
+            {
+              "link_id": "PL-C3-002",
+              "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+              "placement": "cta-banner primary button",
+              "cta_text": "לצפייה במוצר"
+            }
+          ]
+        }
+      ],
+      "deferred_articles": [
+        {
+          "cluster_id": "HUB-7-pillar",
+          "title": "Safe Sleep for Newborns: What Every Parent Should Know",
+          "target_keyword": "safe sleep for newborns",
+          "url_slug": "safe-sleep-for-newborns",
+          "full_url": "https://babymania-il.com/blogs/news/safe-sleep-for-newborns",
+          "article_type": "aeo",
+          "cluster_role": "cross-hub (belongs to HUB-7)",
+          "status": "deferred",
+          "defer_reason": "HUB-7 not yet started — will be written after HUB-4 cluster is established"
+        }
+      ]
+    }
+  ],
+  "hub1_link_graph": {
+    "description": "Adjacency map for HUB-1. All 5 articles published and internally linked as of 2026-03-10.",
+    "nodes": [
+      {
+        "id": "how-to-help-baby-sleep-through-the-night",
+        "role": "pillar",
+        "status": "published"
+      },
+      {
+        "id": "white-noise-for-babies",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "id": "baby-sleep-routine",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "id": "all-in-one-baby-sleep-solution",
+        "role": "cluster-expansion",
+        "status": "published"
+      },
+      {
+        "id": "baby-night-light-guide",
+        "role": "cluster-expansion",
+        "status": "published"
+      }
+    ],
+    "edges": [
+      {
+        "from": "how-to-help-baby-sleep-through-the-night",
+        "to": "white-noise-for-babies",
+        "link_id": "AL-P-001"
+      },
+      {
+        "from": "how-to-help-baby-sleep-through-the-night",
+        "to": "baby-sleep-routine",
+        "link_id": "AL-P-002"
+      },
+      {
+        "from": "white-noise-for-babies",
+        "to": "how-to-help-baby-sleep-through-the-night",
+        "link_id": "AL-C1-001"
+      },
+      {
+        "from": "white-noise-for-babies",
+        "to": "baby-sleep-routine",
+        "link_id": "AL-C1-002"
+      },
+      {
+        "from": "baby-sleep-routine",
+        "to": "how-to-help-baby-sleep-through-the-night",
+        "link_id": "AL-C2-001"
+      },
+      {
+        "from": "baby-sleep-routine",
+        "to": "white-noise-for-babies",
+        "link_id": "AL-C2-002"
+      },
+      {
+        "from": "all-in-one-baby-sleep-solution",
+        "to": "how-to-help-baby-sleep-through-the-night",
+        "link_id": "AL-C4-001"
+      },
+      {
+        "from": "all-in-one-baby-sleep-solution",
+        "to": "white-noise-for-babies",
+        "link_id": "AL-C4-002"
+      },
+      {
+        "from": "baby-night-light-guide",
+        "to": "how-to-help-baby-sleep-through-the-night",
+        "link_id": "AL-C3-001"
+      },
+      {
+        "from": "baby-night-light-guide",
+        "to": "white-noise-for-babies",
+        "link_id": "AL-C3-002"
+      }
+    ],
+    "graph_stats": {
+      "total_nodes": 5,
+      "total_edges": 10,
+      "pillar_inbound_links": 4,
+      "all_nodes_linked": true,
+      "isolated_nodes": 0
+    }
+  },
+  "hub3_cluster_file": "shared/product-context/baby-bath-cluster.json",
+  "hub3_articles": {
+    "hub_id": "HUB-3",
+    "hub_name": "Baby Bath",
+    "hub_status": "active",
+    "published_at": "2026-03-11T14:30:00+02:00",
+    "articles": [
+      { "cluster_id": "HUB-3-Pillar", "shopify_article_id": 681476489529, "url_slug": "how-to-bathe-a-newborn",          "status": "published", "http_verified": true },
+      { "cluster_id": "HUB-3-C1",     "shopify_article_id": 681476522297, "url_slug": "baby-bath-water-temperature",     "status": "published", "http_verified": true },
+      { "cluster_id": "HUB-3-C2",     "shopify_article_id": 681476555065, "url_slug": "baby-bath-safety-tips",           "status": "published", "http_verified": true },
+      { "cluster_id": "HUB-3-C3",     "shopify_article_id": 681476587833, "url_slug": "baby-bath-essentials-checklist",  "status": "published", "http_verified": true },
+      { "cluster_id": "HUB-3-C4",     "shopify_article_id": 681476620601, "url_slug": "how-often-to-bathe-a-newborn",   "status": "published", "http_verified": true }
+    ],
+    "link_graph_stats": { "total_internal_links": 15, "pillar_inbound_links": 4, "cross_hub_links": 2, "all_product_handles_200": true }
+  },
+  "hub4_cluster_file": "shared/product-context/baby-skin-cluster.json",
+  "hub4_articles": {
+    "hub_id": "HUB-4",
+    "hub_name": "Sensitive Baby Skin",
+    "hub_status": "active",
+    "published_at": "2026-03-12T01:50:18+02:00",
+    "articles": [
+      { "cluster_id": "HUB-4-Pillar", "shopify_article_id": 681481797945, "url_slug": "how-to-care-for-sensitive-baby-skin",   "status": "published", "http_verified": true },
+      { "cluster_id": "HUB-4-C1",     "shopify_article_id": 681481830713, "url_slug": "best-fabrics-for-sensitive-baby-skin",  "status": "published", "http_verified": true },
+      { "cluster_id": "HUB-4-C2",     "shopify_article_id": 681481863481, "url_slug": "why-cotton-is-best-for-babies",         "status": "published", "http_verified": true },
+      { "cluster_id": "HUB-4-C3",     "shopify_article_id": 681481896249, "url_slug": "signs-your-baby-has-sensitive-skin",    "status": "published", "http_verified": true },
+      { "cluster_id": "HUB-4-C4",     "shopify_article_id": 681481929017, "url_slug": "what-clothes-are-safe-for-newborn-skin", "status": "published", "http_verified": true }
+    ],
+    "link_graph_stats": { "total_internal_links": 12, "pillar_inbound_links": 4, "cross_hub_links": 4, "all_product_handles_valid": true }
+  },
+  "cross_hub_opportunities": [
+    {
+      "from_hub": "HUB-3",
+      "to_hub": "HUB-1",
+      "from_articles": ["how-to-bathe-a-newborn", "how-often-to-bathe-a-newborn"],
+      "to_article": "how-to-help-baby-sleep-through-the-night",
+      "rationale": "אמבטיה כחלק משגרת ערב — bridge טבעי בין Baby Bath ל-Baby Sleep"
+    },
+    {
+      "from_hub": "HUB-4",
+      "to_hub": "HUB-2",
+      "from_articles": ["how-to-care-for-sensitive-baby-skin", "best-fabrics-for-sensitive-baby-skin", "why-cotton-is-best-for-babies", "what-clothes-are-safe-for-newborn-skin"],
+      "to_articles": ["best-fabric-for-baby-skin", "how-to-dress-a-newborn-for-sleep", "how-many-clothes-does-a-newborn-need"],
+      "rationale": "בחירת בד לעור רגיש — bridge טבעי בין Sensitive Skin ל-Newborn Clothing"
+    }
+  ],
+  "orphan_articles": [],
+  "notes": "HUB-1 COMPLETE 2026-03-10. All 5 articles published (Pillar + C1 + C2 + C3 + C4). Internal link graph: 10 edges, 0 isolated nodes, pillar receives 4 inbound links. Product handles corrected from broken easy-sleep (HTTP 404) to BabySleep Pro canonical handle (HTTP 200). C3 slug corrected from deferred placeholder 'best-baby-night-light' to actual published handle 'baby-night-light-guide' (Shopify Article ID: 681312452921). CTA texts standardised to approved list v2.1. Version 1.1 — 2026-03-10T14:00:00Z. HUB-2 IN PROGRESS: Pillar (681333621049) + C1 (681348792633) + C2 (681356132665) all published as of 2026-03-10. Version 1.4 — 2026-03-10T15:30:00Z. HUB-2-C3 article generated (Presentation Spec v1.0), article linking confirmed (Agent 08) — 3 content links active (C1 + C2 + Pillar), 2 product links active (baby-bear-cozy-set). Status remains 'planned' until Shopify publish. Version 1.6 — 2026-03-10T18:30:00Z. HUB-2-C3 published (Shopify ID: 681362456889) — how-to-dress-a-newborn-for-sleep. Next: activate C2→C3 deferred anchor link. Version 1.7 — 2026-03-10T19:10:59+02:00. HUB-4 COMPLETE 2026-03-12. All 5 articles published (Pillar + C1-C4). 12 internal links, 4 cross-hub links to HUB-2. 5 products (LUMI hero). QA v1.1 PASS. Version 3.2 — 2026-03-12T01:50:34+02:00."
+}

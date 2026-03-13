@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-analysis",
+  "title": "BabyMania Visual Product Analysis",
+  "description": "Output schema for 01b-visual-product-analyzer. JSON only, no markdown, no code fences.",
+  "type": "object",
+  "required": [
+    "analysis_meta",
+    "primary_subject",
+    "visual_structure",
+    "color_palette",
+    "pattern_and_design",
+    "texture_and_season_signals",
+    "style_interpretation",
+    "audience_signals",
+    "distinctive_features",
+    "ignored_context",
+    "content_guidance",
+    "hard_limits",
+    "summary"
+  ],
+  "properties": {
+    "analysis_meta": {
+      "type": "object",
+      "required": ["product_id", "product_title", "analyzed_image", "total_images_reviewed", "main_subject_identified", "ambiguity_flag", "analysis_scope", "confidence_overall"],
+      "properties": {
+        "product_id":             { "type": "string" },
+        "product_title":          { "type": "string" },
+        "analyzed_image":         { "type": "string" },
+        "total_images_reviewed":  { "type": "integer", "minimum": 1 },
+        "main_subject_identified":{ "type": "boolean" },
+        "ambiguity_flag":         { "type": "boolean" },
+        "ambiguity_reason":       { "type": "string" },
+        "analysis_scope":         { "type": "string", "const": "main_garment_only" },
+        "confidence_overall":     { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "primary_subject": {
+      "type": "object",
+      "required": ["main_garment_type", "is_set_or_single", "main_garment_only_analysis", "analysis_confidence"],
+      "properties": {
+        "main_garment_type":        { "type": "string" },
+        "is_set_or_single":         { "type": "string", "enum": ["set", "single", ""] },
+        "piece_count_estimate":     { "type": ["integer", "null"] },
+        "set_pieces_description":   { "type": "array", "items": { "type": "string" } },
+        "main_garment_only_analysis": { "type": "boolean", "const": true },
+        "analysis_confidence":      { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "visual_structure": {
+      "type": "object",
+      "required": ["confidence"],
+      "properties": {
+        "silhouette":       { "type": "array", "items": { "type": "string" } },
+        "neckline":         { "type": "string" },
+        "sleeve_type":      { "type": "string" },
+        "leg_type":         { "type": "string" },
+        "fit_impression":   { "type": "string" },
+        "closure_signals":  { "type": "array", "items": { "type": "string" } },
+        "length_signals":   { "type": "string" },
+        "confidence":       { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "color_palette": {
+      "type": "object",
+      "required": ["confidence"],
+      "properties": {
+        "primary_colors":       { "type": "array", "items": { "type": "string" } },
+        "secondary_colors":     { "type": "array", "items": { "type": "string" } },
+        "contrast_level":       { "type": "string", "enum": ["high", "medium", "low", "monochrome", ""] },
+        "overall_palette_mood": { "type": "string" },
+        "confidence":           { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "pattern_and_design": {
+      "type": "object",
+      "required": ["confidence"],
+      "properties": {
+        "pattern_type":              { "type": "string" },
+        "pattern_description":       { "type": "string" },
+        "decorative_elements":       { "type": "array", "items": { "type": "string" } },
+        "visible_graphics_or_motifs":{ "type": "array", "items": { "type": "string" } },
+        "confidence":                { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "texture_and_season_signals": {
+      "type": "object",
+      "required": ["confidence"],
+      "properties": {
+        "visible_texture_signals": { "type": "array", "items": { "type": "string" } },
+        "thickness_signals":       { "type": "string", "enum": ["thick", "medium", "thin", ""] },
+        "softness_impression":     { "type": "string" },
+        "season_signal":           { "type": "string", "enum": ["winter", "spring-autumn", "summer", "all-season", ""] },
+        "confidence":              { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "style_interpretation": {
+      "type": "object",
+      "required": ["confidence"],
+      "properties": {
+        "style_keywords":   { "type": "array", "items": { "type": "string" }, "maxItems": 5 },
+        "mood_keywords":    { "type": "array", "items": { "type": "string" } },
+        "target_use_cases": { "type": "array", "items": { "type": "string" } },
+        "occasion_signals": { "type": "array", "items": { "type": "string" } },
+        "premium_signals":  { "type": "array", "items": { "type": "string" } },
+        "confidence":       { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "audience_signals": {
+      "type": "object",
+      "required": ["confidence"],
+      "properties": {
+        "gender_styling_signal": { "type": "string", "enum": ["feminine", "masculine", "unisex", ""] },
+        "age_stage_signal":      { "type": "string" },
+        "confidence":            { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "distinctive_features": {
+      "type": "object",
+      "required": ["confidence"],
+      "properties": {
+        "top_5_visual_features":       { "type": "array", "items": { "type": "string" }, "maxItems": 5 },
+        "most_content_useful_details": { "type": "array", "items": { "type": "string" } },
+        "confidence":                  { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "ignored_context": {
+      "type": "object",
+      "properties": {
+        "ignored_context_items":         { "type": "array", "items": { "type": "string" } },
+        "possible_non_product_items":    { "type": "array", "items": { "type": "string" } },
+        "included_only_if_part_of_product": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "content_guidance": {
+      "type": "object",
+      "properties": {
+        "safe_angles_for_copy":     { "type": "array", "items": { "type": "string" } },
+        "useful_benefit_directions":{ "type": "array", "items": { "type": "string" } },
+        "useful_faq_directions":    { "type": "array", "items": { "type": "string" } },
+        "useful_hero_directions":   { "type": "array", "items": { "type": "string" } },
+        "unsafe_claims_to_avoid":   { "type": "array", "items": { "type": "string" } },
+        "fallback_content_signals": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "hard_limits": {
+      "type": "object",
+      "required": ["do_not_claim_as_fact"],
+      "properties": {
+        "do_not_claim_as_fact": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 5,
+          "contains": { "const": "exact fabric composition" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["plain_visual_summary", "content_team_summary"],
+      "properties": {
+        "plain_visual_summary":  { "type": "string", "minLength": 10 },
+        "content_team_summary":  { "type": "string", "minLength": 10 }
+      }
+    }
+  }
+}

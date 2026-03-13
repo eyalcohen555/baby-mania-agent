@@ -1,0 +1,200 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "name": "כותרת",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "name": "מחיר",
+          "settings": {}
+        },
+        "richtext_RyGj4h": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>{{ product.metafields.custom.product_extra_content | metafield_tag }}</p>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "text_ftzDeF": {
+          "type": "text",
+          "settings": {
+            "text": "🔄 החלפות והחזרות נוחות",
+            "text_style": "body"
+          }
+        },
+        "richtext_EbMfgL": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>🚚 משלוחים מהירים לכל הארץ</p>"
+          }
+        },
+        "richtext_AKLnJG": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>📞 שירות לקוחות זמין</p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "richtext_RyGj4h",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "text_ftzDeF",
+        "richtext_EbMfgL",
+        "richtext_AKLnJG",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "יכול להיות שתאהבו גם",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "bm_store_banner_R8qckE": {
+      "type": "bm-store-banner",
+      "name": "BM — Store Banner",
+      "settings": {
+        "msg1_before": "קנייה מעל ₪299 –",
+        "msg1_highlight": "מתנה חינם",
+        "msg2": "משלוחים חינם לכל הארץ",
+        "rotation_interval": 4,
+        "show_banner": true
+      }
+    },
+    "bm_fabric": {
+      "type": "bm-store-fabric",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "title": "",
+        "body": "",
+        "body_2": "",
+        "highlight_quote": ""
+      }
+    },
+    "bm_benefits": {
+      "type": "bm-store-benefits",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "show_header": true,
+        "eyebrow": "",
+        "title": "",
+        "subtitle": ""
+      }
+    },
+    "bm_sizes": {
+      "type": "bm-store-sizes",
+      "settings": {}
+    },
+    "bm_care": {
+      "type": "bm-store-care",
+      "blocks": {},
+      "block_order": [],
+      "settings": {}
+    },
+    "bm_faq": {
+      "type": "bm-store-faq",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "show_section": true,
+        "title": "שאלות נפוצות",
+        "subtitle": ""
+      }
+    },
+    "bm_urgency": {
+      "type": "bm-store-urgency",
+      "settings": {}
+    },
+    "bm_contact": {
+      "type": "bm-store-contact",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "bm_store_banner_R8qckE",
+    "bm_fabric",
+    "bm_benefits",
+    "bm_sizes",
+    "bm_care",
+    "bm_faq",
+    "bm_urgency",
+    "bm_contact",
+    "related-products"
+  ]
+}

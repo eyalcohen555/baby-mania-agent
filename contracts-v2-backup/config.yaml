@@ -1,0 +1,173 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# BabyMania Team Lead — Pipeline Configuration v2.0
+# Single source of truth for all orchestration parameters.
+# ─────────────────────────────────────────────────────────────────────────────
+
+pipeline:
+  version: "2.0"
+  batch_size: 5
+  preview_mode: false
+
+# ── Agent Execution Order ─────────────────────────────────────────────────────
+agents:
+  order:
+    - analyzer        # stage 1  — serial
+    - fabric_story    # stage 2  — parallel ↓
+    - benefits        # stage 3  — parallel ↓
+    - faq             # stage 4  — parallel ↓
+    - care            # stage 5  — parallel ↓  (stages 2–5 run together)
+    - validator       # stage 6  — serial
+    - publisher       # stage 7  — serial (template build + Shopify push)
+    # Future (not wired yet):
+    # - seo_aeo_builder   # stage 8
+    # - taxonomy_tags     # stage 9
+
+  models:
+    analyzer:     claude-opus-4-6
+    fabric_story: claude-sonnet-4-6
+    benefits:     claude-sonnet-4-6
+    faq:          claude-sonnet-4-6
+    care:         claude-sonnet-4-6
+    validator:    claude-opus-4-6
+    publisher:    claude-opus-4-6
+
+  agent_files:
+    analyzer:     01-product-analyzer.md
+    fabric_story: 02-fabric-story-writer.md
+    benefits:     03-benefits-generator.md
+    faq:          04-faq-builder.md
+    care:         05-care-instructions.md
+    validator:    06-validator.md
+    publisher:    07-shopify-publisher.md
+
+  prompt_files:
+    fabric_story: fabric-story.md
+    benefits:     benefits.md
+    faq:          faq.md
+    care:         care.md
+
+# ── Timeouts (seconds) ───────────────────────────────────────────────────────
+timeouts:
+  analyzer:     30
+  fabric_story: 60
+  benefits:     60
+  faq:          60
+  care:         60
+  validator:    20
+  publisher:    30
+  verification: 10
+
+# ── Retry Rules ───────────────────────────────────────────────────────────────
+retry:
+  analyzer:
+    max_attempts: 2
+    on: [timeout, empty_output]
+  writers:
+    max_attempts: 1        # single retry, only triggered by validator_fail
+    on: [validator_fail]
+  validator:
+    max_attempts: 1        # re-validate once after writers retry
+  publisher:
+    max_attempts: 2
+    on: [timeout, shopify_error]
+
+# ── State Machine ─────────────────────────────────────────────────────────────
+states:
+  all:
+    - created
+    - analyzed
+    - content_generated
+    - validated
+    - template_built
+    - published
+    - verified
+    - failed
+
+  terminal:
+    - verified
+    - failed
+
+  # Legal forward transitions only.
+  # Any stage failure → "failed" (not shown per-transition).
+  transitions:
+    created:           analyzed
+    analyzed:          content_generated
+    content_generated: validated
+    validated:         template_built
+    template_built:    published
+    published:         verified
+
+# ── Content Rules ─────────────────────────────────────────────────────────────
+content_rules:
+
+  # Words that are FORBIDDEN unless found literally in description_raw or fabric_type.
+  # Validator must FAIL if these appear in generated content without a source.
+  blocked_if_not_in_source:
+    - word: "סרבל"
+      allowed_when: "product_type contains 'סרבל'"
+    - word: "100% כותנה"
+      allowed_when: "fabric_type contains '100% כותנה'"
+    - word: "כותנה סרוגה"
+      allowed_when: "fabric_type contains 'כותנה סרוגה'"
+    - word: "כותנה"
+      allowed_when: "fabric_type is not empty"
+    - word: "פוליאסטר"
+      allowed_when: "fabric_type is not empty"
+    - word: "סריג"
+      allowed_when: "fabric_type contains 'סריג'"
+    - word: "ג'רסי"
+      allowed_when: "fabric_type contains \"ג'רסי\""
+
+  # Words always discouraged regardless of source — brand voice violations.
+  # Validator should FAIL if these appear anywhere in generated content.
+  always_discouraged_brand_voice:
+    - "מושלם"
+    - "הכי טוב"
+    - "איכות גבוהה"
+    - "מדהים"
+    - "חובה לכל אמא"
+    - "פרימיום במיוחד"
+    - "תינוקכם"
+    - "מעוצב בקפידה"
+    - "נבחר בקפידה"
+    - "מביא לכם את הטוב ביותר"
+
+# ── Care Icon Constraints ──────────────────────────────────────────────────────
+care_icons:
+  allowed:
+    - wash_60
+    - sun_dry
+    - iron
+    - no_bleach
+    - repeat
+    - no_tumble_dry
+    - hand_wash
+  when_fabric_unknown: hand_wash   # if fabric_type is empty → no wash_60
+
+# ── Template Handle Resolution ────────────────────────────────────────────────
+# Shopify asset keys must be ASCII-safe. Hebrew or Unicode product handles cause
+# a 422 error when pushing theme assets. The pipeline resolves the handle
+# automatically before any push operation.
+template_handle_resolution:
+  rule: ascii_first
+  fallback_order:
+    - product_handle           # used if ASCII-safe
+    - template_suffix_current  # fallback if product_handle is non-ASCII
+    - product_id               # last resort — always ASCII digits
+  note: >
+    Products with Hebrew handles (e.g. חליפה-מנומר-...) must have
+    template_suffix_current set to an ASCII-safe value in their context YAML.
+    If not, the product_id is used as the template key.
+
+# ── Publish Verification ──────────────────────────────────────────────────────
+publish_verification:
+  check_template_asset_exists:   true   # GET theme asset → 200 OK
+  check_template_suffix_matches: true   # product.template_suffix == handle
+  check_body_html_empty:         true   # product.body_html == "" or null
+
+# ── Required Shopify Sections ──────────────────────────────────────────────────
+required_sections:
+  - bm-store-fabric
+  - bm-store-benefits
+  - bm-store-faq
+  - bm-store-care

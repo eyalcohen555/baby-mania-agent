@@ -1,0 +1,42 @@
+# HUB-1 Product Bridge — Canonical Live Product Context
+# Source of truth for all organic articles in Baby Sleep cluster (HUB-1)
+# Verified live: 2026-03-10
+
+product_id: '9839252472121'
+product_title: 'BabySleep Pro — רעש לבן ואור לילה לתינוק'
+product_handle: 'baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine'
+product_url: '/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine'
+product_full_url: 'https://babymania-il.com/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine'
+status: active
+hub_assignment: 'HUB-1: Baby Sleep'
+product_bridge_concept: 'EasySleep / Baby Sleep Device'
+
+# Confirmed live HTTP 200 on 2026-03-10
+http_verified: true
+http_verified_at: '2026-03-10'
+
+# Images (all verified HTTP 200 from Shopify CDN)
+images:
+  - url: 'https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S44ede635a497429982c8d960ef821d28y.webp?v=1743967893'
+    alt: 'תאורת לילה רכה מאירה חדר תינוק'
+    use: hero_or_intro
+  - url: 'https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S0eb716b05b3a47f7a32c9a85df38ca95G.webp?v=1743967893'
+    alt: 'מכשיר BabySleep Pro — רעש לבן ותאורת לילה'
+    use: mid_article
+  - url: 'https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S73980b74f6644735bb848333619348c88.webp?v=1743967893'
+    alt: 'BabySleep Pro לצד עריסת תינוק'
+    use: cta_or_summary
+
+# Approved CTA phrases for this product
+approved_cta:
+  primary: 'לרכישת EasySleep™'
+  secondary: 'לצפייה במוצר'
+
+# ⚠️  DO NOT USE /products/easy-sleep — returns HTTP 404
+# ⚠️  DO NOT USE /products/easysleep — returns HTTP 404
+# The concept name "EasySleep™" may be used as CTA label text.
+# The target URL must ALWAYS be product_url above.
+broken_handles_do_not_use:
+  - '/products/easy-sleep'
+  - '/products/easysleep'
+  - '/products/easy-sleep-tm'

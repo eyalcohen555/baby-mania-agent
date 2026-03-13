@@ -1,0 +1,424 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "name": "כותרת",
+          "settings": {}
+        },
+        "text_kCA67G": {
+          "type": "text",
+          "settings": {
+            "text": "✨ נבחר בקפידה עבור נוחות וסטייל מושלם",
+            "text_style": "body"
+          }
+        },
+        "price": {
+          "type": "price",
+          "name": "מחיר",
+          "settings": {}
+        },
+        "text_khGCah": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "💤 עוזר להרדמות מהירה",
+            "text_style": "body"
+          }
+        },
+        "text_hDaVw8": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "😴עוזר לאלפי הורים לישון טוב יותר",
+            "text_style": "body"
+          }
+        },
+        "text_6d8GYe": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "נסו את הבובה ל-30 יום ללא התחייבות",
+            "text_style": "body"
+          }
+        },
+        "richtext_RyGj4h": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>{{ product.metafields.custom.product_extra_content | metafield_tag }}</p>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "text_ftzDeF": {
+          "type": "text",
+          "settings": {
+            "text": "🔄 החלפות והחזרות נוחות",
+            "text_style": "body"
+          }
+        },
+        "richtext_EbMfgL": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>🚚 משלוחים מהירים לכל הארץ</p>"
+          }
+        },
+        "richtext_AKLnJG": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>📞 שירות לקוחות זמין </p>"
+          }
+        },
+        "custom_liquid_WwebJY": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<video \n  autoplay \n  muted \n  loop \n  playsinline \n  preload=\"auto\"\n  style=\"width:100%;height:auto;border-radius:14px;margin:24px 0;\">\n  <source src=\"https://cdn.shopify.com/videos/c/o/v/7c6ff517aa0e44798a20e80c56ffc840.mp4\" type=\"video/mp4\">\n</video>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "text_kCA67G",
+        "price",
+        "text_khGCah",
+        "text_hDaVw8",
+        "text_6d8GYe",
+        "richtext_RyGj4h",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "text_ftzDeF",
+        "richtext_EbMfgL",
+        "richtext_AKLnJG",
+        "custom_liquid_WwebJY",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "יכול להיות שתאהבו גם",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "bm_store_banner_R8qckE": {
+      "type": "bm-store-banner",
+      "name": "BM — Store Banner",
+      "settings": {
+        "msg1_before": "קנייה מעל ₪299 –",
+        "msg1_highlight": "מתנה חינם",
+        "msg2": "משלוחים חינם לכל הארץ",
+        "rotation_interval": 4,
+        "show_banner": true
+      }
+    },
+    "bm_fabric": {
+      "type": "bm-store-fabric",
+      "blocks": {
+        "tag_51e7ad2a": {
+          "type": "tag",
+          "settings": {
+            "label": "100% כותנה"
+          }
+        },
+        "tag_080cb537": {
+          "type": "tag",
+          "settings": {
+            "label": "כותנה סרוגה"
+          }
+        },
+        "tag_227bf399": {
+          "type": "tag",
+          "settings": {
+            "label": "רך לעור תינוק"
+          }
+        },
+        "tag_cec6bd32": {
+          "type": "tag",
+          "settings": {
+            "label": "גמיש ונוח"
+          }
+        },
+        "tag_98418dcf": {
+          "type": "tag",
+          "settings": {
+            "label": "שומר חום טבעי"
+          }
+        }
+      },
+      "block_order": [
+        "tag_51e7ad2a",
+        "tag_080cb537",
+        "tag_227bf399",
+        "tag_cec6bd32",
+        "tag_98418dcf"
+      ],
+      "settings": {
+        "title": "סרבל הסריג שכולם מדברים עליו",
+        "body": "הסרבל הסרוג שלנו עשוי מכותנה סרוגה איכותית — בד שנושם, גמיש ומשמר חום גוף בצורה מושלמת לימות הסתיו והחורף. הסריגה הייחודית מאפשרת לבד להתאים עצמו לתנועות הטבעיות של תינוקכם.",
+        "body_2": "הגזרה הנוחה עם צווארון עגול ושרוולים ארוכים מבטיחה חופש תנועה מלא, בלי לסרבל. הפסים הצבעוניים מוסיפים קסם ומחמיאים לכל גוון עור.",
+        "highlight_quote": "בד שנבחר בקפידה — כי החורף הראשון של תינוקכם ראוי לטוב ביותר."
+      }
+    },
+    "bm_benefits": {
+      "type": "bm-store-benefits",
+      "blocks": {
+        "benefit_ba77a280": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌿",
+            "title": "כותנה טבעית",
+            "description": "100% כותנה, ללא סינתטיקה — עדינה על עור התינוק."
+          }
+        },
+        "benefit_d3619775": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌡️",
+            "title": "מסדיר חום",
+            "description": "מאפשר מחזור אוויר טבעי ומונע הזעה יתרה בחורף."
+          }
+        },
+        "benefit_621cdd19": {
+          "type": "benefit",
+          "settings": {
+            "icon": "✂️",
+            "title": "תפירה מוקפדת",
+            "description": "תפרים שטוחים פנימה — ללא חיכוך מיותר על העור."
+          }
+        },
+        "benefit_e61c6fbf": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🔄",
+            "title": "שומר צורה",
+            "description": "נשאר נעים ושלם אחרי כביסות חוזרות ונשנות."
+          }
+        },
+        "benefit_d146a304": {
+          "type": "benefit",
+          "settings": {
+            "icon": "⚡",
+            "title": "הלבשה קלה",
+            "description": "נפתח בכפתורים בתחתית — נוח גם בהחלפת חיתולים."
+          }
+        },
+        "benefit_ed76f758": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🎨",
+            "title": "פסים עמידים",
+            "description": "הצבעים לא דוהים ולא מכתימים, כביסה אחר כביסה."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_ba77a280",
+        "benefit_d3619775",
+        "benefit_621cdd19",
+        "benefit_e61c6fbf",
+        "benefit_d146a304",
+        "benefit_ed76f758"
+      ],
+      "settings": {
+        "show_header": true,
+        "eyebrow": "למה לבחור בנו",
+        "title": "עשוי אחרת, מהיסוד",
+        "subtitle": "כל פרט בסרבל הסריג שלנו נבחר בקפידה — כדי שהתינוק שלכם ירגיש בנוח כל היום."
+      }
+    },
+    "bm_sizes": {
+      "type": "bm-store-sizes",
+      "settings": {}
+    },
+    "bm_care": {
+      "type": "bm-store-care",
+      "blocks": {
+        "care_d4187a80": {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "wash_60",
+            "card_title": "כביסה עד 30°C",
+            "card_text": "כבסו במים קרירים לשמירה על הסריגה וצבעי הפסים."
+          }
+        },
+        "care_48e53dea": {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "sun_dry",
+            "card_title": "ייבוש טבעי",
+            "card_text": "ייבשו על כלי ייבוש שטוח לשמירה על הצורה."
+          }
+        },
+        "care_180f8f80": {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "iron",
+            "card_title": "גיהוץ עדין",
+            "card_text": "גהצו על חום נמוך בלבד, בדרגה 1."
+          }
+        },
+        "care_b7452236": {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "no_bleach",
+            "card_title": "ללא אקונומיקה",
+            "card_text": "הרחיקו חומרי הלבנה — הם פוגעים בסריגה."
+          }
+        },
+        "care_a61ba457": {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "no_tumble_dry",
+            "card_title": "ללא מייבש חשמלי",
+            "card_text": "המייבש עלול לכווץ את הבד הסרוג."
+          }
+        }
+      },
+      "block_order": [
+        "care_d4187a80",
+        "care_48e53dea",
+        "care_180f8f80",
+        "care_b7452236",
+        "care_a61ba457"
+      ],
+      "settings": {}
+    },
+    "bm_faq": {
+      "type": "bm-store-faq",
+      "blocks": {
+        "faq_8f1aa691": {
+          "type": "faq_item",
+          "settings": {
+            "question": "האם הסרבל מתאים לחורף?",
+            "answer": "כן — הכותנה הסרוגה מספקת חמימות טבעית ומושלמת לסתיו ולחורף. לימות החורף הקרים במיוחד ניתן להוסיף שכבת בד פנימה."
+          }
+        },
+        "faq_f570610e": {
+          "type": "faq_item",
+          "settings": {
+            "question": "איך בוחרים מידה?",
+            "answer": "מומלץ לבדוק את טבלת המידות בדף המוצר. לתינוקות גבוהים מגילם — כדאי לבחור מידה אחת מעלה. הסרבל מגיע במידות 0 עד 18 חודשים."
+          }
+        },
+        "faq_4ff6eea3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "כמה זמן לוקח המשלוח?",
+            "answer": "זמן האספקה הוא 5–10 ימי עסקים מרגע ביצוע ההזמנה. תקבלו מספר מעקב ב-SMS מיד לאחר שהחבילה יצאה לדרך."
+          }
+        },
+        "faq_30b78600": {
+          "type": "faq_item",
+          "settings": {
+            "question": "האם הסרבל מתאים כמתנה לידה?",
+            "answer": "בהחלט! הסרבל הסרוג עם הפסים הצבעוניים הוא מתנת לידה מושלמת. ניתן להוסיף כרטיס ברכה אישי בהזמנה."
+          }
+        },
+        "faq_40980d9b": {
+          "type": "faq_item",
+          "settings": {
+            "question": "מה מדיניות ההחזרות?",
+            "answer": "ניתן להחזיר מוצרים עד 14 יום מיום הקבלה, בתנאי שלא נעשה בהם שימוש. פנו אלינו ב-WhatsApp ונסייע בכל שאלה."
+          }
+        }
+      },
+      "block_order": [
+        "faq_8f1aa691",
+        "faq_f570610e",
+        "faq_4ff6eea3",
+        "faq_30b78600",
+        "faq_40980d9b"
+      ],
+      "settings": {
+        "show_section": true,
+        "title": "שאלות נפוצות",
+        "subtitle": "כל מה שרציתם לדעת על הסרבל הסרוג שלנו"
+      }
+    },
+    "bm_urgency": {
+      "type": "bm-store-urgency",
+      "settings": {}
+    },
+    "bm_contact": {
+      "type": "bm-store-contact",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "bm_store_banner_R8qckE",
+    "bm_fabric",
+    "bm_benefits",
+    "bm_sizes",
+    "bm_care",
+    "bm_faq",
+    "bm_urgency",
+    "bm_contact",
+    "related-products"
+  ]
+}

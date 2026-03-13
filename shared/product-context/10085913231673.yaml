@@ -1,0 +1,30 @@
+# ⚠️  BROKEN HANDLE — DO NOT USE FOR PRODUCT LINKS
+# This product (EasySleep™) has a garbled handle starting with ™ symbol.
+# The handle stored below is NOT a valid live URL — HTTP 404.
+# Verified broken: 2026-03-10
+#
+# FOR HUB-1 PRODUCT LINKS → USE: shared/product-context/babysleep-pro.yaml
+# Live product: BabySleep Pro (ID: 9839252472121)
+# Live URL: /products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine
+#
+# NOTE: template_suffix_current = "easy-sleep" is a THEME TEMPLATE NAME, not a product URL handle.
+# Do not use template_suffix as a product link target.
+
+broken_handle_warning: true
+description_raw: "\n\n    \n\n    \n"
+fabric_type: ''
+fetched_at: '2026-03-09T15:05:06.549696'
+generated:
+  published: false
+  validated: false
+main_use: ''
+price: '319.00'
+product_handle: BROKEN-™easysleep-מערכת-שינה-חכמה-לתינוקות-לשינה-רגועה-ורציפה-מבית-babymania
+product_id: '10085913231673'
+product_title: ™EasySleep פתרון שינה יעיל  שמחליף כמה מוצרים
+product_type: ''
+tags: []
+target_age: ''
+template_suffix_current: easy-sleep
+variants_count: 4
+hub1_replacement: 'shared/product-context/babysleep-pro.yaml'
