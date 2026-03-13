@@ -66,6 +66,13 @@ model: claude-opus-4-6
 28. אין טקסט באנגלית (מלבד: °C, kg, cm, icon_type values, emoji, שמות מותג)
 29. אין מידע שאינו מבוסס על ה-context (הרכב בד, גיל, מפרט טכני)
 
+### כללי גנדר (Phase 1 — v3.1)
+
+G01. benefit שמתייחס לגנדר ("יוניסקס", "לבנים", "לבנות", "לשני המינים") **מותר רק אם** Visual JSON מכיל `audience_signals.gender_styling_signal` עם ערך לא ריק.
+G02. אם `gender_styling_signal` ריק או חסר — כל benefit שמזכיר גנדר → **FAIL**.
+G03. הערכים המותרים בתוכן: "יוניסקס" / "בנים" / "בנות" בלבד. אסור: "לשני המינים", "לכולם", "universally".
+G04. אסור להסיק גנדר מצבע, שם מוצר, או דוגמה עיצובית — רק מ-Visual JSON.
+
 ### כללי Fallback Compliance (Phase 1 — v3.0)
 
 חשוב: כללים אלה משתמשים ב-fallback_flags מפלט ה-Analyzer.
