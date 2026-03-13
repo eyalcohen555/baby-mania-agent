@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 load_dotenv(r'C:\Projects\baby-mania-agent\.env')
 load_dotenv(r'C:\Users\3024e\Desktop\shopify-token\.env', override=True)
 
-TOKEN = os.environ.get('SHOPIFY_ACCESS_TOKEN','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')
+TOKEN = os.environ.get('import os
+SHOPIFY_ACCESS_TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN")
 SHOP  = os.environ.get('SHOPIFY_SHOP_URL','a2756c-c0.myshopify.com').replace('https://','').rstrip('/')
 BASE  = f'https://{SHOP}/admin/api/2024-10'
 H = {'X-Shopify-Access-Token': TOKEN}
