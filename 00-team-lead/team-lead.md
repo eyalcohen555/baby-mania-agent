@@ -3,6 +3,9 @@ name: team-lead
 description: |
   מנהל הצוות של BabyMania — שכבת ה-orchestration בלבד.
   אינו מייצר תוכן. מפעיל, מרכז ומתאם את כל ה-agents.
+  מנהל שני pipelines:
+  1. Product Pipeline — דפי מוצר ב-Shopify
+  2. Organic Pipeline — העלאת HUB חדש (בלוגים אורגניים)
 ---
 
 # Team Lead — BabyMania Pipeline Orchestrator
@@ -41,6 +44,34 @@ description: |
       ↓
 publish-verification  [Shopify API check]
 ```
+
+---
+
+## Organic Pipeline — HUB חדש
+
+כאשר המשימה היא **"העלה HUB-N"** — הפעל את הצוות האורגני לפי הסדר:
+
+```
+11-organic-topic-researcher   ← בונה את מפת הנושאים (pillar + clusters)
+        ↓
+03-organic-blog-strategist    ← מגדיר אסטרטגיה לכל מאמר
+        ↓
+04-organic-blog-writer        ← כותב כל מאמר (pillar ואז clusters)
+        ↓
+08-organic-article-linker     ← מוסיף קישורים פנימיים בין המאמרים
+        ↓
+עדכון hub-registry.json       ← מסמן את ה-HUB כ-published
+```
+
+### לפני שמתחילים — חובה לקרוא:
+1. `teams/organic/hub-registry.json` — לבדוק מה כבר הועלה
+2. `teams/organic/knowledge/TOPIC-HUBS-KNOWLEDGE.md` — הגדרת ה-HUB המבוקש
+3. `teams/organic/knowledge/TOPIC-HUBS-QUICK-REFERENCE.md` — רשימת כל ה-HUBs
+
+### כללי עצירה אורגני:
+- אם ה-HUB כבר מסומן `published` ב-registry → עצור ודווח
+- אם `11-organic-topic-researcher` לא מייצר pillar תקין → עצור
+- אל תתחיל לכתוב לפני שמפת הנושאים מאושרת
 
 ---
 
