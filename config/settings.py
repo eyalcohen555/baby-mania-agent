@@ -70,9 +70,9 @@ SECTION_METAFIELD_MAP = {
         f"{METAFIELD_NAMESPACE}.whatsapp_number",      # מספר ווטסאפ (ספרות בלבד)
         f"{METAFIELD_NAMESPACE}.whatsapp_message",     # הודעת פתיחה ל-WA (אופציונלי)
     ],
-    "bm-store-banner": {
-        "title":    "baby_mania.banner_title",
-        "subtitle": "baby_mania.banner_subtitle",
-        "badge":    "baby_mania.banner_badge",
-    },
+    "bm-store-banner": [
+        f"{METAFIELD_NAMESPACE}.banner_title",
+        f"{METAFIELD_NAMESPACE}.banner_subtitle",
+        f"{METAFIELD_NAMESPACE}.banner_badge",
+    ],
 }
