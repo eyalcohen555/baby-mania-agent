@@ -32,15 +32,7 @@ METAFIELD_NAMESPACE = "baby_mania"
 # Sections connected to the product page template
 # סקשנים מ-product.json (Shopify theme 2.0)
 TEMPLATE_SECTIONS = [
-    "product-hero",        # תמונה ראשית, שם מוצר, מחיר
-    "color-selector",      # בורר צבעים
-    "size-selector",       # בורר מידות
-    "stock-bar",           # פס מלאי (Low / In Stock / Out)
-    "product-gallery",     # גלריית thumbnails
-    "product-details",     # פרטי המוצר (חומר, טיפול, מידות)
-    "whatsapp-button",     # כפתור WhatsApp לייעוץ
     "related-products",    # מוצרים דומים
-    # ── סקשנים חדשים (theme/sections/bm-store-*.liquid) ──
     "bm-store-fabric",     # סיפור הבד — קורא מ-baby_mania.fabric_story
     "bm-store-benefits",   # יתרונות — קורא מ-baby_mania.benefits
     "bm-store-sizes",      # מדריך מידות — נגזר מ-product variants
@@ -107,4 +99,9 @@ SECTION_METAFIELD_MAP = {
         f"{METAFIELD_NAMESPACE}.whatsapp_number",      # מספר ווטסאפ (ספרות בלבד)
         f"{METAFIELD_NAMESPACE}.whatsapp_message",     # הודעת פתיחה ל-WA (אופציונלי)
     ],
+    "bm-store-banner": {
+        "title":    "baby_mania.banner_title",
+        "subtitle": "baby_mania.banner_subtitle",
+        "badge":    "baby_mania.banner_badge",
+    },
 }

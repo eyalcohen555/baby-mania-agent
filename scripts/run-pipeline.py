@@ -55,7 +55,7 @@ logging.basicConfig(
 log = logging.getLogger("bm-pipeline")
 
 # ── Config ────────────────────────────────────────────────────
-PREVIEW_MODE  = True
+PREVIEW_MODE  = False
 BATCH_SIZE    = 5
 THEME_ID      = os.getenv("SHOPIFY_THEME_ID", "183668179257")
 SHOPIFY_HOST  = os.getenv("SHOPIFY_SHOP_URL", "a2756c-c0.myshopify.com")

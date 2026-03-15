@@ -1,0 +1,424 @@
+{% comment %}
+DEPRECATED SECTION
+Not used in product template
+Kept for reference only
+{% endcomment %}
+
+{% comment %}
+  BabyMania — Store Hero (Section 0 of 8)
+  File: sections/bm-store-hero.liquid
+  Purpose: Opening hero — eyebrow pill, headline, accent line, subheadline, trust bar.
+           Data priority: product.metafields.baby_mania → section.settings.
+{% endcomment %}
+
+{% comment %} ── Guard: only render when real hero metafield exists ── {% endcomment %}
+{% assign bm_hero_headline_mf = product.metafields.baby_mania.hero_headline %}
+
+{% if bm_hero_headline_mf != blank %}
+
+{% comment %} ── Data resolution ── {% endcomment %}
+{% assign bm_hero_eyebrow     = product.metafields.baby_mania.hero_eyebrow %}
+{% assign bm_hero_headline    = bm_hero_headline_mf %}
+{% assign bm_hero_subheadline = product.metafields.baby_mania.hero_subheadline %}
+
+{% if bm_hero_eyebrow     == blank %}{% assign bm_hero_eyebrow     = section.settings.eyebrow     %}{% endif %}
+{% if bm_hero_subheadline == blank %}{% assign bm_hero_subheadline = section.settings.subheadline %}{% endif %}
+
+<style>
+  /* ============================================================
+     BM-HERO — SECTION BACKGROUND
+  ============================================================ */
+  .bm-hero-section {
+    background: linear-gradient(170deg, #FFFDF9 0%, #FAF3EC 40%, #F5EDE4 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 52px 20px 44px;
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    box-sizing: border-box;
+  }
+
+  /* Ambient radial highlights */
+  .bm-hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(139, 94, 60, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(212, 168, 83, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* ── Decorative circles ── */
+  .bm-hero-deco-1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    top: -60px;
+    right: -40px;
+    background: rgba(139, 94, 60, 0.04);
+    pointer-events: none;
+  }
+
+  .bm-hero-deco-2 {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    bottom: -30px;
+    left: -30px;
+    background: rgba(212, 168, 83, 0.035);
+    pointer-events: none;
+  }
+
+  .bm-hero-deco-3 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(139, 94, 60, 0.025);
+    pointer-events: none;
+  }
+
+  /* ============================================================
+     CONTENT CONTAINER
+  ============================================================ */
+  .bm-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .bm-hero-content.bm-hero--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============================================================
+     EYEBROW — pill badge
+  ============================================================ */
+  .bm-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #8B5E3C 0%, #A67B5B 100%);
+    color: #FFFFFF;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 10px rgba(139, 94, 60, 0.25);
+  }
+
+  .bm-hero-eyebrow svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  /* ============================================================
+     HEADLINE
+  ============================================================ */
+  .bm-hero-headline {
+    font-family: 'Heebo', sans-serif;
+    font-size: clamp(24px, 5vw, 34px);
+    font-weight: 800;
+    color: #1A1A1A;
+    line-height: 1.3;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.02em;
+  }
+
+  /* ============================================================
+     ACCENT LINE
+  ============================================================ */
+  .bm-hero-accent-line {
+    width: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, #8B5E3C, #D4A853);
+    border-radius: 2px;
+    margin: 0 auto 22px;
+  }
+
+  /* ============================================================
+     SUBHEADLINE
+  ============================================================ */
+  .bm-hero-subheadline {
+    font-size: 16px;
+    font-weight: 400;
+    color: #5C4033;
+    line-height: 1.8;
+    max-width: 580px;
+    margin: 0 auto 32px;
+  }
+
+  /* ============================================================
+     TRUST BAR
+  ============================================================ */
+  .bm-hero-trust {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .bm-hero-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(139, 94, 60, 0.1);
+    border-radius: 14px;
+    padding: 20px 14px;
+    box-sizing: border-box;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .bm-hero-trust-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(139, 94, 60, 0.12);
+  }
+
+  /* Icon circle */
+  .bm-hero-trust-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #F5EDE4 0%, #FAF3EC 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(139, 94, 60, 0.1);
+    flex-shrink: 0;
+  }
+
+  .bm-hero-trust-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: #8B5E3C;
+    fill: none;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Labels */
+  .bm-hero-trust-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.3;
+  }
+
+  .bm-hero-trust-sub {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #9E8272;
+    line-height: 1.4;
+  }
+
+  /* ============================================================
+     MOBILE — max-width: 520px
+     Trust bar stays in ONE ROW — items shrink, do not stack
+  ============================================================ */
+  @media (max-width: 520px) {
+    .bm-hero-section {
+      padding: 36px 14px 32px;
+    }
+
+    .bm-hero-headline {
+      font-size: clamp(20px, 5vw, 26px);
+    }
+
+    .bm-hero-subheadline {
+      font-size: 15px;
+    }
+
+    .bm-hero-trust {
+      gap: 10px;
+      flex-wrap: nowrap;
+    }
+
+    .bm-hero-trust-item {
+      padding: 14px 10px;
+    }
+
+    .bm-hero-trust-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .bm-hero-trust-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .bm-hero-trust-label {
+      font-size: 12.5px;
+    }
+
+    .bm-hero-trust-sub {
+      font-size: 11px;
+    }
+  }
+</style>
+
+<section class="bm-hero-section" aria-labelledby="bm-hero-heading">
+
+  {% comment %} Decorative circles {% endcomment %}
+  <div class="bm-hero-deco-1" aria-hidden="true"></div>
+  <div class="bm-hero-deco-2" aria-hidden="true"></div>
+  <div class="bm-hero-deco-3" aria-hidden="true"></div>
+
+  <div class="bm-hero-content" id="bm-hero-content">
+
+    {% comment %} Eyebrow pill {% endcomment %}
+    {% if bm_hero_eyebrow != blank %}
+      <div class="bm-hero-eyebrow" aria-hidden="false">
+        <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="6" cy="4.5" r="2.25"/>
+          <path d="M2 11c0-2.2 1.8-4 4-4s4 1.8 4 4"/>
+        </svg>
+        {{ bm_hero_eyebrow }}
+      </div>
+    {% endif %}
+
+    {% comment %} Headline {% endcomment %}
+    <h1 class="bm-hero-headline" id="bm-hero-heading">{{ bm_hero_headline }}</h1>
+
+    {% comment %} Decorative accent line {% endcomment %}
+    <div class="bm-hero-accent-line" aria-hidden="true"></div>
+
+    {% comment %} Subheadline {% endcomment %}
+    {% if bm_hero_subheadline != blank %}
+      <p class="bm-hero-subheadline">{{ bm_hero_subheadline }}</p>
+    {% endif %}
+
+    {% comment %} Trust bar {% endcomment %}
+    {% if section.settings.show_trust_bar %}
+      <div class="bm-hero-trust" role="list" aria-label="יתרונות הזמנה">
+
+        {% comment %} 1 — משלוח חינם {% endcomment %}
+        <div class="bm-hero-trust-item" role="listitem">
+          <div class="bm-hero-trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 3h15v13H1z"/>
+              <path d="M16 8h4l3 4v4h-7V8z"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <span class="bm-hero-trust-label">משלוח חינם</span>
+          <span class="bm-hero-trust-sub">לכל הארץ</span>
+        </div>
+
+        {% comment %} 2 — החזרה עד 14 יום {% endcomment %}
+        <div class="bm-hero-trust-item" role="listitem">
+          <div class="bm-hero-trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.36 2.64L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+          </div>
+          <span class="bm-hero-trust-label">החזרה עד 14 יום</span>
+          <span class="bm-hero-trust-sub">ממועד קבלת המוצר</span>
+        </div>
+
+        {% comment %} 3 — תשלום מאובטח {% endcomment %}
+        <div class="bm-hero-trust-item" role="listitem">
+          <div class="bm-hero-trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L3 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-9-4z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="bm-hero-trust-label">תשלום מאובטח</span>
+          <span class="bm-hero-trust-sub">הצפנה מלאה SSL</span>
+        </div>
+
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% comment %} Close metafield guard {% endcomment %}
+
+<script>
+  (function () {
+    var el = document.getElementById('bm-hero-content');
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) { el.classList.add('bm-hero--visible'); return; }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('bm-hero--visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    obs.observe(el);
+  })();
+</script>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "הירו",
+  "tag": "div",
+  "class": "bm-hero-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "תווית עליונה",
+      "default": "לתינוקות",
+      "info": "טקסט קטן מעל הכותרת — למשל גיל, קטגוריה. אפשר להשאיר ריק."
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "כותרת ראשית",
+      "default": "הבגד שמרגיש טוב על העור כל היום"
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "תת-כותרת",
+      "default": "בד רך ונושם בגזרה נוחה — מתאים לשגרה יומיומית"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_bar",
+      "label": "הצג סרגל אמון",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "הירו"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,480 @@
+{% comment %}
+DEPRECATED SECTION
+Not used in product template
+Kept for reference only
+{% endcomment %}
+
+{% comment %}
+  BabyMania — Store Features (Section)
+  File: sections/bm-store-features.liquid
+  Purpose: 4-card premium feature highlights grid.
+           Desktop: 2 columns × 2 rows · Mobile: 1 column × 4 rows
+  Data: product.metafields.baby_mania.features (priority) → section blocks (fallback)
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
+
+  /* ============================================================
+     BM-FEATURES — CSS Variables
+  ============================================================ */
+  .bm-features-root {
+    --bm-f-brown:      #8B5E3C;
+    --bm-f-brown-text: #3a2c23;
+    --bm-f-icon-color: #8a684f;
+    --bm-f-muted:      #6e6258;
+    --bm-f-cream:      #FFFDF9;
+    --bm-f-border:     #efe7df;
+    --bm-f-shadow-sm:  rgba(0,0,0,0.04);
+    --bm-f-shadow-lg:  rgba(0,0,0,0.08);
+    --bm-f-radius:     18px;
+    --bm-f-font:       'Heebo', sans-serif;
+  }
+
+  /* ============================================================
+     BLOB ANIMATIONS
+  ============================================================ */
+  @keyframes bmFloatA {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(16px, -12px); }
+  }
+
+  @keyframes bmFloatB {
+    0%, 100% { transform: translate(0, 0); }
+    40%       { transform: translate(-14px, 18px); }
+    80%       { transform: translate(10px, -8px); }
+  }
+
+  /* ============================================================
+     CARD FADE-IN
+  ============================================================ */
+  @keyframes bm-features-fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============================================================
+     SECTION WRAPPER
+  ============================================================ */
+  .bm-features-root {
+    background: var(--bm-f-cream);
+    padding: 56px 20px;
+    font-family: var(--bm-f-font);
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ============================================================
+     DECORATIVE BLOBS
+  ============================================================ */
+  .bm-features-blob {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff 0%,
+      #f6efe7 60%,
+      #ede3da 100%
+    );
+    opacity: 0.18;
+    filter: blur(38px);
+    border-radius: 50%;
+    will-change: transform;
+  }
+
+  .bm-features-blob--1 {
+    width: 320px;
+    height: 320px;
+    top: -80px;
+    right: -100px;
+    animation: bmFloatA 26s ease-in-out infinite;
+  }
+
+  .bm-features-blob--2 {
+    width: 280px;
+    height: 280px;
+    bottom: -70px;
+    left: -90px;
+    animation: bmFloatB 34s ease-in-out infinite;
+  }
+
+  /* ============================================================
+     CONTENT CONTAINER
+  ============================================================ */
+  .bm-features-container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============================================================
+     SECTION HEADER
+  ============================================================ */
+  .bm-features-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .bm-features-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bm-f-brown);
+    background: #F5EDE4;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .bm-features-title {
+    font-family: 'Playfair Display', 'Heebo', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bm-f-brown-text);
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+
+  .bm-features-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--bm-f-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     GRID — 2×2 desktop, 1 column mobile
+  ============================================================ */
+  .bm-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 420px));
+    justify-content: center;
+    gap: 28px;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  /* ============================================================
+     CARD
+  ============================================================ */
+  .bm-features-card {
+    background: #ffffff;
+    border: 1px solid #efe7df;
+    border-radius: 18px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.03);
+    transition: all .35s ease;
+    animation: bm-features-fade-up 0.5s ease both;
+    cursor: default;
+  }
+
+  .bm-features-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 46px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+  }
+
+  /* Staggered entrance */
+  .bm-features-card:nth-child(1) { animation-delay: 0.06s; }
+  .bm-features-card:nth-child(2) { animation-delay: 0.12s; }
+  .bm-features-card:nth-child(3) { animation-delay: 0.18s; }
+  .bm-features-card:nth-child(4) { animation-delay: 0.24s; }
+
+  /* ============================================================
+     ICON CIRCLE
+  ============================================================ */
+  .bm-features-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--bm-f-icon-color);
+    flex-shrink: 0;
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff 0%,
+      #f4ede6 60%,
+      #e9e1d8 100%
+    );
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06), inset 0 1px 3px rgba(255,255,255,0.9);
+    transition: box-shadow 0.35s ease;
+  }
+
+  .bm-features-card:hover .bm-features-icon-wrap {
+    box-shadow: 0 10px 28px rgba(139,94,60,0.14), inset 0 1px 3px rgba(255,255,255,0.9);
+  }
+
+  /* ============================================================
+     CARD TEXT
+  ============================================================ */
+  .bm-features-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bm-features-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--bm-f-brown-text);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .bm-features-card-desc {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--bm-f-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 640px) {
+    .bm-features-root {
+      padding: 40px 16px;
+    }
+
+    .bm-features-grid {
+      grid-template-columns: 1fr;
+      max-width: 420px;
+      gap: 14px;
+    }
+
+    .bm-features-card {
+      padding: 22px 18px;
+    }
+
+    .bm-features-title {
+      font-size: 22px;
+    }
+
+    .bm-features-blob--1 { width: 220px; height: 180px; top: -50px; right: -60px; }
+    .bm-features-blob--2 { width: 180px; height: 160px; bottom: -40px; left: -50px; }
+  }
+</style>
+
+{% comment %} ── Data sources ──────────────────────────────────────────
+  Priority: product.metafields.baby_mania.features (JSON array)
+  Fallback: section.blocks type="feature" (up to 4)
+{% endcomment %}
+{% assign bm_features        = product.metafields.baby_mania.features.value %}
+{% assign bm_feat_blocks     = section.blocks | where: "type", "feature" %}
+
+{% assign bm_has_content = false %}
+{% if bm_features and bm_features.size > 0 %}
+  {% assign bm_has_content = true %}
+{% elsif bm_feat_blocks.size > 0 %}
+  {% assign bm_has_content = true %}
+{% endif %}
+
+{% if bm_has_content %}
+<section
+  class="bm-features-root"
+  aria-labelledby="bm-features-heading"
+>
+  <div class="bm-features-blob bm-features-blob--1" aria-hidden="true"></div>
+  <div class="bm-features-blob bm-features-blob--2" aria-hidden="true"></div>
+
+  <div class="bm-features-container">
+
+    {% if section.settings.show_header %}
+      <header class="bm-features-header">
+        {% if section.settings.eyebrow != blank %}
+          <span class="bm-features-eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <h2 class="bm-features-title" id="bm-features-heading">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="bm-features-subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    {% comment %} Grid — exactly 4 cards {% endcomment %}
+    <div class="bm-features-grid" role="list">
+
+      {% if bm_features and bm_features.size > 0 %}
+
+        {% comment %} ── Metafield path (cap at 4) ── {% endcomment %}
+        {% for feature in bm_features limit: 4 %}
+          <article class="bm-features-card" role="listitem">
+            {% if feature.icon != blank %}
+              <div class="bm-features-icon-wrap" aria-hidden="true">{{ feature.icon }}</div>
+            {% endif %}
+            <div class="bm-features-card-body">
+              {% if feature.title != blank %}
+                <h3 class="bm-features-card-title">{{ feature.title }}</h3>
+              {% endif %}
+              {% if feature.description != blank %}
+                <p class="bm-features-card-desc">{{ feature.description }}</p>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+
+        {% comment %} ── Gap fill from blocks if metafield < 4 ── {% endcomment %}
+        {%- assign bm_mf_count    = bm_features.size -%}
+        {%- if bm_mf_count > 4 -%}{%- assign bm_mf_count = 4 -%}{%- endif -%}
+        {%- assign bm_fill_needed = 4 | minus: bm_mf_count -%}
+        {% if bm_fill_needed > 0 and bm_feat_blocks.size > 0 %}
+          {% for block in bm_feat_blocks limit: bm_fill_needed %}
+            <article class="bm-features-card" role="listitem" {{ block.shopify_attributes }}>
+              {% if block.settings.icon != blank %}
+                <div class="bm-features-icon-wrap" aria-hidden="true">{{ block.settings.icon }}</div>
+              {% endif %}
+              <div class="bm-features-card-body">
+                {% if block.settings.title != blank %}
+                  <h3 class="bm-features-card-title">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.description != blank %}
+                  <p class="bm-features-card-desc">{{ block.settings.description }}</p>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        {% endif %}
+
+      {% else %}
+
+        {% comment %} ── Block-only path (no metafield) ── {% endcomment %}
+        {% for block in bm_feat_blocks limit: 4 %}
+          <article class="bm-features-card" role="listitem" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <div class="bm-features-icon-wrap" aria-hidden="true">{{ block.settings.icon }}</div>
+            {% endif %}
+            <div class="bm-features-card-body">
+              {% if block.settings.title != blank %}
+                <h3 class="bm-features-card-title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <p class="bm-features-card-desc">{{ block.settings.description }}</p>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+
+      {% endif %}
+
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "BM — Store Features",
+  "tag": "div",
+  "class": "bm-store-features-section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "הצג כותרת",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "מה מייחד אותנו"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "כותרת ראשית",
+      "default": "תכונות שעושות את ההבדל"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "כותרת משנה",
+      "default": "פרטים שחשבנו עליהם — כדי שלא תצטרכו."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "תכונה",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "אייקון (Emoji)",
+          "default": "✨"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "כותרת התכונה",
+          "default": "תכונה ייחודית"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "תיאור",
+          "default": "פרט חשוב שמבדיל את המוצר מהשאר."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM — Store Features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🌿",
+            "title": "חומרים טבעיים",
+            "description": "נבחרו במיוחד לעור הרגיש של תינוקות — ללא חומרים מגרים."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "✂️",
+            "title": "תפירה מדויקת",
+            "description": "תפרים שטוחים ומוגמרים בפנים — לא מגרדים ולא לוחצים."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🔄",
+            "title": "עמיד לכביסות",
+            "description": "שומר על הצבע, הגזרה והמרקם גם אחרי עשרות כביסות."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "⚡",
+            "title": "הלבשה פשוטה",
+            "description": "פתחים נוחים שמאפשרים הלבשה מהירה — גם בעיצומו של הלילה."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
