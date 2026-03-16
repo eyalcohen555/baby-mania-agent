@@ -1,0 +1,553 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title_pzTjeT": {
+          "type": "title",
+          "settings": {}
+        },
+        "buy_buttons_DDph7h": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "variant_picker_BxXihE": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "price_izbbck": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_wPUMBR": {
+          "type": "text",
+          "settings": {
+            "text": "🚚 משלוח מהיר 5-8 ימי עסקים",
+            "text_style": "body"
+          }
+        },
+        "richtext_94VRWF": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>👶 בטוח לילדים | 👆 התקנה קלה<\/p>"
+          }
+        },
+        "text_HRpChT": {
+          "type": "text",
+          "settings": {
+            "text": "בדיקה מיידית של טמפרטורת המים בזמן אמת",
+            "text_style": "body"
+          }
+        },
+        "description_HebTpj": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_pzTjeT",
+        "buy_buttons_DDph7h",
+        "variant_picker_BxXihE",
+        "price_izbbck",
+        "text_wPUMBR",
+        "richtext_94VRWF",
+        "text_HRpChT",
+        "description_HebTpj"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_6zDfhA": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nVCzV4": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_jC7x9B": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "button_TPwG9x": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_nVCzV4",
+        "text_jC7x9B",
+        "button_TPwG9x"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Brown_and_White_Minimalist_Desktop_Mockup_Instagram_Post_3.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_pyDiPg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ftxxkF": {
+          "type": "heading",
+          "settings": {
+            "heading": "למי Tempioמתאים?",
+            "heading_size": "h1"
+          }
+        },
+        "text_jgwJEw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>👶 <strong>הורים לילדים <\/strong><br\/>מניעת כוויות ומים קרים לפני הכניסה למקלחת<\/p><p>🧓 <strong>מטפלים בקשישים או רגישים לחום<\/strong><br\/>קריאה ברורה בעין בלי ניחושים<\/p><p>🔧 <strong>אנשים שאוהבים ודאות <\/strong><br\/>טמפרטורה מדויקת בזמן אמת<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ftxxkF",
+        "text_jgwJEw"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/1_4f5b1802-791d-4e33-8929-d46c2b41b57b.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_ziLM7i": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AB4DHa": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_4jHzFj": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_AB4DHa",
+        "text_4jHzFj"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_763tcE": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div style=\"width:100%; max-width:520px; margin:0 auto;\">\n  <div style=\"position:relative; aspect-ratio: 1 \/ 1; border-radius:14px; overflow:hidden; background:#000;\">\n    <iframe\n      src=\"https:\/\/player.vimeo.com\/video\/1156739232?autoplay=1&muted=1&loop=1&background=1\"\n      style=\"position:absolute; top:50%; left:50%; width:100%; height:100%; transform:translate(-50%,-50%) scale(1.35);\"\n      frameborder=\"0\"\n      allow=\"autoplay; fullscreen; picture-in-picture\"\n      allowfullscreen>\n    <\/iframe>\n  <\/div>\n<\/div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_Qh6AKJ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hNETDa": {
+          "type": "heading",
+          "settings": {
+            "heading": "מתחבר ועובד בקלות",
+            "heading_size": "h1"
+          }
+        },
+        "text_7ndPzb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✔ פועל מכוח זרימת המים<br\/>✔ ללא סוללות וללא חשמל<br\/>✔ נדלק עם פתיחת הברז<br\/>✔ כיבוי אוטומטי בסיום השימוש<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hNETDa",
+        "text_7ndPzb"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/1080_x_1080_-Instagram___45.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_Wtm3xV": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_GHFz8K": {
+          "type": "heading",
+          "settings": {
+            "heading": "ספיר מתל אביב :",
+            "heading_size": "h2"
+          }
+        },
+        "text_KXY8jq": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>״המוצר פועל ללא סוללות, התקנה בחצי דקה...<\/h3><h3>סוף סוף אני יכולה לדעת מתי חום המים עולה ויורד לפני שהגוף שלי מרגיש״<\/h3><p><br\/><strong>נרכש ונבדק על־ידי אלפי לקוחות מרוצים!<\/strong><\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GHFz8K",
+        "text_KXY8jq"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/GIF_1.gif",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_F7diLg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ejMcgH": {
+          "type": "heading",
+          "settings": {
+            "heading": "המבצע נגמר היום  🔥 יחידות אחרונות",
+            "heading_size": "h1"
+          }
+        },
+        "text_xDYePP": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "button_LwLBbb": {
+          "type": "button",
+          "settings": {
+            "button_label": "להזמנה עכשיו",
+            "button_link": "#top",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ejMcgH",
+        "text_xDYePP",
+        "button_LwLBbb"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/6849b0d8c41f9a0a11aa129d3ba2c138.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_ptDC6n": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3zTt93": {
+          "type": "heading",
+          "settings": {
+            "heading": "חשוב לדעת",
+            "heading_size": "h1"
+          }
+        },
+        "text_LTN4TH": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>גוף המדחום עשוי חומר ייעודי לשימוש במים חמים. לבטיחות ודיוק לאורך זמן.<\/strong><\/p><p><br\/><strong>מציג את טמפרטורת המים בפועל לשליטה מדויקת ובטוחה<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3zTt93",
+        "text_LTN4TH"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collapsible_content_bMchJJ": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_RrDpbh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "איך המוצר  עובד ?",
+            "icon": "none",
+            "row_content": "<p><strong>Tempio™ פועל מכוח זרימת המים בלבד.<\/strong><br\/><br\/>כאשר פותחים את הברז, זרימת המים מפעילה את המנגנון הפנימי ומדליקה את התצוגה<\/p><p>המדחום מציג את טמפרטורת המים בפועל בזמן אמת <br\/><br\/>ללא סוללות וללא חשמל <br\/><br\/>וכך ניתן לדעת את חום המים בצורה ברורה ובטוחה עוד לפני שנכנסים למקלחת.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AkfkPX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "האם יש סכנת התחשמלות",
+            "icon": "none",
+            "row_content": "<p><br\/>אין סכנת התחשמלות<br\/>המדחום אינו מחובר לחשמל כלל ואינו מכיל סוללות.<br\/><br\/>האנרגיה נוצרת מזרימת המים בלבד, ולכן השימוש בטוח גם בסביבה רטובה ובקרבת ילדים.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eHMrAW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "האם המדחום מחמם  ?",
+            "icon": "none",
+            "row_content": "<p><br\/>Tempio™ אינו משנה את טמפרטורת המים ואינו מווסת את הזרימה.<br\/><br\/>הוא מציג את טמפרטורת המים בפועל בזמן אמת — כדי שתוכלו לכוון את החום בעצמכם בצורה בטוחה<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zgAr8a": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "האם ההתקנה מסובכת?",
+            "icon": "none",
+            "row_content": "<p>ההתקנה ממש קלה<br\/>ההתקנה מתבצעת ידנית תוך כדקה, ללא כלים וללא צורך בידע טכני.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_C88nEK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "היכן להתקין את Tempio™",
+            "icon": "none",
+            "row_content": "<p>מומלץ להתקין את Tempio™ בסמוך ליציאת המים <br\/><br\/>בין חיבור הצינור לחיבור הברז.<\/p><p>כך מתקבלת מדידה מדויקת ומהירה של טמפרטורת המים בזמן המקלחת.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ktJJjQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "האם כל זרם מים מספיק?",
+            "icon": "none",
+            "row_content": "<p>Tempio™ פועל באמצעות זרימת המים, ולכן נדרש לחץ מים ביתי רגיל להפעלה תקינה.<br\/><br\/>במקרה של זרם חלש מאוד, ייתכן שהמסך לא יידלק או שהמדידה לא תוצג באופן רציף.<\/p><p>ברוב המקלחות הביתיות אין כל בעיה, והמדחום פועל בצורה תקינה במהלך הרחצה.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_RrDpbh",
+        "collapsible_row_AkfkPX",
+        "collapsible_row_eHMrAW",
+        "collapsible_row_zgAr8a",
+        "collapsible_row_C88nEK",
+        "collapsible_row_ktJJjQ"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "blocks_NzjKCi": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e745f35_Dkf7TQ": {
+          "type": "ai_gen_block_e745f35",
+          "name": "Testimonial slider",
+          "settings": {
+            "max_width": 800,
+            "testimonial_1_text": "קנינו בשביל הילדים וזה פשוט עושה שקט. רואים את הטמפרטורה לפני שמכניסים אותם למקלחת וזה מרגיע מאוד.",
+            "testimonial_1_name": "נועה לוי",
+            "testimonial_1_title": "⭐⭐⭐⭐⭐",
+            "testimonial_1_image": "shopify:\/\/shop_images\/ChatGPT_Image_Dec_31_2025_03_08_49_PM.png",
+            "testimonial_2_text": "המוצר נראה פשוט אבל עושה עבודה מצוינת. במיוחד כשיש ילדים קטנים זה נותן ביטחון.",
+            "testimonial_2_name": "נהוראי כהן",
+            "testimonial_2_title": "⭐⭐⭐⭐⭐",
+            "testimonial_2_image": "shopify:\/\/shop_images\/2025-12-31_152951.png",
+            "testimonial_3_text": "רעיון חכם מאוד. עכשיו אני יודע בדיוק מה חום המים ולא מנחש כמו פעם.",
+            "testimonial_3_name": "אלי בן דוד",
+            "testimonial_3_title": "⭐⭐⭐⭐⭐",
+            "testimonial_3_image": "shopify:\/\/shop_images\/2025-12-31_151611.png",
+            "autoplay": true,
+            "autoplay_interval": 4,
+            "card_background": "#ffffff",
+            "card_radius": 12,
+            "text_size": 14,
+            "text_color": "#1c1b1b",
+            "name_size": 16,
+            "name_color": "#1c1b1b",
+            "title_size": 14,
+            "title_color": "#666666",
+            "button_background": "#b3a294",
+            "button_hover_background": "#a08d7e",
+            "button_icon_color": "#ffffff",
+            "dot_color": "#d0d0d0",
+            "dot_active_color": "#b3a294",
+            "placeholder_color": "#f0f0f0"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_e745f35_JgNpz4": {
+          "type": "ai_gen_block_e745f35",
+          "settings": {
+            "max_width": 800,
+            "testimonial_1_text": "לא חשבתי שזה כזה שימושי עד שחיברתי. עובד ישר בלי סוללות ומראה בדיוק את החום",
+            "testimonial_1_name": "לאה גבירצמן",
+            "testimonial_1_title": "⭐⭐⭐⭐⭐",
+            "testimonial_1_image": "shopify:\/\/shop_images\/2025-12-31_152649.png",
+            "testimonial_2_text": "לא חשבתי שזה ישפיע ככה, אבל ממש מרגישים שינוי משמעותי כשיודעים מה מידת החום",
+            "testimonial_2_name": "טלי כץ",
+            "testimonial_2_title": "⭐⭐⭐⭐☆",
+            "testimonial_2_image": "shopify:\/\/shop_images\/ChatGPT_Image_Dec_31_2025_03_21_19_PM.png",
+            "testimonial_3_text": "אהבתי שאין חשמל ואין סוללות. מרגיש הרבה יותר בטוח במקלחת.",
+            "testimonial_3_name": "מירב אוחיון",
+            "testimonial_3_title": "⭐⭐⭐⭐⭐",
+            "testimonial_3_image": "shopify:\/\/shop_images\/2025-12-31_151752.png",
+            "autoplay": true,
+            "autoplay_interval": 5,
+            "card_background": "#ffffff",
+            "card_radius": 12,
+            "text_size": 18,
+            "text_color": "#1c1b1b",
+            "name_size": 16,
+            "name_color": "#1c1b1b",
+            "title_size": 14,
+            "title_color": "#666666",
+            "button_background": "#b3a294",
+            "button_hover_background": "#a08d7e",
+            "button_icon_color": "#ffffff",
+            "dot_color": "#d0d0d0",
+            "dot_active_color": "#b3a294",
+            "placeholder_color": "#f0f0f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e745f35_Dkf7TQ",
+        "ai_gen_block_e745f35_JgNpz4"
+      ],
+      "name": "Testimonial slider",
+      "settings": {}
+    },
+    "bm_main_overrides": {
+      "type": "bm-store-main-overrides",
+      "settings": {}
+    },
+    "bm_sticky_bar": {
+      "type": "bm-sticky-bar",
+      "settings": {}
+    }
+  },
+  "order": [
+    "bm_sticky_bar",
+    "bm_main_overrides",
+    "main",
+    "image_with_text_6zDfhA",
+    "image_with_text_pyDiPg",
+    "rich_text_ziLM7i",
+    "custom_liquid_763tcE",
+    "image_with_text_Qh6AKJ",
+    "image_with_text_Wtm3xV",
+    "image_with_text_F7diLg",
+    "rich_text_ptDC6n",
+    "collapsible_content_bMchJJ",
+    "blocks_NzjKCi"
+  ]
+}

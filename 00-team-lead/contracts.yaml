@@ -165,5 +165,6 @@ publisher:
         benefits:              { type: list, item_fields: [icon, title, description], min_count: 4, max_count: 6 }
         emotional_reassurance: { type: string, not_empty: true }
         size_note:             { type: string }           # can be empty
+        care_section_title:    { type: string }           # static label; can be empty for legacy products
         care_instructions:     { type: list, item_fields: [icon_type, card_title, card_text], min_count: 3, max_count: 5 }
         faq:                   { type: list, item_fields: [question, answer], min_count: 3, max_count: 4 }

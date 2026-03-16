@@ -32,7 +32,7 @@ Kept for reference only
     background: linear-gradient(170deg, #FFFDF9 0%, #FAF3EC 40%, #F5EDE4 100%);
     position: relative;
     overflow: hidden;
-    padding: 52px 20px 44px;
+    padding: 28px 20px 24px;
     font-family: 'Heebo', sans-serif;
     direction: rtl;
     box-sizing: border-box;
@@ -134,42 +134,6 @@ Kept for reference only
   }
 
   /* ============================================================
-     HEADLINE
-  ============================================================ */
-  .bm-hero-headline {
-    font-family: 'Heebo', sans-serif;
-    font-size: clamp(24px, 5vw, 34px);
-    font-weight: 800;
-    color: #1A1A1A;
-    line-height: 1.3;
-    margin: 0 0 16px 0;
-    letter-spacing: 0.02em;
-  }
-
-  /* ============================================================
-     ACCENT LINE
-  ============================================================ */
-  .bm-hero-accent-line {
-    width: 56px;
-    height: 3px;
-    background: linear-gradient(90deg, #8B5E3C, #D4A853);
-    border-radius: 2px;
-    margin: 0 auto 22px;
-  }
-
-  /* ============================================================
-     SUBHEADLINE
-  ============================================================ */
-  .bm-hero-subheadline {
-    font-size: 16px;
-    font-weight: 400;
-    color: #5C4033;
-    line-height: 1.8;
-    max-width: 580px;
-    margin: 0 auto 32px;
-  }
-
-  /* ============================================================
      TRUST BAR
   ============================================================ */
   .bm-hero-trust {
@@ -184,7 +148,7 @@ Kept for reference only
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 10px;
+    gap: 8px;
     flex: 1;
     min-width: 0;
     background: rgba(255, 255, 255, 0.7);
@@ -192,7 +156,7 @@ Kept for reference only
     backdrop-filter: blur(6px);
     border: 1px solid rgba(139, 94, 60, 0.1);
     border-radius: 14px;
-    padding: 20px 14px;
+    padding: 14px 12px;
     box-sizing: border-box;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
@@ -202,28 +166,47 @@ Kept for reference only
     box-shadow: 0 8px 24px rgba(139, 94, 60, 0.12);
   }
 
-  /* Icon circle */
+  /* Icon circle — base */
   .bm-hero-trust-icon {
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #F5EDE4 0%, #FAF3EC 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(139, 94, 60, 0.1);
     flex-shrink: 0;
+    transition: box-shadow 0.22s ease;
   }
 
   .bm-hero-trust-icon svg {
-    width: 20px;
-    height: 20px;
-    stroke: #8B5E3C;
+    width: 22px;
+    height: 22px;
     fill: none;
     stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+
+  /* Card 1 — משלוח חינם — green */
+  .bm-hero-trust-item:nth-child(1) .bm-hero-trust-icon {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E8F5E9 55%, #c8e6c9 100%);
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  .bm-hero-trust-item:nth-child(1) .bm-hero-trust-icon svg { stroke: #43A047; }
+
+  /* Card 2 — החזרה — blue */
+  .bm-hero-trust-item:nth-child(2) .bm-hero-trust-icon {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E3F2FD 55%, #bbdefb 100%);
+    box-shadow: 0 3px 10px rgba(33, 150, 243, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  .bm-hero-trust-item:nth-child(2) .bm-hero-trust-icon svg { stroke: #1E88E5; }
+
+  /* Card 3 — תשלום מאובטח — amber */
+  .bm-hero-trust-item:nth-child(3) .bm-hero-trust-icon {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #FFF3E0 55%, #ffe0b2 100%);
+    box-shadow: 0 3px 10px rgba(255, 152, 0, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  .bm-hero-trust-item:nth-child(3) .bm-hero-trust-icon svg { stroke: #FB8C00; }
 
   /* Labels */
   .bm-hero-trust-label {
@@ -246,29 +229,22 @@ Kept for reference only
   ============================================================ */
   @media (max-width: 520px) {
     .bm-hero-section {
-      padding: 36px 14px 32px;
-    }
-
-    .bm-hero-headline {
-      font-size: clamp(20px, 5vw, 26px);
-    }
-
-    .bm-hero-subheadline {
-      font-size: 15px;
+      padding: 20px 12px 18px;
     }
 
     .bm-hero-trust {
-      gap: 10px;
+      gap: 8px;
       flex-wrap: nowrap;
     }
 
     .bm-hero-trust-item {
-      padding: 14px 10px;
+      padding: 12px 8px;
+      gap: 6px;
     }
 
     .bm-hero-trust-icon {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
     }
 
     .bm-hero-trust-icon svg {
@@ -304,17 +280,6 @@ Kept for reference only
         </svg>
         {{ bm_hero_eyebrow }}
       </div>
-    {% endif %}
-
-    {% comment %} Headline {% endcomment %}
-    <h1 class="bm-hero-headline" id="bm-hero-heading">{{ bm_hero_headline }}</h1>
-
-    {% comment %} Decorative accent line {% endcomment %}
-    <div class="bm-hero-accent-line" aria-hidden="true"></div>
-
-    {% comment %} Subheadline {% endcomment %}
-    {% if bm_hero_subheadline != blank %}
-      <p class="bm-hero-subheadline">{{ bm_hero_subheadline }}</p>
     {% endif %}
 
     {% comment %} Trust bar {% endcomment %}

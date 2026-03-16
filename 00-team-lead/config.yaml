@@ -162,5 +162,6 @@ required_metafields:
     - care_instructions
     - faq
   optional_keys:
-    - fabric_body_2    # may be empty
-    - size_note        # may be empty
+    - fabric_body_2       # may be empty
+    - care_section_title  # from stage-05; static label for care accordion
+    - size_note           # may be empty

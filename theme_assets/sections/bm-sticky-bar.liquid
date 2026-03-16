@@ -1,0 +1,204 @@
+{%- comment -%}
+  BabyMania — Sticky Buy Bar
+  File: sections/bm-sticky-bar.liquid
+  Appears fixed at the bottom when the main buy buttons scroll out of view.
+  Uses IntersectionObserver. Does NOT modify product-form.js.
+{%- endcomment -%}
+
+<div id="bm-sticky-bar" class="bm-sticky-bar" aria-hidden="true">
+  <div class="bm-sticky-bar__inner">
+    <div class="bm-sticky-bar__info">
+      <span class="bm-sticky-bar__title">{{ product.title | truncate: 45 }}</span>
+      <span class="bm-sticky-bar__price" id="bm-sticky-price">
+        {{ product.selected_or_first_available_variant.price | money }}
+      </span>
+    </div>
+    <button class="bm-sticky-bar__btn" id="bm-sticky-add-btn" type="button">
+      {{ 'products.product.add_to_cart' | t }}
+    </button>
+  </div>
+</div>
+
+<style>
+  .bm-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    background: #FFFFFF;
+    box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.10);
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+  .bm-sticky-bar[aria-hidden="false"] {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .bm-sticky-bar__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .bm-sticky-bar__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .bm-sticky-bar__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1A1A1A;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bm-sticky-bar__price {
+    font-size: 16px;
+    font-weight: 800;
+    color: #8B5E3C;
+    direction: ltr;
+    text-align: right;
+  }
+  .bm-sticky-bar__btn {
+    flex-shrink: 0;
+    background: #FFFFFF;
+    color: #8B5E3C;
+    border: 2px solid #D4A574;
+    border-radius: 12px;
+    padding: 11px 28px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.15);
+    white-space: nowrap;
+  }
+  .bm-sticky-bar__btn:hover {
+    background: #D4A574;
+    color: #FFFFFF;
+    border-color: #D4A574;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+  }
+  .bm-sticky-bar__btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  @media (max-width: 520px) {
+    .bm-sticky-bar__inner { padding: 10px 16px; gap: 12px; }
+    .bm-sticky-bar__btn { padding: 10px 18px; font-size: 14px; }
+    .bm-sticky-bar__title { font-size: 13px; }
+    .bm-sticky-bar__price { font-size: 15px; }
+  }
+</style>
+
+<script>
+(function () {
+  var bar = document.getElementById('bm-sticky-bar');
+  var stickyBtn = document.getElementById('bm-sticky-add-btn');
+  var stickyPrice = document.getElementById('bm-sticky-price');
+  if (!bar || !stickyBtn) return;
+
+  // Watch the product form buttons container
+  var target = document.querySelector('.product-form__buttons');
+  if (!target) return;
+
+  new IntersectionObserver(
+    function (entries) {
+      bar.setAttribute('aria-hidden', entries[0].isIntersecting ? 'true' : 'false');
+    },
+    { threshold: 0 }
+  ).observe(target);
+
+  // Sync price from live DOM (updates on variant change)
+  function syncPrice() {
+    if (!stickyPrice) return;
+    var el = document.querySelector('.price__regular .price-item--regular, .price__sale .price-item--sale');
+    if (el) stickyPrice.textContent = el.textContent.trim();
+  }
+  syncPrice();
+
+  var priceContainer = document.querySelector('.price');
+  if (priceContainer) {
+    new MutationObserver(syncPrice).observe(priceContainer, {
+      childList: true, subtree: true, characterData: true
+    });
+  }
+
+  // Click: add to cart via fetch (variant ID from the live form input)
+  stickyBtn.addEventListener('click', function () {
+    var variantInput = document.querySelector(
+      'input[name="id"].product-variant-id, product-form input[name="id"], form[action*="/cart/add"] input[name="id"]'
+    );
+    if (!variantInput) return;
+
+    var variantId = variantInput.value;
+    var qty = 1;
+    var qtyInput = document.querySelector('.quantity__input');
+    if (qtyInput && parseInt(qtyInput.value, 10) > 0) {
+      qty = parseInt(qtyInput.value, 10);
+    }
+
+    stickyBtn.disabled = true;
+    var originalText = stickyBtn.textContent;
+    stickyBtn.textContent = '...';
+
+    fetch('/cart/add.json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+      body: JSON.stringify({ id: variantId, quantity: qty })
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.status) {
+          // Shopify returned an error (e.g. sold out)
+          stickyBtn.textContent = originalText;
+          stickyBtn.disabled = false;
+          return;
+        }
+        // Refresh cart bubble count via Dawn's cart.js
+        fetch('/cart.js')
+          .then(function (r) { return r.json(); })
+          .then(function (cart) {
+            document.querySelectorAll('.cart-count-bubble span[aria-hidden]').forEach(function (el) {
+              el.textContent = cart.item_count;
+            });
+            document.querySelectorAll('.cart-count-bubble span:not([aria-hidden])').forEach(function (el) {
+              el.textContent = cart.item_count + ' items';
+            });
+            document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+          });
+
+        stickyBtn.textContent = '\u2713 \u05E0\u05D5\u05E1\u05E3!'; // ✓ נוסף!
+        setTimeout(function () {
+          stickyBtn.textContent = originalText;
+          stickyBtn.disabled = false;
+        }, 1800);
+      })
+      .catch(function () {
+        stickyBtn.textContent = originalText;
+        stickyBtn.disabled = false;
+      });
+  });
+}());
+</script>
+
+{% schema %}
+{
+  "name": "BM — Sticky Bar",
+  "tag": "div",
+  "class": "bm-sticky-bar-section",
+  "settings": [],
+  "presets": [{ "name": "BM — Sticky Bar" }]
+}
+{% endschema %}

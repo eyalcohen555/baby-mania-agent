@@ -38,8 +38,8 @@ model: claude-opus-4-6
 - `hero_headline` → `metafields.hero_headline`
 - `hero_subheadline` → `metafields.hero_subheadline`
 - `fabric_title` → `metafields.fabric_title`
-- `fabric_body` → `metafields.fabric_body`
-- `fabric_body_2` → `metafields.fabric_body_2` (ריק אם חסר)
+- `fabric_paragraph_1` → `metafields.fabric_body` (שם metafield בשופיפיי נשאר fabric_body)
+- `fabric_paragraph_2` → `metafields.fabric_body_2` (שם metafield בשופיפיי נשאר fabric_body_2)
 - `fabric_highlight` → `metafields.fabric_highlight`
 - `fabric_tags` → `metafields.fabric_tags` (מערך מחרוזות)
 - `whats_special` → `metafields.whats_special`
@@ -52,7 +52,8 @@ model: claude-opus-4-6
 - `faq` → `metafields.faq` (JSON array)
 
 ### מ-stage-05 (care-instructions)
-- `care_instructions` → `metafields.care_instructions` (JSON array)
+- `care_section_title` → `metafields.care_section_title` (חובה: "הוראות כביסה — לחצו לפתיחה")
+- `care_instructions` → `metafields.care_instructions` (JSON array — בדיוק 5 פריטים)
 
 ## חוקים
 - אל תכלול API keys
@@ -84,8 +85,13 @@ model: claude-opus-4-6
     ],
     "emotional_reassurance": "...",
     "size_note": "",
+    "care_section_title": "הוראות כביסה — לחצו לפתיחה",
     "care_instructions": [
-      {"icon_type": "wash_60", "card_title": "...", "card_text": "..."}
+      {"icon_type": "wash_30", "card_title": "...", "card_text": "..."},
+      {"icon_type": "no_tumble_dry", "card_title": "...", "card_text": "..."},
+      {"icon_type": "no_bleach", "card_title": "...", "card_text": "..."},
+      {"icon_type": "iron", "card_title": "...", "card_text": "..."},
+      {"icon_type": "sun_dry", "card_title": "...", "card_text": "..."}
     ],
     "faq": [
       {"question": "...", "answer": "..."}

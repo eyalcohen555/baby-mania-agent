@@ -38,8 +38,8 @@ model: claude-opus-4-6
 - `hero_headline` → `metafields.hero_headline`
 - `hero_subheadline` → `metafields.hero_subheadline`
 - `fabric_title` → `metafields.fabric_title`
-- `fabric_body` → `metafields.fabric_body`
-- `fabric_body_2` → `metafields.fabric_body_2` (ריק אם חסר)
+- `fabric_paragraph_1` → `metafields.fabric_body`
+- `fabric_paragraph_2` → `metafields.fabric_body_2` (ריק אם חסר)
 - `fabric_highlight` → `metafields.fabric_highlight`
 - `fabric_tags` → `metafields.fabric_tags` (מערך מחרוזות)
 - `whats_special` → `metafields.whats_special`
@@ -52,6 +52,7 @@ model: claude-opus-4-6
 - `faq` → `metafields.faq` (JSON array)
 
 ### מ-stage-05 (care-instructions)
+- `care_section_title` → `metafields.care_section_title`
 - `care_instructions` → `metafields.care_instructions` (JSON array)
 
 ## חוקים
@@ -59,6 +60,27 @@ model: claude-opus-4-6
 - JSON תקין לחלוטין — escape גרשיים בתוך מחרוזות
 - אין המצאה — אם שדה חסר מהקלט, השאר ריק (`""` / `[]`)
 - אין הוספת שדות שלא מוגדרים בסכמה
+- **V2 בלבד** — הפלט חייב לכלול את המפתח `metafields` ברמה העליונה. פורמט ישן (`"fabric"`, `"care"` ברמה העליונה) אסור לחלוטין. אם תפיק JSON ללא `metafields` — הפלט יידחה על ידי ה-push script.
+
+## ⚠️ שגיאות פורמט נפוצות — אסורות
+```json
+// ❌ V1 — ישן ושגוי — אסור
+{
+  "fabric": { "title": "..." },
+  "benefits": [...],
+  "care": [...]
+}
+
+// ✅ V2 — נכון — חובה
+{
+  "product_id": "...",
+  "metafields": {
+    "hero_eyebrow": "...",
+    "fabric_title": "...",
+    ...
+  }
+}
+```
 
 ## פלט נדרש — JSON בתוך code block בלבד
 
@@ -84,6 +106,7 @@ model: claude-opus-4-6
     ],
     "emotional_reassurance": "...",
     "size_note": "",
+    "care_section_title": "הוראות כביסה — לחצו לפתיחה",
     "care_instructions": [
       {"icon_type": "wash_60", "card_title": "...", "card_text": "..."}
     ],

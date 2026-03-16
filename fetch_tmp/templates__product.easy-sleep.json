@@ -1,0 +1,483 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title_pzTjeT": {
+          "type": "title",
+          "settings": {}
+        },
+        "buy_buttons_DDph7h": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "collapsible_tab_EcaGXE": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "איך EasySleep™ נותן שינה רגועה יותר בשגרה?",
+            "icon": "none",
+            "content": "<p>שינה רציפה עמוקה היא תוצאה של סביבת חדר שינה בתנאים הנכונים. <\/p><p>EasySleep™ נבנה כדי לשמור על רצף שינה יציב<br\/>באמצעות שילוב של שלושה אלמנטים שפועלים יחד<\/p><p>לא כל אחד בנפרד<br\/>אלא כמערכת אחת<\/p><p>אור לילה רך וקבוע<br\/>יוצר תחושת המשכיות ומונע בהלה בעת יקיצה<\/p><p>צלילים עדינים ואחידים<br\/>מטשטשים רעשי רקע פתאומיים ומרגיעים את המוח<\/p><p>ואדי מים עדינים<br\/>תורמים לאוויר נעים יותר ולנשימה נוחה לאורך הלילה<\/p><p>כאשר שלושת האלמנטים פועלים יחד<br\/>הסביבה נשארת יציבה<br\/>הגוף לא נבהל<br\/>והמעבר חזרה לשינה הופך טבעי ומהיר יותר..<\/p>",
+            "page": ""
+          }
+        },
+        "variant_picker_BxXihE": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "price_izbbck": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_wPUMBR": {
+          "type": "text",
+          "settings": {
+            "text": "🚚 משלוח מהיר 5-8 ימי עסקים",
+            "text_style": "body"
+          }
+        },
+        "richtext_94VRWF": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>👶 בטוח לילדים | 👆 הפעלה פשוט<\/p>"
+          }
+        },
+        "text_HRpChT": {
+          "type": "text",
+          "settings": {
+            "text": "😴שינה טובה תלויה בתנאים  נכונים",
+            "text_style": "body"
+          }
+        },
+        "collapsible_tab_KNAhEk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "האם זה  באמת מתאים גם למשפחה שלנו?",
+            "icon": "none",
+            "content": "<p>בסוף יום ארוך..<br\/><br\/>לא כל משפחה מחפשת את אותו מוצר<br\/><br\/>אבל כולן מחפשות שקט מהילדים ונחת בבית.<\/p><p>ואין כמו פתרון שתמיד יכול להרגיע בלי לתפוס יותר מדי תשומת לב!!<\/p><p>המוצר לא מיועד רק לילדים<br\/>ולא רק לשינה של לילה.<br\/>הוא נועד ליצור אווירה רגועה ונעימה בחדר<br\/>שמלווה את הערב כולו.<\/p><p>אור רך שלא מציף<br\/>אוויר נעים שמקל על תחושת הנשימה<br\/>וצליל שקט וקבוע שנותן תחושת ביטחון.<\/p><p>זה מתאים לילדים שמתקשים להירגע<br\/>ולמבוגרים שרוצים נוחות ותאורה רגועה בחדר.<\/p><p>לא  רק פתרון נקודתי<br\/>אלא תחושה קבועה של רוגע בבית.<\/p>",
+            "page": ""
+          }
+        },
+        "description_HebTpj": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_pzTjeT",
+        "buy_buttons_DDph7h",
+        "collapsible_tab_EcaGXE",
+        "variant_picker_BxXihE",
+        "price_izbbck",
+        "text_wPUMBR",
+        "richtext_94VRWF",
+        "text_HRpChT",
+        "collapsible_tab_KNAhEk",
+        "description_HebTpj"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_C3Tqd4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KqDkTL": {
+          "type": "heading",
+          "settings": {
+            "heading": "זה <strong>לא <\/strong>קסם!!",
+            "heading_size": "h1"
+          }
+        },
+        "text_4jKYRz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>החדר משפיע <strong>ישירות <\/strong>על איכות השינה.<br\/><strong>EasySleep<\/strong> מוסיף לחות עדינה שעוזרת לנשימה להיות קלה וטבעית יותר לאורך הלילה. ,האור החמים יוצר תחושת ביטחון,<br\/>והטיפות שיורדות מהפטרייה יוצרות צליל מים טבעי וקבוע שמונע רעשי רקע אחרים<\/p><p>השילוב בין לחות, אור ורעש לבן טבעי<br\/>יוצרים תנאים נכונים <strong>לשינה עמוקה ורציפה<\/strong>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KqDkTL",
+        "text_4jKYRz"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_MEcrmD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MGmxi3": {
+          "type": "heading",
+          "settings": {
+            "heading": "איך משפיעה השינה על ילדכם:",
+            "heading_size": "h2"
+          }
+        },
+        "text_PxXCRr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>שינה טובה היא <strong>בסיס<\/strong> להתפתחות בריאה.<\/p><p>לכן השלב הראשון מתחיל <strong>בסביבת שינה רגועה<\/strong> לפני ההרדמות. <br\/>לכך נוצר EasySleep  לתת מענה ותמיכה לשינה טובה ורציפה כדי ליצור מעטפת של רוגע  וביטחון בחדר השינה<\/p><p><br\/>יתרונות של שינה טובה:<br\/><br\/>• <strong>חיזוק<\/strong> ואיזון מערכת העצבים<br\/>• <strong>תמיכה<\/strong> בהתפתחות המוח<br\/>• שיפור הריכוז והקשב<br\/>• <strong>חיזוק<\/strong> המערכת החיסונית<br\/>• התנהגות רגועה יותר במהלך היום<\/p><p><br\/>שינה טובה בלילה יוצרת שקט  גם ביום  לילדים ולהורים.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_cjMwjf": {
+          "type": "button",
+          "settings": {
+            "button_label": "הוסף לעגלה",
+            "button_link": "shopify:\/\/products\/™easysleep-מערכת-שינה-חכמה-לתינוקות-לשינה-רגועה-ורציפה-מבית-babymania",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MGmxi3",
+        "text_PxXCRr",
+        "button_cjMwjf"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2026-01-02_114203.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_Wtm3xV": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_GHFz8K": {
+          "type": "heading",
+          "settings": {
+            "heading": "מישל מחולון מספרת:",
+            "heading_size": "h2"
+          }
+        },
+        "text_KXY8jq": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>״המכשיר מייצר ערפל רך בלי להרטיב את הסביבה.<br\/>מושלם לאוויר יבש ולחורף.<br\/>צלילי הגשם מרגיעים,<br\/>ואור הלילה עם הצבעים המשתנים נותן אווירה רגועה.״<\/h3><p><br\/><strong>נרכש ונבדק על־ידי אלפי לקוחות מרוצים!<\/strong><\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GHFz8K",
+        "text_KXY8jq"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/0101_6_1_1.gif",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_Qh6AKJ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hNETDa": {
+          "type": "heading",
+          "settings": {
+            "heading": "מפרט טכני :",
+            "heading_size": "h1"
+          }
+        },
+        "text_7ndPzb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✔ מכשיר EasySleep™<br\/>✔ שלט רחוק להפעלה נוחה<br\/>✔ כבל USB לחיבור והפעלה<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hNETDa",
+        "text_7ndPzb"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2026-01-02_095903.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collapsible_content_bMchJJ": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_RrDpbh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "איך המכשיר עובד ?",
+            "icon": "none",
+            "row_content": "<p>כשהאוויר בחדר יבש, הנשימה  יכולה להיות כבדה יותר.<br\/><br\/>הגוף מרגיש את זה ומגיב בהתעוררות קטנה כדי “לסדר” את הנשימה.<\/p><p>האדים העדינים של EasySleep™ מוסיפים לחות לאוויר ויוצרים תחושת נשימה קלה ונעימה יותר, בלי שינוי חד שמפריע לשינה.<\/p><p>התאורה הרכה משדרת חמימות ותחושת ביטחון.<br\/><br\/>היא מפחיתה פחדים ולחץ לפני השינה ועוזרת לילדים להירגע ולהיכנס לשינה עמוקה יותר.<\/p><p>מעל הכול, יש את פטריית ה“גשם”.<br\/>ממנה נופלות טיפות מים שיוצרות צליל עמוק וקבוע של מים זורמים.<\/p><p>זה לא סתם צליל.<br\/>צליל קבוע עוזר לטשטש רעשי רקע פתאומיים שעלולים להעיר ילדים.<br\/><br\/>זה רעש לבן טבעי, שנוצר מטיפות מים אמיתיות – לא מרמקול.<\/p><p>כששלושת האלמנטים פועלים יחד, נוצר חדר רגוע, יציב ושקט יותר – כזה שמאפשר לגוף להירגע ולהישאר בשינה.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MphEJn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "איך מתבצעים 14 ימי ניסיון ?",
+            "icon": "none",
+            "row_content": "<p>EasySleep כולל אחריות ל־14 יום מרגע קבלת המוצר.<\/p><p>אנחנו בטוחים שהמוצר שלנו ישפיע על השינה שלכם כמו שהוא השפיע כבר על אלפי לקוחות מרוצים. לכן יש החזר מלא למי שרוצה להחזיר את המכשיר. אפשר לפנות עלינו בעמוד צרו קשר<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AkfkPX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "האם המכשיר גם ריחני ?",
+            "icon": "none",
+            "row_content": "<p>כן, אפשר להוסיף כמות קטנה של שמן  ריחני למים, אך חשוב לדעת שזה אינו הייעוד המרכזי של המכשיר.<\/p><p>EasySleep מיועד בעיקר ליצירת אדים ותאורה השמן הוא כתוספת שמעניקה ריח טוב ואווירה<\/p><p>לשמירה על פעולה תקינה לאורך זמן, מומלץ להשתמש בכמות מינימלית של שמן ולנקות את המכשיר באופן קבוע.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eHMrAW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "איך מנקים את המכשיר ?",
+            "icon": "none",
+            "row_content": "<p>הניקוי פשוט ולא דורש תחזוקה מיוחדת.<\/p><p>בסיום השימוש מרוקנים את שאריות המים, מנגבים בעדינות את החלק הפנימי ומניחים לייבוש.<br\/><br\/>ניקוי קל אחת לכמה ימים עוזר לשמור על זרימה תקינה ולמנוע הצטברות.<\/p><p>אין צורך בפירוק חלקים או שימוש בחומרים מיוחדים.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zgAr8a": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "האם המכשיר מטפטף או יוצר עיבוי של מים ?",
+            "icon": "none",
+            "row_content": "<p>כמו בכל מכשיר שפועל עם מים ואדים, בשימוש ממושך או בסביבה לחה יכול להיווצר עיבוי קל.<\/p><p>יש לקוחות שטוענים שהמכשיר לא מטפטף בחוץ ויש להפך<\/p><p>בגרסת 300 מ״ל יש עיצוב עם זווית בחלק העליון שנועד להפחית טפטופים ולהכווין את האדים בצורה מבוקרת יותר.<br\/><br\/>בשאר הדגמים אפשר להניח את המכשיר על משטח יציב וישר.<\/p><p>למי שרוצה להימנע מראש מטיפות לא רצויות, אפשר להניח את המכשיר על סמרטוט קטן או תחתית בד, וזה פותר את העניין בצורה פשוטה.<\/p><p>בשימוש תקין ולפי ההוראות, הטפטופים מינימליים ואינם אמורים להפריע לשימוש יומיומי.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_C88nEK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "כמה זמן EasySleep עובד רצוף",
+            "icon": "none",
+            "row_content": "<p>EasySleep מגיע בשתי גרסאות:<br\/><br\/>300 מ״ל ו־450 מ״ל.<\/p><p>משך הפעולה תלוי בכמות המים במיכל ובמצב הטיפות שנבחר.<br\/><br\/>ככל שמצב הטיפות חזק יותר, כך צריכת המים גבוהה יותר.<\/p><p>גרסת 450 מ״ל מאפשרת זמן פעולה ארוך יותר לפני צורך במילוי מחדש, ומתאימה במיוחד לשימוש רציף במהלך הלילה.<br\/><br\/>גרסת 300 מ״ל מתאימה לשימוש קצר יותר או לחדרים קטנים.<\/p><p>בכל מקרה, המכשיר מיועד לפעול ברצף כל הלילה ללא תקלות ומניעות. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ktJJjQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "אילו מצבים יש במכשיר ?",
+            "icon": "none",
+            "row_content": "<p>EasySleep מאפשר שליטה פשוטה ונוחה בשלושה דברים שונים, וכל אחד מהם פועל בנפרד:<\/p><p>מצבי טיפות- 3 שלבים<\/p><p>מצבי תאורה - 7 צבעים שונים ומצבים שונים<\/p><p><br\/>המכשיר יוצר צליל קבוע של טיפות מים שניתן להפעיל או לכבות, כדי להתאים את האווירה לשינה.<\/p><p>הבחירה נעשית בלחיצת כפתור אחת, ובחלק מהדגמים גם באמצעות שלט, בלי תפריטים ובלי הגדרות מסובכות<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kQJK6x": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "האם המכשיר שקט מספיק לשינה של תינוקות וילדים",
+            "icon": "none",
+            "row_content": "<p>כן. EasySleep מיועד לשימוש בחדר שינה ופועל בעוצמת רעש נמוכה.<br\/><br\/>צליל הטיפות הוא קבוע, עדין ולא משתנה, ולכן הוא לא מפריע לשינה אלא יוצר רקע רגוע.<\/p><p>רוב ההורים לא יודעים שצליל קבוע שחוזר על עצמו עוזר למוח להתעלם מרעשי רקע אחרים.<br\/><br\/>כשהמוח שומע צליל יציב, הוא מפסיק “להקשיב” לרעשים פתאומיים כמו דלת נטרקת, דיבורים או תזוזות בבית.<\/p><p>כך נוצר שקט רציף יותר שמקטין יקיצות פתאומיות ועוזר לשמור על שינה רגועה.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_RrDpbh",
+        "collapsible_row_MphEJn",
+        "collapsible_row_AkfkPX",
+        "collapsible_row_eHMrAW",
+        "collapsible_row_zgAr8a",
+        "collapsible_row_C88nEK",
+        "collapsible_row_ktJJjQ",
+        "collapsible_row_kQJK6x"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "blocks_NzjKCi": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e745f35_Dkf7TQ": {
+          "type": "ai_gen_block_e745f35",
+          "name": "Testimonial slider",
+          "settings": {
+            "max_width": 800,
+            "testimonial_1_text": "הדבר הכי טוב זה השקט. אין רעשים מוזרים, האור רך והאווירה בחדר הרבה יותר רגועה מאז שהכנסנו אותו.",
+            "testimonial_1_name": "שני בן דוד",
+            "testimonial_1_title": "⭐⭐⭐⭐⭐",
+            "testimonial_1_image": "shopify:\/\/shop_images\/ChatGPT_Image_Dec_31_2025_03_08_49_PM.png",
+            "testimonial_2_text": "ושה בדיוק את מה שמצפים ממנו. אדים נעימים, צליל טבעי ולא חוזר על עצמו. היה יכול להיות קצת יותר קומפקטי אבל עדיין שווה.",
+            "testimonial_2_name": "אלעד פרץ",
+            "testimonial_2_title": "⭐⭐⭐⭐⭐",
+            "testimonial_2_image": "shopify:\/\/shop_images\/2025-12-31_152951.png",
+            "testimonial_3_text": "שמנו אותו גם בסלון בערבים וזה ממש מוסיף לאווירה. מרגיע, נעים ולא מרגיש כמו גאדג׳ט זול.",
+            "testimonial_3_name": "מיכאל דהן",
+            "testimonial_3_title": "⭐⭐⭐⭐⭐",
+            "testimonial_3_image": "shopify:\/\/shop_images\/2025-12-31_151611.png",
+            "autoplay": true,
+            "autoplay_interval": 4,
+            "card_background": "#ffffff",
+            "card_radius": 12,
+            "text_size": 14,
+            "text_color": "#1c1b1b",
+            "name_size": 16,
+            "name_color": "#1c1b1b",
+            "title_size": 14,
+            "title_color": "#666666",
+            "button_background": "#b3a294",
+            "button_hover_background": "#a08d7e",
+            "button_icon_color": "#ffffff",
+            "dot_color": "#d0d0d0",
+            "dot_active_color": "#b3a294",
+            "placeholder_color": "#f0f0f0"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_e745f35_JgNpz4": {
+          "type": "ai_gen_block_e745f35",
+          "settings": {
+            "max_width": 800,
+            "testimonial_1_text": "מאז שהתחלנו להשתמש בו בלילה האוויר בחדר הרבה יותר נעים. הצליל עדין ומרגיע ולא מפריע לשינה בכלל. נראה טוב על השידה ומרגיש איכותי.",
+            "testimonial_1_name": "אורית לוי",
+            "testimonial_1_title": "⭐⭐⭐⭐⭐",
+            "testimonial_1_image": "shopify:\/\/shop_images\/2025-12-31_152649.png",
+            "testimonial_2_text": "לא חשבתי שזה ישפיע ככה, אבל ממש מרגישים הבדל. עובד בשקט, האדים עדינים והאור בלילה לא חזק מדי. משתמשים בו כל ערב.",
+            "testimonial_2_name": "דניאל ווסרמן",
+            "testimonial_2_title": "⭐⭐⭐⭐☆",
+            "testimonial_2_image": "shopify:\/\/shop_images\/ChatGPT_Image_Dec_31_2025_03_21_19_PM.png",
+            "testimonial_3_text": "קנינו בגלל האוויר היבש בחורף וזה עושה עבודה מצוינת. צליל הגשם נחמד מאוד ועוזר להירדם. קצת גדול לשידה קטנה אבל בסך הכול מרוצים.",
+            "testimonial_3_name": "נועה רוזן",
+            "testimonial_3_title": "⭐⭐⭐⭐⭐",
+            "testimonial_3_image": "shopify:\/\/shop_images\/2025-12-31_151752.png",
+            "autoplay": true,
+            "autoplay_interval": 5,
+            "card_background": "#ffffff",
+            "card_radius": 12,
+            "text_size": 18,
+            "text_color": "#1c1b1b",
+            "name_size": 16,
+            "name_color": "#1c1b1b",
+            "title_size": 14,
+            "title_color": "#666666",
+            "button_background": "#b3a294",
+            "button_hover_background": "#a08d7e",
+            "button_icon_color": "#ffffff",
+            "dot_color": "#d0d0d0",
+            "dot_active_color": "#b3a294",
+            "placeholder_color": "#f0f0f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e745f35_Dkf7TQ",
+        "ai_gen_block_e745f35_JgNpz4"
+      ],
+      "name": "Testimonial slider",
+      "settings": {}
+    },
+    "custom_liquid_etUrWn": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .video-carousel{display:flex;flex-direction:column;gap:14px;}\n  .video-row{display:flex;flex-wrap:nowrap;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:6px 4px;width:100%;}\n  .video-row::-webkit-scrollbar{display:none;}\n  .video-card{flex:0 0 auto;width:280px;height:280px;scroll-snap-align:start;border-radius:16px;overflow:hidden;background:#000;position:relative;cursor:pointer;}\n  .video-card img,.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;}\n  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.18);pointer-events:none;}\n  .play span{width:58px;height:58px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;}\n  @media (max-width: 749px){.video-card{width:60vw;height:60vw;border-radius:18px;}}\n<\/style>\n\n<div class=\"video-carousel\" id=\"carousel-{{ section.id }}\">\n\n  <div class=\"video-row\">\n    {% assign row1 = \"1150827345,1150828535,1150843187\" | split: \",\" %}\n    {% for id in row1 %}\n      <div class=\"video-card\" data-vimeo=\"{{ id }}\">\n        <img src=\"https:\/\/vumbnail.com\/{{ id }}.jpg\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"play\"><span>▶<\/span><\/div>\n      <\/div>\n    {% endfor %}\n  <\/div>\n\n  <div style=\"height:220px;\"><\/div>\n\n  <div class=\"video-row\" id=\"row2-mount-{{ section.id }}\"><\/div>\n\n  <template id=\"row2-tpl-{{ section.id }}\">\n    {% assign row2 = \"1150831579,1150844000,1150844816\" | split: \",\" %}\n    {% for id in row2 %}\n      <div class=\"video-card\" data-vimeo=\"{{ id }}\">\n        <img src=\"https:\/\/vumbnail.com\/{{ id }}.jpg\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"play\"><span>▶<\/span><\/div>\n      <\/div>\n    {% endfor %}\n  <\/template>\n\n<\/div>\n\n<script>\n(function(){\n  var root = document.getElementById('carousel-{{ section.id }}');\n  if(!root) return;\n\n  var mount = document.getElementById('row2-mount-{{ section.id }}');\n  var tpl = document.getElementById('row2-tpl-{{ section.id }}');\n  var loadedRow2 = false;\n\n  function loadRow2(){\n    if(loadedRow2 || !mount || !tpl) return;\n    loadedRow2 = true;\n    mount.innerHTML = tpl.innerHTML;\n  }\n\n  if(mount && 'IntersectionObserver' in window){\n    var io = new IntersectionObserver(function(entries){\n      entries.forEach(function(e){\n        if(e.isIntersecting){\n          loadRow2();\n          io.disconnect();\n        }\n      });\n    }, { rootMargin: '-300px 0px' });\n    io.observe(mount);\n  } else {\n    loadRow2();\n  }\n\n  root.addEventListener('click', function(ev){\n    var card = ev.target.closest && ev.target.closest('.video-card');\n    if(!card || !root.contains(card)) return;\n    if(card.querySelector('iframe')) return;\n\n    var id = card.getAttribute('data-vimeo');\n    card.innerHTML =\n      '<iframe src=\"https:\/\/player.vimeo.com\/video\/'+id+'?playsinline=1&autoplay=1&muted=1\" '+\n      'allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen><\/iframe>';\n  });\n})();\n<\/script>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 24
+      }
+    },
+    "custom_liquid_kYJz8w": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div style=\"margin:12px 0;text-align:center;\">\n  <button\n    type=\"button\"\n    onclick=\"\n      const target =\n        document.querySelector('.product-form__buttons') ||\n        document.querySelector('button[name=&quot;add&quot;]') ||\n        document.querySelector('variant-selects') ||\n        document.querySelector('.product-form');\n      if(target){\n        target.scrollIntoView({behavior:'smooth', block:'center'});\n      }\n    \"\n    style=\"\n      display:inline-block;\n      padding:10px 16px;\n      font-size:14px;\n      font-weight:600;\n      border-radius:10px;\n      background:#000;\n      color:#fff;\n      border:none;\n      cursor:pointer;\n      width:auto;\n    \"\n  >\n    לבחירת דגם ולהוספה לעגלה\n  <\/button>\n<\/div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "bm_main_overrides": {
+      "type": "bm-store-main-overrides",
+      "settings": {}
+    },
+    "bm_sticky_bar": {
+      "type": "bm-sticky-bar",
+      "settings": {}
+    }
+  },
+  "order": [
+    "bm_sticky_bar",
+    "bm_main_overrides",
+    "main",
+    "rich_text_C3Tqd4",
+    "image_with_text_MEcrmD",
+    "image_with_text_Wtm3xV",
+    "image_with_text_Qh6AKJ",
+    "collapsible_content_bMchJJ",
+    "blocks_NzjKCi",
+    "custom_liquid_etUrWn",
+    "custom_liquid_kYJz8w"
+  ]
+}

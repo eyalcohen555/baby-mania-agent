@@ -1,0 +1,84 @@
+{%- style -%}
+  .bm-blog-tags {
+    background: #FFFDF9;
+    padding: 20px 0 24px;
+    direction: rtl;
+    border-bottom: 1px solid #F0E9E0;
+  }
+  .bm-blog-tags__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .bm-tag-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1.5px solid #8B5E3C;
+    color: #8B5E3C;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .bm-tag-btn:hover,
+  .bm-tag-btn--active {
+    background: #8B5E3C;
+    color: #FFFDF9;
+  }
+  @media screen and (max-width: 749px) {
+    .bm-blog-tags { padding: 16px 20px 20px; }
+    .bm-tag-btn { font-size: 0.85rem; padding: 7px 16px; }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign tags_map = "הכל|,שינה|baby-sleep,ביגוד|newborn-clothing,אמבטיה|baby-bath,עור רגיש|sensitive-skin,מתנות|baby-gifts" | split: ","
+-%}
+
+<div class="bm-blog-tags" dir="rtl">
+  <div class="page-width">
+    <nav class="bm-blog-tags__inner" aria-label="סינון לפי קטגוריה">
+      {%- for pair in tags_map -%}
+        {%- assign parts = pair | split: "|" -%}
+        {%- assign label = parts[0] -%}
+        {%- assign slug  = parts[1] -%}
+
+        {%- if slug == blank -%}
+          {%- assign tag_url   = "/blogs/news" -%}
+          {%- assign is_active = true -%}
+          {%- if current_tags and current_tags.size > 0 -%}
+            {%- assign is_active = false -%}
+          {%- endif -%}
+        {%- else -%}
+          {%- assign tag_url   = "/blogs/news/tagged/" | append: slug -%}
+          {%- assign is_active = false -%}
+          {%- if current_tags contains slug -%}
+            {%- assign is_active = true -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        <a
+          href="{{ tag_url }}"
+          class="bm-tag-btn{% if is_active %} bm-tag-btn--active{% endif %}"
+          {% if is_active %}aria-current="page"{% endif %}
+        >{{ label }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BM - Blog Tags",
+  "settings": [],
+  "presets": [
+    {
+      "name": "BM - Blog Tags"
+    }
+  ]
+}
+{% endschema %}

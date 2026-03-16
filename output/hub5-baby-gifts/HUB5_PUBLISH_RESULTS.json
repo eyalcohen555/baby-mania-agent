@@ -1,0 +1,68 @@
+{
+  "hub_id": "HUB-5",
+  "hub_name": "Baby Gifts",
+  "published_at": "2026-03-15T09:21:32.429173",
+  "blog_id": 109164036409,
+  "total": 7,
+  "published": 7,
+  "errors": 0,
+  "articles": [
+    {
+      "cluster_id": "HUB-5-Pillar",
+      "status": "PUBLISHED",
+      "article_id": 681842737465,
+      "handle": "matanot-letinok-madrih-male",
+      "url": "https://babymania-il.com/blogs/news/matanot-letinok-madrih-male",
+      "published_at": "2026-03-15T09:20:53+02:00",
+      "note": "Published in first run — verified via API"
+    },
+    {
+      "cluster_id": "HUB-5-C1",
+      "status": "PUBLISHED",
+      "article_id": 681842770233,
+      "handle": "matanot-baby-shower-reshima-nigmeret",
+      "url": "https://babymania-il.com/blogs/news/matanot-baby-shower-reshima-nigmeret",
+      "published_at": "2026-03-15T09:21:21+02:00"
+    },
+    {
+      "cluster_id": "HUB-5-C2",
+      "status": "PUBLISHED",
+      "article_id": 681842803001,
+      "handle": "matanot-maasiot-tinok-horeh-chadash",
+      "url": "https://babymania-il.com/blogs/news/matanot-maasiot-tinok-horeh-chadash",
+      "published_at": "2026-03-15T09:21:23+02:00"
+    },
+    {
+      "cluster_id": "HUB-5-C3",
+      "status": "PUBLISHED",
+      "article_id": 681842835769,
+      "handle": "matanot-yokra-tinok-zechronot",
+      "url": "https://babymania-il.com/blogs/news/matanot-yokra-tinok-zechronot",
+      "published_at": "2026-03-15T09:21:25+02:00"
+    },
+    {
+      "cluster_id": "HUB-5-C4",
+      "status": "PUBLISHED",
+      "article_id": 681842868537,
+      "handle": "ma-ima-chadasha-tzricha-achrei-lida",
+      "url": "https://babymania-il.com/blogs/news/ma-ima-chadasha-tzricha-achrei-lida",
+      "published_at": "2026-03-15T09:21:27+02:00"
+    },
+    {
+      "cluster_id": "HUB-5-C5",
+      "status": "PUBLISHED",
+      "article_id": 681842901305,
+      "handle": "matanot-tinok-rishon-madrih",
+      "url": "https://babymania-il.com/blogs/news/matanot-tinok-rishon-madrih",
+      "published_at": "2026-03-15T09:21:29+02:00"
+    },
+    {
+      "cluster_id": "HUB-5-C6",
+      "status": "PUBLISHED",
+      "article_id": 681842934073,
+      "handle": "set-matana-tinok-pitaron-nachon",
+      "url": "https://babymania-il.com/blogs/news/set-matana-tinok-pitaron-nachon",
+      "published_at": "2026-03-15T09:21:30+02:00"
+    }
+  ]
+}

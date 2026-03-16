@@ -1,0 +1,562 @@
+{% comment %}
+  BabyMania — Store Care (Section)
+  File: sections/bm-store-care.liquid
+  Purpose: Premium 2×2 care-instruction card grid.
+           Desktop: 2 columns · Mobile: 1 column · Limit: 4 cards
+  Data: product.metafields.baby_mania.care_instructions (priority) → section.blocks (fallback)
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
+
+  /* ============================================================
+     BM-CARE — CSS Variables
+  ============================================================ */
+  .bm-care-root {
+    --bm-c-brown:      #8B5E3C;
+    --bm-c-brown-text: #3a2c23;
+    --bm-c-icon-color: #8a684f;
+    --bm-c-muted:      #6e6258;
+    --bm-c-cream:      #FFFDF9;
+    --bm-c-border:     #efe7df;
+    --bm-c-radius:     18px;
+    --bm-c-font:       'Heebo', sans-serif;
+  }
+
+  /* ============================================================
+     BLOB ANIMATIONS
+  ============================================================ */
+  @keyframes bmCareFloatA {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(14px, -12px); }
+  }
+
+  @keyframes bmCareFloatB {
+    0%, 100% { transform: translate(0, 0); }
+    40%       { transform: translate(-12px, 16px); }
+    80%       { transform: translate(10px, -8px); }
+  }
+
+  /* ============================================================
+     CARD FADE-IN
+  ============================================================ */
+  @keyframes bm-care-fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============================================================
+     SECTION WRAPPER
+  ============================================================ */
+  .bm-care-root {
+    background: var(--bm-c-cream);
+    padding: 56px 20px;
+    font-family: var(--bm-c-font);
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ============================================================
+     DECORATIVE BLOBS
+  ============================================================ */
+  .bm-care-blob {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff 0%,
+      #f6efe7 60%,
+      #ede3da 100%
+    );
+    opacity: 0.18;
+    filter: blur(36px);
+    border-radius: 50%;
+    will-change: transform;
+  }
+
+  .bm-care-blob--1 {
+    width: 320px;
+    height: 320px;
+    top: -80px;
+    right: -100px;
+    animation: bmCareFloatA 28s ease-in-out infinite;
+  }
+
+  .bm-care-blob--2 {
+    width: 280px;
+    height: 280px;
+    bottom: -70px;
+    left: -90px;
+    animation: bmCareFloatB 34s ease-in-out infinite;
+  }
+
+  /* ============================================================
+     CONTENT CONTAINER
+  ============================================================ */
+  .bm-care-container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============================================================
+     SECTION HEADER
+  ============================================================ */
+  .bm-care-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .bm-care-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bm-c-brown);
+    background: #F5EDE4;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .bm-care-title {
+    font-family: 'Playfair Display', 'Heebo', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bm-c-brown-text);
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+
+  .bm-care-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--bm-c-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     ACCORDION LIST
+  ============================================================ */
+  .bm-care-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* ============================================================
+     ACCORDION ITEM
+  ============================================================ */
+  .bm-care-acc {
+    background: #ffffff;
+    border: 1px solid #efe7df;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04), 0 1px 4px rgba(0,0,0,0.02);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    animation: bm-care-fade-up 0.5s ease both;
+  }
+
+  /* Right-side colored accent bar (RTL) */
+  .bm-care-acc::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 4px;
+    border-radius: 0 16px 16px 0;
+  }
+
+  /* Staggered entrance */
+  .bm-care-acc:nth-child(1) { animation-delay: 0.06s; }
+  .bm-care-acc:nth-child(2) { animation-delay: 0.12s; }
+  .bm-care-acc:nth-child(3) { animation-delay: 0.18s; }
+  .bm-care-acc:nth-child(4) { animation-delay: 0.24s; }
+
+  /* Item 1 — teal */
+  .bm-care-acc:nth-child(1)::after { background: linear-gradient(180deg, #00ACC1, #4DD0E1); }
+  .bm-care-acc:nth-child(1) .bm-care-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E0F7FA 55%, #b2ebf2 100%);
+    box-shadow: 0 3px 10px rgba(0,188,212,0.22), inset 0 1px 3px rgba(255,255,255,0.9);
+  }
+  .bm-care-acc:nth-child(1) .bm-care-icon { color: #0097A7; }
+  .bm-care-acc:nth-child(1):has(.bm-care-acc-input:checked) {
+    box-shadow: 0 6px 24px rgba(0,188,212,0.12), 0 1px 4px rgba(0,0,0,0.02);
+  }
+
+  /* Item 2 — amber */
+  .bm-care-acc:nth-child(2)::after { background: linear-gradient(180deg, #F9A825, #FFD54F); }
+  .bm-care-acc:nth-child(2) .bm-care-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #FFF8E1 55%, #ffe082 100%);
+    box-shadow: 0 3px 10px rgba(249,168,37,0.22), inset 0 1px 3px rgba(255,255,255,0.9);
+  }
+  .bm-care-acc:nth-child(2) .bm-care-icon { color: #F9A825; }
+  .bm-care-acc:nth-child(2):has(.bm-care-acc-input:checked) {
+    box-shadow: 0 6px 24px rgba(249,168,37,0.12), 0 1px 4px rgba(0,0,0,0.02);
+  }
+
+  /* Item 3 — rose */
+  .bm-care-acc:nth-child(3)::after { background: linear-gradient(180deg, #EC407A, #F48FB1); }
+  .bm-care-acc:nth-child(3) .bm-care-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #FCE4EC 55%, #f48fb1 100%);
+    box-shadow: 0 3px 10px rgba(236,64,122,0.18), inset 0 1px 3px rgba(255,255,255,0.9);
+  }
+  .bm-care-acc:nth-child(3) .bm-care-icon { color: #C2185B; }
+  .bm-care-acc:nth-child(3):has(.bm-care-acc-input:checked) {
+    box-shadow: 0 6px 24px rgba(236,64,122,0.10), 0 1px 4px rgba(0,0,0,0.02);
+  }
+
+  /* Item 4 — sage green */
+  .bm-care-acc:nth-child(4)::after { background: linear-gradient(180deg, #43A047, #81C784); }
+  .bm-care-acc:nth-child(4) .bm-care-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E8F5E9 55%, #a5d6a7 100%);
+    box-shadow: 0 3px 10px rgba(67,160,71,0.22), inset 0 1px 3px rgba(255,255,255,0.9);
+  }
+  .bm-care-acc:nth-child(4) .bm-care-icon { color: #388E3C; }
+  .bm-care-acc:nth-child(4):has(.bm-care-acc-input:checked) {
+    box-shadow: 0 6px 24px rgba(67,160,71,0.12), 0 1px 4px rgba(0,0,0,0.02);
+  }
+
+  /* Hidden checkbox — !important overrides any theme-level input reset */
+  .bm-care-acc-input {
+    display: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Label row */
+  .bm-care-acc-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 16px 16px;
+    cursor: pointer;
+    user-select: none;
+    gap: 12px;
+    transition: background 0.25s ease;
+  }
+
+  .bm-care-acc-label:hover { background: rgba(0,0,0,0.018); }
+  .bm-care-acc-input:checked + .bm-care-acc-label { background: rgba(0,0,0,0.025); }
+
+  .bm-care-acc-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ============================================================
+     ICON CIRCLE
+  ============================================================ */
+  .bm-care-icon-wrap {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(255,255,255,0.55);
+    transition: transform 0.3s ease;
+  }
+
+  .bm-care-acc-input:checked + .bm-care-acc-label .bm-care-icon-wrap {
+    transform: scale(1.07);
+  }
+
+  .bm-care-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Accordion title */
+  .bm-care-acc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--bm-c-brown-text);
+    line-height: 1.3;
+  }
+
+  /* Arrow */
+  .bm-care-acc-arrow {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    fill: var(--bm-c-brown);
+    transition: transform 0.3s ease;
+  }
+
+  .bm-care-acc-input:checked + .bm-care-acc-label .bm-care-acc-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* Body */
+  .bm-care-acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .bm-care-acc-input:checked ~ .bm-care-acc-body {
+    max-height: 300px;
+  }
+
+  .bm-care-acc-body-inner {
+    padding: 14px 20px 18px 20px;
+    border-top: 1px solid #efe7df;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--bm-c-muted);
+    line-height: 1.65;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 640px) {
+    .bm-care-root { padding: 40px 16px; }
+    .bm-care-title { font-size: 22px; }
+    .bm-care-blob--1 { width: 220px; height: 180px; top: -50px; right: -60px; }
+    .bm-care-blob--2 { width: 180px; height: 160px; bottom: -40px; left: -50px; }
+  }
+</style>
+
+{% comment %} ── Data sources ───────────────────────────────────────────
+  Priority: product.metafields.baby_mania.care_instructions (JSON array)
+  Fallback: section.blocks type="care_item"
+  Limit: 4 cards max
+{% endcomment %}
+{% assign bm_care        = product.metafields.baby_mania.care_instructions.value %}
+{% assign bm_care_blocks = section.blocks | where: "type", "care_item" %}
+
+{% assign bm_has_care = false %}
+{% if bm_care and bm_care.size > 0 %}
+  {% assign bm_has_care = true %}
+{% elsif bm_care_blocks.size > 0 %}
+  {% assign bm_has_care = true %}
+{% endif %}
+
+{% if bm_has_care %}
+<section
+  class="bm-care-root"
+  aria-labelledby="bm-care-heading"
+>
+  <div class="bm-care-blob bm-care-blob--1" aria-hidden="true"></div>
+  <div class="bm-care-blob bm-care-blob--2" aria-hidden="true"></div>
+
+  <div class="bm-care-container">
+
+    {% if section.settings.section_title != blank or section.settings.section_subtitle != blank %}
+      <header class="bm-care-header">
+        {% if section.settings.eyebrow != blank %}
+          <span class="bm-care-eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+        {% if section.settings.section_title != blank %}
+          <h2 class="bm-care-title" id="bm-care-heading">{{ section.settings.section_title }}</h2>
+        {% endif %}
+        {% if section.settings.section_subtitle != blank %}
+          <p class="bm-care-subtitle">{{ section.settings.section_subtitle }}</p>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <div class="bm-care-grid" role="list">
+
+      {% comment %} ── SVG macro via capture ── {% endcomment %}
+
+      {% if bm_care and bm_care.size > 0 %}
+
+        {% for item in bm_care limit: 4 %}
+          {%- assign _icon = item.icon_type -%}
+          <div class="bm-care-acc" role="listitem">
+            <input type="checkbox" id="bm-care-{{ product.id }}-{{ forloop.index }}" class="bm-care-acc-input">
+            <label class="bm-care-acc-label" for="bm-care-{{ product.id }}-{{ forloop.index }}">
+              <div class="bm-care-acc-left">
+                <div class="bm-care-icon-wrap" aria-hidden="true">
+                  <span class="bm-care-icon">
+                    {% case _icon %}
+                      {% when 'wash_60' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M14 14.76V4a2 2 0 0 0-4 0v10.76"/><circle cx="12" cy="18" r="2.5"/><path d="M9.5 10h5"/></svg>
+                      {% when 'sun_dry' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                      {% when 'iron' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 16h14l4-5H7L3 16z"/><path d="M3 16l1.5 3h11l1.5-3"/><path d="M17 11V8a3 3 0 0 0-3-3H8"/></svg>
+                      {% when 'no_bleach' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                      {% when 'repeat' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                      {% when 'no_tumble_dry' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93l14.14 14.14"/></svg>
+                      {% when 'hand_wash' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20 7a1 1 0 0 0-1-1h-5V4a1 1 0 0 0-2 0v8l-2.4-2.4A1.5 1.5 0 0 0 7.5 12l5 6.5A4 4 0 0 0 16 20h1a4 4 0 0 0 4-4V7z"/></svg>
+                      {% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+                    {% endcase %}
+                  </span>
+                </div>
+                {% if item.card_title != blank %}
+                  <span class="bm-care-acc-title">{{ item.card_title }}</span>
+                {% endif %}
+              </div>
+              <svg class="bm-care-acc-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </label>
+            <div class="bm-care-acc-body">
+              <div class="bm-care-acc-body-inner">
+                {% if item.card_text != blank %}{{ item.card_text }}{% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+      {% else %}
+
+        {% for block in bm_care_blocks limit: 4 %}
+          {%- assign _icon = block.settings.icon_type -%}
+          <div class="bm-care-acc" role="listitem" {{ block.shopify_attributes }}>
+            <input type="checkbox" id="bm-care-b-{{ block.id }}" class="bm-care-acc-input">
+            <label class="bm-care-acc-label" for="bm-care-b-{{ block.id }}">
+              <div class="bm-care-acc-left">
+                <div class="bm-care-icon-wrap" aria-hidden="true">
+                  <span class="bm-care-icon">
+                    {% case _icon %}
+                      {% when 'wash_60' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M14 14.76V4a2 2 0 0 0-4 0v10.76"/><circle cx="12" cy="18" r="2.5"/><path d="M9.5 10h5"/></svg>
+                      {% when 'sun_dry' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                      {% when 'iron' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 16h14l4-5H7L3 16z"/><path d="M3 16l1.5 3h11l1.5-3"/><path d="M17 11V8a3 3 0 0 0-3-3H8"/></svg>
+                      {% when 'no_bleach' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                      {% when 'repeat' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                      {% when 'no_tumble_dry' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93l14.14 14.14"/></svg>
+                      {% when 'hand_wash' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20 7a1 1 0 0 0-1-1h-5V4a1 1 0 0 0-2 0v8l-2.4-2.4A1.5 1.5 0 0 0 7.5 12l5 6.5A4 4 0 0 0 16 20h1a4 4 0 0 0 4-4V7z"/></svg>
+                      {% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+                    {% endcase %}
+                  </span>
+                </div>
+                {% if block.settings.card_title != blank %}
+                  <span class="bm-care-acc-title">{{ block.settings.card_title }}</span>
+                {% endif %}
+              </div>
+              <svg class="bm-care-acc-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </label>
+            <div class="bm-care-acc-body">
+              <div class="bm-care-acc-body-inner">
+                {% if block.settings.card_text != blank %}{{ block.settings.card_text }}{% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+      {% endif %}
+
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "BM - הוראות טיפול",
+  "tag": "div",
+  "class": "bm-care-section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "טיפול בבגד"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "כותרת הסקשן",
+      "default": "הוראות טיפול בבגד"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "תת-כותרת",
+      "default": "כדי שהבגד ישמור על רכותו לאורך זמן"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "care_item",
+      "name": "פריט טיפול",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "סוג אייקון",
+          "default": "wash_60",
+          "options": [
+            { "value": "wash_60",       "label": "טמפרטורה / כביסה" },
+            { "value": "sun_dry",       "label": "ייבוש בשמש / צל" },
+            { "value": "iron",          "label": "גיהוץ" },
+            { "value": "no_bleach",     "label": "ללא אקונומיקה" },
+            { "value": "repeat",        "label": "כביסה חוזרת" },
+            { "value": "no_tumble_dry", "label": "ללא מייבש" },
+            { "value": "hand_wash",     "label": "כביסת יד" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "כותרת הכרטיס",
+          "default": "כביסה עד 60°C"
+        },
+        {
+          "type": "text",
+          "id": "card_text",
+          "label": "טקסט קצר",
+          "default": "מחמם ונקי — מתאים לבגדי תינוק"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM - הוראות טיפול",
+      "blocks": [
+        {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "wash_60",
+            "card_title": "כביסה עד 30°C",
+            "card_text": "תוכנית עדינה לשמירה על הבד"
+          }
+        },
+        {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "sun_dry",
+            "card_title": "ייבוש טבעי",
+            "card_text": "ייבשו בצל לשמירה על הצורה"
+          }
+        },
+        {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "no_bleach",
+            "card_title": "ללא אקונומיקה",
+            "card_text": "הרחיקו חומרי הלבנה מהבגד"
+          }
+        },
+        {
+          "type": "care_item",
+          "settings": {
+            "icon_type": "iron",
+            "card_title": "גיהוץ עדין",
+            "card_text": "חום נמוך בלבד — לא ישירות על הדפס"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

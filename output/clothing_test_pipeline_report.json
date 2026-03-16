@@ -1,0 +1,802 @@
+{
+  "products_tested": 10,
+  "push_succeeded": 10,
+  "metafields_written": 2,
+  "sections_rendered": "40/80",
+  "suffix_clothing_test": 10,
+  "failed_products": [
+    "10009173033273",
+    "10029648970041",
+    "10029649101113",
+    "10029649133881",
+    "9657091293497",
+    "9673732292921",
+    "9688660312377",
+    "9688934940985"
+  ],
+  "errors": [
+    "  missing metafield 'hero_eyebrow': 10009173033273",
+    "  missing metafield 'hero_headline': 10009173033273",
+    "  missing metafield 'hero_subheadline': 10009173033273",
+    "  missing metafield 'fabric_title': 10009173033273",
+    "  missing metafield 'fabric_body': 10009173033273",
+    "  missing metafield 'fabric_highlight': 10009173033273",
+    "  missing metafield 'fabric_tags': 10009173033273",
+    "  missing metafield 'whats_special': 10009173033273",
+    "  missing metafield 'benefits': 10009173033273",
+    "  missing metafield 'emotional_reassurance': 10009173033273",
+    "  missing metafield 'care_instructions': 10009173033273",
+    "  missing metafield 'faq': 10009173033273",
+    "  missing metafield 'hero_eyebrow': 10029648970041",
+    "  missing metafield 'hero_headline': 10029648970041",
+    "  missing metafield 'hero_subheadline': 10029648970041",
+    "  missing metafield 'fabric_title': 10029648970041",
+    "  missing metafield 'fabric_body': 10029648970041",
+    "  missing metafield 'fabric_highlight': 10029648970041",
+    "  missing metafield 'fabric_tags': 10029648970041",
+    "  missing metafield 'whats_special': 10029648970041",
+    "  missing metafield 'benefits': 10029648970041",
+    "  missing metafield 'emotional_reassurance': 10029648970041",
+    "  missing metafield 'care_instructions': 10029648970041",
+    "  missing metafield 'faq': 10029648970041",
+    "  missing metafield 'hero_eyebrow': 10029649101113",
+    "  missing metafield 'hero_headline': 10029649101113",
+    "  missing metafield 'hero_subheadline': 10029649101113",
+    "  missing metafield 'fabric_title': 10029649101113",
+    "  missing metafield 'fabric_body': 10029649101113",
+    "  missing metafield 'fabric_highlight': 10029649101113",
+    "  missing metafield 'fabric_tags': 10029649101113",
+    "  missing metafield 'whats_special': 10029649101113",
+    "  missing metafield 'benefits': 10029649101113",
+    "  missing metafield 'emotional_reassurance': 10029649101113",
+    "  missing metafield 'care_instructions': 10029649101113",
+    "  missing metafield 'faq': 10029649101113",
+    "  missing metafield 'hero_eyebrow': 10029649133881",
+    "  missing metafield 'hero_headline': 10029649133881",
+    "  missing metafield 'hero_subheadline': 10029649133881",
+    "  missing metafield 'fabric_title': 10029649133881",
+    "  missing metafield 'fabric_body': 10029649133881",
+    "  missing metafield 'fabric_highlight': 10029649133881",
+    "  missing metafield 'fabric_tags': 10029649133881",
+    "  missing metafield 'whats_special': 10029649133881",
+    "  missing metafield 'benefits': 10029649133881",
+    "  missing metafield 'emotional_reassurance': 10029649133881",
+    "  missing metafield 'care_instructions': 10029649133881",
+    "  missing metafield 'faq': 10029649133881",
+    "  missing metafield 'hero_eyebrow': 9657091293497",
+    "  missing metafield 'hero_headline': 9657091293497",
+    "  missing metafield 'hero_subheadline': 9657091293497",
+    "  missing metafield 'fabric_title': 9657091293497",
+    "  missing metafield 'fabric_body': 9657091293497",
+    "  missing metafield 'fabric_highlight': 9657091293497",
+    "  missing metafield 'fabric_tags': 9657091293497",
+    "  missing metafield 'whats_special': 9657091293497",
+    "  missing metafield 'benefits': 9657091293497",
+    "  missing metafield 'emotional_reassurance': 9657091293497",
+    "  missing metafield 'care_instructions': 9657091293497",
+    "  missing metafield 'faq': 9657091293497",
+    "  missing metafield 'hero_eyebrow': 9673732292921",
+    "  missing metafield 'hero_headline': 9673732292921",
+    "  missing metafield 'hero_subheadline': 9673732292921",
+    "  missing metafield 'fabric_title': 9673732292921",
+    "  missing metafield 'fabric_body': 9673732292921",
+    "  missing metafield 'fabric_highlight': 9673732292921",
+    "  missing metafield 'fabric_tags': 9673732292921",
+    "  missing metafield 'whats_special': 9673732292921",
+    "  missing metafield 'benefits': 9673732292921",
+    "  missing metafield 'emotional_reassurance': 9673732292921",
+    "  missing metafield 'care_instructions': 9673732292921",
+    "  missing metafield 'faq': 9673732292921",
+    "  missing metafield 'hero_eyebrow': 9688660312377",
+    "  missing metafield 'hero_headline': 9688660312377",
+    "  missing metafield 'hero_subheadline': 9688660312377",
+    "  missing metafield 'fabric_title': 9688660312377",
+    "  missing metafield 'fabric_body': 9688660312377",
+    "  missing metafield 'fabric_highlight': 9688660312377",
+    "  missing metafield 'fabric_tags': 9688660312377",
+    "  missing metafield 'whats_special': 9688660312377",
+    "  missing metafield 'benefits': 9688660312377",
+    "  missing metafield 'emotional_reassurance': 9688660312377",
+    "  missing metafield 'care_instructions': 9688660312377",
+    "  missing metafield 'faq': 9688660312377",
+    "  missing metafield 'hero_eyebrow': 9688934940985",
+    "  missing metafield 'hero_headline': 9688934940985",
+    "  missing metafield 'hero_subheadline': 9688934940985",
+    "  missing metafield 'fabric_title': 9688934940985",
+    "  missing metafield 'fabric_body': 9688934940985",
+    "  missing metafield 'fabric_highlight': 9688934940985",
+    "  missing metafield 'fabric_tags': 9688934940985",
+    "  missing metafield 'whats_special': 9688934940985",
+    "  missing metafield 'benefits': 9688934940985",
+    "  missing metafield 'emotional_reassurance': 9688934940985",
+    "  missing metafield 'care_instructions': 9688934940985",
+    "  missing metafield 'faq': 9688934940985"
+  ],
+  "risk_level": "HIGH — multiple failures",
+  "step2_table": {
+    "10009173033273": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "10029648970041": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "10029649101113": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "10029649133881": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "9657091293497": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "9673732292921": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "9687596728633": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "9688660312377": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "9688932909369": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    },
+    "9688934940985": {
+      "old": "clothing",
+      "new": "clothing-test",
+      "ok": true
+    }
+  },
+  "mf_results": {
+    "10009173033273": {
+      "present": 0,
+      "missing": [
+        "hero_eyebrow",
+        "hero_headline",
+        "hero_subheadline",
+        "fabric_title",
+        "fabric_body",
+        "fabric_highlight",
+        "fabric_tags",
+        "whats_special",
+        "benefits",
+        "emotional_reassurance",
+        "care_instructions",
+        "faq"
+      ],
+      "ok": false
+    },
+    "10029648970041": {
+      "present": 0,
+      "missing": [
+        "hero_eyebrow",
+        "hero_headline",
+        "hero_subheadline",
+        "fabric_title",
+        "fabric_body",
+        "fabric_highlight",
+        "fabric_tags",
+        "whats_special",
+        "benefits",
+        "emotional_reassurance",
+        "care_instructions",
+        "faq"
+      ],
+      "ok": false
+    },
+    "10029649101113": {
+      "present": 0,
+      "missing": [
+        "hero_eyebrow",
+        "hero_headline",
+        "hero_subheadline",
+        "fabric_title",
+        "fabric_body",
+        "fabric_highlight",
+        "fabric_tags",
+        "whats_special",
+        "benefits",
+        "emotional_reassurance",
+        "care_instructions",
+        "faq"
+      ],
+      "ok": false
+    },
+    "10029649133881": {
+      "present": 0,
+      "missing": [
+        "hero_eyebrow",
+        "hero_headline",
+        "hero_subheadline",
+        "fabric_title",
+        "fabric_body",
+        "fabric_highlight",
+        "fabric_tags",
+        "whats_special",
+        "benefits",
+        "emotional_reassurance",
+        "care_instructions",
+        "faq"
+      ],
+      "ok": false
+    },
+    "9657091293497": {
+      "present": 0,
+      "missing": [
+        "hero_eyebrow",
+        "hero_headline",
+        "hero_subheadline",
+        "fabric_title",
+        "fabric_body",
+        "fabric_highlight",
+        "fabric_tags",
+        "whats_special",
+        "benefits",
+        "emotional_reassurance",
+        "care_instructions",
+        "faq"
+      ],
+      "ok": false
+    },
+    "9673732292921": {
+      "present": 0,
+      "missing": [
+        "hero_eyebrow",
+        "hero_headline",
+        "hero_subheadline",
+        "fabric_title",
+        "fabric_body",
+        "fabric_highlight",
+        "fabric_tags",
+        "whats_special",
+        "benefits",
+        "emotional_reassurance",
+        "care_instructions",
+        "faq"
+      ],
+      "ok": false
+    },
+    "9687596728633": {
+      "present": 12,
+      "missing": [],
+      "ok": true
+    },
+    "9688660312377": {
+      "present": 0,
+      "missing": [
+        "hero_eyebrow",
+        "hero_headline",
+        "hero_subheadline",
+        "fabric_title",
+        "fabric_body",
+        "fabric_highlight",
+        "fabric_tags",
+        "whats_special",
+        "benefits",
+        "emotional_reassurance",
+        "care_instructions",
+        "faq"
+      ],
+      "ok": false
+    },
+    "9688932909369": {
+      "present": 12,
+      "missing": [],
+      "ok": true
+    },
+    "9688934940985": {
+      "present": 0,
+      "missing": [
+        "hero_eyebrow",
+        "hero_headline",
+        "hero_subheadline",
+        "fabric_title",
+        "fabric_body",
+        "fabric_highlight",
+        "fabric_tags",
+        "whats_special",
+        "benefits",
+        "emotional_reassurance",
+        "care_instructions",
+        "faq"
+      ],
+      "ok": false
+    }
+  },
+  "section_results": {
+    "10009173033273": {
+      "bm-store-banner": {
+        "ok": false,
+        "missing": [
+          "hero_eyebrow",
+          "hero_headline",
+          "hero_subheadline"
+        ]
+      },
+      "bm-store-fabric": {
+        "ok": false,
+        "missing": [
+          "fabric_title",
+          "fabric_body",
+          "fabric_highlight",
+          "fabric_tags"
+        ]
+      },
+      "bm-store-benefits": {
+        "ok": false,
+        "missing": [
+          "benefits",
+          "whats_special",
+          "emotional_reassurance"
+        ]
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": false,
+        "missing": [
+          "care_instructions"
+        ]
+      },
+      "bm-store-faq": {
+        "ok": false,
+        "missing": [
+          "faq"
+        ]
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "10029648970041": {
+      "bm-store-banner": {
+        "ok": false,
+        "missing": [
+          "hero_eyebrow",
+          "hero_headline",
+          "hero_subheadline"
+        ]
+      },
+      "bm-store-fabric": {
+        "ok": false,
+        "missing": [
+          "fabric_title",
+          "fabric_body",
+          "fabric_highlight",
+          "fabric_tags"
+        ]
+      },
+      "bm-store-benefits": {
+        "ok": false,
+        "missing": [
+          "benefits",
+          "whats_special",
+          "emotional_reassurance"
+        ]
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": false,
+        "missing": [
+          "care_instructions"
+        ]
+      },
+      "bm-store-faq": {
+        "ok": false,
+        "missing": [
+          "faq"
+        ]
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "10029649101113": {
+      "bm-store-banner": {
+        "ok": false,
+        "missing": [
+          "hero_eyebrow",
+          "hero_headline",
+          "hero_subheadline"
+        ]
+      },
+      "bm-store-fabric": {
+        "ok": false,
+        "missing": [
+          "fabric_title",
+          "fabric_body",
+          "fabric_highlight",
+          "fabric_tags"
+        ]
+      },
+      "bm-store-benefits": {
+        "ok": false,
+        "missing": [
+          "benefits",
+          "whats_special",
+          "emotional_reassurance"
+        ]
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": false,
+        "missing": [
+          "care_instructions"
+        ]
+      },
+      "bm-store-faq": {
+        "ok": false,
+        "missing": [
+          "faq"
+        ]
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "10029649133881": {
+      "bm-store-banner": {
+        "ok": false,
+        "missing": [
+          "hero_eyebrow",
+          "hero_headline",
+          "hero_subheadline"
+        ]
+      },
+      "bm-store-fabric": {
+        "ok": false,
+        "missing": [
+          "fabric_title",
+          "fabric_body",
+          "fabric_highlight",
+          "fabric_tags"
+        ]
+      },
+      "bm-store-benefits": {
+        "ok": false,
+        "missing": [
+          "benefits",
+          "whats_special",
+          "emotional_reassurance"
+        ]
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": false,
+        "missing": [
+          "care_instructions"
+        ]
+      },
+      "bm-store-faq": {
+        "ok": false,
+        "missing": [
+          "faq"
+        ]
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "9657091293497": {
+      "bm-store-banner": {
+        "ok": false,
+        "missing": [
+          "hero_eyebrow",
+          "hero_headline",
+          "hero_subheadline"
+        ]
+      },
+      "bm-store-fabric": {
+        "ok": false,
+        "missing": [
+          "fabric_title",
+          "fabric_body",
+          "fabric_highlight",
+          "fabric_tags"
+        ]
+      },
+      "bm-store-benefits": {
+        "ok": false,
+        "missing": [
+          "benefits",
+          "whats_special",
+          "emotional_reassurance"
+        ]
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": false,
+        "missing": [
+          "care_instructions"
+        ]
+      },
+      "bm-store-faq": {
+        "ok": false,
+        "missing": [
+          "faq"
+        ]
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "9673732292921": {
+      "bm-store-banner": {
+        "ok": false,
+        "missing": [
+          "hero_eyebrow",
+          "hero_headline",
+          "hero_subheadline"
+        ]
+      },
+      "bm-store-fabric": {
+        "ok": false,
+        "missing": [
+          "fabric_title",
+          "fabric_body",
+          "fabric_highlight",
+          "fabric_tags"
+        ]
+      },
+      "bm-store-benefits": {
+        "ok": false,
+        "missing": [
+          "benefits",
+          "whats_special",
+          "emotional_reassurance"
+        ]
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": false,
+        "missing": [
+          "care_instructions"
+        ]
+      },
+      "bm-store-faq": {
+        "ok": false,
+        "missing": [
+          "faq"
+        ]
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "9687596728633": {
+      "bm-store-banner": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-fabric": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-benefits": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-faq": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "9688660312377": {
+      "bm-store-banner": {
+        "ok": false,
+        "missing": [
+          "hero_eyebrow",
+          "hero_headline",
+          "hero_subheadline"
+        ]
+      },
+      "bm-store-fabric": {
+        "ok": false,
+        "missing": [
+          "fabric_title",
+          "fabric_body",
+          "fabric_highlight",
+          "fabric_tags"
+        ]
+      },
+      "bm-store-benefits": {
+        "ok": false,
+        "missing": [
+          "benefits",
+          "whats_special",
+          "emotional_reassurance"
+        ]
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": false,
+        "missing": [
+          "care_instructions"
+        ]
+      },
+      "bm-store-faq": {
+        "ok": false,
+        "missing": [
+          "faq"
+        ]
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "9688932909369": {
+      "bm-store-banner": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-fabric": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-benefits": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-faq": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    },
+    "9688934940985": {
+      "bm-store-banner": {
+        "ok": false,
+        "missing": [
+          "hero_eyebrow",
+          "hero_headline",
+          "hero_subheadline"
+        ]
+      },
+      "bm-store-fabric": {
+        "ok": false,
+        "missing": [
+          "fabric_title",
+          "fabric_body",
+          "fabric_highlight",
+          "fabric_tags"
+        ]
+      },
+      "bm-store-benefits": {
+        "ok": false,
+        "missing": [
+          "benefits",
+          "whats_special",
+          "emotional_reassurance"
+        ]
+      },
+      "bm-store-sizes": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-care": {
+        "ok": false,
+        "missing": [
+          "care_instructions"
+        ]
+      },
+      "bm-store-faq": {
+        "ok": false,
+        "missing": [
+          "faq"
+        ]
+      },
+      "bm-store-urgency": {
+        "ok": true,
+        "missing": []
+      },
+      "bm-store-contact": {
+        "ok": true,
+        "missing": []
+      }
+    }
+  }
+}

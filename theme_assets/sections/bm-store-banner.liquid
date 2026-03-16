@@ -1,0 +1,457 @@
+{% comment %}
+  BabyMania — Store Banner (Section 1 of 8)
+  File: sections/bm-store-banner.liquid
+  Purpose: Sticky promotional banner with rotating messages.
+{% endcomment %}
+
+<style>
+  /* ============================================================
+     BM-STORE-BANNER — CSS Variables
+  ============================================================ */
+  .bm-banner-root {
+    --bm-brown:        #8B5E3C;
+    --bm-brown-dark:   #6B4530;
+    --bm-brown-light:  #F5EDE4;
+    --bm-cream:        #FFFDF9;
+    --bm-white:        #FFFFFF;
+    --bm-gold:         #D4A853;
+    --bm-text-muted:   rgba(255, 255, 255, 0.82);
+    --bm-font:         'Heebo', sans-serif;
+  }
+
+  /* ============================================================
+     ANIMATIONS
+  ============================================================ */
+  @keyframes bm-slide-down {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
+  }
+
+  @keyframes bm-shimmer-line {
+    0%   { background-position: -400% center; }
+    100% { background-position:  400% center; }
+  }
+
+  @keyframes bm-gift-bounce {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50%       { transform: translateY(-3px) rotate(4deg); }
+  }
+
+  @keyframes bm-icon-fade-in {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes bm-msg-enter {
+    from { opacity: 0; transform: translateY(55%); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bm-msg-exit {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-55%); }
+  }
+
+  /* ============================================================
+     STICKY WRAPPER
+  ============================================================ */
+  .bm-banner-root {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9000;
+    width: 100%;
+    animation: bm-slide-down 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    font-family: var(--bm-font);
+    direction: rtl;
+  }
+
+  /* ============================================================
+     MAIN BANNER STRIP
+  ============================================================ */
+  .bm-banner-strip {
+    background: linear-gradient(
+      100deg,
+      var(--bm-brown-dark) 0%,
+      var(--bm-brown)      45%,
+      #9E6B46              100%
+    );
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle shimmer overlay */
+  .bm-banner-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent            0%,
+      rgba(255,255,255,0.06) 40%,
+      rgba(255,255,255,0.12) 50%,
+      rgba(255,255,255,0.06) 60%,
+      transparent            100%
+    );
+    background-size: 400% 100%;
+    animation: bm-shimmer-line 5s ease infinite;
+    pointer-events: none;
+  }
+
+  /* Gold accent line at the top */
+  .bm-banner-strip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent    0%,
+      var(--bm-gold) 30%,
+      #F0C070        50%,
+      var(--bm-gold) 70%,
+      transparent    100%
+    );
+  }
+
+  /* ============================================================
+     INNER LAYOUT
+  ============================================================ */
+  .bm-banner-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    position: relative;
+  }
+
+  /* ============================================================
+     GIFT ICON
+  ============================================================ */
+  .bm-banner-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(212, 168, 83, 0.22);
+    border: 1px solid rgba(212, 168, 83, 0.5);
+    border-radius: 50%;
+    animation: bm-icon-fade-in 0.55s ease both, bm-gift-bounce 2.8s ease-in-out 0.6s infinite;
+    transition: transform 0.22s ease;
+  }
+
+  .bm-banner-icon:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
+  }
+
+  .bm-banner-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: var(--bm-gold);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ============================================================
+     ROTATING MESSAGES CONTAINER
+  ============================================================ */
+  .bm-banner-messages-wrap {
+    position: relative;
+    height: 1.5em;
+    overflow: hidden;
+    text-align: center;
+    flex: 1;
+    max-width: 700px;
+  }
+
+  .bm-banner-message {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(15px, 2vw, 17px);
+    font-weight: 600;
+    color: var(--bm-white);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    opacity: 0;
+  }
+
+  .bm-banner-message.bm-msg--active {
+    animation: bm-msg-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    opacity: 1;
+  }
+
+  .bm-banner-message.bm-msg--exit {
+    animation: bm-msg-exit 0.45s cubic-bezier(0.55, 0, 0.78, 0) both;
+  }
+
+  .bm-banner-message .bm-highlight {
+    color: var(--bm-gold);
+    font-weight: 700;
+  }
+
+  /* ============================================================
+     CLOSE BUTTON
+  ============================================================ */
+  .bm-banner-close {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease;
+    color: var(--bm-white);
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    opacity: 0.75;
+  }
+
+  .bm-banner-close:hover {
+    background: rgba(255, 255, 255, 0.22);
+    opacity: 1;
+  }
+
+  .bm-banner-close-icon {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: var(--bm-white);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+  }
+
+  /* ============================================================
+     BOTTOM ACCENT LINE
+  ============================================================ */
+  .bm-banner-bottom-line {
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      var(--bm-brown-dark) 0%,
+      var(--bm-gold)        35%,
+      #F0C070              50%,
+      var(--bm-gold)        65%,
+      var(--bm-brown-dark) 100%
+    );
+    opacity: 0.7;
+  }
+
+  /* ============================================================
+     HIDDEN STATE
+  ============================================================ */
+  .bm-banner-root.bm-banner--hidden {
+    display: none;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 600px) {
+    .bm-banner-inner {
+      padding: 10px 44px 10px 44px;
+      gap: 10px;
+    }
+
+    .bm-banner-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    .bm-banner-icon svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .bm-banner-message {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .bm-banner-message {
+      font-size: 12.5px;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .bm-banner-messages-wrap {
+      height: auto;
+      min-height: 1.5em;
+    }
+  }
+</style>
+
+{% if section.settings.show_banner %}
+<div class="bm-banner-root" id="bm-store-banner" role="banner" aria-label="באנר מבצעים">
+
+  <div class="bm-banner-strip">
+    <div class="bm-banner-inner">
+
+      {% comment %} Gift SVG icon {% endcomment %}
+      <div class="bm-banner-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 12v10H4V12M22 7H2v5h20V7zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+        </svg>
+      </div>
+
+      {% comment %} Rotating messages {% endcomment %}
+      <div class="bm-banner-messages-wrap" aria-live="polite">
+        <div class="bm-banner-message" id="bm-msg-0">
+          {{ section.settings.msg1_before }}<span class="bm-highlight">{{ section.settings.msg1_highlight }}</span>
+        </div>
+        <div class="bm-banner-message" id="bm-msg-1">
+          {{ section.settings.msg2 }}
+        </div>
+      </div>
+
+      {% comment %} Close / dismiss button {% endcomment %}
+      <button
+        class="bm-banner-close"
+        id="bm-banner-close-btn"
+        aria-label="סגור באנר"
+        type="button"
+      >
+        <svg class="bm-banner-close-icon" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="1" y1="1" x2="13" y2="13"/>
+          <line x1="13" y1="1" x2="1"  y2="13"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <div class="bm-banner-bottom-line" aria-hidden="true"></div>
+
+</div>
+{% endif %}
+
+<script>
+  (function () {
+    var banner   = document.getElementById('bm-store-banner');
+    var closeBtn = document.getElementById('bm-banner-close-btn');
+    if (!banner) return;
+
+    /* ---- Close logic ---- */
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        banner.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+        banner.style.opacity    = '0';
+        banner.style.transform  = 'translateY(-100%)';
+        setTimeout(function () {
+          banner.classList.add('bm-banner--hidden');
+          try { sessionStorage.setItem('bm_banner_closed', '1'); } catch (e) {}
+        }, 260);
+      });
+    }
+
+    try {
+      if (sessionStorage.getItem('bm_banner_closed') === '1') {
+        banner.classList.add('bm-banner--hidden');
+        return;
+      }
+    } catch (e) {}
+
+    /* ---- Rotating messages ---- */
+    var messages = banner.querySelectorAll('.bm-banner-message');
+    if (messages.length < 2) {
+      if (messages.length === 1) messages[0].classList.add('bm-msg--active');
+      return;
+    }
+
+    var current  = 0;
+    var interval = {{ section.settings.rotation_interval | times: 1000 }};
+    var ANIM_MS  = 450;
+
+    /* Show first message after banner slides in */
+    setTimeout(function () {
+      messages[0].classList.add('bm-msg--active');
+
+      setInterval(function () {
+        var prev = current;
+        current  = (current + 1) % messages.length;
+
+        /* Exit previous */
+        messages[prev].classList.remove('bm-msg--active');
+        messages[prev].classList.add('bm-msg--exit');
+        var exitEl = messages[prev];
+        setTimeout(function () { exitEl.classList.remove('bm-msg--exit'); }, ANIM_MS);
+
+        /* Enter next */
+        messages[current].classList.add('bm-msg--active');
+      }, interval);
+
+    }, 300);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "BM — Store Banner",
+  "tag": "div",
+  "class": "bm-store-banner-section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "msg1_before",
+      "label": "הודעה 1 — טקסט לפני ההדגשה",
+      "default": "קנייה מעל ₪299 – "
+    },
+    {
+      "type": "text",
+      "id": "msg1_highlight",
+      "label": "הודעה 1 — טקסט מודגש (זהב)",
+      "default": "מתנה חינם"
+    },
+    {
+      "type": "text",
+      "id": "msg2",
+      "label": "הודעה 2",
+      "default": "משלוח חינם מעל ₪200"
+    },
+    {
+      "type": "range",
+      "id": "rotation_interval",
+      "label": "מהירות החלפה (שניות)",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "הצג באנר",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM — Store Banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,97 @@
+{
+  "theme_id": 183668179257,
+  "theme_name": "Copy of  Dawn new",
+  "sections": [
+    {
+      "filename": "bm-store-banner.liquid",
+      "key": "sections/bm-store-banner.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-banner.liquid",
+      "size_bytes": 12035,
+      "size_kb": 11.8
+    },
+    {
+      "filename": "bm-store-benefits.liquid",
+      "key": "sections/bm-store-benefits.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-benefits.liquid",
+      "size_bytes": 21388,
+      "size_kb": 20.9
+    },
+    {
+      "filename": "bm-store-care.liquid",
+      "key": "sections/bm-store-care.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-care.liquid",
+      "size_bytes": 18481,
+      "size_kb": 18.0
+    },
+    {
+      "filename": "bm-store-contact.liquid",
+      "key": "sections/bm-store-contact.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-contact.liquid",
+      "size_bytes": 9074,
+      "size_kb": 8.9
+    },
+    {
+      "filename": "bm-store-fabric.liquid",
+      "key": "sections/bm-store-fabric.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-fabric.liquid",
+      "size_bytes": 10208,
+      "size_kb": 10.0
+    },
+    {
+      "filename": "bm-store-faq.liquid",
+      "key": "sections/bm-store-faq.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-faq.liquid",
+      "size_bytes": 9562,
+      "size_kb": 9.3
+    },
+    {
+      "filename": "bm-store-features.liquid",
+      "key": "sections/bm-store-features.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-features.liquid",
+      "size_bytes": 14428,
+      "size_kb": 14.1
+    },
+    {
+      "filename": "bm-store-hero.liquid",
+      "key": "sections/bm-store-hero.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-hero.liquid",
+      "size_bytes": 11867,
+      "size_kb": 11.6
+    },
+    {
+      "filename": "bm-store-main-overrides.liquid",
+      "key": "sections/bm-store-main-overrides.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-main-overrides.liquid",
+      "size_bytes": 7592,
+      "size_kb": 7.4
+    },
+    {
+      "filename": "bm-store-sizes.liquid",
+      "key": "sections/bm-store-sizes.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-sizes.liquid",
+      "size_bytes": 7695,
+      "size_kb": 7.5
+    },
+    {
+      "filename": "bm-store-urgency.liquid",
+      "key": "sections/bm-store-urgency.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\bm-store-urgency.liquid",
+      "size_bytes": 12690,
+      "size_kb": 12.4
+    },
+    {
+      "filename": "main-product.liquid",
+      "key": "sections/main-product.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\main-product.liquid",
+      "size_bytes": 98979,
+      "size_kb": 96.7
+    },
+    {
+      "filename": "related-products.liquid",
+      "key": "sections/related-products.liquid",
+      "local_path": "C:\\Projects\\baby-mania-agent\\theme_assets\\sections\\related-products.liquid",
+      "size_bytes": 7698,
+      "size_kb": 7.5
+    }
+  ]
+}

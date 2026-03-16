@@ -1,0 +1,331 @@
+{% comment %} Data: product.metafields.baby_mania (priority) → section.blocks (fallback) {% endcomment %}
+{% assign bm_faq = product.metafields.baby_mania.faq.value %}
+
+{% assign bm_has_faq = false %}
+{% if bm_faq %}
+  {% assign bm_has_faq = true %}
+{% elsif section.settings.show_section and section.blocks.size > 0 %}
+  {% assign bm_has_faq = true %}
+{% endif %}
+
+{% if bm_has_faq %}
+
+<style>
+  /* ===== BM-FAQ: Base Reset ===== */
+  .bm-faq-wrapper *,
+  .bm-faq-wrapper *::before,
+  .bm-faq-wrapper *::after {
+    box-sizing: border-box;
+  }
+
+  /* ===== BM-FAQ: Section Wrapper ===== */
+  .bm-faq-wrapper {
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    background: transparent;
+    padding: 48px 16px;
+  }
+
+  /* ===== BM-FAQ: Inner Container ===== */
+  .bm-faq-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ===== BM-FAQ: Section Title ===== */
+  .bm-faq-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #8B5E3C;
+    text-align: center;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
+  }
+
+  .bm-faq-subtitle {
+    font-size: 0.95rem;
+    color: #9E8272;
+    text-align: center;
+    margin: 0 0 36px 0;
+    font-weight: 400;
+  }
+
+  /* ===== BM-FAQ: Card ===== */
+  .bm-faq-card {
+    background: linear-gradient(180deg, #FFF8F2 0%, #FFFFFF 70%);
+    border: 1px solid #E8E1D8;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(139, 94, 60, 0.06);
+  }
+
+  /* ===== BM-FAQ: Item ===== */
+  .bm-faq-item {
+    border-bottom: 1px solid #E8E1D8;
+  }
+
+  .bm-faq-item:last-child {
+    border-bottom: none;
+  }
+
+  /* ===== BM-FAQ: Hidden Checkbox (CSS-only toggle) ===== */
+  .bm-faq-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  /* ===== BM-FAQ: Question Label ===== */
+  .bm-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.25s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .bm-faq-question:hover {
+    background: #FAF0E8;
+  }
+
+  /* When checkbox is checked — highlight question row */
+  .bm-faq-toggle:checked + .bm-faq-question {
+    background: #F5EDE4;
+  }
+
+  /* ===== BM-FAQ: Question Text ===== */
+  .bm-faq-question-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3D2B1F;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  /* ===== BM-FAQ: Arrow Icon ===== */
+  .bm-faq-arrow {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: #8B5E3C;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bm-faq-arrow svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  /* Rotate arrow when open */
+  .bm-faq-toggle:checked + .bm-faq-question .bm-faq-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* ===== BM-FAQ: Answer Panel ===== */
+  .bm-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.3s ease,
+                opacity 0.3s ease;
+    opacity: 0;
+    padding: 0 20px;
+    background: #FFFFFF;
+  }
+
+  /* When checkbox is checked — expand answer */
+  .bm-faq-toggle:checked ~ .bm-faq-answer {
+    max-height: 400px;
+    opacity: 1;
+    padding: 16px 20px 20px 20px;
+  }
+
+  /* ===== BM-FAQ: Answer Text ===== */
+  .bm-faq-answer-text {
+    font-size: 0.9375rem;
+    color: #5C4033;
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  .bm-faq-answer-text strong {
+    color: #8B5E3C;
+    font-weight: 600;
+  }
+
+  /* ===== BM-FAQ: Responsive ===== */
+  @media (max-width: 520px) {
+    .bm-faq-wrapper {
+      padding: 36px 12px;
+    }
+
+    .bm-faq-title {
+      font-size: 1.45rem;
+    }
+
+    .bm-faq-question {
+      padding: 16px 14px;
+    }
+
+    .bm-faq-question-text {
+      font-size: 0.9375rem;
+    }
+
+    .bm-faq-toggle:checked ~ .bm-faq-answer {
+      padding: 14px 14px 18px 14px;
+    }
+  }
+</style>
+
+<section class="bm-faq-wrapper" id="bm-faq-section">
+  <div class="bm-faq-container">
+
+    {% if section.settings.title != blank %}
+      <h2 class="bm-faq-title">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+      <p class="bm-faq-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <div class="bm-faq-card">
+      {% if bm_faq %}
+        {% for item in bm_faq %}
+          {% assign item_id = 'bm-faq-' | append: section.id | append: '-' | append: forloop.index %}
+          <div class="bm-faq-item">
+            <input type="checkbox" class="bm-faq-toggle" id="{{ item_id }}" name="{{ item_id }}" aria-hidden="true">
+            <label class="bm-faq-question" for="{{ item_id }}" aria-expanded="false">
+              <span class="bm-faq-question-text">{{ item.question }}</span>
+              <span class="bm-faq-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </label>
+            <div class="bm-faq-answer" role="region" aria-labelledby="{{ item_id }}">
+              <p class="bm-faq-answer-text">{{ item.answer }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        {% for block in section.blocks %}
+          {% if block.type == 'faq_item' %}
+            {% assign item_id = 'bm-faq-' | append: section.id | append: '-' | append: forloop.index %}
+            <div class="bm-faq-item" {{ block.shopify_attributes }}>
+              <input type="checkbox" class="bm-faq-toggle" id="{{ item_id }}" name="{{ item_id }}" aria-hidden="true">
+              <label class="bm-faq-question" for="{{ item_id }}" aria-expanded="false">
+                <span class="bm-faq-question-text">{{ block.settings.question }}</span>
+                <span class="bm-faq-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+              <div class="bm-faq-answer" role="region" aria-labelledby="{{ item_id }}">
+                <p class="bm-faq-answer-text">{{ block.settings.answer }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% endif %}{%- comment -%}closes bm_has_faq{%- endcomment -%}
+
+{% schema %}
+{
+  "name": "BM - שאלות ותשובות",
+  "tag": "section",
+  "class": "bm-faq-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "הצג סקשן",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "כותרת",
+      "default": "שאלות נפוצות"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "תת-כותרת",
+      "default": "כל מה שרציתם לדעת — במקום אחד"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "שאלה ותשובה",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "שאלה",
+          "default": "כמה זמן לוקח המשלוח?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "תשובה",
+          "default": "זמן האספקה הוא 5–10 ימי עסקים מרגע ביצוע ההזמנה. תקבלו מספר מעקב ב-SMS מיד לאחר שהחבילה יצאה לדרך."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM - שאלות ותשובות",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "כמה זמן לוקח המשלוח?",
+            "answer": "זמן האספקה הוא 5–10 ימי עסקים מרגע ביצוע ההזמנה. תקבלו מספר מעקב ב-SMS מיד לאחר שהחבילה יצאה לדרך."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "מה מדיניות ההחזרות?",
+            "answer": "ניתן להחזיר מוצרים עד 14 יום מיום הקבלה, בתנאי שלא נעשה בהם שימוש והם נמצאים באריזה המקורית. עלות שליח להחלפה היא 30₪."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "איך בוחרים מידה?",
+            "answer": "מומלץ להיעזר בטבלת המידות שמופיעה בדף המוצר. לתינוקות גבוהים מגילם — כדאי לבחור מידה אחת מעלה. יש שאלה? פנו אלינו ב-WhatsApp ונשמח לעזור."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "האם המוצר מתאים כמתנה?",
+            "answer": "בהחלט. ניתן להוסיף כרטיס ברכה אישי בהזמנה, והמוצר מגיע באריזת מתנה מוקפדת. זה מתנה שכיף לתת — וכיף עוד יותר לקבל."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

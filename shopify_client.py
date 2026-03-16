@@ -72,3 +72,53 @@ def update_product(product_id, body_html):
     resp = requests.put(f"{BASE_URL}/products/{product_id}.json", headers=_headers(), json=payload)
     resp.raise_for_status()
     return resp.json()["product"]
+
+
+# ─── Blog Articles ────────────────────────────────────────────────────────────
+
+def get_blog_articles(blog_id, limit=250):
+    """Fetch all articles from a Shopify blog (paginated)."""
+    articles = []
+    params = {"limit": limit}
+    url = f"{BASE_URL}/blogs/{blog_id}/articles.json"
+
+    while url:
+        resp = requests.get(url, headers=_headers(), params=params)
+        resp.raise_for_status()
+        batch = resp.json().get("articles", [])
+        articles.extend(batch)
+
+        # Follow Shopify pagination via Link header
+        link_header = resp.headers.get("Link", "")
+        next_url = None
+        for part in link_header.split(","):
+            part = part.strip()
+            if 'rel="next"' in part:
+                next_url = part.split(";")[0].strip().strip("<>")
+                break
+        url = next_url
+        params = {}  # page_info is embedded in next_url
+
+    return articles
+
+
+def get_blog_article(blog_id, article_id):
+    """Fetch a single blog article."""
+    resp = requests.get(
+        f"{BASE_URL}/blogs/{blog_id}/articles/{article_id}.json",
+        headers=_headers(),
+    )
+    resp.raise_for_status()
+    return resp.json()["article"]
+
+
+def update_blog_article(blog_id, article_id, body_html):
+    """Update a blog article's HTML body in Shopify."""
+    payload = {"article": {"id": article_id, "body_html": body_html}}
+    resp = requests.put(
+        f"{BASE_URL}/blogs/{blog_id}/articles/{article_id}.json",
+        headers=_headers(),
+        json=payload,
+    )
+    resp.raise_for_status()
+    return resp.json()["article"]

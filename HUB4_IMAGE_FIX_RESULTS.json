@@ -1,0 +1,137 @@
+{
+  "article_deleted": 676685971769,
+  "delete_status": 404,
+  "images_available": 397,
+  "articles": [
+    {
+      "role": "Pillar",
+      "article_id": 681481797945,
+      "status": "success",
+      "featured_image_set": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S9a6a9251711a44fbae1fc113f9880916N.webp?v=1754215955",
+      "shopify_confirmed_featured": "https://cdn.shopify.com/s/files/1/0864/9677/2409/articles/S9a6a9251711a44fbae1fc113f9880916N.webp?v=1773570937",
+      "broken_urls_fixed": 3,
+      "broken_urls_remaining": 0,
+      "replacements": [
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/sensitive-baby-skin-hero.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S9a6a9251711a44fbae1fc113f9880916N.webp?v=1754215955",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-cotton-clothing-soft.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sbb66fc84dcf04c579f69c4bb1b6aa100n.webp?v=1754215955",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-skin-care-routine.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S570f97233f4648768f515a32d7b8c13cA.webp?v=1754215955",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        }
+      ]
+    },
+    {
+      "role": "C1",
+      "article_id": 681481830713,
+      "status": "success",
+      "featured_image_set": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sbb66fc84dcf04c579f69c4bb1b6aa100n.webp?v=1754215955",
+      "shopify_confirmed_featured": "https://cdn.shopify.com/s/files/1/0864/9677/2409/articles/Sbb66fc84dcf04c579f69c4bb1b6aa100n.webp?v=1773570939",
+      "broken_urls_fixed": 3,
+      "broken_urls_remaining": 0,
+      "replacements": [
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-fabrics-comparison-hero.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sa2e11911466f4f79b60a9fe4a867f765F.webp?v=1754215955",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/cotton-fabric-closeup-baby.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S035dd55bdc654b019041737c75657fae6.webp?v=1754215955",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-wearing-cotton-outfit.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S690f8d9c14954a0a8191f72c14f4d7e3T.webp?v=1754215955",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        }
+      ]
+    },
+    {
+      "role": "C2",
+      "article_id": 681481863481,
+      "status": "success",
+      "featured_image_set": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S570f97233f4648768f515a32d7b8c13cA.webp?v=1754215955",
+      "shopify_confirmed_featured": "https://cdn.shopify.com/s/files/1/0864/9677/2409/articles/S570f97233f4648768f515a32d7b8c13cA.webp?v=1773570941",
+      "broken_urls_fixed": 3,
+      "broken_urls_remaining": 0,
+      "replacements": [
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/cotton-baby-clothes-hero.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S5424b13006d3417aa6f95afca3402dd2g.webp?v=1754215956",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/cotton-properties-infographic.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S79b1052db1fe4906907709e1e42e1c443.webp?v=1754215955",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-cotton-seasonal-wear.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S6e7771b5a85a49daba4cdf455db96c76e.webp?v=1754215956",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        }
+      ]
+    },
+    {
+      "role": "C3",
+      "article_id": 681481896249,
+      "status": "success",
+      "featured_image_set": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sa2e11911466f4f79b60a9fe4a867f765F.webp?v=1754215955",
+      "shopify_confirmed_featured": "https://cdn.shopify.com/s/files/1/0864/9677/2409/articles/Sa2e11911466f4f79b60a9fe4a867f765F.webp?v=1773570944",
+      "broken_urls_fixed": 3,
+      "broken_urls_remaining": 0,
+      "replacements": [
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-sensitive-skin-signs-hero.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S229f619ac7a34d0c84e445e37e65aa07q.webp?v=1754215956",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-skin-redness-signs.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S6d7410ea15084526a960b72fc1c28b822.webp?v=1754215956",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-doctor-consultation.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S3b667c59e09645209da7e46a09d41dd4R.webp?v=1754215956",
+          "product": "1-4T Baby Sandals Summer Breathable Air Mesh Unisex Kids Casual Shoes Anti-Slip Soft Sole First Walkers Infant Lightweight Shoes"
+        }
+      ]
+    },
+    {
+      "role": "C4",
+      "article_id": 681481929017,
+      "status": "success",
+      "featured_image_set": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S035dd55bdc654b019041737c75657fae6.webp?v=1754215955",
+      "shopify_confirmed_featured": "https://cdn.shopify.com/s/files/1/0864/9677/2409/articles/S035dd55bdc654b019041737c75657fae6.webp?v=1773570946",
+      "broken_urls_fixed": 3,
+      "broken_urls_remaining": 0,
+      "replacements": [
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/safe-baby-clothing-checklist-hero.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/42f49328-1594-4fdf-8cc2-b359667445cf.jpg?v=1746697744",
+          "product": "2pcs Girls' Onesie with Ribbed Round Neck, Sleeveless, Half-Open Front, Shorts, Comfortable and Soft, Daily Casual Outing Wear"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-clothing-labels-check.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/c6ae5dc2-c683-4582-a19c-ee318cb2bccb.jpg?v=1746697743",
+          "product": "2pcs Girls' Onesie with Ribbed Round Neck, Sleeveless, Half-Open Front, Shorts, Comfortable and Soft, Daily Casual Outing Wear"
+        },
+        {
+          "original": "https://cdn.shopify.com/s/files/1/0891/5765/7897/files/baby-seasonal-clothing-tips.jpg",
+          "replacement": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/b0fb0e6a-b1be-46a0-86de-8aa3552c8786.jpg?v=1746697744",
+          "product": "2pcs Girls' Onesie with Ribbed Round Neck, Sleeveless, Half-Open Front, Shorts, Comfortable and Soft, Daily Casual Outing Wear"
+        }
+      ]
+    }
+  ]
+}

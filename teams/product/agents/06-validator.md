@@ -19,9 +19,11 @@ model: claude-opus-4-6
 3. hero_headline אינו מכיל שם מוצר גולמי בלבד (חייב להיות copywriting, לא title ישיר מ-Shopify)
 
 ### fabric_story
-4. קיים fabric_title לא ריק
-5. קיים fabric_body לא ריק
-6. קיים שדה fabric_tags עם לפחות תגית אחת
+4. קיים `fabric_title` לא ריק
+5. קיים `fabric_paragraph_1` לא ריק — מתאר תחושת הבד על התינוק
+6. קיים `fabric_paragraph_2` לא ריק — מסביר עמידות, רכות או נוחות יומיומית
+7. קיים `fabric_tags` עם לפחות 2 תגיות
+8. אסור שה-fabric_story כולו יכיל bullet list — חייב להיות נרטיב פסקאות
 
 ### whats_special
 7. קיים whats_special לא ריק
@@ -45,9 +47,11 @@ model: claude-opus-4-6
 19. כל שאלה מתחילה ב-Q: וכל תשובה ב-A:
 
 ### care_instructions
-20. בין 3 ל-5 פריטים
-21. כל פריט בפורמט: icon_type | כותרת | טקסט (3 חלקים)
-22. icon_type חייב להיות אחד מ: wash_60 / sun_dry / iron / no_bleach / repeat / no_tumble_dry / hand_wash
+20. קיים `care_section_title` = `הוראות כביסה — לחצו לפתיחה` (בדיוק)
+21. **בדיוק 5 פריטים** — לא 3, לא 4, לא 6
+22. כל פריט בפורמט: icon_type | כותרת | טקסט (3 חלקים מופרדים ב-|)
+23. icon_type חייב להיות אחד מ: wash_60 / wash_30 / sun_dry / iron / no_bleach / repeat / no_tumble_dry / hand_wash
+24. כל טקסט care מנוסח כיתרון — לא כאיסור (בדוק: "שומר על" ✅ / "אסור", "ללא", "הימנעו" ❌)
 
 ### מילים אסורות — Blacklist (בכל הסקשנים)
 23. אסור להשתמש במילה "מושלם" — יש להחליף ב"נוח", "מתאים", "טוב" וכדומה

@@ -1,0 +1,285 @@
+{
+  "product_id": "HUB-5",
+  "product_handle": "baby-gifts-hub",
+  "system_topic": "baby-gifts",
+  "market": "Israel",
+  "language": "he",
+  "generated_at": "2026-03-15T10:00:00+02:00",
+  "seed_entities": [
+    "מתנות לתינוק",
+    "בייבי שאוור",
+    "מתנה לברית",
+    "מתנה ליולדת",
+    "ביגוד כמתנה",
+    "סט מתנה",
+    "מתנות לתינוק ראשון"
+  ],
+  "hubs": [
+    {
+      "hub_id": "HUB-5",
+      "hub_name": "Baby Gifts",
+      "hub_priority": "high",
+      "hub_reason": "כוונת קנייה גבוהה מאוד — הקונה הוא לא ההורה אלא דוד, דודה, חבר או סבא/סבתא שמחפש מתנה מתאימה לאירוע מוגדר (ברית, בייבי שאוור, ביקור יולדת). פורמט ליסטיקל עובד מצוין כי הקונה רוצה רשימה ברורה ולא לחשוב יותר מדי. פוטנציאל מכירה גבוה דרך סטים ואוברולים כמתנות מוכנות.",
+      "pillar": {
+        "title": "מתנות לתינוק — המדריך המלא (בייבי שאוור, ברית, ביקור יולדת)",
+        "slug_suggestion": "matanot-letinok-madrih-male",
+        "primary_intent": "BOFU",
+        "primary_keyword": "מתנות לתינוק",
+        "secondary_keywords": [
+          "מתנה לבייבי שאוור",
+          "מתנה ליולדת",
+          "מתנות לתינוק ראשון",
+          "מה לקנות לתינוק"
+        ],
+        "target_length_words": 1800,
+        "product_bridge_candidates": ["Lino™ סט", "LUMI™ אוברול"],
+        "priority_score": 9
+      },
+      "clusters": [
+        {
+          "cluster_id": "HUB-5-C1",
+          "cluster_name": "Baby Shower Gift Ideas",
+          "title": "מה לקנות לבייבי שאוור כשהרשימה כבר נגמרה",
+          "slug_suggestion": "matanot-baby-shower-reshima-nigmeret",
+          "article_type": "listicle",
+          "primary_intent": "BOFU",
+          "primary_keyword": "מתנה לבייבי שאוור",
+          "secondary_keywords": [
+            "מה לקנות לבייבי שאוור",
+            "מתנות לבייבי שאוור מקוריות",
+            "רשימת מתנות לבייבי שאוור",
+            "בייבי שאוור מתנה שימושית"
+          ],
+          "target_length_words": 1200,
+          "product_bridge_candidates": ["Lino™ סט", "LUMI™ אוברול"],
+          "search_demand_estimate": "high",
+          "priority_score": 9,
+          "notes": "הרשימה 'כבר נגמרה' — זווית שמדברת ישירות לאנשים שמגיעים מאוחר או רוצים לצאת מהרשימה הרגילה"
+        },
+        {
+          "cluster_id": "HUB-5-C2",
+          "cluster_name": "Practical Gifts for New Parents",
+          "title": "מתנות מעשיות לתינוק שהורים חדשים באמת ישמחו עליהן",
+          "slug_suggestion": "matanot-maasiot-tinok-horeh-chadash",
+          "article_type": "listicle",
+          "primary_intent": "BOFU",
+          "primary_keyword": "מתנות מעשיות לתינוק",
+          "secondary_keywords": [
+            "מתנות שימושיות לתינוק",
+            "מה לקנות להורים חדשים",
+            "מתנות לתינוק שהורים אוהבים",
+            "מתנה טובה לתינוק"
+          ],
+          "target_length_words": 1200,
+          "product_bridge_candidates": ["Lino™ סט", "LUMI™ אוברול"],
+          "search_demand_estimate": "high",
+          "priority_score": 8,
+          "notes": "פוקוס על ערך מעשי — הקונה רוצה לדעת שהמתנה תשמש ולא תתאסף אבק"
+        },
+        {
+          "cluster_id": "HUB-5-C3",
+          "cluster_name": "Luxury Baby Gift Ideas",
+          "title": "מתנות יוקרה לתינוק — מה שישאר בזיכרון",
+          "slug_suggestion": "matanot-yokra-tinok-zechronot",
+          "article_type": "listicle",
+          "primary_intent": "BOFU",
+          "primary_keyword": "מתנות יוקרה לתינוק",
+          "secondary_keywords": [
+            "מתנה יוקרתית לתינוק",
+            "מתנה מפנקת לתינוק",
+            "מתנה יקרה לתינוק",
+            "מתנה מיוחדת לתינוק"
+          ],
+          "target_length_words": 1200,
+          "product_bridge_candidates": ["Lino™ סט", "LUMI™ אוברול"],
+          "search_demand_estimate": "high",
+          "priority_score": 8,
+          "notes": "קהל שלא רגיש למחיר — רוצה לתת מתנה שתיזכר. זווית רגשית חזקה."
+        },
+        {
+          "cluster_id": "HUB-5-C4",
+          "cluster_name": "What New Moms Really Need",
+          "title": "מה אמא חדשה באמת צריכה אחרי הלידה",
+          "slug_suggestion": "ma-ima-chadasha-tzricha-achrei-lida",
+          "article_type": "how-to",
+          "primary_intent": "AEO",
+          "primary_keyword": "מה צריך אחרי לידה",
+          "secondary_keywords": [
+            "מה לקנות לאמא חדשה",
+            "מתנה לאמא אחרי לידה",
+            "מתנה ליולדת",
+            "מה מכינים ללידה"
+          ],
+          "target_length_words": 1000,
+          "product_bridge_candidates": ["LUMI™ אוברול"],
+          "search_demand_estimate": "high",
+          "priority_score": 7,
+          "notes": "זווית AEO — תשובה ישירה לשאלה שנשאלת הרבה. מבדיל בין מה שאמא צריכה למה שהתינוק צריך."
+        },
+        {
+          "cluster_id": "HUB-5-C5",
+          "cluster_name": "Top Baby Gifts for First-Time Parents",
+          "title": "מתנות לתינוק ראשון — המדריך לאנשים שלא מכירים תינוקות",
+          "slug_suggestion": "matanot-tinok-rishon-madrih",
+          "article_type": "listicle",
+          "primary_intent": "BOFU",
+          "primary_keyword": "מתנות לתינוק ראשון",
+          "secondary_keywords": [
+            "מה לקנות לתינוק ראשון",
+            "מתנה לבן ראשון",
+            "מתנה לבת ראשונה",
+            "מה קונים לתינוק ראשון"
+          ],
+          "target_length_words": 1200,
+          "product_bridge_candidates": ["Lino™ סט", "LUMI™ אוברול"],
+          "search_demand_estimate": "high",
+          "priority_score": 8,
+          "notes": "זווית ייחודית — הדוד/הדודה שלא מכיר/ה תינוקות ולא יודע/ת מה מתאים. מורידה חרדת קנייה."
+        },
+        {
+          "cluster_id": "HUB-5-C6",
+          "cluster_name": "Baby Gift Bundles Guide",
+          "title": "סט מתנה לתינוק — למה זה תמיד הפתרון הנכון",
+          "slug_suggestion": "set-matana-tinok-pitaron-nachon",
+          "article_type": "listicle",
+          "primary_intent": "BOFU",
+          "primary_keyword": "סט מתנה לתינוק",
+          "secondary_keywords": [
+            "סט ביגוד לתינוק כמתנה",
+            "חבילת מתנה לתינוק",
+            "מארז מתנה לתינוק",
+            "סט מתנה ליולדת"
+          ],
+          "target_length_words": 1200,
+          "product_bridge_candidates": ["Lino™ סט", "LUMI™ אוברול"],
+          "search_demand_estimate": "high",
+          "priority_score": 9,
+          "notes": "הגשר הישיר ביותר למוצרים — Lino™ ו-LUMI™ הם בדיוק סטים ואוברולים. פוקוס על הנוחות שב'הכל בחבילה אחת'."
+        }
+      ],
+      "topic_gaps": [
+        {
+          "gap": "מתנה לתינוק שני",
+          "reason": "הורים שניים קשים יותר לרצות — כבר יש להם הכל. נושא עם כוונת קנייה גבוהה כי הקונה יותר אבוד מהרגיל"
+        },
+        {
+          "gap": "מתנה מרחוק לישראל",
+          "reason": "ישראלים בחו\"ל שרוצים לשלוח מתנה לארץ — קהל ייחודי עם צורך בפתרון שליחה פשוט"
+        },
+        {
+          "gap": "מתנה קבוצתית לתינוק",
+          "reason": "מארגני מתנות קבוצתיות בעבודה או בכיתה — צריכים מדריך על חלוקת תקציב ובחירת מוצר"
+        },
+        {
+          "gap": "תקציב מתנה לתינוק",
+          "reason": "קונים שצריכים לדעת כמה מוציאים בהתאם לקרבה — ברית משפחה vs. עמית עבודה"
+        }
+      ],
+      "related_products": ["Lino™ סט סריג", "LUMI™ אוברול נוחות"],
+      "hub_internal_linking_logic": {
+        "pillar_links_to_all_clusters": true,
+        "all_clusters_link_back_to_pillar": true,
+        "cluster_to_cluster_opportunities": [
+          {
+            "from": "HUB-5-C1",
+            "to": "HUB-5-C2",
+            "link_reason": "baby shower → practical gifts natural flow — מי שחושב על בייבי שאוור ירצה גם לדעת מה מעשי"
+          },
+          {
+            "from": "HUB-5-C3",
+            "to": "HUB-5-C6",
+            "link_reason": "luxury gifts → gift bundles — סט מתנה הוא הדרך הקלה לתת מתנה יוקרתית"
+          },
+          {
+            "from": "HUB-5-C4",
+            "to": "HUB-5-C2",
+            "link_reason": "what moms need → practical gifts — מי שמחפש מה אמא צריכה יגיע לרשימת מתנות מעשיות"
+          },
+          {
+            "from": "HUB-5-C5",
+            "to": "HUB-5-C6",
+            "link_reason": "first-time parents → gift bundles — המדריך לאנשים שלא מכירים תינוקות מוביל לפתרון הבטוח של הסט"
+          },
+          {
+            "from": "HUB-5-C2",
+            "to": "HUB-5-C6",
+            "link_reason": "practical gifts → gift bundles — מתנות מעשיות מובילות טבעית לסט שמכיל כמה פריטים שימושיים"
+          }
+        ]
+      }
+    }
+  ],
+  "global_prioritized_queue": [
+    {
+      "rank": 1,
+      "id": "HUB-5-Pillar",
+      "type": "pillar",
+      "title": "מתנות לתינוק — המדריך המלא (בייבי שאוור, ברית, ביקור יולדת)",
+      "slug": "matanot-letinok-madrih-male",
+      "priority_score": 9,
+      "reason": "עמוד עוגן של כל ה-HUB — חייב להיות ראשון"
+    },
+    {
+      "rank": 2,
+      "id": "HUB-5-C1",
+      "type": "cluster",
+      "title": "מה לקנות לבייבי שאוור כשהרשימה כבר נגמרה",
+      "slug": "matanot-baby-shower-reshima-nigmeret",
+      "priority_score": 9,
+      "reason": "ביטוי חיפוש עם נפח גבוה ו-BOFU חזק"
+    },
+    {
+      "rank": 3,
+      "id": "HUB-5-C6",
+      "type": "cluster",
+      "title": "סט מתנה לתינוק — למה זה תמיד הפתרון הנכון",
+      "slug": "set-matana-tinok-pitaron-nachon",
+      "priority_score": 9,
+      "reason": "גשר ישיר למוצרים Lino™ ו-LUMI™ — פוטנציאל המרה גבוה"
+    },
+    {
+      "rank": 4,
+      "id": "HUB-5-C2",
+      "type": "cluster",
+      "title": "מתנות מעשיות לתינוק שהורים חדשים באמת ישמחו עליהן",
+      "slug": "matanot-maasiot-tinok-horeh-chadash",
+      "priority_score": 8,
+      "reason": "ביטוי עם כוונת קנייה גבוהה וקהל רחב"
+    },
+    {
+      "rank": 5,
+      "id": "HUB-5-C3",
+      "type": "cluster",
+      "title": "מתנות יוקרה לתינוק — מה שישאר בזיכרון",
+      "slug": "matanot-yokra-tinok-zechronot",
+      "priority_score": 8,
+      "reason": "קהל לא רגיש למחיר — ערך כסף גבוה לעסק"
+    },
+    {
+      "rank": 6,
+      "id": "HUB-5-C5",
+      "type": "cluster",
+      "title": "מתנות לתינוק ראשון — המדריך לאנשים שלא מכירים תינוקות",
+      "slug": "matanot-tinok-rishon-madrih",
+      "priority_score": 8,
+      "reason": "זווית ייחודית עם חרדת קנייה גבוהה — פוטנציאל המרה חזק"
+    },
+    {
+      "rank": 7,
+      "id": "HUB-5-C4",
+      "type": "cluster",
+      "title": "מה אמא חדשה באמת צריכה אחרי הלידה",
+      "slug": "ma-ima-chadasha-tzricha-achrei-lida",
+      "priority_score": 7,
+      "reason": "AEO — מבנה שונה, פחות BOFU ישיר אבל תנועה גבוהה"
+    }
+  ],
+  "notes": [
+    "HUB-5 has no dedicated product — gift bundles and newborn sets are the product bridge",
+    "All articles written from gifter's POV (not parent's) — זווית הדוד/הדודה שלא יודע מה לקנות",
+    "BOFU intent dominates — listicle format preferred for most clusters",
+    "Israeli occasions covered: בייבי שאוור, ברית/שמחת בת, ביקור יולדת, ילד שני, שליחה מחו\"ל",
+    "Gift buyers are NOT price-sensitive — messaging should emphasize quality and generosity over price",
+    "Lino™ סט ו-LUMI™ אוברול הם הגשר למוצרים — להציגם כמתנות מוכנות ומאורזות"
+  ]
+}

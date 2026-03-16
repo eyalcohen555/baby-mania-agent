@@ -54,14 +54,15 @@ Namespace: `baby_mania`
 | `hero_headline` | `single_line_text_field` | Hero |
 | `hero_subheadline` | `single_line_text_field` | Hero |
 | `fabric_title` | `single_line_text_field` | Fabric Story |
-| `fabric_body` | `multi_line_text_field` | Fabric Story |
-| `fabric_body_2` | `multi_line_text_field` | Fabric Story |
+| `fabric_body` | `multi_line_text_field` | Fabric Story | ← pipeline: `fabric_paragraph_1` |
+| `fabric_body_2` | `multi_line_text_field` | Fabric Story | ← pipeline: `fabric_paragraph_2` |
 | `fabric_highlight` | `single_line_text_field` | Fabric Story |
 | `fabric_tags` | `list.single_line_text_field` | Fabric Story |
 | `whats_special` | `json` | What's Special |
 | `benefits` | `json` | Benefits |
 | `emotional_reassurance` | `multi_line_text_field` | Emotional Reassurance |
 | `size_note` | `single_line_text_field` | Size Guide |
+| `care_section_title` | `single_line_text_field` | Care |
 | `care_instructions` | `json` | Care |
 | `faq` | `json` | FAQ |
 

@@ -1,0 +1,331 @@
+<style>
+  .bm-contact-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+    direction: rtl;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  /* ============================================================
+     CARD
+  ============================================================ */
+  .bm-contact-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FAF3EC 0%, #F5EDE4 55%, #EDE5D8 100%);
+    border: 1px solid #D4B99A;
+    border-radius: 14px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  /* ============================================================
+     TEXT
+  ============================================================ */
+  .bm-contact-heading {
+    position: relative;
+    z-index: 1;
+    font-size: 22px;
+    font-weight: 800;
+    color: #8B5E3C;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+  }
+
+  .bm-contact-subheading {
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: 400;
+    color: #8B5E3C;
+    margin: 0 0 28px 0;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  /* ============================================================
+     BUTTON
+  ============================================================ */
+  .bm-contact-btn {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #8B5E3C;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    line-height: 1;
+    box-shadow: 0 4px 14px rgba(139, 94, 60, 0.25);
+  }
+
+  .bm-contact-btn:hover {
+    background-color: #6B4530;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 94, 60, 0.32);
+  }
+
+  .bm-contact-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(139, 94, 60, 0.2);
+  }
+
+  .bm-contact-btn-icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* ============================================================
+     BACKGROUND ANIMATION — ENVELOPE
+  ============================================================ */
+  @keyframes bm-env-float {
+    0%, 100% { transform: translateY(0)   rotate(-14deg); }
+    50%       { transform: translateY(-14px) rotate(-11deg); }
+  }
+
+  @keyframes bm-env-letter-slide {
+    0%, 20%  { transform: translateY(0); }
+    45%, 70% { transform: translateY(-22px); }
+    90%, 100%{ transform: translateY(0); }
+  }
+
+  @keyframes bm-env-heart-rise {
+    0%   { opacity: 0;   transform: translateY(0)    scale(0.6); }
+    15%  { opacity: 0.9; }
+    80%  { opacity: 0.5; }
+    100% { opacity: 0;   transform: translateY(-70px) scale(1.1); }
+  }
+
+  @keyframes bm-env-dot-pulse {
+    0%, 100% { transform: scale(1);    opacity: 0.7; }
+    50%       { transform: scale(1.25); opacity: 1; }
+  }
+
+  /* Container — decorative, bottom-left corner */
+  .bm-contact-anim {
+    position: absolute;
+    bottom: -18px;
+    left: -22px;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Main envelope SVG */
+  .bm-contact-env-svg {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 160px;
+    opacity: 0.16;
+    animation: bm-env-float 5s ease-in-out infinite;
+  }
+
+  /* The letter inside (clipped) */
+  .bm-env-letter-inner {
+    animation: bm-env-letter-slide 5s ease-in-out infinite;
+  }
+
+  /* Floating hearts */
+  .bm-contact-heart {
+    position: absolute;
+    font-size: 14px;
+    color: #8B5E3C;
+    opacity: 0;
+    animation: bm-env-heart-rise 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .bm-contact-heart--1 {
+    bottom: 80px;
+    left: 55px;
+    animation-delay: 0.5s;
+    font-size: 12px;
+  }
+
+  .bm-contact-heart--2 {
+    bottom: 80px;
+    left: 80px;
+    animation-delay: 1.8s;
+    font-size: 16px;
+  }
+
+  .bm-contact-heart--3 {
+    bottom: 80px;
+    left: 38px;
+    animation-delay: 3.2s;
+    font-size: 10px;
+  }
+
+  /* Small decorative circles — top-right corner */
+  .bm-contact-deco {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: rgba(139, 94, 60, 0.07);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bm-contact-deco--2 {
+    top: -10px;
+    right: -10px;
+    width: 65px;
+    height: 65px;
+    background: rgba(139, 94, 60, 0.05);
+    animation: bm-env-dot-pulse 3.5s ease-in-out infinite;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 520px) {
+    .bm-contact-card {
+      padding: 32px 20px;
+    }
+
+    .bm-contact-heading {
+      font-size: 19px;
+    }
+
+    .bm-contact-subheading {
+      font-size: 15px;
+    }
+
+    .bm-contact-btn {
+      font-size: 15px;
+      padding: 13px 24px;
+    }
+
+    .bm-contact-anim {
+      opacity: 0.7;
+    }
+  }
+</style>
+
+<section class="bm-contact-wrapper">
+  <div class="bm-contact-card">
+
+    {% comment %} Background animation — envelope {% endcomment %}
+    <div class="bm-contact-anim" aria-hidden="true">
+
+      {% comment %} Main envelope SVG {% endcomment %}
+      <svg class="bm-contact-env-svg" viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="bm-env-body-clip">
+            <rect x="2" y="22" width="96" height="48" rx="5"/>
+          </clipPath>
+        </defs>
+
+        {% comment %} Letter inside (slides up/down) {% endcomment %}
+        <g clip-path="url(#bm-env-body-clip)" class="bm-env-letter-inner">
+          <rect x="18" y="10" width="64" height="50" rx="3" fill="#FFFDF9" stroke="#C4956A" stroke-width="1.2"/>
+          <line x1="26" y1="28" x2="74" y2="28" stroke="#D4B99A" stroke-width="1.5"/>
+          <line x1="26" y1="35" x2="74" y2="35" stroke="#D4B99A" stroke-width="1.5"/>
+          <line x1="26" y1="42" x2="60" y2="42" stroke="#D4B99A" stroke-width="1.5"/>
+          {% comment %} Small heart on letter {% endcomment %}
+          <path d="M47 18 C47 16 45 15 44 16.5 C43 15 41 16 41 18 C41 20 44 22.5 44 22.5 C44 22.5 47 20 47 18Z" fill="#C4956A"/>
+        </g>
+
+        {% comment %} Envelope body {% endcomment %}
+        <rect x="2" y="22" width="96" height="48" rx="5" fill="#FAF3EC" stroke="#8B5E3C" stroke-width="1.8"/>
+
+        {% comment %} Bottom V fold {% endcomment %}
+        <path d="M2 70 L50 46 L98 70" fill="#EFE3D5" stroke="#8B5E3C" stroke-width="1.2"/>
+
+        {% comment %} Left diagonal fold {% endcomment %}
+        <path d="M2 22 L50 46 L2 70" fill="#E8DDD3" stroke="#8B5E3C" stroke-width="0.9"/>
+
+        {% comment %} Right diagonal fold {% endcomment %}
+        <path d="M98 22 L50 46 L98 70" fill="#E8DDD3" stroke="#8B5E3C" stroke-width="0.9"/>
+
+        {% comment %} Top flap {% endcomment %}
+        <path d="M2 22 L50 46 L98 22 Z" fill="#F5EDE4" stroke="#8B5E3C" stroke-width="1.8" stroke-linejoin="round"/>
+
+        {% comment %} Wax seal {% endcomment %}
+        <circle cx="50" cy="47" r="9" fill="#8B5E3C"/>
+        <path d="M46 47 L49 50 L54 43.5" stroke="#FFFDF9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      {% comment %} Floating hearts {% endcomment %}
+      <span class="bm-contact-heart bm-contact-heart--1">♡</span>
+      <span class="bm-contact-heart bm-contact-heart--2">♡</span>
+      <span class="bm-contact-heart bm-contact-heart--3">✦</span>
+    </div>
+
+    {% comment %} Decorative circles — top right {% endcomment %}
+    <div class="bm-contact-deco"   aria-hidden="true"></div>
+    <div class="bm-contact-deco bm-contact-deco--2" aria-hidden="true"></div>
+
+    {% comment %} Content {% endcomment %}
+    <h2 class="bm-contact-heading">
+      {{ section.settings.heading }}
+    </h2>
+
+    <p class="bm-contact-subheading">
+      {{ section.settings.subheading }}
+    </p>
+
+    <a
+      href="{{ section.settings.button_url }}"
+      class="bm-contact-btn"
+      aria-label="{{ section.settings.button_text }}"
+    >
+      <span class="bm-contact-btn-icon" aria-hidden="true">✉️</span>
+      {{ section.settings.button_text }}
+    </a>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BM - צור קשר",
+  "tag": "section",
+  "class": "bm-store-contact",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "כותרת",
+      "default": "אנחנו כאן בשבילכם"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "תת-כותרת",
+      "default": "שאלה על מידות? לא בטוחים מה לבחור? נשמח לעזור!"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "טקסט כפתור",
+      "default": "צרו קשר"
+    },
+    {
+      "type": "text",
+      "id": "button_url",
+      "label": "קישור כפתור",
+      "default": "/pages/contact"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM - צור קשר"
+    }
+  ]
+}
+{% endschema %}

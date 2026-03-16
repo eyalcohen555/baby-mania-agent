@@ -1,0 +1,616 @@
+{% comment %}
+  BabyMania — Store Benefits (Section 2 of 8)
+  File: sections/bm-store-benefits.liquid
+  Purpose: 6-card benefits grid showcasing product advantages.
+           Desktop: 3 cols · Tablet: 2 cols · Mobile: 1 col
+  Repairs applied:
+    - Always renders exactly 6 cards (metafield + block gap-fill)
+    - Text icon names mapped to emoji (old pipeline compatibility)
+    - Blob opacity raised to 0.11 for visibility
+    - Icon circles upgraded to radial gradient with inner highlight
+    - Tablet breakpoint added (768px → 2 columns)
+    - Small-mobile breakpoint added (420px → 1 column)
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
+
+  /* ============================================================
+     BM-BENEFITS — CSS Variables
+  ============================================================ */
+  .bm-benefits-root {
+    --bm-b-brown:        #8B5E3C;
+    --bm-b-brown-dark:   #6B4530;
+    --bm-b-brown-light:  #F5EDE4;
+    --bm-b-cream:        #FFFDF9;
+    --bm-b-white:        #FFFFFF;
+    --bm-b-border:       #EDE0D4;
+    --bm-b-text:         #1A1A1A;
+    --bm-b-muted:        #6B6B6B;
+    --bm-b-shadow:       rgba(139, 94, 60, 0.10);
+    --bm-b-radius:       14px;
+    --bm-b-font:         'Heebo', sans-serif;
+  }
+
+  /* ============================================================
+     ANIMATIONS
+  ============================================================ */
+  @keyframes bm-benefits-fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bmFloat1 {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(20px, -15px); }
+  }
+
+  @keyframes bmFloat2 {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(-18px, 22px); }
+  }
+
+  @keyframes bmFloat3 {
+    0%, 100% { transform: translate(0, 0); }
+    33%       { transform: translate(14px, 10px); }
+    66%       { transform: translate(-12px, -8px); }
+  }
+
+  /* ============================================================
+     DECORATIVE BLOBS — behind content, purely visual
+  ============================================================ */
+  .bm-benefits-blob {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff 0%,
+      #F6EFE7 60%,
+      #EFE6DD 100%
+    );
+    opacity: 0.18;
+    filter: blur(36px);
+    will-change: transform;
+  }
+
+  .bm-benefits-blob--1 {
+    width: 340px;
+    height: 340px;
+    top: -60px;
+    left: -80px;
+    border-radius: 58% 42% 72% 28% / 44% 62% 38% 56%;
+    animation: bmFloat1 26s ease-in-out infinite;
+  }
+
+  .bm-benefits-blob--2 {
+    width: 280px;
+    height: 280px;
+    bottom: -80px;
+    right: -100px;
+    border-radius: 38% 62% 44% 56% / 60% 36% 64% 40%;
+    animation: bmFloat2 30s ease-in-out infinite;
+  }
+
+  .bm-benefits-blob--3 {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    border-radius: 46% 54% 66% 34% / 52% 44% 56% 48%;
+    animation: bmFloat3 28s ease-in-out infinite;
+  }
+
+  /* ============================================================
+     SECTION WRAPPER
+  ============================================================ */
+  .bm-benefits-root {
+    background: var(--bm-b-cream);
+    padding: 52px 20px;
+    font-family: var(--bm-b-font);
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bm-benefits-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============================================================
+     SECTION HEADER
+  ============================================================ */
+  .bm-benefits-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .bm-benefits-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bm-b-brown);
+    background: var(--bm-b-brown-light);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .bm-benefits-title {
+    font-family: 'Playfair Display', 'Heebo', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bm-b-text);
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+
+  .bm-benefits-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--bm-b-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .bm-benefits-reassurance {
+    max-width: 680px;
+    margin: 28px auto 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--bm-b-brown);
+    line-height: 1.75;
+    text-align: center;
+    font-style: italic;
+    padding-top: 20px;
+    border-top: 1px solid var(--bm-b-border);
+  }
+
+  /* ============================================================
+     GRID
+  ============================================================ */
+  .bm-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* ============================================================
+     CARD
+  ============================================================ */
+  .bm-benefits-card {
+    background: linear-gradient(180deg, #FFF8F2 0%, #FFFFFF 70%);
+    border: 1px solid var(--bm-b-border);
+    border-radius: var(--bm-b-radius);
+    box-shadow: 0 2px 12px var(--bm-b-shadow);
+    padding: 24px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    animation: bm-benefits-fade-up 0.5s ease both;
+  }
+
+  .bm-benefits-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--bm-b-shadow);
+  }
+
+  /* Staggered animation delays */
+  .bm-benefits-card:nth-child(1) { animation-delay: 0.05s; }
+  .bm-benefits-card:nth-child(2) { animation-delay: 0.10s; }
+  .bm-benefits-card:nth-child(3) { animation-delay: 0.15s; }
+  .bm-benefits-card:nth-child(4) { animation-delay: 0.20s; }
+  .bm-benefits-card:nth-child(5) { animation-delay: 0.25s; }
+  .bm-benefits-card:nth-child(6) { animation-delay: 0.30s; }
+
+  /* ============================================================
+     ICON BUBBLE
+     Upgraded from flat color to radial gradient with soft
+     inner highlight and tinted drop shadow per card.
+  ============================================================ */
+  .bm-benefits-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: box-shadow 0.22s ease;
+  }
+
+  /* Card 1 — green */
+  .bm-benefits-card:nth-child(1) .bm-benefits-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E8F5E9 55%, #c8e6c9 100%);
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 2 — blue */
+  .bm-benefits-card:nth-child(2) .bm-benefits-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E3F2FD 55%, #bbdefb 100%);
+    box-shadow: 0 3px 10px rgba(33, 150, 243, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 3 — amber */
+  .bm-benefits-card:nth-child(3) .bm-benefits-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #FFF3E0 55%, #ffe0b2 100%);
+    box-shadow: 0 3px 10px rgba(255, 152, 0, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 4 — purple */
+  .bm-benefits-card:nth-child(4) .bm-benefits-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #F3E5F5 55%, #e1bee7 100%);
+    box-shadow: 0 3px 10px rgba(156, 39, 176, 0.16), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 5 — pink */
+  .bm-benefits-card:nth-child(5) .bm-benefits-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #FCE4EC 55%, #f8bbd0 100%);
+    box-shadow: 0 3px 10px rgba(233, 30, 99, 0.16), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 6 — teal */
+  .bm-benefits-card:nth-child(6) .bm-benefits-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E0F7FA 55%, #b2ebf2 100%);
+    box-shadow: 0 3px 10px rgba(0, 188, 212, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+
+  .bm-benefits-card:hover .bm-benefits-icon-wrap {
+    box-shadow: 0 5px 16px rgba(139, 94, 60, 0.18), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+
+  /* ============================================================
+     CARD TEXT
+  ============================================================ */
+  .bm-benefits-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bm-benefits-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bm-b-text);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .bm-benefits-card-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--bm-b-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+
+  /* Tablet: 2 columns (new) */
+  @media (max-width: 768px) {
+    .bm-benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+
+  /* Mobile: compact, 2 columns with smaller text */
+  @media (max-width: 600px) {
+    .bm-benefits-root {
+      padding: 36px 12px;
+    }
+    .bm-benefits-title    { font-size: 20px; }
+    .bm-benefits-subtitle { font-size: 13.5px; }
+    .bm-benefits-grid     { gap: 10px; }
+    .bm-benefits-card     { padding: 16px 10px 14px; gap: 8px; }
+    .bm-benefits-icon-wrap { width: 44px; height: 44px; font-size: 20px; }
+    .bm-benefits-card-title { font-size: 13px; }
+    .bm-benefits-card-desc  { font-size: 11.5px; line-height: 1.45; }
+    /* Blob sizes on mobile */
+    .bm-benefits-blob--1 { width: 200px; height: 180px; top: -40px; left: -50px; }
+    .bm-benefits-blob--2 { width: 240px; height: 200px; bottom: -50px; right: -60px; }
+    .bm-benefits-blob--3 { width: 160px; height: 150px; margin-top: -75px; margin-left: -80px; }
+  }
+
+  /* Small mobile: 1 column */
+  @media (max-width: 420px) {
+    .bm-benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .bm-benefits-card {
+      flex-direction: row;
+      text-align: right;
+      align-items: flex-start;
+      padding: 14px 12px;
+      gap: 12px;
+    }
+    .bm-benefits-card-body { align-items: flex-start; }
+    .bm-benefits-icon-wrap { width: 40px; height: 40px; font-size: 18px; flex-shrink: 0; }
+    .bm-benefits-card-title { font-size: 13px; }
+    .bm-benefits-card-desc  { font-size: 11px; }
+  }
+</style>
+
+{% comment %} ── Data sources ──────────────────────────────────────────
+  Priority:  product.metafields.baby_mania.benefits (rendered first, up to 6)
+  Fallback:  section.blocks type="benefit"  (fills gap if metafield < 6, or all)
+{% endcomment %}
+{% assign bm_benefits        = product.metafields.baby_mania.benefits.value %}
+{% assign bm_emotional       = product.metafields.baby_mania.emotional_reassurance %}
+{% assign bm_fallback_blocks = section.blocks | where: "type", "benefit" %}
+
+{% comment %} Has any renderable content? {% endcomment %}
+{% assign bm_has_content = false %}
+{% if bm_benefits and bm_benefits.size > 0 %}
+  {% assign bm_has_content = true %}
+{% elsif bm_fallback_blocks.size > 0 %}
+  {% assign bm_has_content = true %}
+{% endif %}
+
+{% if bm_has_content %}
+<section
+  class="bm-benefits-root"
+  aria-labelledby="bm-benefits-heading"
+  data-bm-count="{{ bm_benefits.size | default: 0 }}"
+>
+  <div class="bm-benefits-blob bm-benefits-blob--1" aria-hidden="true"></div>
+  <div class="bm-benefits-blob bm-benefits-blob--2" aria-hidden="true"></div>
+  <div class="bm-benefits-blob bm-benefits-blob--3" aria-hidden="true"></div>
+
+  <div class="bm-benefits-container">
+
+    {% comment %} Section Header {% endcomment %}
+    {% if section.settings.show_header %}
+      <header class="bm-benefits-header">
+        {% if section.settings.eyebrow != blank %}
+          <span class="bm-benefits-eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <h2 class="bm-benefits-title" id="bm-benefits-heading">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="bm-benefits-subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    {% comment %} ── Benefits Grid ─────────────────────────────────
+      Rule: always render up to 6 cards.
+      If metafield has 4 items → render 4 from metafield + 2 from blocks.
+      If metafield is empty   → render up to 6 from blocks.
+    {% endcomment %}
+    <div class="bm-benefits-grid" role="list">
+
+      {% if bm_benefits and bm_benefits.size > 0 %}
+
+        {% comment %} ── PRIMARY: metafield benefits (cap at 6) ── {% endcomment %}
+        {% for benefit in bm_benefits limit: 6 %}
+
+          {% comment %} Icon normalization: map old text icon names → emoji {% endcomment %}
+          {%- assign _icon_raw = benefit.icon | strip -%}
+          {%- assign _icon_lc  = _icon_raw | downcase -%}
+          {%- case _icon_lc -%}
+            {%- when 'run'           -%}{%- assign bm_icon = '🏃' -%}
+            {%- when 'bolt'          -%}{%- assign bm_icon = '⚡' -%}
+            {%- when 'lion'          -%}{%- assign bm_icon = '🦁' -%}
+            {%- when 'gift'          -%}{%- assign bm_icon = '🎁' -%}
+            {%- when 'moon'          -%}{%- assign bm_icon = '🌙' -%}
+            {%- when 'repeat'        -%}{%- assign bm_icon = '🔄' -%}
+            {%- when 'star'          -%}{%- assign bm_icon = '⭐' -%}
+            {%- when 'heart'         -%}{%- assign bm_icon = '❤️' -%}
+            {%- when 'leaf'          -%}{%- assign bm_icon = '🌿' -%}
+            {%- when 'shield'        -%}{%- assign bm_icon = '🛡️' -%}
+            {%- when 'check'         -%}{%- assign bm_icon = '✅' -%}
+            {%- when 'smile'         -%}{%- assign bm_icon = '😊' -%}
+            {%- when 'baby'          -%}{%- assign bm_icon = '👶' -%}
+            {%- when 'drop'          -%}{%- assign bm_icon = '💧' -%}
+            {%- when 'sun'           -%}{%- assign bm_icon = '☀️' -%}
+            {%- when 'crown'         -%}{%- assign bm_icon = '👑' -%}
+            {%- when 'wash_60'       -%}{%- assign bm_icon = '🌡️' -%}
+            {%- when 'hand_wash'     -%}{%- assign bm_icon = '💧' -%}
+            {%- when 'sun_dry'       -%}{%- assign bm_icon = '☀️' -%}
+            {%- when 'no_bleach'     -%}{%- assign bm_icon = '✋' -%}
+            {%- when 'iron'          -%}{%- assign bm_icon = '♨️' -%}
+            {%- when 'no_tumble_dry' -%}{%- assign bm_icon = '🌀' -%}
+            {%- else                 -%}{%- assign bm_icon = _icon_raw -%}
+          {%- endcase -%}
+
+          <article class="bm-benefits-card" role="listitem">
+            {% if bm_icon != blank %}
+              <div class="bm-benefits-icon-wrap" aria-hidden="true">{{ bm_icon }}</div>
+            {% endif %}
+            <div class="bm-benefits-card-body">
+              {% if benefit.title != blank %}
+                <h3 class="bm-benefits-card-title">{{ benefit.title }}</h3>
+              {% endif %}
+              {% if benefit.description != blank %}
+                <p class="bm-benefits-card-desc">{{ benefit.description }}</p>
+              {% endif %}
+            </div>
+          </article>
+
+        {% endfor %}
+
+        {% comment %} ── GAP FILL: top-up to 6 from section blocks ── {% endcomment %}
+        {%- assign bm_mf_count    = bm_benefits.size -%}
+        {%- if bm_mf_count > 6 -%}{%- assign bm_mf_count = 6 -%}{%- endif -%}
+        {%- assign bm_fill_needed = 6 | minus: bm_mf_count -%}
+        {% if bm_fill_needed > 0 and bm_fallback_blocks.size > 0 %}
+          {% for block in bm_fallback_blocks limit: bm_fill_needed %}
+            <article class="bm-benefits-card" role="listitem" {{ block.shopify_attributes }}>
+              {% if block.settings.icon != blank %}
+                <div class="bm-benefits-icon-wrap" aria-hidden="true">{{ block.settings.icon }}</div>
+              {% endif %}
+              <div class="bm-benefits-card-body">
+                {% if block.settings.title != blank %}
+                  <h3 class="bm-benefits-card-title">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.description != blank %}
+                  <p class="bm-benefits-card-desc">{{ block.settings.description }}</p>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        {% endif %}
+
+      {% else %}
+
+        {% comment %} ── FALLBACK: block-only path (no metafield) ── {% endcomment %}
+        {% for block in bm_fallback_blocks limit: 6 %}
+          <article class="bm-benefits-card" role="listitem" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <div class="bm-benefits-icon-wrap" aria-hidden="true">{{ block.settings.icon }}</div>
+            {% endif %}
+            <div class="bm-benefits-card-body">
+              {% if block.settings.title != blank %}
+                <h3 class="bm-benefits-card-title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <p class="bm-benefits-card-desc">{{ block.settings.description }}</p>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+
+      {% endif %}
+
+    </div>
+
+    {% if bm_emotional != blank %}
+      <p class="bm-benefits-reassurance">{{ bm_emotional }}</p>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "BM — Store Benefits",
+  "tag": "div",
+  "class": "bm-store-benefits-section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "הצג כותרת",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "מדבקת קטגוריה (Eyebrow)",
+      "default": "למה לבחור בנו",
+      "info": "טקסט קטן מעל הכותרת הראשית."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "כותרת ראשית",
+      "default": "עשויים אחרת, מהיסוד"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "כותרת משנה",
+      "default": "כל פרט בביגוד שלנו נבחר בקפידה — כדי שהתינוק שלכם ירגיש בנוח כל היום."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "יתרון",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "אייקון (Emoji)",
+          "default": "🌿",
+          "info": "הדביקו emoji אחד שיוצג על רקע עגול."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "כותרת היתרון",
+          "default": "נעים ללבישה"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "תיאור קצר",
+          "default": "נבחר כדי להעניק תחושת נוחות נעימה לאורך כל היום."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM — Store Benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌿",
+            "title": "נעים ללבישה",
+            "description": "נבחר כדי להעניק תחושת נוחות נעימה לאורך כל היום."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "💧",
+            "title": "נושם ומסדיר חום",
+            "description": "מאפשר מחזור אוויר טבעי ומונע הזעה יתרה."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "✂️",
+            "title": "תפירה מוקפדת",
+            "description": "תפרים שטוחים פנימה — ללא חיכוך מיותר על העור."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🔄",
+            "title": "שומר צורה",
+            "description": "נשאר נעים ושלם אחרי כביסות חוזרות ונשנות."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "⚡",
+            "title": "הלבשה קלה",
+            "description": "נפתח בשתי ידיים בקלות — גם בשעות הלילה."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🎨",
+            "title": "צבעים עמידים",
+            "description": "הצבעים לא דוהים ולא מכתימים, כביסה אחר כביסה."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

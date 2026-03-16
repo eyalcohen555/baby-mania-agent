@@ -87,21 +87,23 @@ model: claude-opus-4-6
 
 ```
 body_html — סדר בלוקים:
-0. section.hero        ← תמונה + כותרת + מטא (חובה, תמיד ראשון)
-1. .intro-box          ← פסקת פתיחה לפי PPT formula
-2. .quick-answer       ← [אופציונלי — ראה כלל B.12 — רק ב-AEO]
-3. .toc                ← תוכן עניינים עם anchor links
-4. .article-body       ← כל תוכן המאמר:
+0. section.hero            ← תמונה + כותרת + מטא (חובה, תמיד ראשון)
+1. .intro-box              ← פסקת פתיחה לפי PPT formula
+2. .quick-answer           ← חובה בכל מאמר — ראה כלל B.15
+3. .toc                    ← תוכן עניינים עם anchor links
+4. .article-body           ← כל תוכן המאמר:
    - [figure.article-image — תמונה 1, לפני H2 ראשון — חובה]
    - H2 sections (3–5) עם id לanchoring
    - פסקאות קצרות (מקסימום 3 משפטים)
-   - .tip-box — טיפ מעשי אחד לפחות
-   - .warning-box — אזהרה (אופציונלי)
+   - .tip-box — לפחות 2 בכל מאמר (ראה B.15)
+   - .warning-box — לפחות 1 בכל מאמר (ראה B.15)
+   - .pull-quote — 1 באמצע המאמר (ראה B.15)
+   - .product-card-inline — 1 בסקשן הרלוונטי (ראה B.15)
    - [figure.article-image — תמונה 2, לפני H2 שלישי — חובה]
    - .product-mention — 1–2 כרטיסי מוצר (מינימום 1)
-5. .cta-banner         ← קישור למוצר או לקולקציה — חובה
-6. #faq + JSON-LD      ← 3–5 שאלות ב-<details> + schema script — חובה
-7. .article-tags       ← 5–7 תגיות
+5. .cta-banner             ← קישור למוצר או לקולקציה — חובה
+6. #faq + JSON-LD          ← 3–5 שאלות ב-<details> + schema script — חובה
+7. .article-tags           ← 5–7 תגיות
 ```
 
 ---
@@ -481,34 +483,133 @@ article_type: "pillar" | "supporting" | "review" | "listicle" | "how-to"
 
 ### B.12 — QUICK ANSWER BOX
 
-בלוק HTML אופציונלי שמופיע **לאחר ה-intro ולפני ה-TOC**, כאשר המאמר עונה על שאלה ממוקדת.
+> ⛔ **UPDATED (מרץ 2026):** quick-answer הוא **חובה בכל מאמר** — לא אופציונלי. ראה B.15.
 
-**מתי להשתמש:**
-- `article_type: "aeo"` — תמיד
-- `article_type: "tofu"` כאשר הכותרת היא שאלה ישירה ("כמה בגדים צריך יילוד?") — כן
-- `article_type: "bofu"` — לא. השוואה אינה שאלה בעלת תשובה אחת
+בלוק HTML שמופיע **לאחר ה-intro ולפני ה-TOC** — תשובה ישירה קצרה על השאלה המרכזית של המאמר.
 
-**מתי לא להשתמש:**
-- מאמרי pillar רחבים ללא שאלת מוקד ברורה
-- מאמרים שהתשובה שלהם היא "זה תלוי" ללא עמדה ברורה
-- BOFU articles
+**כמות:** לפחות 1 בכל מאמר (כל article_type).
 
-**תוכן ה-Quick Answer Box:**
+**תוכן:**
 - 40–60 מילים בלבד
 - ענה על השאלה המרכזית ישירות — ללא הקדמה
-- שפה פשוטה וברורה — מה שהורה צריך לדעת, לא מה שמרשים
+- שפה פשוטה וברורה — מה שהורה צריך לדעת
 - אין אזכור מוצר בתוך הבלוק
 
 ```html
 <div class="quick-answer" dir="rtl">
-  <strong>תשובה קצרה:</strong>
-  יילוד צריך 6–8 חולצות גוף לשבוע הראשון. בגלל החלפות תכופות מפליטות ושינויי חיתול,
-  7 חתיכות הן המינימום הפרקטי כדי לא להיתפס ללא בגד נקי בלילה.
+  <span class="qa-label">התשובה הקצרה:</span>
+  <p>יילוד צריך 6–8 חולצות גוף לשבוע הראשון. בגלל החלפות תכופות מפליטות ושינויי חיתול,
+  7 חתיכות הן המינימום הפרקטי כדי לא להיתפס ללא בגד נקי בלילה.</p>
 </div>
 ```
 
 **כלל אחיד:** הבלוק הוא **תשובה ישירה** — לא סיכום, לא intro נוסף, לא הצגת פרקים.
-אם אינך יכול לכתוב תשובה ברורה ב-60 מילים — אל תוסיף את הבלוק.
+אם אינך יכול לכתוב תשובה ברורה ב-60 מילים — כתוב תשובה כללית קצרה על נושא המאמר.
+
+---
+
+### B.15 — כללי עיצוב מאמר (DESIGN COMPONENT RULES) — מרץ 2026
+
+> ⛔ **LOCKED RULE (v3.2 — 2026-03-15):** כל מאמר חייב לכלול את האלמנטים הבאים.
+> כל CSS מגיע מ-`assets/bm-blog-premium.css`. אין inline styles. אין `<style>` tags.
+
+---
+
+#### B.15.1 — Quick Answer (חובה — כל מאמר)
+
+כמות: **1 לפחות** — מיד אחרי `.intro-box`, לפני `.toc`.
+
+```html
+<div class="quick-answer" dir="rtl">
+  <span class="qa-label">התשובה הקצרה:</span>
+  <p>תשובה ישירה של 2–3 משפטים על השאלה המרכזית של המאמר. ללא הקדמה, ללא מוצרים.</p>
+</div>
+```
+
+---
+
+#### B.15.2 — Tip Box (חובה — לפחות 2 בכל מאמר)
+
+כמות: **2 לפחות** — במקומות רלוונטיים בגוף המאמר. טיפ מעשי שהורה יכול ליישם מיד.
+
+```html
+<div class="tip-box" dir="rtl">
+  <span class="tip-icon">💡</span>
+  <div>
+    <span class="box-label">טיפ:</span>
+    <p>הטקסט — טיפ מעשי קצר, שורה-שתיים, ניתן ליישום מיידי.</p>
+  </div>
+</div>
+```
+
+**כלל:** אל תכתוב tip-box ש"מזכיר" להורה לקנות מוצר — הטיפ חייב להיות ידע מעשי, לא מכירה.
+
+---
+
+#### B.15.3 — Warning Box (חובה — לפחות 1 בכל מאמר)
+
+כמות: **1 לפחות** — ב-H2 שבו ישנה טעות נפוצה, סכנה, או "שימי לב" חשוב.
+
+```html
+<div class="warning-box" dir="rtl">
+  <span class="warning-icon">⚠️</span>
+  <div>
+    <span class="box-label">שימי לב:</span>
+    <p>הטקסט — אזהרה או טעות נפוצה שהורים עושים. קצר וברור.</p>
+  </div>
+</div>
+```
+
+---
+
+#### B.15.4 — Pull Quote (חובה — 1 בכל מאמר)
+
+כמות: **1** — באמצע המאמר (לפני H2 השלישי או הרביעי). משפט מרכזי שמסכם תובנה מפתח.
+
+```html
+<blockquote class="pull-quote" dir="rtl">
+  <p>המשפט המרכזי שבולט מהמאמר — תובנה אמיתית, לא שיווק.</p>
+</blockquote>
+```
+
+**כלל:** הציטוט צריך לעמוד בפני עצמו — הורה שיראה רק את הציטוט יבין את הרעיון המרכזי של המאמר.
+**אסור:** "קנו את [מוצר] עכשיו", שפה שיווקית, הפניה למוצר.
+
+---
+
+#### B.15.5 — Product Card Inline (חובה — 1 בכל מאמר)
+
+כמות: **1** — בסקשן שבו המוצר נובע באופן טבעי מהתוכן (לא לפני H2 השני).
+המוצר חייב להגיע מרשימת ה-product bridge של ה-hub. ה-handle מ-`{pid}.yaml` בלבד.
+
+```html
+<div class="product-card-inline" dir="rtl">
+  <img src="https://cdn.shopify.com/..." alt="תיאור מוצר בעברית" loading="lazy">
+  <div class="product-card-info">
+    <h4 class="product-card-name">שם המוצר™</h4>
+    <p class="product-card-price">₪XXX</p>
+    <a href="https://babymania-il.com/products/{handle}" class="product-card-btn">לצפייה במוצר</a>
+  </div>
+</div>
+```
+
+**כללים:**
+- ה-handle חייב להגיע מ-`{pid}.yaml` — **אסור להמציא**
+- כפתור: רק `לצפייה במוצר` (מהרשימה המאושרת ב-C.1c)
+- תמונה: מ-Shopify CDN בלבד
+- אסור product-card-inline ו-.product-mention על אותו מוצר בסמיכות — בחר אחד מהם
+
+---
+
+#### טבלת סיכום — חובות עיצוב לפי article_type
+
+| קומפוננט | tofu | aeo | bofu |
+|----------|------|-----|------|
+| `.quick-answer` | 1 חובה | 1 חובה | 1 חובה |
+| `.tip-box` | 2 חובה | 1–2 | 1 חובה |
+| `.warning-box` | 1 חובה | 1 | 1 חובה |
+| `.pull-quote` | 1 חובה | 1 אופציונלי | 1 חובה |
+| `.product-card-inline` | 1 חובה | 1 חובה | 1 חובה |
 
 ---
 
@@ -640,7 +741,7 @@ article_type: "pillar" | "supporting" | "review" | "listicle" | "how-to"
 - השתמש רק ב-classes מהרשימה המאושרת ב-`prompts/blog-template-structure.md`
 
 **Classes מאושרים לשימוש:**
-`.intro-box` / `.quick-answer` / `.toc` / `.article-body` / `.tip-box` / `.warning-box` / `.note-box` / `.img-grid` / `.article-image` / `.data-table` / `.checklist-summary` / `.product-mention` / `.product-btn` / `.cta-banner` / `.cta-buttons` / `.cta-btn` / `.cta-btn-outline` / `.faq` / `.faq-title` / `.article-tags` / `.tag`
+`.intro-box` / `.quick-answer` / `.qa-label` / `.toc` / `.article-body` / `.tip-box` / `.tip-icon` / `.box-label` / `.warning-box` / `.warning-icon` / `.pull-quote` / `.product-card-inline` / `.product-card-info` / `.product-card-name` / `.product-card-price` / `.product-card-btn` / `.note-box` / `.img-grid` / `.article-image` / `.data-table` / `.checklist-summary` / `.product-mention` / `.product-btn` / `.cta-banner` / `.cta-buttons` / `.cta-btn` / `.cta-btn-outline` / `.faq` / `.faq-title` / `.article-tags` / `.tag`
 
 **אם צריך אלמנט שלא ברשימה** — השמט אותו לחלוטין. אל תמציא class חדש.
 
@@ -721,11 +822,26 @@ BLOG_META:
 | אין URL מוצר המומצא | ✓ |
 | אין URL תמונה המומצא | ✓ |
 | AEO: תשובה ישירה 40–60 מילים תחת כל H2 | ✓ (אם aeo) |
-| AEO: Quick Answer Box קיים אם המאמר עונה על שאלה ממוקדת | ✓ (אם aeo) |
 | BOFU: טבלת השוואה קיימת | ✓ (אם bofu) |
 | BOFU: אין שפת מכירה דחיינית | ✓ (אם bofu) |
 | יחס שכבות תואם את article_type (ראה B.14) | ✓ |
 | product bridge מופיע רק כשרלוונטי — לא בכל קטע | ✓ |
+
+### קבוצה D — אלמנטי עיצוב (v3.2 — מרץ 2026)
+
+| פריט | עוצמת כשל | בדוק |
+|------|-----------|------|
+| ⛔ `.quick-answer` קיים — אחרי intro, לפני TOC | FAIL | ✓ |
+| ⛔ `.quick-answer` משתמש ב-`<span class="qa-label">` ולא ב-`<strong>` | WARNING | ✓ |
+| ⛔ לפחות 2 × `.tip-box` בגוף המאמר | FAIL | ✓ |
+| ⛔ `.tip-box` כולל `<span class="tip-icon">` + `<span class="box-label">` | WARNING | ✓ |
+| ⛔ לפחות 1 × `.warning-box` בגוף המאמר | FAIL | ✓ |
+| ⛔ `.warning-box` כולל `<span class="warning-icon">` + `<span class="box-label">` | WARNING | ✓ |
+| ⛔ לפחות 1 × `.pull-quote` — כ-`<blockquote class="pull-quote">` | FAIL | ✓ |
+| ⛔ `.pull-quote` לא מכיל שפה שיווקית או אזכור מוצר | WARNING | ✓ |
+| ⛔ לפחות 1 × `.product-card-inline` עם handle אמיתי מה-YAML | FAIL | ✓ |
+| ⛔ `.product-card-inline` כפתור — רק `לצפייה במוצר` | FAIL | ✓ |
+| ⛔ אין inline styles על אף אחד מהאלמנטים החדשים | FAIL | ✓ |
 
 > **הפניה:** לרשימת הכללים הנעולים המלאה ראה `prompts/organic-article-qa.md`
 
@@ -747,17 +863,20 @@ BLOG_META:
 ```
 [META COMMENT]
 [INTRO BOX] PPT — 3–5 משפטים          ← מתחיל כאן, לא לפניו
+[QUICK ANSWER BOX] .quick-answer — 2–3 משפטים, תשובה ישירה — חובה
 [TOC] anchor links לכל ה-H2
 [BODY]
   [figure.article-image — תמונה 1, לפני H2 ראשון — חובה]
   H2: הגדרה / מה זה בכלל — (TOFU)
+    └ TIP BOX #1
   H2: למה זה חשוב להורים — (TOFU + AEO layer)
-    └ Quick answer אופציונלי אם קיימת שאלה ממוקדת
   [figure.article-image — תמונה 2, לפני H2 שלישי — חובה]
   H2: כיצד עושים / מה לבחור — (TOFU + עוגני link-ready)
-    └ TIP BOX
+    └ TIP BOX #2
+    └ PULL QUOTE — תובנה מרכזית
   H2: טעויות נפוצות / מה לא לעשות — (TOFU)
     └ WARNING BOX
+    └ PRODUCT CARD INLINE — מוצר מה-hub בהקשר טבעי
   H2: מה לשים לב בהקשר ישראלי / עונתי — (TOFU + עוגני link-ready)
 [PRODUCT MENTION — טבעי, 1–2 מוצרים מה-hub]
 [CTA BANNER — חובה]
@@ -776,14 +895,19 @@ BLOG_META:
 ```
 [META COMMENT]
 [INTRO BOX] PPT — 3–4 משפטים          ← מתחיל כאן, לא לפניו
+[QUICK ANSWER BOX] .quick-answer — 2–3 משפטים — חובה
 [TOC] anchor links
 [BODY]
   [figure.article-image — תמונה 1, לפני H2 ראשון — חובה]
   H2: שאלה מרכזית — תשובה ישירה קצרה + הרחבה (AEO layer)
+    └ TIP BOX #1
   H2: פירוט מעשי — איך, מתי, כמה (TOFU)
-    └ TIP BOX
+    └ TIP BOX #2
+    └ WARNING BOX
   [figure.article-image — תמונה 2, לפני H2 שלישי — חובה]
   H2: מקרים ספציפיים / גיל / עונה — (TOFU + link-ready לsibling clusters)
+    └ PULL QUOTE — תובנה מרכזית
+    └ PRODUCT CARD INLINE — מוצר מה-hub
 [PRODUCT MENTION — אופציונלי, רק אם טבעי (מינימום 1 product bridge)]
 [CTA BANNER — חובה]
 [FAQ #faq + JSON-LD — 3 שאלות, schema-ready — חובה]
@@ -801,16 +925,20 @@ BLOG_META:
 ```
 [META COMMENT]
 [INTRO BOX] PPT קצר — 2–3 משפטים בלבד    ← מתחיל כאן, לא לפניו
-[QUICK ANSWER BOX] .quick-answer — 40–60 מילים, תשובה ישירה
+[QUICK ANSWER BOX] .quick-answer — 40–60 מילים, תשובה ישירה — חובה
 [TOC] anchor links
 [BODY]
   [figure.article-image — תמונה 1, לפני H2 ראשון — חובה]
   H2: [שאלת משנה 1] — תשובה ישירה (40–60 מילים) + הרחבה
+    └ TIP BOX #1
   H2: [שאלת משנה 2] — תשובה ישירה + הרחבה + bullet list
-    └ TIP BOX אחד
+    └ WARNING BOX
+    └ PULL QUOTE (אופציונלי — אם יש תובנה חזקה)
   [figure.article-image — תמונה 2, לפני H2 שלישי — חובה]
   H2: [שאלת משנה 3] — תשובה ישירה + הרחבה
+    └ TIP BOX #2
     └ link-ready mention לpillar של ה-hub
+    └ PRODUCT CARD INLINE — חובה, מוצר הנובע מהתשובה
 [PRODUCT MENTION — רק אם נובע ישירות מתשובה (מינימום 1 product bridge)]
 [CTA BANNER — חובה]
 [FAQ #faq + JSON-LD — 3–4 שאלות long-tail, schema-ready — חובה]
@@ -828,17 +956,22 @@ BLOG_META:
 ```
 [META COMMENT]
 [INTRO BOX] PPT — הצג את ההחלטה שהקורא עומד בפניה — 3–4 משפטים    ← מתחיל כאן
+[QUICK ANSWER BOX] .quick-answer — "בקצרה: [אפשרות X] מתאימה ל..." — חובה
 [COMPARISON TABLE — .data-table] — לפחות 2 אפשרויות, קריטריונים ברורים
 [TOC] anchor links
 [BODY]
   [figure.article-image — תמונה 1, לפני H2 ראשון — חובה]
   H2: [אפשרות A] — יתרונות, חסרונות, למי מתאים
+    └ TIP BOX #1
   H2: [אפשרות B] — יתרונות, חסרונות, למי מתאים
+    └ WARNING BOX
   [figure.article-image — תמונה 2, לפני H2 שלישי — חובה]
   H2: מה לשים לב אליו בבחירה — (decision support)
-    └ TIP BOX
+    └ TIP BOX #2
+    └ PULL QUOTE — תובנת המפתח להחלטה
   H2: ההמלצה שלנו — מסקנה ברורה (לא מתחמקת)
-    └ PRODUCT MENTION — מנצח ההשוואה בהקשר טבעי
+    └ PRODUCT CARD INLINE — מנצח ההשוואה עם תמונה ומחיר
+    └ PRODUCT MENTION — גיבוי אם יש מוצר שני רלוונטי
 [CTA BANNER — חובה]
 [FAQ #faq + JSON-LD — 2–3 שאלות מוכוונות-החלטה — חובה]
 [TACT ENDING]

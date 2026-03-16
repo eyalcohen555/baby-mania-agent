@@ -14,12 +14,27 @@ Commands:
 
 Stage output files (Claude Code writes these between fetch and push):
   output/stage-outputs/{pid}_analyzer.yaml
+  output/stage-outputs/{pid}_visual.json        <- stage 01b output
+  output/stage-outputs/{pid}_intelligence.json  <- stage 01c output (product intelligence)
   output/stage-outputs/{pid}_fabric_story.txt
   output/stage-outputs/{pid}_benefits.txt
   output/stage-outputs/{pid}_faq.txt
   output/stage-outputs/{pid}_care.txt
+  output/stage-outputs/{pid}_edited.txt      <- content-editor-agent output (post-writer, pre-validator)
   output/stage-outputs/{pid}_validator.txt   <- must contain: STATUS: PASS
   output/stage-outputs/{pid}_publisher.json  <- structured JSON from stage 07
+
+Pipeline order (AI stages):
+  01  product-analyzer       → {pid}_analyzer.yaml
+  01b visual-product-analyzer → {pid}_visual.json  (parallel with 01)
+  01c product-intelligence-builder → {pid}_intelligence.json  (python scripts/product_intelligence_builder.py {pid})
+  02  fabric-story-writer    → {pid}_fabric_story.txt
+  03  benefits-generator     → {pid}_benefits.txt
+  04  faq-builder            → {pid}_faq.txt
+  05  care-instructions      → {pid}_care.txt
+  06c content-editor-agent   → {pid}_edited.txt   ← reads knowledge/copywriting/ + intelligence + all writer outputs
+  06  validator              → {pid}_validator.txt  ← validates edited output
+  07  shopify-publisher      → {pid}_publisher.json
 """
 
 from __future__ import annotations
@@ -186,11 +201,25 @@ def run_fetch_stage(pid: str) -> int:
     log.info("")
     log.info("  Next: Claude Code runs AI stages 01-07 and saves to:")
     log.info("    %s/", STAGE_OUT_DIR)
-    log.info("    %s_analyzer.yaml", pid)
-    log.info("    %s_fabric_story.txt / %s_benefits.txt / %s_faq.txt / %s_care.txt",
-             pid, pid, pid, pid)
-    log.info("    %s_validator.txt  <- must contain: STATUS: PASS", pid)
-    log.info("    %s_publisher.json <- structured JSON from stage 07", pid)
+    log.info("    %s_analyzer.yaml             (stage 01)", pid)
+    log.info("    %s_visual.json               (stage 01b — visual analyzer)", pid)
+    log.info("    %s_intelligence.json         (stage 01c — product intelligence builder)", pid)
+    log.info("    %s_fabric_story.txt           (stage 02)", pid)
+    log.info("    %s_benefits.txt               (stage 03)", pid)
+    log.info("    %s_faq.txt                    (stage 04)", pid)
+    log.info("    %s_care.txt                   (stage 05)", pid)
+    log.info("    %s_edited.txt                 (stage 06c — content-editor-agent)", pid)
+    log.info("    %s_validator.txt              (stage 06  — must contain: STATUS: PASS)", pid)
+    log.info("    %s_publisher.json             (stage 07)", pid)
+    log.info("")
+    log.info("  Stage 01c — Product Intelligence Builder:")
+    log.info("    python scripts/product_intelligence_builder.py %s", pid)
+    log.info("")
+    log.info("  Knowledge layer (loaded by writer agents automatically):")
+    log.info("    knowledge/copywriting/brand-voice.md")
+    log.info("    knowledge/copywriting/persuasion-rules.md")
+    log.info("    knowledge/copywriting/section-goals.md")
+    log.info("    knowledge/copywriting/baby-clothing-library.md")
     return 0
 
 

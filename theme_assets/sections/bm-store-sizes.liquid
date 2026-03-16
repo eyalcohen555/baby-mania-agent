@@ -1,0 +1,338 @@
+<style>
+  .bm-sizes-wrapper {
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 16px;
+  }
+
+  .bm-sizes-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 8px 0;
+    text-align: center;
+  }
+
+  .bm-sizes-subheading {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #757575;
+    margin: 0 0 32px 0;
+    text-align: center;
+  }
+
+  .bm-sizes-table-container {
+    border-radius: 14px;
+    overflow: hidden;
+    overflow-x: auto;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    border: 1px solid #E0E0E0;
+  }
+
+  .bm-sizes-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 360px;
+    background-color: #FFFFFF;
+  }
+
+  .bm-sizes-table thead tr {
+    background-color: #8B5E3C;
+  }
+
+  .bm-sizes-table thead th {
+    color: #FFFFFF;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 16px 24px;
+    text-align: right;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  .bm-sizes-table tbody tr {
+    border-bottom: 1px solid #F0E6DC;
+    transition: background-color 0.15s ease;
+  }
+
+  .bm-sizes-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .bm-sizes-table tbody tr:nth-child(even) {
+    background-color: #FDF8F4;
+  }
+
+  .bm-sizes-table tbody tr:hover {
+    background-color: #FAF0E8;
+  }
+
+  .bm-sizes-table tbody td {
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #1A1A1A;
+    padding: 14px 24px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .bm-sizes-table tbody td:first-child {
+    font-weight: 700;
+    color: #8B5E3C;
+    font-size: 1rem;
+  }
+
+  .bm-sizes-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 14px 18px;
+    background-color: #FDF8F4;
+    border-radius: 10px;
+    border-right: 4px solid #8B5E3C;
+  }
+
+  .bm-sizes-note-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: #8B5E3C;
+    margin-top: 1px;
+  }
+
+  .bm-sizes-note-text {
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #5C3D20;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ===== BM-SIZES: Accordion ===== */
+  .bm-sizes-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .bm-sizes-accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 22px;
+    background: #FAF3EC;
+    border: 1px solid #D4B99A;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.25s ease, border-radius 0.3s ease;
+  }
+
+  .bm-sizes-accordion-header:hover {
+    background: #F5EDE4;
+  }
+
+  .bm-sizes-toggle:checked + .bm-sizes-accordion-header {
+    border-radius: 12px 12px 0 0;
+    background: #F5EDE4;
+  }
+
+  .bm-sizes-accordion-header-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .bm-sizes-accordion-header .bm-sizes-heading {
+    text-align: right;
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .bm-sizes-accordion-header .bm-sizes-subheading {
+    text-align: right;
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  .bm-sizes-accordion-arrow {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: #8B5E3C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bm-sizes-toggle:checked + .bm-sizes-accordion-header .bm-sizes-accordion-arrow {
+    transform: rotate(180deg);
+  }
+
+  .bm-sizes-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                padding-top 0.3s ease;
+  }
+
+  .bm-sizes-toggle:checked ~ .bm-sizes-accordion-body {
+    max-height: 760px;
+    padding-top: 16px;
+  }
+
+  @media (max-width: 520px) {
+    .bm-sizes-wrapper {
+      padding: 32px 12px;
+    }
+
+    .bm-sizes-heading {
+      font-size: 1.4rem;
+    }
+
+    .bm-sizes-table thead th,
+    .bm-sizes-table tbody td {
+      padding: 12px 16px;
+      font-size: 0.875rem;
+    }
+
+    .bm-sizes-table tbody td:first-child {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<section class="bm-sizes-wrapper">
+
+  <input
+    type="checkbox"
+    class="bm-sizes-toggle"
+    id="bm-sizes-accordion"
+    aria-hidden="true"
+  >
+
+  <label class="bm-sizes-accordion-header" for="bm-sizes-accordion">
+    <div class="bm-sizes-accordion-header-inner">
+      <span class="bm-sizes-heading">{{ section.settings.section_title }}</span>
+      <span class="bm-sizes-subheading">בחרו את המידה המתאימה לפי גיל ומשקל התינוק</span>
+    </div>
+    <span class="bm-sizes-accordion-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </label>
+
+  <div class="bm-sizes-accordion-body">
+
+  <div class="bm-sizes-table-container">
+    <table class="bm-sizes-table">
+      <thead>
+        <tr>
+          <th scope="col">מידה</th>
+          <th scope="col">גיל</th>
+          <th scope="col">משקל</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NB</td>
+          <td>0–1 חודש</td>
+          <td>עד 4 ק"ג</td>
+        </tr>
+        <tr>
+          <td>0–3M</td>
+          <td>0–3 חודשים</td>
+          <td>3–6 ק"ג</td>
+        </tr>
+        <tr>
+          <td>3–6M</td>
+          <td>3–6 חודשים</td>
+          <td>5–7.5 ק"ג</td>
+        </tr>
+        <tr>
+          <td>6–9M</td>
+          <td>6–9 חודשים</td>
+          <td>7–9 ק"ג</td>
+        </tr>
+        <tr>
+          <td>9–12M</td>
+          <td>9–12 חודשים</td>
+          <td>8–10.5 ק"ג</td>
+        </tr>
+        <tr>
+          <td>12–18M</td>
+          <td>12–18 חודשים</td>
+          <td>10–12 ק"ג</td>
+        </tr>
+        <tr>
+          <td>18–24M</td>
+          <td>18–24 חודשים</td>
+          <td>11–14 ק"ג</td>
+        </tr>
+        <tr>
+          <td>2T</td>
+          <td>2 שנים</td>
+          <td>12–14 ק"ג</td>
+        </tr>
+        <tr>
+          <td>3T</td>
+          <td>3 שנים</td>
+          <td>13–16 ק"ג</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bm-sizes-note">
+    <svg class="bm-sizes-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+    </svg>
+    <p class="bm-sizes-note-text">{{ section.settings.note_text }}</p>
+  </div>
+
+  </div><!-- /.bm-sizes-accordion-body -->
+
+</section>
+
+{% schema %}
+{
+  "name": "BM - טבלת מידות",
+  "tag": "section",
+  "class": "bm-store-sizes-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "כותרת הסקשן",
+      "default": "מדריך מידות"
+    },
+    {
+      "type": "text",
+      "id": "note_text",
+      "label": "הערת מידות בתחתית",
+      "default": "לתינוקות גבוהים לגילם — מומלץ מידה אחת מעלה"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM - טבלת מידות"
+    }
+  ]
+}
+{% endschema %}

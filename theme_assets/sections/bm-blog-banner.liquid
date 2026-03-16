@@ -1,0 +1,61 @@
+{%- style -%}
+  .bm-blog-banner {
+    background: #FFFDF9;
+    padding: 48px 0 28px;
+    text-align: center;
+    direction: rtl;
+    border-bottom: 1px solid #F0E9E0;
+  }
+  .bm-blog-banner__title {
+    font-family: 'Heebo', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #8B5E3C;
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+  .bm-blog-banner__desc {
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.05rem;
+    color: #3A2E24;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  @media screen and (max-width: 749px) {
+    .bm-blog-banner { padding: 32px 20px 20px; }
+    .bm-blog-banner__title { font-size: 1.75rem; }
+  }
+{%- endstyle -%}
+
+<div class="bm-blog-banner" dir="rtl">
+  <div class="page-width">
+    <h1 class="bm-blog-banner__title">{{ section.settings.title | escape }}</h1>
+    <p class="bm-blog-banner__desc">{{ section.settings.description | escape }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BM - Blog Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "כותרת",
+      "default": "המגזין של BabyMania"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "תיאור",
+      "default": "טיפים, מדריכים והשראה להורים — מהצוות שמכיר תינוקות"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM - Blog Banner"
+    }
+  ]
+}
+{% endschema %}

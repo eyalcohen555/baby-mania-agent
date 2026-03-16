@@ -1,12 +1,12 @@
 {
   "description": "BabyMania Organic Team — רישום מרכזי של כל ה-HUBs",
   "version": "2.0",
-  "last_updated": "2026-03-13",
+  "last_updated": "2026-03-15",
   "blog_id": 109164036409,
   "blog_url": "https://babymania-il.com/blogs/news",
   "topic_hubs_knowledge": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic צוות/docs/TOPIC-HUBS-KNOWLEDGE.md",
-  "last_published": "HUB-4",
-  "next_hub": "HUB-5",
+  "last_published": "HUB-5",
+  "next_hub": "HUB-6",
   "hubs": [
     {
       "hub_id": "HUB-1",
@@ -73,26 +73,31 @@
       "hub_id": "HUB-5",
       "hub_name": "Baby Gifts",
       "hub_name_he": "מתנות לתינוק",
-      "status": "planned",
-      "approved_pillar": "Best Gifts for a New Mom",
-      "approved_pillar_he": "מתנות טובות לאמא חדשה",
-      "pillar_keyword": null,
-      "articles_count": 0,
-      "articles": [],
-      "product_bridge": "gift bundles, newborn gift sets",
-      "approved_clusters": [
-        "Baby Shower Gift Ideas",
-        "Practical Gifts for New Parents",
-        "Luxury Baby Gift Ideas",
-        "What New Moms Really Need",
-        "Top Baby Gifts for First-Time Parents",
-        "Baby Gift Bundles Guide"
+      "status": "published",
+      "pillar": {
+        "title": "מתנות לתינוק — המדריך המלא (בייבי שאוור, ברית, ביקור יולדת)",
+        "handle": "matanot-letinok-madrih-male",
+        "article_id": 681842737465,
+        "url": "https://babymania-il.com/blogs/news/matanot-letinok-madrih-male"
+      },
+      "pillar_keyword": "מתנות לתינוק",
+      "articles_count": 7,
+      "articles": [
+        {"id": "HUB-5-Pillar", "handle": "matanot-letinok-madrih-male", "article_id": 681842737465},
+        {"id": "HUB-5-C1", "handle": "matanot-baby-shower-reshima-nigmeret", "article_id": 681842770233},
+        {"id": "HUB-5-C2", "handle": "matanot-maasiot-tinok-horeh-chadash", "article_id": 681842803001},
+        {"id": "HUB-5-C3", "handle": "matanot-yokra-tinok-zechronot", "article_id": 681842835769},
+        {"id": "HUB-5-C4", "handle": "ma-ima-chadasha-tzricha-achrei-lida", "article_id": 681842868537},
+        {"id": "HUB-5-C5", "handle": "matanot-tinok-rishon-madrih", "article_id": 681842901305},
+        {"id": "HUB-5-C6", "handle": "set-matana-tinok-pitaron-nachon", "article_id": 681842934073}
       ],
-      "files_location": null,
+      "product_bridge": "Lino™ set, LUMI™ romper",
+      "writing_angle": "הדוד/הדודה שלא יודע מה לקנות — 5 תרחישים ישראליים",
+      "files_location": "C:/Projects/baby-mania-agent/output/hub5-baby-gifts/",
       "file_prefix": "HUB5_",
-      "published_at": null,
-      "demand_validation_required": true,
-      "notes": "הבא לביצוע — לפי עדיפות TOPIC-HUBS-KNOWLEDGE. דורש ולידציית ביקוש לפני כתיבה"
+      "published_at": "2026-03-15",
+      "publish_results_file": "HUB5_PUBLISH_RESULTS.json",
+      "notes": "פורסם 15/03/2026 — 7 מאמרים. זווית: הדוד/הדודה שלא יודע מה לקנות. 5 תרחישים ישראליים."
     },
     {
       "hub_id": "HUB-6",
