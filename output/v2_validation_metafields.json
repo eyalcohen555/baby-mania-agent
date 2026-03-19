@@ -1,0 +1,11 @@
+{
+  "9687596728633": {
+    "error": "HTTPSConnectionPool(host='a2756c-c0.myshopify.com', port=443): Max retries exceeded with url: /admin/api/2024-10/products/9687596728633/metafields.json?namespace=baby_mania&limit=250 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+  },
+  "9688932909369": {
+    "error": "HTTPSConnectionPool(host='a2756c-c0.myshopify.com', port=443): Max retries exceeded with url: /admin/api/2024-10/products/9688932909369/metafields.json?namespace=baby_mania&limit=250 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+  },
+  "9657091293497": {
+    "error": "HTTPSConnectionPool(host='a2756c-c0.myshopify.com', port=443): Max retries exceeded with url: /admin/api/2024-10/products/9657091293497/metafields.json?namespace=baby_mania&limit=250 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+  }
+}
