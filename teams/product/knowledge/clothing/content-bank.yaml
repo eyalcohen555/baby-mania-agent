@@ -10,7 +10,7 @@ benefits:
   comfort_daily:
     benefit_key: comfort_daily
     headline: "נוח לאורך כל היום"
-    supporting: "גזרה שמאפשרת תנועה חופשית — מהמשחק עד השינה."
+    supporting: "הילד לא מגיע עייף או עצבני לסוף היום — הבגד לא עצר אותו בדרך."
     use_when:
       - season_signal is winter or all-season
       - fit_impression is relaxed or loose
@@ -21,7 +21,7 @@ benefits:
   free_movement:
     benefit_key: free_movement
     headline: "תנועה חופשית בכל פוזיציה"
-    supporting: "הגזרה לא מגבילה — גם כשהתינוק זוחל, יושב או משחק."
+    supporting: "הילד זוחל, קופץ ומשחק — הבגד לא עוצר אותו ואתה לא צריך להתערב."
     use_when:
       - silhouette includes relaxed or wide
       - leg_type includes full or wide
@@ -31,7 +31,7 @@ benefits:
   easy_dressing:
     benefit_key: easy_dressing
     headline: "קל ללבישה ולהחלפה"
-    supporting: "פתיחה נגישה — פחות מאמץ לשניכם."
+    supporting: "פחות מריבות בלילה — נפתח בשתי ידיים גם כשאתה עייף."
     use_when:
       - closure_signals includes snaps or zipper or buttons
     do_not_use_when:
@@ -40,7 +40,7 @@ benefits:
   neat_look:
     benefit_key: neat_look
     headline: "מראה מסודר גם אחרי שעות"
-    supporting: "שומר על צורתו גם אחרי כביסות ולבישה חוזרת."
+    supporting: "מגיע לאירוע מסודר כמו שיצא — בלי שאתה צריך לסדר אותו שוב."
     use_when:
       - style_keywords includes clean or structured
       - occasion_signals includes outing or event
@@ -50,7 +50,7 @@ benefits:
   soft_touch:
     benefit_key: soft_touch
     headline: "נעים למגע על עור רגיש"
-    supporting: "תחושת רכות שמתאימה לעור עדין של תינוקות."
+    supporting: "התינוק לא מתעצבן מהבגד — אתה לא צריך להחליף באמצע היום."
     use_when:
       - softness_impression is high or visible
       - texture_signals includes plush or knit or fleece
@@ -60,7 +60,12 @@ benefits:
   versatile_use:
     benefit_key: versatile_use
     headline: "מתאים לבית ולחוץ"
-    supporting: "לא צריך להחליף — עובר מהמשחק בבית לטיול בחוץ."
+    supporting_variants:
+      - "לא צריך להחליף לפני הטיול — יוצאים מוכנים ישר מהבית."
+      - "עובד בבית, עובד בחוץ — חוסך החלפה שלמה לפני כל יציאה."
+      - "מסודר מספיק לפארק, נוח מספיק לבית — פריט אחד לשני המצבים."
+      - "לא צריך לבחור בגד אחר לפני שיוצאים — הדגם עובד לשני הסיטואציות."
+    selection_rule: "בחר variant לפי context של המוצר. אסור לחזור על אותו variant במוצרים עוקבים — סקור 2 מוצרים אחרונים לפני הבחירה."
     use_when:
       - target_use_cases includes daily AND outing
       - style is casual or smart-casual
@@ -70,7 +75,7 @@ benefits:
   gift_worthy:
     benefit_key: gift_worthy
     headline: "נראה כמו מתנה, מרגיש כמו בית"
-    supporting: "עיצוב שמתאים לאירוע — נוחות שמתאימה לכל יום."
+    supporting: "נראה יקר בתמונות — ואחרי האירוע הילד לובש אותו כל יום."
     use_when:
       - premium_signals is not empty
       - occasion_signals includes gift or event
@@ -80,7 +85,7 @@ benefits:
   layering:
     benefit_key: layering
     headline: "שכבה שעובדת עם כל הארון"
-    supporting: "קל לשלב עם פריטים נוספים בכל עונה."
+    supporting: "קונים פריט אחד ומשלבים עם כל מה שכבר בארון — פחות סחבת, פחות עלות."
     use_when:
       - season_signal is spring-autumn or all-season
       - is_set_or_single is single
@@ -113,8 +118,13 @@ faq:
 
     - key: gift_option
       question: "האם מתאים כמתנה?"
-      answer: "בהחלט — הדגם עשוי ברמה גבוהה ונראה יפה גם באריזה."
-      trigger: premium_signals is not empty OR occasion includes gift
+      answer_variants:
+        - "בהחלט — הדגם נראה יפה באריזה ומרגיש כמו מתנה מחושבת."
+        - "כן — עיצוב ייחודי שנראה יפה לפני הפתיחה וגם אחריה."
+        - "מתאים — מכובד מספיק לאירוע ונוח מספיק לשגרה."
+      selection_rule: "בחר variant לפי סוג המוצר: סט → variant 1, עיצוב ייחודי → variant 2, פריט יומיומי עם פרימיום → variant 3."
+      trigger: "premium_signals is not empty AND (occasion includes gift OR product_type includes set)"
+      trigger_note: "שינוי: AND מחליף OR. נדרש premium_signals ממשי בנוסף ל-signal מפורש של מתנה או סט. לא להפעיל על מוצרי ביגוד יומיומי ללא signal ברור."
       safe: true
 
   visual_triggered:

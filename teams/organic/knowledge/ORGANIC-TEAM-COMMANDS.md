@@ -91,6 +91,13 @@ python 10-organic-lead/organic-strategy-controller.py decide 9999999999999
 #   Agent 10 (Link QA) → output/stage-outputs/{pid}_internal_link_validation.json
 # → אימות: PASS / WARNING / FAIL — לפני פרסום
 # → בודק: 404, anchor text, density, pillar link, cluster link, duplicates
+# → FAIL חוסם פרסום (hard gate דרך qa_gate.py)
+
+#   Agent 10.5 (Content Reviewer) → output/stage-outputs/{pid}_content_review.json
+# → REVIEWER ONLY — לא gate, לא מחובר ל-qa_gate.py
+# → בודק בדיוק 2 נושאים: (1) איכות כותרת, (2) איכות intro-box (PPT)
+# → תוצאה: PASS / WARN — WARN דורש החלטה אנושית, לא עוצר פרסום אוטומטית
+# → מריצים לפי שיקול דעת, לא חובה בכל HUB
 
 # שלב 6: Push tags ל-Shopify
 python 10-organic-lead/organic-orchestrator.py push 9999999999999
@@ -140,8 +147,11 @@ cat output/stage-outputs/PRODUCT_ID_article_link_suggestions.json
 # בדיקת הצעות קישורי מוצרים (Product Linker)
 cat output/stage-outputs/PRODUCT_ID_product_link_suggestions.json
 
-# בדיקת אימות קישורים (Link QA)
+# בדיקת אימות קישורים (Link QA — hard gate)
 cat output/stage-outputs/PRODUCT_ID_internal_link_validation.json
+
+# בדיקת סקירת תוכן (Content Reviewer — reviewer only, לא gate)
+cat output/stage-outputs/PRODUCT_ID_content_review.json
 
 # בדיקת החלטה מהירה (בלי הערכה מחדש)
 python 10-organic-lead/organic-strategy-controller.py check PRODUCT_ID
@@ -167,7 +177,8 @@ python 10-organic-lead/organic-orchestrator.py verify PRODUCT_ID
 | `content_mapped` | agent 07 כתב internal_content_map.json — מפת תוכן האתר |
 | `article_links_suggested` | agent 08 כתב article_link_suggestions.json |
 | `product_links_suggested` | agent 09 כתב product_link_suggestions.json |
-| `links_validated` | agent 10 כתב internal_link_validation.json — PASS/WARNING/FAIL |
+| `links_validated` | agent 10 כתב internal_link_validation.json — PASS/WARNING/FAIL (hard gate) |
+| `content_reviewed` | agent 10.5 כתב content_review.json — PASS/WARN (reviewer only, לא חוסם) |
 | `tags_pushed` | tags עודכנו ב-Shopify |
 | `tags_verified` | אומת שהתגיות נשמרו נכון |
 | `failed` | כישלון בשלב כלשהו |

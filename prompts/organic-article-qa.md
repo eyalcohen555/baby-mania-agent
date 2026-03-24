@@ -1,5 +1,5 @@
 # Organic Article QA Rules — BabyMania Pipeline
-# Version 3.0 — Presentation Spec Lock (2026-03-10)
+# Version 3.2 — Image HTTP Verification + Transliteration Blocklist (2026-03-19)
 #
 # This file is the SINGLE SOURCE OF TRUTH for all organic article quality rules.
 # Referenced by: Agent 04 (blog-writer), Agent 10 (link-qa), publish scripts.
@@ -123,6 +123,20 @@ Before finalizing the HTML, scan the full body for these patterns and replace th
 - "לסיכום, ברור מאליו ש..."
 - "שאלה מצוינת!"
 - Any phrase that sounds like a translated prompt response
+
+### Forbidden transliterations — domain blocklist (auto-FAIL in QA, added 2026-03-19)
+These are medical/technical English terms transliterated into Hebrew letters.
+Israeli parents do not use them. Replace with natural Hebrew equivalents.
+
+| Forbidden (transliteration) | Required replacement |
+|-----------------------------|----------------------|
+| `מטטרסל` | `עצמות כף הרגל` |
+| `פרונציה` | `סיבוב פנימי של כף הרגל` |
+| `סופינציה` | `סיבוב חיצוני של כף הרגל` |
+| `אורתופדי` (as general adjective for everyday shoes) | `תומך / מתאים לכף הרגל` |
+
+Scope: applies to all HUB topics, not only shoes. If a similar transliteration appears in another domain (e.g., clothing, sleep), it must also be replaced.
+Do NOT add new terms to this list without a documented production incident as justification.
 
 ---
 
@@ -289,6 +303,7 @@ If found → **FAIL — Block publish**.
 
 | Date | Change | Reason |
 |------|--------|--------|
+| 2026-03-19 | v3.2 — Image HTTP Verification + Transliteration Blocklist | Check 10: HTTP HEAD on image src added (FAIL on 404). Rule 3: domain transliteration blocklist (4 terms, shoes/baby) — auto-FAIL |
 | 2026-03-10 | v3.1 — Image Source Policy | Rule 2 updated: trusted stock sources allowed; section relevance required; generic alt text explicitly forbidden; Rule 7 check 4 updated |
 | 2026-03-10 | v3.0 — Presentation Spec Lock | Hero architecture change; CSS moved to bm-blog-premium.css; inline styles forbidden; figure/figcaption required; Rules 8–9 added; Rule 7 checklist extended to 15 items |
 | 2026-03-10 | v2.1 — Rules 1–7 locked | HUB-1 manual QA cycle revealed systemic issues |

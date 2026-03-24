@@ -1,0 +1,25 @@
+# BabyMania Clothing Rollout — products_to_push.txt
+# Generated: 2026-03-18
+# Total: 15 PIDs (11 rebuilt v3.1 + 4 already-ready)
+# Excluded: 9606693749049 (permanently failed) + 7 non-clothing products
+#
+# Format: one PID per line (lines starting with # are comments)
+#
+# --- REBUILT-11 (stages 02-07, v3.1, 2026-03-18) ---
+10009173033273
+10026705748281
+10029648970041
+10029649101113
+10029649133881
+9657091293497
+9673732292921
+9688660312377
+9688934940985
+9855017550137
+9895864205625
+#
+# --- READY-4 (health_ok, all 12 metafields, validator PASS) ---
+9687596728633
+9688932909369
+9874906415417
+9892196417849

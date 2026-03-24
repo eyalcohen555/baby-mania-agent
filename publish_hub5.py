@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import requests
 from shopify_client import _headers, BASE_URL
+from qa_gate import preflight_qa_check, check_article_qa
 
 BLOG_ID = 109164036409
 HUB5_DIR = Path("C:/Projects/baby-mania-agent/output/hub5-baby-gifts")
@@ -107,6 +108,9 @@ def read_body_html(filepath: Path) -> str:
 
 def publish_article(article_def: dict) -> dict:
     """Publish a single article to Shopify blog."""
+    # Gate: check QA immediately before each Shopify call
+    check_article_qa(HUB5_DIR, article_def)
+
     filepath = HUB5_DIR / article_def["file"]
 
     if not filepath.exists():
@@ -170,6 +174,9 @@ def main():
     print(f"Blog ID: {BLOG_ID}")
     print(f"Articles: {len(ARTICLES)}")
     print(f"{'='*60}\n")
+
+    # Pre-flight: validate ALL QA files before publishing anything
+    preflight_qa_check(HUB5_DIR, ARTICLES, "HUB-5 Baby Gifts")
 
     results = []
     published = 0

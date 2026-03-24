@@ -1,0 +1,58 @@
+{
+  "agent": "08-organic-article-linker",
+  "version": "1.0",
+  "hub_id": "HUB-7",
+  "article_id": "HUB-7-C1",
+  "article_file": "HUB7_C1_blog_article.html",
+  "article_word_count_estimate": 750,
+  "recommended_link_count": 4,
+  "links": [
+    {
+      "anchor_text": "המדריך המלא לסביבה בטוחה לתינוק",
+      "target_url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male",
+      "link_type": "pillar",
+      "anchor_type": "partial_match",
+      "placement_section": "מה הכלל הבסיסי של שינה בטוחה לתינוק?",
+      "position_third": "first",
+      "source_sentence": "\"מיטה ריקה\" היא הנקודה שהכי קשה לחלק מההורים: ריקה מכריות, מבובות קטיפה, ממגיני דפנות, ומשמיכות כבדות. לא בגלל שהם מסוכנים בהכרח — אלא כי הם מגבירים את הסיכון כשמשהו משתבש. המדריך המלא לסביבה בטוחה לתינוק מפרט את הנושא לעומק.",
+      "correction_note": "Existing link in HTML has incorrect slug (/iyach-liytzor-sviva-betua-letinok). Correct target URL is sviva-betua-letinok-madrih-male."
+    },
+    {
+      "anchor_text": "הטעויות הנפוצות בשינת תינוקות",
+      "target_url": "https://babymania-il.com/blogs/news/tauyot-shina-betua-tinok",
+      "link_type": "cluster",
+      "anchor_type": "partial_match",
+      "placement_section": "מה שמים (ומה לא שמים) במיטת תינוק?",
+      "position_third": "first",
+      "source_sentence": "הורים רבים תוהים לגבי הטעויות הנפוצות בשינת תינוקות — ואחת הנפוצות ביותר היא שימוש במגיני דפנות.",
+      "correction_note": "Existing link in HTML has incorrect slug (/tauyot-shina-tinok). Correct target URL is tauyot-shina-betua-tinok."
+    },
+    {
+      "anchor_text": "בטיחות לילה לתינוק",
+      "target_url": "https://babymania-il.com/blogs/news/betihut-layla-letinok-bdikot-lifney-shina",
+      "link_type": "cluster",
+      "anchor_type": "partial_match",
+      "placement_section": "איזו טמפרטורת חדר מומלצת לשינת תינוק?",
+      "position_third": "middle",
+      "source_sentence": "בטיחות לילה לתינוק מפרטת את הנושא בהרחבה.",
+      "correction_note": "Existing link in HTML has incorrect slug (/btiut-layla-tinok). Correct target URL is betihut-layla-letinok-bdikot-lifney-shina."
+    },
+    {
+      "anchor_text": "שינה טובה = שינה בטוחה",
+      "target_url": "https://babymania-il.com/blogs/news/how-to-help-baby-sleep-through-the-night",
+      "link_type": "cross-hub",
+      "anchor_type": "partial_match",
+      "placement_section": "כמה שמיכות מותר לתינוק בשינה?",
+      "position_third": "middle",
+      "source_sentence": "שינה טובה = שינה בטוחה — הקשר בין שני הנושאים מוסבר היטב במדריך ה-HUB-1 שלנו.",
+      "correction_note": "Existing link in HTML has incorrect URL (https://babymania-il.com/blogs/news/shina-tova-tinok). Correct target URL is the HUB-1 Pillar: how-to-help-baby-sleep-through-the-night."
+    }
+  ],
+  "validation": {
+    "has_pillar_link": true,
+    "no_duplicate_targets": true,
+    "density_ok": true,
+    "density_note": "4 links across ~750 words = 1 per ~188 words. Slightly above 1/250 target but within acceptable range given structural linking requirements. Links are spread across 4 of 5 body sections."
+  },
+  "generated_at": "2026-03-23T10:00:00Z"
+}

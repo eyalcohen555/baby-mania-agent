@@ -315,9 +315,19 @@ def print_report(results, live_mode):
 
 def main():
     parser = argparse.ArgumentParser(description="BabyMania Article Refresh")
-    parser.add_argument("--live", action="store_true", help="עדכן מאמרים ב-Shopify (ברירת מחדל: dry-run)")
+    parser.add_argument("--live",  action="store_true", help="עדכן מאמרים ב-Shopify (ברירת מחדל: dry-run)")
+    parser.add_argument("--force", action="store_true", help="חובה יחד עם --live כדי לאשר כתיבה ל-Shopify")
     args = parser.parse_args()
     live_mode = args.live
+
+    # QA gate: --live alone is not enough — requires explicit --force confirmation.
+    # refresh_articles bypasses per-article QA files (no local HTML to validate against).
+    # --force signals that the operator knowingly accepts this bypass.
+    if live_mode and not args.force:
+        print("\n[BLOCKED] --live requires --force to confirm QA bypass.")
+        print("  refresh_articles modifies published articles without running Agent 10.")
+        print("  If you have verified the articles manually, re-run with: --live --force")
+        sys.exit(1)
 
     print(f"\n🔍 שולף מאמרים מבלוג {BLOG_ID}...")
     articles = get_blog_articles(BLOG_ID)

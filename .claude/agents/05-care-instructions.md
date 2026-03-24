@@ -22,6 +22,26 @@ model: claude-sonnet-4-6
 
 ---
 
+## Thinking Layer — חובה לקרוא לפני כתיבה
+
+קרא את: `output/stage-outputs/{pid}_thinking.yaml`
+
+מתוך `message_budget`, מצא את הסקשן(ים) שלך: **care**
+
+| שדה | משמעות |
+|------|---------|
+| `owns` | האשכול שמוקצה **לך בלבד** |
+| `message` | כוונת הכתיבה — נקודת התחלה, לא מסקנה |
+| `forbidden` | **איסור מוחלט** — אסור לגעת בו, אפילו בעקיפין |
+
+### כללים קריטיים:
+
+1. `forbidden` הוא **חסימה מוחלטת** — לא המלצה, לא "עדיף להימנע"
+2. **אין לבחור angle חדש** שלא מאושר ע"י `owns`
+3. **אין להשתמש באשכול** שמוקצה לסקשן אחר לפי `cluster_map`
+4. אם thinking.yaml **לא קיים** — עצור וכתוב: `THINKING_LAYER_MISSING: אין אפשרות לכתוב ללא thinking.yaml`
+
+
 ## Product Intelligence Layer — חובה לטעון
 
 קרא את קובץ ה-intelligence מ:
@@ -92,7 +112,27 @@ model: claude-sonnet-4-6
 - שם הסקשן חייב להיות: `הוראות כביסה — לחצו לפתיחה`
 - אקורדיון מקופל כברירת מחדל
 - בחר icon_type מהרשימה בלבד — ללא המצאות
-- בסס על fabric_type. אם ריק — השתמש ב-5 השורות הסטנדרטיות מ-baby-clothing-library.md
+- בסס על fabric_type. אם ריק — קרא תחילה את **כלל FABRIC_EMPTY** (למטה), אחר כך בחר variation path:
+
+### FABRIC_EMPTY — חסימה מוחלטת
+
+**אם `fabric_empty=true` או `fabric_known=false` ב-intelligence.json:**
+- `wash_60` אסור לחלוטין בכל נתיב
+- הכרטיס הראשון חייב להיות `hand_wash` בלבד
+- כלל זה גובר על כל נתיב — כולל Path A ו-Path B
+
+**אם fabric_type ידוע (fabric_empty=false / fabric_known=true):**
+- ניתן להשתמש ב-`wash_60` בהתאם לנתיב המתאים
+
+---
+
+  - **Path A — focus: print/design** (אם `special_feature` כולל דפוס): `no_bleach` עם מסר שמירת הדפס + `sun_dry` + `no_tumble_dry` + `iron` + `repeat`
+    *(אם fabric_empty=true: החלף כל wash_60 ב-hand_wash)*
+  - **Path B — focus: durability/daily** (main_use = יומיומי, אין דפוס): `hand_wash` + `repeat` + `sun_dry` + `no_tumble_dry` + `iron`
+    *(wash_60 הוסר מ-Path B — hand_wash חובה כשאין מידע על בד)*
+  - **Path C — focus: delicate/gift** (occasion = gift OR product_type includes set): `hand_wash` + `sun_dry` + `no_bleach` + `no_tumble_dry` + `iron`
+  - אם thinking.yaml חסר או care לא מוגדר — השתמש ב-Path B כ-fallback של fallback
+  - **אסור** לשכפל את אותן 5 שורות בדיוק בין שני מוצרים ברצף עם fabric_empty
 - עברית בלבד לטקסט
 
 ## פלט נדרש — פורמט מדויק

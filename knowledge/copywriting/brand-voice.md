@@ -32,6 +32,7 @@ premium simplicity
   - "מושלם" — replace with: "נוח", "מתאים", "טוב"
   - "תינוקכם" — replace with: "לתינוק שלכם", "לתינוק"
   - "הכי טוב", "מעוצב בקפידה", "נבחר בקפידה", "פרימיום במיוחד"
+  - "חוויית שימוש", "מוצר חובה", "איכות ללא פשרות"
 
 ---
 
@@ -69,6 +70,11 @@ Frame ease of maintenance as a benefit for the parent, not a product feature.
 - Bad: "ניתן לכביסה חוזרת"
 - Good: "שומר על הרכות אחרי כביסות רבות — פחות דאגות, יותר זמן"
 
+**P7 — Address form (singular default)**
+Use singular (אתה/לך/שלך) as the default when direct address is needed.
+Plural (אתם/לכם) is acceptable in Fabric Story and Emotional Reassurance where warmth to the family unit is intentional.
+When possible, write neutrally with no direct address — avoids inconsistency across sections.
+
 ---
 
 ## Voice Examples
@@ -78,4 +84,4 @@ Frame ease of maintenance as a benefit for the parent, not a product feature.
 | Fabric intro | "בד איכותי שנבחר בקפידה" | "בד רך שמרגיש טוב על עור התינוק" |
 | Washing care | "יש לכבס בתוכנית עדינה" | "כביסה עדינה שומרת על הרכות — פשוט ויעיל" |
 | Gift framing | "מתנה מושלמת לכל תינוק" | "מתנה שהורים אוהבים לקבל — פרקטית ויפה" |
-| Hero headline | "אוברול לתינוקות — איכותי ונוח" | "הנוחות שתינוקכם ראוי לה מהיום הראשון" |
+| Hero headline | "אוברול לתינוקות — איכותי ונוח" | "הנוחות שהתינוק שלך ראוי לה מהיום הראשון" |

@@ -10,6 +10,7 @@ import json
 import requests
 from datetime import datetime
 from pathlib import Path
+from qa_gate import check_article_qa
 
 BASE_DIR    = Path(r"C:\Projects\baby-mania-agent")
 ARTICLE_SRC = BASE_DIR / "output" / "stage-outputs" / "HUB2_C5_blog_article.html"
@@ -214,6 +215,8 @@ def update_content_map(shopify_id, published_at):
 
 
 if __name__ == "__main__":
+    check_article_qa(ARTICLE_SRC.parent, {"file": ARTICLE_SRC.name, "cluster_id": "HUB-2-C5"})  # Gate: blocks if QA missing or FAIL
+
     print("=== publish_hub2_c5.py ===")
     print(f"Article : {ARTICLE_TITLE}")
     print(f"Handle  : {ARTICLE_HANDLE}")

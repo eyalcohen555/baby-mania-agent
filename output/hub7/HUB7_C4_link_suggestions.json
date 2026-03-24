@@ -1,0 +1,44 @@
+{
+  "agent": "08-organic-article-linker",
+  "version": "1.0",
+  "hub_id": "HUB-7",
+  "article_id": "HUB-7-C4",
+  "article_file": "HUB7_C4_blog_article.html",
+  "article_word_count_estimate": 650,
+  "recommended_link_count": 3,
+  "links": [
+    {
+      "anchor_text": "חלק מרכזי בשגרת הבטיחות היומיומית",
+      "target_url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male",
+      "link_type": "pillar",
+      "anchor_type": "exact_match",
+      "placement_section": "למה ביגוד בטוח לתינוק זה לא רק שאלת נוחות",
+      "position_third": "first",
+      "notes": "Appears in body paragraph: 'היא חלק מרכזי בשגרת הבטיחות היומיומית' — wrap that clause"
+    },
+    {
+      "anchor_text": "התחממות יתר בתינוקות",
+      "target_url": "https://babymania-il.com/blogs/news/minuat-hitchamamut-yeter-betinok",
+      "link_type": "cluster",
+      "anchor_type": "exact_match",
+      "placement_section": "חומרים בטוחים לביגוד תינוק — מה לחפש",
+      "position_third": "first",
+      "notes": "Sentence ends: 'קראו עוד על התחממות יתר בתינוקות כדי להבין איך ביגוד משפיע על ויסות חום' — anchor the phrase 'התחממות יתר בתינוקות'"
+    },
+    {
+      "anchor_text": "עור רגיש ותגובות אלרגיות לבגדים",
+      "target_url": "https://babymania-il.com/blogs/news/how-to-care-for-sensitive-baby-skin",
+      "link_type": "cross-hub",
+      "anchor_type": "exact_match",
+      "placement_section": "בחירת מידה נכונה — למה גדול מדי זה לא פתרון",
+      "position_third": "last",
+      "notes": "Sentence: 'בנוגע לעור רגיש ותגובות אלרגיות לבגדים — ראו גם את...' — anchor 'עור רגיש ותגובות אלרגיות לבגדים'"
+    }
+  ],
+  "validation": {
+    "has_pillar_link": true,
+    "no_duplicate_targets": true,
+    "density_ok": true
+  },
+  "generated_at": "2026-03-23T10:00:00Z"
+}

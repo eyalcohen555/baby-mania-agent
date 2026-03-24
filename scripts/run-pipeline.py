@@ -131,11 +131,13 @@ def shopify_post(path: str, payload: dict) -> dict:
     return r.json()
 
 
-def write_metafields(product_id: str, metafields: dict) -> int:
+def write_metafields(product_id: str, metafields: dict, skip_if_exists: set = frozenset()) -> int:
     """
     Upsert all baby_mania metafields for a product.
     Fetches existing metafields first, then PUT for updates and POST for new keys.
     Returns count of metafields written.
+
+    skip_if_exists: keys to skip if they already exist in Shopify (preserve approved values).
     """
     namespace = "baby_mania"
     json_keys = {"benefits", "care_instructions", "faq", "fabric_tags"}
@@ -147,6 +149,9 @@ def write_metafields(product_id: str, metafields: dict) -> int:
 
     written = 0
     for key, value in metafields.items():
+        if key in skip_if_exists and key in existing_map:
+            log.info("  Protecting %s — existing value preserved", key)
+            continue
         mf_type  = "json" if key in json_keys else "single_line_text_field"
         mf_value = (
             json.dumps(value, ensure_ascii=False)

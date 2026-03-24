@@ -1,0 +1,54 @@
+{
+  "agent": "10.5-organic-content-qa",
+  "version": "2.0",
+  "article_file": "C:\\Projects\\baby-mania-agent\\output\\hub7\\HUB7_C4_blog_article.html",
+  "reviewed_at": "2026-03-23T10:00:00Z",
+  "overall_review": "PASS",
+  "checks": {
+    "title_quality": {
+      "result": "PASS",
+      "h1_text": "ביגוד בטוח לתינוק — מה לחפש ומה להימנע ממנו",
+      "specificity": "PASS",
+      "length_words": 9,
+      "length_check": "PASS",
+      "natural_hebrew": "PASS",
+      "notes": null
+    },
+    "intro_box_quality": {
+      "result": "PASS",
+      "preview_present": true,
+      "proof_present": true,
+      "transition_present": true,
+      "notes": "proof_present PASS — post-fix sentence 'הקריטריונים כאן ברורים ומעשיים: חומר, תפרים, מידה, וקישוטים — ארבעה דברים שניתן לבדוק בפחות מדקה לפני כל רכישה' provides defined criteria with an actionable timeframe, qualifying as a concrete trust signal. preview_present PASS via 'נסביר בדיוק מה לחפש, מה להימנע ממנו, ואיך לבחור'. transition_present PASS via 'במדריך הזה נסביר'."
+    },
+    "body_language_quality": {
+      "result": "PASS",
+      "sampling_scope": {
+        "z1_headings": {
+          "tags_scanned": ["h2", "h3"],
+          "elements_found": 10
+        },
+        "z2_first_paragraphs": {
+          "paragraphs_scanned": 3,
+          "note": "first 3 <p> after intro-box"
+        },
+        "z3_pre_cta": {
+          "paragraphs_scanned": 1,
+          "note": "last <p> before class=cta-banner"
+        }
+      },
+      "findings": {
+        "hard_match": [],
+        "human_review": [],
+        "observed_below_threshold": []
+      },
+      "summary": {
+        "hm_findings_count": 0,
+        "hr_findings_count": 0,
+        "total_findings_count": 0,
+        "rules_triggered": []
+      }
+    }
+  },
+  "action_required": false
+}

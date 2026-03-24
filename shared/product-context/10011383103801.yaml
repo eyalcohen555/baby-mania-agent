@@ -1,0 +1,41 @@
+description_raw: "\n\n\n\n\nBaby Mania — סט בגדים לתינוקות חורף\n\n\n/* ═══════════════════════════════════════════\n\
+  \   BABY MANIA — PREMIUM PRODUCT PAGE v2\n   Agent-Ready Template — All fixes applied\n\
+  \   ═══════════════════════════════════════════ */\n\n:root {\n  --bm-cream: #faf8f4;\n\
+  \  --bm-sand: #f5f0e8;\n  --bm-warm: #e8ddd0;\n  --bm-accent: #c4956a;\n  --bm-accent-dark:\
+  \ #a67b52;\n  --bm-accent-light: #d4b896;\n  --bm-text: #2d2a26;\n  --bm-text-light:\
+  \ #6b6560;\n  --bm-text-muted: #9b9590;\n  --bm-success: #5a8f6a;\n  --bm-success-light:\
+  \ #e8f2ec;\n  --bm-danger: #c45c5c;\n  --bm-white: #ffffff;\n  --bm-border: #e8e4de;\n\
+  \  --bm-shadow-sm: 0 2px 8px rgba(45,42,38,.06);\n  --bm-shadow-md: 0 4px 20px rgba(45,42,38,.08);\n\
+  \  --bm-shadow-lg: 0 8px 40px rgba(45,42,38,.12);\n  --bm-radius-sm: 8px;\n  --bm-radius-md:\
+  \ 12px;\n  --bm-radius-lg: 16px;\n  --bm-font: 'Heebo', sans-serif;\n  --bm-transition:\
+  \ .25s cubic-bezier(.4,0,.2,1);\n}\n\n.bm-premium * { box-sizing: border-box; }\n\
+  .bm-premium {\n  font-family: var(--bm-font);\n  background: var(--bm-cream);\n\
+  \  color: var(--bm-text);\n  line-height: 1.75;\n  font-size: 16px;\n  direction:\
+  \ rtl;\n  -webkit-font-smoothing: antialiased;\n}\n.bm-premium img { max-width:\
+  \ 100%; display: block; }\n.bm-premium a { color: var(--bm-accent-dark); text-decoration:\
+  \ none; }\n\n.bm-wrap {\n  max-width: 820px;\n  margin: 0 auto;\n  padding: 0 20px\
+  \ 120px;\n}\n\n/* ═══ GALLERY — handled by Shopify theme ═══ */\n\n/* ═══ PRICE\
+  \ — handled by Shopify theme ═══ */\n.bm-social-proof {\n  display: flex; align-items:\
+  \ center; gap: 8px;\n  font-size: .82rem; color: var(--bm-text-muted); margin: 8px\
+  \ 0 20px;\n}\n.bm-social-proof-dot {\n  width: 8px; height: 8px; background: var(--bm-success);\n\
+  \  border-radius: 50%; animation: bm-pulse 2s infinite;\n}\n@keyframes bm-pulse\
+  \ { 0%,100%{opacity:1} 50%{opacity:.4} }\n\n/* ═══ BADGES ═══ */\n.bm-badges { display:\
+  \ flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }\n.bm-badge {\n  display:\
+  \ inline-flex; align-items: center; gap: 6px;\n  background: var(--bm-sand); color:\
+  \ var(--bm-text-light);\n  font"
+fabric_type: ''
+fetched_at: '2026-03-17T19:19:36.000087'
+generated:
+  published: true
+  validated: false
+main_use: ''
+price: '149.00'
+product_handle: autumn-and-winter-baby-boy-cute-fashion-sports-style-a-line-embroidery-design-long-sleeved-round-neck-top-and-pants-set
+product_id: '10011383103801'
+product_template_type: ''
+product_title: חליפת אלופים מהממת דגם שון  מבית בייבי מניה
+product_type: ''
+tags: []
+target_age: ''
+template_suffix_current: clothing
+variants_count: 5

@@ -1,0 +1,382 @@
+{
+  "product_id": "HUB-7",
+  "product_handle": "baby-safety-hub",
+  "system_topic": "baby-safety",
+  "market": "Israel",
+  "language": "he",
+  "generated_at": "2026-03-23T10:00:00+02:00",
+  "seed_entities": [
+    "בטיחות תינוק",
+    "שינה בטוחה לתינוק",
+    "מניעת התחממות יתר",
+    "בטיחות לילה לתינוק",
+    "ביגוד בטוח לתינוק",
+    "סביבה בטוחה לתינוק",
+    "כללי שינה בטוחה"
+  ],
+  "hubs": [
+    {
+      "hub_id": "HUB-7",
+      "hub_name": "Baby Safety",
+      "hub_priority": "high",
+      "hub_reason": "פחד ואחריות הם מניעי החיפוש המרכזיים — הורים רוצים אישור שהם עושים את הדבר הנכון. תוכן HUB-7 בונה סמכות ואמון (authority + trust). המרה ישירה נמוכה יותר ביחס ל-HUB-5, אך ערך ה-E-E-A-T גבוה מאוד. גשר מוצרי טבעי לאביזרי שינה וביגוד בטוח — בעיקר בקלסטרים C4 ו-C1.",
+      "pillar": {
+        "title": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+        "slug_suggestion": "sviva-betua-letinok-madrih-male",
+        "primary_intent": "AEO",
+        "primary_keyword": "בטיחות תינוק",
+        "secondary_keywords": [
+          "סביבה בטוחה לתינוק",
+          "כללי בטיחות לתינוק",
+          "בטיחות בית לתינוק",
+          "איך להגן על תינוק"
+        ],
+        "target_length_words": 2000,
+        "product_bridge_candidates": [
+          "אביזרי שינה בטוחים",
+          "ביגוד בטוח לתינוק — כותנה, ללא חוטים רפויים"
+        ],
+        "priority_score": 8,
+        "priority_breakdown": {
+          "demand": "high (3) × 0.25 = 0.75",
+          "commercial": "medium (2) × 0.25 = 0.50",
+          "authority": "high (3) × 0.20 = 0.60",
+          "competition_inv": "high → inverted (1) × 0.15 = 0.15",
+          "product_fit": "medium (2) × 0.15 = 0.30",
+          "raw_sum": "2.30 / 3 × 10 = 7.67 → 8"
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "HUB-7-C1",
+          "title": "כללי שינה בטוחה לתינוק — מה שכל הורה חייב לדעת",
+          "slug_suggestion": "klalei-shina-betua-letinok",
+          "article_type": "guide",
+          "intent": "AEO",
+          "primary_keyword": "שינה בטוחה לתינוק",
+          "secondary_keywords": [
+            "כללי שינה בטוחה",
+            "שינה בטוחה תינוק גיל",
+            "חדר שינה בטוח לתינוק",
+            "מיטת תינוק בטוחה"
+          ],
+          "long_tail_queries": [
+            "מה כללי שינה בטוחה לתינוק",
+            "איך ישן תינוק בצורה בטוחה",
+            "מה שמים במיטת תינוק",
+            "כמה שמיכות מותר לשים לתינוק ישן"
+          ],
+          "search_demand_estimate": "high",
+          "competition_estimate": "high",
+          "commercial_relevance": "medium",
+          "product_bridge_candidates": [
+            "אביזרי שינה בטוחים",
+            "BabySleep Pro (אור לילה + רעש לבן)"
+          ],
+          "parent_pillar": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+          "internal_link_role": "supporting",
+          "priority_score": 8,
+          "priority_breakdown": {
+            "demand": "high (3) × 0.25 = 0.75",
+            "commercial": "medium (2) × 0.25 = 0.50",
+            "authority": "high (3) × 0.20 = 0.60",
+            "competition_inv": "high → inverted (1) × 0.15 = 0.15",
+            "product_fit": "medium (2) × 0.15 = 0.30",
+            "raw_sum": "2.30 / 3 × 10 = 7.67 → 8"
+          },
+          "why_it_matters": "שינה בטוחה היא נושא חיפוש עם נפח גבוה ודחיפות רגשית מקסימלית — הורים חדשים מחפשים אישור בלילות. תחרות גבוהה אבל ערך הסמכות גבוה. גשר טבעי ל-HUB-1."
+        },
+        {
+          "cluster_id": "HUB-7-C2",
+          "title": "טעויות נפוצות בשינה בטוחה לתינוק — ומה לעשות אחרת",
+          "slug_suggestion": "tauyot-shina-betua-tinok",
+          "article_type": "how-to",
+          "intent": "AEO",
+          "primary_keyword": "טעויות שינה תינוק",
+          "secondary_keywords": [
+            "טעויות בשינה בטוחה",
+            "מה לא לעשות שינה תינוק",
+            "שגיאות נפוצות הורים שינה",
+            "מה אסור בשינת תינוק"
+          ],
+          "long_tail_queries": [
+            "מה הטעויות הנפוצות בשינת תינוק",
+            "למה תינוק לא ישן בטוח",
+            "מה עושים לא נכון בשינה בטוחה",
+            "איך מתקנים טעויות שינה בטוחה"
+          ],
+          "search_demand_estimate": "high",
+          "competition_estimate": "medium",
+          "commercial_relevance": "medium",
+          "product_bridge_candidates": [
+            "אביזרי שינה בטוחים",
+            "BabySleep Pro (אור לילה + רעש לבן)"
+          ],
+          "parent_pillar": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+          "internal_link_role": "supporting",
+          "priority_score": 8,
+          "priority_breakdown": {
+            "demand": "high (3) × 0.25 = 0.75",
+            "commercial": "medium (2) × 0.25 = 0.50",
+            "authority": "high (3) × 0.20 = 0.60",
+            "competition_inv": "medium → inverted (2) × 0.15 = 0.30",
+            "product_fit": "medium (2) × 0.15 = 0.30",
+            "raw_sum": "2.45 / 3 × 10 = 8.17 → 8"
+          },
+          "why_it_matters": "פורמט 'טעויות' מניע קליקים גבוהים — הורים שמחפשים לוודא שהם לא עושים טעות. ביקוש גבוה, תחרות בינונית. מחזק קישורים ל-C1 (כללים) ו-C5 (בטיחות לילה) ול-HUB-1."
+        },
+        {
+          "cluster_id": "HUB-7-C3",
+          "title": "איך למנוע התחממות יתר בתינוק — הסימנים שחשוב להכיר",
+          "slug_suggestion": "minuat-hitchamamut-yeter-betinok",
+          "article_type": "how-to",
+          "intent": "AEO",
+          "primary_keyword": "התחממות יתר בתינוק",
+          "secondary_keywords": [
+            "מניעת התחממות תינוק",
+            "תינוק חם מדי",
+            "כמה שכבות לתינוק",
+            "טמפרטורת חדר לתינוק"
+          ],
+          "long_tail_queries": [
+            "איך יודעים שתינוק חם מדי",
+            "כמה שכבות בגדים לתינוק בלילה",
+            "טמפרטורה מומלצת לחדר תינוק",
+            "סימנים שתינוק מתחמם יותר מדי"
+          ],
+          "search_demand_estimate": "high",
+          "competition_estimate": "medium",
+          "commercial_relevance": "medium",
+          "product_bridge_candidates": [
+            "ביגוד תינוק נושם — כותנה",
+            "אביזרי שינה בטוחים"
+          ],
+          "parent_pillar": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+          "internal_link_role": "supporting",
+          "priority_score": 8,
+          "priority_breakdown": {
+            "demand": "high (3) × 0.25 = 0.75",
+            "commercial": "medium (2) × 0.25 = 0.50",
+            "authority": "high (3) × 0.20 = 0.60",
+            "competition_inv": "medium → inverted (2) × 0.15 = 0.30",
+            "product_fit": "medium (2) × 0.15 = 0.30",
+            "raw_sum": "2.45 / 3 × 10 = 8.17 → 8"
+          },
+          "why_it_matters": "חיפוש עם נפח גבוה ודחיפות מיידית בקיץ הישראלי. מחזק גשר לביגוד נושם — קישור טבעי למוצרי כותנה. תחרות בינונית = יתרון."
+        },
+        {
+          "cluster_id": "HUB-7-C4",
+          "title": "ביגוד בטוח לתינוק — מה לחפש ומה להימנע ממנו",
+          "slug_suggestion": "bigud-batua-letinok-mah-levakesh",
+          "article_type": "guide",
+          "intent": "TOFU",
+          "primary_keyword": "ביגוד בטוח לתינוק",
+          "secondary_keywords": [
+            "בגדי תינוק בטוחים",
+            "חומרים בטוחים לתינוק",
+            "בגדים ללא חוטים לתינוק",
+            "ביגוד תינוק בריא"
+          ],
+          "long_tail_queries": [
+            "אילו בגדים בטוחים לתינוק",
+            "מה אסור בביגוד תינוק",
+            "חומרים לא מומלצים לביגוד תינוק",
+            "ביגוד תינוק ללא כימיקלים"
+          ],
+          "search_demand_estimate": "medium",
+          "competition_estimate": "low",
+          "commercial_relevance": "high",
+          "product_bridge_candidates": [
+            "ביגוד תינוק כותנה נקייה",
+            "חליפות ואוברולים ללא אביזרים מסוכנים"
+          ],
+          "parent_pillar": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+          "internal_link_role": "supporting",
+          "priority_score": 9,
+          "priority_breakdown": {
+            "demand": "medium (2) × 0.25 = 0.50",
+            "commercial": "high (3) × 0.25 = 0.75",
+            "authority": "high (3) × 0.20 = 0.60",
+            "competition_inv": "low → inverted (3) × 0.15 = 0.45",
+            "product_fit": "high (3) × 0.15 = 0.45",
+            "raw_sum": "2.75 / 3 × 10 = 9.17 → 9"
+          },
+          "why_it_matters": "הגשר הישיר ביותר למוצרי BabyMania — ביגוד בטוח = ביגוד כותנה נקייה ללא חוטים רפויים. תחרות נמוכה. פוטנציאל המרה גבוה מתוך HUB-7. גם קישור פנימי חזק ל-HUB-4 (Sensitive Skin)."
+        },
+        {
+          "cluster_id": "HUB-7-C5",
+          "title": "בטיחות לילה לתינוק — מה בודקים לפני שהולכים לישון",
+          "slug_suggestion": "betihut-layla-letinok-bdikot-lifney-shina",
+          "article_type": "how-to",
+          "intent": "AEO",
+          "primary_keyword": "בטיחות לילה לתינוק",
+          "secondary_keywords": [
+            "בדיקות בטיחות לפני שינת תינוק",
+            "הכנת חדר תינוק ללילה",
+            "שגרת לילה בטוחה לתינוק",
+            "ניטור תינוק בלילה"
+          ],
+          "long_tail_queries": [
+            "מה בודקים לפני שתינוק ישן",
+            "איך מכינים חדר בטוח לתינוק בלילה",
+            "מה לעשות כשתינוק ישן לבד בלילה",
+            "בטיחות מוניטור תינוק"
+          ],
+          "search_demand_estimate": "medium",
+          "competition_estimate": "medium",
+          "commercial_relevance": "medium",
+          "product_bridge_candidates": [
+            "אביזרי שינה בטוחים",
+            "BabySleep Pro (אור לילה + ניטור)"
+          ],
+          "parent_pillar": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+          "internal_link_role": "supporting",
+          "priority_score": 7,
+          "priority_breakdown": {
+            "demand": "medium (2) × 0.25 = 0.50",
+            "commercial": "medium (2) × 0.25 = 0.50",
+            "authority": "high (3) × 0.20 = 0.60",
+            "competition_inv": "medium → inverted (2) × 0.15 = 0.30",
+            "product_fit": "medium (2) × 0.15 = 0.30",
+            "raw_sum": "2.20 / 3 × 10 = 7.33 → 7"
+          },
+          "why_it_matters": "מאמר how-to מעשי עם רשימת בדיקות — קל לאינדוקס כ-Featured Snippet. גשר טבעי ל-BabySleep Pro (אור לילה). מחזק את הקשר בין HUB-7 ל-HUB-1."
+        }
+      ],
+      "topic_gaps": [
+        {
+          "gap": "בטיחות רכב לתינוק — כסא בטיחות",
+          "reason": "gap: נושא חיפוש עם נפח גבוה מאוד בישראל — reason: BabyMania אינה מוכרת מושבי בטיחות אך נושא קריטי שחסר ב-Hub. מסומן כ-gap ולא כ-cluster כי אין גשר מוצרי ישיר."
+        },
+        {
+          "gap": "בטיחות בית לתינוק — מניעת נפילות ובטחון מגירות",
+          "reason": "gap: הורים מחפשים רשימת בטיחות בית מלאה — reason: תוכן שלא קיים ב-BabyMania ושמתחרים מחכים עליו. ניתן לכתוב ב-Hub expansion עתידי."
+        },
+        {
+          "gap": "בטיחות האכלה — מניעת חנק בתינוק",
+          "reason": "gap: שאלה שחוזרת ב-Google PAA — reason: הורים חדשים חוששים מחנק. נושא קריטי מבחינת E-E-A-T, אך דורש ניסוח זהיר ביותר. מוצא מחוץ לכתיבה הנוכחית בגלל רגישות רפואית."
+        },
+        {
+          "gap": "בטיחות תינוק בשמש — UV ומניעת שיזוף",
+          "reason": "gap: עונתיות ישראלית — reason: קיץ ישראלי (אפריל-אוקטובר) יוצר ביקוש עונתי גבוה. גשר טבעי לביגוד מגן שמש."
+        }
+      ],
+      "related_products": [
+        "ביגוד תינוק כותנה — אוברולים וחליפות",
+        "BabySleep Pro — אביזרי שינה בטוחים"
+      ],
+      "hub_internal_linking_logic": {
+        "pillar_links_to_all_clusters": true,
+        "all_clusters_link_back_to_pillar": true,
+        "cluster_to_cluster_opportunities": [
+          {
+            "from": "HUB-7-C1",
+            "to": "HUB-1-pillar",
+            "link_reason": "safe sleep guidelines → HUB-1 pillar — שינה בטוחה מחברת ישירות ל-Hub השינה הראשי"
+          },
+          {
+            "from": "HUB-7-C2",
+            "to": "HUB-7-C1",
+            "link_reason": "common mistakes → safe sleep guidelines — מי שקרא על טעויות ירצה את הכללים המלאים"
+          },
+          {
+            "from": "HUB-7-C2",
+            "to": "HUB-1-pillar",
+            "link_reason": "sleep mistakes → HUB-1 pillar — שינה בטוחה מקשרת ל-Hub השינה הראשי"
+          },
+          {
+            "from": "HUB-7-C3",
+            "to": "HUB-7-C4",
+            "link_reason": "overheating prevention → safe clothing — מניעת התחממות יתר קשורה ישירות לבחירת ביגוד נושם"
+          },
+          {
+            "from": "HUB-7-C4",
+            "to": "HUB-4-pillar",
+            "link_reason": "safe baby clothing → HUB-4 pillar — ביגוד בטוח = ביגוד לעור רגיש — קישור פנימי חזק"
+          },
+          {
+            "from": "HUB-7-C5",
+            "to": "HUB-7-C1",
+            "link_reason": "night safety tips → safe sleep guidelines — בדיקות לפני שינה מובילות לכללי שינה בטוחה"
+          },
+          {
+            "from": "HUB-7-C5",
+            "to": "HUB-1-pillar",
+            "link_reason": "night safety → HUB-1 pillar — בטיחות לילה מחברת ל-Hub השינה הראשי"
+          }
+        ]
+      }
+    }
+  ],
+  "global_prioritized_queue": [
+    {
+      "rank": 1,
+      "item_type": "pillar",
+      "hub_id": "HUB-7",
+      "title": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+      "primary_keyword": "בטיחות תינוק",
+      "priority_score": 8,
+      "recommended_action": "write_now"
+    },
+    {
+      "rank": 2,
+      "item_type": "cluster",
+      "hub_id": "HUB-7",
+      "cluster_id": "HUB-7-C4",
+      "title": "ביגוד בטוח לתינוק — מה לחפש ומה להימנע ממנו",
+      "primary_keyword": "ביגוד בטוח לתינוק",
+      "priority_score": 9,
+      "recommended_action": "write_now"
+    },
+    {
+      "rank": 3,
+      "item_type": "cluster",
+      "hub_id": "HUB-7",
+      "cluster_id": "HUB-7-C1",
+      "title": "כללי שינה בטוחה לתינוק — מה שכל הורה חייב לדעת",
+      "primary_keyword": "שינה בטוחה לתינוק",
+      "priority_score": 8,
+      "recommended_action": "write_now"
+    },
+    {
+      "rank": 4,
+      "item_type": "cluster",
+      "hub_id": "HUB-7",
+      "cluster_id": "HUB-7-C3",
+      "title": "איך למנוע התחממות יתר בתינוק — הסימנים שחשוב להכיר",
+      "primary_keyword": "התחממות יתר בתינוק",
+      "priority_score": 8,
+      "recommended_action": "write_now"
+    },
+    {
+      "rank": 5,
+      "item_type": "cluster",
+      "hub_id": "HUB-7",
+      "cluster_id": "HUB-7-C5",
+      "title": "בטיחות לילה לתינוק — מה בודקים לפני שהולכים לישון",
+      "primary_keyword": "בטיחות לילה לתינוק",
+      "priority_score": 7,
+      "recommended_action": "write_now"
+    },
+    {
+      "rank": 6,
+      "item_type": "cluster",
+      "hub_id": "HUB-7",
+      "cluster_id": "HUB-7-C2",
+      "title": "טעויות נפוצות בשינה בטוחה לתינוק — ומה לעשות אחרת",
+      "primary_keyword": "טעויות שינה תינוק",
+      "priority_score": 8,
+      "recommended_action": "write_now"
+    }
+  ],
+  "notes": [
+    "HUB-7 הוא hub של בניית סמכות — המרה ישירה נמוכה יותר ביחס ל-HUB-5/HUB-6, אך ערך E-E-A-T גבוה מאוד",
+    "demand_validation_required: true — יש לאמת ביקוש בפועל לפני העלאה לאוויר (כפי שנקבע ב-hub-registry)",
+    "כל קלסטר מחייב כתיבה ממוקדת ברגש של הורה: פחד + אחריות + חיפוש אישור — לא מידע גנרי",
+    "קישורים פנימיים קריטיים: HUB-7 ↔ HUB-1 (שינה בטוחה) + HUB-7 → HUB-4 (ביגוד לעור רגיש)",
+    "C4 (ביגוד בטוח) הוא הגשר המסחרי הטוב ביותר ב-Hub — נכתב אחרי הפילר אך בעדיפות גבוהה",
+    "topic gaps כוללים: בטיחות רכב, בטיחות בית, מניעת חנק, UV — כל אלה מחוץ לכתיבה הנוכחית",
+    "BabySleep Pro (HUB-1) רלוונטי ל-C1 ו-C5 כ-product bridge עקיף (אור לילה + ניטור)",
+    "אין קובץ keyword_research.json ייעודי ל-HUB-7 — מפה בנויה על בסיס hub-registry + TOPIC-HUBS-KNOWLEDGE + ניתוח ביקוש מבוסס שוק ישראלי"
+  ]
+}

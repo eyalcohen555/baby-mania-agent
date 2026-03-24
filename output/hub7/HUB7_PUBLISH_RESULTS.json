@@ -1,0 +1,59 @@
+{
+  "hub_id": "HUB-7",
+  "hub_name": "Baby Safety",
+  "published_at": "2026-03-23T15:44:03.342215",
+  "blog_id": 109164036409,
+  "total": 6,
+  "published": 6,
+  "errors": 0,
+  "articles": [
+    {
+      "cluster_id": "HUB-7-Pillar",
+      "status": "PUBLISHED",
+      "article_id": 682836066617,
+      "handle": "sviva-betua-letinok-madrih-male",
+      "url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male",
+      "published_at": "2026-03-23T15:43:53+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C1",
+      "status": "PUBLISHED",
+      "article_id": 682836099385,
+      "handle": "klalei-shina-betua-letinok",
+      "url": "https://babymania-il.com/blogs/news/klalei-shina-betua-letinok",
+      "published_at": "2026-03-23T15:43:55+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C2",
+      "status": "PUBLISHED",
+      "article_id": 682836132153,
+      "handle": "tauyot-shina-betua-tinok",
+      "url": "https://babymania-il.com/blogs/news/tauyot-shina-betua-tinok",
+      "published_at": "2026-03-23T15:43:57+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C3",
+      "status": "PUBLISHED",
+      "article_id": 682836164921,
+      "handle": "minuat-hitchamamut-yeter-betinok",
+      "url": "https://babymania-il.com/blogs/news/minuat-hitchamamut-yeter-betinok",
+      "published_at": "2026-03-23T15:43:59+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C4",
+      "status": "PUBLISHED",
+      "article_id": 682836197689,
+      "handle": "bigud-batua-letinok-mah-levakesh",
+      "url": "https://babymania-il.com/blogs/news/bigud-batua-letinok-mah-levakesh",
+      "published_at": "2026-03-23T15:44:01+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C5",
+      "status": "PUBLISHED",
+      "article_id": 682836230457,
+      "handle": "betihut-layla-letinok-bdikot-lifney-shina",
+      "url": "https://babymania-il.com/blogs/news/betihut-layla-letinok-bdikot-lifney-shina",
+      "published_at": "2026-03-23T15:44:02+02:00"
+    }
+  ]
+}

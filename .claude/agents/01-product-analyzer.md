@@ -37,7 +37,6 @@ model: claude-opus-4-6
 ## כלל אבורט
 
 - `product_template_type == "accessories"` → **עצור, רשום ב-log, לא ממשיך.**
-- `product_template_type == "shoes"` → **עצור, רשום ב-log: "shoes not yet supported", לא ממשיך.**
 - רק `product_template_type == "clothing"` → ממשיך בפייפליין.
 
 ## זיהוי מקור (source provenance)

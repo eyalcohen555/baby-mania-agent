@@ -1,0 +1,346 @@
+<style>
+  .bm-fabric-section {
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    padding: 48px 20px;
+    box-sizing: border-box;
+  }
+
+  .bm-fabric-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #FAF3EC 0%, #FFFFFF 100%);
+    border: 1px solid #D4B99A;
+    border-radius: 14px;
+    padding: 40px 44px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 16px rgba(139, 94, 60, 0.07);
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .bm-fabric-card.bm-fabric--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .bm-fabric-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8B5E3C;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .bm-fabric-eyebrow-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .bm-fabric-title {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 800;
+    color: #1A1A1A;
+    line-height: 1.35;
+    margin: 0 0 32px 0;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .bm-fabric-title-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #8B5E3C;
+    opacity: 0.65;
+  }
+
+  .bm-fabric-body {
+    font-size: 16px;
+    font-weight: 400;
+    color: #3D2B1F;
+    line-height: 1.9;
+    margin: 0 auto 32px;
+    max-width: 680px;
+  }
+
+  .bm-fabric-highlight {
+    border-right: 3px solid #8B5E3C;
+    padding: 14px 20px 14px 16px;
+    margin: 0 0 40px 0;
+    background: linear-gradient(135deg, rgba(139, 94, 60, 0.065) 0%, rgba(139, 94, 60, 0.02) 100%);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 10px rgba(139, 94, 60, 0.07);
+    transition: box-shadow 0.25s ease;
+  }
+
+  .bm-fabric-highlight:hover {
+    box-shadow: 0 4px 18px rgba(139, 94, 60, 0.13);
+  }
+
+  .bm-fabric-highlight-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: #8B5E3C;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .bm-fabric-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to left, #D4B99A, transparent);
+    margin: 0 0 24px 0;
+    border: none;
+  }
+
+  .bm-fabric-tags-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8B5E3C;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .bm-fabric-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .bm-fabric-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #8B5E3C;
+    background: #FFFFFF;
+    border: 1px solid #C4956A;
+    border-radius: 999px;
+    padding: 6px 14px;
+    line-height: 1;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .bm-fabric-tag:hover {
+    background: #FAF3EC;
+    color: #6B4226;
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(139, 94, 60, 0.14);
+  }
+
+  .bm-fabric-tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #C4956A;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 520px) {
+    .bm-fabric-card {
+      padding: 28px 20px;
+    }
+
+    .bm-fabric-title {
+      font-size: 20px;
+    }
+
+    .bm-fabric-body {
+      font-size: 15px;
+    }
+
+    .bm-fabric-tags {
+      justify-content: flex-start;
+    }
+  }
+</style>
+
+{% comment %} Data: product.metafields.baby_mania (priority) → section.settings (fallback) {% endcomment %}
+{% assign bm_fabric_title     = product.metafields.baby_mania.fabric_title %}
+{% assign bm_fabric_body      = product.metafields.baby_mania.fabric_body %}
+{% assign bm_fabric_body_2    = product.metafields.baby_mania.fabric_body_2 %}
+{% assign bm_fabric_highlight = product.metafields.baby_mania.fabric_highlight %}
+{% assign bm_fabric_tags      = product.metafields.baby_mania.fabric_tags.value %}
+{% assign bm_whats_special    = product.metafields.baby_mania.whats_special %}
+
+{% if bm_fabric_title == blank %}{% assign bm_fabric_title = section.settings.title %}{% endif %}
+{% if bm_fabric_body == blank %}{% assign bm_fabric_body = section.settings.body %}{% endif %}
+{% if bm_fabric_body_2 == blank %}{% assign bm_fabric_body_2 = section.settings.body_2 %}{% endif %}
+{% if bm_fabric_highlight == blank %}{% assign bm_fabric_highlight = section.settings.highlight_quote %}{% endif %}
+
+{% assign bm_fabric_has_content = false %}
+{% if bm_fabric_title != blank or bm_fabric_body != blank %}
+  {% assign bm_fabric_has_content = true %}
+{% endif %}
+
+{% if bm_fabric_has_content %}
+<section class="bm-fabric-section">
+  <div class="bm-fabric-card">
+
+    <div class="bm-fabric-eyebrow">
+      <svg class="bm-fabric-eyebrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 3C7.5 3 4 6.5 4 11C4 13.5 5 15.8 6.7 17.4L6 21L9.5 19.5C10.3 19.8 11.1 20 12 20C16.5 20 20 16.5 20 12C20 7.5 16.5 3 12 3Z" stroke="#8B5E3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 11C8 9.5 9.5 8 11 8.5C12.5 9 12 11 11 12C10 13 9.5 14.5 11 15C12.5 15.5 14 14 14 12.5" stroke="#8B5E3C" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      סיפור הבד
+    </div>
+
+    {% if bm_fabric_title != blank %}
+    <h2 class="bm-fabric-title">
+      <svg class="bm-fabric-title-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M4 8 Q7 4 10 8 Q13 12 16 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M4 12 Q7 8 10 12 Q13 16 16 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      {{ bm_fabric_title }}
+    </h2>
+    {% endif %}
+
+    <p class="bm-fabric-body">{{ bm_fabric_body }}</p>
+
+    {% if bm_fabric_body_2 != blank %}
+      <p class="bm-fabric-body">{{ bm_fabric_body_2 }}</p>
+    {% endif %}
+
+    {% if bm_whats_special != blank %}
+      <p class="bm-fabric-body" style="color:#5C4033;border-top:1px solid #D4B99A;padding-top:20px;margin-top:0;">{{ bm_whats_special }}</p>
+    {% endif %}
+
+    {% if bm_fabric_highlight != blank %}
+      <blockquote class="bm-fabric-highlight">
+        <p class="bm-fabric-highlight-text">{{ bm_fabric_highlight }}</p>
+      </blockquote>
+    {% endif %}
+
+    {% assign bm_has_tags = false %}
+    {% if bm_fabric_tags != blank and bm_fabric_tags.size > 0 %}
+      {% assign bm_has_tags = true %}
+    {% elsif section.blocks.size > 0 %}
+      {% assign bm_has_tags = true %}
+    {% endif %}
+
+    {% if bm_has_tags %}
+      <hr class="bm-fabric-divider" aria-hidden="true">
+      <span class="bm-fabric-tags-label">הרכב ומאפיינים</span>
+      <div class="bm-fabric-tags" role="list">
+        {% if bm_fabric_tags != blank and bm_fabric_tags.size > 0 %}
+          {% for tag in bm_fabric_tags %}
+            <span class="bm-fabric-tag" role="listitem">
+              <span class="bm-fabric-tag-dot" aria-hidden="true"></span>
+              {{ tag }}
+            </span>
+          {% endfor %}
+        {% else %}
+          {% for block in section.blocks %}
+            {% if block.type == 'tag' and block.settings.label != blank %}
+              <span class="bm-fabric-tag" role="listitem" {{ block.shopify_attributes }}>
+                <span class="bm-fabric-tag-dot" aria-hidden="true"></span>
+                {{ block.settings.label }}
+              </span>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}
+
+<script>
+  (function () {
+    var card = document.querySelector('.bm-fabric-card');
+    if (!card) return;
+
+    if (!('IntersectionObserver' in window)) {
+      card.classList.add('bm-fabric--visible');
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('bm-fabric--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    observer.observe(card);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "סיפור הבד",
+  "tag": "div",
+  "class": "bm-fabric-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "כותרת",
+      "default": "הבגד שגורם לתינוק להירגע"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "פסקה ראשונה — תיאור הבד",
+      "default": "הבד שנבחר לבגד זה עבר תהליך ייצור מדוקדק כדי להיות נוח ורך לעור התינוק."
+    },
+    {
+      "type": "textarea",
+      "id": "body_2",
+      "label": "פסקה שנייה (אופציונלי)",
+      "default": "המידות נשמרות גם לאחר כביסות חוזרות ונשנות, ולבגד יש גמישות טבעית שמתאימה לתנועות החופשיות של תינוקכם — מהלבישה הראשונה ועד האחרונה."
+    },
+    {
+      "type": "text",
+      "id": "highlight_quote",
+      "label": "ציטוט הדגשה (אופציונלי)",
+      "default": "בד שנבחר בקפידה — כי העור של תינוקכם ראוי לטוב ביותר."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tag",
+      "name": "תגית בד",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "שם התגית",
+          "default": "תגית"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "סיפור הבד",
+      "blocks": [
+        { "type": "tag", "settings": { "label": "רכות" } },
+        { "type": "tag", "settings": { "label": "נושם" } },
+        { "type": "tag", "settings": { "label": "נוח ללבישה" } }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+{% endschema %}

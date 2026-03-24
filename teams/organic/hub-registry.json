@@ -1,12 +1,12 @@
 {
   "description": "BabyMania Organic Team — רישום מרכזי של כל ה-HUBs",
   "version": "2.0",
-  "last_updated": "2026-03-15",
+  "last_updated": "2026-03-23",
   "blog_id": 109164036409,
   "blog_url": "https://babymania-il.com/blogs/news",
   "topic_hubs_knowledge": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic צוות/docs/TOPIC-HUBS-KNOWLEDGE.md",
-  "last_published": "HUB-5",
-  "next_hub": "HUB-6",
+  "last_published": "HUB-7",
+  "next_hub": "HUB-8",
   "hubs": [
     {
       "hub_id": "HUB-1",
@@ -101,6 +101,97 @@
     },
     {
       "hub_id": "HUB-6",
+      "hub_name": "Baby Shoes",
+      "hub_name_he": "נעלי תינוקות וילדים",
+      "status": "published",
+      "pillar_keyword": "איך לבחור נעלי תינוק",
+      "pillar_keyword_he": "איך לבחור נעלי תינוק",
+      "writing_angle": "הורים קונים ביטחון — לא נעל",
+      "research_pillars": [
+        "מידה נכונה — עצמות גדלות ישר",
+        "סוליה גמישה — ביטחון בגוף היום = ביטחון עצמי של מחר",
+        "קלות משקל — מוטוריקה, שינה, גן שמח",
+        "חומרים נושמים — בוקר בלי מריבות",
+        "סגירה מתכווננת — אני מסוגל",
+        "אנטי סליפ — חופש תנועה = ילדים לומדים על העולם",
+        "שלב התפתחותי — נעל נכונה לשלב הנכון",
+        "עמידות — קונים פעם אחת"
+      ],
+      "articles_count": 7,
+      "articles": [
+        {"id": "HUB-6-Pillar", "handle": "bchira-naale-tinok-madrih-male", "article_id": 682289987897, "url": "https://babymania-il.com/blogs/news/bchira-naale-tinok-madrih-male"},
+        {"id": "HUB-6-C1", "handle": "naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat", "article_id": 682290053433, "url": "https://babymania-il.com/blogs/news/naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat"},
+        {"id": "HUB-6-C2", "handle": "solya-gmisha-naale-yeladim-mah-hahevdel", "article_id": 682290151737, "url": "https://babymania-il.com/blogs/news/solya-gmisha-naale-yeladim-mah-hahevdel"},
+        {"id": "HUB-6-C3", "handle": "mida-nachon-naale-yeladim-kacha-memdim-babayit", "article_id": 682290217273, "url": "https://babymania-il.com/blogs/news/mida-nachon-naale-yeladim-kacha-memdim-babayit"},
+        {"id": "HUB-6-C4", "handle": "naale-gan-yeladim-mah-kday-ladaat", "article_id": 682290282809, "url": "https://babymania-il.com/blogs/news/naale-gan-yeladim-mah-kday-ladaat"},
+        {"id": "HUB-6-C5", "handle": "matay-lechahlif-naale-yeled-hassimanim", "article_id": 682290315577, "url": "https://babymania-il.com/blogs/news/matay-lechahlif-naale-yeled-hassimanim"},
+        {"id": "HUB-6-C6", "handle": "chomrim-noshmim-naale-tinoket-mah-levakesh", "article_id": 682290381113, "url": "https://babymania-il.com/blogs/news/chomrim-noshmim-naale-tinoket-mah-levakesh"}
+      ],
+      "approved_clusters": [
+        "C1: נעל לצעד ראשון — מה שהורים צריכים לדעת",
+        "C2: מידה נכונה לנעלי ילדים — כך תמדדו בבית",
+        "C3: נעלי מניעת החלקה לתינוקות — למה זה קריטי",
+        "C4: סוליה גמישה בנעלי ילדים — מה ההבדל",
+        "C5: חומרים נושמים בנעלי תינוקות — מה לחפש",
+        "C6: נעלי גן לילדים — מה כדאי לדעת"
+      ],
+      "writing_order": ["Pillar", "C1", "C3", "C2", "C4", "C5", "C6"],
+      "product_bridge": "נעלי צעד ראשון, נעלי מניעת החלקה, נעלי גן",
+      "product_handles": {
+        "first_step": "trendy-comfortable-sneakers-for-baby-girls-and-boys-lightweight-nonslip-shoes-for-indoor-outdoor-walking-all-seasons",
+        "anti_slip": "zapatillas-girl-shoe-spring-autumn-boy-white-shoe-casual-running-kid-shoe-anti-slip-soft-sole-sneaker-kid-tenis-hot-selling-item",
+        "first_step_alt": "meckior-baby-sandals-newborn-soft-comfortable-fluff-baby-shoes-anti-slip-cotton-sole-flat-new-baby-boys-gilrs-sandals",
+        "leather_first_step": "new-baby-shoes-leather-baby-boy-girl-shoes-rubber-sole-anti-slip-multicolor-toddler-first-walkers-newborn-crib-toddler-shoes"
+      },
+      "product_link_rule": "כל מאמר חייב לכלול קישור למוצרי נעליים מהחנות — במיוחד נעלי צעד ראשון + נעלי מונעת החלקה. השתמש ב-product-card-inline כפי שמוגדר ב-agent04.",
+      "files_location": "C:/Projects/baby-mania-agent/output/hub6-baby-shoes/",
+      "file_prefix": "HUB6_",
+      "published_at": "2026-03-19",
+      "publish_results_file": "HUB6_PUBLISH_RESULTS.json",
+      "gsc_indexing": "PENDING — ממתין לאישור משתמש אחרי בדיקת פילר בגלישה בסתר",
+      "last_updated": "next_hub",
+      "notes": "פורסם 19/03/2026 — 7 מאמרים. זווית: הורים קונים ביטחון — לא נעל. 8 נקודות מחקר + שרשרת יתרון-של-יתרון."
+    },
+    {
+      "hub_id": "HUB-7",
+      "hub_name": "Baby Safety",
+      "hub_name_he": "בטיחות תינוק",
+      "status": "published",
+      "approved_pillar": "How to Create a Safe Environment for Your Baby",
+      "approved_pillar_he": "איך ליצור סביבה בטוחה לתינוק",
+      "pillar_keyword": "בטיחות תינוק",
+      "pillar": {
+        "title": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+        "handle": "sviva-betua-letinok-madrih-male",
+        "article_id": 682836066617,
+        "url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male"
+      },
+      "articles_count": 6,
+      "articles": [
+        {"id": "HUB-7-Pillar", "handle": "sviva-betua-letinok-madrih-male", "article_id": 682836066617, "url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male"},
+        {"id": "HUB-7-C1", "handle": "klalei-shina-betua-letinok", "article_id": 682836099385, "url": "https://babymania-il.com/blogs/news/klalei-shina-betua-letinok"},
+        {"id": "HUB-7-C2", "handle": "tauyot-shina-betua-tinok", "article_id": 682836132153, "url": "https://babymania-il.com/blogs/news/tauyot-shina-betua-tinok"},
+        {"id": "HUB-7-C3", "handle": "minuat-hitchamamut-yeter-betinok", "article_id": 682836164921, "url": "https://babymania-il.com/blogs/news/minuat-hitchamamut-yeter-betinok"},
+        {"id": "HUB-7-C4", "handle": "bigud-batua-letinok-mah-levakesh", "article_id": 682836197689, "url": "https://babymania-il.com/blogs/news/bigud-batua-letinok-mah-levakesh"},
+        {"id": "HUB-7-C5", "handle": "betihut-layla-letinok-bdikot-lifney-shina", "article_id": 682836230457, "url": "https://babymania-il.com/blogs/news/betihut-layla-letinok-bdikot-lifney-shina"}
+      ],
+      "product_bridge": "sleep accessories, safe baby clothing",
+      "approved_clusters": [
+        "C1: כללי שינה בטוחה לתינוק",
+        "C2: טעויות נפוצות בשינה בטוחה לתינוק",
+        "C3: מניעת התחממות יתר בתינוק",
+        "C4: ביגוד בטוח לתינוק",
+        "C5: בטיחות לילה לתינוק"
+      ],
+      "files_location": "C:/Projects/baby-mania-agent/output/hub7/",
+      "file_prefix": "HUB7_",
+      "published_at": "2026-03-23",
+      "publish_results_file": "HUB7_PUBLISH_RESULTS.json",
+      "demand_validation_required": true,
+      "notes": "פורסם 23/03/2026 — 6 מאמרים. בניית סמכות ואמון. פחות המרה ישירה, יותר authority building"
+    },
+    {
+      "hub_id": "HUB-8",
       "hub_name": "Baby Routine",
       "hub_name_he": "שגרה יומית לתינוק",
       "status": "planned",
@@ -119,34 +210,10 @@
         "Signs Your Baby Needs a Routine"
       ],
       "files_location": null,
-      "file_prefix": "HUB6_",
+      "file_prefix": "HUB8_",
       "published_at": null,
       "demand_validation_required": true,
-      "notes": "מתוכנן — חפיפה טבעית עם HUB-1 (Sleep)"
-    },
-    {
-      "hub_id": "HUB-7",
-      "hub_name": "Baby Safety",
-      "hub_name_he": "בטיחות תינוק",
-      "status": "planned",
-      "approved_pillar": "How to Create a Safe Environment for Your Baby",
-      "approved_pillar_he": "איך ליצור סביבה בטוחה לתינוק",
-      "pillar_keyword": null,
-      "articles_count": 0,
-      "articles": [],
-      "product_bridge": "sleep accessories, safe baby clothing",
-      "approved_clusters": [
-        "Safe Sleep Guidelines for Babies",
-        "What Is Safe Sleep for Newborns",
-        "How to Prevent Overheating in Babies",
-        "Safe Baby Clothing Tips",
-        "Baby Night Safety Tips"
-      ],
-      "files_location": null,
-      "file_prefix": "HUB7_",
-      "published_at": null,
-      "demand_validation_required": true,
-      "notes": "מתוכנן — בניית סמכות ואמון. פחות המרה ישירה, יותר authority building"
+      "notes": "הועבר מ-HUB-6 ל-HUB-8 בתאריך 19/03/2026. חפיפה טבעית עם HUB-1 (Sleep)"
     }
   ]
 }

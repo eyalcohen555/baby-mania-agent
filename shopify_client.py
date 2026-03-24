@@ -122,3 +122,26 @@ def update_blog_article(blog_id, article_id, body_html):
     )
     resp.raise_for_status()
     return resp.json()["article"]
+
+
+def create_blog_article(blog_id, title, body_html, handle, seo_title, seo_description, tags, author="BabyMania"):
+    """Create a new published blog article in Shopify."""
+    payload = {
+        "article": {
+            "title": title,
+            "author": author,
+            "body_html": body_html,
+            "handle": handle,
+            "seo_title": seo_title,
+            "seo_description": seo_description,
+            "tags": tags,
+            "published": True,
+        }
+    }
+    resp = requests.post(
+        f"{BASE_URL}/blogs/{blog_id}/articles.json",
+        headers=_headers(),
+        json=payload,
+    )
+    resp.raise_for_status()
+    return resp.json()["article"]

@@ -1,0 +1,67 @@
+{
+  "hub_id": "HUB-7",
+  "action": "REPUBLISH",
+  "republished_at": "2026-03-23T17:53:24.897914",
+  "blog_id": 109164036409,
+  "total": 6,
+  "updated": 6,
+  "errors": 0,
+  "changes": [
+    "C5: full rewrite — new angle, new content, new product (Baby Bear Cozy Set)",
+    "C1: images → Tempio/Alure/LumiBear, product → Tempio",
+    "C2: images → WarmNest/WinterSuit/BearCozy, product → WarmNest",
+    "C3: images → LUMI/Gemini/GirlsOnesie, product → LUMI",
+    "C4: images → Lino/LumiBear/Veloura (product unchanged)",
+    "Pillar: unchanged"
+  ],
+  "articles": [
+    {
+      "cluster_id": "HUB-7-Pillar",
+      "status": "UPDATED",
+      "article_id": 682836066617,
+      "handle": "sviva-betua-letinok-madrih-male",
+      "url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male",
+      "updated_at": "2026-03-23T15:43:53+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C1",
+      "status": "UPDATED",
+      "article_id": 682836099385,
+      "handle": "klalei-shina-betua-letinok",
+      "url": "https://babymania-il.com/blogs/news/klalei-shina-betua-letinok",
+      "updated_at": "2026-03-23T17:53:17+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C2",
+      "status": "UPDATED",
+      "article_id": 682836132153,
+      "handle": "tauyot-shina-betua-tinok",
+      "url": "https://babymania-il.com/blogs/news/tauyot-shina-betua-tinok",
+      "updated_at": "2026-03-23T17:53:19+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C3",
+      "status": "UPDATED",
+      "article_id": 682836164921,
+      "handle": "minuat-hitchamamut-yeter-betinok",
+      "url": "https://babymania-il.com/blogs/news/minuat-hitchamamut-yeter-betinok",
+      "updated_at": "2026-03-23T17:53:20+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C4",
+      "status": "UPDATED",
+      "article_id": 682836197689,
+      "handle": "bigud-batua-letinok-mah-levakesh",
+      "url": "https://babymania-il.com/blogs/news/bigud-batua-letinok-mah-levakesh",
+      "updated_at": "2026-03-23T17:53:22+02:00"
+    },
+    {
+      "cluster_id": "HUB-7-C5",
+      "status": "UPDATED",
+      "article_id": 682836230457,
+      "handle": "betihut-layla-letinok-bdikot-lifney-shina",
+      "url": "https://babymania-il.com/blogs/news/betihut-layla-letinok-bdikot-lifney-shina",
+      "updated_at": "2026-03-23T17:53:24+02:00"
+    }
+  ]
+}

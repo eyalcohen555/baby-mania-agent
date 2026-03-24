@@ -1,0 +1,683 @@
+=== PHASE 1 BULK PUSH ===
+Already confirmed OK (skipping): 75
+Excluded PIDs: 2
+Skipped (incomplete metafields): 19
+Target for push: 113
+
+SKIPPED (incomplete):
+  10011383071033: missing ['fabric_highlight']
+  9096607138105: missing ['fabric_highlight']
+  9179146256697: missing ['fabric_highlight']
+  9606691324217: missing ['fabric_highlight']
+  9606693945657: missing ['fabric_highlight']
+  9606694306105: missing ['fabric_highlight']
+  9606694371641: missing ['fabric_highlight']
+  9687563338041: missing ['fabric_highlight']
+  9687596663097: missing ['fabric_highlight']
+  9687653056825: missing ['fabric_highlight']
+  9687653089593: missing ['fabric_highlight']
+  9688674500921: missing ['fabric_highlight']
+  9688965087545: missing ['fabric_highlight']
+  9717957525817: missing ['fabric_highlight']
+  9719189635385: missing ['fabric_highlight']
+  9724813443385: missing ['fabric_highlight']
+  9724813476153: missing ['fabric_highlight']
+  9858268430649: missing ['fabric_highlight']
+  9874906349881: missing ['fabric_highlight']
+
+[1/113] 10005779743033
+  [verify] 10005779743033 — 429, wait 15s (attempt 1)
+  [verify] 10005779743033 — 429, wait 30s (attempt 2)
+  [verify] 10005779743033 — 429, wait 45s (attempt 3)
+  [verify] 10005779743033 — 429, wait 60s (attempt 4)
+  [verify] 10005779743033 — 429, wait 75s (attempt 5)
+  [verify] 10005779743033 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[2/113] 10011383103801
+  [verify] 10011383103801 — 429, wait 15s (attempt 1)
+  [verify] 10011383103801 — 429, wait 30s (attempt 2)
+  [verify] 10011383103801 — 429, wait 45s (attempt 3)
+  [verify] 10011383103801 — 429, wait 60s (attempt 4)
+  [verify] 10011383103801 — 429, wait 75s (attempt 5)
+  [verify] 10011383103801 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[3/113] 10011383136569
+  OK
+[4/113] 10011383234873
+  OK
+[5/113] 10025300853049
+  [verify] 10025300853049 — 429, wait 15s (attempt 1)
+  [verify] 10025300853049 — 429, wait 30s (attempt 2)
+  [verify] 10025300853049 — 429, wait 45s (attempt 3)
+  [verify] 10025300853049 — 429, wait 60s (attempt 4)
+  [verify] 10025300853049 — 429, wait 75s (attempt 5)
+  [verify] 10025300853049 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[6/113] 10026520445241
+  OK
+[7/113] 10029649068345
+  OK
+[8/113] 9096599994681
+  [verify] 9096599994681 — 429, wait 15s (attempt 1)
+  [verify] 9096599994681 — 429, wait 30s (attempt 2)
+  [verify] 9096599994681 — 429, wait 45s (attempt 3)
+  [verify] 9096599994681 — 429, wait 60s (attempt 4)
+  [verify] 9096599994681 — 429, wait 75s (attempt 5)
+  [verify] 9096599994681 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[9/113] 9096606220601
+  OK
+[10/113] 9096606515513
+  [verify] 9096606515513 — 429, wait 15s (attempt 1)
+  [verify] 9096606515513 — 429, wait 30s (attempt 2)
+  [verify] 9096606515513 — 429, wait 45s (attempt 3)
+  [verify] 9096606515513 — 429, wait 60s (attempt 4)
+  [verify] 9096606515513 — 429, wait 75s (attempt 5)
+  [verify] 9096606515513 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[11/113] 9096606679353
+  [verify] 9096606679353 — 429, wait 15s (attempt 1)
+  [verify] 9096606679353 — 429, wait 30s (attempt 2)
+  [verify] 9096606679353 — 429, wait 45s (attempt 3)
+  [verify] 9096606679353 — 429, wait 60s (attempt 4)
+  [verify] 9096606679353 — 429, wait 75s (attempt 5)
+  [verify] 9096606679353 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[12/113] 9096606810425
+  [verify] 9096606810425 — 429, wait 15s (attempt 1)
+  [verify] 9096606810425 — 429, wait 30s (attempt 2)
+  [verify] 9096606810425 — 429, wait 45s (attempt 3)
+  [verify] 9096606810425 — 429, wait 60s (attempt 4)
+  [verify] 9096606810425 — 429, wait 75s (attempt 5)
+  [verify] 9096606810425 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[13/113] 9096606974265
+  [verify] 9096606974265 — 429, wait 15s (attempt 1)
+  [verify] 9096606974265 — 429, wait 30s (attempt 2)
+  [verify] 9096606974265 — 429, wait 45s (attempt 3)
+  [verify] 9096606974265 — 429, wait 60s (attempt 4)
+  [verify] 9096606974265 — 429, wait 75s (attempt 5)
+  [verify] 9096606974265 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[14/113] 9096607301945
+  [verify] 9096607301945 — 429, wait 15s (attempt 1)
+  [verify] 9096607301945 — 429, wait 30s (attempt 2)
+  [verify] 9096607301945 — 429, wait 45s (attempt 3)
+  [verify] 9096607301945 — 429, wait 60s (attempt 4)
+  [verify] 9096607301945 — 429, wait 75s (attempt 5)
+  [verify] 9096607301945 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[15/113] 9096607596857
+  [verify] 9096607596857 — 429, wait 15s (attempt 1)
+  [verify] 9096607596857 — 429, wait 30s (attempt 2)
+  [verify] 9096607596857 — 429, wait 45s (attempt 3)
+  [verify] 9096607596857 — 429, wait 60s (attempt 4)
+  [verify] 9096607596857 — 429, wait 75s (attempt 5)
+  [verify] 9096607596857 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[16/113] 9096607695161
+  [verify] 9096607695161 — 429, wait 15s (attempt 1)
+  [verify] 9096607695161 — 429, wait 30s (attempt 2)
+  [verify] 9096607695161 — 429, wait 45s (attempt 3)
+  [verify] 9096607695161 — 429, wait 60s (attempt 4)
+  [verify] 9096607695161 — 429, wait 75s (attempt 5)
+  [verify] 9096607695161 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[17/113] 9096622473529
+  OK
+[18/113] 9096622604601
+  OK
+[19/113] 9096636694841
+  [verify] 9096636694841 — 429, wait 15s (attempt 1)
+  [verify] 9096636694841 — 429, wait 30s (attempt 2)
+  [verify] 9096636694841 — 429, wait 45s (attempt 3)
+  [verify] 9096636694841 — 429, wait 60s (attempt 4)
+  [verify] 9096636694841 — 429, wait 75s (attempt 5)
+  [verify] 9096636694841 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[20/113] 9179133870393
+  [verify] 9179133870393 — 429, wait 15s (attempt 1)
+  [verify] 9179133870393 — 429, wait 30s (attempt 2)
+  [verify] 9179133870393 — 429, wait 45s (attempt 3)
+  [verify] 9179133870393 — 429, wait 60s (attempt 4)
+  [verify] 9179133870393 — 429, wait 75s (attempt 5)
+  [verify] 9179133870393 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[21/113] 9179134132537
+  [verify] 9179134132537 — 429, wait 15s (attempt 1)
+  [verify] 9179134132537 — 429, wait 30s (attempt 2)
+  [verify] 9179134132537 — 429, wait 45s (attempt 3)
+  [verify] 9179134132537 — 429, wait 60s (attempt 4)
+  [verify] 9179134132537 — 429, wait 75s (attempt 5)
+  [verify] 9179134132537 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[22/113] 9179136131385
+  OK
+[23/113] 9179136426297
+  [verify] 9179136426297 — 429, wait 15s (attempt 1)
+  [verify] 9179136426297 — 429, wait 30s (attempt 2)
+  [verify] 9179136426297 — 429, wait 45s (attempt 3)
+  [verify] 9179136426297 — 429, wait 60s (attempt 4)
+  [verify] 9179136426297 — 429, wait 75s (attempt 5)
+  [verify] 9179136426297 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[24/113] 9179137933625
+  OK
+[25/113] 9179138457913
+  [verify] 9179138457913 — 429, wait 15s (attempt 1)
+  [verify] 9179138457913 — 429, wait 30s (attempt 2)
+  [verify] 9179138457913 — 429, wait 45s (attempt 3)
+  [verify] 9179138457913 — 429, wait 60s (attempt 4)
+  [verify] 9179138457913 — 429, wait 75s (attempt 5)
+  [verify] 9179138457913 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[26/113] 9179138687289
+  [verify] 9179138687289 — 429, wait 15s (attempt 1)
+  [verify] 9179138687289 — 429, wait 30s (attempt 2)
+  [verify] 9179138687289 — 429, wait 45s (attempt 3)
+  [verify] 9179138687289 — 429, wait 60s (attempt 4)
+  [verify] 9179138687289 — 429, wait 75s (attempt 5)
+  [verify] 9179138687289 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[27/113] 9179142750521
+  VERIFY FAILED: error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+[28/113] 9179145568569
+  OK
+[29/113] 9179148190009
+  OK
+[30/113] 9179149173049
+  OK
+[31/113] 9179150516537
+  OK
+[32/113] 9179151008057
+  OK
+[33/113] 9179151335737
+  OK
+[34/113] 9179152154937
+  OK
+[35/113] 9179152482617
+  [verify] 9179152482617 — 429, wait 15s (attempt 1)
+  [verify] 9179152482617 — 429, wait 30s (attempt 2)
+  [verify] 9179152482617 — 429, wait 45s (attempt 3)
+  [verify] 9179152482617 — 429, wait 60s (attempt 4)
+  [verify] 9179152482617 — 429, wait 75s (attempt 5)
+  [verify] 9179152482617 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[36/113] 9179152875833
+  OK
+[37/113] 9179155693881
+  [verify] 9179155693881 — 429, wait 15s (attempt 1)
+  [verify] 9179155693881 — 429, wait 30s (attempt 2)
+  [verify] 9179155693881 — 429, wait 45s (attempt 3)
+  [verify] 9179155693881 — 429, wait 60s (attempt 4)
+  [verify] 9179155693881 — 429, wait 75s (attempt 5)
+  [verify] 9179155693881 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[38/113] 9179156742457
+  [verify] 9179156742457 — 429, wait 15s (attempt 1)
+  [verify] 9179156742457 — 429, wait 30s (attempt 2)
+  [verify] 9179156742457 — 429, wait 45s (attempt 3)
+  [verify] 9179156742457 — 429, wait 60s (attempt 4)
+  [verify] 9179156742457 — 429, wait 75s (attempt 5)
+  [verify] 9179156742457 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[39/113] 9179157266745
+  OK
+[40/113] 9179157725497
+  OK
+[41/113] 9179158217017
+  [verify] 9179158217017 — 429, wait 15s (attempt 1)
+  [verify] 9179158217017 — 429, wait 30s (attempt 2)
+  [verify] 9179158217017 — 429, wait 45s (attempt 3)
+  [verify] 9179158217017 — 429, wait 60s (attempt 4)
+  [verify] 9179158217017 — 429, wait 75s (attempt 5)
+  [verify] 9179158217017 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[42/113] 9179158479161
+  [verify] 9179158479161 — 429, wait 15s (attempt 1)
+  [verify] 9179158479161 — 429, wait 30s (attempt 2)
+  [verify] 9179158479161 — 429, wait 45s (attempt 3)
+  [verify] 9179158479161 — 429, wait 60s (attempt 4)
+  [verify] 9179158479161 — 429, wait 75s (attempt 5)
+  [verify] 9179158479161 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[43/113] 9179158839609
+  [verify] 9179158839609 — 429, wait 15s (attempt 1)
+  [verify] 9179158839609 — 429, wait 30s (attempt 2)
+  [verify] 9179158839609 — 429, wait 45s (attempt 3)
+  [verify] 9179158839609 — 429, wait 60s (attempt 4)
+  [verify] 9179158839609 — 429, wait 75s (attempt 5)
+  [verify] 9179158839609 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[44/113] 9179161231673
+  OK
+[45/113] 9179162083641
+  [verify] 9179162083641 — 429, wait 15s (attempt 1)
+  [verify] 9179162083641 — 429, wait 30s (attempt 2)
+  [verify] 9179162083641 — 429, wait 45s (attempt 3)
+  [verify] 9179162083641 — 429, wait 60s (attempt 4)
+  [verify] 9179162083641 — 429, wait 75s (attempt 5)
+  [verify] 9179162083641 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[46/113] 9179162444089
+  [verify] 9179162444089 — 429, wait 15s (attempt 1)
+  [verify] 9179162444089 — 429, wait 30s (attempt 2)
+  [verify] 9179162444089 — 429, wait 45s (attempt 3)
+  [verify] 9179162444089 — 429, wait 60s (attempt 4)
+  [verify] 9179162444089 — 429, wait 75s (attempt 5)
+  [verify] 9179162444089 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[47/113] 9179162804537
+  [verify] 9179162804537 — 429, wait 15s (attempt 1)
+  [verify] 9179162804537 — 429, wait 30s (attempt 2)
+  [verify] 9179162804537 — 429, wait 45s (attempt 3)
+  [verify] 9179162804537 — 429, wait 60s (attempt 4)
+  [verify] 9179162804537 — 429, wait 75s (attempt 5)
+  [verify] 9179162804537 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[48/113] 9179164344633
+  OK
+[49/113] 9179164705081
+  OK
+[50/113] 9179165753657
+  [verify] 9179165753657 — 429, wait 15s (attempt 1)
+  [verify] 9179165753657 — 429, wait 30s (attempt 2)
+  [verify] 9179165753657 — 429, wait 45s (attempt 3)
+  [verify] 9179165753657 — 429, wait 60s (attempt 4)
+  [verify] 9179165753657 — 429, wait 75s (attempt 5)
+  [verify] 9179165753657 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[51/113] 9179166376249
+  OK
+[52/113] 9179166671161
+  OK
+[53/113] 9179168473401
+  OK
+[54/113] 9179168964921
+  [verify] 9179168964921 — 429, wait 15s (attempt 1)
+  [verify] 9179168964921 — 429, wait 30s (attempt 2)
+  [verify] 9179168964921 — 429, wait 45s (attempt 3)
+  [verify] 9179168964921 — 429, wait 60s (attempt 4)
+  [verify] 9179168964921 — 429, wait 75s (attempt 5)
+  [verify] 9179168964921 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[55/113] 9179169128761
+  [verify] 9179169128761 — 429, wait 15s (attempt 1)
+  [verify] 9179169128761 — 429, wait 30s (attempt 2)
+  [verify] 9179169128761 — 429, wait 45s (attempt 3)
+  [verify] 9179169128761 — 429, wait 60s (attempt 4)
+  [verify] 9179169128761 — 429, wait 75s (attempt 5)
+  [verify] 9179169128761 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[56/113] 9179169620281
+  [verify] 9179169620281 — 429, wait 15s (attempt 1)
+  [verify] 9179169620281 — 429, wait 30s (attempt 2)
+  [verify] 9179169620281 — 429, wait 45s (attempt 3)
+  [verify] 9179169620281 — 429, wait 60s (attempt 4)
+  [verify] 9179169620281 — 429, wait 75s (attempt 5)
+  [verify] 9179169620281 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[57/113] 9179170144569
+  [verify] 9179170144569 — 429, wait 15s (attempt 1)
+  [verify] 9179170144569 — 429, wait 30s (attempt 2)
+  [verify] 9179170144569 — 429, wait 45s (attempt 3)
+  [verify] 9179170144569 — 429, wait 60s (attempt 4)
+  [verify] 9179170144569 — 429, wait 75s (attempt 5)
+  [verify] 9179170144569 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[58/113] 9179170799929
+  [verify] 9179170799929 — 429, wait 15s (attempt 1)
+  [verify] 9179170799929 — 429, wait 30s (attempt 2)
+  [verify] 9179170799929 — 429, wait 45s (attempt 3)
+  [verify] 9179170799929 — 429, wait 60s (attempt 4)
+  [verify] 9179170799929 — 429, wait 75s (attempt 5)
+  [verify] 9179170799929 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[59/113] 9179172274489
+  OK
+[60/113] 9179172733241
+  [verify] 9179172733241 — 429, wait 15s (attempt 1)
+  [verify] 9179172733241 — 429, wait 30s (attempt 2)
+  [verify] 9179172733241 — 429, wait 45s (attempt 3)
+  [verify] 9179172733241 — 429, wait 60s (attempt 4)
+  [verify] 9179172733241 — 429, wait 75s (attempt 5)
+  [verify] 9179172733241 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[61/113] 9179173454137
+  [verify] 9179173454137 — 429, wait 15s (attempt 1)
+  [verify] 9179173454137 — 429, wait 30s (attempt 2)
+  [verify] 9179173454137 — 429, wait 45s (attempt 3)
+  [verify] 9179173454137 — 429, wait 60s (attempt 4)
+  [verify] 9179173454137 — 429, wait 75s (attempt 5)
+  [verify] 9179173454137 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[62/113] 9179173617977
+  [verify] 9179173617977 — 429, wait 15s (attempt 1)
+  [verify] 9179173617977 — 429, wait 30s (attempt 2)
+  [verify] 9179173617977 — 429, wait 45s (attempt 3)
+  [verify] 9179173617977 — 429, wait 60s (attempt 4)
+  [verify] 9179173617977 — 429, wait 75s (attempt 5)
+  [verify] 9179173617977 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[63/113] 9179174895929
+  [verify] 9179174895929 — 429, wait 15s (attempt 1)
+  [verify] 9179174895929 — 429, wait 30s (attempt 2)
+  [verify] 9179174895929 — 429, wait 45s (attempt 3)
+  [verify] 9179174895929 — 429, wait 60s (attempt 4)
+  [verify] 9179174895929 — 429, wait 75s (attempt 5)
+  [verify] 9179174895929 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[64/113] 9179176141113
+  [verify] 9179176141113 — 429, wait 15s (attempt 1)
+  [verify] 9179176141113 — 429, wait 30s (attempt 2)
+  [verify] 9179176141113 — 429, wait 45s (attempt 3)
+  [verify] 9179176141113 — 429, wait 60s (attempt 4)
+  [verify] 9179176141113 — 429, wait 75s (attempt 5)
+  [verify] 9179176141113 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[65/113] 9605503516985
+  [verify] 9605503516985 — 429, wait 15s (attempt 1)
+  [verify] 9605503516985 — 429, wait 30s (attempt 2)
+  [verify] 9605503516985 — 429, wait 45s (attempt 3)
+  [verify] 9605503516985 — 429, wait 60s (attempt 4)
+  [verify] 9605503516985 — 429, wait 75s (attempt 5)
+  [verify] 9605503516985 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[66/113] 9605887492409
+  [verify] 9605887492409 — 429, wait 15s (attempt 1)
+  OK
+[67/113] 9605887590713
+  [verify] 9605887590713 — 429, wait 15s (attempt 1)
+  [verify] 9605887590713 — 429, wait 30s (attempt 2)
+  [verify] 9605887590713 — 429, wait 45s (attempt 3)
+  [verify] 9605887590713 — 429, wait 60s (attempt 4)
+  [verify] 9605887590713 — 429, wait 75s (attempt 5)
+  [verify] 9605887590713 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[68/113] 9605887721785
+  [verify] 9605887721785 — 429, wait 15s (attempt 1)
+  [verify] 9605887721785 — 429, wait 30s (attempt 2)
+  [verify] 9605887721785 — 429, wait 45s (attempt 3)
+  [verify] 9605887721785 — 429, wait 60s (attempt 4)
+  [verify] 9605887721785 — 429, wait 75s (attempt 5)
+  [verify] 9605887721785 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[69/113] 9605887754553
+  [verify] 9605887754553 — 429, wait 15s (attempt 1)
+  [verify] 9605887754553 — 429, wait 30s (attempt 2)
+  [verify] 9605887754553 — 429, wait 45s (attempt 3)
+  [verify] 9605887754553 — 429, wait 60s (attempt 4)
+  [verify] 9605887754553 — 429, wait 75s (attempt 5)
+  [verify] 9605887754553 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[70/113] 9605887787321
+  [verify] 9605887787321 — 429, wait 15s (attempt 1)
+  [verify] 9605887787321 — 429, wait 30s (attempt 2)
+  [verify] 9605887787321 — 429, wait 45s (attempt 3)
+  [verify] 9605887787321 — 429, wait 60s (attempt 4)
+  [verify] 9605887787321 — 429, wait 75s (attempt 5)
+  [verify] 9605887787321 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[71/113] 9606670909753
+  OK
+[72/113] 9606691291449
+  OK
+[73/113] 9606691520825
+  [verify] 9606691520825 — 429, wait 15s (attempt 1)
+  [verify] 9606691520825 — 429, wait 30s (attempt 2)
+  [verify] 9606691520825 — 429, wait 45s (attempt 3)
+  [verify] 9606691520825 — 429, wait 60s (attempt 4)
+  [verify] 9606691520825 — 429, wait 75s (attempt 5)
+  [verify] 9606691520825 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[74/113] 9606691619129
+  [verify] 9606691619129 — 429, wait 15s (attempt 1)
+  [verify] 9606691619129 — 429, wait 30s (attempt 2)
+  [verify] 9606691619129 — 429, wait 45s (attempt 3)
+  [verify] 9606691619129 — 429, wait 60s (attempt 4)
+  [verify] 9606691619129 — 429, wait 75s (attempt 5)
+  [verify] 9606691619129 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[75/113] 9606694011193
+  [verify] 9606694011193 — 429, wait 15s (attempt 1)
+  [verify] 9606694011193 — 429, wait 30s (attempt 2)
+  [verify] 9606694011193 — 429, wait 45s (attempt 3)
+  [verify] 9606694011193 — 429, wait 60s (attempt 4)
+  [verify] 9606694011193 — 429, wait 75s (attempt 5)
+  [verify] 9606694011193 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[76/113] 9606694043961
+  [verify] 9606694043961 — 429, wait 15s (attempt 1)
+  [verify] 9606694043961 — 429, wait 30s (attempt 2)
+  [verify] 9606694043961 — 429, wait 45s (attempt 3)
+  [verify] 9606694043961 — 429, wait 60s (attempt 4)
+  [verify] 9606694043961 — 429, wait 75s (attempt 5)
+  [verify] 9606694043961 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[77/113] 9606694240569
+  [verify] 9606694240569 — 429, wait 15s (attempt 1)
+  [verify] 9606694240569 — 429, wait 30s (attempt 2)
+  [verify] 9606694240569 — 429, wait 45s (attempt 3)
+  [verify] 9606694240569 — 429, wait 60s (attempt 4)
+  [verify] 9606694240569 — 429, wait 75s (attempt 5)
+  [verify] 9606694240569 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[78/113] 9606694338873
+  [verify] 9606694338873 — 429, wait 15s (attempt 1)
+  [verify] 9606694338873 — 429, wait 30s (attempt 2)
+  [verify] 9606694338873 — 429, wait 45s (attempt 3)
+  [verify] 9606694338873 — 429, wait 60s (attempt 4)
+  [verify] 9606694338873 — 429, wait 75s (attempt 5)
+  [verify] 9606694338873 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[79/113] 9672569749817
+  OK
+[80/113] 9673730359609
+  OK
+[81/113] 9673732194617
+  [verify] 9673732194617 — 429, wait 15s (attempt 1)
+  [verify] 9673732194617 — 429, wait 30s (attempt 2)
+  [verify] 9673732194617 — 429, wait 45s (attempt 3)
+  [verify] 9673732194617 — 429, wait 60s (attempt 4)
+  [verify] 9673732194617 — 429, wait 75s (attempt 5)
+  [verify] 9673732194617 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[82/113] 9673732227385
+  [verify] 9673732227385 — 429, wait 15s (attempt 1)
+  [verify] 9673732227385 — 429, wait 30s (attempt 2)
+  [verify] 9673732227385 — 429, wait 45s (attempt 3)
+  [verify] 9673732227385 — 429, wait 60s (attempt 4)
+  [verify] 9673732227385 — 429, wait 75s (attempt 5)
+  [verify] 9673732227385 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[83/113] 9673732260153
+  [verify] 9673732260153 — 429, wait 15s (attempt 1)
+  [verify] 9673732260153 — 429, wait 30s (attempt 2)
+  [verify] 9673732260153 — 429, wait 45s (attempt 3)
+  [verify] 9673732260153 — 429, wait 60s (attempt 4)
+  [verify] 9673732260153 — 429, wait 75s (attempt 5)
+  [verify] 9673732260153 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[84/113] 9678573207865
+  [verify] 9678573207865 — 429, wait 15s (attempt 1)
+  [verify] 9678573207865 — 429, wait 30s (attempt 2)
+  [verify] 9678573207865 — 429, wait 45s (attempt 3)
+  [verify] 9678573207865 — 429, wait 60s (attempt 4)
+  [verify] 9678573207865 — 429, wait 75s (attempt 5)
+  [verify] 9678573207865 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[85/113] 9678573240633
+  [verify] 9678573240633 — 429, wait 15s (attempt 1)
+  [verify] 9678573240633 — 429, wait 30s (attempt 2)
+  [verify] 9678573240633 — 429, wait 45s (attempt 3)
+  [verify] 9678573240633 — 429, wait 60s (attempt 4)
+  [verify] 9678573240633 — 429, wait 75s (attempt 5)
+  [verify] 9678573240633 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[86/113] 9678598734137
+  OK
+[87/113] 9687563305273
+  OK
+[88/113] 9687563370809
+  OK
+[89/113] 9687563403577
+  OK
+[90/113] 9687596564793
+  [verify] 9687596564793 — 429, wait 15s (attempt 1)
+  [verify] 9687596564793 — 429, wait 30s (attempt 2)
+  [verify] 9687596564793 — 429, wait 45s (attempt 3)
+  [verify] 9687596564793 — 429, wait 60s (attempt 4)
+  [verify] 9687596564793 — 429, wait 75s (attempt 5)
+  [verify] 9687596564793 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[91/113] 9687653024057
+  [verify] 9687653024057 — 429, wait 15s (attempt 1)
+  [verify] 9687653024057 — 429, wait 30s (attempt 2)
+  [verify] 9687653024057 — 429, wait 45s (attempt 3)
+  [verify] 9687653024057 — 429, wait 60s (attempt 4)
+  [verify] 9687653024057 — 429, wait 75s (attempt 5)
+  [verify] 9687653024057 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[92/113] 9688660377913
+  [verify] 9688660377913 — 429, wait 15s (attempt 1)
+  [verify] 9688660377913 — 429, wait 30s (attempt 2)
+  [verify] 9688660377913 — 429, wait 45s (attempt 3)
+  [verify] 9688660377913 — 429, wait 60s (attempt 4)
+  [verify] 9688660377913 — 429, wait 75s (attempt 5)
+  [verify] 9688660377913 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[93/113] 9688670110009
+  [verify] 9688670110009 — 429, wait 15s (attempt 1)
+  [verify] 9688670110009 — 429, wait 30s (attempt 2)
+  [verify] 9688670110009 — 429, wait 45s (attempt 3)
+  [verify] 9688670110009 — 429, wait 60s (attempt 4)
+  [verify] 9688670110009 — 429, wait 75s (attempt 5)
+  [verify] 9688670110009 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[94/113] 9688670142777
+  OK
+[95/113] 9688674533689
+  [verify] 9688674533689 — 429, wait 15s (attempt 1)
+  [verify] 9688674533689 — 429, wait 30s (attempt 2)
+  [verify] 9688674533689 — 429, wait 45s (attempt 3)
+  [verify] 9688674533689 — 429, wait 60s (attempt 4)
+  [verify] 9688674533689 — 429, wait 75s (attempt 5)
+  [verify] 9688674533689 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[96/113] 9688674566457
+  OK
+[97/113] 9688674599225
+  OK
+[98/113] 9688885920057
+  [verify] 9688885920057 — 429, wait 15s (attempt 1)
+  [verify] 9688885920057 — 429, wait 30s (attempt 2)
+  [verify] 9688885920057 — 429, wait 45s (attempt 3)
+  [verify] 9688885920057 — 429, wait 60s (attempt 4)
+  [verify] 9688885920057 — 429, wait 75s (attempt 5)
+  [verify] 9688885920057 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[99/113] 9688955945273
+  OK
+[100/113] 9688955978041
+  OK
+[101/113] 9688956043577
+  [verify] 9688956043577 — 429, wait 15s (attempt 1)
+  [verify] 9688956043577 — 429, wait 30s (attempt 2)
+  [verify] 9688956043577 — 429, wait 45s (attempt 3)
+  [verify] 9688956043577 — 429, wait 60s (attempt 4)
+  [verify] 9688956043577 — 429, wait 75s (attempt 5)
+  [verify] 9688956043577 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[102/113] 9688964989241
+  [verify] 9688964989241 — 429, wait 15s (attempt 1)
+  [verify] 9688964989241 — 429, wait 30s (attempt 2)
+  [verify] 9688964989241 — 429, wait 45s (attempt 3)
+  [verify] 9688964989241 — 429, wait 60s (attempt 4)
+  [verify] 9688964989241 — 429, wait 75s (attempt 5)
+  [verify] 9688964989241 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[103/113] 9688976228665
+  OK
+[104/113] 9688976326969
+  [verify] 9688976326969 — 429, wait 15s (attempt 1)
+  [verify] 9688976326969 — 429, wait 30s (attempt 2)
+  [verify] 9688976326969 — 429, wait 45s (attempt 3)
+  [verify] 9688976326969 — 429, wait 60s (attempt 4)
+  [verify] 9688976326969 — 429, wait 75s (attempt 5)
+  [verify] 9688976326969 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[105/113] 9731768746297
+  [verify] 9731768746297 — 429, wait 15s (attempt 1)
+  [verify] 9731768746297 — 429, wait 30s (attempt 2)
+  [verify] 9731768746297 — 429, wait 45s (attempt 3)
+  [verify] 9731768746297 — 429, wait 60s (attempt 4)
+  [verify] 9731768746297 — 429, wait 75s (attempt 5)
+  [verify] 9731768746297 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[106/113] 9858268496185
+  [verify] 9858268496185 — 429, wait 15s (attempt 1)
+  [verify] 9858268496185 — 429, wait 30s (attempt 2)
+  [verify] 9858268496185 — 429, wait 45s (attempt 3)
+  [verify] 9858268496185 — 429, wait 60s (attempt 4)
+  [verify] 9858268496185 — 429, wait 75s (attempt 5)
+  [verify] 9858268496185 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[107/113] 9864947794233
+  [verify] 9864947794233 — 429, wait 15s (attempt 1)
+  [verify] 9864947794233 — 429, wait 30s (attempt 2)
+  [verify] 9864947794233 — 429, wait 45s (attempt 3)
+  [verify] 9864947794233 — 429, wait 60s (attempt 4)
+  [verify] 9864947794233 — 429, wait 75s (attempt 5)
+  [verify] 9864947794233 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[108/113] 9873511022905
+  [verify] 9873511022905 — 429, wait 15s (attempt 1)
+  [verify] 9873511022905 — 429, wait 30s (attempt 2)
+  [verify] 9873511022905 — 429, wait 45s (attempt 3)
+  [verify] 9873511022905 — 429, wait 60s (attempt 4)
+  [verify] 9873511022905 — 429, wait 75s (attempt 5)
+  [verify] 9873511022905 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[109/113] 9874906382649
+  [verify] 9874906382649 — 429, wait 15s (attempt 1)
+  [verify] 9874906382649 — 429, wait 30s (attempt 2)
+  [verify] 9874906382649 — 429, wait 45s (attempt 3)
+  [verify] 9874906382649 — 429, wait 60s (attempt 4)
+  [verify] 9874906382649 — 429, wait 75s (attempt 5)
+  [verify] 9874906382649 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[110/113] 9874906513721
+  [verify] 9874906513721 — 429, wait 15s (attempt 1)
+  [verify] 9874906513721 — 429, wait 30s (attempt 2)
+  [verify] 9874906513721 — 429, wait 45s (attempt 3)
+  [verify] 9874906513721 — 429, wait 60s (attempt 4)
+  [verify] 9874906513721 — 429, wait 75s (attempt 5)
+  [verify] 9874906513721 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[111/113] 9892620894521
+  [verify] 9892620894521 — 429, wait 15s (attempt 1)
+  [verify] 9892620894521 — 429, wait 30s (attempt 2)
+  [verify] 9892620894521 — 429, wait 45s (attempt 3)
+  [verify] 9892620894521 — 429, wait 60s (attempt 4)
+  [verify] 9892620894521 — 429, wait 75s (attempt 5)
+  [verify] 9892620894521 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+[112/113] 9895864402233
+  OK
+[113/113] 9895864435001
+  [verify] 9895864435001 — 429, wait 15s (attempt 1)
+  [verify] 9895864435001 — 429, wait 30s (attempt 2)
+  [verify] 9895864435001 — 429, wait 45s (attempt 3)
+  [verify] 9895864435001 — 429, wait 60s (attempt 4)
+  [verify] 9895864435001 — 429, wait 75s (attempt 5)
+  [verify] 9895864435001 — 429, wait 90s (attempt 6)
+  VERIFY FAILED: max retries exceeded
+
+=== PHASE 1 DONE ===
+Push + verify OK: 42
+Push failed:      0
+Verify failed:    71
+Skipped (incomplete mf): 19
+
+Results saved to: C:\Projects\baby-mania-agent\output\phase1_push_results.json

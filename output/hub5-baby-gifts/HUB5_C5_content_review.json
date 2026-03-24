@@ -1,0 +1,38 @@
+{
+  "agent": "10.5-organic-content-qa",
+  "version": "2.0",
+  "article_file": "HUB5_C5_blog_article.html",
+  "reviewed_at": "2026-03-23T10:00:00Z",
+  "overall_review": "PASS",
+  "checks": {
+    "title_quality": {
+      "result": "PASS",
+      "h1_text": "מתנות לתינוק ראשון — המדריך לאנשים שלא מכירים תינוקות",
+      "specificity": "PASS",
+      "length_words": 9,
+      "length_check": "PASS",
+      "natural_hebrew": "PASS",
+      "notes": null
+    },
+    "intro_box_quality": {
+      "result": "PASS",
+      "preview_present": true,
+      "proof_present": true,
+      "transition_present": true,
+      "notes": "Preview: 'המדריך הזה הוא בשבילך'. Proof: 'יוצא עם ראש מסובב מרשימות של 47 פריטים שאתה לא מבין אף אחד מהם'. Transition: 'המדריך הזה הוא בשבילך. לא בשביל ההורים — בשבילך'"
+    },
+    "body_language_quality": {
+      "result": "PASS",
+      "sampling_scope": {
+        "z1_headings": { "tags_scanned": ["h2", "h3"], "elements_found": 5 },
+        "z2_first_paragraphs": { "paragraphs_scanned": 3, "note": "first 3 <p> after intro-box" },
+        "z3_pre_cta": { "note": "class=cta-banner used as primary selector. Z3 = last <p> before line 241." }
+      },
+      "findings": { "hard_match": [], "human_review": [], "observed_below_threshold": [] },
+      "summary": { "hm_findings_count": 0, "hr_findings_count": 0, "total_findings_count": 0, "rules_triggered": [] },
+      "notes": "'בצורה לא צפויה' at line 222 — outside sampled zones. Not triggered. R5 also does not match: 'לא צפויה' is not a single adjective."
+    }
+  },
+  "action_required": false,
+  "reviewer_notes": "All 3 checks PASS. No action needed."
+}

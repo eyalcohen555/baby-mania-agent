@@ -1,0 +1,53 @@
+{
+  "agent": "08-organic-article-linker",
+  "version": "1.0",
+  "hub_id": "HUB-7",
+  "article_id": "HUB-7-C5",
+  "article_file": "HUB7_C5_blog_article.html",
+  "article_word_count_estimate": 700,
+  "recommended_link_count": 4,
+  "links": [
+    {
+      "anchor_text": "המדריך המלא לבטיחות תינוק",
+      "target_url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male",
+      "link_type": "pillar",
+      "anchor_type": "exact_match",
+      "placement_section": "מה רשימת הבדיקות לפני שינת תינוק?",
+      "position_third": "first",
+      "notes": "Sentence: 'ראו גם את המדריך המלא לבטיחות תינוק ואת... לרקע מקיף יותר' — first link in the pair"
+    },
+    {
+      "anchor_text": "כללי שינה בטוחה לתינוקות",
+      "target_url": "https://babymania-il.com/blogs/news/klalei-shina-betua-letinok",
+      "link_type": "cluster",
+      "anchor_type": "exact_match",
+      "placement_section": "מה רשימת הבדיקות לפני שינת תינוק?",
+      "position_third": "first",
+      "notes": "Same sentence as Pillar link: '...ואת כללי שינה בטוחה לתינוקות לרקע מקיף יותר' — second link in the pair"
+    },
+    {
+      "anchor_text": "טעויות שינה נפוצות",
+      "target_url": "https://babymania-il.com/blogs/news/tauyot-shina-betua-tinok",
+      "link_type": "cluster",
+      "anchor_type": "partial_match",
+      "placement_section": "איך בודקים שהמיטה בטוחה לשינה?",
+      "position_third": "middle",
+      "notes": "Sentence: 'לסקירה של טעויות נפוצות בשינת תינוקות, ראו את המדריך לטעויות שינה נפוצות' — anchor 'טעויות שינה נפוצות'"
+    },
+    {
+      "anchor_text": "המדריך המרכזי לשינת תינוקות",
+      "target_url": "https://babymania-il.com/blogs/news/how-to-help-baby-sleep-through-the-night",
+      "link_type": "cross-hub",
+      "anchor_type": "exact_match",
+      "placement_section": "מה כלי הניטור שמומלץ לשינת לילה?",
+      "position_third": "last",
+      "notes": "Sentence: 'לרקע מקיף על כלים לשינת לילה בטוחה ראו גם את המדריך המרכזי לשינת תינוקות שלנו'"
+    }
+  ],
+  "validation": {
+    "has_pillar_link": true,
+    "no_duplicate_targets": true,
+    "density_ok": true
+  },
+  "generated_at": "2026-03-23T10:00:00Z"
+}

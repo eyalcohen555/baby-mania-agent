@@ -1,0 +1,54 @@
+{
+  "agent": "10.5-organic-content-qa",
+  "version": "2.0",
+  "article_file": "C:\\Projects\\baby-mania-agent\\output\\hub7\\HUB7_C1_blog_article.html",
+  "reviewed_at": "2026-03-23T10:00:00Z",
+  "overall_review": "PASS",
+  "checks": {
+    "title_quality": {
+      "result": "PASS",
+      "h1_text": "כללי שינה בטוחה לתינוק — מה שכל הורה חייב לדעת",
+      "specificity": "PASS",
+      "length_words": 9,
+      "length_check": "PASS",
+      "natural_hebrew": "PASS",
+      "notes": null
+    },
+    "intro_box_quality": {
+      "result": "PASS",
+      "preview_present": true,
+      "proof_present": true,
+      "transition_present": true,
+      "notes": "preview_present: 'המאמר הזה מרכז את הכללים הברורים ביותר: מה שמים במיטה, על איזה צד ישנים, איזו טמפרטורה, וכמה שמיכות' — clear, specific preview. proof_present: 'הכללים כאן מבוססים על ממצאים שחוזרים ומאוששים בנתוני בטיחות תינוקות — לא על אינסטינקט בלבד' — research-based claim with explicit credibility anchor. transition_present: 'נתחיל מהכלל הבסיסי' — exact trigger phrase present."
+    },
+    "body_language_quality": {
+      "result": "PASS",
+      "sampling_scope": {
+        "z1_headings": {
+          "tags_scanned": ["h2", "h3"],
+          "elements_found": 6
+        },
+        "z2_first_paragraphs": {
+          "paragraphs_scanned": 3,
+          "note": "first 3 <p> after intro-box"
+        },
+        "z3_pre_cta": {
+          "paragraphs_scanned": 1,
+          "note": "last <p> before class=cta-banner"
+        }
+      },
+      "findings": {
+        "hard_match": [],
+        "human_review": [],
+        "observed_below_threshold": []
+      },
+      "summary": {
+        "hm_findings_count": 0,
+        "hr_findings_count": 0,
+        "total_findings_count": 0,
+        "rules_triggered": []
+      }
+    }
+  },
+  "action_required": false
+}

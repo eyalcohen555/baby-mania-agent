@@ -1,0 +1,234 @@
+{
+  "sections": {
+    "bm_sticky_bar": {
+      "type": "bm-sticky-bar",
+      "settings": {}
+    },
+    "bm_main_overrides": {
+      "type": "bm-store-main-overrides",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "name": "כותרת",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "name": "מחיר",
+          "settings": {}
+        },
+        "richtext_RyGj4h": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>{{ product.metafields.custom.product_extra_content | metafield_tag }}<\/p>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "text_ftzDeF": {
+          "type": "text",
+          "settings": {
+            "text": "🔄 החלפות והחזרות נוחות",
+            "text_style": "body"
+          }
+        },
+        "richtext_EbMfgL": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>🚚 משלוחים מהירים לכל הארץ<\/p>"
+          }
+        },
+        "richtext_AKLnJG": {
+          "type": "richtext",
+          "settings": {
+            "paragraph": "<p>📞 שירות לקוחות זמין<\/p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "richtext_RyGj4h",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "text_ftzDeF",
+        "richtext_EbMfgL",
+        "richtext_AKLnJG",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "bm_hero": {
+      "type": "bm-store-hero",
+      "settings": {
+        "eyebrow": "",
+        "headline": "",
+        "subheadline": "",
+        "show_trust_bar": true
+      }
+    },
+    "bm_store_banner": {
+      "type": "bm-store-banner",
+      "settings": {
+        "msg1_before": "קנייה מעל ₪299 –",
+        "msg1_highlight": "מתנה חינם",
+        "msg2": "משלוחים חינם לכל הארץ",
+        "rotation_interval": 4,
+        "show_banner": true
+      }
+    },
+    "bm_benefits": {
+      "type": "bm-shoes-benefits",
+      "settings": {}
+    },
+    "bm_sizes": {
+      "type": "bm-shoes-size-guide",
+      "settings": {}
+    },
+    "bm_accordion": {
+      "type": "bm-shoes-accordion",
+      "blocks": {
+        "insight_1": {
+          "type": "insight",
+          "settings": {
+            "title": "הרגליים הן הבסיס של הגוף — ושל כל היום",
+            "body": "כשנוח לילד ברגליים כל הגוף מתפקד טוב יותר. ילד שיוצא מהבית עם נעליים נוחות מגיע לגן שמח ומוכן. כשהמוח במצב רגוע מופרשים דופמין וסרוטונין שמגבירים סקרנות וריכוז.",
+            "connection": "הנעליים שלנו תוכננו בדיוק בשביל זה."
+          }
+        },
+        "insight_2": {
+          "type": "insight",
+          "settings": {
+            "title": "נעל נוחה = ילד שנועל בכל בוקר בלי מריבות",
+            "body": "הבוקר קובע את הטון של כל היום. ילד שמתחיל רגוע מתמודד טוב יותר עם תסכולים. נעל שהילד אוהב לנעול מורידה חיכוך אחד מהבוקר — וזה משנה את האנרגיה של כל המשפחה.",
+            "connection": "הנעל הזו תוכננה להיות הדבר שהילד רוצה לנעול."
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "איך יודעים מה המידה הנכונה?",
+            "answer": "למדוד את כף הרגל בעמידה על דף נייר, לסמן עקב ובוהן, למדוד בסנטימטרים ולהשוות לטבלת המידות. תמיד למדוד שתי רגליים ולבחור לפי הגדולה. להוסיף מרווח של 1-1.5 ס״מ."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "כל כמה זמן צריך לבדוק מידה?",
+            "answer": "כל 2-3 חודשים בגיל הפעוט. סימנים שהמידה קטנה: אצבעות לוחצות לקצה, הילד מסרב לנעול, אדמומיות על הרגל."
+          }
+        }
+      },
+      "block_order": ["insight_1", "insight_2", "faq_1", "faq_2"],
+      "settings": {}
+    },
+    "bm_urgency": {
+      "type": "bm-store-urgency",
+      "settings": {
+        "enabled": true,
+        "sold_pct_override": 0,
+        "headline": "המלאי אוזל מהר",
+        "label_above_bar": "כבר נמכר ממלאי זה:",
+        "stock_units": 8,
+        "label_sold": "נמכר",
+        "label_remain": "יחידות נותרו",
+        "btn_text": "הוסיפו לעגלה"
+      }
+    },
+    "bm_contact": {
+      "type": "bm-store-contact",
+      "settings": {
+        "heading": "אנחנו כאן בשבילכם",
+        "subheading": "שאלה על מידות? לא בטוחים מה לבחור? נשמח לעזור!",
+        "button_text": "צרו קשר",
+        "button_url": "/pages/contact"
+      }
+    },
+    "related_products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "יכול להיות שתאהבו גם",
+        "heading_size": "h2",
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "bm_sticky_bar",
+    "bm_main_overrides",
+    "main",
+    "bm_hero",
+    "bm_store_banner",
+    "bm_benefits",
+    "bm_sizes",
+    "bm_accordion",
+    "bm_urgency",
+    "bm_contact",
+    "related_products"
+  ]
+}

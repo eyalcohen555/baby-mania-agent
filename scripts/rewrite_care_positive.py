@@ -68,6 +68,24 @@ SEASON_CARE_TEXT = {
     "":       "",
 }
 
+# Fabric keywords that justify hand_wash (must appear in fabric_type)
+DELICATE_FABRIC_KEYWORDS = {
+    "צמר", "קשמיר", "משי", "לייקרה", "אנגורה", "מוהר", "שיפון",
+    "wool", "cashmere", "silk", "lycra", "angora", "chiffon",
+}
+
+# Default card used when hand_wash is not justified by fabric data
+HAND_WASH_DEFAULT = {
+    "icon_type":  "wash_60",
+    "card_title": "כביסה עדינה במכונה",
+    "card_text":  "מתאים לכביסה יומיומית — הבד נשמר רך ונעים",
+}
+
+# Icon types in the same logical group — keep only the first encountered per group
+DUPLICATE_GROUPS = [
+    {"sun_dry", "no_tumble_dry"},   # both mean "air-dry" — sun_dry is more positive
+]
+
 
 def detect_season(pid: str) -> str:
     """Detect season from analyzer.yaml. Returns 'winter'|'summer'|''."""
@@ -87,12 +105,45 @@ def detect_season(pid: str) -> str:
     return ""
 
 
-def rewrite_care(care_list: list, season: str) -> list:
+def _hand_wash_justified(fabric_type: str) -> bool:
+    """Return True only if fabric_type explicitly mentions a delicate fabric."""
+    if not fabric_type:
+        return False
+    ft = fabric_type.lower()
+    return any(kw in ft for kw in DELICATE_FABRIC_KEYWORDS)
+
+
+def _deduplicate(cards: list) -> list:
+    """Remove cards that duplicate the same logical group — keep first in group."""
+    seen_groups: set[int] = set()
+    result = []
+    for card in cards:
+        icon = card.get("icon_type", "")
+        group_idx = None
+        for idx, group in enumerate(DUPLICATE_GROUPS):
+            if icon in group:
+                group_idx = idx
+                break
+        if group_idx is not None:
+            if group_idx in seen_groups:
+                continue  # duplicate in this group — skip
+            seen_groups.add(group_idx)
+        result.append(card)
+    return result
+
+
+def rewrite_care(care_list: list, season: str, fabric_type: str = "") -> list:
     """Rewrite a list of care cards to positive framing."""
     season_care = SEASON_CARE_TEXT.get(season, "")
     rewritten = []
     for card in care_list:
         icon = card.get("icon_type", "")
+
+        # hand_wash: replace with safe default if not justified by fabric data
+        if icon == "hand_wash" and not _hand_wash_justified(fabric_type):
+            rewritten.append(dict(HAND_WASH_DEFAULT))
+            continue
+
         if icon in POSITIVE_BASE:
             title, text = POSITIVE_BASE[icon]
             text = text.replace("{season_care}", season_care)
@@ -100,7 +151,7 @@ def rewrite_care(care_list: list, season: str) -> list:
             # Unknown icon — keep original but sanitise negative language
             title = card.get("card_title", "")
             text  = card.get("card_text", "")
-            # Replace common negative phrases
+            # Replace common negative phrases with positive equivalents
             for neg, pos in [
                 ("אין להשתמש ב", "שומר על "),
                 ("ללא ", "עם "),
@@ -116,7 +167,8 @@ def rewrite_care(care_list: list, season: str) -> list:
             "card_title": title.strip(),
             "card_text":  text.strip(),
         })
-    return rewritten
+
+    return _deduplicate(rewritten)
 
 
 def push_care_metafield(pid: str, care_list: list) -> bool:
@@ -179,8 +231,10 @@ for f in publisher_files:
         print(f"{pid:<20} {'?':<8} {'0':<6} {'SKIPPED':<10} NO CARE DATA")
         continue
 
-    season   = detect_season(pid)
-    new_care = rewrite_care(old_care, season)
+    season      = detect_season(pid)
+    fabric_type = data.get("metafields", {}).get("fabric_type", "") or \
+                  data.get("fabric_type", "") or ""
+    new_care = rewrite_care(old_care, season, fabric_type)
 
     # Update publisher.json
     data["metafields"]["care_instructions"] = new_care

@@ -13,6 +13,7 @@ import time
 import requests
 from pathlib import Path
 from shopify_client import _headers, BASE_URL
+from qa_gate import check_article_qa
 
 BLOG_ID = 109164036409
 STAGE_DIR = Path(r"C:\Projects\baby-mania-agent\output\stage-outputs")
@@ -20,6 +21,7 @@ SITE_MAP = Path(r"C:\Projects\baby-mania-agent\output\site-map\internal_content_
 
 ARTICLE = {
     "file": "HUB2_C3_blog_article.html",
+    "cluster_id": "HUB-2-C3",
     "title": "איך להלביש תינוק לשינה — המדריך המלא לפי עונה וטמפרטורה",
     "handle": "how-to-dress-a-newborn-for-sleep",
     "cluster": "HUB-2-C3",
@@ -153,6 +155,8 @@ def update_content_map(shopify_id: int, published_at: str) -> None:
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
+
+check_article_qa(STAGE_DIR, ARTICLE)  # Gate: blocks if QA missing or FAIL
 
 filepath = STAGE_DIR / ARTICLE["file"]
 print(f"\nPublishing {ARTICLE['cluster']}...")

@@ -1,0 +1,577 @@
+{% comment %}
+  BabyMania Shoes — Size Guide Section
+  File: sections/bm-shoes-size-guide.liquid
+  Purpose: 3 אקורדיונים: טבלת מידות + מדידה בבית + כמה זמן (ללא JavaScript)
+  Accordions: checkbox/label pattern בלבד.
+  RTL עברית · פונט Heebo · צבע ראשי #8B5E3C
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
+  /* ============================================================
+     BM-SHOES-SIZE-GUIDE — CSS Variables
+  ============================================================ */
+  .bm-sg-root {
+    --bm-sg-brown:        #8B5E3C;
+    --bm-sg-brown-dark:   #6B4423;
+    --bm-sg-brown-light:  #D4B99A;
+    --bm-sg-cream-bg:     #FFFDF9;
+    --bm-sg-cream-row:    #FDF8F4;
+    --bm-sg-cream-hover:  #FAF0E8;
+    --bm-sg-cream-header: #FAF3EC;
+    --bm-sg-border:       #F0E6DC;
+    --bm-sg-border-acc:   #D4B99A;
+    --bm-sg-text:         #1A1A1A;
+    --bm-sg-muted:        #757575;
+    --bm-sg-font:         'Heebo', sans-serif;
+    --bm-sg-radius:       14px;
+    --bm-sg-shadow:       0 2px 12px rgba(139,94,60,0.07);
+  }
+
+  /* ============================================================
+     WRAPPER
+  ============================================================ */
+  .bm-sg-root {
+    font-family: var(--bm-sg-font);
+    direction: rtl;
+    text-align: right;
+    background-color: var(--bm-sg-cream-bg);
+    padding: 48px 20px 56px;
+    box-sizing: border-box;
+  }
+
+  .bm-sg-inner {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  /* ============================================================
+     SECTION HEADING
+  ============================================================ */
+  .bm-sg-section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--bm-sg-text);
+    margin: 0 0 6px 0;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+
+  .bm-sg-section-subtitle {
+    font-size: 0.95rem;
+    color: var(--bm-sg-muted);
+    text-align: center;
+    margin: 12px 0 32px;
+    font-weight: 400;
+  }
+
+  /* ============================================================
+     TABLE
+  ============================================================ */
+  .bm-sg-table-wrap {
+    border-radius: var(--bm-sg-radius);
+    overflow: hidden;
+    overflow-x: auto;
+    box-shadow: var(--bm-sg-shadow);
+    border: 1px solid var(--bm-sg-border);
+    margin-bottom: 32px;
+  }
+
+  .bm-sg-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 320px;
+    background: #fff;
+  }
+
+  .bm-sg-table thead tr {
+    background-color: var(--bm-sg-brown);
+  }
+
+  .bm-sg-table thead th {
+    color: #fff;
+    font-family: var(--bm-sg-font);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 16px 24px;
+    text-align: right;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  .bm-sg-table tbody tr {
+    border-bottom: 1px solid var(--bm-sg-border);
+    transition: background-color 0.15s ease;
+  }
+
+  .bm-sg-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .bm-sg-table tbody tr:nth-child(even) {
+    background-color: var(--bm-sg-cream-row);
+  }
+
+  .bm-sg-table tbody tr:hover {
+    background-color: var(--bm-sg-cream-hover);
+  }
+
+  .bm-sg-table tbody td {
+    font-family: var(--bm-sg-font);
+    font-size: 0.95rem;
+    color: var(--bm-sg-text);
+    padding: 13px 24px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .bm-sg-table tbody td:first-child {
+    font-weight: 700;
+    color: var(--bm-sg-brown);
+    font-size: 1rem;
+  }
+
+  /* ============================================================
+     ACCORDION — shared styles
+  ============================================================ */
+  .bm-sg-accordion {
+    margin-bottom: 12px;
+  }
+
+  /* hide the checkbox */
+  .bm-sg-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .bm-sg-acc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 22px;
+    background: var(--bm-sg-cream-header);
+    border: 1px solid var(--bm-sg-border-acc);
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.25s ease, border-radius 0.3s ease;
+  }
+
+  .bm-sg-acc-header:hover {
+    background: var(--bm-sg-cream-hover);
+  }
+
+  .bm-sg-toggle:checked + .bm-sg-acc-header {
+    border-radius: 12px 12px 0 0;
+    background: var(--bm-sg-cream-hover);
+  }
+
+  .bm-sg-acc-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--bm-sg-text);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .bm-sg-acc-arrow {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: var(--bm-sg-brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bm-sg-toggle:checked + .bm-sg-acc-header .bm-sg-acc-arrow {
+    transform: rotate(180deg);
+  }
+
+  .bm-sg-acc-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    border: 1px solid var(--bm-sg-border-acc);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    background: #fff;
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+  }
+
+  .bm-sg-toggle:checked ~ .bm-sg-acc-body {
+    max-height: 900px;
+    opacity: 1;
+  }
+
+  .bm-sg-acc-inner {
+    padding: 24px 26px 28px;
+  }
+
+  /* inner modifier — table inside accordion: remove bottom margin */
+  .bm-sg-acc-inner--table {
+    padding: 16px 16px 20px;
+  }
+
+  .bm-sg-acc-inner--table .bm-sg-table-wrap {
+    margin-bottom: 0;
+  }
+
+  /* ============================================================
+     ACCORDION 1 — מדידה בבית
+  ============================================================ */
+  .bm-sg-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    counter-reset: steps;
+  }
+
+  .bm-sg-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--bm-sg-border);
+    counter-increment: steps;
+  }
+
+  .bm-sg-step:last-child {
+    border-bottom: none;
+  }
+
+  .bm-sg-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bm-sg-brown);
+    color: #fff;
+    font-family: var(--bm-sg-font);
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .bm-sg-step-text {
+    font-size: 0.95rem;
+    color: var(--bm-sg-text);
+    line-height: 1.6;
+    margin: 4px 0 0;
+  }
+
+  .bm-sg-tips-heading {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bm-sg-brown);
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .bm-sg-tips {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .bm-sg-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--bm-sg-text);
+    line-height: 1.55;
+    padding: 10px 14px;
+    background: var(--bm-sg-cream-row);
+    border-radius: 8px;
+    border-right: 3px solid var(--bm-sg-brown);
+  }
+
+  .bm-sg-tip-icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+    margin-top: 1px;
+  }
+
+  /* ============================================================
+     ACCORDION 2 — כמה זמן
+  ============================================================ */
+  .bm-sg-timing-text {
+    font-size: 0.95rem;
+    color: var(--bm-sg-text);
+    line-height: 1.7;
+    margin: 0 0 18px 0;
+  }
+
+  .bm-sg-timing-signals {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bm-sg-brown);
+    margin: 0 0 10px 0;
+  }
+
+  .bm-sg-signal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .bm-sg-signal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--bm-sg-text);
+    line-height: 1.55;
+    padding: 10px 14px;
+    background: var(--bm-sg-cream-row);
+    border-radius: 8px;
+  }
+
+  .bm-sg-signal-icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 520px) {
+    .bm-sg-root {
+      padding: 32px 12px 40px;
+    }
+
+    .bm-sg-section-title {
+      font-size: 1.45rem;
+    }
+
+    .bm-sg-table thead th,
+    .bm-sg-table tbody td {
+      padding: 11px 14px;
+      font-size: 0.875rem;
+    }
+
+    .bm-sg-table tbody td:first-child {
+      font-size: 0.9rem;
+    }
+
+    .bm-sg-acc-header {
+      padding: 15px 16px;
+    }
+
+    .bm-sg-acc-title {
+      font-size: 0.97rem;
+    }
+
+    .bm-sg-acc-inner {
+      padding: 18px 16px 20px;
+    }
+  }
+</style>
+
+<div class="bm-sg-root" id="bm-sg-{{ section.id }}">
+<div class="bm-sg-inner">
+
+  {%- comment -%} ── 1. כותרת סקשן {%- endcomment -%}
+  <h2 class="bm-sg-section-title">{{ section.settings.section_title }}</h2>
+  <p class="bm-sg-section-subtitle">בחרו את המידה הנכונה לפי אורך כף הרגל — לא לפי גיל בלבד</p>
+
+  {%- comment -%} ── 5. אקורדיון 3 — טבלת מידות {%- endcomment -%}
+  <div class="bm-sg-accordion">
+    <input
+      type="checkbox"
+      class="bm-sg-toggle"
+      id="bm-sg-acc3-{{ section.id }}"
+      aria-hidden="true"
+    >
+    <label class="bm-sg-acc-header" for="bm-sg-acc3-{{ section.id }}">
+      <span class="bm-sg-acc-title">{{ section.settings.accordion3_title }}</span>
+      <span class="bm-sg-acc-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+          <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </label>
+    <div class="bm-sg-acc-body">
+      <div class="bm-sg-acc-inner bm-sg-acc-inner--table">
+        <div class="bm-sg-table-wrap">
+          <table class="bm-sg-table">
+            <thead>
+              <tr>
+                <th scope="col">גיל</th>
+                <th scope="col">אורך כף רגל (ס"מ)</th>
+                <th scope="col">מידה</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>12–18 חודשים</td><td>12–12.5</td><td>19–20</td></tr>
+              <tr><td>18–24 חודשים</td><td>13–13.5</td><td>21–22</td></tr>
+              <tr><td>2–3 שנים</td><td>14–15</td><td>23–25</td></tr>
+              <tr><td>3–4 שנים</td><td>16–17</td><td>26–27</td></tr>
+              <tr><td>4–5 שנים</td><td>17.5–18.5</td><td>28–29</td></tr>
+              <tr><td>5–6 שנים</td><td>19–20</td><td>30–31</td></tr>
+              <tr><td>6–7 שנים</td><td>20.5–21.5</td><td>32–33</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ── 2. אקורדיון 1 — מדידה בבית {%- endcomment -%}
+  <div class="bm-sg-accordion">
+    <input
+      type="checkbox"
+      class="bm-sg-toggle"
+      id="bm-sg-acc1-{{ section.id }}"
+      aria-hidden="true"
+    >
+    <label class="bm-sg-acc-header" for="bm-sg-acc1-{{ section.id }}">
+      <span class="bm-sg-acc-title">{{ section.settings.accordion1_title }}</span>
+      <span class="bm-sg-acc-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+          <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </label>
+    <div class="bm-sg-acc-body">
+      <div class="bm-sg-acc-inner">
+
+        <ol class="bm-sg-steps">
+          <li class="bm-sg-step">
+            <span class="bm-sg-step-num">1</span>
+            <p class="bm-sg-step-text">להניח את הילד על דף נייר לבן ולסמן בעיפרון נקודה בקצה העקב ונקודה בקצה הבוהן.</p>
+          </li>
+          <li class="bm-sg-step">
+            <span class="bm-sg-step-num">2</span>
+            <p class="bm-sg-step-text">למדוד את המרחק בין שתי הנקודות בסנטימטרים — זה אורך כף הרגל.</p>
+          </li>
+          <li class="bm-sg-step">
+            <span class="bm-sg-step-num">3</span>
+            <p class="bm-sg-step-text">להשוות לטבלה למעלה ולבחור לפי הרגל הגדולה יותר.</p>
+          </li>
+        </ol>
+
+        <p class="bm-sg-tips-heading">💡 טיפים חשובים</p>
+        <ul class="bm-sg-tips">
+          <li class="bm-sg-tip">
+            <span class="bm-sg-tip-icon">👣</span>
+            <span>למדוד שתי רגליים — הרגליים לא תמיד שוות. לבחור לפי הגדולה.</span>
+          </li>
+          <li class="bm-sg-tip">
+            <span class="bm-sg-tip-icon">📏</span>
+            <span>להוסיף 1–1.5 ס"מ מרווח גדילה מעל מידת הרגל בפועל.</span>
+          </li>
+          <li class="bm-sg-tip">
+            <span class="bm-sg-tip-icon">🔁</span>
+            <span>לבדוק מידות כל 2–3 חודשים — הרגליים גדלות מהר בגיל הזה.</span>
+          </li>
+          <li class="bm-sg-tip">
+            <span class="bm-sg-tip-icon">⬆️</span>
+            <span>אם הילד בין שתי מידות — לקחת תמיד את הגדולה.</span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ── 4. אקורדיון 2 — כל כמה זמן מחליפים {%- endcomment -%}
+  <div class="bm-sg-accordion">
+    <input
+      type="checkbox"
+      class="bm-sg-toggle"
+      id="bm-sg-acc2-{{ section.id }}"
+      aria-hidden="true"
+    >
+    <label class="bm-sg-acc-header" for="bm-sg-acc2-{{ section.id }}">
+      <span class="bm-sg-acc-title">{{ section.settings.accordion2_title }}</span>
+      <span class="bm-sg-acc-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+          <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </label>
+    <div class="bm-sg-acc-body">
+      <div class="bm-sg-acc-inner">
+
+        <p class="bm-sg-timing-text">
+          בגיל הפעוט הרגליים גדלות מהר — פעוטות מחליפים מידת נעל כל <strong>2–3 חודשים</strong>.
+          נעל קטנה מדי לוחצת על האצבעות בלי שההורה שם לב, ויכולה להשפיע על דפוס ההליכה.
+        </p>
+
+        <p class="bm-sg-timing-signals">סימנים שהמידה קטנה:</p>
+        <ul class="bm-sg-signal-list">
+          <li class="bm-sg-signal-item">
+            <span class="bm-sg-signal-icon">👆</span>
+            <span>האצבעות לוחצות לקצה הנעל — אפשר לחוש בהן מבחוץ.</span>
+          </li>
+          <li class="bm-sg-signal-item">
+            <span class="bm-sg-signal-icon">😤</span>
+            <span>הילד מסרב לנעול, בוכה בנעילה, או מוריד את הנעל מיד.</span>
+          </li>
+          <li class="bm-sg-signal-item">
+            <span class="bm-sg-signal-icon">🔴</span>
+            <span>אדמומיות או עקבות לחץ על עור הרגל אחרי הורדת הנעל.</span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "BM Shoes - מדריך מידות",
+  "tag": "section",
+  "class": "bm-shoes-size-guide-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "כותרת הסקשן",
+      "default": "מדריך מידות"
+    },
+    {
+      "type": "text",
+      "id": "accordion1_title",
+      "label": "כותרת אקורדיון 1",
+      "default": "איך למדוד את רגל הילד בבית"
+    },
+    {
+      "type": "text",
+      "id": "accordion2_title",
+      "label": "כותרת אקורדיון 2",
+      "default": "כל כמה זמן צריך להחליף מידה?"
+    },
+    {
+      "type": "text",
+      "id": "accordion3_title",
+      "label": "כותרת אקורדיון 3 (טבלת מידות)",
+      "default": "טבלת מידות לפי גיל"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM Shoes - מדריך מידות"
+    }
+  ]
+}
+{% endschema %}

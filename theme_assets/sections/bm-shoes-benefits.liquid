@@ -1,0 +1,601 @@
+{% comment %}
+  BabyMania Shoes — Benefits Section
+  File: sections/bm-shoes-benefits.liquid
+  Purpose: רשת יתרונות נעליים — 5 כרטיסים קבועים לפי קטגוריה + עד 3 דינמיים
+  עיצוב: שכפול מדויק של bm-store-benefits-reference.liquid
+  מקור נתונים: product.metafields.baby_mania.benefits → gap-fill מ-blocks
+  RTL עברית · ללא JavaScript · Prefix: bm-sb
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
+
+  /* ============================================================
+     BM-SHOES-BENEFITS — CSS Variables
+  ============================================================ */
+  .bm-sb-root {
+    --bm-sb-brown:        #8B5E3C;
+    --bm-sb-brown-dark:   #6B4530;
+    --bm-sb-brown-light:  #F5EDE4;
+    --bm-sb-cream:        #FFFDF9;
+    --bm-sb-white:        #FFFFFF;
+    --bm-sb-border:       #EDE0D4;
+    --bm-sb-text:         #1A1A1A;
+    --bm-sb-muted:        #6B6B6B;
+    --bm-sb-shadow:       rgba(139, 94, 60, 0.10);
+    --bm-sb-radius:       14px;
+    --bm-sb-font:         'Heebo', sans-serif;
+  }
+
+  /* ============================================================
+     ANIMATIONS
+  ============================================================ */
+  @keyframes bm-sb-fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bmSbFloat1 {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(20px, -15px); }
+  }
+
+  @keyframes bmSbFloat2 {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(-18px, 22px); }
+  }
+
+  @keyframes bmSbFloat3 {
+    0%, 100% { transform: translate(0, 0); }
+    33%       { transform: translate(14px, 10px); }
+    66%       { transform: translate(-12px, -8px); }
+  }
+
+  /* ============================================================
+     DECORATIVE BLOBS
+  ============================================================ */
+  .bm-sb-blob {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffffff 0%,
+      #F6EFE7 60%,
+      #EFE6DD 100%
+    );
+    opacity: 0.18;
+    filter: blur(36px);
+    will-change: transform;
+  }
+
+  .bm-sb-blob--1 {
+    width: 340px;
+    height: 340px;
+    top: -60px;
+    left: -80px;
+    border-radius: 58% 42% 72% 28% / 44% 62% 38% 56%;
+    animation: bmSbFloat1 26s ease-in-out infinite;
+  }
+
+  .bm-sb-blob--2 {
+    width: 280px;
+    height: 280px;
+    bottom: -80px;
+    right: -100px;
+    border-radius: 38% 62% 44% 56% / 60% 36% 64% 40%;
+    animation: bmSbFloat2 30s ease-in-out infinite;
+  }
+
+  .bm-sb-blob--3 {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    border-radius: 46% 54% 66% 34% / 52% 44% 56% 48%;
+    animation: bmSbFloat3 28s ease-in-out infinite;
+  }
+
+  /* ============================================================
+     SECTION WRAPPER
+  ============================================================ */
+  .bm-sb-root {
+    background: var(--bm-sb-cream);
+    padding: 52px 20px;
+    font-family: var(--bm-sb-font);
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bm-sb-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============================================================
+     SECTION HEADER
+  ============================================================ */
+  .bm-sb-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .bm-sb-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bm-sb-brown);
+    background: var(--bm-sb-brown-light);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .bm-sb-title {
+    font-family: 'Playfair Display', 'Heebo', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bm-sb-text);
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+
+  .bm-sb-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--bm-sb-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     GRID
+  ============================================================ */
+  .bm-sb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* ============================================================
+     CARD
+  ============================================================ */
+  .bm-sb-card {
+    background: linear-gradient(180deg, #FFF8F2 0%, #FFFFFF 70%);
+    border: 1px solid var(--bm-sb-border);
+    border-radius: var(--bm-sb-radius);
+    box-shadow: 0 2px 12px var(--bm-sb-shadow);
+    padding: 24px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    animation: bm-sb-fade-up 0.5s ease both;
+  }
+
+  .bm-sb-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--bm-sb-shadow);
+  }
+
+  /* Staggered animation delays — up to 8 cards */
+  .bm-sb-card:nth-child(1) { animation-delay: 0.05s; }
+  .bm-sb-card:nth-child(2) { animation-delay: 0.10s; }
+  .bm-sb-card:nth-child(3) { animation-delay: 0.15s; }
+  .bm-sb-card:nth-child(4) { animation-delay: 0.20s; }
+  .bm-sb-card:nth-child(5) { animation-delay: 0.25s; }
+  .bm-sb-card:nth-child(6) { animation-delay: 0.30s; }
+  .bm-sb-card:nth-child(7) { animation-delay: 0.35s; }
+  .bm-sb-card:nth-child(8) { animation-delay: 0.40s; }
+
+  /* ============================================================
+     ICON BUBBLE — radial gradient with inner highlight
+  ============================================================ */
+  .bm-sb-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: box-shadow 0.22s ease;
+  }
+
+  /* Card 1 — green */
+  .bm-sb-card:nth-child(1) .bm-sb-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E8F5E9 55%, #c8e6c9 100%);
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 2 — blue */
+  .bm-sb-card:nth-child(2) .bm-sb-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E3F2FD 55%, #bbdefb 100%);
+    box-shadow: 0 3px 10px rgba(33, 150, 243, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 3 — amber */
+  .bm-sb-card:nth-child(3) .bm-sb-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #FFF3E0 55%, #ffe0b2 100%);
+    box-shadow: 0 3px 10px rgba(255, 152, 0, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 4 — purple */
+  .bm-sb-card:nth-child(4) .bm-sb-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #F3E5F5 55%, #e1bee7 100%);
+    box-shadow: 0 3px 10px rgba(156, 39, 176, 0.16), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 5 — pink */
+  .bm-sb-card:nth-child(5) .bm-sb-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #FCE4EC 55%, #f8bbd0 100%);
+    box-shadow: 0 3px 10px rgba(233, 30, 99, 0.16), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 6 — teal */
+  .bm-sb-card:nth-child(6) .bm-sb-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E0F7FA 55%, #b2ebf2 100%);
+    box-shadow: 0 3px 10px rgba(0, 188, 212, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 7 — amber-light */
+  .bm-sb-card:nth-child(7) .bm-sb-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #FFF8E1 55%, #ffecb3 100%);
+    box-shadow: 0 3px 10px rgba(255, 193, 7, 0.20), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+  /* Card 8 — indigo */
+  .bm-sb-card:nth-child(8) .bm-sb-icon-wrap {
+    background: radial-gradient(circle at 38% 35%, #ffffff 0%, #E8EAF6 55%, #c5cae9 100%);
+    box-shadow: 0 3px 10px rgba(63, 81, 181, 0.16), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+
+  .bm-sb-card:hover .bm-sb-icon-wrap {
+    box-shadow: 0 5px 16px rgba(139, 94, 60, 0.18), inset 0 1px 3px rgba(255,255,255,0.85);
+  }
+
+  /* ============================================================
+     CARD TEXT
+  ============================================================ */
+  .bm-sb-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bm-sb-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bm-sb-text);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .bm-sb-card-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--bm-sb-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+
+  /* Tablet: 2 columns */
+  @media (max-width: 768px) {
+    .bm-sb-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .bm-sb-root      { padding: 36px 12px; }
+    .bm-sb-title     { font-size: 20px; }
+    .bm-sb-subtitle  { font-size: 13.5px; }
+    .bm-sb-grid      { gap: 10px; }
+    .bm-sb-card      { padding: 16px 10px 14px; gap: 8px; }
+    .bm-sb-icon-wrap { width: 44px; height: 44px; font-size: 20px; }
+    .bm-sb-card-title { font-size: 13px; }
+    .bm-sb-card-desc  { font-size: 11.5px; line-height: 1.45; }
+    .bm-sb-blob--1 { width: 200px; height: 180px; top: -40px; left: -50px; }
+    .bm-sb-blob--2 { width: 240px; height: 200px; bottom: -50px; right: -60px; }
+    .bm-sb-blob--3 { width: 160px; height: 150px; margin-top: -75px; margin-left: -80px; }
+  }
+
+  /* Small mobile: 1 column */
+  @media (max-width: 420px) {
+    .bm-sb-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .bm-sb-card {
+      flex-direction: row;
+      text-align: right;
+      align-items: flex-start;
+      padding: 14px 12px;
+      gap: 12px;
+    }
+    .bm-sb-card-body { align-items: flex-start; }
+    .bm-sb-icon-wrap { width: 40px; height: 40px; font-size: 18px; flex-shrink: 0; }
+    .bm-sb-card-title { font-size: 13px; }
+    .bm-sb-card-desc  { font-size: 11px; }
+  }
+</style>
+
+{% comment %}
+  ── Data sources ────────────────────────────────────────────────
+  Fixed:   5 cards hardcoded per shoe_category (developmental / style)
+  Extra:   up to 3 cards — metafield shoe_benefits first, gap-fill from blocks
+{% endcomment %}
+{%- assign bm_sb_cat    = section.settings.shoe_category | default: 'developmental' -%}
+{%- assign bm_sb_mf     = product.metafields.baby_mania.benefits.value -%}
+{%- assign bm_sb_blocks = section.blocks | where: "type", "shoe_benefit" -%}
+
+{%- comment -%} Resolve header text with fallbacks {%- endcomment -%}
+{%- assign bm_sb_eyebrow  = section.settings.eyebrow -%}
+{%- assign bm_sb_heading  = section.settings.title -%}
+{%- assign bm_sb_subtitle = section.settings.subtitle -%}
+{%- if bm_sb_eyebrow  == blank -%}{%- assign bm_sb_eyebrow  = 'למה הנעליים שלנו' -%}{%- endif -%}
+{%- if bm_sb_heading  == blank -%}{%- assign bm_sb_heading  = 'נבחרו בקפידה' -%}{%- endif -%}
+{%- if bm_sb_subtitle == blank -%}
+  {%- if bm_sb_cat == 'style' -%}
+    {%- assign bm_sb_subtitle = 'נעליים שנראות מדהים ומרגישות טוב — בלי לבחור בין סטייל לנוחות.' -%}
+  {%- else -%}
+    {%- assign bm_sb_subtitle = 'כל פרט בנעל נבחר כדי לתמוך בהתפתחות הרגל הצומחת — צעד אחר צעד.' -%}
+  {%- endif -%}
+{%- endif -%}
+
+<section
+  class="bm-sb-root"
+  id="bm-sb-{{ section.id }}"
+  aria-labelledby="bm-sb-heading-{{ section.id }}"
+>
+  <div class="bm-sb-blob bm-sb-blob--1" aria-hidden="true"></div>
+  <div class="bm-sb-blob bm-sb-blob--2" aria-hidden="true"></div>
+  <div class="bm-sb-blob bm-sb-blob--3" aria-hidden="true"></div>
+
+  <div class="bm-sb-container">
+
+    {%- if section.settings.show_header -%}
+      <header class="bm-sb-header">
+        <span class="bm-sb-eyebrow">{{ bm_sb_eyebrow }}</span>
+        <h2 class="bm-sb-title" id="bm-sb-heading-{{ section.id }}">{{ bm_sb_heading }}</h2>
+        <p class="bm-sb-subtitle">{{ bm_sb_subtitle }}</p>
+      </header>
+    {%- endif -%}
+
+    <div class="bm-sb-grid" role="list">
+
+      {% comment %} ── 1. FIXED CARDS per shoe_category ── {% endcomment %}
+      {% if bm_sb_cat == 'style' %}
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">✨</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">עיצוב שמושך עיניים</h3>
+            <p class="bm-sb-card-desc">כל הגננות ישאלו מאיפה הנעליים</p>
+          </div>
+        </article>
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">👗</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">משלימה כל לוק</h3>
+            <p class="bm-sb-card-desc">מתאימה לשמלה, לחליפה ולכל אירוע</p>
+          </div>
+        </article>
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">🤗</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">נוחה למרות העיצוב</h3>
+            <p class="bm-sb-card-desc">יפה מבחוץ, רכה מבפנים — בלי ויתורים</p>
+          </div>
+        </article>
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">👣</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">ריפוד פנימי רך</h3>
+            <p class="bm-sb-card-desc">הילד לא מוריד אותן אחרי 10 דקות</p>
+          </div>
+        </article>
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">🎀</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">גימורים איכותיים</h3>
+            <p class="bm-sb-card-desc">פרטים קטנים שעושים את ההבדל</p>
+          </div>
+        </article>
+
+      {% else %}{% comment %} developmental (default) {% endcomment %}
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">🦶</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">סוליה גמישה</h3>
+            <p class="bm-sb-card-desc">הרגליים מתפתחות כמו שצריך — בלי שאתם צריכים לחשוב על זה</p>
+          </div>
+        </article>
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">🪶</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">קלה במיוחד</h3>
+            <p class="bm-sb-card-desc">הילד זז חופשי כל היום — בלי להתעייף ובלי לבקש הפסקות</p>
+          </div>
+        </article>
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">💨</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">חומרים נושמים</h3>
+            <p class="bm-sb-card-desc">כף הרגל יבשה — הילד לא מתלונן ולא מוריד אחרי שעה</p>
+          </div>
+        </article>
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">🔒</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">סגירה מתכווננת</h3>
+            <p class="bm-sb-card-desc">הילד נועל לבד בלי לבקש עזרה — פחות מריבות בבוקר</p>
+          </div>
+        </article>
+
+        <article class="bm-sb-card" role="listitem">
+          <div class="bm-sb-icon-wrap" aria-hidden="true">🛡️</div>
+          <div class="bm-sb-card-body">
+            <h3 class="bm-sb-card-title">מונעת החלקה</h3>
+            <p class="bm-sb-card-desc">הילד רץ, מטפס, חוקר — אתם רגועים</p>
+          </div>
+        </article>
+
+      {% endif %}
+
+      {% comment %}
+        ── 2. EXTRA CARDS: metafield first, gap-fill from blocks ──
+        Priority: shoe_benefits metafield (up to 3) → blocks fill the rest
+      {% endcomment %}
+      {%- assign bm_sb_mf_count   = 0 -%}
+      {%- if bm_sb_mf and bm_sb_mf.size > 0 -%}
+        {%- assign bm_sb_mf_count = bm_sb_mf.size -%}
+        {%- if bm_sb_mf_count > 3 -%}{%- assign bm_sb_mf_count = 3 -%}{%- endif -%}
+      {%- endif -%}
+
+      {%- if bm_sb_mf and bm_sb_mf.size > 0 -%}
+        {%- for benefit in bm_sb_mf limit: 3 -%}
+          <article class="bm-sb-card" role="listitem">
+            {%- if benefit.icon != blank -%}
+              <div class="bm-sb-icon-wrap" aria-hidden="true">{{ benefit.icon }}</div>
+            {%- endif -%}
+            <div class="bm-sb-card-body">
+              {%- if benefit.title != blank -%}
+                <h3 class="bm-sb-card-title">{{ benefit.title }}</h3>
+              {%- endif -%}
+              {%- if benefit.body != blank -%}
+                <p class="bm-sb-card-desc">{{ benefit.body }}</p>
+              {%- elsif benefit.description != blank -%}
+                <p class="bm-sb-card-desc">{{ benefit.description }}</p>
+              {%- elsif benefit.desc != blank -%}
+                <p class="bm-sb-card-desc">{{ benefit.desc }}</p>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- comment -%} Gap-fill: blocks fill slots not covered by metafield {%- endcomment -%}
+      {%- assign bm_sb_fill = 3 | minus: bm_sb_mf_count -%}
+      {%- if bm_sb_fill > 0 and bm_sb_blocks.size > 0 -%}
+        {%- for block in bm_sb_blocks limit: bm_sb_fill -%}
+          <article class="bm-sb-card" role="listitem" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <div class="bm-sb-icon-wrap" aria-hidden="true">{{ block.settings.icon }}</div>
+            {%- endif -%}
+            <div class="bm-sb-card-body">
+              {%- if block.settings.title != blank -%}
+                <h3 class="bm-sb-card-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <p class="bm-sb-card-desc">{{ block.settings.body }}</p>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- endfor -%}
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BM Shoes — יתרונות",
+  "tag": "div",
+  "class": "bm-shoes-benefits-section",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "select",
+      "id": "shoe_category",
+      "label": "קטגוריית נעל",
+      "default": "developmental",
+      "options": [
+        { "value": "developmental", "label": "התפתחותיות" },
+        { "value": "style",         "label": "סטייל / אירועים" }
+      ],
+      "info": "קובע את 5 הכרטיסים הקבועים המוצגים תמיד."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "הצג כותרת",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "מדבקת קטגוריה (Eyebrow)",
+      "default": "למה הנעליים שלנו",
+      "info": "טקסט קטן מעל הכותרת הראשית."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "כותרת ראשית",
+      "default": "נבחרו בקפידה"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "כותרת משנה",
+      "info": "אם ריק — ימולא אוטומטית לפי קטגוריה."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "shoe_benefit",
+      "name": "יתרון נוסף",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "אייקון (Emoji)",
+          "default": "🌟",
+          "info": "Emoji אחד שיוצג על רקע עגול."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "כותרת היתרון",
+          "default": "יתרון נוסף"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "תיאור קצר",
+          "default": "פרט שמשלים את התמונה."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM Shoes — יתרונות",
+      "settings": {
+        "shoe_category": "developmental"
+      }
+    }
+  ]
+}
+{% endschema %}

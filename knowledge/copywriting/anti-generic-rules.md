@@ -72,7 +72,7 @@ If the same phrase appears in two sections — one must be rewritten.
 |---------|----------------|
 | Hero | emotional hook — what draws the parent in |
 | Fabric Story | how the fabric feels on baby's skin |
-| Benefits | why each feature helps baby or parent |
+| Benefits | parent outcome — what changes in the parent's daily life (layer 3) |
 | Care | how easy maintenance is |
 | FAQ | direct answers to specific doubts |
 | Emotional Reassurance | a moment of human connection — not a benefit list |

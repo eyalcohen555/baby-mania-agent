@@ -4,10 +4,12 @@ Publish order: Pillar → C1 → C2 → C4
 """
 
 import re
+import sys
 import time
 import requests
 from pathlib import Path
 from shopify_client import _headers, BASE_URL
+from qa_gate import preflight_qa_check, check_article_qa
 
 BLOG_ID = 109164036409
 STAGE_DIR = Path(r"C:\Projects\baby-mania-agent\output\stage-outputs")
@@ -15,6 +17,7 @@ STAGE_DIR = Path(r"C:\Projects\baby-mania-agent\output\stage-outputs")
 ARTICLES = [
     {
         "file": "10085913231673_blog_article_1.html",
+        "cluster_id": "HUB-1-pillar",
         "title": "איך לעזור לתינוק לישון בלילה — המדריך המלא להורים עייפים",
         "handle": "how-to-help-baby-sleep-through-the-night",
         "cluster": "HUB-1-pillar",
@@ -22,6 +25,7 @@ ARTICLES = [
     },
     {
         "file": "10085913231673_blog_article_2.html",
+        "cluster_id": "HUB-1-C1",
         "title": "רעש לבן לתינוקות: האם זה באמת עובד?",
         "handle": "white-noise-for-babies",
         "cluster": "HUB-1-C1",
@@ -29,6 +33,7 @@ ARTICLES = [
     },
     {
         "file": "10085913231673_blog_article_4.html",
+        "cluster_id": "HUB-1-C2",
         "title": "שגרת שינה לתינוק: מדריך צעד-אחר-צעד להורים חדשים",
         "handle": "baby-sleep-routine",
         "cluster": "HUB-1-C2",
@@ -36,12 +41,16 @@ ARTICLES = [
     },
     {
         "file": "10085913231673_blog_article_3.html",
+        "cluster_id": "HUB-1-C4",
         "title": "מכשיר שינה אחד-לכל לתינוק: מה חשוב לבדוק לפני הקנייה?",
         "handle": "all-in-one-baby-sleep-solution",
         "cluster": "HUB-1-C4",
         "tags": "baby-sleep,all-in-one,bofu,hidden-diamond,HUB-1",
     },
 ]
+
+# ── QA Pre-flight — all articles must pass before any publish ─────────────────
+preflight_qa_check(STAGE_DIR, ARTICLES, "HUB-1 Baby Sleep")
 
 
 def extract_body_html(html_text):
@@ -91,6 +100,7 @@ def verify_article(article_id, blog_id):
 results = []
 
 for i, art in enumerate(ARTICLES, 1):
+    check_article_qa(STAGE_DIR, art)  # per-article gate — blocks if QA missing or FAIL
     filepath = STAGE_DIR / art["file"]
     print(f"\n[{i}/4] Publishing {art['cluster']} — {art['title'][:50]}...")
 

@@ -1,0 +1,41 @@
+{
+  "agent": "08-organic-article-linker",
+  "version": "1.0",
+  "hub_id": "HUB-7",
+  "article_id": "HUB-7-C3",
+  "article_file": "HUB7_C3_blog_article.html",
+  "article_word_count_estimate": 580,
+  "recommended_link_count": 3,
+  "links": [
+    {
+      "anchor_text": "טמפרטורת חדר מומלצת לשינת תינוק היא 18–22 מעלות",
+      "target_url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male",
+      "link_type": "pillar",
+      "anchor_type": "partial_match",
+      "placement_section": "מה טמפרטורת החדר המומלצת?",
+      "position_third": "middle"
+    },
+    {
+      "anchor_text": "בגד גדול יוצר קפלים של בד שלוכדים חום מרוכז, מגביל תנועה, ועלול לכסות פנים בשינה",
+      "target_url": "https://babymania-il.com/blogs/news/bigud-batua-letinok-mah-levakesh",
+      "link_type": "cluster",
+      "anchor_type": "partial_match",
+      "placement_section": "מה ביגוד הכי מתאים למניעת התחממות?",
+      "position_third": "last"
+    },
+    {
+      "anchor_text": "שכבה אחת יותר ממה שמבוגר היה לובש באותה סביבה",
+      "target_url": "https://babymania-il.com/blogs/news/how-many-clothes-does-a-newborn-need",
+      "link_type": "cross-hub",
+      "anchor_type": "partial_match",
+      "placement_section": "כמה שכבות בגדים צריך תינוק?",
+      "position_third": "first"
+    }
+  ],
+  "validation": {
+    "has_pillar_link": true,
+    "no_duplicate_targets": true,
+    "density_ok": true
+  },
+  "generated_at": "2026-03-23T10:00:00Z"
+}

@@ -326,6 +326,57 @@ def infer_season(visual: dict, handle: str) -> str:
     return "all_season"
 
 
+# ── Shoes inference helpers ────────────────────────────────────────────────────
+
+def infer_closure_type(text: str) -> str:
+    """Detect shoe closure type. Returns velcro|slip-on|laces|button|unknown."""
+    t = text.lower()
+    if any(kw in t for kw in ["velcro", "ולקרו", "סקוטש", "סקוצ'", "סקוצ"]):
+        return "velcro"
+    if any(kw in t for kw in ["slip-on", "slip on", "ללא שרוכים"]):
+        return "slip-on"
+    if any(kw in t for kw in ["laces", "שרוכים", "lace-up", "lace up"]):
+        return "laces"
+    if any(kw in t for kw in ["button", "כפתור", "buckle", "אבזם"]):
+        return "button"
+    return "unknown"
+
+
+def infer_sole_type(text: str) -> str:
+    """Detect shoe sole type. Returns flexible|anti-slip|firm|unknown."""
+    t = text.lower()
+    if any(kw in t for kw in ["anti slip", "anti-slip", "non slip", "non-slip",
+                                "מונעת החלקה", "מונע החלקה", "אנטי סליפ"]):
+        return "anti-slip"
+    if any(kw in t for kw in ["flexible", "גמישה", "גמיש", "soft sole",
+                                "סוליה רכה", "סוליה גמישה"]):
+        return "flexible"
+    if any(kw in t for kw in ["firm", "hard sole", "rigid", "קשיחה", "סוליה קשיחה"]):
+        return "firm"
+    return "unknown"
+
+
+_SHOE_FEATURE_MAP = {
+    "anti_slip":     ["anti slip", "anti-slip", "non slip", "non-slip",
+                      "מונעת החלקה", "מונע החלקה", "אנטי סליפ"],
+    "velcro":        ["velcro", "ולקרו", "סקוטש", "סקוצ'", "סקוצ"],
+    "soft_sole":     ["soft sole", "סוליה רכה", "soft bottom"],
+    "mesh":          ["mesh", "רשת נושמת", "breathable mesh"],
+    "breathable":    ["breathable", "נושמת", "נושם"],
+    "padded":        ["padded", "ריפוד", "מרופד", "cushion"],
+    "flexible_sole": ["flexible sole", "סוליה גמישה", "flexible", "גמישה"],
+    "lightweight":   ["lightweight", "light weight", "קל", "קלה"],
+    "first_steps":   ["first step", "first-step", "צעד ראשון", "צעדים ראשונים"],
+    "closed_toe":    ["closed toe", "closed-toe", "אצבעות סגורות"],
+}
+
+
+def infer_detected_features(text: str) -> list:
+    """Return list of shoe features found in text. Keyword-only — no inference."""
+    t = text.lower()
+    return [feat for feat, kws in _SHOE_FEATURE_MAP.items() if any(kw in t for kw in kws)]
+
+
 # ── Main builder ───────────────────────────────────────────────────────────────
 
 def build_intelligence(pid: str) -> dict:
@@ -364,6 +415,18 @@ def build_intelligence(pid: str) -> dict:
     giftable      = infer_giftable(description, title, handle, outfit_type)
     parent_use    = infer_parent_use_case(main_use, handle)
     season        = infer_season(visual, handle)
+
+    # ── Shoes-specific fields (shoes path only) ──────────────────────────────
+    product_template_type = analyzer.get("product_template_type", "")
+    if product_template_type == "shoes":
+        shoe_text         = f"{title} {description}"
+        detected_features = infer_detected_features(shoe_text)
+        closure_type      = infer_closure_type(shoe_text)
+        sole_type         = infer_sole_type(shoe_text)
+    else:
+        detected_features = []
+        closure_type      = "unknown"
+        sole_type         = "unknown"
 
     # Visual content_guidance — safe angles for writers
     safe_benefit_directions = (
@@ -407,6 +470,14 @@ def build_intelligence(pid: str) -> dict:
         },
         "fallback_flags": fallback_flags,
     }
+
+    # Merge shoes-specific fields into product_intelligence (shoes path only)
+    if product_template_type == "shoes":
+        intelligence["product_intelligence"].update({
+            "detected_features": detected_features,
+            "closure_type":      closure_type,
+            "sole_type":         sole_type,
+        })
 
     # Save
     out_path = STAGE_OUT_DIR / f"{pid}_intelligence.json"

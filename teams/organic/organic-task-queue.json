@@ -1,0 +1,138 @@
+{
+  "queue_id": "HUB-7-build-2026-03-19",
+  "hub": "HUB-7",
+  "stop_after_each": true,
+  "stop_on_failure": true,
+  "tasks": [
+    {
+      "id": "01",
+      "agent": "12-hub-planner",
+      "description": "תכנון אשכול HUB-7 — נושא, כותרות, מבנה",
+      "status": "pending",
+      "input_files": [],
+      "output_file": "output/hub7/HUB7_hub_plan.json",
+      "depends_on": [],
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    {
+      "id": "02",
+      "agent": "02-organic-keyword-research",
+      "description": "מחקר מילות מפתח HUB-7",
+      "status": "pending",
+      "input_files": [
+        "output/hub7/HUB7_hub_plan.json"
+      ],
+      "output_file": "output/hub7/HUB7_keyword_research.json",
+      "depends_on": [
+        "01"
+      ],
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    {
+      "id": "03",
+      "agent": "03-organic-blog-strategist",
+      "description": "אסטרטגיית תוכן HUB-7 — 7 מאמרים",
+      "status": "pending",
+      "input_files": [
+        "output/hub7/HUB7_hub_plan.json",
+        "output/hub7/HUB7_keyword_research.json"
+      ],
+      "output_file": "output/hub7/HUB7_blog_strategy.json",
+      "depends_on": [
+        "01",
+        "02"
+      ],
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    {
+      "id": "04",
+      "agent": "04-organic-blog-writer",
+      "description": "כתיבת Pillar HUB-7",
+      "status": "pending",
+      "input_files": [
+        "output/hub7/HUB7_blog_strategy.json",
+        "output/hub7/HUB7_keyword_research.json"
+      ],
+      "output_file": "output/hub7/HUB7_Pillar_blog_article.html",
+      "depends_on": [
+        "03"
+      ],
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    {
+      "id": "05",
+      "agent": "04-organic-blog-writer",
+      "description": "כתיבת C1 HUB-7",
+      "status": "pending",
+      "input_files": [
+        "output/hub7/HUB7_blog_strategy.json",
+        "output/hub7/HUB7_keyword_research.json"
+      ],
+      "output_file": "output/hub7/HUB7_C1_blog_article.html",
+      "depends_on": [
+        "03"
+      ],
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    {
+      "id": "06",
+      "agent": "08-organic-article-linker",
+      "description": "קישורים פנימיים — כל 7 מאמרי HUB-7",
+      "status": "pending",
+      "input_files": [
+        "output/hub7/HUB7_Pillar_blog_article.html",
+        "output/hub7/HUB7_C1_blog_article.html"
+      ],
+      "output_file": "output/hub7/HUB7_link_suggestions.json",
+      "depends_on": [
+        "04",
+        "05"
+      ],
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    {
+      "id": "07",
+      "agent": "10-organic-link-qa",
+      "description": "QA validation — Pillar HUB-7",
+      "status": "pending",
+      "input_files": [
+        "output/hub7/HUB7_Pillar_blog_article.html"
+      ],
+      "output_file": "output/hub7/HUB7_Pillar_internal_link_validation.json",
+      "depends_on": [
+        "06"
+      ],
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    {
+      "id": "08",
+      "agent": "publish_hub7.py",
+      "description": "פרסום HUB-7 ל-Shopify — Pillar ← C1–C6",
+      "status": "pending",
+      "input_files": [
+        "output/hub7/HUB7_Pillar_internal_link_validation.json"
+      ],
+      "output_file": "output/hub7/HUB7_PUBLISH_RESULTS.json",
+      "depends_on": [
+        "07"
+      ],
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  ]
+}

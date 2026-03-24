@@ -89,7 +89,7 @@ C:\Projects\baby-mania-agent\
 |---|---------|-------|-----------|
 | 1 | `main` | `main-product` — hero, title, price, cart | — |
 | 2 | `fabric` | `bm-store-fabric` — סיפור הבד | `baby_mania.fabric_story` |
-| 3 | `benefits` | `bm-store-benefits` — יתרונות 6 כרטיסים | `baby_mania.benefits` |
+| 3 | `benefits` | `bm-store-benefits` — יתרונות 4 או 6 כרטיסים | `baby_mania.benefits` |
 | 4 | `sizes` | `bm-store-sizes` — מדריך מידות accordion | variants + `baby_mania.size_guide_url` |
 | 5 | `care` | `bm-store-care` — מפרט + הוראות כביסה | `baby_mania.care_instructions` |
 | 6 | `faq` | `bm-store-faq` — שאלות נפוצות accordion | `baby_mania.faq` |
@@ -220,6 +220,15 @@ def should_skip(product):
 
 ## 5. תהליך עבודה מלא
 
+> ⚠️ **LEGACY — V1 Workflow (`main.py` + Gemini)**
+> 
+> תהליך זה שייך למערכת V1 (Python + Gemini) — **אינו מסלול ברירת המחדל.**
+> 
+> המערכת הנוכחית: **V2 orchestrator** (`00-team-lead/orchestrator.py`) + agents 01–07 → כותב ל-Metafields.
+> 
+> הפקודות נשמרות לעיון, אך **אסור להריץ V1 על מוצרים שכבר עובדו ב-V2** — ה-orchestrator מוחק `body_html` בפרסום.
+
+
 ### א. עדכון מוצר בודד
 
 ```
@@ -263,6 +272,13 @@ def should_skip(product):
 ---
 
 ## 6. פקודות מוכנות
+
+> ⚠️ **LEGACY — פקודות V1 (`main.py`)**
+> 
+> הפקודות מטה שייכות למערכת V1. **אל תריץ ב-production ללא אישור מפורש.**
+> 
+> המערכת הנוכחית: `python 00-team-lead/orchestrator.py`
+
 
 ### הרצה על 50 מוצרים
 

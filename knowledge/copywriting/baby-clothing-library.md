@@ -7,7 +7,16 @@ Writers must select and adapt sentences from this library instead of generating 
 
 ## BENEFITS LIBRARY
 
-Use short real-life advantages.
+> **⚠️ Anchors only — NOT final benefit output.**
+> All entries below are layer 1–2 fragments (feature or child benefit).
+> Before using any entry as a final benefit card, complete it to layer 3:
+> add an explicit parent outcome — what changes in the parent's day.
+>
+> Example of required completion:
+> Library entry: `"נוח לזחילה ולתנועה חופשית"` (layer 2 — child benefit)
+> Final benefit card: `"נוח לזחילה ולתנועה חופשית — אתה לא עוצר אותו כל הזמן"` (layer 3 — parent outcome added)
+
+Use short real-life advantages (as anchors for layer-3 completion):
 
 - לבישה מהירה גם כשהתינוק עייף
 - סט מוכן בלי לחפש אביזרים נוספים
@@ -155,7 +164,7 @@ All baby clothing products must include a washing instructions accordion.
 
 | icon_type | card_title | card_text |
 |-----------|------------|-----------|
-| `wash_30` | כביסה עד 30° בלבד | שומרת על הרכות והצבע לאורך זמן |
+| `wash_60` | כביסה עד 60° | בגד עמיד — נשמר כחדש אחרי כביסות חוזרות |
 | `no_tumble_dry` | ייבוש טבעי מומלץ | שומר על הצורה המקורית ומאריך את חיי הבגד |
 | `no_bleach` | שמירה על הצבע | הסיבים עמידים — ללא צורך בחומרי הלבנה |
 | `iron` | גיהוץ עדין אם נחוץ | חום נמוך מספיק לשמירת הבד |
@@ -163,7 +172,7 @@ All baby clothing products must include a washing instructions accordion.
 
 ### Override rule
 
-If `fabric_type` is known → may replace `wash_30` with `wash_60` only if product data supports it.
+If `fabric_type` is **empty** (`fabric_known = false`) → replace `wash_60` with `hand_wash` only.
 All other 4 rows remain standard.
 
 ---

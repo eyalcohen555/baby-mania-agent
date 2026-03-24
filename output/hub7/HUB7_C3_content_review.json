@@ -1,0 +1,54 @@
+{
+  "agent": "10.5-organic-content-qa",
+  "version": "2.0",
+  "article_file": "HUB7_C3_blog_article.html",
+  "reviewed_at": "2026-03-23T10:00:00Z",
+  "overall_review": "PASS",
+  "checks": {
+    "title_quality": {
+      "result": "PASS",
+      "h1_text": "איך למנוע התחממות יתר בתינוק — הסימנים שחשוב להכיר",
+      "specificity": "PASS",
+      "length_words": 9,
+      "length_check": "PASS",
+      "natural_hebrew": "PASS",
+      "notes": null
+    },
+    "intro_box_quality": {
+      "result": "PASS",
+      "preview_present": true,
+      "proof_present": true,
+      "transition_present": true,
+      "notes": "POST-FIX RE-CHECK. proof_present: fix added 'בדיקה לפי כמה סימנים קבועים — גב, צוואר, טמפרטורת חדר — מאפשרת לדעת בוודאות, לא לנחש.' — defined criteria (gב, צוואר, טמפרטורת חדר) as concrete, enumerable trust signal; satisfies the 'defined criteria' proof category. PASS. transition_present: 'המאמר הזה מסביר את הסימנים שצריך להכיר, כמה שכבות ביגוד נכון, ואיזו טמפרטורת חדר מומלצת' matches the article-introduces-itself pattern (המדריך הזה / המאמר הזה); carried forward from prior review as PASS. preview_present: same sentence clearly enumerates what the reader will learn (סימנים, שכבות ביגוד, טמפרטורת חדר). PASS."
+    },
+    "body_language_quality": {
+      "result": "PASS",
+      "sampling_scope": {
+        "z1_headings": {
+          "tags_scanned": ["h2", "h3"],
+          "elements_found": 6
+        },
+        "z2_first_paragraphs": {
+          "paragraphs_scanned": 3,
+          "note": "first 3 <p> after intro-box: quick-answer <p> (line 37), first body <p> (line 61), second body <p> (line 63)"
+        },
+        "z3_pre_cta": {
+          "paragraphs_scanned": 1,
+          "note": "last <p> before class=cta-banner: <p> at line 140 ('אחרי כל כביסה — עברו עם אצבע על התפרים הפנימיים...')"
+        }
+      },
+      "findings": {
+        "hard_match": [],
+        "human_review": [],
+        "observed_below_threshold": []
+      },
+      "summary": {
+        "hm_findings_count": 0,
+        "hr_findings_count": 0,
+        "total_findings_count": 0,
+        "rules_triggered": []
+      }
+    }
+  },
+  "action_required": false
+}

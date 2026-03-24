@@ -37,6 +37,32 @@ analyzer:
     has_reviews:      { type: boolean }
     has_stock_data:   { type: boolean }
 
+# ── Stage 02b: Clothing Thinking Agent ───────────────────────────────────────
+thinking:
+  output_format: yaml_code_block       # must be inside ```yaml ... ```
+  required_fields:
+    product_id:             { type: string, not_empty: true }
+    core_angle:             { type: string, not_empty: true }
+    primary_parent_outcome: { type: string, not_empty: true }
+    emotional_trigger:      { type: string, not_empty: false }
+    main_friction:          { type: string, not_empty: false }
+    message_budget:
+      type: object
+      required_sections: [hero, fabric_body, fabric_body_2, whats_special, benefits, emotional_reassurance, care, faq]
+      each_section_requires:
+        owns:    { type: string, not_empty: true, valid_values: [softness_skin, washing_durability, warmth_winter, ease_dressing, special_feature, parent_ease, gift_value] }
+        message: { type: string, not_empty: true }
+        forbidden: { type: list, min_count: 1 }
+    cluster_map:            { type: object, not_empty: true }
+    repetition_risks:       { type: list }   # can be empty list
+  validation_rules:
+    - "owns value must not appear in the same section's forbidden list"
+    - "cluster_map must reference every cluster used in any owns field"
+    - "benefits section must define card_1 through card_N (N = 4 or 6) each with owns + message"
+    - "care section must define at least 3 card entries each with owns + message"
+    - "faq section must define q1 through q4 each with topic + cluster"
+    - "forbidden lists must not be empty — every section must declare at least 1 forbidden cluster"
+
 # ── Stage 2: Fabric Story ─────────────────────────────────────────────────────
 fabric_story:
   output_format: freeform_text
@@ -140,6 +166,29 @@ validator:
     - emotional_reassurance
     - faq
     - care_instructions
+
+# ── Stage 8: Page Validator ──────────────────────────────────────────────────
+page_validator:
+  output_format: json_code_block        # must be inside ```json ... ```
+  pass_token: '"page_validation_status": "PASS"'
+  fail_token: '"page_validation_status": "FAIL"'
+  required_fields:
+    product_id:                { type: string, not_empty: true }
+    page_validation_status:    { type: enum, values: [PASS, FAIL] }
+    publish_recommendation:    { type: enum, values: [publish, review, block] }
+    overall_page_quality_score: { type: integer, min: 0, max: 100 }
+    hebrew_summary:            { type: string, not_empty: true }
+    section_scores:            { type: object }
+    critical_failures:         { type: list }
+    warnings:                  { type: list }
+    cross_section_repetition:  { type: list }
+    weak_benefits:             { type: list }
+    care_duplications:         { type: list }
+    generic_faq_items:         { type: list }
+    hero_consistency_result:   { type: object }
+  # page_validation_status = FAIL → orchestrator blocks push.
+  # File absent (legacy products) → orchestrator skips check (backward-compatible).
+  backward_compatible: true
 
 # ── Stage 7: Publisher ────────────────────────────────────────────────────────
 publisher:

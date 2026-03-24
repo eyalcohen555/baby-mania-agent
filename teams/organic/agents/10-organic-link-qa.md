@@ -78,7 +78,12 @@ Also check alt text: every `<img` must have `alt="..."` with Hebrew text.
 Also check section relevance: image src and alt text must relate to the H2 section content.
 Unrelated image (e.g., product image placed in an unrelated section) → WARNING.
 
-Reason: HUB-1 cycle — C1, C2, C4 had only 1 image each at publish. v3.0: figure/figcaption required. Image Source Policy: generic alt and section mismatch flagged.
+Also check image URL accessibility: perform HTTP HEAD on every `<img src="...">` URL found in body_html.
+- HTTP 200 → PASS
+- HTTP 404 or any non-2xx response → **FAIL ⛔ (blocks publish)**
+- Relative path or non-CDN src → **FAIL ⛔** (already caught by Check 15 in v3.1, but flag here too)
+
+Reason: HUB-1 cycle — C1, C2, C4 had only 1 image each at publish. v3.0: figure/figcaption required. Image Source Policy: generic alt and section mismatch flagged. v3.2 (2026-03-19): image src HTTP verification added — CDN hash URLs can be syntactically valid but return 404 if the file was never uploaded or was deleted.
 
 ---
 

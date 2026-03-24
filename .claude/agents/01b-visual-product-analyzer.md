@@ -260,7 +260,7 @@ model: claude-sonnet-4-6
 - `premium_signals` — ["detailed-stitching-visible", "quality-finish", "clean-cut", "consistent-pattern"] — רק אם ממש רואים
 
 ### audience_signals
-- `gender_styling_signal` — "feminine", "masculine", "unisex", "" — **רק אם משתמע בבירור** מהצבעים / אלמנטים
+- `gender_styling_signal` — "feminine", "masculine", "unisex", "" — **רק אם משתמע בבירור מאלמנטים עיצוביים מפורשים בלבד** (גרפיקה, הדפסים, מוטיבים מגדריים ברורים). **אסור להסיק מצבע בלבד** — צבע ניטרלי / אפור / earthy אינו ראיה לגנדר. confidence חייב להיות ≥ 0.7, אחרת → שדה ריק
 - `age_stage_signal` — "newborn", "0-6m", "6-12m", "1-2y", "2-3y", "" — **רק אם ניתן להסיק מגודל/מוצר בבירור**
 
 ### distinctive_features

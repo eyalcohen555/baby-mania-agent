@@ -32,14 +32,18 @@ METAFIELD_NAMESPACE = "baby_mania"
 # Sections connected to the product page template
 # סקשנים מ-product.json (Shopify theme 2.0)
 TEMPLATE_SECTIONS = [
-    "related-products",    # מוצרים דומים
-    "bm-store-fabric",     # סיפור הבד — קורא מ-baby_mania.fabric_story
-    "bm-store-benefits",   # יתרונות — קורא מ-baby_mania.benefits
-    "bm-store-sizes",      # מדריך מידות — נגזר מ-product variants
-    "bm-store-care",       # טיפול ומפרט — קורא מ-baby_mania.care_instructions
-    "bm-store-faq",        # שאלות נפוצות — קורא מ-baby_mania.faq
-    "bm-store-urgency",    # דחיפות מלאי — קורא מ-baby_mania.stock_level/units_left
-    "bm-store-contact",    # WhatsApp CTA — קורא מ-baby_mania.whatsapp_number/message
+    "bm-sticky-bar",           # פס עליון קבוע — אין metafields
+    "bm-store-main-overrides", # overrides לסקשן הראשי — אין metafields
+    "bm-store-hero",           # Hero — קורא מ-baby_mania.hero_eyebrow/headline/subheadline
+    "bm-store-banner",         # פס הודעה — הגדרות סטטיות בלבד (אין metafields)
+    "bm-store-benefits",       # יתרונות — קורא מ-baby_mania.benefits
+    "bm-store-fabric",         # סיפור הבד — קורא מ-baby_mania.fabric_*
+    "bm-store-sizes",          # מדריך מידות — נגזר מ-product variants
+    "bm-store-care",           # טיפול ומפרט — קורא מ-baby_mania.care_instructions
+    "bm-store-faq",            # שאלות נפוצות — קורא מ-baby_mania.faq
+    "bm-store-urgency",        # דחיפות מלאי — קורא מ-baby_mania.stock_level/units_left
+    "bm-store-contact",        # WhatsApp CTA — קורא מ-baby_mania.whatsapp_number/message
+    "related-products",        # מוצרים דומים
 ]
 
 # Mapping: section → metafield key(s) it reads
@@ -48,7 +52,11 @@ SECTION_METAFIELD_MAP = {
         f"{METAFIELD_NAMESPACE}.related_product_ids",  # IDs של מוצרים קשורים (JSON)
     ],
     "bm-store-fabric": [
-        f"{METAFIELD_NAMESPACE}.fabric_story",         # JSON: { title, dream, body, tags }
+        f"{METAFIELD_NAMESPACE}.fabric_title",     # כותרת סקשן הבד
+        f"{METAFIELD_NAMESPACE}.fabric_body",      # פסקה ראשית
+        f"{METAFIELD_NAMESPACE}.fabric_body_2",    # פסקה שנייה (אופציונלי)
+        f"{METAFIELD_NAMESPACE}.fabric_highlight", # ציטוט highlight
+        f"{METAFIELD_NAMESPACE}.fabric_tags",      # מערך תגיות
     ],
     "bm-store-benefits": [
         f"{METAFIELD_NAMESPACE}.benefits",             # JSON array: [{ icon, title, desc, chain }]
@@ -70,9 +78,9 @@ SECTION_METAFIELD_MAP = {
         f"{METAFIELD_NAMESPACE}.whatsapp_number",      # מספר ווטסאפ (ספרות בלבד)
         f"{METAFIELD_NAMESPACE}.whatsapp_message",     # הודעת פתיחה ל-WA (אופציונלי)
     ],
-    "bm-store-banner": [
-        f"{METAFIELD_NAMESPACE}.banner_title",
-        f"{METAFIELD_NAMESPACE}.banner_subtitle",
-        f"{METAFIELD_NAMESPACE}.banner_badge",
+    "bm-store-hero": [
+        f"{METAFIELD_NAMESPACE}.hero_eyebrow",     # טקסט מעל הכותרת
+        f"{METAFIELD_NAMESPACE}.hero_headline",    # כותרת ראשית
+        f"{METAFIELD_NAMESPACE}.hero_subheadline", # תת-כותרת
     ],
 }

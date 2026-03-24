@@ -1,0 +1,54 @@
+{
+  "agent": "10.5-organic-content-qa",
+  "version": "2.0",
+  "article_file": "HUB7_Pillar_blog_article.html",
+  "reviewed_at": "2026-03-23T10:00:00Z",
+  "overall_review": "PASS",
+  "checks": {
+    "title_quality": {
+      "result": "PASS",
+      "h1_text": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+      "specificity": "PASS",
+      "length_words": 8,
+      "length_check": "PASS",
+      "natural_hebrew": "PASS",
+      "notes": "Concrete topic and outcome. 'איך ליצור' is natural Hebrew phrasing, not a translation artifact."
+    },
+    "intro_box_quality": {
+      "result": "PASS",
+      "preview_present": true,
+      "proof_present": true,
+      "transition_present": true,
+      "notes": "preview: 'המדריך הזה נותן עקרונות ברורים לשלושת תחומי הבטיחות הנפוצים ביותר: שינה, התחממות, וביגוד'. proof: 'העקרונות כאן מבוססים על מה שחוזר ומאושש בנתוני בטיחות תינוקות — לא על מסורת או ניחושים' — qualifies as a research-based claim matching the rubric pattern 'מבוסס על ממצאים שחוזרים'; anchors the content in verified safety data rather than tradition or guesswork. The scope disclaimer 'לא מידע רפואי' is present separately but does not negate the proof signal, which precedes and stands independently. transition: 'המדריך הזה' is a listed qualifying leading phrase."
+    },
+    "body_language_quality": {
+      "result": "PASS",
+      "sampling_scope": {
+        "z1_headings": {
+          "tags_scanned": ["h2", "h3"],
+          "elements_found": 6
+        },
+        "z2_first_paragraphs": {
+          "paragraphs_scanned": 3,
+          "note": "first 3 <p> after intro-box"
+        },
+        "z3_pre_cta": {
+          "paragraphs_scanned": 1,
+          "note": "last <p> before class=cta-banner"
+        }
+      },
+      "findings": {
+        "hard_match": [],
+        "human_review": [],
+        "observed_below_threshold": []
+      },
+      "summary": {
+        "hm_findings_count": 0,
+        "hr_findings_count": 0,
+        "total_findings_count": 0,
+        "rules_triggered": []
+      }
+    }
+  },
+  "action_required": false
+}

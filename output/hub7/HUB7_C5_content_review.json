@@ -1,0 +1,63 @@
+{
+  "agent": "10.5-organic-content-qa",
+  "version": "2.0",
+  "article_file": "C:\\Projects\\baby-mania-agent\\output\\hub7\\HUB7_C5_blog_article.html",
+  "reviewed_at": "2026-03-23T10:00:00Z",
+  "overall_review": "PASS",
+  "checks": {
+    "title_quality": {
+      "result": "PASS",
+      "h1_text": "בטיחות לילה לתינוק — מה בודקים לפני שהולכים לישון",
+      "specificity": "PASS",
+      "length_words": 9,
+      "length_check": "PASS",
+      "natural_hebrew": "PASS",
+      "notes": null
+    },
+    "intro_box_quality": {
+      "result": "PASS",
+      "preview_present": true,
+      "proof_present": true,
+      "transition_present": true,
+      "notes": "proof_present PASS — post-fix sentence 'הבדיקות כאן מבוססות על מצבים שחוזרים שוב ושוב אצל הורים בתחילת הדרך — לא תרחישים נדירים' establishes a real-parent-context frame with a contrast qualifier, qualifying as a concrete trust signal. 'משמעותית' removal confirmed (not present in scanned intro-box text; now reads 'יכולה להפחית את הסיכון'). preview_present PASS via 'תמצאו רשימה ברורה ומסודרת, כולל איך לבדוק את המיטה, הביגוד, הטמפרטורה, ואמצעי הניטור'. transition_present PASS via 'במדריך זה תמצאו'."
+    },
+    "body_language_quality": {
+      "result": "PASS",
+      "sampling_scope": {
+        "z1_headings": {
+          "tags_scanned": ["h2", "h3"],
+          "elements_found": 10
+        },
+        "z2_first_paragraphs": {
+          "paragraphs_scanned": 3,
+          "note": "first 3 <p> after intro-box"
+        },
+        "z3_pre_cta": {
+          "paragraphs_scanned": 1,
+          "note": "last <p> before class=cta-banner"
+        }
+      },
+      "findings": {
+        "hard_match": [],
+        "human_review": [],
+        "observed_below_threshold": [
+          {
+            "rule": "R3",
+            "type": "HM",
+            "zone": "Z2",
+            "text": "ניתן לסרוק אותה תוך 2–3 דקות",
+            "location": "section-1, first <p> after intro-box",
+            "note": "Single instance of 'ניתן ל' at sentence start (after period). count=1, below threshold of 2 required for hard_match. No finding raised; recorded for completeness."
+          }
+        ]
+      },
+      "summary": {
+        "hm_findings_count": 0,
+        "hr_findings_count": 0,
+        "total_findings_count": 0,
+        "rules_triggered": []
+      }
+    }
+  },
+  "action_required": false
+}

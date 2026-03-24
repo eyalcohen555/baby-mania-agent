@@ -1,0 +1,69 @@
+{
+  "agent": "10.5-organic-content-qa",
+  "version": "2.0",
+  "article_file": "HUB7_C2_blog_article.html",
+  "reviewed_at": "2026-03-23T10:00:00Z",
+  "overall_review": "PASS",
+  "checks": {
+    "title_quality": {
+      "result": "PASS",
+      "h1_text": "טעויות נפוצות בשינה בטוחה לתינוק — ומה לעשות אחרת",
+      "specificity": "PASS",
+      "length_words": 9,
+      "length_check": "PASS",
+      "natural_hebrew": "PASS",
+      "notes": null
+    },
+    "intro_box_quality": {
+      "result": "PASS",
+      "preview_present": true,
+      "proof_present": true,
+      "transition_present": true,
+      "notes": "POST-FIX RE-CHECK. transition_present: fix added 'הנה הטעויות הנפוצות ביותר — ומה עושים אחרת.' as final sentence of intro-box. 'הנה' is an explicit listed transition phrase; the sentence leads into the body content. PASS. proof_present: real-parent-context frame ('כמעט כל הורה עושה לפחות טעות אחת... לא מרשלנות, אלא כי לא ידע') substantiated by 'מועברות מדור לדור' — qualifies as concrete trust signal. PASS. preview_present: 'המאמר הזה מציג את הטעויות הנפוצות ביותר בשינה בטוחה לתינוקות — ונותן לכל אחת תיקון מעשי וברור' clearly states what reader will learn. PASS."
+    },
+    "body_language_quality": {
+      "result": "PASS",
+      "sampling_scope": {
+        "z1_headings": {
+          "tags_scanned": ["h2", "h3"],
+          "elements_found": 11
+        },
+        "z2_first_paragraphs": {
+          "paragraphs_scanned": 3,
+          "note": "first 3 <p> after intro-box: quick-answer <p> (line 46), article body p1 (line 83), article body p2 (line 86)"
+        },
+        "z3_pre_cta": {
+          "paragraphs_scanned": 1,
+          "note": "last <p> before class=cta-banner: paragraph at lines 190-192 ('בנוסף, חדר כהה לחלוטין...')"
+        }
+      },
+      "findings": {
+        "hard_match": [],
+        "human_review": [],
+        "observed_below_threshold": [
+          {
+            "rule": "R4",
+            "zone": "outside_sampled_zones",
+            "text": "חשוב לציין: שינה משותפת במיטה עם שני הורים בריאים...",
+            "location": "line 144, H2-3 body paragraph",
+            "note": "Phrase 'חשוב לציין' appears with colon, not 'חשוב לציין כי'. Does not match the exact rule string. Outside Z1/Z2/Z3 scope and not an exact match. Not counted."
+          },
+          {
+            "rule": "R5",
+            "zone": "outside_sampled_zones",
+            "text": "מווסת טמפרטורה בצורה שונה ממבוגר",
+            "location": "line 105, H2-2 first paragraph",
+            "note": "'בצורה שונה' appears in body but outside Z2 (not within the first 3 <p> after the intro-box) and outside Z3. R5 applies to Z2/Z3 only. Not counted."
+          }
+        ]
+      },
+      "summary": {
+        "hm_findings_count": 0,
+        "hr_findings_count": 0,
+        "total_findings_count": 0,
+        "rules_triggered": []
+      }
+    }
+  },
+  "action_required": false
+}

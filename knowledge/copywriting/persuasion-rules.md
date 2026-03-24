@@ -10,7 +10,9 @@ Read and apply before generating any section.
 Parents do not respond to superlatives. They respond to reassurance.
 Replace hype with concrete, calm, trust-building language.
 
-| Hype | Reassurance |
+> **Note — tone examples only.** The table below shows how to fix hype language in general copy (Fabric Story, Hero, Emotional Reassurance). These are NOT final benefit card outputs — they are layer 1–2 anchors. For benefit cards, every claim must reach layer 3: a clear parent outcome.
+
+| Hype | Reassurance (tone fix — not final benefit output) |
 |------|-------------|
 | "הבד הטוב ביותר לתינוקות" | "בד רך שנעים על עור רגיש" |
 | "איכות גבוהה שתשמח כל הורה" | "שומר על הצורה והרכות אחרי כביסות רבות" |
@@ -28,6 +30,8 @@ Good: "הבד הרך נעים על עור התינוק ומאפשר מחזור �
 
 Bad: "תפירה מוקפדת ועמידה."
 Good: "תפרים שטוחים פנימה — לא מגרדים ולא לוחצים."
+
+> **Note — these "Good" examples demonstrate grounded claims (layer 1–2) but do NOT include a parent outcome.** For benefit cards, a grounded claim is necessary but not sufficient — it must also reach layer 3. Example of a full layer-3 completion: "תפרים שטוחים פנימה — התינוק לא מגרד את עצמו, אתה לא עוצר כל שעה לבדוק."
 
 ---
 

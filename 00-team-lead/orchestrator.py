@@ -16,6 +16,7 @@ Stage output files (Claude Code writes these between fetch and push):
   output/stage-outputs/{pid}_analyzer.yaml
   output/stage-outputs/{pid}_visual.json        <- stage 01b output
   output/stage-outputs/{pid}_intelligence.json  <- stage 01c output (product intelligence)
+  output/stage-outputs/{pid}_thinking.yaml      <- stage 02b output (clothing-thinking-agent; REQUIRED)
   output/stage-outputs/{pid}_fabric_story.txt
   output/stage-outputs/{pid}_benefits.txt
   output/stage-outputs/{pid}_faq.txt
@@ -25,16 +26,18 @@ Stage output files (Claude Code writes these between fetch and push):
   output/stage-outputs/{pid}_publisher.json  <- structured JSON from stage 07
 
 Pipeline order (AI stages):
-  01  product-analyzer       → {pid}_analyzer.yaml
-  01b visual-product-analyzer → {pid}_visual.json  (parallel with 01)
-  01c product-intelligence-builder → {pid}_intelligence.json  (python scripts/product_intelligence_builder.py {pid})
-  02  fabric-story-writer    → {pid}_fabric_story.txt
-  03  benefits-generator     → {pid}_benefits.txt
-  04  faq-builder            → {pid}_faq.txt
-  05  care-instructions      → {pid}_care.txt
-  06c content-editor-agent   → {pid}_edited.txt   ← reads knowledge/copywriting/ + intelligence + all writer outputs
-  06  validator              → {pid}_validator.txt  ← validates edited output
-  07  shopify-publisher      → {pid}_publisher.json
+  01   product-analyzer         → {pid}_analyzer.yaml
+  01b  visual-product-analyzer  → {pid}_visual.json  (parallel with 01)
+  01c  product-intelligence-builder → {pid}_intelligence.json  (python scripts/product_intelligence_builder.py {pid})
+  02b  clothing-thinking-agent  → {pid}_thinking.yaml  ← serial; MUST complete before 02–05
+  02   fabric-story-writer      → {pid}_fabric_story.txt  (reads thinking.yaml: owns/forbidden)
+  03   benefits-generator       → {pid}_benefits.txt     (reads thinking.yaml: owns/forbidden)
+  04   faq-builder              → {pid}_faq.txt          (reads thinking.yaml: owns/forbidden)
+  05   care-instructions        → {pid}_care.txt         (reads thinking.yaml: owns/forbidden)
+  06c  content-editor-agent     → {pid}_edited.txt   ← reads knowledge/copywriting/ + intelligence + all writer outputs
+  06   validator                → {pid}_validator.txt  ← validates edited output
+  07   shopify-publisher        → {pid}_publisher.json
+  09   page-validator           → {pid}_page_validator.json  ← blocks push if FAIL
 """
 
 from __future__ import annotations
@@ -204,7 +207,8 @@ def run_fetch_stage(pid: str) -> int:
     log.info("    %s_analyzer.yaml             (stage 01)", pid)
     log.info("    %s_visual.json               (stage 01b — visual analyzer)", pid)
     log.info("    %s_intelligence.json         (stage 01c — product intelligence builder)", pid)
-    log.info("    %s_fabric_story.txt           (stage 02)", pid)
+    log.info("    %s_thinking.yaml             (stage 02b — clothing-thinking-agent  ← REQUIRED before writers)", pid)
+    log.info("    %s_fabric_story.txt           (stage 02 — reads thinking.yaml)", pid)
     log.info("    %s_benefits.txt               (stage 03)", pid)
     log.info("    %s_faq.txt                    (stage 04)", pid)
     log.info("    %s_care.txt                   (stage 05)", pid)
@@ -233,14 +237,16 @@ def run_push_stage(pid: str) -> int:
     log.info("[push] product_id=%s", pid)
 
     ctx_path       = CONTEXT_DIR   / f"{pid}.yaml"
+    thinking_path  = STAGE_OUT_DIR / f"{pid}_thinking.yaml"
     validator_path = STAGE_OUT_DIR / f"{pid}_validator.txt"
     publisher_path = STAGE_OUT_DIR / f"{pid}_publisher.json"
 
     # ── Pre-flight: all required files must exist ─────────────────────────────
     missing = []
-    if not ctx_path.exists():       missing.append(f"context YAML:     {ctx_path}")
-    if not validator_path.exists(): missing.append(f"validator output: {validator_path}")
-    if not publisher_path.exists(): missing.append(f"publisher JSON:   {publisher_path}")
+    if not ctx_path.exists():       missing.append(f"context YAML:         {ctx_path}")
+    if not thinking_path.exists():  missing.append(f"thinking YAML (02b):  {thinking_path}  ← run clothing-thinking-agent first")
+    if not validator_path.exists(): missing.append(f"validator output:     {validator_path}")
+    if not publisher_path.exists(): missing.append(f"publisher JSON:       {publisher_path}")
 
     if missing:
         log.error("[push] ABORTED — missing required files:")
@@ -263,6 +269,41 @@ def run_push_stage(pid: str) -> int:
         log.error("[push] ABORTED — validator did not pass. Check: %s", validator_path)
         return 1
 
+    # ── Staleness guard — validator must be newer than edited content ──────────
+    # SEQUENTIAL ENFORCEMENT: stage order is write→edit(06c)→validate(06)→push.
+    # If edited.txt is newer than validator.txt, the validator ran on stale content.
+    # This happens when manual fixes are applied AFTER the validator ran.
+    # Fix: re-run stage 06 (validator) whenever edited.txt changes.
+    edited_path = STAGE_OUT_DIR / f"{pid}_edited.txt"
+    if edited_path.exists() and validator_path.exists():
+        edited_mtime   = edited_path.stat().st_mtime
+        validator_mtime = validator_path.stat().st_mtime
+        if edited_mtime > validator_mtime:
+            audit.end_stage("push_preflight", "fail",
+                            error="validator is stale — edited.txt is newer than validator.txt")
+            audit.finalize("failed")
+            audit.save()
+            log.error("[push] ABORTED — validator is STALE.")
+            log.error("  %s_edited.txt was modified AFTER the validator ran.", pid)
+            log.error("  Required: re-run stage 06 (validator) to validate current content.")
+            log.error("  edited.txt:   %s", datetime.fromtimestamp(edited_mtime).strftime("%Y-%m-%d %H:%M:%S"))
+            log.error("  validator.txt: %s", datetime.fromtimestamp(validator_mtime).strftime("%Y-%m-%d %H:%M:%S"))
+            return 1
+
+    # ── Stage 2 guard — validator must include T01–T08 thinking-layer results ─
+    # Pre-Stage-2 validator.txt files contain STATUS: PASS but no Stage 2 block.
+    # A stale record must not be able to authorize a push.
+    if "Stage 2 result: PASS" not in validator_txt:
+        audit.end_stage("push_preflight", "fail",
+                        error="validator output is pre-Stage-2 — missing T01–T08 thinking-layer results")
+        audit.finalize("failed")
+        audit.save()
+        log.error("[push] ABORTED — validator output is pre-Stage-2 (T01–T08 block absent).")
+        log.error("  This product was validated before the thinking layer was enforced.")
+        log.error("  Required: re-run stage 02b (clothing-thinking-agent) then re-run validator.")
+        log.error("  Check: %s", validator_path)
+        return 1
+
     # ── Publisher JSON must be valid ──────────────────────────────────────────
     try:
         pub_data = json.loads(publisher_path.read_text(encoding="utf-8"))
@@ -273,6 +314,27 @@ def run_push_stage(pid: str) -> int:
         audit.save()
         log.error("[push] ABORTED — publisher JSON parse error: %s", e)
         return 1
+
+    # ── Stage 8: Page Validator — blocks push if FAIL; skips if file absent ──
+    page_val_path = STAGE_OUT_DIR / f"{pid}_page_validator.json"
+    if page_val_path.exists():
+        try:
+            pv = json.loads(page_val_path.read_text(encoding="utf-8"))
+            if pv.get("page_validation_status") == "FAIL":
+                audit.end_stage("push_preflight", "fail",
+                                error=f"page_validator FAIL (score={pv.get('overall_page_quality_score')}) — {pv.get('critical_failures')}")
+                audit.finalize("failed")
+                audit.save()
+                log.error("[push] ABORTED — page validator FAIL | product=%s | score=%s",
+                          pid, pv.get("overall_page_quality_score"))
+                for blocker in pv.get("critical_failures", []):
+                    log.error("  BLOCKER: %s", blocker)
+                log.error("  Recommendation: %s | Summary: %s",
+                          pv.get("publish_recommendation"), pv.get("hebrew_summary"))
+                return 1
+        except json.JSONDecodeError as e:
+            log.warning("[push] page_validator.json parse error (skipping check): %s", e)
+    # File absent → skip (backward-compatible with pre-stage-8 products)
 
     audit.end_stage("push_preflight", "pass")
     audit.set_state("validated")
@@ -295,10 +357,18 @@ def run_push_stage(pid: str) -> int:
     }
     save_preview(pid, handle, ctx, gen, pub_data)
 
+    # ── FAQ overwrite protection (clothing only) ─────────────────────────────
+    faq_protected_keys: set = set()
+    if product_template_type == "clothing":
+        faq_overwrite = ctx.get("faq_overwrite", False)
+        if not faq_overwrite:
+            faq_protected_keys = {"faq"}
+            log.info("[push] FAQ protection active — faq_overwrite not set")
+
     # ── Stage: publish ────────────────────────────────────────────────────────
     audit.begin_stage("publish")
     try:
-        write_metafields(pid, metafields)                                               # 1. write metafields
+        write_metafields(pid, metafields, skip_if_exists=faq_protected_keys)           # 1. write metafields
         assign_clothing_template_suffix(pid, product_template_type, current_suffix)    # 2. set suffix
         update_product_body_html(pid)                                                   # 3. clear body_html
     except Exception as e:

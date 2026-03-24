@@ -1,0 +1,49 @@
+{
+  "agent": "08-organic-article-linker",
+  "version": "1.0",
+  "hub_id": "HUB-7",
+  "article_id": "HUB-7-C2",
+  "article_file": "HUB7_C2_blog_article.html",
+  "article_word_count_estimate": 620,
+  "recommended_link_count": 4,
+  "links": [
+    {
+      "anchor_text": "הבסיס לכל הנחיה רשמית",
+      "target_url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male",
+      "link_type": "pillar",
+      "anchor_type": "partial_match",
+      "placement_section": "מה הטעות הנפוצה ביותר בשינה בטוחה?",
+      "position_third": "first"
+    },
+    {
+      "anchor_text": "כלל ברזל בבטיחות שינה",
+      "target_url": "https://babymania-il.com/blogs/news/klalei-shina-betua-letinok",
+      "link_type": "cluster",
+      "anchor_type": "partial_match",
+      "placement_section": "מה הטעות הנפוצה ביותר בשינה בטוחה?",
+      "position_third": "first"
+    },
+    {
+      "anchor_text": "תאורת לילה עדינה ברמה נמוכה",
+      "target_url": "https://babymania-il.com/blogs/news/betihut-layla-letinok-bdikot-lifney-shina",
+      "link_type": "cluster",
+      "anchor_type": "partial_match",
+      "placement_section": "איך מחדר כהה מדי יכול לפגוע בשינה בטוחה?",
+      "position_third": "last"
+    },
+    {
+      "anchor_text": "פריטים רכים בסביבת השינה הם גורם הסיכון הנפוץ ביותר",
+      "target_url": "https://babymania-il.com/blogs/news/how-to-help-baby-sleep-through-the-night",
+      "link_type": "cross-hub",
+      "anchor_type": "partial_match",
+      "placement_section": "מה הטעות הנפוצה ביותר בשינה בטוחה?",
+      "position_third": "first"
+    }
+  ],
+  "validation": {
+    "has_pillar_link": true,
+    "no_duplicate_targets": true,
+    "density_ok": true
+  },
+  "generated_at": "2026-03-23T10:00:00Z"
+}

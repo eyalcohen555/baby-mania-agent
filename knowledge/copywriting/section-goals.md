@@ -40,14 +40,14 @@ Failure mode: listing fabric specs without sensory meaning.
 
 ---
 
-## Benefits (6 cards)
+## Benefits (4 or 6 cards)
 
-**Goal:** Explain why this product is comfortable for babies and easy for parents.
+**Goal:** Give parents concrete reasons to buy — each framed as an outcome in their daily life, not a baby feature.
 
 What it must do:
-- Give 6 distinct reasons to buy, each grounded in product data
-- Cover: fabric feel, ease of dressing, durability, design detail, parent ease, fit/movement
-- Each benefit follows: Feature → Parent Benefit → Emotional payoff
+- Give 4 or 6 distinct reasons to buy (even number only — never 3, 5, or 7), each grounded in product data
+- Cover areas such as: fabric feel, ease of dressing, durability, design detail, parent ease, fit/movement
+- Each benefit follows: Feature → Parent Benefit → Parent Outcome (layer 3 — what changes in the parent's daily life)
 
 Card format: emoji | short title | one sentence
 

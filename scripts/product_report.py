@@ -27,20 +27,20 @@ print(f"Collections loaded: {len(all_cols)}")
 
 # Collects (product -> collection)
 product_cols = {}
-r = requests.get(f'{BASE}/collects.json', headers=H, params={'limit':250})
+resp = requests.get(f'{BASE}/collects.json', headers=H, params={'limit':250})
 
 while True:
-    data = r.json().get('collects',[])
+    data = resp.json().get('collects',[])
     for c in data:
         product_cols.setdefault(c['product_id'],[]).append(
             all_cols.get(c['collection_id'],'?')
         )
 
-    nxt = r.links.get('next',{}).get('url')
+    nxt = resp.links.get('next',{}).get('url')
     if not nxt:
         break
 
-    r = requests.get(nxt, headers=H)
+    resp = requests.get(nxt, headers=H)
 
 print(f"Collects loaded: {sum(len(v) for v in product_cols.values())}")
 
@@ -53,7 +53,7 @@ r = requests.get(
     params={
         'limit':250,
         'fields':'id,handle,title,template_suffix',
-        'status':'any'
+        'status':'active'
     }
 )
 

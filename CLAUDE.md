@@ -1,5 +1,11 @@
 # Baby Mania — הוראות פתיחה
 
+## Shopify API
+אל תשתמש ב-Shopify MCP כלל. תמיד השתמש ב-requests ישירות עם הטוקן מקובץ .env.
+shop: a2756c-c0.myshopify.com
+token path: C:\Users\3024e\Desktop\shopify-token\.env
+API version: 2024-10
+
 בתחילת כל שיחה קרא אוטומטית:
 C:\Projects\baby-mania-agent\.claude\skills\babymania-master.md
 

@@ -1,0 +1,495 @@
+{% comment %}
+  BabyMania Shoes — Accordion Section (Insights + FAQ)
+  File: sections/bm-shoes-accordion.liquid
+  Purpose: אקורדיון אחד — בלוקי יתרונות עמוקים (insight) + שאלות FAQ (faq)
+  עיצוב: שכפול מדויק של bm-store-faq-reference.liquid · Prefix: bm-sa
+  מקורות:
+    shoe_accordion metafield → gap-fill מ-insight blocks
+    shoe_faq metafield      → gap-fill מ-faq blocks
+  RTL עברית · ללא JavaScript
+{% endcomment %}
+
+{% comment %} ── Data sources ──────────────────────────────────────────
+  Insights:  product.metafields.baby_mania.accordion_blocks (up to 5) → gap-fill from insight blocks
+  FAQ:       product.metafields.baby_mania.faq      (up to 4) → gap-fill from faq blocks
+{% endcomment %}
+{%- assign bm_sa_mf_acc  = product.metafields.baby_mania.accordion_blocks.value -%}
+{%- assign bm_sa_mf_faq  = product.metafields.baby_mania.faq.value -%}
+{%- assign bm_sa_ins_blk = section.blocks | where: "type", "insight" -%}
+{%- assign bm_sa_faq_blk = section.blocks | where: "type", "faq" -%}
+
+{%- assign bm_sa_has = false -%}
+{%- if section.settings.show_section -%}
+  {%- if bm_sa_mf_acc and bm_sa_mf_acc.size > 0 -%}{%- assign bm_sa_has = true -%}
+  {%- elsif bm_sa_mf_faq and bm_sa_mf_faq.size > 0 -%}{%- assign bm_sa_has = true -%}
+  {%- elsif bm_sa_ins_blk.size > 0 -%}{%- assign bm_sa_has = true -%}
+  {%- elsif bm_sa_faq_blk.size > 0 -%}{%- assign bm_sa_has = true -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if bm_sa_has -%}
+
+<style>
+  /* ===== BM-SA: Base Reset ===== */
+  .bm-sa-wrapper *,
+  .bm-sa-wrapper *::before,
+  .bm-sa-wrapper *::after {
+    box-sizing: border-box;
+  }
+
+  /* ===== BM-SA: Section Wrapper ===== */
+  .bm-sa-wrapper {
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    background: transparent;
+    padding: 48px 16px;
+  }
+
+  /* ===== BM-SA: Inner Container ===== */
+  .bm-sa-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ===== BM-SA: Section Title ===== */
+  .bm-sa-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #8B5E3C;
+    text-align: center;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
+  }
+
+  .bm-sa-subtitle {
+    font-size: 0.95rem;
+    color: #9E8272;
+    text-align: center;
+    margin: 0 0 36px 0;
+    font-weight: 400;
+  }
+
+  /* ===== BM-SA: Card ===== */
+  .bm-sa-card {
+    background: linear-gradient(180deg, #FFF8F2 0%, #FFFFFF 70%);
+    border: 1px solid #E8E1D8;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(139, 94, 60, 0.06);
+  }
+
+  /* ===== BM-SA: Item ===== */
+  .bm-sa-item {
+    border-bottom: 1px solid #E8E1D8;
+    position: relative; /* נדרש: checkbox הוא position:absolute — חייב positioned parent */
+  }
+
+  .bm-sa-item:last-child {
+    border-bottom: none;
+  }
+
+  /* ===== BM-SA: Hidden Checkbox (CSS-only toggle) ===== */
+  .bm-sa-toggle {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    /* pointer-events: none הוסר — גורם לכשל ב-mobile עם label→checkbox */
+  }
+
+  /* ===== BM-SA: Question / Title Label ===== */
+  .bm-sa-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.25s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .bm-sa-question:hover {
+    background: #FAF0E8;
+  }
+
+  /* When checkbox is checked — highlight row */
+  .bm-sa-toggle:checked + .bm-sa-question {
+    background: #F5EDE4;
+  }
+
+  /* ===== BM-SA: Question Text ===== */
+  .bm-sa-question-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3D2B1F;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  /* ===== BM-SA: Arrow Icon ===== */
+  .bm-sa-arrow {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: #8B5E3C;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bm-sa-arrow svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  /* Rotate arrow when open */
+  .bm-sa-toggle:checked + .bm-sa-question .bm-sa-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* ===== BM-SA: Answer / Body Panel ===== */
+  .bm-sa-answer {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.3s ease,
+                opacity 0.3s ease;
+    opacity: 0 !important;
+    padding: 0 20px;
+    background: #FFFFFF;
+  }
+
+  /* When checkbox is checked — expand panel */
+  .bm-sa-toggle:checked ~ .bm-sa-answer {
+    max-height: 1200px !important;
+    opacity: 1 !important;
+    padding: 16px 20px 20px 20px;
+  }
+
+  /* ===== BM-SA: Answer / Body Text ===== */
+  .bm-sa-answer-text {
+    font-size: 0.9375rem;
+    color: #5C4033;
+    line-height: 1.75;
+    font-weight: 400;
+    margin: 0 0 10px;
+  }
+
+  .bm-sa-answer-text:last-child {
+    margin-bottom: 0;
+  }
+
+  .bm-sa-answer-text strong {
+    color: #8B5E3C;
+    font-weight: 600;
+  }
+
+  /* ===== BM-SA: Insight — Connection Sentence ===== */
+  .bm-sa-connection {
+    font-size: 0.9375rem;
+    color: #8B5E3C;
+    font-weight: 600;
+    line-height: 1.65;
+    margin: 10px 0 0;
+    border-top: 1px solid #EDE0D4;
+    padding-top: 10px;
+  }
+
+  /* ===== BM-SA: Responsive ===== */
+  @media (max-width: 520px) {
+    .bm-sa-wrapper {
+      padding: 36px 12px;
+    }
+
+    .bm-sa-title {
+      font-size: 1.45rem;
+    }
+
+    .bm-sa-question {
+      padding: 16px 14px;
+    }
+
+    .bm-sa-question-text {
+      font-size: 0.9375rem;
+    }
+
+    .bm-sa-toggle:checked ~ .bm-sa-answer {
+      padding: 14px 14px 18px 14px;
+    }
+  }
+</style>
+
+<section class="bm-sa-wrapper" id="bm-sa-{{ section.id }}">
+  <div class="bm-sa-container">
+
+    {%- if section.settings.title != blank -%}
+      <h2 class="bm-sa-title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.subtitle != blank -%}
+      <p class="bm-sa-subtitle">{{ section.settings.subtitle }}</p>
+    {%- endif -%}
+
+    <div class="bm-sa-card">
+
+      {% comment %} ══════════════════════════════════════════════════
+        PART 1 — INSIGHTS
+        מקור ראשי: shoe_accordion metafield (up to 5)
+        Gap-fill:  insight blocks
+      ══════════════════════════════════════════════════ {% endcomment %}
+
+      {%- assign bm_sa_acc_count = 0 -%}
+      {%- if bm_sa_mf_acc and bm_sa_mf_acc.size > 0 -%}
+        {%- assign bm_sa_acc_count = bm_sa_mf_acc.size -%}
+        {%- if bm_sa_acc_count > 5 -%}{%- assign bm_sa_acc_count = 5 -%}{%- endif -%}
+      {%- endif -%}
+
+      {%- if bm_sa_mf_acc and bm_sa_mf_acc.size > 0 -%}
+        {%- for item in bm_sa_mf_acc limit: 5 -%}
+          {%- assign bm_sa_id = 'bm-sa-ins-' | append: section.id | append: '-' | append: forloop.index -%}
+          <div class="bm-sa-item">
+            <input type="checkbox" class="bm-sa-toggle" id="{{ bm_sa_id }}" name="{{ bm_sa_id }}" aria-hidden="true">
+            <label class="bm-sa-question" for="{{ bm_sa_id }}">
+              <span class="bm-sa-question-text">{{ item.title }}</span>
+              <span class="bm-sa-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </label>
+            <div class="bm-sa-answer" role="region" aria-labelledby="{{ bm_sa_id }}">
+              {%- if item.body != blank -%}
+                <p class="bm-sa-answer-text">{{ item.body }}</p>
+              {%- endif -%}
+              {%- if item.connection != blank -%}
+                <p class="bm-sa-connection">{{ item.connection }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- comment -%} Gap-fill insights from blocks {%- endcomment -%}
+      {%- assign bm_sa_ins_fill = 5 | minus: bm_sa_acc_count -%}
+      {%- if bm_sa_ins_fill > 0 and bm_sa_ins_blk.size > 0 -%}
+        {%- for block in bm_sa_ins_blk limit: bm_sa_ins_fill -%}
+          {%- assign bm_sa_id = 'bm-sa-ins-blk-' | append: section.id | append: '-' | append: forloop.index -%}
+          <div class="bm-sa-item" {{ block.shopify_attributes }}>
+            <input type="checkbox" class="bm-sa-toggle" id="{{ bm_sa_id }}" name="{{ bm_sa_id }}" aria-hidden="true">
+            <label class="bm-sa-question" for="{{ bm_sa_id }}">
+              <span class="bm-sa-question-text">{{ block.settings.title }}</span>
+              <span class="bm-sa-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </label>
+            <div class="bm-sa-answer" role="region" aria-labelledby="{{ bm_sa_id }}">
+              {%- if block.settings.body != blank -%}
+                <p class="bm-sa-answer-text">{{ block.settings.body }}</p>
+              {%- endif -%}
+              {%- if block.settings.connection != blank -%}
+                <p class="bm-sa-connection">{{ block.settings.connection }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+
+      {% comment %} ══════════════════════════════════════════════════
+        PART 2 — FAQ
+        מקור ראשי: shoe_faq metafield (up to 4)
+        Gap-fill:  faq blocks
+      ══════════════════════════════════════════════════ {% endcomment %}
+
+      {%- assign bm_sa_faq_count = 0 -%}
+      {%- if bm_sa_mf_faq and bm_sa_mf_faq.size > 0 -%}
+        {%- assign bm_sa_faq_count = bm_sa_mf_faq.size -%}
+        {%- if bm_sa_faq_count > 4 -%}{%- assign bm_sa_faq_count = 4 -%}{%- endif -%}
+      {%- endif -%}
+
+      {%- if bm_sa_mf_faq and bm_sa_mf_faq.size > 0 -%}
+        {%- for item in bm_sa_mf_faq limit: 4 -%}
+          {%- assign bm_sa_id = 'bm-sa-faq-' | append: section.id | append: '-' | append: forloop.index -%}
+          <div class="bm-sa-item">
+            <input type="checkbox" class="bm-sa-toggle" id="{{ bm_sa_id }}" name="{{ bm_sa_id }}" aria-hidden="true">
+            <label class="bm-sa-question" for="{{ bm_sa_id }}">
+              <span class="bm-sa-question-text">{{ item.question }}</span>
+              <span class="bm-sa-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </label>
+            <div class="bm-sa-answer" role="region" aria-labelledby="{{ bm_sa_id }}">
+              <p class="bm-sa-answer-text">{{ item.answer }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- comment -%} Gap-fill FAQ from blocks {%- endcomment -%}
+      {%- assign bm_sa_faq_fill = 4 | minus: bm_sa_faq_count -%}
+      {%- if bm_sa_faq_fill > 0 and bm_sa_faq_blk.size > 0 -%}
+        {%- for block in bm_sa_faq_blk limit: bm_sa_faq_fill -%}
+          {%- assign bm_sa_id = 'bm-sa-faq-blk-' | append: section.id | append: '-' | append: forloop.index -%}
+          <div class="bm-sa-item" {{ block.shopify_attributes }}>
+            <input type="checkbox" class="bm-sa-toggle" id="{{ bm_sa_id }}" name="{{ bm_sa_id }}" aria-hidden="true">
+            <label class="bm-sa-question" for="{{ bm_sa_id }}">
+              <span class="bm-sa-question-text">{{ block.settings.question }}</span>
+              <span class="bm-sa-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </label>
+            <div class="bm-sa-answer" role="region" aria-labelledby="{{ bm_sa_id }}">
+              <p class="bm-sa-answer-text">{{ block.settings.answer }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+
+    </div>
+
+  </div>
+</section>
+
+{%- endif -%}{%- comment -%} closes bm_sa_has {%- endcomment -%}
+
+{% schema %}
+{
+  "name": "BM Shoes — אקורדיון",
+  "tag": "section",
+  "class": "bm-shoes-accordion-section",
+  "max_blocks": 9,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "הצג סקשן",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "כותרת",
+      "default": "כל מה שחשוב לדעת"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "תת-כותרת",
+      "default": "יתרונות, עובדות ותשובות — במקום אחד"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "insight",
+      "name": "יתרון עמוק",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "כותרת מסקרנת (6–10 מילים)",
+          "default": "הרגליים הן הבסיס של הגוף — ושל כל היום"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "תוכן עמוק (2–4 משפטים)",
+          "default": "כשנוח לילד ברגליים כל הגוף מתפקד טוב יותר. הוא הולך ישר, זז בחופשיות, לא עוצר כל כמה דקות. ילד שיוצא מהבית עם נעליים נוחות מגיע לגן שמח ומוכן. כשהמוח במצב רגוע מופרשים דופמין וסרוטונין שמגבירים סקרנות וריכוז."
+        },
+        {
+          "type": "text",
+          "id": "connection",
+          "label": "משפט חיבור למוצר",
+          "default": "הנעליים שלנו תוכננו בדיוק בשביל זה."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "שאלה ותשובה",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "שאלה",
+          "default": "איך יודעים מה המידה הנכונה בקנייה אונליין?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "תשובה",
+          "default": "למדוד את כף הרגל בעמידה על דף נייר, לסמן עקב ובוהן, למדוד בסנטימטרים ולהשוות לטבלת המידות. תמיד למדוד שתי רגליים ולבחור לפי הגדולה."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM Shoes — אקורדיון (התפתחותי)",
+      "settings": {
+        "title": "כל מה שחשוב לדעת",
+        "subtitle": "יתרונות, עובדות ותשובות — במקום אחד"
+      },
+      "blocks": [
+        {
+          "type": "insight",
+          "settings": {
+            "title": "הרגליים הן הבסיס של הגוף — ושל כל היום",
+            "body": "כשנוח לילד ברגליים כל הגוף מתפקד טוב יותר. הוא הולך ישר, זז בחופשיות, לא עוצר כל כמה דקות. ילד שיוצא מהבית עם נעליים נוחות מגיע לגן שמח ומוכן. כשהמוח במצב רגוע מופרשים דופמין וסרוטונין שמגבירים סקרנות וריכוז.",
+            "connection": "הנעליים שלנו תוכננו בדיוק בשביל זה."
+          }
+        },
+        {
+          "type": "insight",
+          "settings": {
+            "title": "נעל נוחה = ילד שנועל בכל בוקר בלי מריבות",
+            "body": "הבוקר קובע את הטון של כל היום. ילד שמתחיל רגוע מתמודד טוב יותר עם תסכולים, פחות התפרצויות, יותר שליטה עצמית. נעל שהילד אוהב לנעול מורידה חיכוך אחד מהבוקר — וכל חיכוך שיורד משנה את האנרגיה של כל המשפחה.",
+            "connection": "סגירת הסקוטש הפשוטה מאפשרת לילד לנעול לבד — הצלחה קטנה שמתחילה את הבוקר נכון."
+          }
+        },
+        {
+          "type": "insight",
+          "settings": {
+            "title": "סוליה גמישה — לא פיצ'ר, השקעה בהתפתחות",
+            "body": "סוליה גמישה מאפשרת לשרירי כף הרגל לעבוד נכון בכל צעד. כף הרגל מתפתחת תקין, הקשת מתחזקת, שיווי המשקל משתפר. ילד עם שיווי משקל טוב זז יותר — וילד שזז הרבה ביום ישן טוב יותר בלילה.",
+            "connection": "הסוליה שלנו גמישה מהקדמי ויציבה בעקב — בדיוק כמו שכף הרגל הגדלה צריכה."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "איך יודעים מה המידה הנכונה בקנייה אונליין?",
+            "answer": "למדוד את כף הרגל בעמידה על דף נייר, לסמן עקב ובוהן, למדוד בסנטימטרים ולהשוות לטבלת המידות. תמיד למדוד שתי רגליים ולבחור לפי הגדולה."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "כל כמה זמן צריך לבדוק אם הנעל עדיין מתאימה?",
+            "answer": "כל חודשיים-שלושה בגיל הפעוט. הרגליים גדלות מהר ונעל קטנה לוחצת על האצבעות בלי שההורה שם לב. אם הילד מתחיל להסיר את הנעליים מיד לאחר הנעילה — כדאי למדוד מחדש."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "מתי הזמן הנכון לקנות נעליים ראשונות?",
+            "answer": "כשהילד הולך לבד בחוץ. בבית עדיף יחף כמה שיותר — זה מחזק את כף הרגל ומפתח שיווי משקל טבעי. הנעל הראשונה צריכה להיות גמישה, קלה ועם אחיזה — לא נוקשה."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,306 @@
+{% comment %}
+  BabyMania — Main Product Overrides
+  File: sections/bm-store-main-overrides.liquid
+  Purpose: CSS-only overrides for Dawn theme main-product elements.
+           No HTML, no JavaScript.
+           Sticky bar removed — handled exclusively by sections/bm-sticky-bar.liquid
+{% endcomment %}
+
+<style>
+  /* ============================================================
+     1. VARIANT PICKER — size/color buttons
+  ============================================================ */
+
+  /* Label above variant group */
+  .product-form__input label:not([for]) {
+    font-family: 'Heebo', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #3D2B1F !important;
+    margin-bottom: 8px !important;
+  }
+
+  fieldset.product-form__input {
+    margin-bottom: 16px !important;
+  }
+
+  /* Default state */
+  .product-form__input input[type="radio"] + label {
+    border-radius: 10px !important;
+    border: 1.5px solid #D4B99A !important;
+    padding: 10px 22px !important;
+    font-family: 'Heebo', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    color: #3D2B1F !important;
+    background: #FFFFFF !important;
+    transition: all 0.25s ease !important;
+    cursor: pointer !important;
+    min-width: 56px !important;
+    text-align: center !important;
+  }
+
+  /* Selected state */
+  .product-form__input input[type="radio"]:checked + label {
+    background: linear-gradient(135deg, #8B5E3C 0%, #A67B5B 100%) !important;
+    color: #FFFFFF !important;
+    border-color: #8B5E3C !important;
+    box-shadow: 0 3px 10px rgba(139, 94, 60, 0.3) !important;
+  }
+
+  /* Hover — unselected */
+  .product-form__input input[type="radio"]:not(:checked) + label:hover {
+    border-color: #8B5E3C !important;
+    background: #FFF8F2 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px rgba(139, 94, 60, 0.1) !important;
+  }
+
+  /* ============================================================
+     2. ADD TO CART BUTTON
+  ============================================================ */
+
+  /* High-specificity override — matches Shopify's injected <style data-shopify> selector */
+  button.product-form__submit.button.button--full-width.button--secondary {
+    background: #FFFFFF !important;
+    color: #8B5E3C !important;
+    border: 2px solid #D4A574 !important;
+    border-radius: 12px !important;
+    outline: none !important;
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.15) !important;
+    transition: all 0.35s ease !important;
+  }
+
+  button.product-form__submit.button.button--full-width.button--secondary:hover {
+    background: #D4A574 !important;
+    color: #FFFFFF !important;
+    border-color: #D4A574 !important;
+    outline: none !important;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4) !important;
+  }
+
+  button.product-form__submit.button.button--full-width.button--secondary:active {
+    background: #C4956A !important;
+    border-color: #C4956A !important;
+    outline: none !important;
+  }
+
+  button.product-form__submit.button.button--full-width.button--secondary:focus,
+  button.product-form__submit.button.button--full-width.button--secondary:focus-visible {
+    outline: none !important;
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.15) !important;
+  }
+
+  .product-form__submit {
+    background: #FFFFFF !important;
+    color: #8B5E3C !important;
+    border: 2px solid #D4A574 !important;
+    border-radius: 12px !important;
+    padding: 16px 32px !important;
+    font-family: 'Heebo', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.03em !important;
+    cursor: pointer !important;
+    transition: all 0.35s ease !important;
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.15) !important;
+    width: 100% !important;
+    min-height: 56px !important;
+  }
+
+  .product-form__submit:hover {
+    background: #D4A574 !important;
+    color: #FFFFFF !important;
+    border-color: #D4A574 !important;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4) !important;
+  }
+
+  .product-form__submit:active {
+    background: #C4956A !important;
+    border-color: #C4956A !important;
+  }
+
+  .product-form__submit:disabled,
+  .product-form__submit[disabled] {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+  }
+
+  /* Loading spinner */
+  .product-form__submit .loading__spinner circle {
+    stroke: #8B5E3C !important;
+  }
+
+  /* ============================================================
+     3. DYNAMIC CHECKOUT / BUY IT NOW
+  ============================================================ */
+
+  /* עטיפה חיצונית — ניקוי מסגרת כפולה */
+  .shopify-payment-button {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .shopify-payment-button__button {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 12px !important;
+    min-height: 52px !important;
+    font-family: 'Heebo', sans-serif !important;
+    overflow: hidden !important;
+  }
+
+  .shopify-payment-button__button--unbranded {
+    background: #FFFFFF !important;
+    color: #1A1A1A !important;
+    border: 2px solid #1A1A1A !important;
+    border-radius: 12px !important;
+    font-family: 'Heebo', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    outline: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.35s ease !important;
+  }
+
+  .shopify-payment-button__button--unbranded:hover {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .shopify-payment-button__button--unbranded:focus,
+  .shopify-payment-button__button--unbranded:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.2) !important;
+  }
+
+  /* ============================================================
+     4. PRICE STYLING
+  ============================================================ */
+  .price__regular .price-item--regular,
+  .price__sale .price-item--sale {
+    font-family: 'Heebo', sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #8B5E3C !important;
+  }
+
+  /* Original price (struck) */
+  .price__sale .price-item--regular {
+    font-size: 17px !important;
+    color: #999999 !important;
+    text-decoration: line-through !important;
+  }
+
+  /* Sale badge */
+  .price .badge {
+    background: linear-gradient(135deg, #C62828, #D32F2F) !important;
+    color: #FFFFFF !important;
+    border-radius: 999px !important;
+    font-family: 'Heebo', sans-serif !important;
+    font-weight: 700 !important;
+    padding: 3px 12px !important;
+    font-size: 13px !important;
+  }
+
+  /* ============================================================
+     5. QUANTITY SELECTOR
+  ============================================================ */
+  .quantity {
+    border-radius: 10px !important;
+    border: 1.5px solid #D4B99A !important;
+    overflow: hidden !important;
+  }
+
+  .quantity__input {
+    font-family: 'Heebo', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #3D2B1F !important;
+    border: none !important;
+  }
+
+  .quantity__button {
+    color: #8B5E3C !important;
+    border: none !important;
+    transition: background 0.2s ease !important;
+  }
+
+  .quantity__button:hover {
+    background: #FFF8F2 !important;
+  }
+
+  /* ============================================================
+     6. PRODUCT TITLE
+  ============================================================ */
+  .product__title h1 {
+    font-family: 'Heebo', sans-serif !important;
+    font-weight: 800 !important;
+    color: #1A1A1A !important;
+    font-size: clamp(22px, 4vw, 28px) !important;
+    line-height: 1.35 !important;
+  }
+
+  /* ============================================================
+     7. PRODUCT MEDIA / GALLERY
+  ============================================================ */
+  /* Main image */
+  .product__media-item img,
+  .product__media-item model-viewer,
+  .product__media-item .media {
+    border-radius: 14px !important;
+  }
+
+  /* Thumbnail list */
+  .thumbnail-list .thumbnail {
+    border-radius: 10px !important;
+    border: 2px solid transparent !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  }
+
+  .thumbnail-list .thumbnail.is-active,
+  .thumbnail-list .thumbnail:hover {
+    border-color: #8B5E3C !important;
+    box-shadow: 0 2px 8px rgba(139, 94, 60, 0.15) !important;
+  }
+
+  /* ============================================================
+     MOBILE — max-width: 520px
+  ============================================================ */
+  @media (max-width: 520px) {
+    .product-form__submit {
+      padding: 14px 24px !important;
+      font-size: 16px !important;
+      min-height: 52px !important;
+    }
+
+    .product-form__input input[type="radio"] + label {
+      padding: 8px 16px !important;
+      font-size: 13px !important;
+    }
+
+    .price__regular .price-item--regular,
+    .price__sale .price-item--sale {
+      font-size: 24px !important;
+    }
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": "BM — עיצוב מוצר",
+  "tag": "div",
+  "class": "bm-main-overrides",
+  "settings": [],
+  "presets": [
+    {
+      "name": "BM — עיצוב מוצר"
+    }
+  ]
+}
+{% endschema %}
+

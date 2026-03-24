@@ -1,0 +1,191 @@
+{
+  "hub": "HUB-6",
+  "hub_name": "נעלי תינוקות וילדים",
+  "generated": "2026-03-19",
+  "collection_handle": "נעליים",
+  "collection_url": "https://babymania-il.com/collections/נעליים",
+  "rule": "כל מאמר מקשר למוצרים רלוונטיים לנושאו בלבד. לא לחזור על אותם מוצרים בין מאמרים. product-card-inline לפי agent04.",
+  "note_pillar": "הפילר כבר השתמש ב: trendy-comfortable-sneakers (₪139) + zapatillas-girl-shoe (₪149) — לא לחזור עליהם בקלאסטרים.",
+  "clusters": {
+    "C1_first_step": {
+      "topic": "נעל לצעד ראשון — מה שהורים צריכים לדעת",
+      "product_type": "first-walker / צעד ראשון",
+      "products": [
+        {
+          "title": "נעל סנדל צעד ראשון מונעת החלקה – גמישה בטוחה ונוחה לתינוק דגם רוני",
+          "handle": "סנדל-אופנתי-נח-מונע-החלקה-רוני",
+          "url": "https://babymania-il.com/products/סנדל-אופנתי-נח-מונע-החלקה-רוני",
+          "price": "149.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S29b4baf1d79049a1a39ff9787ed81f60B.jpg?v=1711470926",
+          "role": "product-card-inline"
+        },
+        {
+          "title": "נעל צעד ראשון אלגנטית לבנים",
+          "handle": "baby-boy-shoes-new-pu-leather-casual-sneakers-anti-slip-infant-sport-first-walkers-christening",
+          "url": "https://babymania-il.com/products/baby-boy-shoes-new-pu-leather-casual-sneakers-anti-slip-infant-sport-first-walkers-christening",
+          "price": "139.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S00c04fe35f8343c9923388807bd540ac3.webp?v=1724678299",
+          "role": "product-mention"
+        },
+        {
+          "title": "נעלי סניקרס צעד ראשון",
+          "handle": "citgeett-infant-baby-boys-girls-sneakers-contrast-color-stripe-pu-leather-anti-slip-sole-prewalker-first-walker-shoes",
+          "url": "https://babymania-il.com/products/citgeett-infant-baby-boys-girls-sneakers-contrast-color-stripe-pu-leather-anti-slip-sole-prewalker-first-walker-shoes",
+          "price": "149.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S81074ef17a444655b94baf41364130f9H.webp?v=1724686311",
+          "role": "product-mention"
+        }
+      ]
+    },
+    "C2_flexible_sole": {
+      "topic": "סוליה גמישה בנעלי ילדים — מה ההבדל",
+      "product_type": "סניקרס / soft-sole",
+      "products": [
+        {
+          "title": "סניקרס לתינוקות מונעות החלקה מבית בייבי מניה",
+          "handle": "childrens-sneakers-boys-girls-soft-sole-non-slip-casual-student-running-shoes-baby-kids-school-sports-shoes-warm-cotton-shoes",
+          "url": "https://babymania-il.com/products/childrens-sneakers-boys-girls-soft-sole-non-slip-casual-student-running-shoes-baby-kids-school-sports-shoes-warm-cotton-shoes",
+          "price": "169.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S50cf1d0d1d5b449ebfbf2c73659ca356Z.webp?v=1723922214",
+          "role": "product-card-inline"
+        },
+        {
+          "title": "נעל ספורט קז'ואל נוחה לתינוק",
+          "handle": "kids-casual-shoes-sneakers-boys-sport-breathable-tennis-sneaker-baby-children-girls-shoes-spring-fashion-white-flat-running-shoe",
+          "url": "https://babymania-il.com/products/kids-casual-shoes-sneakers-boys-sport-breathable-tennis-sneaker-baby-children-girls-shoes-spring-fashion-white-flat-running-shoe",
+          "price": "169.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S14f7d7938b5d4ad790ec57c37c6f082fC.webp?v=1724505028",
+          "role": "product-mention"
+        },
+        {
+          "title": "נעלי ספורט מעוצבות",
+          "handle": "size-21-36-baby-toddler-shoes-for-boys-girls-breathable-mesh-little-kids-casual-sneakers-non-slip-children-sport-shoes-tenis-1",
+          "url": "https://babymania-il.com/products/size-21-36-baby-toddler-shoes-for-boys-girls-breathable-mesh-little-kids-casual-sneakers-non-slip-children-sport-shoes-tenis-1",
+          "price": "199.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S6b07538a72aa49fca36c162c88514f64Z.webp?v=1723983872",
+          "role": "product-mention"
+        }
+      ]
+    },
+    "C3_sizing": {
+      "topic": "מידה נכונה לנעלי ילדים — כך תמדדו בבית",
+      "product_type": "כל הקולקציה — מגוון",
+      "products": [
+        {
+          "title": "נעלי אופנה קז'ואל מונעות החלקה לתינוקות",
+          "handle": "childrens-sneakers-kids-fashion-design-white-non-slip-casual-shoes-for-boys-girls-hook-breathable-sneakers-toddler-outdoor-shoe",
+          "url": "https://babymania-il.com/products/childrens-sneakers-kids-fashion-design-white-non-slip-casual-shoes-for-boys-girls-hook-breathable-sneakers-toddler-outdoor-shoe",
+          "price": "180.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S7c56ba26321e4f999aeb3d6547fb4bf4c.webp?v=1723923672",
+          "role": "product-card-inline"
+        },
+        {
+          "title": "נעל מעבר צעד ראשון לתינוק",
+          "handle": "baby-socks-shoes-infant-color-matching-cute-kids-boys-shoes-doll-soft-soled-child-floor-sneaker-bebe-toddler-girls-first-walkers",
+          "url": "https://babymania-il.com/products/baby-socks-shoes-infant-color-matching-cute-kids-boys-shoes-doll-soft-soled-child-floor-sneaker-bebe-toddler-girls-first-walkers",
+          "price": "149.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S18f6916c00654fb8be1720c94936c76bi.webp?v=1723985130",
+          "role": "product-mention"
+        },
+        {
+          "title": "נעל עור צעד ראשון",
+          "handle": "new-baby-shoes-leather-baby-boy-girl-shoes-rubber-sole-anti-slip-multicolor-toddler-first-walkers-newborn-crib-toddler-shoes",
+          "url": "https://babymania-il.com/products/new-baby-shoes-leather-baby-boy-girl-shoes-rubber-sole-anti-slip-multicolor-toddler-first-walkers-newborn-crib-toddler-shoes",
+          "price": "150.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sfeeccbdf1ef54df39333c06529cfebc6F.webp?v=1724678312",
+          "role": "product-mention"
+        }
+      ]
+    },
+    "C4_kindergarten": {
+      "topic": "נעלי גן לילדים — מה כדאי לדעת",
+      "product_type": "סניקרס יומיומי + סגירה חכמה",
+      "products": [
+        {
+          "title": "נעלי ילדים מונעות החלקה – סגירה חכמה ללא שרוכים",
+          "handle": "no-tie-knob-parent-child-daddy-shoes-womens-new-autumn-thick-soled-running-childrens-sports-casual-shoes-for-girls-and-boys",
+          "url": "https://babymania-il.com/products/no-tie-knob-parent-child-daddy-shoes-womens-new-autumn-thick-soled-running-childrens-sports-casual-shoes-for-girls-and-boys",
+          "price": "199.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S3355dce8eb0c4c5f8cbef738de103926U.webp?v=1748959221",
+          "role": "product-card-inline"
+        },
+        {
+          "title": "סניקרס קלאסיות- דיויד",
+          "handle": "סניקרס-קלאסיות-דיויד",
+          "url": "https://babymania-il.com/products/סניקרס-קלאסיות-דיויד",
+          "price": "155.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/products/S6d0719c55a1647c1a925095785f92291P.jpg?v=1708513799",
+          "role": "product-mention"
+        },
+        {
+          "title": "סניקרס סטייל- גולדן",
+          "handle": "סניקרס-סטייל-גולדן",
+          "url": "https://babymania-il.com/products/סניקרס-סטייל-גולדן",
+          "price": "159.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/WhatsAppImage2024-10-06at21.14.16_2.jpg?v=1728238508",
+          "role": "product-mention"
+        }
+      ]
+    },
+    "C5_when_to_replace": {
+      "topic": "מתי מחליפים נעלי ילד — הסימנים שצריך לדעת",
+      "product_type": "נעלים עמידות — מגפיים + מגוון",
+      "products": [
+        {
+          "title": "מגפי פרמיום לבנות – חורף חם, נוח ואלגנטי דגם אלין",
+          "handle": "מגפון-פפיון-אלין",
+          "url": "https://babymania-il.com/products/מגפון-פפיון-אלין",
+          "price": "189.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/post_26.png?v=1764449815",
+          "role": "product-card-inline"
+        },
+        {
+          "title": "מגפי חורף נוצצים עם כוכבים",
+          "handle": "childrens-fashion-boots-black-low-lightweight-boys-girls-toddler-shoes-0-8-years-old-soft-bottom-non-slip-kids-baby-boots-shoes",
+          "url": "https://babymania-il.com/products/childrens-fashion-boots-black-low-lightweight-boys-girls-toddler-shoes-0-8-years-old-soft-bottom-non-slip-kids-baby-boots-shoes",
+          "price": "189.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S0878208eb75f46b189b2dd075eba9cb6X.webp?v=1724687218",
+          "role": "product-mention"
+        },
+        {
+          "title": "נעל חורף מחממת ואלגנטית צעד ראשון",
+          "handle": "2023-winter-snow-baby-boots-multiple-colors-warm-fluff-balls-indoor-colloidal-particle-sole-infant-newborn-toddler-baby-shoes",
+          "url": "https://babymania-il.com/products/2023-winter-snow-baby-boots-multiple-colors-warm-fluff-balls-indoor-colloidal-particle-sole-infant-newborn-toddler-baby-shoes",
+          "price": "139.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sad0eec6650fe4ebd8ec4d5a00b9b2599w.webp?v=1724678277",
+          "role": "product-mention"
+        }
+      ]
+    },
+    "C6_materials": {
+      "topic": "חומרים נושמים בנעלי תינוקות — מה לחפש",
+      "product_type": "סנדלים + נעלי עור + רשת אוויר",
+      "products": [
+        {
+          "title": "סנדל הליכה נוח - חיוכי",
+          "handle": "סנדל-הליכה-נוח-חיוכי",
+          "url": "https://babymania-il.com/products/סנדל-הליכה-נוח-חיוכי",
+          "price": "149.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S1ae247fdf74f4d4eaedb47fc8d5c6c92v.webp?v=1711470547",
+          "role": "product-card-inline"
+        },
+        {
+          "title": "נעלי קרוקס לתינוק",
+          "handle": "childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes",
+          "url": "https://babymania-il.com/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes",
+          "price": "119.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sd1f118c5f198497fb38b73e13f817935a.webp?v=1724678309",
+          "role": "product-mention"
+        },
+        {
+          "title": "נעלי מים לילדים מונעות החלקה",
+          "handle": "1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes",
+          "url": "https://babymania-il.com/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes",
+          "price": "169.00",
+          "image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S9a6a9251711a44fbae1fc113f9880916N.webp?v=1754215955",
+          "role": "product-mention"
+        }
+      ]
+    }
+  }
+}
