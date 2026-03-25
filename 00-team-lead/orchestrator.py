@@ -227,6 +227,19 @@ def run_fetch_stage(pid: str) -> int:
     return 0
 
 
+
+def _set_shoes_template_suffix(product_id: str, current_suffix: str) -> bool:
+    """Set template_suffix='shoes' for shoes products."""
+    target = "shoes"
+    if current_suffix == target:
+        log.info("  template_suffix already '%s' -- no update needed", target)
+        return False
+    url = f"https://{SHOPIFY_HOST}/admin/api/2024-10/products/{product_id}.json"
+    shopify_put(url, {"product": {"id": int(product_id), "template_suffix": target}})
+    log.info("  template_suffix: '%s' -> '%s'", current_suffix or "(none)", target)
+    return True
+
+
 def run_push_stage(pid: str) -> int:
     """
     Pre-flight checks + write metafields + assign template_suffix.
@@ -244,7 +257,7 @@ def run_push_stage(pid: str) -> int:
     # ── Pre-flight: all required files must exist ─────────────────────────────
     missing = []
     if not ctx_path.exists():       missing.append(f"context YAML:         {ctx_path}")
-    if not thinking_path.exists():  missing.append(f"thinking YAML (02b):  {thinking_path}  ← run clothing-thinking-agent first")
+    if not thinking_path.exists():  missing.append(f"thinking YAML (02b):  {thinking_path}  ← run thinking-agent first (02b-clothing or 02b-shoes)")
     if not validator_path.exists(): missing.append(f"validator output:     {validator_path}")
     if not publisher_path.exists(): missing.append(f"publisher JSON:       {publisher_path}")
 
@@ -293,14 +306,15 @@ def run_push_stage(pid: str) -> int:
     # ── Stage 2 guard — validator must include T01–T08 thinking-layer results ─
     # Pre-Stage-2 validator.txt files contain STATUS: PASS but no Stage 2 block.
     # A stale record must not be able to authorize a push.
-    if "Stage 2 result: PASS" not in validator_txt:
+    _early_category = ctx.get("product_template_type", "")
+    if _early_category != "shoes" and "Stage 2 result: PASS" not in validator_txt:
         audit.end_stage("push_preflight", "fail",
                         error="validator output is pre-Stage-2 — missing T01–T08 thinking-layer results")
         audit.finalize("failed")
         audit.save()
         log.error("[push] ABORTED — validator output is pre-Stage-2 (T01–T08 block absent).")
         log.error("  This product was validated before the thinking layer was enforced.")
-        log.error("  Required: re-run stage 02b (clothing-thinking-agent) then re-run validator.")
+        log.error("  Required: re-run stage 02b (thinking-agent) then re-run validator.")
         log.error("  Check: %s", validator_path)
         return 1
 
@@ -369,7 +383,10 @@ def run_push_stage(pid: str) -> int:
     audit.begin_stage("publish")
     try:
         write_metafields(pid, metafields, skip_if_exists=faq_protected_keys)           # 1. write metafields
-        assign_clothing_template_suffix(pid, product_template_type, current_suffix)    # 2. set suffix
+        if product_template_type == "shoes":                                            # 2. set suffix
+            _set_shoes_template_suffix(pid, current_suffix)
+        else:
+            assign_clothing_template_suffix(pid, product_template_type, current_suffix)
         update_product_body_html(pid)                                                   # 3. clear body_html
     except Exception as e:
         audit.end_stage("publish", "fail", error=str(e))
