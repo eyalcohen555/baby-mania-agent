@@ -1,3 +1,3 @@
-status: idle
-time: 2026-03-25 14:08:03
-detail: PID 46644
+status: done
+time: 2026-03-25 15:21:32
+detail: result written, task removed
