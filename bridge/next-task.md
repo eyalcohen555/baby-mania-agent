@@ -1,0 +1,1 @@
+הדפס את המילה: BRIDGE_FINAL_TEST
