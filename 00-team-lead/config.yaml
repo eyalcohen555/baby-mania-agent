@@ -215,11 +215,12 @@ required_metafields:
 
   shoes:
     required_keys:
-      - hero_eyebrow
-      - hero_headline
-      - hero_subheadline
       - benefits
       - accordion_blocks
       - faq
     optional_keys:
+      - hero_eyebrow        # shoes hero agent not yet built
+      - hero_headline       # shoes hero agent not yet built
+      - hero_subheadline    # shoes hero agent not yet built
+      - track               # written by publisher from thinking.yaml
       - size_note           # may be empty
