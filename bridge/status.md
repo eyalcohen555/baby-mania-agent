@@ -1,3 +1,3 @@
-status: done
-time: 2026-03-25 09:36:19
-detail: result written, task removed
+status: idle
+time: 2026-03-25 09:37:35
+detail: next-task.md not found
