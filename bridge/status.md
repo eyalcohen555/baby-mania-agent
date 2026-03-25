@@ -1,4 +1,3 @@
-status: running
-time: 2026-03-25 10:28:07
-detail: TASK: Changes 1+3 — category routing + template suffix ב-orchestrator.py
-LAYER: 
+status: done
+time: 2026-03-25 10:30:55
+detail: result written, task removed
