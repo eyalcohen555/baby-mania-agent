@@ -193,20 +193,33 @@ publish_verification:
 # ── Required Metafields ────────────────────────────────────────────────────────
 required_metafields:
   namespace: baby_mania
-  required_keys:
-    - hero_eyebrow
-    - hero_headline
-    - hero_subheadline
-    - fabric_title
-    - fabric_body
-    - fabric_highlight
-    - fabric_tags
-    - whats_special
-    - benefits
-    - emotional_reassurance
-    - care_instructions
-    - faq
-  optional_keys:
-    - fabric_body_2       # may be empty
-    - care_section_title  # from stage-05; static label for care accordion
-    - size_note           # may be empty
+
+  clothing:
+    required_keys:
+      - hero_eyebrow
+      - hero_headline
+      - hero_subheadline
+      - fabric_title
+      - fabric_body
+      - fabric_highlight
+      - fabric_tags
+      - whats_special
+      - benefits
+      - emotional_reassurance
+      - care_instructions
+      - faq
+    optional_keys:
+      - fabric_body_2       # may be empty
+      - care_section_title  # from stage-05; static label for care accordion
+      - size_note           # may be empty
+
+  shoes:
+    required_keys:
+      - hero_eyebrow
+      - hero_headline
+      - hero_subheadline
+      - benefits
+      - accordion_blocks
+      - faq
+    optional_keys:
+      - size_note           # may be empty
