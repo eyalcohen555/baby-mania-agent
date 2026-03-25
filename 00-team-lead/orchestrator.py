@@ -371,9 +371,9 @@ def run_push_stage(pid: str) -> int:
     }
     save_preview(pid, handle, ctx, gen, pub_data)
 
-    # ── FAQ overwrite protection (clothing only) ─────────────────────────────
+    # ── FAQ overwrite protection (clothing + shoes) ──────────────────────────
     faq_protected_keys: set = set()
-    if product_template_type == "clothing":
+    if product_template_type in ("clothing", "shoes"):
         faq_overwrite = ctx.get("faq_overwrite", False)
         if not faq_overwrite:
             faq_protected_keys = {"faq"}
@@ -422,7 +422,11 @@ def run_verify_stage(pid: str) -> int:
     audit.begin_stage("verification")
 
     vcfg          = CFG.get("publish_verification", {})
-    req_mf        = CFG.get("required_metafields", {})
+    _category     = ctx.get("product_template_type", "clothing")
+    _all_req_mf   = CFG.get("required_metafields", {})
+    req_mf        = {"namespace": _all_req_mf.get("namespace", "baby_mania"),
+                     "required_keys": _all_req_mf.get(_category, {}).get("required_keys",
+                                      _all_req_mf.get("required_keys", []))}
     errors        = []
     product_cache = None
 
@@ -434,7 +438,7 @@ def run_verify_stage(pid: str) -> int:
 
     # 1. All required metafields are present
     if vcfg.get("check_metafields_written"):
-        namespace    = req_mf.get("namespace", "baby_mania")
+        namespace     = req_mf.get("namespace", "baby_mania")
         required_keys = set(req_mf.get("required_keys", []))
         try:
             resp         = shopify_get(f"products/{pid}/metafields.json?namespace={namespace}&limit=250")
