@@ -28,6 +28,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 BASE_DIR      = Path(__file__).parent.parent
 STAGE_OUT_DIR = BASE_DIR / "output" / "stage-outputs"
+CONTEXT_DIR   = BASE_DIR / "shared" / "product-context"
 
 try:
     import yaml
@@ -131,7 +132,16 @@ def parse_analyzer(pid: str) -> dict:
     if not path.exists():
         print(f"  [PIB] analyzer not found: {path}")
         return {}
-    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    # Fallback: enrich from context YAML if description_raw or product_template_type missing
+    ctx_path = CONTEXT_DIR / f"{pid}.yaml"
+    if ctx_path.exists():
+        ctx = yaml.safe_load(ctx_path.read_text(encoding="utf-8")) or {}
+        if not data.get("description_raw"):
+            data["description_raw"] = ctx.get("description_raw", "")
+        if not data.get("product_template_type"):
+            data["product_template_type"] = ctx.get("product_template_type", "")
+    return data
 
 
 # ── Stage 01b (visual.json) parsing ──────────────────────────────────────────
@@ -337,7 +347,11 @@ def infer_closure_type(text: str) -> str:
         return "slip-on"
     if any(kw in t for kw in ["laces", "שרוכים", "lace-up", "lace up"]):
         return "laces"
-    if any(kw in t for kw in ["button", "כפתור", "buckle", "אבזם"]):
+    if any(kw in t for kw in ["buckle strap", "buckle", "כפתור", "אבזם"]):
+        return "buckle"
+    if any(kw in t for kw in ["hook and loop", "hook-and-loop", "hook & loop"]):
+        return "velcro"
+    if any(kw in t for kw in ["button"]):
         return "button"
     return "unknown"
 
@@ -474,6 +488,7 @@ def build_intelligence(pid: str) -> dict:
     # Merge shoes-specific fields into product_intelligence (shoes path only)
     if product_template_type == "shoes":
         intelligence["product_intelligence"].update({
+            "clothing_type":     None,   # not applicable for shoes
             "detected_features": detected_features,
             "closure_type":      closure_type,
             "sole_type":         sole_type,
