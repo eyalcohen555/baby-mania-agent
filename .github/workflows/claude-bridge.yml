@@ -1,0 +1,30 @@
+name: Claude Bridge
+
+on:
+  push:
+    paths:
+      - 'bridge/next-task.md'
+
+jobs:
+  run-claude:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run task
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          TASK=$(cat bridge/next-task.md)
+          claude --print --dangerously-skip-permissions "$TASK" > bridge/last-result.md
+
+      - name: Commit result
+        run: |
+          git config user.name "claude-bridge"
+          git config user.email "bridge@babymania.com"
+          git add bridge/last-result.md
+          git commit -m "bridge result"
+          git push

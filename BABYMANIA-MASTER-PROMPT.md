@@ -17,6 +17,40 @@
 
 ---
 
+## 📁 תיעוד רשמי — Official Documents
+
+### תפקיד המאסטר פרומפט
+**MASTER PROMPT = חוקה + snapshot.** לא journal, לא מחסן היסטוריה.
+מתעדכן אחרי: milestone / blocker נסגר / agent חדש / החלטה ארכיטקטונית / לפני handoff.
+
+### חוק תיעוד
+```
+שינוי משמעותי → journal של התחום (לא ל-master)
+milestone / blocker נסגר → גם master snapshot
+לפני chat חדש → next step בjournal + master אם צריך
+```
+
+### מפת מסמכים רשמית
+
+| מסמך | תפקיד |
+|------|--------|
+| `docs/management/management-index.md` | מפת כל המסמכים |
+| `docs/management/source-of-truth.md` | מי מקור האמת לכל תחום |
+| `docs/management/update-policy.md` | מתי לעדכן מה |
+| `docs/management/management-journal.md` | החלטות ניהוליות רחבות |
+| `docs/operations/bridge-operations-journal.md` | היסטוריית bridge מלאה |
+| `docs/operations/bridge-runtime-status.md` | איך לקרוא מצב bridge live |
+| `docs/product/shoes-journal.md` | shoes — blockers, rollout |
+| `docs/product/clothing-journal.md` | clothing — production |
+| `docs/product/infrastructure-journal.md` | orchestrator, config |
+| `docs/organic/organic-journal.md` | HUBs, organic pipeline |
+
+### קבצים היסטוריים (לא לעדכן)
+- `shared_memory.md` — עיצוב מוקדם, לפני הpipeline הנוכחי
+- `NIGHT_EXECUTION_PLAN.md` — תוכנית אורגנית היסטורית
+
+---
+
 ## 🏗️ מבנה המערכת
 
 ### פרויקט ראשי
@@ -24,11 +58,34 @@
 - **מקור האמת:** `C:/Projects/baby-mania-agent` בלבד
 - **Reference בלבד (אסור לכתוב שם):** `C:/Projects/baby-mania-shoes`
 
-### Bridge — ערוץ התקשורת
-- **GPT כותבת משימות ל:** `bridge/next-task.md`
-- **Claude Code מחזיר תוצאות ל:** `bridge/last-result.md`
-- **כללים:** `bridge/EXECUTION_RULES.md`
-- **סקריפט:** `bridge/github-bridge.py` (רץ בבוקר)
+### Bridge — ערוץ התקשורת ✅ OPERATIONAL
+
+**מסלול רשמי — GitHub mode:**
+```
+GPT כותב bridge/next-task.md → push לGitHub
+    → GitHub Actions (claude-bridge.yml) מופעל אוטומטית
+    → claude --print --dangerously-skip-permissions
+    → bridge/last-result.md → commit + push חזרה
+    → GPT קורא תוצאה מGitHub
+```
+**מסלול מקומי — local fallback:**
+```
+bridge.py (polling, singleton-safe)
+← Task Scheduler: BabyMania Bridge AutoStart (logon)
+← start-bridge.bat → python -u bridge.py
+```
+
+| קובץ | תפקיד |
+|------|--------|
+| `bridge/next-task.md` | כניסת משימה — GPT כותב |
+| `bridge/last-result.md` | תוצאה — Claude כותב, GPT קורא |
+| `bridge/EXECUTION_RULES.md` | כללי ביצוע חובה |
+| `bridge/task-format.md` | פורמט רשמי |
+| `.github/workflows/claude-bridge.yml` | GitHub Actions executor |
+
+- **source of truth למשימות:** GitHub repo (`eyalcohen555/baby-mania-agent`)
+- **local runtime:** executor בלבד — לא source of truth
+- **root `next-task.md` / `last-result.md`:** DEPRECATED
 
 ### שפת עבודה
 עברית בלבד בכל התקשורת.
@@ -221,13 +278,24 @@ EXPECTED: SYSTEM STATE / CHANGES MADE / FILES UPDATED / RISK LEVEL / NEXT STEP
 
 ## 🔄 חוק עדכון הקובץ הזה
 
-**מתי לעדכן:** אחרי סגירת blocker | agent חדש | HUB חדש | החלטה ארכיטקטונית | כל 3 שינויים
+**מתי לעדכן master:** סגירת blocker | agent חדש | HUB חדש | החלטה ארכיטקטונית | כל 3 שינויים | לפני handoff
+**מתי לעדכן journal:** כל משימה משמעותית → journal של התחום (ראה `docs/management/update-policy.md`)
+**כלל:** שינוי שוטף → journal. milestone → גם master.
 
-**איך:**
+**bridge task לעדכון master:**
 ```
-TASK: עדכון BABYMANIA-MASTER-PROMPT
-ACTION: עדכן שורות ספציפיות בקובץ BABYMANIA-MASTER-PROMPT.md:
-[מה בדיוק לשנות]
+TASK_ID: YYYY-MM-DD-master-update
+GOAL: עדכן BABYMANIA-MASTER-PROMPT.md — [מה בדיוק]
+FILES_ALLOWED: BABYMANIA-MASTER-PROMPT.md
+OUTPUT_REQUIRED: הדפס TASK_ID + STATUS: PASS + שורות שעודכנו
+```
+
+**bridge task לעדכון journal:**
+```
+TASK_ID: YYYY-MM-DD-journal-[domain]
+GOAL: עדכן docs/[path]/[journal].md — הוסף entry
+FILES_ALLOWED: docs/[path]/[journal].md
+OUTPUT_REQUIRED: הדפס TASK_ID + STATUS: PASS
 ```
 
 ---

@@ -38,4 +38,4 @@ node_modules/
 
 # Bridge files
 bridge.py
-bridge/last-result.md
+bridge/bridge.lock
