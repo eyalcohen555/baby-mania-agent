@@ -1,4 +1,3 @@
-import time
 import subprocess
 import os
 
@@ -7,61 +6,50 @@ TASK_FILE = r"C:\Projects\baby-mania-agent\bridge\next-task.md"
 RESULT_FILE = r"C:\Projects\baby-mania-agent\bridge\last-result.md"
 CLAUDE = r"C:\Users\3024e\AppData\Roaming\npm\claude.cmd"
 
-print("GitHub Bridge פעיל — מאזין לשינויים ב-GitHub...")
+print("GitHub Bridge — one-shot mode")
 print("=" * 50)
 
-last_task = ""
+# 1. git pull
+print("מושך שינויים מ-GitHub...")
+subprocess.run(["git", "pull", "origin", "main"], cwd=REPO)
 
-while True:
-    try:
-        # משוך שינויים מ-GitHub
-        subprocess.run(
-            ["git", "pull", "--quiet"],
-            cwd=REPO,
-            capture_output=True
-        )
+# 2. קרא משימה מ-next-task.md
+if not os.path.exists(TASK_FILE):
+    print(f"לא נמצא קובץ משימה: {TASK_FILE}")
+    exit(0)
 
-        # קרא את קובץ המשימה
-        if os.path.exists(TASK_FILE):
-            with open(TASK_FILE, "r", encoding="utf-8") as f:
-                task = f.read().strip()
+with open(TASK_FILE, "r", encoding="utf-8") as f:
+    task = f.read().strip()
 
-            if task and task != last_task:
-                last_task = task
-                print(f"\nמשימה חדשה מ-GPT!")
+if not task:
+    print("next-task.md ריק — אין משימה להריץ.")
+    exit(0)
 
-                # הרץ Claude Code
-                result = subprocess.run(
-                    [CLAUDE, "--print", task],
-                    cwd=REPO,
-                    capture_output=True,
-                    text=True,
-                    encoding="utf-8"
-                )
+print(f"\nמשימה נמצאה — מריץ Claude Code...")
 
-                output = result.stdout if result.stdout else result.stderr
+# 3. הרץ פעם אחת
+result = subprocess.run(
+    [CLAUDE, "--print", task],
+    cwd=REPO,
+    capture_output=True,
+    text=True,
+    encoding="utf-8"
+)
 
-                # שמור תוצאה
-                with open(RESULT_FILE, "w", encoding="utf-8") as f:
-                    f.write(output)
+output = result.stdout if result.stdout else result.stderr
 
-                # נקה משימה
-                with open(TASK_FILE, "w", encoding="utf-8") as f:
-                    f.write("")
+# שמור תוצאה
+with open(RESULT_FILE, "w", encoding="utf-8") as f:
+    f.write(output)
 
-                # Push תוצאה ל-GitHub
-                subprocess.run(["git", "add", "bridge/"], cwd=REPO)
-                subprocess.run(
-                    ["git", "commit", "-m", "bridge: task result"],
-                    cwd=REPO
-                )
-                subprocess.run(["git", "push"], cwd=REPO)
+# נקה משימה
+with open(TASK_FILE, "w", encoding="utf-8") as f:
+    f.write("")
 
-                print("סיים! תוצאה הועלתה ל-GitHub")
-                print("=" * 50)
-                last_task = ""
+# Push תוצאה ל-GitHub
+subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+subprocess.run(["git", "commit", "-m", "bridge: task result"], cwd=REPO)
+subprocess.run(["git", "push"], cwd=REPO)
 
-    except Exception as e:
-        print(f"שגיאה: {e}")
-
-    time.sleep(10)
+print("סיים! תוצאה הועלתה ל-GitHub")
+print("=" * 50)
