@@ -37,6 +37,5 @@ logs/
 node_modules/
 
 # Bridge files
-next-task.md
-last-result.md
 bridge.py
+bridge/last-result.md
