@@ -8,6 +8,31 @@ pipeline:
   batch_size: 5
   preview_mode: false
 
+# -- Category Routing ---------------------------------------------------------
+categories:
+  clothing:
+    stages:
+      - analyzer           # 01  -- serial
+      - clothing_thinking  # 02b -- serial
+      - fabric_story       # 02  -- parallel
+      - benefits           # 03  -- parallel
+      - faq                # 04  -- parallel
+      - care               # 05  -- parallel  (02-05 run together)
+      - validator          # 06  -- serial
+      - publisher          # 07  -- serial
+      - page_validator     # 09  -- serial
+
+  shoes:
+    stages:
+      - analyzer           # 01  -- serial (shared)
+      - shoes_thinking     # 02b -- serial
+      - shoes_benefits     # 03b -- parallel
+      - shoes_accordion    # 04b -- parallel
+      - shoes_faq          # 04c -- parallel  (03b-04c run together)
+      - validator          # 06  -- serial (shared)
+      - publisher          # 07  -- serial (shared)
+      - page_validator     # 09  -- serial (shared)
+
 # ── Agent Execution Order ─────────────────────────────────────────────────────
 agents:
   order:
