@@ -1,3 +1,5 @@
-status: idle
-time: 2026-03-25 09:46:06
-detail: next-task.md is empty
+status: running
+time: 2026-03-25 10:04:34
+detail: TASK: אשר ובצע שינוי config.yaml shoes stages
+LAYER: 4
+ACTION: בצע את השינויים ה
