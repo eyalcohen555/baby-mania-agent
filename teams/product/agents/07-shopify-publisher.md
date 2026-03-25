@@ -203,7 +203,7 @@ action required: remove gender references and re-run stage 03/04
   "body_html_clear": true,
   "metafields": {
     "benefits": [
-      {"icon": "👟", "title": "...", "description": "..."}
+      {"icon": "👟", "title": "...", "body": "..."}
     ],
     "accordion_blocks": [
       {"title": "...", "body": "...", "connection": "..."}
