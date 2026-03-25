@@ -24,14 +24,14 @@ Critical fields:
 - sole_type
 - fallback_flags
 
-If _intelligence.json missing: stop and output INTELLIGENCE_MISSING
+If _intelligence.json missing: continue in degraded_mode=true using shared/product-context/{pid}.yaml only.
 
 ---
 
 # BabyMania — Shoes Thinking Layer
 **Version:** 1.0
 **Date:** 2026-03-23
-**Status:** DESIGN — טרם הפך לסוכן
+**Status:** ACTIVE
 
 ---
 
@@ -39,7 +39,6 @@ If _intelligence.json missing: stop and output INTELLIGENCE_MISSING
 
 מגדיר את כל ההחלטות האסטרטגיות שצריכות להתבצע לפני כל כתיבה של דף נעליים.
 זה לא מסמך קופי. זה מסמך חשיבה.
-כל מה שכתוב כאן הוא INPUT לסוכן `02b-shoes-thinking.md` שייבנה בהמשך.
 
 ---
 
@@ -422,4 +421,4 @@ Every shoes writing agent reads at start:
 4. development_movement -- accordion only. Forbidden in benefits.
 5. event_occasion -- one benefits card only. No accordion, no hero, no faq.
 6. mixed track -- hero gets one cluster only. Not two.
-7. _intelligence.json missing -- output INTELLIGENCE_MISSING and stop
+7. _intelligence.json missing -- continue with degraded_mode=true using context.yaml only. Do not stop.
