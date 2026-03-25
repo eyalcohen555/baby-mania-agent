@@ -43,8 +43,7 @@ with open(RESULT_FILE, "w", encoding="utf-8") as f:
     f.write(output)
 
 # נקה משימה
-with open(TASK_FILE, "w", encoding="utf-8") as f:
-    f.write("")
+os.remove(TASK_FILE)
 
 # Push תוצאה ל-GitHub
 subprocess.run(["git", "add", "bridge/"], cwd=REPO)
