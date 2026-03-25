@@ -50,7 +50,7 @@ write_status("running", task[:80])
 
 # 3. הרץ Claude Code
 result = subprocess.run(
-    [CLAUDE, "--print", task],
+    [CLAUDE, "--print", "--dangerously-skip-permissions", task],
     cwd=REPO,
     capture_output=True,
     text=True,
