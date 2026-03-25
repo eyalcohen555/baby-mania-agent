@@ -34,6 +34,10 @@ agents:
     validator:      claude-opus-4-6
     publisher:      claude-opus-4-6
     page_validator: claude-opus-4-6
+    shoes_thinking:    claude-opus-4-6
+    shoes_benefits:    claude-sonnet-4-6
+    shoes_accordion:   claude-sonnet-4-6
+    shoes_faq:         claude-sonnet-4-6
 
   agent_files:
     analyzer:          01-product-analyzer.md
@@ -45,6 +49,10 @@ agents:
     validator:      06-validator.md
     publisher:      07-shopify-publisher.md
     page_validator: 09-page-validator.md
+    shoes_thinking:    02b-shoes-thinking.md
+    shoes_benefits:    03b-shoes-benefits.md
+    shoes_accordion:   04b-shoes-accordion.md
+    shoes_faq:         04c-shoes-faq.md
 
   prompt_files:
     fabric_story: fabric-story.md
@@ -63,6 +71,10 @@ timeouts:
   validator:      20
   publisher:      30
   page_validator: 45
+  shoes_thinking:    30
+  shoes_benefits:    60
+  shoes_accordion:   60
+  shoes_faq:         60
   verification:   10
 
 # ── Retry Rules ───────────────────────────────────────────────────────────────
