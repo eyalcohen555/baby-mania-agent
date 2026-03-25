@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 1.1 | עודכן: 2026-03-25
+### גרסה: 1.2 | עודכן: 2026-03-25
 
 ---
 
@@ -68,7 +68,7 @@ DATA → LOGIC → OUTPUT
 | 01b-visual-product-analyzer | מנתח תמונות | ✅ |
 | 01c (script) | product_intelligence_builder.py | ✅ shoes-aware |
 | 02b-clothing-thinking | חשיבה לביגוד | ✅ |
-| 02b-shoes-thinking | חשיבה לנעליים | 🔶 DESIGN |
+| 02b-shoes-thinking | חשיבה לנעליים | ✅ |
 | 02-fabric-story-writer | כותב fabric (ביגוד) | ✅ |
 | 03-benefits-generator | benefits לביגוד | ✅ |
 | 03b-shoes-benefits | benefits לנעליים | ✅ |
@@ -93,7 +93,7 @@ DATA → LOGIC → OUTPUT
 
 #### נעליים (Shoes)
 ```
-סטטוס: 🔶 שכבה 4 (Runtime) — בבנייה
+סטטוס: 🔶 שכבה 5 (Test → Rollout) — מוכן לריצת בדיקה ראשונה
 
 סגור ✅:
   - Stage 01 ABORT הוסר
@@ -102,14 +102,14 @@ DATA → LOGIC → OUTPUT
   - sections + template ב-theme_assets
   - metafield keys יושרו
   - publisher shoes path
+  - 02b-shoes-thinking — runnable (commit 7e7ee5e)
+  - config.yaml — shoes stages + categories routing (commits 086ae8a, 7720f91)
+  - orchestrator push — shoes-aware: routing + suffix + Stage 2 guard (commit f68cfd1)
+  - orchestrator B4+B6+B7 — FAQ protection + verify gate + routing (commit 1bcbd3f)
 
 פתוח ❌ (לפי סדר):
-  [ ] 1. 02b-shoes-thinking — DESIGN, לא runnable
-  [ ] 2. config.yaml — shoes stages לא רשומים
-  [ ] 3. orchestrator push — לא shoes-aware
-  [ ] 4. shoes validator — לא קיים
-  [ ] 5. orchestrator verify — clothing-only
-  [ ] 6. benefit.body vs benefit.description — mismatch קל
+  [ ] 1. shoes validator — טרם נבדק על מוצר אמיתי
+  [ ] 2. benefit.body vs benefit.description — mismatch קל
 ```
 
 #### אביזרים (Accessories)
@@ -121,6 +121,7 @@ DATA → LOGIC → OUTPUT
 
 ### יומן שינויים — צוות 1
 ```
+2026-03-25 | orchestrator shoes-aware (B1-B7) | config categories | 02b runnable | commits f68cfd1, 1bcbd3f, 086ae8a
 2026-03-25 | Stage 01 ABORT הוסר | intelligence_builder shoes fields | commit f485b04
 2026-03-24 | sections + template הועתקו | metafield keys יושרו | 03b/04b/04c סגורו
 2026-03-23 | 15 מוצרי ביגוד לייב | settings.py נוקה | CATEGORY-ARCHITECTURE-DECISION.md
