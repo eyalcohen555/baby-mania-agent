@@ -1,3 +1,6 @@
+# תמיד קרא את הקובץ הזה בתחילת כל סשן:
+read BABYMANIA-MASTER-PROMPT.md
+
 # Baby Mania — הוראות פתיחה
 
 ## Shopify API
