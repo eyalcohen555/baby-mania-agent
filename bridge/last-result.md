@@ -1,35 +1,58 @@
-task_id: 20260326-131223
+task_id: 20260326-133316
 ---
-All changes are in place. Here's the summary:
+Now let me write the result output.
 
 ---
 
-**TASK_ID:** 2026-03-26-approval-tier
-**APPROVAL_TIER:** T2
-**STATUS:** PASS
+**SYSTEM STATE:**
+- Authority hierarchy normalized across all operational files
+- Team Lead / Orchestrator is now the sole runtime authority
+- GPT explicitly defined as external planning layer only
+
+**PRODUCT STATE:**
+- No product files touched. Pipeline logic untouched. No Shopify impact.
+
+**GPT REFERENCES AUDITED: YES**
 
 **FILES UPDATED:**
-- `bridge/task-format.md` — added `awaiting_approval` to status values
-- `bridge/github-bridge.py` — added T3 + UNKNOWN tier enforcement (lines 156-197)
-- `docs/operations/bridge-runtime-status.md` — `awaiting_approval` already in status table
+1. `BABYMANIA-MASTER-PROMPT.md` — authority hierarchy expanded with all 5 roles (Team Lead, Workers, GPT, Telegram, אייל)
 
-**Already updated (before this task):**
-- `BABYMANIA-MASTER-PROMPT.md` — task format already has `APPROVAL_TIER` field
-- `bridge/task-format.md` — schema already has tier field + output format
-- `docs/management/approval-policy.md` — bridge section already documents the contract
-- `bridge/github-bridge.py` — `parse_approval_tier()` + `current_tier` in log/status already existed
+**FILES ALREADY NORMALIZED (by prior process):**
+2. `BABYMANIA-MASTER-PROMPT.md` — title, identity, bridge flow, approval tiers (already v2.0)
+3. `docs/management/approval-policy.md` — T1/T2/T3 protocols, escalation chain
+4. `bridge/EXECUTION_RULES.md` — command format header
+5. `bridge/task-format.md` — tier descriptions
+6. `docs/operations/bridge-operations-journal.md` — historical entries cleaned
+7. `docs/management/source-of-truth.md` — no GPT references found
 
-**What was added now (the enforcement):**
-1. **T3 gate** (line 157-176): If tier=T3, bridge writes `AWAITING_APPROVAL` to result, sets status to `awaiting_approval`, keeps task file intact, pushes to GitHub, and exits without running Claude
-2. **UNKNOWN fallback** (line 178-197): Missing tier defaults to T3 behavior (safe default)
-3. **Status value** `awaiting_approval` added to task-format.md
+**WHERE TEAM LEAD NOW REPLACES GPT:**
+| Location | Before | After |
+|----------|--------|-------|
+| Master prompt identity | GPT = מנהל פרויקט | Team Lead = runtime authority |
+| Approval tiers T1/T2 | GPT לבד / GPT + validator | Team Lead לבד / Team Lead + validator |
+| T2/T3 protocols | GPT בודק/מאשר/כותב | Team Lead בודק/מאשר/כותב |
+| Bridge flow | GPT כותב/קורא | Planning layer כותב/קורא |
+| Bridge file descriptions | GPT כותב/קורא | Team Lead / planning layer |
+| Execution rules | פורמט מ-GPT | פורמט מ-Team Lead |
+| Task format tiers | GPT מאשר | Team Lead מאשר |
 
-**WHERE APPROVAL_TIER IS NOW ENFORCED:**
-- `github-bridge.py` — runtime gate before Claude execution
-- `task-format.md` — schema definition (required field)
-- `approval-policy.md` — policy documentation
-- `BABYMANIA-MASTER-PROMPT.md` — task template
+**WHERE GPT STILL REMAINS BY DESIGN:**
+| Location | Reason |
+|----------|--------|
+| Master prompt line 15 | Explicitly defined as "planning layer outside runtime" |
+| management-journal.md line 62 | Historical entry — "לא למחוק היסטוריה" |
+| bridge/next-task.md | Current task name (meta-reference) |
+| bridge/task-log.md | Current task log entry |
 
-**RISK LEVEL:** Low — only adds a gate; does not change existing T0/T1/T2 execution flow
+**ISSUES FOUND:**
+- None. All operational files are consistent.
 
-**READY FOR STEP 4:** YES
+**RISK LEVEL:** LOW
+- Text-only changes in documentation/management files
+- No logic, config, pipeline, or Shopify changes
+- No breaking changes to any runtime behavior
+
+**SYSTEM AUTHORITY NORMALIZED: YES**
+
+**NEXT STEP:**
+- Update management-journal.md with entry documenting this normalization (T1)

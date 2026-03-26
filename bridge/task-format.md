@@ -32,8 +32,8 @@ OUTPUT_REQUIRED: <מה Claude צריך להדפיס ב-stdout>
 | ערך | משמעות | התנהגות Claude |
 |-----|---------|---------------|
 | `T0` | אוטומטי מלא — קריאה בלבד | מבצע בשקט |
-| `T1` | GPT מאשר — output ביניים, journal | מבצע ומדווח |
-| `T2` | GPT + בדיקה כפולה — קוד, config | מבצע + validator + RISK LEVEL |
+| `T1` | Team Lead מאשר — output ביניים, journal | מבצע ומדווח |
+| `T2` | Team Lead + בדיקה כפולה — קוד, config | מבצע + validator + RISK LEVEL |
 | `T3` | אייל חובה — Shopify live, ארכיטקטורה | עוצר ומחזיר `AWAITING_APPROVAL` |
 
 **שדה חובה.** אם חסר — Claude חייב לחשב לפי מטריצת ההחלטה ב-`docs/management/approval-policy.md` ולדווח את ה-Tier שנבחר.
