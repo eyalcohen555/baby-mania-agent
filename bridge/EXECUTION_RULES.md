@@ -42,7 +42,9 @@ NEXT STEP
 - לגעת בקבצים מחוץ לscope של המשימה
 - להציע שלבים נוספים מחוץ למשימה הנוכחית
 
-## פורמט פקודה חובה מ-Team Lead
+## פורמט פקודה חובה (מ-bridge/next-task.md)
+> **הערה:** Team Lead = Claude Code session המבצע. הפקודה מגיעה דרך bridge/next-task.md (נכתב ע"י GPT/אייל), לא מ-agent נפרד.
+
 SCOPE: [שם המשימה המדויקת]
 INPUT REQUIRED: [קבצים שחייבים להיות קיימים]
 OUTPUT EXPECTED: [מה צריך להיווצר]
