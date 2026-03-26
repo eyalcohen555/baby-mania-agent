@@ -19,6 +19,7 @@ CLAUDE = r"C:\Users\3024e\AppData\Roaming\npm\claude.cmd"
 RESPONSE_TIMEOUT = 300   # 5 minutes max wait for Telegram response
 RESPONSE_POLL    = 5     # poll every 5 seconds
 MAX_ROUNDS       = 5     # safety cap — max Claude re-runs per task
+CLAUDE_TIMEOUT   = 600   # 10 minutes max for a single Claude run
 
 def generate_task_id() -> str:
     """Generate a unique task_id based on timestamp."""
@@ -200,65 +201,102 @@ print("מריץ Claude Code...")
 log_task(task, f"STARTED [{current_task_id}] [TIER:{current_tier}]")
 write_status("running", task[:80])
 
-# 3. הרץ Claude Code — עם wait-loop לתשובת טלגרם
-output = ""
-for round_num in range(1, MAX_ROUNDS + 1):
-    print(f"\n--- Round {round_num}/{MAX_ROUNDS} ---")
-    result = subprocess.run(
-        [CLAUDE, "--print", "--dangerously-skip-permissions", task],
-        cwd=REPO,
-        capture_output=True,
-        text=True,
-        encoding="utf-8"
-    )
-    output = result.stdout if result.stdout else result.stderr
+try:
+    # 3. הרץ Claude Code — עם wait-loop לתשובת טלגרם
+    output = ""
+    for round_num in range(1, MAX_ROUNDS + 1):
+        print(f"\n--- Round {round_num}/{MAX_ROUNDS} ---")
+        try:
+            result = subprocess.run(
+                [CLAUDE, "--print", "--dangerously-skip-permissions", task],
+                cwd=REPO,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                timeout=CLAUDE_TIMEOUT
+            )
+        except subprocess.TimeoutExpired:
+            print(f"❌ Claude Code timeout after {CLAUDE_TIMEOUT}s (round {round_num})")
+            write_status("error", f"Claude timeout after {CLAUDE_TIMEOUT}s")
+            with open(RESULT_FILE, "w", encoding="utf-8") as f:
+                f.write(f"task_id: {current_task_id}\n---\nERROR: Claude Code timed out after {CLAUDE_TIMEOUT}s\n")
+            log_task(task, f"TIMEOUT [{current_task_id}]")
+            try:
+                os.remove(TASK_FILE)
+            except OSError:
+                pass
+            exit(1)
 
-    # שמור תוצאה ביניים — עם task_id בראש הקובץ
-    with open(RESULT_FILE, "w", encoding="utf-8") as f:
-        f.write(f"task_id: {current_task_id}\n---\n{output}")
+        output = result.stdout if result.stdout else result.stderr
 
-    # בדוק אם קלוד ממתין לתשובה מטלגרם
-    event = needs_response(output)
-    if not event:
-        print(f"✅ Claude סיים ללא המתנה (round {round_num})")
-        break
+        # שמור תוצאה ביניים — עם task_id בראש הקובץ
+        with open(RESULT_FILE, "w", encoding="utf-8") as f:
+            f.write(f"task_id: {current_task_id}\n---\n{output}")
 
-    # ממתין לתשובת טלגרם
-    response = wait_for_telegram_response(event)
-    if not response:
-        write_status("error", f"Telegram response timeout after {event}")
-        print(f"❌ timeout — אין תשובה מטלגרם. עוצר.")
-        os.remove(TASK_FILE)
+        # בדוק אם קלוד ממתין לתשובה מטלגרם
+        event = needs_response(output)
+        if not event:
+            print(f"✅ Claude סיים ללא המתנה (round {round_num})")
+            break
+
+        # ממתין לתשובת טלגרם
+        response = wait_for_telegram_response(event)
+        if not response:
+            write_status("error", f"Telegram response timeout after {event}")
+            print(f"❌ timeout — אין תשובה מטלגרם. עוצר.")
+            try:
+                os.remove(TASK_FILE)
+            except OSError:
+                pass
+            exit(1)
+
+        # תשובה התקבלה — נקה את הקובץ ורוץ שוב (קלוד יקרא telegram-response.md)
+        # הקובץ נשמר ב-RESPONSE_FILE כדי שקלוד יוכל לקרוא אותו בסיבוב הבא
+        print(f"🔄 מריץ שוב עם תשובת טלגרם (round {round_num + 1})...")
+        write_status("running", f"re-run after {event} response (round {round_num + 1})")
+    else:
+        print(f"⚠️ הגענו למקסימום {MAX_ROUNDS} סיבובים — עוצר")
+        write_status("error", f"max rounds ({MAX_ROUNDS}) reached")
+        try:
+            os.remove(TASK_FILE)
+        except OSError:
+            pass
         exit(1)
 
-    # תשובה התקבלה — נקה את הקובץ ורוץ שוב (קלוד יקרא telegram-response.md)
-    # הקובץ נשמר ב-RESPONSE_FILE כדי שקלוד יוכל לקרוא אותו בסיבוב הבא
-    print(f"🔄 מריץ שוב עם תשובת טלגרם (round {round_num + 1})...")
-    write_status("running", f"re-run after {event} response (round {round_num + 1})")
-else:
-    print(f"⚠️ הגענו למקסימום {MAX_ROUNDS} סיבובים — עוצר")
-    write_status("error", f"max rounds ({MAX_ROUNDS}) reached")
-    os.remove(TASK_FILE)
-    exit(1)
+    # 4. נקה response file לאחר השלמת המשימה
+    clear_response()
 
-# 4. נקה response file לאחר השלמת המשימה
-clear_response()
+    # 5. נקה משימה רק אחרי שהתוצאה נכתבה
+    try:
+        os.remove(TASK_FILE)
+    except OSError:
+        pass
 
-# 5. נקה משימה רק אחרי שהתוצאה נכתבה
-os.remove(TASK_FILE)
+    log_task(task, f"DONE [{current_task_id}] [TIER:{current_tier}]")
+    write_status("done", "result written, task removed")
 
-log_task(task, f"DONE [{current_task_id}] [TIER:{current_tier}]")
-write_status("done", "result written, task removed")
+    # 6. Push תוצאה + status ל-GitHub
+    subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+    commit = subprocess.run(
+        ["git", "commit", "-m", f"bridge: task result [{current_task_id}]"],
+        cwd=REPO, capture_output=True, text=True
+    )
+    if commit.returncode != 0:
+        print(f"⚠️ git commit: {commit.stderr.strip()}")
 
-# 6. Push תוצאה + status ל-GitHub
-subprocess.run(["git", "add", "bridge/"], cwd=REPO)
-subprocess.run(["git", "commit", "-m", f"bridge: task result [{current_task_id}]"], cwd=REPO)
-push = subprocess.run(["git", "push"], cwd=REPO)
+    push = subprocess.run(["git", "push"], cwd=REPO, capture_output=True, text=True)
+    if push.returncode != 0:
+        write_status("error", f"push failed: {push.stderr.strip()[:80]}")
+        print(f"❌ git push failed: {push.stderr.strip()}")
+    else:
+        print("✅ תוצאה הועלתה ל-GitHub")
 
-if push.returncode != 0:
-    write_status("error", "push failed after task completion")
-else:
-    write_status("pushed")
+finally:
+    # ALWAYS transition to idle — prevents stuck "running" status
+    finished_id = current_task_id
+    current_task_id = ""
+    current_tier = ""
+    write_status("idle", f"task {finished_id} finished")
 
-print("סיים! תוצאה הועלתה ל-GitHub")
+print("סיים!")
 print("=" * 50)
