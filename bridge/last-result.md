@@ -1,9 +1,6 @@
-task_id: 20260327-010055
-round: 1
+task_id: 20260327-010811
+approval_tier: UNKNOWN (defaulted to T3)
 ---
-**DONE.**
-
-- `telegram-response.md` contained `APPROVE` — approval confirmed
-- `approval-test-output.txt` created with exactly `APPROVED-ONCE`
-- File didn't exist before — no duplicates
-- `bridge/last-result.md` updated with completion status
+STATUS: AWAITING_APPROVAL
+REASON: APPROVAL_TIER חסר — ברירת מחדל T3
+TASK_PREVIEW: משימה חדשה בדיקה בלבד

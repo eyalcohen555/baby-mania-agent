@@ -1,9 +1,9 @@
-watchdog_time:     2026-03-27 00:51:33
+watchdog_time:     2026-03-27 01:05:34
 bridge_status:     starting
-task_id:           20260327-004743
+task_id:           20260327-010055
 stage:             DONE
 waiting_for:       —
-state_age_seconds: 197
+state_age_seconds: 213
 suspected_stuck:   NO
 reminder_sent:     YES
-task_preview:      TASK: בדיקת מעגל question מלא
+task_preview:      TASK: בדיקת approval מלא ללא כפילות — שלב 2
