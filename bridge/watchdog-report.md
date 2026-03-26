@@ -1,9 +1,9 @@
-watchdog_time:     2026-03-27 01:09:51
+watchdog_time:     2026-03-27 01:10:21
 bridge_status:     awaiting_approval
 task_id:           20260327-010055
 stage:             DONE
 waiting_for:       —
-state_age_seconds: 470
+state_age_seconds: 500
 suspected_stuck:   YES
 reminder_sent:     YES
 task_preview:      TASK: בדיקת approval מלא ללא כפילות — שלב 2
