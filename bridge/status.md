@@ -1,5 +1,5 @@
-status: done
-time: 2026-03-26 23:15:58
-task_id: 20260326-231333
+status: awaiting_approval
+time: 2026-03-26 23:40:37
+task_id: 20260326-234037
 approval_tier: T3
-detail: result written, task removed
+detail: T3 — waiting for Eyal approval
