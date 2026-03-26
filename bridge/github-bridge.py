@@ -173,8 +173,8 @@ print(f"\nמשימה נמצאה — task_id: {current_task_id} | tier: {current_
 
 # 2b. T3 enforcement — עצירה מלאה עד אישור אייל
 if current_tier == "T3":
-    print("🛑 APPROVAL_TIER: T3 — נדרש אישור אייל. לא מבצע.")
-    log_task(task, f"BLOCKED_T3 [{current_task_id}]")
+    print("🛑 APPROVAL_TIER: T3 — נדרש אישור אייל לפני ביצוע.")
+    log_task(task, f"AWAITING_APPROVAL_T3 [{current_task_id}]")
     awaiting_msg = (
         f"task_id: {current_task_id}\n"
         f"approval_tier: T3\n"
@@ -186,12 +186,27 @@ if current_tier == "T3":
     with open(RESULT_FILE, "w", encoding="utf-8") as f:
         f.write(awaiting_msg)
     write_status("awaiting_approval", "T3 — waiting for Eyal approval")
-    # Do NOT remove task file — task stays for retry after approval
     subprocess.run(["git", "add", "bridge/"], cwd=REPO)
     subprocess.run(["git", "commit", "-m", f"bridge: T3 awaiting approval [{current_task_id}]"], cwd=REPO)
     subprocess.run(["git", "push"], cwd=REPO)
-    print("משימה ממתינה לאישור — task file נשמר.")
-    exit(0)
+    # Wait for Telegram approval before proceeding
+    t3_response = wait_for_telegram_response("T3_APPROVAL")
+    if not t3_response:
+        write_status("blocked", f"T3 approval timeout — task {current_task_id}")
+        log_task(task, f"BLOCKED_T3_TIMEOUT [{current_task_id}]")
+        print("⏰ T3 approval timed out — task blocked.")
+        exit(1)
+    t3_action = parse_response_field(t3_response, "action").lower()
+    if t3_action not in ("approve", "approved", "yes"):
+        write_status("blocked", f"T3 rejected by Eyal — task {current_task_id}")
+        log_task(task, f"BLOCKED_T3_REJECTED [{current_task_id}]")
+        clear_response()
+        print(f"🚫 T3 rejected (action={t3_action!r}) — task blocked.")
+        exit(1)
+    clear_response()
+    print(f"✅ T3 approved — ממשיך בביצוע המשימה.")
+    log_task(task, f"T3_APPROVED [{current_task_id}]")
+    # Fall through to team_lead execution below
 
 # 2c. UNKNOWN tier — treat as T3 (safe default)
 if current_tier == "UNKNOWN":
