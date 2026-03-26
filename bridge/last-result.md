@@ -1,6 +1,3 @@
-task_id: 20260327-011744
-approval_tier: UNKNOWN (defaulted to T3)
+task_id: 20260327-011740
 ---
-STATUS: AWAITING_APPROVAL
-REASON: APPROVAL_TIER חסר — ברירת מחדל T3
-TASK_PREVIEW: משימה חדשה בדיקה בלבד
+הבנתי — משימה חדשה, בדיקה בלבד. מוכן לקבל הוראות.
