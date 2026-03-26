@@ -101,9 +101,19 @@ def log_task(task_text, action):
     except Exception as e:
         print(f"[task-log] write error: {e}")
 
+def parse_response_field(content: str, field: str) -> str:
+    """Extract a field from telegram-response.md content."""
+    for line in content.splitlines():
+        line = line.strip()
+        if line.lower().startswith(f"{field.lower()}:"):
+            return line.split(":", 1)[1].strip()
+    return ""
+
+
 def wait_for_telegram_response(event_type: str) -> str:
     """
     Wait up to RESPONSE_TIMEOUT seconds for telegram-response.md to be populated.
+    Validates task_id — stale responses (wrong task_id) are discarded, not consumed.
     Returns the response content, or empty string on timeout.
     """
     write_status("waiting_response", f"Waiting for Telegram {event_type}")
@@ -112,7 +122,14 @@ def wait_for_telegram_response(event_type: str) -> str:
     while time.time() < deadline:
         content = read_response()
         if content:
-            print(f"✅ תשובה התקבלה מטלגרם:\n{content}")
+            resp_task_id = parse_response_field(content, "task_id")
+            # Validate task_id — discard stale responses
+            if resp_task_id and resp_task_id != current_task_id:
+                print(f"⚠️ תגובה ישנה/שגויה — task_id={resp_task_id!r} (מצפה: {current_task_id!r}) — מנקה")
+                clear_response()
+                time.sleep(RESPONSE_POLL)
+                continue
+            print(f"✅ תשובה תקינה מטלגרם (task_id={resp_task_id!r}):\n{content}")
             return content
         time.sleep(RESPONSE_POLL)
     print("⏰ תם הזמן — לא התקבלה תשובה מטלגרם")

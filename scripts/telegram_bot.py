@@ -94,6 +94,7 @@ bot = telebot.TeleBot(BOT_TOKEN, parse_mode=None)
 _reply_lock           = threading.Lock()
 _waiting_for_reply    = False   # True when user clicked "שלח תשובה"
 _pending_event_type   = ""      # APPROVAL | QUESTION | BLOCKED — set when buttons are sent
+_pending_task_id      = ""      # task_id that triggered the current prompt
 _pending_task_text    = ""      # Phase 3: task text waiting for confirmation
 
 def _set_waiting(val):
@@ -113,6 +114,15 @@ def _set_pending_event(event_type):
 def _get_pending_event_type():
     with _reply_lock:
         return _pending_event_type
+
+def _set_pending_task_id(tid: str):
+    global _pending_task_id
+    with _reply_lock:
+        _pending_task_id = tid
+
+def _get_pending_task_id() -> str:
+    with _reply_lock:
+        return _pending_task_id
 
 def _set_pending_task(text):
     global _pending_task_text
@@ -201,14 +211,15 @@ def write_response(action, content=""):
         print(f"[response] blocked overwrite — unread response exists")
         return
 
-    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    ts         = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     event_type = _get_pending_event_type()
+    task_id    = _get_pending_task_id()
     try:
         RESPONSE_FILE.write_text(
-            f"time: {ts}\ntype: {event_type}\naction: {action}\ncontent: {content}\n",
+            f"time: {ts}\ntype: {event_type}\ntask_id: {task_id}\naction: {action}\ncontent: {content}\n",
             encoding="utf-8",
         )
-        print(f"[response] wrote type={event_type!r} action={action!r} content={content[:60]!r}")
+        print(f"[response] wrote type={event_type!r} task_id={task_id!r} action={action!r} content={content[:60]!r}")
     except Exception as e:
         print(f"[response] write error: {e}")
         send(f"⚠️ שגיאה בכתיבת תגובה: {e}")
@@ -408,39 +419,53 @@ def detect_result_event(content):
 
 # ── Phase 2 button senders ─────────────────────────────────────────────────────
 
+def _capture_pending_task_id():
+    """Read current task_id from status.md and store as pending."""
+    status_content = read_file(STATUS_FILE)
+    tid = extract_field(status_content, "task_id")
+    _set_pending_task_id(tid)
+    return tid
+
+
 def send_approval_prompt(context_text):
     """⚠️ APPROVAL NEEDED — כפתורים: אשר / דחה"""
     _set_pending_event("APPROVAL")
+    tid = _capture_pending_task_id()
     markup = telebot.types.InlineKeyboardMarkup()
     markup.row(
         telebot.types.InlineKeyboardButton("✅ אשר",  callback_data="approve"),
         telebot.types.InlineKeyboardButton("❌ דחה",  callback_data="reject"),
     )
     snippet = extract_snippet(context_text, "APPROVAL_NEEDED")
-    send_with_markup(f"⚠️ נדרש אישור שלך\n\nעל מה האישור:\n{snippet}", markup)
+    id_line = f"task: {tid}\n" if tid else ""
+    send_with_markup(f"⚠️ נדרש אישור שלך\n{id_line}\nעל מה האישור:\n{snippet}", markup)
 
 
 def send_question_prompt(context_text):
     """❓ QUESTION — כפתורים: שלח תשובה / דלג"""
     _set_pending_event("QUESTION")
+    tid = _capture_pending_task_id()
     markup = telebot.types.InlineKeyboardMarkup()
     markup.row(
         telebot.types.InlineKeyboardButton("✏️ שלח תשובה", callback_data="reply"),
         telebot.types.InlineKeyboardButton("⏭️ דלג",        callback_data="skip"),
     )
     snippet = extract_snippet(context_text, "QUESTION")
-    send_with_markup(f"❓ יש שאלה שמחכה לך\n\nהשאלה:\n{snippet}", markup)
+    id_line = f"task: {tid}\n" if tid else ""
+    send_with_markup(f"❓ יש שאלה שמחכה לך\n{id_line}\nהשאלה:\n{snippet}", markup)
 
 
 def send_blocked_prompt(context_text):
     """❌ BLOCKED — כפתורים: נסה שוב / עצור"""
     _set_pending_event("BLOCKED")
+    tid = _capture_pending_task_id()
     markup = telebot.types.InlineKeyboardMarkup()
     markup.row(
         telebot.types.InlineKeyboardButton("🔄 נסה שוב", callback_data="retry"),
         telebot.types.InlineKeyboardButton("🛑 עצור",    callback_data="stop"),
     )
-    send_with_markup(f"❌ המשימה נעצרה\n\n{context_text}", markup)
+    id_line = f"task: {tid}\n" if tid else ""
+    send_with_markup(f"❌ המשימה נעצרה\n{id_line}\n{context_text}", markup)
 
 
 # ── Phase 2 callback handler ───────────────────────────────────────────────────
@@ -687,14 +712,26 @@ def cmd_result(message):
 
 @bot.message_handler(commands=["cancel"])
 def cmd_cancel(message):
-    """Cancel a queued (not yet running) task."""
+    """Cancel a queued or blocked task."""
     if str(message.chat.id) != str(CHAT_ID):
         return
+    status_content = read_file(STATUS_FILE)
+    current_status, _ = parse_status(status_content)
+    task_id = extract_field(status_content, "task_id")
+
+    if current_status in ("running", "waiting_response"):
+        send(f"⚠️ משימה רצה כרגע [{task_id}] — לא ניתן לבטל. שלח 'stop' דרך הכפתורים אם נחסמה.")
+        return
+
     removed = cancel_task()
     if removed:
-        send(f"🗑️ משימה בוטלה:\n{removed[:200]}")
+        id_str = f" [{task_id}]" if task_id else ""
+        # Write CANCELLED to response file so bridge can exit cleanly if waiting
+        write_response("stop")
+        log_task(removed, f"CANCELLED_BY_USER{id_str}")
+        send(f"🗑️ משימה בוטלה{id_str}:\n{removed[:200]}")
     else:
-        send("אין משימה בתור לביטול")
+        send("אין משימה בתור לביטול — Bridge במצב idle")
 
 
 @bot.message_handler(commands=["log"])
