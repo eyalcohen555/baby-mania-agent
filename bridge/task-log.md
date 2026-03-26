@@ -123,3 +123,5 @@
 | 2026-03-27 00:47:14 | BLOCKED_UNKNOWN_TIER [20260327-004714] | TASK: בדיקת מעגל question מלא |
 | 2026-03-27 00:47:24 | BLOCKED_UNKNOWN_TIER [20260327-004724] | TASK: בדיקת מעגל question מלא |
 | 2026-03-27 00:47:33 | BLOCKED_UNKNOWN_TIER [20260327-004733] | TASK: בדיקת מעגל question מלא |
+| 2026-03-27 00:47:43 | STARTED [20260327-004743] [TIER:T1] | TASK: בדיקת מעגל question מלא |
+| 2026-03-27 00:48:16 | DONE [20260327-004743] [TIER:T1] | TASK: בדיקת מעגל question מלא |

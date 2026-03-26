@@ -1,9 +1,9 @@
-task_id: 20260327-004733
-approval_tier: UNKNOWN (defaulted to T3)
+task_id: 20260327-004743
+round: 1
 ---
-STATUS: AWAITING_APPROVAL
-REASON: APPROVAL_TIER חסר — ברירת מחדל T3
-TASK_PREVIEW: TASK: בדיקת מעגל question מלא
-LAYER: 1
-BLOCKER: חסר ערך לביצוע
-ACTION: שאל שאלה אחת בלבד ב-bridge/last-result.md: "מה הערך לכתיבה בתוך test-question-output.txt?" ואז עצור. אל תיצור את הקובץ לפני שמתקב
+שלב 1 הושלם:
+- **נכתבה שאלה** ב-`bridge/last-result.md` עם `STATUS: QUESTION`
+- **ממתין לתשובה** ב-`bridge/telegram-response.md`
+- **לא נוצר** `test-question-output.txt` — כנדרש
+
+כשתגיע תשובה דרך טלגרם ל-`telegram-response.md`, יש להריץ שוב כדי להשלים את המעגל (כתיבת הערך ל-`test-question-output.txt`).
