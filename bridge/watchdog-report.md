@@ -1,9 +1,9 @@
-watchdog_time:     2026-03-27 00:45:33
+watchdog_time:     2026-03-27 00:46:03
 bridge_status:     awaiting_approval
 task_id:           20260327-002130
 stage:             BLOCKED
 waiting_for:       telegram_blocked
-state_age_seconds: 1375
+state_age_seconds: 1405
 suspected_stuck:   YES
 reminder_sent:     YES
 task_preview:      APPROVAL_TIER: T3
