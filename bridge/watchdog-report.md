@@ -1,9 +1,9 @@
-watchdog_time:     2026-03-27 00:12:00
+watchdog_time:     2026-03-27 00:38:02
 bridge_status:     starting
-task_id:           20260326-234346
+task_id:           20260327-002130
 stage:             BLOCKED
-waiting_for:       —
-state_age_seconds: 1681
+waiting_for:       telegram_blocked
+state_age_seconds: 924
 suspected_stuck:   YES
 reminder_sent:     YES
-task_preview:      TASK: Final E2E test — write checkpoint file
+task_preview:      APPROVAL_TIER: T3

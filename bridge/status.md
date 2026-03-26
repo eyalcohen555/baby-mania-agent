@@ -1,5 +1,5 @@
-status: done
-time: 2026-03-27 00:22:38
-task_id: 20260327-001812
-approval_tier: T3
-detail: result written, task removed
+status: awaiting_approval
+time: 2026-03-27 00:39:01
+task_id: 20260327-003901
+approval_tier: UNKNOWN
+detail: UNKNOWN tier — defaulted to T3
