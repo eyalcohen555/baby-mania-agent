@@ -187,9 +187,10 @@ if current_tier == "T3":
         f.write(awaiting_msg)
     write_status("awaiting_approval", "T3 — waiting for Eyal approval")
     # Do NOT remove task file — task stays for retry after approval
-    subprocess.run(["git", "add", "bridge/"], cwd=REPO)
-    subprocess.run(["git", "commit", "-m", f"bridge: T3 awaiting approval [{current_task_id}]"], cwd=REPO)
-    subprocess.run(["git", "push"], cwd=REPO)
+    if not _args.no_push:
+        subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+        subprocess.run(["git", "commit", "-m", f"bridge: T3 awaiting approval [{current_task_id}]"], cwd=REPO)
+        subprocess.run(["git", "push"], cwd=REPO)
     print("משימה ממתינה לאישור — task file נשמר.")
     exit(0)
 
@@ -208,9 +209,10 @@ if current_tier == "UNKNOWN":
     with open(RESULT_FILE, "w", encoding="utf-8") as f:
         f.write(awaiting_msg)
     write_status("awaiting_approval", "UNKNOWN tier — defaulted to T3")
-    subprocess.run(["git", "add", "bridge/"], cwd=REPO)
-    subprocess.run(["git", "commit", "-m", f"bridge: missing tier, blocked [{current_task_id}]"], cwd=REPO)
-    subprocess.run(["git", "push"], cwd=REPO)
+    if not _args.no_push:
+        subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+        subprocess.run(["git", "commit", "-m", f"bridge: missing tier, blocked [{current_task_id}]"], cwd=REPO)
+        subprocess.run(["git", "push"], cwd=REPO)
     print("משימה ממתינה — הוסף APPROVAL_TIER למשימה.")
     exit(0)
 
