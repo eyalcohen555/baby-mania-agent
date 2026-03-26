@@ -1,39 +1,18 @@
-I notice lines 33-36 look different from what I wrote - it seems the `write_status` was modified to use conditional writing. Let me check - actually that looks like it was already changed with an `if` block. But my edit used a simple f-string with `task_id: {current_task_id}`. Let me re-read those specific lines to be sure.
-
-The file looks clean. The `write_status` has the conditional `task_id` line (lines 33-36), which is actually better than always writing it. That's fine.
-
-Here's the summary:
-
+task_id: 20260326-130622
 ---
+Done. Here's a summary of what was set up:
 
-## SYSTEM STATE
-Bridge one-shot mode with Telegram response loop.
+## מדיניות אישורים מדורגת — 4 Tiers
 
-## PRODUCT STATE
-`task_id` flow added to bridge.
+| Tier | מי מאשר | מתי |
+|------|---------|-----|
+| **T0** | אף אחד (auto) | קריאה, audit, validator, GET מ-Shopify |
+| **T1** | GPT בלבד | output ביניים, journal, dry-run, writing agents |
+| **T2** | GPT + validator | agent prompts, sections, pipeline בודד, git push |
+| **T3** | **אייל חובה** | Shopify live, config/orchestrator, bulk >5, ביגוד production |
 
-## ISSUES FOUND
-None - implementation is minimal and additive.
-
-## RISK LEVEL: LOW
-
-## NEXT STEP
-Step 2 - integrate `task_id` into Telegram bot notifications.
-
----
-
-## TASK_ID FLOW ADDED: YES
-
-## FILES UPDATED
-| File | Change |
-|------|--------|
-| `bridge/github-bridge.py` | `generate_task_id()`, `current_task_id` global, task_id in status/result/log |
-| `docs/operations/bridge-runtime-status.md` | Documented `task_id` field |
-
-## WHERE TASK_ID NOW APPEARS
-1. **`status.md`** - `task_id:` line in every status write (when a task is active)
-2. **`last-result.md`** - `task_id: XXXXXXXX-HHMMSS` header before output
-3. **`task-log.md`** - `STARTED [task_id]` and `DONE [task_id]` entries
-4. **Console output** - `משימה נמצאה — task_id: XXXXXXXX-HHMMSS`
-
-## READY FOR STEP 2 (/task command): YES
+## קבצים שעודכנו:
+1. **`docs/management/approval-policy.md`** — מסמך מלא (source of truth) עם מטריצת החלטה, escalation rules, מקרי קצה, דוגמאות, וחיבור ל-Bridge
+2. **`BABYMANIA-MASTER-PROMPT.md`** — טבלת סיכום עם 4 tiers + כלל הסלמה
+3. **`bridge/EXECUTION_RULES.md`** — הוספת בדיקת Tier כשלב ראשון חובה לפני כל פעולה
+4. **`docs/management/management-index.md`** — עודכן ל-T0/T1/T2/T3

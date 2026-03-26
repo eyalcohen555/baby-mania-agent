@@ -1,5 +1,13 @@
 # EXECUTION RULES — חובה בכל פקודה
 
+## בדיקת Approval Tier (חובה לפני כל פעולה)
+- זהה את ה-APPROVAL_TIER מהמשימה (T0/T1/T2/T3)
+- אם T3 ואין אישור אייל מפורש — עצור ודווח `AWAITING_APPROVAL`
+- אם T2 — בצע + הרץ validator + דווח RISK LEVEL
+- אם T0/T1 — בצע כרגיל
+- אם אין APPROVAL_TIER — חשב לפי מטריצת ההחלטה ב-`docs/management/approval-policy.md`
+- ראה מסמך מלא: `docs/management/approval-policy.md`
+
 ## סדר שלבים
 - לפני כל פעולה — בדוק שהקלט הנדרש קיים
 - אם קלט חסר — עצור ודווח MISSING_INPUT
