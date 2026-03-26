@@ -1,12 +1,12 @@
-task_id:        20260327-012641
-time:           2026-03-27 01:27:03
-stage:          BLOCKED
+task_id:        20260327-013440
+time:           2026-03-27 01:34:40
+stage:          RUNNING
 current_worker: claude-code
-round:          2 / 2
+round:          1 / 2
 completed:      —
-failed:         round-1:partial, round-2:false_success
+failed:         —
 blocked_reason: —
 waiting_for:    —
 next_action:    —
-final_verdict:  BLOCKED
-task_preview:   TASK: בדיקת כתיבה פשוטה
+final_verdict:  —
+task_preview:   TASK: בדיקת ביצוע מילולי מדויק
