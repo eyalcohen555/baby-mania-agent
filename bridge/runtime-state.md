@@ -1,12 +1,12 @@
-task_id:        20260326-224702
-time:           2026-03-26 22:48:07
-stage:          BLOCKED
+task_id:        20260326-231516
+time:           2026-03-26 23:15:58
+stage:          DONE
 current_worker: claude-code
-round:          2 / 2
-completed:      —
-failed:         round-1:false_success, round-2:false_success
+round:          1 / 2
+completed:      round-1
+failed:         —
 blocked_reason: —
 waiting_for:    —
-next_action:    —
-final_verdict:  BLOCKED
-task_preview:   TASK: E2E workflow test — APPROVAL exception
+next_action:    done
+final_verdict:  PASS
+task_preview:   TASK: E2E checkpoint — write status line

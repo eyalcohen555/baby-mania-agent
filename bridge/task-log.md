@@ -55,3 +55,6 @@
 | 2026-03-26 23:13:16 | BLOCKED_T3 [20260326-231316] | TASK: E2E checkpoint — write status line |
 | 2026-03-26 23:13:25 | AWAITING_APPROVAL_T3 [20260326-231325] | TASK: E2E checkpoint — write status line |
 | 2026-03-26 23:13:33 | AWAITING_APPROVAL_T3 [20260326-231333] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:15:16 | T3_APPROVED [20260326-231333] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:15:16 | STARTED [20260326-231333] [TIER:T3] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:15:58 | DONE [20260326-231333] [TIER:T3] | TASK: E2E checkpoint — write status line |
