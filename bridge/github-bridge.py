@@ -227,7 +227,31 @@ try:
                 pass
             exit(1)
 
-        output = result.stdout if result.stdout else result.stderr
+        output = (result.stdout or result.stderr or "").strip()
+
+        # Empty output — treat as FAILED, not silent success
+        if not output:
+            print(f"❌ Claude returned empty output (round {round_num}) — exit code: {result.returncode}")
+            empty_msg = (
+                f"task_id: {current_task_id}\n"
+                f"approval_tier: {current_tier}\n"
+                f"---\n"
+                f"STATUS: FAILED\n"
+                f"REASON: Claude returned empty stdout and empty stderr\n"
+                f"EXIT_CODE: {result.returncode}\n"
+            )
+            with open(RESULT_FILE, "w", encoding="utf-8") as f:
+                f.write(empty_msg)
+            log_task(task, f"FAILED_EMPTY [{current_task_id}]")
+            try:
+                os.remove(TASK_FILE)
+            except OSError:
+                pass
+            subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+            subprocess.run(["git", "commit", "-m", f"bridge: FAILED empty output [{current_task_id}]"], cwd=REPO)
+            subprocess.run(["git", "push"], cwd=REPO)
+            write_status("failed", f"empty output [{current_task_id}]")
+            exit(1)
 
         # שמור תוצאה ביניים — עם task_id בראש הקובץ
         with open(RESULT_FILE, "w", encoding="utf-8") as f:
@@ -292,11 +316,18 @@ try:
         print("✅ תוצאה הועלתה ל-GitHub")
 
 finally:
-    # ALWAYS transition to idle — prevents stuck "running" status
+    # ALWAYS transition out of "running" — prevents stuck status
+    # Only write idle here if we didn't already write a terminal status above
     finished_id = current_task_id
     current_task_id = ""
     current_tier = ""
-    write_status("idle", f"task {finished_id} finished")
+    try:
+        with open(STATUS_FILE, "r", encoding="utf-8") as f:
+            current_status = f.read()
+        if "status: running" in current_status or "status: starting" in current_status:
+            write_status("idle", f"task {finished_id} finished (fallback cleanup)")
+    except Exception:
+        write_status("idle", f"task {finished_id} finished (fallback cleanup)")
 
 print("סיים!")
 print("=" * 50)
