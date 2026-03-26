@@ -187,10 +187,9 @@ if current_tier == "T3":
         f.write(awaiting_msg)
     write_status("awaiting_approval", "T3 — waiting for Eyal approval")
     # Do NOT remove task file — task stays for retry after approval
-    if not _args.no_push:
-        subprocess.run(["git", "add", "bridge/"], cwd=REPO)
-        subprocess.run(["git", "commit", "-m", f"bridge: T3 awaiting approval [{current_task_id}]"], cwd=REPO)
-        subprocess.run(["git", "push"], cwd=REPO)
+    subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+    subprocess.run(["git", "commit", "-m", f"bridge: T3 awaiting approval [{current_task_id}]"], cwd=REPO)
+    subprocess.run(["git", "push"], cwd=REPO)
     print("משימה ממתינה לאישור — task file נשמר.")
     exit(0)
 

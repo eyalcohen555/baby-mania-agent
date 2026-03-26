@@ -25,3 +25,17 @@
 | 2026-03-26 22:46:55 | DONE [20260326-224651] [TIER:T2] | TASK: E2E workflow test — APPROVAL exception |
 | 2026-03-26 22:47:02 | STARTED [20260326-224702] [TIER:T2] | TASK: E2E workflow test — APPROVAL exception |
 | 2026-03-26 22:48:07 | DONE [20260326-224702] [TIER:T2] | TASK: E2E workflow test — APPROVAL exception |
+| 2026-03-26 23:09:50 | BLOCKED_T3 [20260326-230950] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:09:55 | BLOCKED_T3 [20260326-230955] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:09:56 | BLOCKED_T3 [20260326-230956] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:02 | BLOCKED_T3 [20260326-231002] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:09 | BLOCKED_T3 [20260326-231009] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:15 | BLOCKED_T3 [20260326-231015] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:22 | BLOCKED_T3 [20260326-231022] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:29 | BLOCKED_T3 [20260326-231029] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:35 | BLOCKED_T3 [20260326-231035] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:43 | BLOCKED_T3 [20260326-231043] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:50 | BLOCKED_T3 [20260326-231050] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:10:56 | BLOCKED_T3 [20260326-231056] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:11:03 | BLOCKED_T3 [20260326-231103] | TASK: E2E checkpoint — write status line |
+| 2026-03-26 23:11:09 | BLOCKED_T3 [20260326-231109] | TASK: E2E checkpoint — write status line |

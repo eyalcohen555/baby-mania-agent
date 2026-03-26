@@ -1,11 +1,12 @@
-task_id: 20260326-224702
-round: 2
+task_id: 20260326-231109
+approval_tier: T3
 ---
-Done. `bridge/last-result.md` contains the required APPROVAL NEEDED + STATUS: PASS text. No further actions taken.
-
----
-TELEGRAM_RESPONSE: time: 2026-03-26 22:47:28
-type: APPROVAL
-task_id: 20260326-224702
-action: approve
-content:
+STATUS: AWAITING_APPROVAL
+REASON: APPROVAL_TIER T3 — נדרש אישור אייל לפני ביצוע
+TASK_PREVIEW: TASK: E2E checkpoint — write status line
+LAYER: 1
+APPROVAL_TIER: T3
+BLOCKER: none
+ACTION: כתוב לקובץ bridge/e2e-checkpoint.txt את הטקסט הבא בדיוק:
+E2E_PASS: workflow test complete
+TIMESTAMP: use curre
