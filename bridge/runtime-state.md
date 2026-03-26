@@ -1,12 +1,12 @@
-task_id:        20260326-200158
-time:           2026-03-26 20:01:58
-stage:          DONE
+task_id:        20260326-224652
+time:           2026-03-26 22:46:55
+stage:          FAILED
 current_worker: claude-code
 round:          1 / 2
-completed:      round-1
-failed:         —
-blocked_reason: —
-waiting_for:    —
-next_action:    done
-final_verdict:  PASS
-task_preview:   TASK: בדיקת dry run
+completed:      —
+failed:         round-1:empty
+blocked_reason: Worker returned empty output
+waiting_for:    telegram_blocked
+next_action:    escalate
+final_verdict:  FAILED_EMPTY
+task_preview:   TASK: E2E workflow test — APPROVAL exception
