@@ -1,58 +1,47 @@
-task_id: 20260326-133316
+task_id: 20260326-134219
 ---
-Now let me write the result output.
+Now let me produce the bridge result output as required by the task.
 
 ---
 
-**SYSTEM STATE:**
-- Authority hierarchy normalized across all operational files
-- Team Lead / Orchestrator is now the sole runtime authority
-- GPT explicitly defined as external planning layer only
+## TASK RESULT
 
-**PRODUCT STATE:**
-- No product files touched. Pipeline logic untouched. No Shopify impact.
+**TASK_ID:** 2026-03-26-team-lead-input-model
+**APPROVAL_TIER:** T1
+**STATUS:** PASS
 
-**GPT REFERENCES AUDITED: YES**
+### SYSTEM STATE
+Spec document exists at `docs/management/team-lead-input-model.md` with all 3 layers fully defined. Telegram section updated to match real Phase 1-3 implementation.
 
-**FILES UPDATED:**
-1. `BABYMANIA-MASTER-PROMPT.md` — authority hierarchy expanded with all 5 roles (Team Lead, Workers, GPT, Telegram, אייל)
+### CHANGES MADE
+- Updated Telegram rules in Layer 1 (Manager Profile) to reflect actual implemented Phases 1-3 instead of placeholder "future" content
 
-**FILES ALREADY NORMALIZED (by prior process):**
-2. `BABYMANIA-MASTER-PROMPT.md` — title, identity, bridge flow, approval tiers (already v2.0)
-3. `docs/management/approval-policy.md` — T1/T2/T3 protocols, escalation chain
-4. `bridge/EXECUTION_RULES.md` — command format header
-5. `bridge/task-format.md` — tier descriptions
-6. `docs/operations/bridge-operations-journal.md` — historical entries cleaned
-7. `docs/management/source-of-truth.md` — no GPT references found
+### FILES UPDATED
+- `docs/management/team-lead-input-model.md` (Telegram section enhanced)
 
-**WHERE TEAM LEAD NOW REPLACES GPT:**
-| Location | Before | After |
-|----------|--------|-------|
-| Master prompt identity | GPT = מנהל פרויקט | Team Lead = runtime authority |
-| Approval tiers T1/T2 | GPT לבד / GPT + validator | Team Lead לבד / Team Lead + validator |
-| T2/T3 protocols | GPT בודק/מאשר/כותב | Team Lead בודק/מאשר/כותב |
-| Bridge flow | GPT כותב/קורא | Planning layer כותב/קורא |
-| Bridge file descriptions | GPT כותב/קורא | Team Lead / planning layer |
-| Execution rules | פורמט מ-GPT | פורמט מ-Team Lead |
-| Task format tiers | GPT מאשר | Team Lead מאשר |
+### RISK LEVEL
+**Low** — spec/design document only, no system files changed
 
-**WHERE GPT STILL REMAINS BY DESIGN:**
-| Location | Reason |
-|----------|--------|
-| Master prompt line 15 | Explicitly defined as "planning layer outside runtime" |
-| management-journal.md line 62 | Historical entry — "לא למחוק היסטוריה" |
-| bridge/next-task.md | Current task name (meta-reference) |
-| bridge/task-log.md | Current task log entry |
+### SPEC STATUS
 
-**ISSUES FOUND:**
-- None. All operational files are consistent.
+| Layer | Spec Ready | Fields Covered |
+|-------|-----------|---------------|
+| **Manager Profile** | YES | mission, authority (T0-T3), escalation rules, telegram rules (Phase 1-3), approval usage, hard rules, constraints |
+| **Task Packet** | YES | task goal, scope, workers allowed/forbidden, files allowed/forbidden, success conditions, stop conditions, priority, blocker, context |
+| **Runtime State** | YES | current stage, current worker, completed steps, blocked reason, waiting_for, next_action, health metrics, decision log, state transitions |
 
-**RISK LEVEL:** LOW
-- Text-only changes in documentation/management files
-- No logic, config, pipeline, or Shopify changes
-- No breaking changes to any runtime behavior
+### PROPOSED FILE NAMES
 
-**SYSTEM AUTHORITY NORMALIZED: YES**
+| Layer | File | Lifecycle |
+|-------|------|-----------|
+| L1 — Manager Profile | `teams/lead/manager-profile.yaml` | Persistent, rarely changes |
+| L2 — Task Packet | `bridge/next-task.md` (enhanced format) | Per-task |
+| L3 — Runtime State | `bridge/runtime-state.yaml` | Per-execution, cleared after done |
 
-**NEXT STEP:**
-- Update management-journal.md with entry documenting this normalization (T1)
+### WHAT MUST BE BUILT NEXT
+
+1. **Instantiate `teams/lead/manager-profile.yaml`** — convert spec to real YAML (T1)
+2. **Enhance bridge task parser** — support full Task Packet schema while keeping backwards compatibility (T2)
+3. **Build runtime-state writer** — Team Lead writes/reads state during execution (T2)
+4. **Wire into bridge.py** — load profile + parse enhanced packets (T2)
+5. **Dry-run test** — single shoes product, T1, full 3-layer flow (T2 first, T3 for publish)
