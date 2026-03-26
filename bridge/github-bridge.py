@@ -24,8 +24,19 @@ def generate_task_id() -> str:
     """Generate a unique task_id based on timestamp."""
     return datetime.now().strftime("%Y%m%d-%H%M%S")
 
+def parse_approval_tier(task_text: str) -> str:
+    """Extract APPROVAL_TIER from task text. Returns T0/T1/T2/T3 or 'UNKNOWN'."""
+    for line in task_text.splitlines():
+        stripped = line.strip()
+        if stripped.upper().startswith("APPROVAL_TIER:"):
+            value = stripped.split(":", 1)[1].strip().upper()
+            if value in ("T0", "T1", "T2", "T3"):
+                return value
+    return "UNKNOWN"
+
 # Current task_id — set when a task starts, empty otherwise
 current_task_id = ""
+current_tier = ""
 
 def write_status(state: str, detail: str = ""):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -33,6 +44,8 @@ def write_status(state: str, detail: str = ""):
         f.write(f"status: {state}\ntime: {ts}\n")
         if current_task_id:
             f.write(f"task_id: {current_task_id}\n")
+        if current_tier:
+            f.write(f"approval_tier: {current_tier}\n")
         f.write(f"detail: {detail}\n")
 
 def needs_response(output: str):
@@ -137,9 +150,54 @@ if not task:
     exit(0)
 
 current_task_id = generate_task_id()
-print(f"\nמשימה נמצאה — task_id: {current_task_id}")
+current_tier = parse_approval_tier(task)
+print(f"\nמשימה נמצאה — task_id: {current_task_id} | tier: {current_tier}")
+
+# 2b. T3 enforcement — עצירה מלאה עד אישור אייל
+if current_tier == "T3":
+    print("🛑 APPROVAL_TIER: T3 — נדרש אישור אייל. לא מבצע.")
+    log_task(task, f"BLOCKED_T3 [{current_task_id}]")
+    awaiting_msg = (
+        f"task_id: {current_task_id}\n"
+        f"approval_tier: T3\n"
+        f"---\n"
+        f"STATUS: AWAITING_APPROVAL\n"
+        f"REASON: APPROVAL_TIER T3 — נדרש אישור אייל לפני ביצוע\n"
+        f"TASK_PREVIEW: {task[:200]}\n"
+    )
+    with open(RESULT_FILE, "w", encoding="utf-8") as f:
+        f.write(awaiting_msg)
+    write_status("awaiting_approval", "T3 — waiting for Eyal approval")
+    # Do NOT remove task file — task stays for retry after approval
+    subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+    subprocess.run(["git", "commit", "-m", f"bridge: T3 awaiting approval [{current_task_id}]"], cwd=REPO)
+    subprocess.run(["git", "push"], cwd=REPO)
+    print("משימה ממתינה לאישור — task file נשמר.")
+    exit(0)
+
+# 2c. UNKNOWN tier — treat as T3 (safe default)
+if current_tier == "UNKNOWN":
+    print("⚠️ APPROVAL_TIER חסר — מתייחס כ-T3 (ברירת מחדל בטוחה)")
+    log_task(task, f"BLOCKED_UNKNOWN_TIER [{current_task_id}]")
+    awaiting_msg = (
+        f"task_id: {current_task_id}\n"
+        f"approval_tier: UNKNOWN (defaulted to T3)\n"
+        f"---\n"
+        f"STATUS: AWAITING_APPROVAL\n"
+        f"REASON: APPROVAL_TIER חסר — ברירת מחדל T3\n"
+        f"TASK_PREVIEW: {task[:200]}\n"
+    )
+    with open(RESULT_FILE, "w", encoding="utf-8") as f:
+        f.write(awaiting_msg)
+    write_status("awaiting_approval", "UNKNOWN tier — defaulted to T3")
+    subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+    subprocess.run(["git", "commit", "-m", f"bridge: missing tier, blocked [{current_task_id}]"], cwd=REPO)
+    subprocess.run(["git", "push"], cwd=REPO)
+    print("משימה ממתינה — הוסף APPROVAL_TIER למשימה.")
+    exit(0)
+
 print("מריץ Claude Code...")
-log_task(task, f"STARTED [{current_task_id}]")
+log_task(task, f"STARTED [{current_task_id}] [TIER:{current_tier}]")
 write_status("running", task[:80])
 
 # 3. הרץ Claude Code — עם wait-loop לתשובת טלגרם
@@ -189,7 +247,7 @@ clear_response()
 # 5. נקה משימה רק אחרי שהתוצאה נכתבה
 os.remove(TASK_FILE)
 
-log_task(task, f"DONE [{current_task_id}]")
+log_task(task, f"DONE [{current_task_id}] [TIER:{current_tier}]")
 write_status("done", "result written, task removed")
 
 # 6. Push תוצאה + status ל-GitHub
