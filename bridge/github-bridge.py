@@ -197,73 +197,76 @@ if current_tier == "UNKNOWN":
     print("משימה ממתינה — הוסף APPROVAL_TIER למשימה.")
     exit(0)
 
-print("מריץ Claude Code...")
+print("מריץ Team Lead...")
 log_task(task, f"STARTED [{current_task_id}] [TIER:{current_tier}]")
 write_status("running", task[:80])
 
+TL_TIMEOUT = CLAUDE_TIMEOUT + 120  # buffer for Team Lead decision overhead
+
 try:
-    # 3. הרץ Claude Code — עם wait-loop לתשובת טלגרם
-    output = ""
-    for round_num in range(1, MAX_ROUNDS + 1):
-        print(f"\n--- Round {round_num}/{MAX_ROUNDS} ---")
+    # 3. הרץ Team Lead במקום קריאה ישירה ל-Claude
+    # team_lead.py כותב ל-RESULT_FILE ול-runtime-state.md בעצמו
+    # stdout מכיל summary מובנה: STATUS / VERDICT / SUMMARY
+    try:
+        tl = subprocess.run(
+            [sys.executable,
+             os.path.join(REPO, "teams", "team-lead", "team_lead.py"),
+             "--task", TASK_FILE],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            timeout=TL_TIMEOUT,
+        )
+    except subprocess.TimeoutExpired:
+        print(f"❌ Team Lead timeout after {TL_TIMEOUT}s")
+        write_status("error", f"Team Lead timeout after {TL_TIMEOUT}s")
+        with open(RESULT_FILE, "w", encoding="utf-8") as f:
+            f.write(f"task_id: {current_task_id}\n---\nERROR: Team Lead timed out after {TL_TIMEOUT}s\n")
+        log_task(task, f"TIMEOUT [{current_task_id}]")
         try:
-            result = subprocess.run(
-                [CLAUDE, "--print", "--dangerously-skip-permissions", task],
-                cwd=REPO,
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-                timeout=CLAUDE_TIMEOUT
-            )
-        except subprocess.TimeoutExpired:
-            print(f"❌ Claude Code timeout after {CLAUDE_TIMEOUT}s (round {round_num})")
-            write_status("error", f"Claude timeout after {CLAUDE_TIMEOUT}s")
-            with open(RESULT_FILE, "w", encoding="utf-8") as f:
-                f.write(f"task_id: {current_task_id}\n---\nERROR: Claude Code timed out after {CLAUDE_TIMEOUT}s\n")
-            log_task(task, f"TIMEOUT [{current_task_id}]")
-            try:
-                os.remove(TASK_FILE)
-            except OSError:
-                pass
-            exit(1)
+            os.remove(TASK_FILE)
+        except OSError:
+            pass
+        exit(1)
 
-        output = (result.stdout or result.stderr or "").strip()
+    # stdout = structured summary from team_lead (STATUS / VERDICT / SUMMARY)
+    tl_stdout = (tl.stdout or tl.stderr or "").strip()
 
-        # Empty output — treat as FAILED, not silent success
-        if not output:
-            print(f"❌ Claude returned empty output (round {round_num}) — exit code: {result.returncode}")
-            empty_msg = (
+    if not tl_stdout:
+        print(f"❌ Team Lead returned empty output — exit code: {tl.returncode}")
+        with open(RESULT_FILE, "w", encoding="utf-8") as f:
+            f.write(
                 f"task_id: {current_task_id}\n"
                 f"approval_tier: {current_tier}\n"
                 f"---\n"
                 f"STATUS: FAILED\n"
-                f"REASON: Claude returned empty stdout and empty stderr\n"
-                f"EXIT_CODE: {result.returncode}\n"
+                f"REASON: Team Lead returned empty stdout and stderr\n"
+                f"EXIT_CODE: {tl.returncode}\n"
             )
-            with open(RESULT_FILE, "w", encoding="utf-8") as f:
-                f.write(empty_msg)
-            log_task(task, f"FAILED_EMPTY [{current_task_id}]")
-            try:
-                os.remove(TASK_FILE)
-            except OSError:
-                pass
-            subprocess.run(["git", "add", "bridge/"], cwd=REPO)
-            subprocess.run(["git", "commit", "-m", f"bridge: FAILED empty output [{current_task_id}]"], cwd=REPO)
-            subprocess.run(["git", "push"], cwd=REPO)
-            write_status("failed", f"empty output [{current_task_id}]")
-            exit(1)
+        log_task(task, f"FAILED_EMPTY [{current_task_id}]")
+        try:
+            os.remove(TASK_FILE)
+        except OSError:
+            pass
+        subprocess.run(["git", "add", "bridge/"], cwd=REPO)
+        subprocess.run(["git", "commit", "-m", f"bridge: FAILED empty output [{current_task_id}]"], cwd=REPO)
+        subprocess.run(["git", "push"], cwd=REPO)
+        write_status("failed", f"empty output [{current_task_id}]")
+        exit(1)
 
-        # שמור תוצאה ביניים — עם task_id בראש הקובץ
-        with open(RESULT_FILE, "w", encoding="utf-8") as f:
-            f.write(f"task_id: {current_task_id}\n---\n{output}")
+    print(f"Team Lead stdout:\n{tl_stdout}")
 
-        # בדוק אם קלוד ממתין לתשובה מטלגרם
-        event = needs_response(output)
-        if not event:
-            print(f"✅ Claude סיים ללא המתנה (round {round_num})")
-            break
+    # team_lead.py כתב כבר ל-RESULT_FILE — קרא אותו לצורך בדיקת Telegram
+    try:
+        with open(RESULT_FILE, "r", encoding="utf-8") as f:
+            result_content = f.read()
+    except OSError:
+        result_content = tl_stdout
 
-        # ממתין לתשובת טלגרם
+    # בדוק אם נדרשת תשובת טלגרם (future: team_lead יטפל בזה בעצמו)
+    event = needs_response(result_content)
+    if event:
         response = wait_for_telegram_response(event)
         if not response:
             write_status("error", f"Telegram response timeout after {event}")
@@ -273,19 +276,12 @@ try:
             except OSError:
                 pass
             exit(1)
+        # תשובה התקבלה — הוסף ל-RESULT_FILE
+        with open(RESULT_FILE, "a", encoding="utf-8") as f:
+            f.write(f"\n---\nTELEGRAM_RESPONSE: {response}\n")
+        clear_response()
 
-        # תשובה התקבלה — נקה את הקובץ ורוץ שוב (קלוד יקרא telegram-response.md)
-        # הקובץ נשמר ב-RESPONSE_FILE כדי שקלוד יוכל לקרוא אותו בסיבוב הבא
-        print(f"🔄 מריץ שוב עם תשובת טלגרם (round {round_num + 1})...")
-        write_status("running", f"re-run after {event} response (round {round_num + 1})")
-    else:
-        print(f"⚠️ הגענו למקסימום {MAX_ROUNDS} סיבובים — עוצר")
-        write_status("error", f"max rounds ({MAX_ROUNDS}) reached")
-        try:
-            os.remove(TASK_FILE)
-        except OSError:
-            pass
-        exit(1)
+    print(f"✅ Team Lead סיים")
 
     # 4. נקה response file לאחר השלמת המשימה
     clear_response()

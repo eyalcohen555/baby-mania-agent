@@ -310,8 +310,18 @@ def main():
 
     verdict = run(task_text, dry_run=args.dry_run)
 
+    # Structured stdout summary — consumed by github-bridge.py
     print("=" * 50)
-    print(f"FINAL VERDICT: {verdict}")
+    print(f"STATUS: {'PASS' if verdict == PASS else 'FAILED'}")
+    print(f"VERDICT: {verdict}")
+    try:
+        state_lines = Path(STATE_FILE).read_text(encoding="utf-8").splitlines()
+        tid   = next((l for l in state_lines if l.startswith("task_id:")), "")
+        stage = next((l for l in state_lines if l.startswith("stage:")),   "")
+        print(f"SUMMARY: {tid} | {stage}")
+    except Exception:
+        print(f"SUMMARY: verdict={verdict}")
+
     sys.exit(0 if verdict == PASS else 1)
 
 
