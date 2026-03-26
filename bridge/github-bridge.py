@@ -123,10 +123,14 @@ def wait_for_telegram_response(event_type: str) -> str:
         content = read_response()
         if content:
             resp_task_id = parse_response_field(content, "task_id")
-            # Validate task_id — discard stale responses
-            if resp_task_id and resp_task_id != current_task_id:
-                print(f"⚠️ תגובה ישנה/שגויה — task_id={resp_task_id!r} (מצפה: {current_task_id!r}) — מנקה")
-                clear_response()
+            # No task_id — invalid/stale, never consume or clear
+            if not resp_task_id:
+                print(f"⚠️ תגובה ללא task_id — invalid/stale — מתעלם, לא מוחק")
+                time.sleep(RESPONSE_POLL)
+                continue
+            # Foreign task_id — belongs to another bridge instance, never clear
+            if resp_task_id != current_task_id:
+                print(f"⚠️ תגובה שייכת ל-bridge אחר — task_id={resp_task_id!r} (מצפה: {current_task_id!r}) — מתעלם בלבד, לא מוחק")
                 time.sleep(RESPONSE_POLL)
                 continue
             print(f"✅ תשובה תקינה מטלגרם (task_id={resp_task_id!r}):\n{content}")

@@ -1,12 +1,12 @@
-task_id:        20260326-234346
-time:           2026-03-26 23:43:58
-stage:          BLOCKED
-current_worker: claude-code
-round:          1 / 2
+task_id:        —
+time:           2026-03-27 00:27:00
+stage:          IDLE
+current_worker: —
+round:          —
 completed:      —
-failed:         round-1:rate_limit
-blocked_reason: Claude rate limit hit — wait and retry manually
+failed:         —
+blocked_reason: —
 waiting_for:    —
-next_action:    wait
-final_verdict:  FAILED_RATE_LIMIT
-task_preview:   TASK: Final E2E test — write checkpoint file
+next_action:    —
+final_verdict:  —
+task_preview:   — (reset after rate-limit, ready for new task)
