@@ -231,6 +231,7 @@ def run(task_text: str, dry_run: bool = False) -> str:
             state.final_verdict = FAILED_EMPTY
             state.stage = "FAILED"
             state.blocked_reason = "Worker returned empty output"
+            state.waiting_for = "telegram_blocked"
             state.next_action = "escalate"
             state.write()
             state.log("FAILED — empty output ❌")
@@ -251,6 +252,7 @@ def run(task_text: str, dry_run: bool = False) -> str:
             state.final_verdict = BLOCKED
             state.stage = "BLOCKED"
             state.blocked_reason = f"Worker failed after {round_num} rounds"
+            state.waiting_for = "telegram_blocked"
             state.next_action = "escalate_telegram"
             state.write()
             state.log("BLOCKED — escalate to Telegram 🔴")
