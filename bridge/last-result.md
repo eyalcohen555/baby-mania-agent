@@ -1,31 +1,44 @@
-task_id: 20260327-122313
+task_id: 20260327-122431
 round: 1
 ---
-## SYSTEM STATE — Full Process Map
+Here is the complete state summary:
 
-| # | PID | Process | Command | Started |
-|---|-----|---------|---------|---------|
-| 1 | **57308** | telegram_bot.py | `scripts\telegram_bot.py` | 12:20:42 |
-| 2 | **44164** | bridge.py | `bridge.py -u` | 12:20:46 |
-| 3 | **37908** | watchdog.py | `watchdog.py --daemon` | 12:21:49 |
-| 4 | **23560** | conductor.py | `conductor.py "plans/master-execution 001-plan.yaml" --resume` | 12:23:09 |
-| 5 | **47260** | github-bridge.py | `bridge\github-bridge.py` (WindowsApps python) | 12:23:11 |
-| 6 | **55560** | github-bridge.py | `bridge\github-bridge.py` (pythoncore python) | 12:23:11 |
-| 7 | **12576** | team_lead.py | `team_lead.py --task bridge\next-task.md` | 12:23:13 |
+---
 
-### Findings
+## STAGE-2 State Audit — Bridge Files Summary
 
-- **telegram_bot.py**: 1 instance — OK
-- **bridge.py**: 1 instance — OK
-- **watchdog.py**: 1 instance (daemon) — OK
-- **conductor.py**: 1 instance — OK
-- **github-bridge.py**: **2 instances (DUPLICATE)** — PIDs 47260 and 55560, started at the same second but using **different Python interpreters** (WindowsApps vs pythoncore). This is a potential conflict.
-- **team_lead.py**: 1 instance (this session) — OK
+### File States
+
+| File | Status | Content |
+|------|--------|---------|
+| `bridge/next-task.md` | **Active** | STAGE-2 task (this task) — read state files |
+| `bridge/status.md` | **Running** | `status: running`, task_id: 20260327-122431, tier T0 |
+| `bridge/last-result.md` | **Stale** | Contains STAGE-1 result (process map, 7 PIDs, github-bridge duplicate) |
+| `bridge/runtime-state.md` | **Running** | STAGE-2, round 1/2, worker: claude-code |
+| `bridge/conductor-state.md` | **Running** | Plan `bridge-telegram-stabilization-001`, STAGE-2, STAGE-1 completed |
+| `bridge/conductor-log.md` | **OK** | STAGE-1 PASS at 12:24:15, STAGE-2 started at 12:24:25 |
+| `bridge/telegram-response.md` | **Empty** | No pending Telegram response |
+| `bridge/watchdog-report.md` | **Stale** | Reports `suspected_stuck: YES` for old task (114336), state_age 2235s — this is from pre-resume, now outdated |
+| `bridge/bridge.lock` | **Active** | PID 44164 (bridge.py) |
+| `bridge/watchdog.pid` | **Active** | PID 37908 (watchdog.py) |
+| `bridge/task-log.md` | **236 lines** | Last entries: STAGE-2 STARTED at 12:24:27 and 12:24:31 |
+
+### Anomalies Found
+
+1. **Watchdog stale report** — `watchdog-report.md` reports `suspected_stuck: YES` for task 114336 (STAGE-1 from 11:43), but that task completed at 11:44:34. The watchdog wrote at 12:21:51, after bridge restarted. **Stale — not a real stuck task.**
+
+2. **Duplicate STARTED entries in task-log** — STAGE-2 has two STARTED entries (122427 and 122431) suggesting a race between conductor and team-lead writing to the log simultaneously.
+
+3. **conductor-state shows `overall_verdict: FAILED` + `failed_stages: [STAGE-1]`** — but conductor-log shows STAGE-1 PASS at 12:24:15. The FAILED verdict is from the first attempt (11:43, which returned UNKNOWN). The state wasn't fully cleaned on resume.
+
+4. **BLOCKED_UNKNOWN_TIER spam** — task-log lines 73-177 show ~100 repeated BLOCKED_UNKNOWN_TIER entries for tasks without proper APPROVAL_TIER. This is a known historical issue, not current.
+
+5. **No stale running task** — The current task (STAGE-2, 122431) is the only RUNNING task. No orphaned RUNNING entries in task-log.
 
 ---
 
 **STAGE_VERDICT: PASS**
 
-**EVIDENCE:** All processes identified. 1 instance each of telegram_bot, bridge, watchdog, conductor, team_lead. **1 anomaly found**: github-bridge.py has 2 duplicate instances (PIDs 47260, 55560) launched simultaneously from different Python runtimes — likely a startup script bug.
+**EVIDENCE:** All bridge state files read and audited. Current task (STAGE-2) is properly tracked as RUNNING. No stale tasks in progress. Watchdog report is outdated (refers to pre-resume STAGE-1). Lock files exist for active bridge (PID 44164) and watchdog (PID 37908). One inconsistency: conductor-state shows `overall_verdict: FAILED` from first STAGE-1 attempt despite STAGE-1 passing on retry — should be cleaned up in a later stage.
 
-**SYSTEM STATE:** 7 Python processes running. No stale/orphaned processes from previous runs. The only issue is the duplicate github-bridge.py which should be resolved in next stage.
+**SYSTEM STATE:** Bridge running (PID 44164). Watchdog running (PID 37908). Conductor at STAGE-2. No stale/orphaned tasks. telegram-response empty. watchdog-report stale but harmless. Task-log has duplicate-entry noise but no data loss.
