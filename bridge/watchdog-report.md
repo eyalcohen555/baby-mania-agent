@@ -1,9 +1,9 @@
-watchdog_time:     2026-03-27 12:21:51
-bridge_status:     starting
-task_id:           20260327-114336
+watchdog_time:     2026-03-27 12:32:23
+bridge_status:     waiting_response
+task_id:           20260327-122616
 stage:             DONE
 waiting_for:       —
-state_age_seconds: 2235
-suspected_stuck:   YES
+state_age_seconds: 282
+suspected_stuck:   NO
 reminder_sent:     YES
-task_preview:      TASK_ID: conductor-bridge-telegram-stabilization-001-STAGE-1-20260327-114332
+task_preview:      TASK_ID: conductor-bridge-telegram-stabilization-001-STAGE-3-20260327-122610
