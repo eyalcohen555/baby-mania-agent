@@ -1,66 +1,34 @@
-task_id: 20260327-020454
+task_id: 20260327-021009
 round: 1
 ---
-Now I have a complete picture. Here's the audit:
+File looks correct. Here's a summary of all changes made:
 
----
+**BABYMANIA-MASTER-PROMPT.md v1.2 → v2.0**
 
-# MASTER PROMPT + SYSTEM DOCS SYNC AUDIT
+Changes made to match the real system:
 
-## SYSTEM STATE: Multiple desync issues found
+1. **Roles section** — Added Team Lead (`team_lead.py`) and Watchdog (`watchdog.py`) as real system actors with their actual verdicts (PASS/RETRY/BLOCKED/FAILED_EMPTY/etc.)
 
----
+2. **Documents table** — Added 3 missing docs: `approval-policy.md`, `team-lead-agent-design.md`, `team-lead-input-model.md`, `telegram-channel-design.md`
 
-### 1. CRITICAL — `babymania-master.md` (skill file) is stale / V1-centric
+3. **Directory structure** — Added full real tree showing `bridge/`, `teams/`, `shared/` (234 product contexts), `knowledge/`, `prompts/`, `theme_assets/` with actual file counts
 
-| Issue | Detail |
-|-------|--------|
-| **Shop URL wrong** | `babymania-master.md` §6 commands use `babymania-il.myshopify.com` — actual shop is `a2756c-c0.myshopify.com` (CLAUDE.md is correct) |
-| **theme/ directory doesn't exist** | `babymania-master.md` §2 documents `theme/sections/*.liquid` — no `theme/` dir exists in repo. Sections are at `C:\Users\3024e\Downloads\קלוד קוד\sections\` per CLAUDE.md |
-| **fabric_story metafield schema outdated** | Skill says `fabric_story` = single JSON object `{title, dream, body, tags}`. Actual `settings.py` maps to 5 separate keys: `fabric_title`, `fabric_body`, `fabric_body_2`, `fabric_highlight`, `fabric_tags` |
-| **8 sections → 12 sections** | Skill lists 8 sections. Actual `TEMPLATE_SECTIONS` in `settings.py` has 12 (added: `bm-sticky-bar`, `bm-store-main-overrides`, `bm-store-hero`, `bm-store-banner`, `related-products`) |
-| **V1 commands still prominent** | §5-6 show `main.py` commands as primary workflow. Master prompt correctly marks these LEGACY but skill file does not |
-| **SECTION_METAFIELD_MAP outdated** | Skill shows old simplified map. Actual `settings.py` has `bm-store-hero` mapping + expanded fabric keys |
-| **Missing hero metafield keys** | Skill lists `subtitle`, `badge_text` but actual config uses `hero_eyebrow`, `hero_headline`, `hero_subheadline` |
+4. **Bridge section** — Completely rewritten:
+   - Local daemon is now primary (was "fallback"), with polling interval (4s), singleton lock, approval tier parsing
+   - Added Telegram integration flow (needs_response → telegram-response.md → re-run)
+   - Added startup flow (start-bridge.bat → watchdog + bridge)
+   - Added all 11 bridge files (was 5)
+   - Added Approval Tiers table (T0–T3) with bridge behavior
+   - Added Team Lead and Watchdog sections with real CLI usage
 
-### 2. MEDIUM — Master Prompt vs Actual State
+5. **Product agents** — Fixed to match actual 17 files in `teams/product/agents/`: removed phantom `01c`, `02b-clothing-thinking`, `02b-shoes-thinking`, `09-page-validator`; added `04-shoes-validator`, `08-section-expert`, `ad-script-writer`, `product-page-builder`, `seo-specialist`, `winning-product-scout`
 
-| Issue | Detail |
-|-------|--------|
-| **Agent paths inconsistent** | Master prompt says `00-team-lead/orchestrator.py` — file exists there. But `source-of-truth.md` says agents at `.claude/agents/*.md`. Actual agents are **dual-located**: both `.claude/agents/` and `teams/product/agents/`. No doc clarifies which is canonical |
-| **Shoes agents incomplete in master** | Master lists `02b-shoes-thinking` but actual repo also has `04-shoes-validator.md` (in `teams/product/agents/`) which is NOT listed in the agent table |
-| **content-editor-agent missing from master** | `.claude/agents/content-editor-agent.md` exists but not listed in master prompt agent table |
-| **Organic pipeline numbering mismatch** | Master says pipeline is `11 → 03 → 04 → 08 → publish`. Actual organic agents: 01-tag, 02-keyword, 03-strategist, 04-writer, 05-demand, 06-prioritizer, 07-mapper, 08-linker, 09-product-linker, 10-link-qa, 10.5-content-qa, 11-topic, 12-hub-planner. Pipeline numbering doesn't match |
+6. **Organic agents** — Added full table of all 13 agents in `teams/organic/agents/` (was missing entirely). Added hub-registry.json reference
 
-### 3. LOW — source-of-truth.md gaps
+7. **Theme assets** — Added organized table of all 20 Liquid sections (clothing/shoes/blog/shared) + templates
 
-| Issue | Detail |
-|-------|--------|
-| **Missing from source-of-truth** | `teams/team-lead/team_lead.py`, `teams/team-lead/watchdog.py` — not documented anywhere |
-| **New bridge files undocumented** | `bridge/checkpoint.md`, `bridge/telegram-response.md`, `bridge/watchdog-report.md`, `bridge/runtime-state.md`, `bridge/task-log.md` — none in any doc |
-| **New docs undocumented** | `docs/management/approval-policy.md`, `docs/management/team-lead-agent-design.md`, `docs/management/team-lead-input-model.md`, `docs/operations/telegram-channel-design.md` — not in management-index.md |
-| **EXECUTION_RULES references approval-policy.md** | This file exists but isn't in any index |
+8. **Shoes status** — Simplified to current state (removed stale commit hashes and closed items)
 
-### 4. LOW — CLAUDE.md vs Memory
+9. **Task format** — Added mandatory `APPROVAL_TIER` field
 
-| Issue | Detail |
-|-------|--------|
-| **Memory says store URL = `babymania-il.myshopify.com`** | CLAUDE.md correctly says `a2756c-c0.myshopify.com`. Memory file is wrong |
-
----
-
-## ROOT CAUSE
-- System evolved (V1→V2, new agents, new bridge features) but `babymania-master.md` skill file was not updated alongside
-- New operational files (watchdog, telegram, approval-policy) added without updating indexes
-- Agent dual-location (`.claude/agents/` + `teams/`) never formally documented
-
-## PRIORITY FIX ORDER
-
-1. **Fix `babymania-master.md`** — shop URL, remove theme/ references, update section list + metafield schema, mark V1 sections clearly
-2. **Update `management-index.md`** — add 4 missing docs
-3. **Update `source-of-truth.md`** — add bridge new files, teams/team-lead, approval-policy
-4. **Fix master prompt agent table** — add shoes-validator, content-editor-agent
-5. **Fix memory MEMORY.md** — correct store URL
-6. **Clarify agent canonical location** — `.claude/agents/` vs `teams/*/agents/`
-
-Want me to proceed with fixes? I recommend starting with items 1-2 (most impactful).
+10. **Security rules** — Added rule #8 (no Shopify MCP), added Shopify Config block with shop URL, theme ID, token path, metafields namespace, sections path
