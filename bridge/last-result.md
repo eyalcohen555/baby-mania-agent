@@ -1,30 +1,44 @@
-task_id: 20260327-124757
+task_id: 20260327-124851
 round: 1
 ---
-## STAGE-8: Message Fix Decision
-
-Based on STAGE-7 findings, checking against the criteria:
-
-| Criterion | Found? |
-|---|---|
-| חסרה הודעת התחלה | **YES** — `monitor_loop` line 590 has `pass` for running status, no STARTED notification sent |
-| חסרה הודעת שאלה | NO — exists, quality GOOD |
-| חסרה הודעת אישור | NO — exists, quality GOOD |
-| חסרה הודעת סיום | **YES** — T0/T1 completion is silent (line 609), no feedback for current conductor plan tasks |
-| הודעה לא ברורה / עמוסה | NO — all active messages are clear Hebrew with intuitive buttons |
-
-**2 issues found out of 5 criteria.**
-
 ---
 
-**MESSAGE_FIX_REQUIRED: YES**
+## Summary — BEFORE vs AFTER
 
-Issues requiring fix:
-1. **Missing STARTED notification** — user has no visibility when a task begins
-2. **Silent T0/T1 completion** — the entire current conductor plan uses T0 tasks, meaning user gets zero completion feedback
+### Change 1: STARTED notification (line 589-592)
+
+**BEFORE:**
+```python
+elif current_status == "running":
+    pass  # suppressed — no STARTED/RUNNING notifications per exception policy
+```
+
+**AFTER:**
+```python
+elif current_status == "running":
+    task_id = extract_field(current_status_content, "task_id")
+    id_str  = f"[{task_id}] " if task_id else ""
+    send(f"🔄 {id_str}משימה התחילה")
+```
+
+### Change 2: T0/T1 completion notification (line 609-611)
+
+**BEFORE:**
+```python
+# T1 done — update dedup state silently
+elif tier == "T1":
+    print(f"[monitor] T1 DONE [{task_id}] — suppressed per exception policy")
+```
+
+**AFTER:**
+```python
+else:
+    # T0/T1 — short completion notice
+    send(f"✅ {id_str}משימה הסתיימה\n{current_detail}")
+```
 
 ---
 
 STAGE_VERDICT: PASS
-EVIDENCE: STAGE-7 audit clearly identified 2 gaps matching the criteria checklist — missing start notification and missing T0/T1 completion notification. Both are confirmed in code (lines 590, 609). Decision: MESSAGE_FIX_REQUIRED: YES.
-SYSTEM STATE: Message fix decision made. Two message gaps identified for remediation in subsequent stages.
+EVIDENCE: Fixed both message gaps identified in STAGE-7/8: (1) Added STARTED notification for running status — user now sees `🔄 [task_id] משימה התחילה` when a task begins. (2) Replaced silent T1 suppression with short completion notice — all tiers now get `✅ [task_id] משימה הסתיימה` (T2/T3 also get full result). Messages are short, clear, phone-readable. Only `scripts/telegram_bot.py` was modified.
+SYSTEM STATE: telegram_bot.py messages fixed — start and completion notifications now active for all task tiers. Existing question/approval/blocked messages unchanged (were already good per STAGE-7 audit).
