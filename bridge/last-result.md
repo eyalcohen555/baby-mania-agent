@@ -1,35 +1,30 @@
-task_id: 20260327-114336
-round: 1
+task_id: 20260327-122311
 ---
-Here is the full process snapshot:
+## STAGE-1 Results — Process Inventory
 
----
+| # | PID | Process | Started | Status |
+|---|-----|---------|---------|--------|
+| 1 | **57308** | `scripts\telegram_bot.py` | 12:20:42 | Running (1 instance) |
+| 2 | **44164** | `bridge.py -u` | 12:20:46 | Running (1 instance) |
+| 3 | **37908** | `watchdog.py --daemon` | 12:21:49 | Running (1 instance) |
+| 4 | **23560** | `conductor.py "plans/master-execution 001-plan.yaml" --resume` | 12:23:09 | Running (1 instance) |
+| 5 | **47260** | `bridge\github-bridge.py` (WindowsApps python) | 12:23:11 | Running |
+| 6 | **55560** | `bridge\github-bridge.py` (pythoncore python) | 12:23:11 | **DUPLICATE** — same script, different Python interpreter |
+| 7 | **12576** | `team_lead.py --task next-task.md` | 12:23:13 | Running (this task) |
 
-## SYSTEM STATE — Python Process Inventory (2026-03-27 11:43)
+### Findings
 
-| # | PID | Command | Created | Issue |
-|---|-----|---------|---------|-------|
-| 1 | **30472** | `conductor.py "plans/master-execution 001-plan.yaml"` (WindowsApps python) | 11:43:32 | **DUPLICATE** conductor |
-| 2 | **52000** | `conductor.py "plans/master-execution 001-plan.yaml"` (pythoncore-3.14) | 11:43:32 | **DUPLICATE** conductor |
-| 3 | **55404** | `bridge\github-bridge.py` (WindowsApps python) | 11:43:33 | **DUPLICATE** bridge |
-| 4 | **26140** | `bridge\github-bridge.py` (pythoncore-3.14) | 11:43:34 | **DUPLICATE** bridge |
-| 5 | **2392** | `team_lead.py --task bridge\next-task.md` | 11:43:36 | OK (current task worker) |
-
-### Key Findings
-
-- **telegram_bot.py**: **NOT RUNNING** — 0 instances found.
-- **watchdog.py**: **NOT RUNNING** — 0 instances found.
-- **conductor.py**: **2 instances** (PIDs 30472, 52000) — duplicate, launched ~same time via two different Python interpreters (WindowsApps shim vs pythoncore-3.14).
-- **github-bridge.py**: **2 instances** (PIDs 55404, 26140) — same duplication pattern, two Python interpreters.
-- **team_lead.py**: 1 instance (PID 2392) — this is the current task executor, normal.
-
-### Root Cause of Duplicates
-The `start-bridge.bat` likely calls `python` which resolves to the WindowsApps shim AND separately calls the pythoncore-3.14 interpreter, resulting in every script launching twice.
+- **telegram_bot.py**: 1 instance — clean
+- **bridge.py**: 1 instance — clean
+- **watchdog.py**: 1 instance — clean
+- **conductor.py**: 1 instance — clean
+- **github-bridge.py**: **2 instances** (PIDs 47260 + 55560) — launched at the same second but using different Python interpreters (`WindowsApps` vs `pythoncore-3.14`). This is a duplicate that should be investigated.
+- **team_lead.py**: 1 instance (current task execution)
 
 ---
 
 **STAGE_VERDICT: PASS**
 
-**EVIDENCE:** Full process list obtained. No telegram_bot.py or watchdog.py running. Conductor and bridge each have 2 duplicate instances due to dual Python interpreter resolution. All PIDs, command lines, and creation timestamps documented above.
+**EVIDENCE:** Full process snapshot captured. All core components (telegram_bot, bridge, watchdog, conductor) have exactly 1 instance each. One anomaly found: `github-bridge.py` has 2 instances from different Python interpreters — likely a startup race condition in `start-bridge.bat`.
 
-**SYSTEM STATE:** 5 Python processes active — 2x conductor (duplicate), 2x bridge (duplicate), 1x team_lead (current task). No telegram or watchdog processes. Duplication caused by WindowsApps python shim vs pythoncore-3.14 both being invoked.
+**SYSTEM STATE:** 7 Python processes running. 6 unique scripts, 1 duplicate (`github-bridge.py` x2). No stale/orphaned processes from previous runs detected — all were created within the current session (12:20–12:23).
