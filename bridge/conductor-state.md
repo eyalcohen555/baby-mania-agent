@@ -1,6 +1,6 @@
 plan_id: bridge-telegram-stabilization-001
 plan_file: plans/master-execution 001-plan.yaml
-status: RUNNING
+status: FAILED
 current_stage: STAGE-10
 current_task_id: conductor-bridge-telegram-stabilization-001-STAGE-10-20260327-154332
 completed_stages:
@@ -15,10 +15,11 @@ completed_stages:
 - STAGE-9
 failed_stages:
 - STAGE-1
+- STAGE-10
 skipped_stages: []
 blocked_reason: 'Stage blocked: STAGE-10'
 waiting_for: MANUAL_INTERVENTION
 next_stage: STOP
-overall_verdict: BLOCKED
+overall_verdict: FAILED
 started_at: '2026-03-27 11:43:32'
-updated_at: '2026-03-27 15:43:32'
+updated_at: '2026-03-27 15:44:52'
