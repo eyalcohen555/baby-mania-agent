@@ -1,48 +1,16 @@
-task_id: 20260327-024413
-round: 2
+task_id: 20260327-024529
 ---
-## Verification Results
+Both fixes applied:
 
-### Watchdog Runtime Values — All Consistent
+**source-of-truth.md** — Fixed watchdog CLI defaults from `--warn 60 --stuck 180` to `--warn 120 --stuck 300` (matches actual code in `watchdog.py` lines 37-38).
 
-| Check | Watchdog Code | Live State | Match |
-|-------|--------------|------------|-------|
-| `RUNTIME_STATE` path | `bridge/runtime-state.md` | exists, has data | OK |
-| `STATUS_FILE` path | `bridge/status.md` | exists, has data | OK |
-| `REPORT_FILE` path | `bridge/watchdog-report.md` | exists, has data | OK |
-| `POLL_INTERVAL` | 30s | matches source-of-truth docs | OK |
-| `WARN_TIMEOUT` default | 120s | CLI allows override (`--warn`) | OK |
-| `STUCK_TIMEOUT` default | 300s | CLI allows override (`--stuck`) | OK |
-| `ACTIVE_BRIDGE` states | `running, starting, waiting_response, awaiting_approval` | status.md uses `running` | OK |
-| `ACTIVE_STAGE` states | `RUNNING, ANALYZING` | runtime-state uses `RUNNING` | OK |
-| Fields read from status.md | `status, task_id, time` | all present | OK |
-| Fields read from runtime-state | `task_id, time, stage, waiting_for, final_verdict, task_preview` | all present | OK |
-| Report fields written | 9 fields | all match expected format | OK |
+**management-index.md** — Added 12 missing entries:
+- 6 bridge runtime files (`runtime-state.md`, `watchdog-report.md`, `next-task.md`, `last-result.md`, `task-log.md`, `telegram-response.md`)
+- `telegram-channel-design.md`
+- New "Team Lead & Watchdog" section with `team_lead.py`, `watchdog.py`, `approval-policy.md`, `team-lead-agent-design.md`, `team-lead-input-model.md`
 
-### Management Index Gaps
-
-The management-index is **missing** these entries that exist in source-of-truth:
-
-| Missing Entry | Category |
-|--------------|----------|
-| `bridge/runtime-state.md` | Bridge (Operational) |
-| `bridge/watchdog-report.md` | Bridge (Operational) |
-| `teams/team-lead/team_lead.py` | Team Lead |
-| `teams/team-lead/watchdog.py` | Team Lead |
-| `docs/management/approval-policy.md` | Management |
-| `docs/management/team-lead-agent-design.md` | Management |
-| `docs/management/team-lead-input-model.md` | Management |
-| `docs/operations/telegram-channel-design.md` | Operations |
-
-### Verdict
-
-**Watchdog runtime values: PASS** — all paths, thresholds, field names, and active-state sets are consistent between code, live files, and source-of-truth.
-
-**Management index: NEEDS UPDATE** — 8 entries missing. Should I update `management-index.md` now to add the missing entries?
-
----
-TELEGRAM_RESPONSE: time: 2026-03-27 02:45:23
-type: QUESTION
-task_id: 20260327-024413
-action: answer
-content: כן
+**Verification summary:**
+- Watchdog code defaults: `WARN=120s`, `STUCK=300s`, `POLL=30s` — all now correctly documented
+- `start-bridge.bat` uses `--daemon` only (no overrides) — code defaults are the runtime values
+- `runtime-state.md` and `status.md` task IDs match (`20260327-024413`) — bridge is consistent
+- `watchdog-report.md` is stale from previous task (`20260327-023815`) — expected, since watchdog only writes when warn threshold exceeded
