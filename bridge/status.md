@@ -1,5 +1,5 @@
-status: done
-time: 2026-03-27 15:45:10
-task_id: 20260327-154333
-approval_tier: T1
-detail: result written
+status: awaiting_approval
+time: 2026-03-29 19:14:17
+task_id: 20260329-191417
+approval_tier: T3
+detail: T3 — waiting for Eyal approval
