@@ -1,6 +1,6 @@
 plan_id: shoes-rollout-001
 plan_file: plans/shoes-rollout-001.yaml
-status: RUNNING
+status: FAILED
 current_stage: STAGE-4
 current_task_id: conductor-shoes-rollout-001-STAGE-4-20260330-080503
 completed_stages:
@@ -10,9 +10,9 @@ completed_stages:
 failed_stages:
 - STAGE-2
 skipped_stages: []
-blocked_reason: ''
-waiting_for: ''
-next_stage: ''
-overall_verdict: IN_PROGRESS
+blocked_reason: 'Stage blocked: STAGE-4'
+waiting_for: MANUAL_INTERVENTION
+next_stage: STOP
+overall_verdict: BLOCKED
 started_at: '2026-03-30 07:29:47'
-updated_at: '2026-03-30 08:05:03'
+updated_at: '2026-03-30 08:10:13'

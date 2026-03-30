@@ -61,3 +61,7 @@
 | 2026-03-30 08:02:35 | PLAN STOPPED: shoes-rollout-001 at STAGE-3 |
 | 2026-03-30 08:05:03 | RESUMED: shoes-rollout-001 |
 | 2026-03-30 08:05:03 | STARTED STAGE-4 [conductor-shoes-rollout-001-STAGE-4-20260330-080503] |
+| 2026-03-30 08:10:13 | ERROR STAGE-4 |
+| 2026-03-30 08:10:13 |   STAGE-4 | BLOCKED |
+| 2026-03-30 08:10:13 | BLOCKED STAGE-4: approval or manual intervention needed |
+| 2026-03-30 08:10:13 | PLAN STOPPED: shoes-rollout-001 at STAGE-4 |
