@@ -1,16 +1,15 @@
-task_id: 20260330-073523
-round: 2
+task_id: 20260330-073740
+approval_tier: T3
 ---
-The conductor state is already updated. The results are already written to `last-result.md` from a prior run. The state shows STAGE-2 complete with STAGE-3 as next.
+STATUS: AWAITING_APPROVAL
+REASON: APPROVAL_TIER T3 — נדרש אישור אייל לפני ביצוע
+TASK_PREVIEW: TASK_ID: conductor-shoes-rollout-001-STAGE-3-20260330-073735
+APPROVAL_TIER: T3
+CONDUCTOR_PLAN: shoes-rollout-001
+CONDUCTOR_STAGE: STAGE-3
 
-The task is done. Here's the final answer:
+GOAL:
+פרסם 3 מוצרי נעליים ראשונים ל-Shopify ואמת
 
----
-
-**STAGE_VERDICT: PASS**
-
-**EVIDENCE:**
-- 4/5 PIDs fully READY (all files present + validator PASS): `9096635515193`, `9607363625273`, `9615375794489`, `9615669461305`
-- 1 PID NOT_READY: `9096636236089` — FAQ has 3 questions instead of 4-6, missing mandatory trust questions ("מי אנחנו?" and "מהם זמני המשלוח?")
-
-**SYSTEM STATE:** STAGE-2 validation complete. Conductor state already advanced to next_stage: STAGE-3. 4 PIDs are cleared for publish. PID 9096636236089 needs FAQ regeneration before it can proceed.
+ACTION:
+עבו
