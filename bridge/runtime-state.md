@@ -1,5 +1,5 @@
-task_id:        20260330-095550
-time:           2026-03-30 09:56:19
+task_id:        20260330-095636
+time:           2026-03-30 09:57:12
 stage:          DONE
 current_worker: claude-code
 round:          1 / 2
@@ -9,4 +9,4 @@ blocked_reason: —
 waiting_for:    —
 next_action:    done
 final_verdict:  PASS
-task_preview:   TASK_ID: conductor-shoes-rollout-fix-001-STAGE-0-20260330-095548
+task_preview:   TASK_ID: conductor-shoes-rollout-fix-001-STAGE-A-20260330-095633
