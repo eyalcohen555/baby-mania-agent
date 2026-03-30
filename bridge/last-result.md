@@ -1,32 +1,34 @@
 task_id: 20260330-111000
+round: 1
 ---
-## AUDIT RESULT: WATCHDOG FALSE IDLE ALERT
+Diagnosis complete. Here's the result:
 
-**ROOT CAUSE:** Faulty OR logic in `check()` — line 213 of `watchdog.py`
+---
 
+## WATCHDOG FALSE IDLE ALERT — ROOT CAUSE
+
+**ROOT CAUSE:** Logic flaw — OR condition in active-state check ignores terminal stage.
+
+**LAYER:** LOGIC
+
+**WHY THE SYSTEM ALLOWS THIS:**
+
+At `11:09:26`, the watchdog read:
+- `bridge/status.md` → `status: starting` (new cycle beginning)
+- `bridge/runtime-state.md` → `stage: DONE`, `task_id: 20260330-110415` (old task, already finished)
+
+The active check on `watchdog.py:213`:
 ```python
 is_active = bridge_status in ACTIVE_BRIDGE or stage in ACTIVE_STAGE
 ```
 
-**LAYER:** LOGIC
+`"starting"` is in `ACTIVE_BRIDGE` → **OR evaluates to True** → watchdog treats the system as active, even though `stage` is `DONE`. It then computes age from the old task's timestamp (`state_age_seconds: 157`), exceeds `warn_timeout (120s)`, and fires the "ריצה ממתינה" Telegram alert for a task that already completed.
 
-**WHY SYSTEM ALLOWS THIS:**
+**Race condition sequence:**
+1. Task `20260330-110415` completes → `runtime-state.md` stage = `DONE`
+2. Bridge starts new cycle → `status.md` = `starting`
+3. Watchdog reads both files → sees `starting` + old `DONE` timestamp → false alert
 
-The watchdog report at `11:09:26` shows:
-- `bridge_status: starting` (new task cycle spinning up)
-- `stage: DONE` (previous task 20260330-110415 already finished)
-- `state_age_seconds: 157` (stale timestamp from completed task)
-- `reminder_sent: YES` ← **false alert**
+**RISK LEVEL:** Low — cosmetic false alert, no data corruption or task disruption.
 
-The sequence:
-1. Task `20260330-110415` completes → `stage=DONE`
-2. Bridge transitions to next cycle → `bridge_status=starting`
-3. Watchdog checks: `"starting" in ACTIVE_BRIDGE` → **True** (OR short-circuits)
-4. Age calculated from the **old** task timestamp → 157s > 120s warn threshold
-5. Sends "ריצה ממתינה" alert for a task that's already done
-
-The OR condition means **any** active bridge status overrides a terminal stage. There is no check for terminal states (`DONE`, `BLOCKED`, `FAILED`) to suppress the alert.
-
-**RISK LEVEL:** Low — noise only, no data corruption. But erodes trust in alerts over time.
-
-**RECOMMENDED FIX:** Add terminal stage guard before the active check: if `stage in {"DONE", "BLOCKED", "FAILED"}`, force `is_active = False` regardless of bridge_status.
+**RECOMMENDED FIX:** Add a terminal-stage guard before the age check: if `stage` is in `{"DONE", "FAILED", "BLOCKED"}`, skip the alert regardless of `bridge_status`. Alternatively, require both `bridge_status` AND `stage` to be active (AND instead of OR).
