@@ -1,15 +1,14 @@
-task_id: 20260330-110235
-round: 2
+task_id: 20260330-110415
 ---
-The task has already been completed (status: DONE, verdict: PASS). The result was:
+Task complete. Both files updated:
 
-**TELEGRAM TASK WORKING**
+**TASK_ID:** 20260330-110415  
+**STATUS:** PASS
 
-The bridge shows this task (`20260330-110235`) finished successfully. Is there a new task to run, or should I update the bridge to await the next one?
+**CHANGES MADE:**
+1. **BABYMANIA-MASTER-PROMPT.md** — Startup section reorganized with `startup (אוטומטי)` + new `⚠️ כלל הפעלה קריטי — Real Python Path` block (lines 158-196) with official examples and forbidden patterns
+2. **BABYMANIA-MASTER-PROMPT.md** — Conductor run examples (line 532) updated to use full Python path
+3. **docs/operations/bridge-runtime-status.md** — Added clean manual startup section with full Python path before Task Scheduler method
 
----
-TELEGRAM_RESPONSE: time: 2026-03-30 11:04:03
-type: QUESTION
-task_id: 20260330-110234
-action: skip
-content:
+**MASTER PROMPT UPDATED:** YES  
+**RUNTIME DOCS UPDATED:** YES
