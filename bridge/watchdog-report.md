@@ -1,9 +1,9 @@
-watchdog_time:     2026-03-30 11:00:25
-bridge_status:     starting
-task_id:           20260330-095758
-stage:             DONE
+watchdog_time:     2026-03-30 11:06:25
+bridge_status:     idle
+task_id:           20260330-110415
+stage:             RUNNING
 waiting_for:       —
-state_age_seconds: 3363
-suspected_stuck:   YES
+state_age_seconds: 130
+suspected_stuck:   NO
 reminder_sent:     YES
-task_preview:      TASK_ID: conductor-shoes-rollout-fix-001-STAGE-B-20260330-095753
+task_preview:      RUN TASK

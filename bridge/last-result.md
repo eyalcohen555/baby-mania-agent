@@ -1,14 +1,19 @@
 task_id: 20260330-110415
+round: 1
 ---
-Task complete. Both files updated:
+Task complete.
 
-**TASK_ID:** 20260330-110415  
+**TASK_ID:** 20260330-110415
 **STATUS:** PASS
 
-**CHANGES MADE:**
-1. **BABYMANIA-MASTER-PROMPT.md** — Startup section reorganized with `startup (אוטומטי)` + new `⚠️ כלל הפעלה קריטי — Real Python Path` block (lines 158-196) with official examples and forbidden patterns
-2. **BABYMANIA-MASTER-PROMPT.md** — Conductor run examples (line 532) updated to use full Python path
-3. **docs/operations/bridge-runtime-status.md** — Added clean manual startup section with full Python path before Task Scheduler method
+**FILES UPDATED:**
+- `BABYMANIA-MASTER-PROMPT.md` — startup section rewritten with clean official examples + explicit forbidden patterns
+- `docs/operations/bridge-runtime-status.md` — manual start uses full Python path
+- `docs/operations/bridge-operations-journal.md` — journal entry added
 
-**MASTER PROMPT UPDATED:** YES  
+**MASTER PROMPT UPDATED:** YES
 **RUNTIME DOCS UPDATED:** YES
+
+**WHERE THE NEW RULE IS DOCUMENTED:**
+- `BABYMANIA-MASTER-PROMPT.md` → "כלל הפעלה קריטי — Real Python Path" section
+- `docs/operations/bridge-runtime-status.md` → "כלל Python path" + "אם bridge לא רץ" sections
