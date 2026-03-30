@@ -1,12 +1,12 @@
-task_id:        20260330-073523
-time:           2026-03-30 07:37:24
-stage:          DONE
+task_id:        20260330-081612
+time:           2026-03-30 08:16:12
+stage:          RUNNING
 current_worker: claude-code
-round:          2 / 2
-completed:      round-2
-failed:         round-1:retry
+round:          1 / 2
+completed:      —
+failed:         —
 blocked_reason: —
 waiting_for:    —
-next_action:    done
-final_verdict:  PASS
-task_preview:   TASK_ID: conductor-shoes-rollout-001-STAGE-2-20260330-073520
+next_action:    —
+final_verdict:  —
+task_preview:   TASK_ID: conductor-shoes-rollout-001-STAGE-5-20260330-081608
