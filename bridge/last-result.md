@@ -1,19 +1,32 @@
-task_id: 20260330-110415
-round: 1
+task_id: 20260330-111000
 ---
-Task complete.
+## AUDIT RESULT: WATCHDOG FALSE IDLE ALERT
 
-**TASK_ID:** 20260330-110415
-**STATUS:** PASS
+**ROOT CAUSE:** Faulty OR logic in `check()` — line 213 of `watchdog.py`
 
-**FILES UPDATED:**
-- `BABYMANIA-MASTER-PROMPT.md` — startup section rewritten with clean official examples + explicit forbidden patterns
-- `docs/operations/bridge-runtime-status.md` — manual start uses full Python path
-- `docs/operations/bridge-operations-journal.md` — journal entry added
+```python
+is_active = bridge_status in ACTIVE_BRIDGE or stage in ACTIVE_STAGE
+```
 
-**MASTER PROMPT UPDATED:** YES
-**RUNTIME DOCS UPDATED:** YES
+**LAYER:** LOGIC
 
-**WHERE THE NEW RULE IS DOCUMENTED:**
-- `BABYMANIA-MASTER-PROMPT.md` → "כלל הפעלה קריטי — Real Python Path" section
-- `docs/operations/bridge-runtime-status.md` → "כלל Python path" + "אם bridge לא רץ" sections
+**WHY SYSTEM ALLOWS THIS:**
+
+The watchdog report at `11:09:26` shows:
+- `bridge_status: starting` (new task cycle spinning up)
+- `stage: DONE` (previous task 20260330-110415 already finished)
+- `state_age_seconds: 157` (stale timestamp from completed task)
+- `reminder_sent: YES` ← **false alert**
+
+The sequence:
+1. Task `20260330-110415` completes → `stage=DONE`
+2. Bridge transitions to next cycle → `bridge_status=starting`
+3. Watchdog checks: `"starting" in ACTIVE_BRIDGE` → **True** (OR short-circuits)
+4. Age calculated from the **old** task timestamp → 157s > 120s warn threshold
+5. Sends "ריצה ממתינה" alert for a task that's already done
+
+The OR condition means **any** active bridge status overrides a terminal stage. There is no check for terminal states (`DONE`, `BLOCKED`, `FAILED`) to suppress the alert.
+
+**RISK LEVEL:** Low — noise only, no data corruption. But erodes trust in alerts over time.
+
+**RECOMMENDED FIX:** Add terminal stage guard before the active check: if `stage in {"DONE", "BLOCKED", "FAILED"}`, force `is_active = False` regardless of bridge_status.
