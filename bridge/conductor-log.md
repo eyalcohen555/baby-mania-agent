@@ -40,3 +40,5 @@
 | 2026-03-29 19:42:15 | PLAN DONE: shoes-rollout-001 — PASS |
 | 2026-03-30 07:29:47 | STARTED: shoes-rollout-001 |
 | 2026-03-30 07:29:47 | STARTED STAGE-1 [conductor-shoes-rollout-001-STAGE-1-20260330-072947] |
+| 2026-03-30 07:31:17 |   STAGE-1 | PASS |
+| 2026-03-30 07:31:27 | STARTED STAGE-2 [conductor-shoes-rollout-001-STAGE-2-20260330-073127] |
