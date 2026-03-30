@@ -1,12 +1,12 @@
 task_id:        20260330-110235
-time:           2026-03-30 11:03:10
-stage:          DONE
+time:           2026-03-30 11:03:15
+stage:          BLOCKED
 current_worker: claude-code
 round:          2 / 2
-completed:      1
-failed:         —
+completed:      —
+failed:         round-1:partial, round-2:false_success
 blocked_reason: —
 waiting_for:    —
 next_action:    —
-final_verdict:  PASS
-task_preview:   TEST TASK
+final_verdict:  BLOCKED
+task_preview:   RUN TASK
