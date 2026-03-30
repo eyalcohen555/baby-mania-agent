@@ -1,11 +1,10 @@
-task_id: 20260330-095636
-round: 1
+task_id: 20260330-095634
 ---
-Audit complete. Here are the findings:
+Audit complete. Here are the results:
 
 ---
 
-**STAGE-A AUDIT REPORT — PID 9096636236089**
+**STAGE-A AUDIT — PID 9096636236089**
 
 **1. FAQ_FILE_EXISTS:** YES
 
@@ -17,10 +16,10 @@ Audit complete. Here are the findings:
 
 **4. VALIDATOR_STATUS:** FAIL
 - VALIDATOR_FAIL_REASONS:
-  - ✗ [18] FAQ count=3 — required minimum is 4, maximum 6
-  - ✗ [19a] First FAQ question must be "מי אנחנו?" — missing
-  - ✗ [19b] Last FAQ question must be "מהם זמני המשלוח?" — missing
-  - ✗ [19c] Trust questions "מי אנחנו?" and "מהם זמני המשלוח?" completely absent from FAQ
+  - `✗ [18] FAQ count=3 — required minimum is 4, maximum 6`
+  - `✗ [19a] First FAQ question must be "מי אנחנו?" — missing`
+  - `✗ [19b] Last FAQ question must be "מהם זמני המשלוח?" — missing`
+  - `✗ [19c] Trust questions "מי אנחנו?" and "מהם זמני המשלוח?" completely absent from FAQ`
 
 **5. ROOT_CAUSE:** trust_questions_missing
 
@@ -32,6 +31,6 @@ Audit complete. Here are the findings:
 
 ---
 
-**STAGE_VERDICT: PASS**
-**EVIDENCE:** FAQ file exists with 3 product-specific questions but is missing both mandatory trust questions ("מי אנחנו?" as Q1 and "מהם זמני המשלוח?" as Q_last). Validator correctly identified 4 failures all related to missing trust questions. Root cause is trust_questions_missing — the FAQ generator produced only product questions without the 2 fixed trust entries.
-**SYSTEM STATE:** Audit complete. Ready for STAGE-B to regenerate FAQ with trust questions included.
+**EVIDENCE:** FAQ file exists with 3 product-specific questions but is missing both mandatory trust questions ("מי אנחנו?" as Q1, "מהם זמני המשלוח?" as Q_last). Validator correctly identified 4 failures all related to trust questions. The existing 3 product questions are valid and should be kept as Q2-Q4.
+
+**SYSTEM STATE:** STAGE-A complete. Root cause confirmed as `trust_questions_missing`. Ready for STAGE-B to regenerate FAQ with 2 trust questions + 3 existing product questions = 5 total (within 4-6 range).
