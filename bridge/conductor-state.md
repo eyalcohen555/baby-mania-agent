@@ -1,20 +1,14 @@
-plan_id: shoes-rollout-001
-plan_file: plans/shoes-rollout-001.yaml
-status: DONE
-current_stage: STAGE-5
-current_task_id: conductor-shoes-rollout-001-STAGE-5-20260330-081608
-completed_stages:
-- STAGE-1
-- STAGE-2
-- STAGE-3
-- STAGE-4
-- STAGE-5
-failed_stages:
-- STAGE-2
+plan_id: shoes-rollout-fix-001
+plan_file: plans/shoes-rollout-fix-001.yaml
+status: RUNNING
+current_stage: STAGE-0
+current_task_id: conductor-shoes-rollout-fix-001-STAGE-0-20260330-095548
+completed_stages: []
+failed_stages: []
 skipped_stages: []
 blocked_reason: ''
 waiting_for: ''
-next_stage: DONE
-overall_verdict: PASS
-started_at: '2026-03-30 07:29:47'
-updated_at: '2026-03-30 08:17:58'
+next_stage: ''
+overall_verdict: IN_PROGRESS
+started_at: '2026-03-30 09:55:48'
+updated_at: '2026-03-30 09:55:48'

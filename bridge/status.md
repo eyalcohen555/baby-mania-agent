@@ -1,5 +1,5 @@
 status: done
-time: 2026-03-30 08:18:52
-task_id: 20260330-081612
-approval_tier: T1
-detail: result written, task removed
+time: 2026-03-30 09:56:19
+task_id: 20260330-095550
+approval_tier: T0
+detail: result written
