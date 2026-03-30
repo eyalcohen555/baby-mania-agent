@@ -36,3 +36,7 @@
 | 2026-03-27 15:43:32 | STARTED STAGE-10 [conductor-bridge-telegram-stabilization-001-STAGE-10-20260327-154332] |
 | 2026-03-27 15:44:52 |   STAGE-10 | UNKNOWN |
 | 2026-03-27 15:44:52 | PLAN STOPPED: bridge-telegram-stabilization-001 at STAGE-10 |
+| 2026-03-29 19:42:14 | STARTED: shoes-rollout-001 |
+| 2026-03-29 19:42:15 | PLAN DONE: shoes-rollout-001 — PASS |
+| 2026-03-30 07:29:47 | STARTED: shoes-rollout-001 |
+| 2026-03-30 07:29:47 | STARTED STAGE-1 [conductor-shoes-rollout-001-STAGE-1-20260330-072947] |

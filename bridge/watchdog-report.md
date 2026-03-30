@@ -1,9 +1,9 @@
-watchdog_time:     2026-03-29 19:15:30
-bridge_status:     waiting_response
-task_id:           20260327-154335
-stage:             DONE
+watchdog_time:     2026-03-30 07:29:41
+bridge_status:     idle
+task_id:           20260329-192153
+stage:             RUNNING
 waiting_for:       —
-state_age_seconds: 181842
+state_age_seconds: 43668
 suspected_stuck:   YES
 reminder_sent:     YES
-task_preview:      TASK_ID: conductor-bridge-telegram-stabilization-001-STAGE-10-20260327-154332
+task_preview:      TASK: SHOES FULL CONTROLLED ROLLOUT

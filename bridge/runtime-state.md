@@ -1,12 +1,12 @@
-task_id:        20260327-154335
-time:           2026-03-27 15:44:48
-stage:          DONE
+task_id:        20260330-072951
+time:           2026-03-30 07:30:53
+stage:          RUNNING
 current_worker: claude-code
-round:          1 / 2
-completed:      round-1
-failed:         —
+round:          2 / 2
+completed:      —
+failed:         round-1:partial
 blocked_reason: —
 waiting_for:    —
-next_action:    done
-final_verdict:  PASS
-task_preview:   TASK_ID: conductor-bridge-telegram-stabilization-001-STAGE-10-20260327-154332
+next_action:    —
+final_verdict:  —
+task_preview:   TASK_ID: conductor-shoes-rollout-001-STAGE-1-20260330-072947
