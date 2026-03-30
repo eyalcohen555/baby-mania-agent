@@ -1,6 +1,6 @@
 plan_id: shoes-rollout-001
 plan_file: plans/shoes-rollout-001.yaml
-status: RUNNING
+status: DONE
 current_stage: STAGE-5
 current_task_id: conductor-shoes-rollout-001-STAGE-5-20260330-081608
 completed_stages:
@@ -8,12 +8,13 @@ completed_stages:
 - STAGE-2
 - STAGE-3
 - STAGE-4
+- STAGE-5
 failed_stages:
 - STAGE-2
 skipped_stages: []
 blocked_reason: ''
 waiting_for: ''
-next_stage: ''
-overall_verdict: IN_PROGRESS
+next_stage: DONE
+overall_verdict: PASS
 started_at: '2026-03-30 07:29:47'
-updated_at: '2026-03-30 08:16:08'
+updated_at: '2026-03-30 08:17:58'
