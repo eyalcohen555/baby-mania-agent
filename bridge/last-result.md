@@ -1,18 +1,25 @@
-task_id: 20260405-104953
+task_id: 20260405-105438
 ---
+All validations pass.
+
 ---
 
-**STAGE-3A Validation Complete for PID 9179143569721**
+**TASK_ID:** conductor-shoes-stabilization-002-STAGE-3B-20260405-105436
 
-```
-VALIDATOR_HARD_FAILS: 0
-VALIDATOR_SOFT_FAILS: 0
-VALIDATOR_WARNINGS: 6
-VALIDATOR_VERDICT: PASS_WITH_WARNINGS
-```
+**PUBLISHER_VERDICT: PASS**
+**TEMPLATE_TYPE: shoes**
 
-```
-STAGE_VERDICT: PASS
-EVIDENCE: All T01-T05s checks passed. 6 warnings (forbidden leakage x1, accordion/benefits overlap x1, sentence length x4). No HARD_FAIL. No blacklist, safety, intelligence, or gender violations. Output written to output/stage-outputs/9179143569721_validator.txt.
-SYSTEM STATE: PID 9179143569721 validated PASS_WITH_WARNINGS — ready for publisher stage.
-```
+**EVIDENCE:**
+- `output/stage-outputs/9179143569721_publisher.json` — valid JSON, V2 metafields format
+- 4 benefits, 3 accordion_blocks, 5 FAQ, track=functional
+- No forbidden clothing fields present
+- Gender gate: clear (no gender terms, gender_signal empty)
+- Template protection: clear (suffix=shoes, not tempio/easy-sleep)
+- All content copied verbatim from validated source files
+
+**SYSTEM STATE:**
+- PID 9179143569721 publisher.json ready for Shopify push
+- product_template_type: shoes
+- template_action: set_suffix_shoes
+
+**STAGE_VERDICT: PASS**
