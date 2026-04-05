@@ -1,24 +1,32 @@
-task_id: 20260405-060947
+task_id: 20260405-071747
 ---
-The file does NOT contain "STATUS: PASS". It contains "STATUS: FAIL".
+Now let me validate the output against all criteria:
+
+**Validation:**
+
+| Check | Result |
+|-------|--------|
+| FAQ_COUNT | **5** (2 trust + 3 objection) — within 4-6 range |
+| Q1_IS_TRUST | **YES** — "מי אנחנו?" |
+| Q_LAST_IS_TRUST | **YES** — "מהם זמני המשלוח?" |
+| NO_FORBIDDEN_CLUSTERS | **YES** — no morning_ease or stability_confidence used |
+| ALL_SENTENCES_12W | **YES** — max sentence is 10 words |
+| No dev_movement language | **YES** — no כף הרגל/סוליה גמישה/מתפתחת/שרירים/הליכה/קשת |
+| No accordion overlap | **YES** — sizing_fit, open-sandal safety, sole durability are new angles |
+| L3 in all answers | **YES** — each answer ends with parent outcome |
+| All signals grounded | **YES** — sole material, anti-slip, sizes 18-23, open design from product data |
 
 ---
 
-**TASK_ID:** conductor-shoes-minibatch-001-STAGE-1A-20260405-060944
+**STAGE_VERDICT: PASS**
 
-**VALIDATOR_STATUS: FAIL**
+**EVIDENCE:**
+- FAQ_COUNT: 5
+- Q1_IS_TRUST: YES ("מי אנחנו?")
+- Q_LAST_IS_TRUST: YES ("מהם זמני המשלוח?")
+- NO_FORBIDDEN_CLUSTERS: YES (no morning_ease, no stability_confidence)
+- ALL_SENTENCES_12W: YES (max 10 words per sentence)
+- No development_movement keywords in any FAQ item
+- 3 objection questions (sizing_fit, open-sandal safety, soft-sole durability) — all specific to סנדל רוני, all grounded in product signals, no accordion overlap
 
-**STAGE_VERDICT: FAIL**
-
-**EVIDENCE:** Validator found 6 failures for PID 9179143569721:
-
-1. **T03s FAIL** — `development_movement` cluster leaked to FAQ q3 (keywords: "כף הרגל", "הסוליה הגמישה"). Should appear ONLY in accordion per shoes rules.
-2. **T04s FAIL** — 3 forbidden leakage violations in FAQ escalated to FAIL: morning_ease in q2 ("בוקרים"), stability_confidence in q3 ("יציב", "מונעת החלקה").
-3. **FAQ COUNT FAIL** — Only 3 Q/A pairs (minimum 4).
-4. **FAQ STRUCTURE FAIL** — Missing mandatory "מי אנחנו?" (first Q) and "מהם זמני המשלוח?" (last Q).
-5. **SENTENCE LENGTH FAIL** — Multiple sentences exceed 12-word limit in FAQ answers and accordion blocks.
-6. **F04 WARN x2** — Accordion developmental claims extrapolated beyond description_raw.
-
-**SYSTEM STATE:** PID 9179143569721 validation FAILED. FAQ section needs major rework (missing trust questions, forbidden cluster leakage, count too low). Sentence length violations across FAQ and accordion. Cannot proceed to publish.
-
-Full report saved to: `output/stage-outputs/9179143569721_validator.txt`
+**SYSTEM STATE:** `output/stage-outputs/9179143569721_faq.json` written with 5 FAQ items. Ready for next stage.
