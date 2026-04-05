@@ -1,15 +1,17 @@
 plan_id: shoes-stabilization-002
 plan_file: plans/shoes-stabilization-002.yaml
-status: RUNNING
-current_stage: STAGE-2
-current_task_id: conductor-shoes-stabilization-002-STAGE-2-20260405-095829
+status: FAILED
+current_stage: STAGE-3
+current_task_id: conductor-shoes-stabilization-002-STAGE-3-20260405-095954
 completed_stages:
 - STAGE-1
-failed_stages: []
+- STAGE-2
+failed_stages:
+- STAGE-3
 skipped_stages: []
 blocked_reason: ''
 waiting_for: ''
-next_stage: STAGE-2
-overall_verdict: IN_PROGRESS
+next_stage: STOP
+overall_verdict: FAILED
 started_at: '2026-04-05 09:56:54'
-updated_at: '2026-04-05 09:58:29'
+updated_at: '2026-04-05 10:11:54'
