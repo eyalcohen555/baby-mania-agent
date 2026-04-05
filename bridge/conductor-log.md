@@ -85,3 +85,5 @@
 | 2026-03-30 10:03:33 | STARTED STAGE-E [conductor-shoes-rollout-fix-001-STAGE-E-20260330-100333] |
 | 2026-03-30 10:04:23 |   STAGE-E | PASS |
 | 2026-03-30 10:04:23 | PLAN DONE: shoes-rollout-fix-001 — PASS |
+| 2026-04-05 06:09:44 | STARTED: shoes-minibatch-001 |
+| 2026-04-05 06:09:44 | STARTED STAGE-1A [conductor-shoes-minibatch-001-STAGE-1A-20260405-060944] |
