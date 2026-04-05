@@ -1,59 +1,75 @@
-task_id: 20260405-112316
+task_id: 20260405-112444
 ---
-Now I have enough data for the pattern check. Let me compile the results.
+## STAGE-5 — Cross-PID Pattern Analysis
 
----
+### Comparison Table
 
-## STAGE-4C Results — PID 9607363461433
-
-| Check | Result |
-|-------|--------|
-| **PREFLIGHT** | PASS |
-| **PUSH_VERDICT** | PASS (3/4 metafields written, FAQ preserved) |
-| **VERIFY_VERDICT** | PASS |
-| **REQUIRED_KEYS** | 3 |
-| **LIVE** | YES |
-
-### Pattern Check (STAGE-3 vs STAGE-4)
-
-**PID 9179143569721 (STAGE-3):** PASS_WITH_WARNINGS — 0 SOFT_FAILS, 6 WARNINGS
-- W01: Forbidden keyword in FAQ (cluster leak)
-- W02: Accordion/benefits overlap
-- W03-W06: Sentence length violations in accordion
-
-**PID 9607363461433 (STAGE-4):** PASS_WITH_WARNINGS — 2 SOFT_FAILS, 8 WARNINGS
-- SF01: event_occasion cluster cap violation in benefits (OUTPUT)
-- SF02: FAQ missing trust anchors Q1/Qlast, only 3 questions (OUTPUT)
-- W01: Cluster cap violation in benefits
-- W02-W03: Forbidden/leaked keywords in FAQ
-- W05-W07: Sentence length violations in accordion
-- W08: Developmental language in accordion
-
-**REPEATING_PATTERN: YES**
-
-Two patterns repeat across both PIDs:
-1. **Sentence length violations in accordion** — both PIDs have 3-4 warnings for sentences exceeding 12-word max in connection/body fields. **CLASSIFICATION: OUTPUT** — accordion agent consistently generates long sentences.
-2. **Forbidden keyword leaking into FAQ** — both PIDs have a warning where a cluster keyword appears in FAQ despite being forbidden per thinking.yaml. **CLASSIFICATION: OUTPUT** — FAQ agent does not fully respect thinking.yaml forbidden zones.
-
-**New in STAGE-4 only (not repeating):**
-- FAQ trust anchor omission (SF02) — FAQ agent dropped Q1 "מי אנחנו?" and Qlast "מהם זמני המשלוח?" — **CLASSIFICATION: OUTPUT**
-- event_occasion cluster cap (SF01) — benefits agent over-allocated one cluster — **CLASSIFICATION: OUTPUT**
-
-**FAILURE_CLASSIFICATION:** All issues are **OUTPUT** — agents generating content that exceeds defined constraints, not logic/data/workflow failures.
+| # | Issue | PID 9179143569721 | PID 9607363461433 | Repeating? | Classification |
+|---|-------|--------------------|--------------------|------------|----------------|
+| 1 | Accordion sentence length > 12 words | W03-W06 (4 sentences in connection/body) | W05-W07 (3 sentences in body/connection) | **YES** | OUTPUT |
+| 2 | Forbidden cluster keyword leaked into FAQ | W01 (stability_confidence → FAQ Q3) | W02 (morning_ease → FAQ Q2) | **YES** | OUTPUT |
+| 3 | Accordion/benefits overlap | W02 (block_3 ↔ card_2) | — | NO (isolated) | OUTPUT |
+| 4 | event_occasion cluster cap in benefits | — | SF01 (2 cards instead of 1) | NO (isolated) | OUTPUT |
+| 5 | FAQ missing trust anchors + count < 4 | — | SF02 (only 3 Qs, no Q1/Qlast) | NO (isolated) | OUTPUT |
+| 6 | development_movement leak into FAQ | — | W03 | NO (isolated) | OUTPUT |
+| 7 | Developmental language in accordion | — | W08 ("הקשת מתחזקת") | NO (isolated) | OUTPUT |
 
 ---
 
-**STAGE_VERDICT: PASS_WITH_WARNINGS**
+### Pattern Verdict
+
+**PATTERN_VERDICT: REPEATING**
+
+Two patterns appear across both PIDs:
+
+1. **Accordion sentence length violations** — Both PIDs produce 3-4 sentences exceeding the 12-word max, always in `connection` and `body` fields. The accordion agent consistently generates em-dash compound sentences that overshoot the limit.
+
+2. **Forbidden cluster keyword leaking into FAQ** — Both PIDs show a cluster keyword from the thinking.yaml forbidden list appearing in an FAQ answer. Different clusters each time (stability_confidence / morning_ease), but the same pattern: FAQ agent does not fully enforce forbidden zones from thinking.yaml.
+
+**FAILURE_CLASSIFICATION: OUTPUT** — Both repeating issues are content generation constraint violations. No logic, data, or workflow failures detected.
+
+---
+
+### Isolated Issues (PID 9607363461433 only)
+
+- SF01: event_occasion over-allocated in benefits (2 cards)
+- SF02: FAQ agent dropped both trust anchor questions, produced only 3 Qs
+- W03: development_movement keywords in FAQ Q3
+- W08: developmental language ("הקשת מתחזקת") in accordion
+
+### Isolated Issues (PID 9179143569721 only)
+
+- W02: accordion block_3 overlaps benefits card_2
+
+---
+
+### Stage Verdict
+
+**STAGE_VERDICT: HARD_FAIL**
+
+Per decision rules: 2 repeating patterns across both PIDs → REPEATING_PATTERN: YES → HARD_FAIL.
+
+**Reason:** The accordion agent and FAQ agent consistently violate output constraints across different products. While no HARD_FAILs or safety issues were triggered, the systematic nature means these will likely recur on every future PID without intervention.
+
+**Recommendation — Agent Prompt Tuning (OUTPUT layer fixes):**
+
+1. **Accordion agent** (`04b-shoes-accordion.md`): Add explicit instruction — "Every `connection` and `body` sentence must be ≤ 12 words. Split em-dash compound sentences into two shorter sentences." Add a self-check step before output.
+
+2. **FAQ agent** (`04c-shoes-faq.md`): Add explicit instruction — "Before generating FAQ answers, load the `active_forbidden_rules` from thinking.yaml. Cross-check each answer against the forbidden cluster keywords for the `faq` section. Remove or rephrase any matches."
+
+3. **FAQ agent** (trust anchors): Reinforce Q1 = "מי אנחנו?" and Qlast = "מהם זמני המשלוח?" as mandatory structural requirements (this was PID-isolated but high-severity).
+
+**Severity context:** All issues are WARNING/SOFT_FAIL level. No safety, medical claim, or HARD_FAIL triggers. The content pushed to Shopify is live and acceptable. The HARD_FAIL classification is structural (repeating pattern detected per rules), not severity-based.
+
+---
 
 **EVIDENCE:**
-- Push succeeded (3/4 metafields, FAQ preserved)
-- Verify confirmed 3 required keys live, product published
-- No HARD_FAILs in either PID
-- 2 repeating output patterns identified (accordion sentence length, FAQ keyword leak) — both non-blocking and documented
-- All issues classified as OUTPUT-layer, no systemic logic/data/workflow failures
+- Accordion sentence length: PID1 W03-W06, PID2 W05-W07 — identical pattern
+- FAQ forbidden leak: PID1 W01 (stability_confidence), PID2 W02 (morning_ease) — same mechanism, different clusters
+- Both validator reports: STATUS = PASS_WITH_WARNINGS, 0 HARD_FAILs
 
 **SYSTEM STATE:**
-- PID 9607363461433 is LIVE on Shopify with correct metafields
-- STAGE-4C complete
-- Repeating patterns documented for agent tuning in future stages
-- Plan shoes-stabilization-002: STAGE-4A ✓, STAGE-4B ✓, STAGE-4C ✓
+- Both PIDs (9179143569721, 9607363461433) are LIVE on Shopify with correct metafields
+- STAGE-5 pattern analysis complete
+- Plan shoes-stabilization-002: STAGE-1 ✓, STAGE-2 ✓, STAGE-3 ✓, STAGE-4 ✓, STAGE-5 = HARD_FAIL (repeating output patterns)
+- Next action: agent prompt tuning before next product batch
