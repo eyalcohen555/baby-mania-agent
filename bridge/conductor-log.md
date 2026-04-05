@@ -106,3 +106,7 @@
 | 2026-04-05 10:11:54 | TIMEOUT STAGE-3 |
 | 2026-04-05 10:11:54 |   STAGE-3 | UNKNOWN |
 | 2026-04-05 10:11:54 | PLAN STOPPED: shoes-stabilization-002 at STAGE-3 |
+| 2026-04-05 10:45:27 | STARTED: shoes-stabilization-002 |
+| 2026-04-05 10:45:27 | PLAN DONE: shoes-stabilization-002 — PASS |
+| 2026-04-05 10:49:50 | RESUMED: shoes-stabilization-002 |
+| 2026-04-05 10:49:50 | STARTED STAGE-3A [conductor-shoes-stabilization-002-STAGE-3A-20260405-104950] |
