@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 1.2 | עודכן: 2026-03-25
+### גרסה: 1.3 | עודכן: 2026-04-09
 
 ---
 
@@ -150,7 +150,7 @@ DATA → LOGIC → OUTPUT
 
 #### נעליים (Shoes)
 ```
-סטטוס: 🔶 שכבה 5 (Test → Rollout) — מוכן לריצת בדיקה ראשונה
+סטטוס: ✅ READY — rollout-ready
 
 סגור ✅:
   - Stage 01 ABORT הוסר
@@ -163,10 +163,13 @@ DATA → LOGIC → OUTPUT
   - config.yaml — shoes stages + categories routing (commits 086ae8a, 7720f91)
   - orchestrator push — shoes-aware: routing + suffix + Stage 2 guard (commit f68cfd1)
   - orchestrator B4+B6+B7 — FAQ protection + verify gate + routing (commit 1bcbd3f)
+  - shoes-validation-mini-batch-003 — 2 PIDs עברו clean, 0 הערות
+  - Accordion sentences > 12 words — נפתר
+  - Forbidden cluster leakage into FAQ — נפתר
+  - Final verdict: SHOES READY ✅ (2026-04-09)
 
-פתוח ❌ (לפי סדר):
-  [ ] 1. shoes validator — טרם נבדק על מוצר אמיתי
-  [ ] 2. benefit.body vs benefit.description — mismatch קל
+פתוח ❌:
+  אין — pipeline מוכן לrollout מלא
 ```
 
 #### אביזרים (Accessories)
@@ -178,6 +181,7 @@ DATA → LOGIC → OUTPUT
 
 ### יומן שינויים — צוות 1
 ```
+2026-04-09 | SHOES READY — mini-batch-003 pass | accordion + FAQ patterns נסגרו | rollout-ready
 2026-03-25 | orchestrator shoes-aware (B1-B7) | config categories | 02b runnable | commits f68cfd1, 1bcbd3f, 086ae8a
 2026-03-25 | Stage 01 ABORT הוסר | intelligence_builder shoes fields | commit f485b04
 2026-03-24 | sections + template הועתקו | metafield keys יושרו | 03b/04b/04c סגורו

@@ -63,3 +63,34 @@
 
 ## NEXT STEP:
 ריצת בדיקה ראשונה על מוצר נעל אמיתי דרך orchestrator.
+
+---
+
+## DATE: 2026-04-09
+## TASK: Shoes Pipeline — סגירה רשמית אחרי SHOES READY verdict
+## SCOPE: shoes lane — validation mini-batch-003 + final verdict
+
+## WHAT CHANGED:
+- `shoes-validation-mini-batch-003.yaml` הושלם בהצלחה
+- שני patterns חוזרים נפתרו לצמיתות:
+  1. Accordion sentences > 12 words — תוקן ב-04b-shoes-accordion
+  2. Forbidden cluster leakage into FAQ — תוקן ב-04c-shoes-faq
+- שני PIDs חדשים עברו validation clean (ללא הערות)
+- Final verdict: `SHOES READY`
+
+## FILES TOUCHED:
+- `.claude/agents/04b-shoes-accordion.md`
+- `.claude/agents/04c-shoes-faq.md`
+
+## SYSTEM IMPACT:
+- Shoes pipeline מוכח ויציב end-to-end
+- אין blocker פתוח ב-shoes
+- pipeline מוכן ל-rollout מלא
+
+## OPEN ISSUES:
+- אין
+
+## RISK LEVEL: LOW
+
+## NEXT STEP:
+rollout — הרצת shoes pipeline על מוצרי נעליים בחנות.
