@@ -1,36 +1,14 @@
-task_id: 20260409-165343
+task_id: 20260409-165609
 ---
-File saved. Running internal validation:
-
-**Validation Results:**
-
-| Check | Block 1 | Block 2 | Block 3 |
-|-------|---------|---------|---------|
-| A — Specificity | PASS (soft-sole transition shoe) | PASS (first-time self-dressing) | PASS (toddler surface grip) |
-| B — Full chain | PASS (signal→child→parent) | PASS (signal→child→parent) | PASS (signal→child→parent) |
-| C — L3 in title | PASS (parent outcome) | PASS (parent outcome) | PASS (parent outcome) |
-| D — Connection specific | PASS (hook-based) | PASS (hook-based) | PASS (hook-based) |
-| E — Sentence ≤12 words | PASS (max 10) | PASS (max 12) | PASS (max 9) |
-
-**Check E detail (word counts):**
-- Block 1 body: 9, 10, 9, 8 | connection: 10
-- Block 2 body: 6, 8, 9, 8 | connection: 12
-- Block 3 body: 8, 7, 5, 7 | connection: 9
-
-All sentences ≤ 12. No splits needed.
-
-**Forbidden check:** No forbidden terms, no forbidden clusters (sizing_fit/style_emotion/event_occasion absent), no material claims, no age claims, no storytelling/poetic tone.
-
-**Survivors: 3** → within 3–5 range → PASS.
-
 ---
 
-**TASK RESULT:**
+**STAGE_VERDICT: PASS**
 
-```
-PID: 9607363658041
-BLOCKS_COUNT: 3
-STAGE_VERDICT: PASS
-EVIDENCE: 3 accordion blocks generated from thinking.yaml accordion_blocks (interpreted as selected_signals). All blocks pass checks A–E. Sentence max = 12 words (block 2 connection). No forbidden terms or clusters. Degraded mode respected (no material/age/closure claims).
-SYSTEM STATE: output/stage-outputs/9607363658041_accordion.json saved. Ready for next stage.
-```
+**EVIDENCE:**
+- `9607363658041_faq.json` saved with 4 items (2 trust + 2 objection)
+- Q1 = "מי אנחנו?" (YES) | Q_last = "מהם זמני המשלוח?" (YES)
+- Check E (forbidden cluster cross-check): PASS — scanned all answers, no keywords from `morning_ease`, `stability_confidence`, or `development_movement`
+- Both objection questions use `sizing_fit` cluster (assigned in thinking.yaml, no accordion overlap)
+- All sentences ≤12 words, all answers reach L3, no banned words
+
+**SYSTEM STATE:** STAGE-1B complete. `9607363658041_faq.json` generated and validated. Ready for next stage.
