@@ -491,3 +491,5 @@
 | 2026-04-09 16:59:12 | DONE [20260409-165609] [TIER:T1] | TASK_ID: conductor-shoes-validation-mini-batch-003-STAGE-1B-20260409-165606 |
 | 2026-04-09 16:59:19 | STARTED [20260409-165919] [TIER:T0] | TASK_ID: conductor-shoes-validation-mini-batch-003-STAGE-1C-20260409-165916 |
 | 2026-04-09 17:00:14 | DONE [20260409-165919] [TIER:T0] | TASK_ID: conductor-shoes-validation-mini-batch-003-STAGE-1C-20260409-165916 |
+| 2026-04-09 17:00:25 | STARTED [20260409-170025] [TIER:T1] | TASK_ID: conductor-shoes-validation-mini-batch-003-STAGE-2A-20260409-170021 |
+| 2026-04-09 17:03:59 | DONE [20260409-170025] [TIER:T1] | TASK_ID: conductor-shoes-validation-mini-batch-003-STAGE-2A-20260409-170021 |

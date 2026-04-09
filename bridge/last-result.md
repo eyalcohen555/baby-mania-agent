@@ -1,72 +1,27 @@
-task_id: 20260409-165919
+task_id: 20260409-170025
 ---
-## STAGE-1C Validation — PID 9607363658041
+**Internal Validation Results:**
 
-### Check 1: ACCORDION SENTENCE LENGTH
+| Block | Check A (Specificity) | Check B (Chain) | Check C (L3 Title) | Check D (Connection) | Check E (≤12 words) |
+|-------|----------------------|-----------------|--------------------|--------------------|---------------------|
+| 1 - development_movement | ✓ winter first-step specific | ✓ signal→effect→outcome | ✓ "בלי לחקור אורתופדיה" = parent | ✓ "חום רך שלא מכביד" = this shoe | ✓ max 9 words |
+| 2 - independence_milestone | ✓ easy-entry first-step shoe | ✓ signal→effect→outcome | ✓ "הרגע שכל הורה מחכה לו" = parent | ✓ "מרקם חמים ורך" = this shoe | ✓ max 8 words |
+| 3 - stability_confidence | ✓ stability on winter surfaces | ✓ signal→effect→outcome | ✓ "ההורים נושמים" = parent | ✓ surfaces specific to toddler day | ✓ max 10 words |
 
-**Block 0 (הרגל מתפתחת):**
-| Field | Sentence | Words |
-|-------|----------|-------|
-| body | הסוליה הרכה נותנת לכף הרגל לעבוד בכל צעד | 8 |
-| body | שרירי הרגל מתחזקים בתנועה טבעית, לא נשענים על סוליה קשיחה | 9 |
-| body | ילד שהרגל שלו עובדת חופשי — זז יותר, נופל פחות | 9 |
-| body | את לא צריכה לחקור מה מתאים לשלב שלו | 7 |
-| connection | הסוליה בנעל הזו לא חוסמת את הרגל — נותנת לה לעבוד | 10 |
+**Survivors: 3** → PASS (3–5 range)
 
-**Block 1 (נועל לבד בפעם הראשונה):**
-| Field | Sentence | Words |
-|-------|----------|-------|
-| body | נעל פשוטה שקלה להיכנס אליה לבד | 6 |
-| body | ילד שמצליח לנעול בלי עזרה בונה ביטחון עצמי | 8 |
-| body | כל הצלחה קטנה בבוקר קובעת את הטון של היום | 9 |
-| body | את לא צריכה להתכופף כל פעם — הוא מסתדר | 8 |
-| connection | הנעל הזו נכנסת על הרגל בלי תרגיל — הילד עושה את זה לבד | 12 |
-
-**Block 2 (הוא חוקר לבד):**
-| Field | Sentence | Words |
-|-------|----------|-------|
-| body | סוליה שמחזיקה על פרקט, אריחים ודשא בלי להחליק | 7 |
-| body | ילד שמרגיש יציב לא מחכה שיחזיקו אותו | 7 |
-| body | הוא ניגש, מטפס, בודק — לבד | 5 |
-| body | את משתחררת מלהיות צמודה אליו כל רגע | 6 |
-| connection | האחיזה בנעל הזו נבנתה למשטחים שפעוט פוגש ביום רגיל | 9 |
-
-**ACCORDION_LONG_SENTENCES:** (none — all ≤ 12 words)
-**ACCORDION_PATTERN_RECURS: NO**
+**Constraint compliance:**
+- No material names (F03): ✓ used "חום רך", "מרקם חמים ורך"
+- No age claims (F04): ✓
+- No gendered language (F06): ✓ used "הילד", "ההורים", neutral verbs
+- No forbidden clusters in accordion: ✓ (sizing_fit, style_emotion, event_occasion absent)
+- No forbidden expressions: ✓
+- No specific closure/sole claims: ✓
 
 ---
 
-### Check 2: FAQ FORBIDDEN CLUSTER LEAK
-
-**Forbidden clusters for FAQ** (from thinking.yaml `faq.forbidden`): `[morning_ease, stability_confidence]`
-
-**Repetition risks relevant:** morning_ease (natural pull to benefits/accordion), stability_confidence (natural pull to accordion/hero)
-
-Scanning all 4 FAQ answers for forbidden cluster keywords:
-
-| Q# | Answer text | morning_ease keywords | stability_confidence keywords |
-|----|-------------|----------------------|------------------------------|
-| Q1 (מי אנחנו) | חנות ביגוד ונעלי תינוקות... משלוח מהיר... החזרות קלות | None | None |
-| Q2 (איך יודעים מה המידה) | מודדים את הרגל על דף נייר... | None | None |
-| Q3 (לא תקטן אחרי חודש) | לכן יש 25 וריאנטים... | None | None |
-| Q4 (זמני משלוח) | משלוח עד 5 ימי עסקים... | None | None |
-
-No אחיזה/יציב/החלקה/משטח (stability_confidence) or בוקר-ease/קל-לנעול (morning_ease) language found in FAQ answers.
-
-**FAQ_FORBIDDEN_LEAKS:** (none)
-**FAQ_PATTERN_RECURS: NO**
-
----
-
-### Results
-
-```
-ACCORDION_PATTERN_RECURS: NO
-FAQ_PATTERN_RECURS: NO
-PID_1_VERDICT: CLEAN
-STAGE_VERDICT: PASS
-```
-
-**EVIDENCE:** All accordion sentences ≤ 12 words (max found: 12 words in block 1 connection). Zero forbidden cluster keywords (morning_ease, stability_confidence) leaked into FAQ answers. Content is clean.
-
-**SYSTEM STATE:** STAGE-1C complete for PID 9607363658041. Both validation patterns negative. Ready for next stage.
+**PID:** 9615376089401
+**BLOCKS_COUNT:** 3
+**STAGE_VERDICT:** PASS
+**EVIDENCE:** 3 blocks generated, all passed checks A–E. Each sentence ≤12 words verified. L3 parent outcomes in all titles. No forbidden clusters/expressions. Material/age/gender constraints respected.
+**SYSTEM STATE:** `9615376089401_accordion.json` saved. Ready for next stage.
