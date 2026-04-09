@@ -172,3 +172,9 @@
 | 2026-04-10 01:19:24 | PLAN DONE: auto-test-003 — PASS |
 | 2026-04-10 01:21:50 | STARTED: auto-test-001 |
 | 2026-04-10 01:21:50 | STARTED STAGE-1 [conductor-auto-test-001-STAGE-1-20260410-012150] |
+| 2026-04-10 01:22:25 |   STAGE-1 | PASS |
+| 2026-04-10 01:22:25 | PLAN DONE: auto-test-001 — PASS |
+| 2026-04-10 01:22:25 | POST_BATCH_DECISION: READY_FOR_FULL | sr=100% fp=0 runs=2 cf=False | action=auto-chain to auto-test-002 |
+| 2026-04-10 01:22:25 | CHAIN_START: depth=1 decision=READY_FOR_FULL plan=plans/auto-test-002.yaml |
+| 2026-04-10 01:22:27 | STARTED: auto-test-002 |
+| 2026-04-10 01:22:27 | STARTED STAGE-1 [conductor-auto-test-002-STAGE-1-20260410-012227] |
