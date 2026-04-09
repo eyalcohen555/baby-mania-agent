@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 2.4 | עודכן: 2026-04-09
+### גרסה: 2.5 | עודכן: 2026-04-09
 
 ---
 
@@ -360,8 +360,8 @@ DATA → LOGIC → OUTPUT
 
 #### נעליים (Shoes)
 ```
-סטטוס: ✅ SHOES READY — pipeline מוכח, rollout-ready
-מוצרים לייב: 8 (6 מ-rollout-001 + 2 מ-stabilization-002)
+סטטוס: ✅ ACTIVE ROLLOUT — pipeline מוכח, batch rollout פעיל
+מוצרים לייב: 13 (6 מ-rollout-001 + 2 מ-stabilization-002 + 5 מ-rollout-002)
 סוכנים: 03b-shoes-benefits, 04-shoes-validator, 04b-shoes-accordion, 04c-shoes-faq
 sections: bm-shoes-accordion.liquid, bm-shoes-benefits.liquid, bm-shoes-size-guide.liquid
 template: product.shoes.json
@@ -378,8 +378,9 @@ milestones שנסגרו:
 ✅ Agent fixes PASS — 04b: 12-word sentence limit + self-check | 04c: forbidden cluster cross-check + trust anchors
 ✅ Validation mini-batch-003 PASS (2026-04-09) — post-fix check CLEAN על 2 PIDs חדשים
 ✅ FINAL VERDICT: SHOES READY (2026-04-09) — pipeline יציב, אין blocker פתוח
+✅ shoes-rollout-002 PASS (2026-04-09) — 5/5 PIDs LIVE, FAILURE_PATTERNS: NONE
 
-הבא: shoes-rollout-002 — batch של 5–8 PIDs מהרשימה הממתינה
+הבא: shoes-rollout-003 — batch נוסף 5–8 PIDs (נותרו ~45 PIDs ברשימה הממתינה)
 ```
 
 #### אביזרים (Accessories)

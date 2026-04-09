@@ -195,3 +195,29 @@ Agent prompt tuning before next batch:
 - agents 04b ו-04c יציבים — אין tuning נוסף נדרש
 ## READY_FOR: batch rollout של שאר מוצרי הנעליים
 ## NEXT_STEP: יצירת plan shoes-rollout-002 על 5–8 PIDs מהרשימה הממתינה
+
+---
+
+## DATE: 2026-04-09
+## TASK: shoes-rollout-002 — Controlled Live Batch
+## APPROVAL_TIER: T2
+## PIDs:
+- 9096635941177 | מגפי פרמיום לבנות דגם אלין
+- 9607365132601 | נעל אולסטאר צעד ראשון לתינוק
+- 9607363756345 | נעל אופנתית אלגנטית לתינוק
+- 9615375565113 | נעל אלגנטית צעד ראשון לבנות
+- 9607363232057 | נעל הלו קיטי עם אורות לילדות
+## WHAT_CHANGED:
+- accordion.json + faq.json נוצרו מחדש עם agents המתוקנים (04b + 04c)
+- publisher.json עודכן לכל 5 PIDs
+- faq_overwrite=True הוגדר ב-product-context לכל 5 PIDs
+- 5 מוצרים נדחפו ל-Shopify ואומתו (required_keys=3, verify OK)
+## BATCH_VERDICT: PASS
+## LIVE_COUNT: 5/5
+## ACCORDION_PATTERN_RECURS: NO — כל משפטי body/connection ≤12 מילים
+## FAQ_FORBIDDEN_LEAK: NO — morning_ease + stability_confidence לא נמצאו בתשובות
+## FAILURE_PATTERNS: NONE
+## TOTAL_LIVE: 13 מוצרי נעליים LIVE על Shopify
+## RISK_LEVEL: LOW
+## READY_TO_CONTINUE: YES
+## NEXT_STEP: shoes-rollout-003 — batch נוסף של 5–8 PIDs מהרשימה הממתינה (נותרו ~45 PIDs)
