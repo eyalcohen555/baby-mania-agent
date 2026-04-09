@@ -158,3 +158,17 @@
 | 2026-04-09 17:15:29 | PLAN DONE: shoes-validation-mini-batch-003 — PASS |
 | 2026-04-09 17:51:27 | STARTED: shoes-rollout-002 |
 | 2026-04-09 17:51:27 | STARTED STAGE-1 [conductor-shoes-rollout-002-STAGE-1-20260409-175127] |
+| 2026-04-09 17:51:42 |   STAGE-1 | UNKNOWN |
+| 2026-04-09 17:51:42 | PLAN STOPPED: shoes-rollout-002 at STAGE-1 |
+| 2026-04-10 01:19:24 | STARTED: auto-test-001 |
+| 2026-04-10 01:19:24 | PLAN DONE: auto-test-001 — PASS |
+| 2026-04-10 01:19:24 | POST_BATCH_DECISION: READY_FOR_SCALE | sr=100% fp=0 runs=1 cf=False | action=auto-chain to auto-test-002 |
+| 2026-04-10 01:19:24 | CHAIN_START: depth=1 decision=READY_FOR_SCALE plan=plans/auto-test-002.yaml |
+| 2026-04-10 01:19:24 | STARTED: auto-test-002 |
+| 2026-04-10 01:19:24 | PLAN DONE: auto-test-002 — PASS |
+| 2026-04-10 01:19:24 | POST_BATCH_DECISION: READY_FOR_SCALE | sr=100% fp=0 runs=1 cf=False | action=auto-chain to auto-test-003 |
+| 2026-04-10 01:19:24 | CHAIN_START: depth=2 decision=READY_FOR_SCALE plan=plans/auto-test-003.yaml |
+| 2026-04-10 01:19:24 | STARTED: auto-test-003 |
+| 2026-04-10 01:19:24 | PLAN DONE: auto-test-003 — PASS |
+| 2026-04-10 01:21:50 | STARTED: auto-test-001 |
+| 2026-04-10 01:21:50 | STARTED STAGE-1 [conductor-auto-test-001-STAGE-1-20260410-012150] |
