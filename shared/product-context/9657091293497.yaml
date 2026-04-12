@@ -1,62 +1,14 @@
-description_raw: '
-
-  זהו אוברול חורף שנבחר בקפידה,עם בד איכותי, מגע עדין וגזרה שמאפשרת תנועה חופשית,כך
-  שהתינוק נשאר רגוע, חמים ונינוח לאורך כל היום.
-
-  למה הורים בוחרים בו
-
-  • בד רך במיוחד ונעים למגע• שומר על חום גוף התינוק מבלי להכביד• קפוצ’ון מחמם עם עיצוב
-  עדין ומתוק• גזרה נוחה שמלווה תנועה טבעית
-
-  • מתאים לשימוש יומיומי בבית ובחוץ
-
-
-
-  הרכב הבד
-
-  האוברול עשוי בד פליז איכותי שנבחר במיוחד לעונת החורף,ומשלב רכות, חמימות ותחושת נוחות
-  מתמשכת.
-
-
-  תחושת הלבישה
-
-  הבד עוטף את הגוף ברכות,אינו נוקשה ואינו מכביד,ומאפשר לתינוק להרגיש חופשי ונינוח
-  גם לאחר שעות של לבישה.
-
-
-  מותאם לעור עדין
-
-  WarmNest™ מותאם לעור הרגיש של תינוקותומעניק תחושת ביטחון ונוחות בכל שימוש.
-
-
-  התאמה ומידות
-
-  האוברול מעוצב בגזרה נוחה ומאוזנת.במידה ואתם מתלבטים בין שתי מידות —מומלץ לבחור מידה
-  אחת מעל.
-
-
-  עיצוב וצבעים
-
-  פלטת צבעים רכה ונעימה לעין,בהשראת עולמות החורף והבית,למראה רגוע, נקי ויוקרתי.
-
-
-  הבחירה של הורים בעונת החורף
-
-  WarmNest™ נבחר בקפידה כדי להפוך את ימי החורף לרכים ונעימים יותרלתינוק ולהורים כאחד.
-
-
-  לבחירת מידה ולהוספה לעגלה'
+description_raw: ''
 fabric_type: ''
-fetched_at: '2026-03-09T09:41:07.898094'
+fetched_at: '2026-04-11T23:46:45.239457'
 generated:
-  published: true
-  template_key: templates/product.newborn-baby-winter-jacket-warm-hooded-infant-romper-thicken-soft-cotton-boys-jumpsuit-cartoon-baby-girl-clothes-0-to-12-months.json
-  template_suffix: newborn-baby-winter-jacket-warm-hooded-infant-romper-thicken-soft-cotton-boys-jumpsuit-cartoon-baby-girl-clothes-0-to-12-months
+  published: false
   validated: false
 main_use: ''
 price: '199.00'
 product_handle: newborn-baby-winter-jacket-warm-hooded-infant-romper-thicken-soft-cotton-boys-jumpsuit-cartoon-baby-girl-clothes-0-to-12-months
 product_id: '9657091293497'
+product_template_type: ''
 product_title: WarmNest™– אוברול חורף מחבק לתינוקות
 product_type: ''
 tags:
@@ -65,5 +17,5 @@ tags:
 - 6-12 חודש
 - אוברול
 target_age: ''
-template_suffix_current: ''
+template_suffix_current: clothing-test
 variants_count: 16

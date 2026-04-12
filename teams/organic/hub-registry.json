@@ -1,12 +1,12 @@
 {
   "description": "BabyMania Organic Team — רישום מרכזי של כל ה-HUBs",
   "version": "2.0",
-  "last_updated": "2026-03-23",
+  "last_updated": "2026-04-05",
   "blog_id": 109164036409,
   "blog_url": "https://babymania-il.com/blogs/news",
   "topic_hubs_knowledge": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic צוות/docs/TOPIC-HUBS-KNOWLEDGE.md",
   "last_published": "HUB-7",
-  "next_hub": "HUB-8",
+  "next_hub": "HUB-9",
   "hubs": [
     {
       "hub_id": "HUB-1",
@@ -194,26 +194,41 @@
       "hub_id": "HUB-8",
       "hub_name": "Baby Routine",
       "hub_name_he": "שגרה יומית לתינוק",
-      "status": "planned",
+      "status": "ready_to_publish",
       "approved_pillar": "How to Build a Healthy Baby Routine",
-      "approved_pillar_he": "איך לבנות שגרה בריאה לתינוק",
-      "pillar_keyword": null,
-      "articles_count": 0,
-      "articles": [],
-      "product_bridge": "sleep accessories, comfortable baby clothing",
-      "approved_clusters": [
-        "Newborn Daily Routine",
-        "Sleep Routine for Babies",
-        "Feeding and Sleep Schedule",
-        "How to Calm a Fussy Baby",
-        "When Babies Start a Routine",
-        "Signs Your Baby Needs a Routine"
+      "approved_pillar_he": "סדר יום לתינוק — המדריך המלא לבניית שגרה לפי גיל",
+      "pillar_keyword": "סדר יום לתינוק",
+      "pillar_keyword_he": "סדר יום לתינוק",
+      "pillar": {
+        "title": "סדר יום לתינוק — המדריך המלא לבניית שגרה לפי גיל",
+        "handle": "seder-yom-letinok-madrih-male"
+      },
+      "articles_count": 6,
+      "articles": [
+        {"id": "HUB-8-Pillar", "handle": "seder-yom-letinok-madrih-male", "title": "סדר יום לתינוק — המדריך המלא לבניית שגרה לפי גיל"},
+        {"id": "HUB-8-C3", "handle": "ech-lehargia-tinok-sheboche-8-shitatot", "title": "איך להרגיע תינוק שבוכה — 8 שיטות שעובדות"},
+        {"id": "HUB-8-C5", "handle": "seder-yom-tinok-3-hodashim-dugma-maasit", "title": "סדר יום לתינוק בן 3 חודשים — דוגמה מעשית"},
+        {"id": "HUB-8-C1", "handle": "seder-yom-lenewborn-shavuot-rishonim", "title": "סדר יום לניובורן — שגרה בשבועות הראשונים"},
+        {"id": "HUB-8-C2", "handle": "seder-achila-veshina-letinok-luach-zmanim", "title": "סדר האכלה ושינה לתינוק — לוח זמנים לפי גיל"},
+        {"id": "HUB-8-C4", "handle": "matay-tinok-matchil-shgara-simanim", "title": "מתי תינוק מתחיל שגרה — סימנים שהגיע הזמן"}
       ],
-      "files_location": null,
+      "product_bridge": "sleep accessories, comfortable baby clothing, cotton rompers",
+      "approved_clusters": [
+        "C1: סדר יום לניובורן — שגרה בשבועות הראשונים",
+        "C2: סדר האכלה ושינה לתינוק — לוח זמנים לפי גיל",
+        "C3: איך להרגיע תינוק שבוכה — 8 שיטות שעובדות",
+        "C4: מתי תינוק מתחיל שגרה — סימנים שהגיע הזמן",
+        "C5: סדר יום לתינוק בן 3 חודשים — דוגמה מעשית"
+      ],
+      "skipped_clusters": ["Sleep Routine for Babies — חפיפה עם HUB-1"],
+      "plan_file": "HUB8_plan.json",
+      "planned_at": "2026-04-05",
+      "files_location": "C:/Projects/baby-mania-agent/output/hub8/",
       "file_prefix": "HUB8_",
+      "writing_order": ["Pillar", "C3", "C5", "C1", "C2", "C4"],
       "published_at": null,
-      "demand_validation_required": true,
-      "notes": "הועבר מ-HUB-6 ל-HUB-8 בתאריך 19/03/2026. חפיפה טבעית עם HUB-1 (Sleep)"
+      "demand_validation_required": false,
+      "notes": "כתיבה הושלמה 05/04/2026 — 6 מאמרים. ממתין לאישור פרסום. Sleep Routine נדחה בגלל חפיפה עם HUB-1. מאמר C5 (3 חודשים) נוסף על בסיס ביקוש גבוה מאומת."
     }
   ]
 }

@@ -1,0 +1,458 @@
+{
+  "generated_by": "product-reverse-index builder v1.2",
+  "generated_at": "2026-04-12T19:15:00+03:00",
+  "version": "1.2",
+  "source_map_version": "4.0",
+  "source_hubs": "HUB-1 through HUB-8",
+  "yaml_scan_dirs": [
+    "C:/Projects/baby-mania-agent/shared/product-context/",
+    "C:/Users/3024e/Documents/GitHub/baby-mania-theme/shared/product-context/"
+  ],
+  "total_products": 25,
+  "total_verified": 25,
+  "total_unverified": 0,
+  "products": [
+    {
+      "product_handle": "1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes",
+      "product_id": "9940751417657",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9940751417657.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C6",
+          "hub_id": "HUB-6",
+          "url_slug": "chomrim-noshmim-naale-tinoket-mah-levakesh",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "2023-winter-snow-baby-boots-multiple-colors-warm-fluff-balls-indoor-colloidal-particle-sole-infant-newborn-toddler-baby-shoes",
+      "product_id": "9615376023865",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9615376023865.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C5",
+          "hub_id": "HUB-6",
+          "url_slug": "matay-lechahlif-naale-yeled-hassimanim",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "baby-bather-baby-bath-support-for-bathtub-infant-bathtub-shower-seat-with-drain-holes-temperature-sensing-for-newborn-babies",
+      "product_id": "9606822330681",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9606822330681.yaml",
+      "total_linking_articles": 2,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-3-C2",
+          "hub_id": "HUB-3",
+          "url_slug": "baby-bath-safety-tips",
+          "cluster_role": "supporting"
+        },
+        {
+          "cluster_id": "HUB-3-C4",
+          "hub_id": "HUB-3",
+          "url_slug": "how-often-to-bathe-a-newborn",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "baby-bear-cozy-set",
+      "product_id": "9688934940985",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9688934940985.yaml",
+      "total_linking_articles": 11,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-2-Pillar",
+          "hub_id": "HUB-2",
+          "url_slug": "how-many-clothes-does-a-newborn-need",
+          "cluster_role": "pillar"
+        },
+        {
+          "cluster_id": "HUB-8-Pillar",
+          "hub_id": "HUB-8",
+          "url_slug": "seder-yom-letinok-madrih-male",
+          "cluster_role": "pillar"
+        }
+      ],
+      "linked_articles_omitted": 9
+    },
+    {
+      "product_handle": "baby-boy-shoes-new-pu-leather-casual-sneakers-anti-slip-infant-sport-first-walkers-christening",
+      "product_id": "9615376417081",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9615376417081.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C1",
+          "hub_id": "HUB-6",
+          "url_slug": "naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "baby-socks-shoes-infant-color-matching-cute-kids-boys-shoes-doll-soft-soled-child-floor-sneaker-bebe-toddler-girls-first-walkers",
+      "product_id": "9607363658041",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9607363658041.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C3",
+          "hub_id": "HUB-6",
+          "url_slug": "mida-nachon-naale-yeladim-kacha-memdim-babayit",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+      "product_id": "9839252472121",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/babysleep-pro.yaml",
+      "total_linking_articles": 11,
+      "linked_articles": [
+        {
+          "cluster_id": "10085913231673_blog_article_1",
+          "hub_id": "HUB-1",
+          "url_slug": "how-to-help-baby-sleep-through-the-night",
+          "cluster_role": "pillar"
+        },
+        {
+          "cluster_id": "HUB-7-Pillar",
+          "hub_id": "HUB-7",
+          "url_slug": "sviva-betua-letinok-madrih-male",
+          "cluster_role": "pillar"
+        }
+      ],
+      "linked_articles_omitted": 9
+    },
+    {
+      "product_handle": "cartoon-digital-thermometer-led-display-water-temperature-meter-safety-floating-toy-for-kids-baby-bath-thermometer",
+      "product_id": "9605688525113",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9605688525113.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-3-C1",
+          "hub_id": "HUB-3",
+          "url_slug": "baby-bath-water-temperature",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "childrens-fashion-boots-black-low-lightweight-boys-girls-toddler-shoes-0-8-years-old-soft-bottom-non-slip-kids-baby-boots-shoes",
+      "product_id": "9615669461305",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9615669461305.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C5",
+          "hub_id": "HUB-6",
+          "url_slug": "matay-lechahlif-naale-yeled-hassimanim",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes",
+      "product_id": "9615378186553",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9615378186553.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C6",
+          "hub_id": "HUB-6",
+          "url_slug": "chomrim-noshmim-naale-tinoket-mah-levakesh",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "childrens-sneakers-boys-girls-soft-sole-non-slip-casual-student-running-shoes-baby-kids-school-sports-shoes-warm-cotton-shoes",
+      "product_id": "9606764200249",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9606764200249.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C2",
+          "hub_id": "HUB-6",
+          "url_slug": "solya-gmisha-naale-yeladim-mah-hahevdel",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "childrens-sneakers-kids-fashion-design-white-non-slip-casual-shoes-for-boys-girls-hook-breathable-sneakers-toddler-outdoor-shoe",
+      "product_id": "9606764298553",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9606764298553.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C3",
+          "hub_id": "HUB-6",
+          "url_slug": "mida-nachon-naale-yeladim-kacha-memdim-babayit",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "citgeett-infant-baby-boys-girls-sneakers-contrast-color-stripe-pu-leather-anti-slip-sole-prewalker-first-walker-shoes",
+      "product_id": "9615375827257",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9615375827257.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C1",
+          "hub_id": "HUB-6",
+          "url_slug": "naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "diimuu-baby-children-boys-clothes-rompers-toddler-kids-overalls-denim-pants-casual-jumpsuits-long-sleeve-fashion-trousers",
+      "product_id": "9895864205625",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9895864205625.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-4-C1",
+          "hub_id": "HUB-4",
+          "url_slug": "best-fabrics-for-sensitive-baby-skin",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "kids-casual-shoes-sneakers-boys-sport-breathable-tennis-sneaker-baby-children-girls-shoes-spring-fashion-white-flat-running-shoe",
+      "product_id": "9607363461433",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9607363461433.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C2",
+          "hub_id": "HUB-6",
+          "url_slug": "solya-gmisha-naale-yeladim-mah-hahevdel",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "led-display-household-water-shower-thermometer-5-85-flow-self-powered-water-thermometer-monitoring-baby-care-energy-smart-meter",
+      "product_id": "10099941179705",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/10099941179705.yaml",
+      "total_linking_articles": 3,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-3-C1",
+          "hub_id": "HUB-3",
+          "url_slug": "baby-bath-water-temperature",
+          "cluster_role": "supporting"
+        },
+        {
+          "cluster_id": "HUB-3-C3",
+          "hub_id": "HUB-3",
+          "url_slug": "baby-bath-essentials-checklist",
+          "cluster_role": "supporting"
+        }
+      ],
+      "linked_articles_omitted": 1
+    },
+    {
+      "product_handle": "ma-baby-0-18m-baby-girl-clothes-sets-newborn-infant-toddler-knit-jumpsuit-floral-print-shorts-headband-outfits-summer-clothing",
+      "product_id": "9855017550137",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9855017550137.yaml",
+      "total_linking_articles": 2,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-4-Pillar",
+          "hub_id": "HUB-4",
+          "url_slug": "how-to-care-for-sensitive-baby-skin",
+          "cluster_role": "pillar"
+        },
+        {
+          "cluster_id": "HUB-4-C3",
+          "hub_id": "HUB-4",
+          "url_slug": "signs-your-baby-has-sensitive-skin",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "newborn-adjustable-bathtub-pillow-seat-cushion-cross-shaped-anti-slip-baby-bath-net-mat-children-bathtub-shower-cradle-bed-seat",
+      "product_id": "9605673419065",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9605673419065.yaml",
+      "total_linking_articles": 3,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-3-Pillar",
+          "hub_id": "HUB-3",
+          "url_slug": "how-to-bathe-a-newborn",
+          "cluster_role": "pillar"
+        },
+        {
+          "cluster_id": "HUB-3-C2",
+          "hub_id": "HUB-3",
+          "url_slug": "baby-bath-safety-tips",
+          "cluster_role": "supporting"
+        }
+      ],
+      "linked_articles_omitted": 1
+    },
+    {
+      "product_handle": "newborn-baby-winter-jacket-warm-hooded-infant-romper-thicken-soft-cotton-boys-jumpsuit-cartoon-baby-girl-clothes-0-to-12-months",
+      "product_id": "9657091293497",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9657091293497.yaml",
+      "total_linking_articles": 2,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-7-C2",
+          "hub_id": "HUB-7",
+          "url_slug": "tauyot-shina-betua-tinok",
+          "cluster_role": "supporting"
+        },
+        {
+          "cluster_id": "HUB-8-C1",
+          "hub_id": "HUB-8",
+          "url_slug": "seder-yom-lenewborn-shavuot-rishonim",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "no-tie-knob-parent-child-daddy-shoes-womens-new-autumn-thick-soled-running-childrens-sports-casual-shoes-for-girls-and-boys",
+      "product_id": "9888961528121",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9888961528121.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C4",
+          "hub_id": "HUB-6",
+          "url_slug": "naale-gan-yeladim-mah-kday-ladaat",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "real-time-temperature-silicone-baby-take-a-bath-bathtub-non-slip-foot-bath-bucket-folding-bathroom-with-temperature-sensing",
+      "product_id": "9605551423801",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9605551423801.yaml",
+      "total_linking_articles": 3,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-3-Pillar",
+          "hub_id": "HUB-3",
+          "url_slug": "how-to-bathe-a-newborn",
+          "cluster_role": "pillar"
+        },
+        {
+          "cluster_id": "HUB-3-C3",
+          "hub_id": "HUB-3",
+          "url_slug": "baby-bath-essentials-checklist",
+          "cluster_role": "supporting"
+        }
+      ],
+      "linked_articles_omitted": 1
+    },
+    {
+      "product_handle": "size-21-36-baby-toddler-shoes-for-boys-girls-breathable-mesh-little-kids-casual-sneakers-non-slip-children-sport-shoes-tenis-1",
+      "product_id": "9607363395897",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9607363395897.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-C2",
+          "hub_id": "HUB-6",
+          "url_slug": "solya-gmisha-naale-yeladim-mah-hahevdel",
+          "cluster_role": "supporting"
+        }
+      ]
+    },
+    {
+      "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months",
+      "product_id": "10029649101113",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/10029649101113.yaml",
+      "total_linking_articles": 13,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-4-Pillar",
+          "hub_id": "HUB-4",
+          "url_slug": "how-to-care-for-sensitive-baby-skin",
+          "cluster_role": "pillar"
+        },
+        {
+          "cluster_id": "HUB-5-Pillar",
+          "hub_id": "HUB-5",
+          "url_slug": "matanot-letinok-madrih-male",
+          "cluster_role": "pillar"
+        }
+      ],
+      "linked_articles_omitted": 11
+    },
+    {
+      "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes",
+      "product_id": "10029649133881",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/10029649133881.yaml",
+      "total_linking_articles": 15,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-2-Pillar",
+          "hub_id": "HUB-2",
+          "url_slug": "how-many-clothes-does-a-newborn-need",
+          "cluster_role": "pillar"
+        },
+        {
+          "cluster_id": "HUB-5-Pillar",
+          "hub_id": "HUB-5",
+          "url_slug": "matanot-letinok-madrih-male",
+          "cluster_role": "pillar"
+        }
+      ],
+      "linked_articles_omitted": 13
+    },
+    {
+      "product_handle": "trendy-comfortable-sneakers-for-baby-girls-and-boys-lightweight-nonslip-shoes-for-indoor-outdoor-walking-all-seasons",
+      "product_id": "9607365132601",
+      "yaml_verified": true,
+      "yaml_file": "shared/product-context/9607365132601.yaml",
+      "total_linking_articles": 1,
+      "linked_articles": [
+        {
+          "cluster_id": "HUB-6-Pillar",
+          "hub_id": "HUB-6",
+          "url_slug": "bchira-naale-tinok-madrih-male",
+          "cluster_role": "pillar"
+        }
+      ]
+    }
+  ]
+}

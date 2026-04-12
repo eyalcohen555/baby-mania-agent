@@ -1,9 +1,9 @@
 {
   "generated_by": "07-organic-content-mapper",
   "generated_at": "2026-03-10T10:00:00Z",
-  "last_updated_at": "2026-03-12T01:50:34+02:00",
-  "last_updated_by": "HUB-4 Sensitive Baby Skin — 5 articles PUBLISHED to Shopify (Pillar + C1-C4, QA v1.1 PASS)",
-  "site_map_version": "3.2",
+  "last_updated_at": "2026-04-12T00:00:00+03:00",
+  "last_updated_by": "STAGE 1B MAP SYNC — HUB-5 through HUB-8 verified in map. HUB-7-C1 product link restored (Tempio™ YAML confirmed). Metadata updated to v4.0.",
+  "site_map_version": "4.0",
   "hubs": [
     {
       "hub_id": "HUB-2",
@@ -839,11 +839,62 @@
     "hub_status": "active",
     "published_at": "2026-03-11T14:30:00+02:00",
     "articles": [
-      { "cluster_id": "HUB-3-Pillar", "shopify_article_id": 681476489529, "url_slug": "how-to-bathe-a-newborn",          "status": "published", "http_verified": true },
-      { "cluster_id": "HUB-3-C1",     "shopify_article_id": 681476522297, "url_slug": "baby-bath-water-temperature",     "status": "published", "http_verified": true },
-      { "cluster_id": "HUB-3-C2",     "shopify_article_id": 681476555065, "url_slug": "baby-bath-safety-tips",           "status": "published", "http_verified": true },
-      { "cluster_id": "HUB-3-C3",     "shopify_article_id": 681476587833, "url_slug": "baby-bath-essentials-checklist",  "status": "published", "http_verified": true },
-      { "cluster_id": "HUB-3-C4",     "shopify_article_id": 681476620601, "url_slug": "how-often-to-bathe-a-newborn",   "status": "published", "http_verified": true }
+      {
+        "cluster_id": "HUB-3-Pillar",
+        "shopify_article_id": 681476489529,
+        "url_slug": "how-to-bathe-a-newborn",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB3P-001", "product_handle": "newborn-adjustable-bathtub-pillow-seat-cushion-cross-shaped-anti-slip-baby-bath-net-mat-children-bathtub-shower-cradle-bed-seat", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB3P-002", "product_handle": "real-time-temperature-silicone-baby-take-a-bath-bathtub-non-slip-foot-bath-bucket-folding-bathroom-with-temperature-sensing", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-3-C1",
+        "shopify_article_id": 681476522297,
+        "url_slug": "baby-bath-water-temperature",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB3C1-001", "product_handle": "cartoon-digital-thermometer-led-display-water-temperature-meter-safety-floating-toy-for-kids-baby-bath-thermometer", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB3C1-002", "product_handle": "led-display-household-water-shower-thermometer-5-85-flow-self-powered-water-thermometer-monitoring-baby-care-energy-smart-meter", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-3-C2",
+        "shopify_article_id": 681476555065,
+        "url_slug": "baby-bath-safety-tips",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB3C2-001", "product_handle": "newborn-adjustable-bathtub-pillow-seat-cushion-cross-shaped-anti-slip-baby-bath-net-mat-children-bathtub-shower-cradle-bed-seat", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB3C2-002", "product_handle": "baby-bather-baby-bath-support-for-bathtub-infant-bathtub-shower-seat-with-drain-holes-temperature-sensing-for-newborn-babies", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-3-C3",
+        "shopify_article_id": 681476587833,
+        "url_slug": "baby-bath-essentials-checklist",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB3C3-001", "product_handle": "real-time-temperature-silicone-baby-take-a-bath-bathtub-non-slip-foot-bath-bucket-folding-bathroom-with-temperature-sensing", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB3C3-002", "product_handle": "newborn-adjustable-bathtub-pillow-seat-cushion-cross-shaped-anti-slip-baby-bath-net-mat-children-bathtub-shower-cradle-bed-seat", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB3C3-003", "product_handle": "led-display-household-water-shower-thermometer-5-85-flow-self-powered-water-thermometer-monitoring-baby-care-energy-smart-meter", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-3-C4",
+        "shopify_article_id": 681476620601,
+        "url_slug": "how-often-to-bathe-a-newborn",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB3C4-001", "product_handle": "baby-bather-baby-bath-support-for-bathtub-infant-bathtub-shower-seat-with-drain-holes-temperature-sensing-for-newborn-babies", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB3C4-002", "product_handle": "real-time-temperature-silicone-baby-take-a-bath-bathtub-non-slip-foot-bath-bucket-folding-bathroom-with-temperature-sensing", "cta_text": "לצפייה במוצר" }
+        ]
+      }
     ],
     "link_graph_stats": { "total_internal_links": 15, "pillar_inbound_links": 4, "cross_hub_links": 2, "all_product_handles_200": true }
   },
@@ -854,13 +905,465 @@
     "hub_status": "active",
     "published_at": "2026-03-12T01:50:18+02:00",
     "articles": [
-      { "cluster_id": "HUB-4-Pillar", "shopify_article_id": 681481797945, "url_slug": "how-to-care-for-sensitive-baby-skin",   "status": "published", "http_verified": true },
-      { "cluster_id": "HUB-4-C1",     "shopify_article_id": 681481830713, "url_slug": "best-fabrics-for-sensitive-baby-skin",  "status": "published", "http_verified": true },
-      { "cluster_id": "HUB-4-C2",     "shopify_article_id": 681481863481, "url_slug": "why-cotton-is-best-for-babies",         "status": "published", "http_verified": true },
-      { "cluster_id": "HUB-4-C3",     "shopify_article_id": 681481896249, "url_slug": "signs-your-baby-has-sensitive-skin",    "status": "published", "http_verified": true },
-      { "cluster_id": "HUB-4-C4",     "shopify_article_id": 681481929017, "url_slug": "what-clothes-are-safe-for-newborn-skin", "status": "published", "http_verified": true }
+      {
+        "cluster_id": "HUB-4-Pillar",
+        "shopify_article_id": 681481797945,
+        "url_slug": "how-to-care-for-sensitive-baby-skin",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB4P-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB4P-002", "product_id": "9855017550137", "product_handle": "ma-baby-0-18m-baby-girl-clothes-sets-newborn-infant-toddler-knit-jumpsuit-floral-print-shorts-headband-outfits-summer-clothing", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-4-C1",
+        "shopify_article_id": 681481830713,
+        "url_slug": "best-fabrics-for-sensitive-baby-skin",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB4C1-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB4C1-002", "product_id": "9895864205625", "product_handle": "diimuu-baby-children-boys-clothes-rompers-toddler-kids-overalls-denim-pants-casual-jumpsuits-long-sleeve-fashion-trousers", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-4-C2",
+        "shopify_article_id": 681481863481,
+        "url_slug": "why-cotton-is-best-for-babies",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB4C2-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-4-C3",
+        "shopify_article_id": 681481896249,
+        "url_slug": "signs-your-baby-has-sensitive-skin",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB4C3-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB4C3-002", "product_id": "9855017550137", "product_handle": "ma-baby-0-18m-baby-girl-clothes-sets-newborn-infant-toddler-knit-jumpsuit-floral-print-shorts-headband-outfits-summer-clothing", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-4-C4",
+        "shopify_article_id": 681481929017,
+        "url_slug": "what-clothes-are-safe-for-newborn-skin",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB4C4-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB4C4-002", "product_id": "9688934940985", "product_handle": "baby-bear-cozy-set", "cta_text": "לצפייה במוצר" }
+        ]
+      }
     ],
     "link_graph_stats": { "total_internal_links": 12, "pillar_inbound_links": 4, "cross_hub_links": 4, "all_product_handles_valid": true }
+  },
+  "hub5_cluster_file": "shared/product-context/baby-gifts-cluster.json",
+  "hub5_articles": {
+    "hub_id": "HUB-5",
+    "hub_name": "Baby Gifts",
+    "hub_status": "active",
+    "published_at": "2026-03-15T00:00:00+02:00",
+    "articles": [
+      {
+        "cluster_id": "HUB-5-Pillar",
+        "shopify_article_id": 681842737465,
+        "url_slug": "matanot-letinok-madrih-male",
+        "title": "מתנות לתינוק — המדריך המלא (בייבי שאוור, ברית, ביקור יולדת)",
+        "cluster_role": "pillar",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB5P-001", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB5P-002", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-5-C1",
+        "shopify_article_id": 681842770233,
+        "url_slug": "matanot-baby-shower-reshima-nigmeret",
+        "title": "מה לקנות לבייבי שאוור כשהרשימה כבר נגמרה",
+        "cluster_role": "supporting",
+        "rank": 1,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB5C1-001", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB5C1-002", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-5-C2",
+        "shopify_article_id": 681842803001,
+        "url_slug": "matanot-maasiot-tinok-horeh-chadash",
+        "title": "מתנות מעשיות לתינוק שהורים חדשים באמת ישמחו עליהן",
+        "cluster_role": "supporting",
+        "rank": 2,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB5C2-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB5C2-002", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-5-C3",
+        "shopify_article_id": 681842835769,
+        "url_slug": "matanot-yokra-tinok-zechronot",
+        "title": "מתנות יוקרה לתינוק — מה שישאר בזיכרון",
+        "cluster_role": "supporting",
+        "rank": 3,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB5C3-001", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-5-C4",
+        "shopify_article_id": 681842868537,
+        "url_slug": "ma-ima-chadasha-tzricha-achrei-lida",
+        "title": "מה אמא חדשה באמת צריכה אחרי הלידה",
+        "cluster_role": "supporting",
+        "rank": 4,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB5C4-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-5-C5",
+        "shopify_article_id": 681842901305,
+        "url_slug": "matanot-tinok-rishon-madrih",
+        "title": "מתנות לתינוק ראשון — המדריך לאנשים שלא מכירים תינוקות",
+        "cluster_role": "supporting",
+        "rank": 5,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB5C5-001", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-5-C6",
+        "shopify_article_id": 681842934073,
+        "url_slug": "set-matana-tinok-pitaron-nachon",
+        "title": "סט מתנה לתינוק — למה זה תמיד הפתרון הנכון",
+        "cluster_role": "supporting",
+        "rank": 6,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB5C6-001", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB5C6-002", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" }
+        ]
+      }
+    ],
+    "link_graph_stats": { "total_articles": 7, "all_handles_in_yaml": true, "all_product_handles_200": true }
+  },
+  "hub6_cluster_file": "shared/product-context/baby-shoes-cluster.json",
+  "hub6_articles": {
+    "hub_id": "HUB-6",
+    "hub_name": "Baby Shoes",
+    "hub_status": "active",
+    "published_at": "2026-03-19T00:00:00+02:00",
+    "articles": [
+      {
+        "cluster_id": "HUB-6-Pillar",
+        "shopify_article_id": 682289987897,
+        "url_slug": "bchira-naale-tinok-madrih-male",
+        "title": "נעלי תינוק — המדריך המלא לבחירת הנעל הנכונה לכל שלב",
+        "cluster_role": "pillar",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB6P-001", "product_id": "9607365132601", "product_handle": "trendy-comfortable-sneakers-for-baby-girls-and-boys-lightweight-nonslip-shoes-for-indoor-outdoor-walking-all-seasons", "cta_text": "לצפייה במוצר" }
+        ],
+        "product_links_omitted": [
+          { "product_handle": "zapatillas-girl-shoe-spring-autumn-boy-white-shoe-casual-running-kid-shoe-anti-slip-soft-sole-sneaker-kid-tenis-hot-selling-item", "reason": "not in shared/product-context YAML — no product_id available" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-6-C1",
+        "shopify_article_id": 682290053433,
+        "url_slug": "naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat",
+        "title": "נעל לצעד ראשון — מה שכל הורה צריך לדעת לפני שקונים",
+        "cluster_role": "supporting",
+        "rank": 1,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB6C1-001", "product_id": "9615376417081", "product_handle": "baby-boy-shoes-new-pu-leather-casual-sneakers-anti-slip-infant-sport-first-walkers-christening", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB6C1-002", "product_id": "9615375827257", "product_handle": "citgeett-infant-baby-boys-girls-sneakers-contrast-color-stripe-pu-leather-anti-slip-sole-prewalker-first-walker-shoes", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-6-C2",
+        "shopify_article_id": 682290151737,
+        "url_slug": "solya-gmisha-naale-yeladim-mah-hahevdel",
+        "title": "סוליה גמישה בנעלי ילדים — למה זה משנה הרבה יותר ממה שחשבתם",
+        "cluster_role": "supporting",
+        "rank": 2,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB6C2-001", "product_id": "9606764200249", "product_handle": "childrens-sneakers-boys-girls-soft-sole-non-slip-casual-student-running-shoes-baby-kids-school-sports-shoes-warm-cotton-shoes", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB6C2-002", "product_id": "9607363461433", "product_handle": "kids-casual-shoes-sneakers-boys-sport-breathable-tennis-sneaker-baby-children-girls-shoes-spring-fashion-white-flat-running-shoe", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB6C2-003", "product_id": "9607363395897", "product_handle": "size-21-36-baby-toddler-shoes-for-boys-girls-breathable-mesh-little-kids-casual-sneakers-non-slip-children-sport-shoes-tenis-1", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-6-C3",
+        "shopify_article_id": 682290217273,
+        "url_slug": "mida-nachon-naale-yeladim-kacha-memdim-babayit",
+        "title": "מדידת נעלי ילדים — כך תמדדו נכון בבית (ותחסכו כאב ראש)",
+        "cluster_role": "supporting",
+        "rank": 3,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB6C3-001", "product_id": "9606764298553", "product_handle": "childrens-sneakers-kids-fashion-design-white-non-slip-casual-shoes-for-boys-girls-hook-breathable-sneakers-toddler-outdoor-shoe", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB6C3-002", "product_id": "9607363658041", "product_handle": "baby-socks-shoes-infant-color-matching-cute-kids-boys-shoes-doll-soft-soled-child-floor-sneaker-bebe-toddler-girls-first-walkers", "cta_text": "לצפייה במוצר" }
+        ],
+        "product_links_omitted": [
+          { "product_handle": "new-baby-shoes-leather-baby-boy-girl-shoes-rubber-sole-anti-slip-multicolor-toddler-first-walkers-newborn-crib-toddler-shoes", "reason": "not in shared/product-context YAML — no product_id available" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-6-C4",
+        "shopify_article_id": 682290282809,
+        "url_slug": "naale-gan-yeladim-mah-kday-ladaat",
+        "title": "נעלי גן לילדים — מה שכדאי לדעת לפני שהסמסטר מתחיל",
+        "cluster_role": "supporting",
+        "rank": 4,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB6C4-001", "product_id": "9888961528121", "product_handle": "no-tie-knob-parent-child-daddy-shoes-womens-new-autumn-thick-soled-running-childrens-sports-casual-shoes-for-girls-and-boys", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-6-C5",
+        "shopify_article_id": 682290315577,
+        "url_slug": "matay-lechahlif-naale-yeled-hassimanim",
+        "title": "מתי מחליפים נעלי ילד — הסימנים שהורים פעמים רבות מפספסים",
+        "cluster_role": "supporting",
+        "rank": 5,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB6C5-001", "product_id": "9615669461305", "product_handle": "childrens-fashion-boots-black-low-lightweight-boys-girls-toddler-shoes-0-8-years-old-soft-bottom-non-slip-kids-baby-boots-shoes", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB6C5-002", "product_id": "9615376023865", "product_handle": "2023-winter-snow-baby-boots-multiple-colors-warm-fluff-balls-indoor-colloidal-particle-sole-infant-newborn-toddler-baby-shoes", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-6-C6",
+        "shopify_article_id": 682290381113,
+        "url_slug": "chomrim-noshmim-naale-tinoket-mah-levakesh",
+        "title": "חומרים נושמים בנעלי תינוקות — מה זה אומר ולמה זה שווה לבדוק",
+        "cluster_role": "supporting",
+        "rank": 6,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB6C6-001", "product_id": "9615378186553", "product_handle": "childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB6C6-002", "product_id": "9940751417657", "product_handle": "1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes", "cta_text": "לצפייה במוצר" }
+        ]
+      }
+    ],
+    "link_graph_stats": { "total_articles": 7, "all_valid_handles_in_yaml": true, "omitted_handles_count": 2 }
+  },
+  "hub7_cluster_file": "shared/product-context/baby-safety-cluster.json",
+  "hub7_articles": {
+    "hub_id": "HUB-7",
+    "hub_name": "Baby Safety",
+    "hub_status": "active",
+    "published_at": "2026-03-23T00:00:00+02:00",
+    "articles": [
+      {
+        "cluster_id": "HUB-7-Pillar",
+        "shopify_article_id": 682836066617,
+        "url_slug": "sviva-betua-letinok-madrih-male",
+        "title": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+        "cluster_role": "pillar",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB7P-001", "product_id": "9839252472121", "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-7-C1",
+        "shopify_article_id": 682836099385,
+        "url_slug": "klalei-shina-betua-letinok",
+        "title": "כללי שינה בטוחה לתינוק — מה שכל הורה חייב לדעת",
+        "cluster_role": "supporting",
+        "rank": 1,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB7C1-001", "product_id": "10099941179705", "product_handle": "led-display-household-water-shower-thermometer-5-85-flow-self-powered-water-thermometer-monitoring-baby-care-energy-smart-meter", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-7-C2",
+        "shopify_article_id": 682836132153,
+        "url_slug": "tauyot-shina-betua-tinok",
+        "title": "טעויות נפוצות בשינה בטוחה לתינוק — ומה לעשות אחרת",
+        "cluster_role": "supporting",
+        "rank": 2,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB7C2-001", "product_id": "9657091293497", "product_handle": "newborn-baby-winter-jacket-warm-hooded-infant-romper-thicken-soft-cotton-boys-jumpsuit-cartoon-baby-girl-clothes-0-to-12-months", "cta_text": "לצפייה במוצר" }
+        ],
+        "collection_links_noted": [
+          { "href": "/collections/baby-clothing", "note": "collection link — not mapped as product_links_out" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-7-C3",
+        "shopify_article_id": 682836164921,
+        "url_slug": "minuat-hitchamamut-yeter-betinok",
+        "title": "איך למנוע התחממות יתר בתינוק — הסימנים שחשוב להכיר",
+        "cluster_role": "supporting",
+        "rank": 3,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB7C3-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-7-C4",
+        "shopify_article_id": 682836197689,
+        "url_slug": "bigud-batua-letinok-mah-levakesh",
+        "title": "ביגוד בטוח לתינוק — מה לחפש ומה להימנע ממנו",
+        "cluster_role": "supporting",
+        "rank": 4,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [],
+        "collection_links_noted": [
+          { "href": "/collections/baby-clothing", "note": "collection link only — no specific product handle present in article" }
+        ]
+      },
+      {
+        "cluster_id": "HUB-7-C5",
+        "shopify_article_id": 682836230457,
+        "url_slug": "betihut-layla-letinok-bdikot-lifney-shina",
+        "title": "בטיחות לילה לתינוק — מה קורה בין 10 בלילה ל-6 בבוקר",
+        "cluster_role": "supporting",
+        "rank": 5,
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB7C5-001", "product_id": "9688934940985", "product_handle": "baby-bear-cozy-set", "cta_text": "לצפייה במוצר" }
+        ]
+      }
+    ],
+    "link_graph_stats": { "total_articles": 6, "valid_product_links": 4, "omitted_handles_count": 1, "collection_links_noted": 2 }
+  },
+  "hub8_cluster_file": "shared/product-context/baby-routine-cluster.json",
+  "hub8_articles": {
+    "hub_id": "HUB-8",
+    "hub_name": "Baby Daily Routine",
+    "articles": [
+      {
+        "cluster_id": "HUB-8-Pillar",
+        "shopify_article_id": 684587450681,
+        "url_slug": "seder-yom-letinok-madrih-male",
+        "title": "סדר יום לתינוק — המדריך המלא לבניית שגרה לפי גיל",
+        "cluster_role": "pillar",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB8P-001", "product_id": "9688934940985", "product_handle": "baby-bear-cozy-set", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8P-002", "product_id": "9839252472121", "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8P-003", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" }
+        ],
+        "collection_links_noted": ["/collections/baby-clothing"]
+      },
+      {
+        "cluster_id": "HUB-8-C1",
+        "shopify_article_id": 684587483449,
+        "url_slug": "seder-yom-lenewborn-shavuot-rishonim",
+        "title": "סדר יום לניובורן — שגרה בשבועות הראשונים",
+        "cluster_role": "supporting",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB8C1-001", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8C1-002", "product_id": "9657091293497", "product_handle": "newborn-baby-winter-jacket-warm-hooded-infant-romper-thicken-soft-cotton-boys-jumpsuit-cartoon-baby-girl-clothes-0-to-12-months", "cta_text": "לצפייה במוצר" }
+        ],
+        "product_links_omitted": ["led-display-household-water-shower-thermometer-5-85-flow-self-powered-water-thermometer-monitoring-baby-care-energy-smart-meter"],
+        "collection_links_noted": ["/collections/baby-clothing"]
+      },
+      {
+        "cluster_id": "HUB-8-C2",
+        "shopify_article_id": 684587516217,
+        "url_slug": "seder-achila-veshina-letinok-luach-zmanim",
+        "title": "סדר האכלה ושינה לתינוק — לוח זמנים לפי גיל",
+        "cluster_role": "supporting",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB8C2-001", "product_id": "9839252472121", "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8C2-002", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" }
+        ],
+        "collection_links_noted": ["/collections/baby-clothing"]
+      },
+      {
+        "cluster_id": "HUB-8-C3",
+        "shopify_article_id": 684587548985,
+        "url_slug": "ech-lehargia-tinok-sheboche-8-shitatot",
+        "title": "איך להרגיע תינוק שבוכה — 8 שיטות שעובדות",
+        "cluster_role": "supporting",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB8C3-001", "product_id": "9839252472121", "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8C3-002", "product_id": "10029649101113", "product_handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8C3-003", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" }
+        ],
+        "collection_links_noted": ["/collections/baby-clothing"]
+      },
+      {
+        "cluster_id": "HUB-8-C4",
+        "shopify_article_id": 684587581753,
+        "url_slug": "matay-tinok-matchil-shgara-simanim",
+        "title": "מתי תינוק מתחיל שגרה — סימנים שהגיע הזמן",
+        "cluster_role": "supporting",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB8C4-001", "product_id": "9688934940985", "product_handle": "baby-bear-cozy-set", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8C4-002", "product_id": "9839252472121", "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine", "cta_text": "לצפייה במוצר" }
+        ],
+        "collection_links_noted": ["/collections/baby-clothing"]
+      },
+      {
+        "cluster_id": "HUB-8-C5",
+        "shopify_article_id": 684587614521,
+        "url_slug": "seder-yom-tinok-3-hodashim-dugma-maasit",
+        "title": "סדר יום לתינוק בן 3 חודשים — דוגמה מעשית",
+        "cluster_role": "supporting",
+        "status": "published",
+        "http_verified": true,
+        "product_links_out": [
+          { "link_id": "PL-HUB8C5-001", "product_id": "9839252472121", "product_handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8C5-002", "product_id": "10029649133881", "product_handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes", "cta_text": "לצפייה במוצר" },
+          { "link_id": "PL-HUB8C5-003", "product_id": "9688934940985", "product_handle": "baby-bear-cozy-set", "cta_text": "לצפייה במוצר" }
+        ],
+        "collection_links_noted": ["/collections/baby-clothing"]
+      }
+    ],
+    "link_graph_stats": { "total_articles": 6, "valid_product_links": 15, "omitted_handles_count": 1, "collection_links_noted": 6 }
   },
   "cross_hub_opportunities": [
     {
@@ -879,5 +1382,5 @@
     }
   ],
   "orphan_articles": [],
-  "notes": "HUB-1 COMPLETE 2026-03-10. All 5 articles published (Pillar + C1 + C2 + C3 + C4). Internal link graph: 10 edges, 0 isolated nodes, pillar receives 4 inbound links. Product handles corrected from broken easy-sleep (HTTP 404) to BabySleep Pro canonical handle (HTTP 200). C3 slug corrected from deferred placeholder 'best-baby-night-light' to actual published handle 'baby-night-light-guide' (Shopify Article ID: 681312452921). CTA texts standardised to approved list v2.1. Version 1.1 — 2026-03-10T14:00:00Z. HUB-2 IN PROGRESS: Pillar (681333621049) + C1 (681348792633) + C2 (681356132665) all published as of 2026-03-10. Version 1.4 — 2026-03-10T15:30:00Z. HUB-2-C3 article generated (Presentation Spec v1.0), article linking confirmed (Agent 08) — 3 content links active (C1 + C2 + Pillar), 2 product links active (baby-bear-cozy-set). Status remains 'planned' until Shopify publish. Version 1.6 — 2026-03-10T18:30:00Z. HUB-2-C3 published (Shopify ID: 681362456889) — how-to-dress-a-newborn-for-sleep. Next: activate C2→C3 deferred anchor link. Version 1.7 — 2026-03-10T19:10:59+02:00. HUB-4 COMPLETE 2026-03-12. All 5 articles published (Pillar + C1-C4). 12 internal links, 4 cross-hub links to HUB-2. 5 products (LUMI hero). QA v1.1 PASS. Version 3.2 — 2026-03-12T01:50:34+02:00."
+  "notes": "HUB-1 COMPLETE 2026-03-10 (5 articles). HUB-2 COMPLETE 2026-03-10 (6 articles). HUB-3 COMPLETE 2026-03-11 (5 articles). HUB-4 COMPLETE 2026-03-12 (5 articles, QA v1.1 PASS). HUB-5 COMPLETE 2026-03-15 (7 articles, Baby Gifts). HUB-6 COMPLETE 2026-03-19 (7 articles, Baby Shoes). HUB-7 COMPLETE 2026-03-23 (6 articles, Baby Safety). HUB-8 COMPLETE (6 articles, Baby Routine). Total: 8 HUBs, 47 articles. STAGE 1B MAP SYNC verified 2026-04-12. HUB-7-C1 product link restored (Tempio™ product_id 10099941179705). Version 4.0 — 2026-04-12."
 }
