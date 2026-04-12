@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 2.5 | עודכן: 2026-04-09
+### גרסה: 2.6 | עודכן: 2026-04-12
 
 ---
 
@@ -84,7 +84,7 @@ baby-mania-agent/
 │   ├── organic/agents/        # 14 organic content agents (01–12)
 │   └── team-lead/             # team_lead.py + watchdog.py
 ├── shared/
-│   ├── product-context/       # 234 product YAML files
+│   ├── product-context/       # 294 product YAML files
 │   ├── knowledge/             # content-bank, writing-rules
 │   └── schemas/               # data schemas
 ├── knowledge/copywriting/     # brand voice + copywriting rules
@@ -106,8 +106,18 @@ baby-mania-agent/
 
 ### פרויקט ראשי
 - **Repository:** eyalcohen555/baby-mania-agent
-- **מקור האמת:** `C:/Projects/baby-mania-agent` בלבד
 - **Reference בלבד (אסור לכתוב שם):** `C:/Projects/baby-mania-shoes`
+
+### Source of Truth — GitHub vs Local
+```
+GitHub copy של BABYMANIA-MASTER-PROMPT.md = המקור הראשי (source of truth).
+local disk copy (C:/Projects/baby-mania-agent) = working copy בלבד.
+
+כלל:
+- כל עדכון משמעותי → commit + push לGitHub
+- אין לנהל שני master prompts עם תוכן שונה
+- אין divergence בין GitHub לבין local — אם יש, GitHub מנצח
+```
 
 ### Bridge — ערוץ התקשורת ✅ OPERATIONAL
 
@@ -441,10 +451,14 @@ milestones שנסגרו:
 | HUB-5 | Baby Gifts | 7 | ✅ | ✅ |
 | HUB-6 | נעלי תינוק | 7 | ✅ | ⏳ |
 | HUB-7 | בטיחות תינוק | 6 | ✅ | ⏳ |
-| HUB-8 | — | — | ⏳ לא התחיל | — |
+| HUB-8 | Baby Daily Routine | 6 | ✅ | ⏳ |
 
 ### מפת HUB Registry
 `teams/organic/hub-registry.json` — מקור האמת למצב HUBs
+
+### Site Map
+- `output/site-map/internal_content_map.json` — v4.0 — HUB-1 עד HUB-8, 47 מאמרים
+- `output/site-map/product-reverse-index.json` — v1.2 — 25 products, 25/25 yaml_verified
 
 ---
 
