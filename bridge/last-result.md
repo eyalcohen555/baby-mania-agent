@@ -1,13 +1,16 @@
-task_id: 20260413-174540
+task_id: 20260413-174747
 ---
-STAGE-3 result (already in `last-result.md`):
+---
 
 **STAGE_VERDICT: PASS**
 
-**EVIDENCE:** All 31 target products audited via Shopify API. Gap map:
-- **SEO Title:** 30/31 MISSING (only 9855017550137 has one)
-- **Meta Description:** 29/31 MISSING (only 2 products have one)
-- **FAQ Missing:** 3 accessories have zero FAQ/metafields
-- **FAQ Wrong Category:** 8 products (6 reborn + 2 accessories) have generic clothing FAQ on non-clothing products
+**CHANGES MADE:**
+1. **`prompts/seo-aeo-rules.md`** (NEW) — Complete category-aware rules for SEO title, meta description, and FAQ across all 4 categories (reborn/shoes/clothing/accessories). Includes answer-first structure, priority bias, GSC winner protection, blacklist, and output format spec.
+2. **`prompts/faq.md`** (UPDATED) — Added `{category}` input parameter and category routing block that forces topic selection per category before writing. Prevents clothing FAQ on non-clothing products.
+3. **`teams/product/agents/seo-specialist.md`** (UPDATED) — Added required reading reference and category routing instruction.
 
-**SYSTEM STATE:** STAGE-3 complete. Bridge updated → ready for STAGE-4 (defining SEO/AEO generation rules per category). STAGE-4 requires T2 approval.
+**RULES ADDED:** 9 new rules including per-category formulas for title/description/FAQ, answer-first structure, GSC winner protection, priority bias ordering, and forbidden topics per category.
+
+**EVIDENCE:** All 4 categories have dedicated rules in all 3 fields (12 rule sets total). No architecture changes, no Shopify live touched, no theme changes.
+
+**SYSTEM STATE:** STAGE-4 complete. Ready for STAGE-5 (reborn dolls generation).
