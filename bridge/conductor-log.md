@@ -184,3 +184,7 @@
 | 2026-04-10 01:22:57 | CHAIN_START: depth=2 decision=READY_FOR_FULL plan=plans/auto-test-003.yaml |
 | 2026-04-10 01:22:58 | STARTED: auto-test-003 |
 | 2026-04-10 01:22:58 | STARTED STAGE-1 [conductor-auto-test-003-STAGE-1-20260410-012258] |
+| 2026-04-10 01:23:33 |   STAGE-1 | PASS |
+| 2026-04-10 01:23:33 | PLAN DONE: auto-test-003 — PASS |
+| 2026-04-13 14:48:42 | STARTED: route-a-layer2-shoes-closure-001 |
+| 2026-04-13 14:48:42 | STARTED STAGE-1 [conductor-route-a-layer2-shoes-closure-001-STAGE-1-20260413-144842] |
