@@ -1,56 +1,53 @@
-task_id: 20260413-160144
+task_id: 20260413-160739
 ---
-3 `case` blocks and 3 `endcase` blocks — balanced. 
-
-Now let me update the conductor state to report the result:
+All tests pass. Now let me write the result.
 
 ---
 
-## SYSTEM STATE
+## STAGE-4 RETEST RESULTS
 
-- `bm-product-blog.liquid` section already exists and is live on Shopify (in `baby-mania-theme` repo)
-- `product.clothing.json` already includes `bm-product-blog` section — working in production
-- `product.shoes.json` was **missing** the `bm-product-blog` section
-- The section's Liquid logic had **no shoes handles** and **no shoes fallback** — only clothing mappings
+### TESTS RUN
 
-## CHANGES MADE
+| # | Test | Result |
+|---|------|--------|
+| 1 | **Liquid tag balance** — case/endcase blocks | **PASS** (3/3 balanced) |
+| 2 | **Clothing handles intact** — all 11 existing clothing mappings present | **PASS** |
+| 3 | **Shoes handles mapped** — all 13 shoes from reverse-index v1.2 present | **PASS** |
+| 4 | **Shoes slug→title in Item 1 block** — all 7 HUB-6 slugs mapped | **PASS** |
+| 5 | **Shoes slug→title in Item 2 block** — all 7 HUB-6 slugs mapped | **PASS** |
+| 6 | **Shoes fallback logic** — 5 keywords (shoe/sneaker/sandal/boot/walker) | **PASS** |
+| 7 | **Clothing fallback logic** — default routes to HUB-2 articles | **PASS** |
+| 8 | **Swimwear suppression** — bm_pb_skip guard for swimwear | **PASS** |
+| 9 | **Blank guard** — section hidden when no match | **PASS** |
+| 10 | **Template JSON (agent repo)** — bm-product-blog in sections + order | **PASS** |
+| 11 | **Template JSON (theme repo)** — bm-product-blog in sections + order | **PASS** |
+| 12 | **Clothing template unchanged** — pre-existing bm-product-blog still intact | **PASS** |
+| 13 | **No reverse-index conflict** — shoes handles correctly linked to HUB-6 articles | **PASS** |
 
-1. **`theme_assets/templates/product.shoes.json`** (local agent repo)
-   - Added `bm-product-blog` section definition with settings
-   - Added `bm-product-blog` to order array (position: after `bm_accordion`, before `bm_urgency`)
+### RESULTS
+- All 13 tests passed
+- No breakage found in any path
 
-2. **`baby-mania-theme/shopify-theme/templates/product.shoes.json`** (theme repo)
-   - Added `bm-product-blog` section definition with settings
-   - Added `bm-product-blog` to order array (after `main`, before `related-products`)
+### FAILURES FOUND
+- **None**
 
-3. **`baby-mania-theme/shopify-theme/sections/bm-product-blog.liquid`** (theme repo)
-   - Added 13 shoes product handle → article slug mappings in the `{% case product.handle %}` block
-   - Each shoe product gets its specific HUB-6 article + pillar as second article
-   - Added shoes fallback logic (handles containing "shoe", "sneaker", "sandal", "boot", "walker") → routes to HUB-6 pillar + C1
-   - Added 7 HUB-6 article slug → Hebrew title/description mappings in both Item 1 and Item 2 case blocks
+### NOTES
+- One clothing product (`newborn-baby-winter-jacket`) is in reverse-index but not in explicit liquid mapping — it falls through to the winter fallback (HUB-4 articles instead of its HUB-7/HUB-8 articles). This is a **pre-existing limitation** of the clothing path, not caused by the shoes changes.
 
-## FILES UPDATED
-
-| File | Repo | Change |
-|------|------|--------|
-| `theme_assets/templates/product.shoes.json` | baby-mania-agent | Added section + order entry |
-| `shopify-theme/templates/product.shoes.json` | baby-mania-theme | Added section + order entry |
-| `shopify-theme/sections/bm-product-blog.liquid` | baby-mania-theme | Added 13 handle mappings + shoes fallback + 7 slug→title mappings |
-
-## RISK LEVEL
-
-**LOW** — All changes are additive. No existing clothing logic was modified. The section already renders with a blank check (`{% if bm_pb_1_title != blank %}`), so shoes products that don't match will simply show nothing. JSON validated. Liquid tags balanced (3 case / 3 endcase).
+### READY FOR LIVE: YES
 
 ---
 
 **STAGE_VERDICT: PASS**
 
-**EVIDENCE:** 
-- Local shoes template now includes `bm-product-blog` section in both repos
-- 13 shoe product handles mapped to specific HUB-6 articles from reverse-index v1.2
-- Shoes fallback logic covers unmapped shoe products via handle keyword detection
-- All 7 HUB-6 article slugs have Hebrew title + description in both item-1 and item-2 case blocks
-- No changes to Shopify live (template not pushed yet)
-- No changes to clothing path — all additions are new `{% when %}` cases
+**EVIDENCE:**
+- All 13 shoes handles from `product-reverse-index.json` v1.2 are mapped in `bm-product-blog.liquid`
+- All 7 HUB-6 article slugs have Hebrew title + description in both Item 1 and Item 2 case blocks
+- Shoes fallback logic covers unmapped shoes via handle keyword detection (5 keywords)
+- Clothing path is completely unmodified — all 11 pre-existing clothing handles intact
+- Default fallback (HUB-2) still works for unmatched clothing
+- Template JSON is consistent between both repos (agent + theme)
+- Liquid syntax is balanced (3 case / 3 endcase)
+- No conflicts with reverse-index, taxonomy, or mapping
 
-**SYSTEM STATE:** Shoes Product ↔ Blog local fix complete. Ready for STAGE-4 (local retest) before live deployment.
+**SYSTEM STATE:** Local retest complete. All shoes Product ↔ Blog changes validated. Safe to proceed to STAGE-5 (live rollout).
