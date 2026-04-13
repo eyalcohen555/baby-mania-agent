@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 2.6 | עודכן: 2026-04-12
+### גרסה: 2.7 | עודכן: 2026-04-13
 
 ---
 
@@ -451,14 +451,16 @@ milestones שנסגרו:
 | HUB-5 | Baby Gifts | 7 | ✅ | ✅ |
 | HUB-6 | נעלי תינוק | 7 | ✅ | ⏳ |
 | HUB-7 | בטיחות תינוק | 6 | ✅ | ⏳ |
-| HUB-8 | Baby Daily Routine | 6 | ✅ | ⏳ |
+| HUB-8 | Baby Daily Routine | 6 | ⏳ ready_to_publish | — |
 
 ### מפת HUB Registry
 `teams/organic/hub-registry.json` — מקור האמת למצב HUBs
 
 ### Site Map
-- `output/site-map/internal_content_map.json` — v4.0 — HUB-1 עד HUB-8, 47 מאמרים
+- `output/site-map/internal_content_map.json` — v4.0 — HUB-1 עד HUB-8, 47 clusters ממופים (41 פורסמו, 6 ממתינים)
 - `output/site-map/product-reverse-index.json` — v1.2 — 25 products, 25/25 yaml_verified
+- `shared/product-context/` — 294 קבצי YAML
+- `docs/organic/מצב-הפרויקט-האורגני.md` — source of truth תפעולי אורגני
 
 ---
 
