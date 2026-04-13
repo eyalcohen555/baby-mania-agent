@@ -270,3 +270,7 @@
 | 2026-04-13 22:21:01 | TIMEOUT STAGE-9 |
 | 2026-04-13 22:21:01 |   STAGE-9 | UNKNOWN |
 | 2026-04-13 22:21:01 | PLAN STOPPED: layer3-product-seo-aeo-priority-001 at STAGE-9 |
+| 2026-04-13 23:43:52 | STAGE-9 closed via recovery (BATCH-1 25/25 + BATCH-2 27/27) — 115 clothing drafts total |
+| 2026-04-13 23:43:52 | STARTED STAGE-10 via conductor resume |
+| 2026-04-13 23:43:59 | RESUMED: layer3-product-seo-aeo-priority-001 |
+| 2026-04-13 23:43:59 | STARTED STAGE-10 [conductor-layer3-product-seo-aeo-priority-001-STAGE-10-20260413-234359] |
