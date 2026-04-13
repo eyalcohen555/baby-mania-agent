@@ -1,5 +1,6 @@
 | time | action | task |
 |------|--------|------|
+| 2026-04-14 02:25:00 | DONE [repush-124-missing-20260414-016000] [TIER:T3] | STAGE-15-REPUSH-124: 124/124 products SEO title_tag + description_tag pushed and live-verified. VERDICT: PASS |
 | 2026-04-14 02:05:00 | DONE [gen-recovery-clothing-B4-20260414-015000] | STAGE-9-GEN-RECOVERY-B4: 25/25 clothing SEO drafts generated |
 | 2026-03-26 13:06:22 | STARTED [20260326-130622] | TASK: הגדרת approval policy מדורג למערכת |
 | 2026-03-26 13:11:22 | DONE [20260326-130622] | TASK: הגדרת approval policy מדורג למערכת |
@@ -610,3 +611,8 @@
 | 2026-04-14 01:52:01 | DONE [20260414-014640] [TIER:T1] | TASK_ID: gen-recovery-clothing-B4-20260414-015000 |
 | 2026-04-14 01:52:27 | STARTED [20260414-015227] [TIER:T1] | TASK_ID: gen-recovery-clothing-B5-20260414-016000 |
 | 2026-04-14 01:57:53 | DONE [20260414-015227] [TIER:T1] | TASK_ID: gen-recovery-clothing-B5-20260414-016000 |
+| 2026-04-14 02:00:49 | STARTED [20260414-020049] [TIER:T3] | TASK_ID: repush-124-missing-20260414-016000 |
+| 2026-04-14 02:00:49 | BLOCKED_T3 [20260414-020049] | TASK_ID: repush-124-missing-20260414-016000 |
+| 2026-04-14 02:01:37 | STARTED [20260414-020137] [TIER:T3] | TASK_ID: repush-124-missing-20260414-016000 |
+| 2026-04-14 02:01:37 | T3_APPROVED [20260414-020137] | TASK_ID: repush-124-missing-20260414-016000 |
+| 2026-04-14 02:09:53 | DONE [20260414-020137] [TIER:T3] | TASK_ID: repush-124-missing-20260414-016000 |
