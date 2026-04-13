@@ -1,11 +1,11 @@
 {
   "description": "BabyMania Organic Team — רישום מרכזי של כל ה-HUBs",
   "version": "2.0",
-  "last_updated": "2026-04-05",
+  "last_updated": "2026-04-13",
   "blog_id": 109164036409,
   "blog_url": "https://babymania-il.com/blogs/news",
   "topic_hubs_knowledge": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic צוות/docs/TOPIC-HUBS-KNOWLEDGE.md",
-  "last_published": "HUB-7",
+  "last_published": "HUB-8",
   "next_hub": "HUB-9",
   "hubs": [
     {
@@ -194,7 +194,7 @@
       "hub_id": "HUB-8",
       "hub_name": "Baby Routine",
       "hub_name_he": "שגרה יומית לתינוק",
-      "status": "ready_to_publish",
+      "status": "published",
       "approved_pillar": "How to Build a Healthy Baby Routine",
       "approved_pillar_he": "סדר יום לתינוק — המדריך המלא לבניית שגרה לפי גיל",
       "pillar_keyword": "סדר יום לתינוק",
@@ -205,12 +205,12 @@
       },
       "articles_count": 6,
       "articles": [
-        {"id": "HUB-8-Pillar", "handle": "seder-yom-letinok-madrih-male", "title": "סדר יום לתינוק — המדריך המלא לבניית שגרה לפי גיל"},
-        {"id": "HUB-8-C3", "handle": "ech-lehargia-tinok-sheboche-8-shitatot", "title": "איך להרגיע תינוק שבוכה — 8 שיטות שעובדות"},
-        {"id": "HUB-8-C5", "handle": "seder-yom-tinok-3-hodashim-dugma-maasit", "title": "סדר יום לתינוק בן 3 חודשים — דוגמה מעשית"},
-        {"id": "HUB-8-C1", "handle": "seder-yom-lenewborn-shavuot-rishonim", "title": "סדר יום לניובורן — שגרה בשבועות הראשונים"},
-        {"id": "HUB-8-C2", "handle": "seder-achila-veshina-letinok-luach-zmanim", "title": "סדר האכלה ושינה לתינוק — לוח זמנים לפי גיל"},
-        {"id": "HUB-8-C4", "handle": "matay-tinok-matchil-shgara-simanim", "title": "מתי תינוק מתחיל שגרה — סימנים שהגיע הזמן"}
+        {"id": "HUB-8-Pillar", "handle": "seder-yom-letinok-madrih-male", "article_id": 684587450681, "url": "https://babymania-il.com/blogs/news/seder-yom-letinok-madrih-male"},
+        {"id": "HUB-8-C3", "handle": "ech-lehargia-tinok-sheboche-8-shitatot", "article_id": 684587548985, "url": "https://babymania-il.com/blogs/news/ech-lehargia-tinok-sheboche-8-shitatot"},
+        {"id": "HUB-8-C5", "handle": "seder-yom-tinok-3-hodashim-dugma-maasit", "article_id": 684587614521, "url": "https://babymania-il.com/blogs/news/seder-yom-tinok-3-hodashim-dugma-maasit"},
+        {"id": "HUB-8-C1", "handle": "seder-yom-lenewborn-shavuot-rishonim", "article_id": 684587483449, "url": "https://babymania-il.com/blogs/news/seder-yom-lenewborn-shavuot-rishonim"},
+        {"id": "HUB-8-C2", "handle": "seder-achila-veshina-letinok-luach-zmanim", "article_id": 684587516217, "url": "https://babymania-il.com/blogs/news/seder-achila-veshina-letinok-luach-zmanim"},
+        {"id": "HUB-8-C4", "handle": "matay-tinok-matchil-shgara-simanim", "article_id": 684587581753, "url": "https://babymania-il.com/blogs/news/matay-tinok-matchil-shgara-simanim"}
       ],
       "product_bridge": "sleep accessories, comfortable baby clothing, cotton rompers",
       "approved_clusters": [
@@ -226,9 +226,11 @@
       "files_location": "C:/Projects/baby-mania-agent/output/hub8/",
       "file_prefix": "HUB8_",
       "writing_order": ["Pillar", "C3", "C5", "C1", "C2", "C4"],
-      "published_at": null,
+      "published_at": "2026-04-09",
+      "publish_results_file": "HUB8_PUBLISH_RESULTS.json",
+      "gsc_indexing": "PENDING",
       "demand_validation_required": false,
-      "notes": "כתיבה הושלמה 05/04/2026 — 6 מאמרים. ממתין לאישור פרסום. Sleep Routine נדחה בגלל חפיפה עם HUB-1. מאמר C5 (3 חודשים) נוסף על בסיס ביקוש גבוה מאומת."
+      "notes": "פורסם 09/04/2026 — 6 מאמרים. Sleep Routine נדחה בגלל חפיפה עם HUB-1. מאמר C5 (3 חודשים) נוסף על בסיס ביקוש גבוה מאומת. state doc היה ready_to_publish — תוקן ל-published ב-13/04/2026."
     }
   ]
 }
