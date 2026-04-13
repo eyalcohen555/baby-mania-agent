@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 2.8 | עודכן: 2026-04-13
+### גרסה: 3.0 | עודכן: 2026-04-14 | LAYER 3 COMPLETE | READY FOR LAYER 4 GEO
 
 ---
 
@@ -329,6 +329,26 @@ AUDIT/FIX/RETEST: מחפש STAGE_VERDICT: PASS | FAIL | AWAITING_APPROVAL
 DATA → LOGIC → OUTPUT
 אם יש בעיה → תקן LOGIC, אל תגע ב-OUTPUT
 ```
+
+---
+
+## 📊 Project Snapshot — מצב נוכחי
+
+| שכבה | סטטוס | פרטים |
+|------|--------|--------|
+| LAYER 1 — DATA | ✅ CLOSED | data stable, 294 YAMLs, reverse-index v1.2 |
+| LAYER 2 — PRODUCT↔BLOG | ✅ CLOSED (2026-04-13) | clothing + shoes, 66 מוצרים LIVE |
+| LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE (2026-04-14) | 244 מוצרים LIVE — title_tag + description_tag |
+| LAYER 4 — GEO | ⏳ NEXT | AI answers: Perplexity, ChatGPT, Gemini |
+| LAYER 5–10 | ⏳ FUTURE | — |
+
+**LAYER 3 breakdown:**
+- Reborn: 6 · Shoes: 13 · Clothing: 219 · Accessories: 6
+- Fields written: `global.title_tag` + `global.description_tag`
+- Plan: `layer3-product-seo-aeo-priority-001` — 18 stages, PASS
+- Recovery: timeout batches (clothing/accessories) + targeted re-push → all 244 verified PASS
+
+**GSC backlog:** PLANNED ONLY — לא לבצע לפני אישור ניהולי מפורש.
 
 ---
 

@@ -36,6 +36,43 @@
 
 ---
 
+## DATE: 2026-04-14
+## TASK: LAYER 3 — Product SEO/AEO complete + route-a closure
+## SCOPE: organic — product SEO layer, plan execution, live push
+
+## WHAT CHANGED:
+- Plan `layer3-product-seo-aeo-priority-001` הושלם — 18 stages, PASS
+- 244 מוצרים עודכנו live ב-Shopify: `global.title_tag` + `global.description_tag`
+  - Reborn dolls: 6 | Baby shoes: 13 | Clothing: 219 | Accessories: 6
+- route-a נסגר: shoes rollout + LAYER 2 (Product↔Blog) + LAYER 3 (SEO/AEO)
+- LAYER 2 נסגר (2026-04-13) — clothing + shoes, 66 מוצרים LIVE
+
+## OPERATIONAL NOTES:
+- STAGE-7 (shoes gen): נכשל פעמיים בגלל rate limit, עבר בריצה שלישית
+- STAGE-9 (clothing gen): timeout פעמיים, recovery ידני 5 batches (B1-B5) — 115 drafts
+- STAGE-11 (accessories gen): timeout, recovery micro-task בודד (babysleep-pro)
+- STAGE-16 (live verify): 29 failures → גילוי 124 missing drafts → generation recovery (B1-B5) → re-push → 244/244 PASS
+- No theme changes. No YAML changes.
+
+## FILES TOUCHED:
+- `bridge/conductor-state.md`
+- `output/stage-outputs/*_seo_draft.json` (244 files)
+- `docs/organic/מצב-הפרויקט-האורגני.md`
+- `BABYMANIA-MASTER-PROMPT.md` (v3.0)
+
+## SYSTEM IMPACT:
+- 244 מוצרים BabyMania עם SEO title + meta description live
+- READY_FOR_LAYER_4 = YES
+
+## OPEN ISSUES:
+- [ ] GSC confirmation HUB-6 + HUB-7 + HUB-8
+- [ ] GSC backlog — PLANNED ONLY
+
+## NEXT STEP:
+- LAYER 4 — GEO (AI answers: Perplexity, ChatGPT, Gemini)
+
+---
+
 ## DATE: 2026-03-25
 ## TASK: HUB-7 פרסום
 ## SCOPE: organic — HUB-7 בטיחות תינוק
