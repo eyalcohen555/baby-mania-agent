@@ -42,6 +42,35 @@ NEXT STEP
 - לגעת בקבצים מחוץ לscope של המשימה
 - להציע שלבים נוספים מחוץ למשימה הנוכחית
 
+## משימות אורגניות — כלל STATE חובה
+
+**כשמשימה כוללת `DOMAIN: ORGANIC` (או מתייחסת ל-HUBs / blog / organic pipeline):**
+
+### לפני ביצוע
+1. קרא: `docs/organic/מצב-הפרויקט-האורגני.md`
+2. זהה את השכבה הפעילה הנוכחית (CURRENT_LAYER)
+3. זהה את הפריט הפתוח הראשון (NEXT_OPEN_ITEM)
+4. ודא שהמשימה הנוכחית מתאימה לפריט הפתוח — לא לשלב שלאחריו
+
+### כלל שכבות
+- אסור לדלג שכבה — גם אם היא נראית פשוטה
+- אסור לפתוח item חדש אם יש item פתוח קודם באותה שכבה
+- אם יש mismatch בין `BABYMANIA-MASTER-PROMPT.md` לבין `מצב-הפרויקט-האורגני.md`:
+  state doc התפעולי קובע לביצוע השוטף — לא לפנות ל-master לצורך החלטות ביצוע
+
+### בלוק STATE_CHECK — חובה בתחילת כל output אורגני
+```
+STATE FILE READ: YES
+CURRENT LAYER: [מספר שכבה — לדוגמה: LAYER 2b]
+NEXT OPEN ITEM: [הפריט הפתוח הראשון לפי state doc]
+WHY THIS TASK NOW: [למה משימה זו עכשיו — לא אחרת]
+WHAT IS BLOCKED AFTER THIS: [מה ייפתח / מה עדיין חסום אחרי המשימה הזו]
+```
+
+אם לא ניתן למלא את הבלוק הזה — עצור ודווח `ORGANIC_STATE_UNRESOLVED`.
+
+---
+
 ## פורמט פקודה חובה (מ-bridge/next-task.md)
 > **הערה:** Team Lead = Claude Code session המבצע. הפקודה מגיעה דרך bridge/next-task.md (נכתב ע"י GPT/אייל), לא מ-agent נפרד.
 
