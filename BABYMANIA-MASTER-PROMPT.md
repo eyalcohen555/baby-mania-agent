@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 2.6 | עודכן: 2026-04-12
+### גרסה: 2.7 | עודכן: 2026-04-13
 
 ---
 
@@ -52,6 +52,7 @@ milestone / blocker נסגר → גם master snapshot
 | `docs/product/clothing-journal.md` | clothing — production |
 | `docs/product/infrastructure-journal.md` | orchestrator, config |
 | `docs/organic/organic-journal.md` | HUBs, organic pipeline |
+| `docs/organic/מצב-הפרויקט-האורגני.md` | **מצב תפעולי מחייב** — חובה לקרוא לפני כל משימה אורגנית |
 
 ### קבצים היסטוריים (לא לעדכן)
 - `shared_memory.md` — עיצוב מוקדם, לפני הpipeline הנוכחי
@@ -418,6 +419,11 @@ milestones שנסגרו:
 ---
 
 ## 📝 צוות 2 — Organic Content Team
+
+> **חובה:** בכל משימה אורגנית — לקרוא קודם:
+> `docs/organic/מצב-הפרויקט-האורגני.md`
+> קובץ זה הוא source of truth התפעולי של המערכת האורגנית.
+> אין לנהל truth נפרד ב-repo אחר. GitHub = מקור ראשי.
 
 ### סוכנים — סטטוס נוכחי (`teams/organic/agents/`)
 
