@@ -1,16 +1,22 @@
-task_id: 20260413-174747
+task_id: 20260413-175232
 ---
----
+**STAGE-5 COMPLETE**
+
+**PRODUCTS_PROCESSED:** 6/6
+**OUTPUT_FILES_CREATED:** 6
+**FAILURES_FOUND:** 0
+
+| PID | Model | Size | Material | Title Len | Desc Len | FAQ |
+|-----|-------|------|----------|-----------|----------|-----|
+| 9690182385977 | (generic) | 55cm | סיליקון מלא | 58ch | 128ch | 5q |
+| 9690182451513 | לולו | 50cm | ויניל+בד | 53ch | 129ch | 5q |
+| 9690247627065 | לוי (ער) | 48cm | ויניל 3D | 51ch | 121ch | 5q |
+| 9690247659833 | מאדי | 50cm | ויניל עמיד במים | 52ch | 129ch | 5q |
+| 9689589383481 | לוי | 48cm | ויניל+שיער | 53ch | 132ch | 5q |
+| 9690182418745 | (premium) | 60cm | סיליקון רך 3D | 52ch | 130ch | 5q |
 
 **STAGE_VERDICT: PASS**
 
-**CHANGES MADE:**
-1. **`prompts/seo-aeo-rules.md`** (NEW) — Complete category-aware rules for SEO title, meta description, and FAQ across all 4 categories (reborn/shoes/clothing/accessories). Includes answer-first structure, priority bias, GSC winner protection, blacklist, and output format spec.
-2. **`prompts/faq.md`** (UPDATED) — Added `{category}` input parameter and category routing block that forces topic selection per category before writing. Prevents clothing FAQ on non-clothing products.
-3. **`teams/product/agents/seo-specialist.md`** (UPDATED) — Added required reading reference and category routing instruction.
+**EVIDENCE:** All 6 reborn products received product-specific SEO title, meta description, and FAQ following REBORN DOLLS rules. No generic content. No blacklisted words. No live changes. All files saved to `output/stage-outputs/{pid}_seo_draft.json`.
 
-**RULES ADDED:** 9 new rules including per-category formulas for title/description/FAQ, answer-first structure, GSC winner protection, priority bias ordering, and forbidden topics per category.
-
-**EVIDENCE:** All 4 categories have dedicated rules in all 3 fields (12 rule sets total). No architecture changes, no Shopify live touched, no theme changes.
-
-**SYSTEM STATE:** STAGE-4 complete. Ready for STAGE-5 (reborn dolls generation).
+**SYSTEM STATE:** STAGE-5 complete. Ready for STAGE-6 quality retest.
