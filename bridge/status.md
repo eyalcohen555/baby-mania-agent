@@ -1,5 +1,5 @@
 status: done
-time: 2026-04-13 16:54:56
-task_id: 20260413-164459
-approval_tier: T1
+time: 2026-04-13 17:09:49
+task_id: 20260413-170720
+approval_tier: T0
 detail: result written
