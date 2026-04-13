@@ -1,26 +1,43 @@
-task_id: 20260414-002503
+task_id: 20260414-003256
 ---
-STAGE-15 execution complete. Here's the structured report:
+Now let me write the bridge result.
 
 ---
+
+## STAGE-16 LIVE VERIFICATION RESULTS
 
 ```
-SYSTEM STATE: complete
-LIVE_PRODUCTS_UPDATED: 119 products
-  - Reborn: 6 (all 6 pushed)
-  - Shoes: 13 (all 13 pushed)
-  - Clothing: 94 (all 94 pushed, including 50 from recovery batch)
-  - Accessories: 6 (all 6 pushed)
+LIVE_VERIFY_RESULTS:
+  reborn:          6/6  PASS (100%)
+  shoes:          13/13 PASS (100%)
+  clothing_audit:  5/6  PASS (83%)
+  accessories:     0/6  PASS (0%)  ← ALL MISSING SEO
+  clothing_bulk:  21/43 PASS (49%) ← ~51% MISSING SEO
 
-PRODUCTS_SKIPPED: 1
-  - babysleep-pro: handle used as PID, product not found in Shopify (likely test/deprecated)
+PRODUCTS_CHECKED: 74
+PRODUCTS_PASSED: 45
+PRODUCTS_FAILED: 29
 
-FIELDS_WRITTEN: seo_title, meta_description (per product)
-
-FAILURES_FOUND: 0
-
-RISK LEVEL: LOW
-NEXT STEP: STAGE-16 (live verify)
+RISK_LEVEL: HIGH
 ```
 
-STAGE_VERDICT: PASS
+### Quality Check (on passing products)
+- Hebrew content: present and correct
+- Encoding corruption: NONE detected
+- SEO title lengths: 53-68 chars (within limits)
+- Meta description lengths: 113-132 chars (within limits)
+- FAQ structured data: present on ALL products (pass + fail)
+
+### Critical Issues
+1. **Accessories (6/6 FAIL)**: No `global.title_tag` or `global.description_tag` written — SEO push was completely missed for this category
+2. **Bulk clothing (22/43 FAIL)**: ~51% of clothing products from bulk push batch have no SEO fields — push reported success but fields weren't actually written
+3. **1 audit clothing product** (9895864205625): missing SEO fields
+
+### Root Cause Assessment
+STAGE-15 reported 119 products pushed with 0 failures, but live verification shows 29 of 74 checked products (39.2%) have empty SEO fields. The push script likely reported success without verifying the metafield write actually persisted, or used a write method that didn't target the `global` namespace metafields.
+
+```
+STAGE_VERDICT: FAIL
+EVIDENCE: 29 of 74 products (39.2%) have empty SEO title + meta description on live. All accessories (6) and ~51% of bulk clothing (22/43) missing SEO fields entirely. Products that DO have SEO fields show correct Hebrew content with no corruption.
+SYSTEM STATE: STAGE-16 complete — live verification FAILED. SEO fields not fully written. Requires re-push for accessories + failed clothing products before proceeding.
+```
