@@ -517,3 +517,8 @@
 | 2026-04-13 16:07:32 | DONE [20260413-160144] [TIER:T2] | TASK_ID: conductor-route-a-layer2-shoes-closure-001-STAGE-3-20260413-160144 |
 | 2026-04-13 16:07:39 | STARTED [20260413-160739] [TIER:T1] | TASK_ID: conductor-route-a-layer2-shoes-closure-001-STAGE-4-20260413-160739 |
 | 2026-04-13 16:14:23 | DONE [20260413-160739] [TIER:T1] | TASK_ID: conductor-route-a-layer2-shoes-closure-001-STAGE-4-20260413-160739 |
+| 2026-04-13 16:14:31 | STARTED [20260413-161431] [TIER:T3] | TASK_ID: conductor-route-a-layer2-shoes-closure-001-STAGE-5-20260413-161429 |
+| 2026-04-13 16:14:31 | BLOCKED_T3 [20260413-161431] | TASK_ID: conductor-route-a-layer2-shoes-closure-001-STAGE-5-20260413-161429 |
+| 2026-04-13 16:33:59 | STARTED [20260413-163359] [TIER:T3] | TASK_ID: conductor-route-a-layer2-shoes-closure-001-STAGE-5-20260413-161429 |
+| 2026-04-13 16:33:59 | T3_APPROVED [20260413-163359] | TASK_ID: conductor-route-a-layer2-shoes-closure-001-STAGE-5-20260413-161429 |
+| 2026-04-13 16:39:12 | DONE [20260413-163359] [TIER:T3] | TASK_ID: conductor-route-a-layer2-shoes-closure-001-STAGE-5-20260413-161429 |

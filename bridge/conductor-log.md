@@ -198,3 +198,8 @@
 | 2026-04-13 16:01:44 | STARTED STAGE-3 [conductor-route-a-layer2-shoes-closure-001-STAGE-3-20260413-160144] |
 | 2026-04-13 16:07:34 |   STAGE-3 | PASS |
 | 2026-04-13 16:07:39 | STARTED STAGE-4 [conductor-route-a-layer2-shoes-closure-001-STAGE-4-20260413-160739] |
+| 2026-04-13 16:14:24 |   STAGE-4 | PASS |
+| 2026-04-13 16:14:29 | STARTED STAGE-5 [conductor-route-a-layer2-shoes-closure-001-STAGE-5-20260413-161429] |
+| 2026-04-13 16:15:29 | TIMEOUT STAGE-5 |
+| 2026-04-13 16:15:29 |   STAGE-5 | UNKNOWN |
+| 2026-04-13 16:15:29 | PLAN STOPPED: route-a-layer2-shoes-closure-001 at STAGE-5 |
