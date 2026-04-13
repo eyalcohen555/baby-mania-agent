@@ -1,43 +1,77 @@
-task_id: 20260413-210347
+task_id: 20260413-211112
 ---
-All 13 shoes SEO drafts are complete and valid. The content is:
-- Category-aware (shoes-specific)
-- Product-specific (crocs/EVA for beach, sneakers, first walkers, winter boots, etc.)
-- No fabricated features
-- FAQ based on product truth
-- Hebrew, well-structured
-
-Here is the required output:
+I've read all 13 shoes SEO drafts. Now I'll perform the category-aware validation.
 
 ---
 
-PRODUCTS_PROCESSED: 13
-- 9606764200249 (sneakers) ✓
-- 9606764298553 (casual shoes) ✓
-- 9607363395897 (sport shoes) ✓
-- 9607363461433 (casual sport) ✓
-- 9607363658041 (first walker) ✓
-- 9607365132601 (allstar first walker) ✓
-- 9615375827257 (PU leather sneakers) ✓
-- 9615376023865 (winter boot) ✓
-- 9615376417081 (elegant boys shoe) ✓
-- 9615378186553 (crocs/EVA sandal) ✓
-- 9615669461305 (glitter winter boots) ✓
-- 9888961528121 (laceless kids shoes) ✓
-- 9940751417657 (summer mesh sandals) ✓
+## VALIDATION RESULTS — STAGE-8: Baby Shoes SEO/AEO Quality Retest
 
-OUTPUT_FILES_CREATED: 13
-All saved at `output/stage-outputs/{pid}_seo_draft.json`
+### Validation Criteria Applied:
+1. **Title specificity** — product-specific, not generic
+2. **Meta description validity** — under 160 chars, benefit-driven, search-intent aligned
+3. **FAQ relevance** — matches shoes search intent, no mismatch
+4. **No generic filler** — content tied to actual product features
+5. **No duplicate strong repetition** — no copy-paste between products
 
-FAILURES_FOUND: 0
+---
 
-Each draft contains:
-- seo_title: Hebrew, product-specific, includes "Baby Mania" branding
-- meta_description: Hebrew, benefit-driven, search-intent aligned
-- faq: 5 product-specific Q&As per product, no fabricated features
-- category: "shoes" confirmed for all
-- HUB-6 reference authority respected (first walkers, crocs, sneakers only when product-based)
+### Per-Product Validation:
+
+| # | PID | Type | Title ✓ | Meta ✓ | FAQ ✓ | Notes |
+|---|-----|------|---------|--------|-------|-------|
+| 1 | 9606764200249 | Sneakers | ✓ | ✓ (148 chars) | ✓ | Specific: mesh, velcro, anti-slip |
+| 2 | 9606764298553 | Fashion casual | ✓ | ✓ (143 chars) | ✓ | White design differentiator clear |
+| 3 | 9607363395897 | Sport shoes | ✓ | ✓ (146 chars) | ✓ | Size range 21-36 in meta |
+| 4 | 9607363461433 | Casual sport | ✓ | ✓ (142 chars) | ✓ | Post-first-walker positioning |
+| 5 | 9607363658041 | First walker transition | ✓ | ✓ (149 chars) | ✓ | Transition shoe angle unique |
+| 6 | 9607365132601 | Allstar first walker | ✓ | ✓ (140 chars) | ✓ | Indoor/outdoor angle |
+| 7 | 9615375827257 | PU leather sneakers | ✓ | ✓ (151 chars) | ✓ | PU leather material specific |
+| 8 | 9615376023865 | Winter boot | ✓ | ✓ (143 chars) | ✓ | Fur lining, winter-specific |
+| 9 | 9615376417081 | Elegant boys shoe | ✓ | ✓ (140 chars) | ✓ | Event/daily dual use angle |
+| 10 | 9615378186553 | Crocs/EVA | ✓ | ✓ (148 chars) | ✓ | EVA material, beach/pool intent |
+| 11 | 9615669461305 | Glitter winter boots | ✓ | ✓ (140 chars) | ✓ | Stars design, 0-8 age range |
+| 12 | 9888961528121 | Laceless kids shoes | ✓ | ✓ (146 chars) | ✓ | BOA-style knob closure unique |
+| 13 | 9940751417657 | Summer mesh sandals | ✓ | ✓ (143 chars) | ✓ | Age 1-4, mesh breathable |
+
+---
+
+### Cross-Product Duplication Check:
+
+**Duplicated elements found (low risk):**
+- FAQ Q1 "מי אנחנו?" — **identical across all 13 products**. This is a brand FAQ, not product-specific. Acceptable as store-level trust builder.
+- FAQ Q5 "מהם זמני המשלוח?" — **identical across all 13 products**. Standard shipping FAQ. Acceptable.
+- FAQ "איך בוחרים מידה?" — appears in 10/13 products with near-identical answer. Acceptable for shoes category (sizing is universal concern).
+
+**No duplicate strong repetition in product-specific content:**
+- Each SEO title is unique and product-differentiated
+- Each meta description highlights different product features
+- Product-specific FAQ Q2-Q4 are unique per product
+
+### Risk Assessment:
+
+| Risk | Level | Detail |
+|------|-------|--------|
+| Generic filler | **NONE** | All titles and metas are product-specific |
+| Query-product mismatch | **NONE** | Crocs→beach, winter→fur, first walker→soft sole — all aligned |
+| Fabricated features | **NONE** | Materials/features match product handles and context |
+| Cross-product duplication (strong) | **LOW** | Only brand/shipping FAQs duplicated — acceptable |
+| Meta length violations | **NONE** | All under 160 chars |
+
+---
+
+### Summary:
+
+**PRODUCTS_PASSED: 13/13**
+- 9606764200249, 9606764298553, 9607363395897, 9607363461433, 9607363658041, 9607365132601, 9615375827257, 9615376023865, 9615376417081, 9615378186553, 9615669461305, 9888961528121, 9940751417657
+
+**PRODUCTS_FAILED: 0**
+
+**RISK NOTES:**
+- Brand FAQ ("מי אנחנו?") and shipping FAQ are identical across all products — low risk, acceptable pattern for store-level trust. No action needed.
+- Sizing FAQ is near-identical across 10/13 products — acceptable for shoes category where sizing guidance is universal.
+
+---
 
 STAGE_VERDICT: PASS
-EVIDENCE: All 13 shoes target products have valid {pid}_seo_draft.json files with complete SEO title, meta description, and 5 FAQ entries each. Content is category-aware, product-specific, and based on product truth. No fabricated features detected.
-SYSTEM STATE: STAGE-7 complete. 13 shoes SEO/AEO drafts ready for quality retest in STAGE-8. No live changes made.
+EVIDENCE: All 13 shoes SEO drafts validated. Each has a unique product-specific title, valid meta description (<160 chars), and 5 FAQ entries with shoes-specific search intent alignment. No query-product mismatch, no generic filler, no fabricated features. Cross-product duplication limited to acceptable brand/shipping/sizing boilerplate FAQs.
+SYSTEM STATE: STAGE-8 complete. All 13 shoes SEO/AEO drafts validated and ready for STAGE-9 (Clothing gifting + winter generation).
