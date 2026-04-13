@@ -203,3 +203,20 @@
 | 2026-04-13 16:15:29 | TIMEOUT STAGE-5 |
 | 2026-04-13 16:15:29 |   STAGE-5 | UNKNOWN |
 | 2026-04-13 16:15:29 | PLAN STOPPED: route-a-layer2-shoes-closure-001 at STAGE-5 |
+| 2026-04-13 16:39:32 | RESUMED: route-a-layer2-shoes-closure-001 |
+| 2026-04-13 16:39:32 | STARTED STAGE-5 [conductor-route-a-layer2-shoes-closure-001-STAGE-5-20260413-163932] |
+| 2026-04-13 16:40:32 | TIMEOUT STAGE-5 |
+| 2026-04-13 16:40:32 |   STAGE-5 | UNKNOWN |
+| 2026-04-13 16:40:32 | PLAN STOPPED: route-a-layer2-shoes-closure-001 at STAGE-5 |
+| 2026-04-13 16:40:37 | RESUMED: route-a-layer2-shoes-closure-001 |
+| 2026-04-13 16:40:37 | STARTED STAGE-5 [conductor-route-a-layer2-shoes-closure-001-STAGE-5-20260413-164037] |
+| 2026-04-13 16:41:37 | TIMEOUT STAGE-5 |
+| 2026-04-13 16:41:37 |   STAGE-5 | UNKNOWN |
+| 2026-04-13 16:41:37 | PLAN STOPPED: route-a-layer2-shoes-closure-001 at STAGE-5 |
+| 2026-04-13 16:42:00 | RESUMED: route-a-layer2-shoes-closure-001 |
+| 2026-04-13 16:42:00 | STARTED STAGE-6 [conductor-route-a-layer2-shoes-closure-001-STAGE-6-20260413-164200] |
+| 2026-04-13 16:43:00 | TIMEOUT STAGE-6 |
+| 2026-04-13 16:43:00 |   STAGE-6 | UNKNOWN |
+| 2026-04-13 16:43:00 | PLAN STOPPED: route-a-layer2-shoes-closure-001 at STAGE-6 |
+| 2026-04-13 16:44:38 | RESUMED: route-a-layer2-shoes-closure-001 |
+| 2026-04-13 16:44:38 | STARTED STAGE-6 [conductor-route-a-layer2-shoes-closure-001-STAGE-6-20260413-164438] |
