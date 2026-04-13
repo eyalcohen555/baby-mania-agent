@@ -1,31 +1,13 @@
-task_id: 20260414-004119
+task_id: 20260414-010431
 ---
----
-
-SYSTEM STATE
-- FAILED_PRODUCTS_COUNT: **124** (not 29 as originally estimated)
-- TARGET_SCOPE: accessories 26 + clothing 98
-- WRITE_FIELDS: global.title_tag, global.description_tag
-
-ACTION TAKEN
-- REPUSH_STARTED: yes
-- PRODUCTS_UPDATED: **0**
-- PRODUCTS_SKIPPED: **124** (all — no seo_draft.json source files exist)
-- FAILURES_FOUND: 0
-
-LIVE RE-VERIFY
-- PRODUCTS_CHECKED: 0
-- PRODUCTS_PASSED: 0
-- PRODUCTS_FAILED: 0
-- REMAINING_EMPTY_FIELDS: 124 products
-
-RISK LEVEL: LOW
-NEXT STEP: STOP — SEO draft generation required for 124 products
-
-STAGE_VERDICT: **FAIL**
+All 25/25 verified. Here is the output summary:
 
 ---
 
-**Root cause:** The original STAGE-16 verify only sampled 74 products and estimated 29 failures. A full scan of all 297 pipeline products found **124 with empty SEO fields**. All 124 have `publisher.json` (hero, fabric, benefits, FAQ content) but **no `seo_draft.json`** — the SEO title/description generation step was never run for these products.
+BATCH: gen-recovery-clothing-B1
+CREATED: 25 — 10011383234873, 10026705748281, 9096599994681, 9096605827385, 9096606056761, 9096606515513, 9096606679353, 9096606908729, 9096606974265, 9096607072569, 9096607138105, 9096607596857, 9096607695161, 9096622473529, 9096622604601, 9179133870393, 9179134132537, 9179137933625, 9179138457913, 9179138687289, 9179145568569, 9179146256697, 9179148190009, 9179151335737, 9179152154937
+SKIPPED: 0
+FAILED: 0
+READY_FOR_B2: YES
 
-**Next step required:** Run the SEO draft generation pipeline for the 124 products that have `publisher.json` but no `seo_draft.json`. The full PID list is saved at `output/stage16_repush_results.json`.
+STAGE_VERDICT: PASS
