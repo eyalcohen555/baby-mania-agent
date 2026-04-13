@@ -566,3 +566,5 @@
 | 2026-04-13 22:09:04 | STARTED [20260413-220904] [TIER:T1] | TASK_ID: conductor-layer3-product-seo-aeo-priority-001-STAGE-9-20260413-220901 |
 | 2026-04-13 22:25:03 | TIMEOUT [20260413-220904] | TASK_ID: conductor-layer3-product-seo-aeo-priority-001-STAGE-9-20260413-220901 |
 | 2026-04-13 22:25:03 | DONE [20260413-220904] [TIER:T1] | TASK_ID: conductor-layer3-product-seo-aeo-priority-001-STAGE-9-20260413-220901 |
+| 2026-04-13 23:27:00 | STARTED [20260413-232700] [TIER:T1] | TASK_ID: manual-recovery-layer3-clothing-batch1-20260413-223000 |
+| 2026-04-13 23:30:17 | DONE [20260413-232700] [TIER:T1] | TASK_ID: manual-recovery-layer3-clothing-batch1-20260413-223000 |
