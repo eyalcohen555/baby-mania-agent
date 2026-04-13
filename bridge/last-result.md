@@ -1,48 +1,76 @@
-task_id: 20260413-144843
+task_id: 20260413-144959
 ---
-## STAGE-1: Audit פתיחה — אימות state וגבולות המשימה
+Now I have the full audit. Here's the report:
 
-### אימות 1: State מחייב סיום LAYER 2 לפני LAYER 3
-**PASS** — LAYER 3 (Product SEO / AEO) states explicitly:
-> `חסום: לא להתחיל לפני closure של LAYER 2` (state doc line 103)
+---
 
-### אימות 2: Visual verify clothing + ציר פתוח
-**FLAG** — State doc (line 76) shows:
-> `[חלקי] Visual verify ידני (accordion, mobile layout, מראה קישורים) — לא אושר עדיין`
+## STAGE-2 AUDIT REPORT — Shoes Product ↔ Blog Readiness
 
-Section 8 (line 257) also shows unchecked:
-> `[ ] Visual verify ידני (accordion, mobile) — לאחר אישור: לסמן [בוצע] ב-LAYER 2`
+### SYSTEM STATE
 
-The plan assumes visual verify clothing is **closed manually by Eyal**, but the state doc has **not been updated** to reflect this. This is likely a documentation lag — the conductor created this plan today with that assumption.
+LAYER 2 is partially complete. Clothing Product ↔ Blog is live and working. Shoes Product ↔ Blog is **data-ready but not deployed**.
 
-**Regardless**, the open items in LAYER 2 are clear:
-- `[לא בוצע] Rollout לנעליים (shoes template)` (line 77)
-- `[לא בוצע] Verify מלא לכל template אחרי rollout` (line 79)
+### FILES CHECKED
 
-The mission direction is correct: shoes rollout + verify is the path to LAYER 2 closure.
+| File | Location | Status |
+|------|----------|--------|
+| `product.shoes.json` | Live Shopify theme + `theme_assets/templates/` | **Missing `bm-product-blog` section** |
+| `product.clothing.json` | Live Shopify theme | **Has `bm-product-blog` section** ✅ |
+| `bm-product-blog.liquid` | Live Shopify theme `sections/` | **Exists on live** ✅ |
+| `product-reverse-index.json` | `output/site-map/` | **13 shoe products mapped to 7 unique HUB-6 articles** ✅ |
+| `bm-product-blog.liquid` (local) | `theme_assets/`, downloads sections | **Not found locally** |
 
-### אימות 3: אין execution של GSC backlog, CTR optimization, HUB-9, או Product SEO
-**PASS** — State doc section 11 (line 312):
-> `לא לבצע שום פעולה מהרשימה הזו לפני אישור ניהולי מפורש.`
+### HOW `bm-product-blog.liquid` WORKS
 
-The plan (all 10 stages) contains zero references to GSC execution, CTR optimization, HUB-9 opening, or Product SEO. Plan scope is strictly: audit → shoes rollout → verify → state update → boundary check.
+The section uses a **`case/when` on `product.handle`** to hardcode article slug assignments. Currently it only has clothing/bath product handles. For shoes, it needs:
 
-### אימות 4: משימה זו היא מסלול A בלבד
-**PASS** — Plan ID: `route-a-layer2-shoes-closure-001`. All stages target LAYER 2 closure through shoes rollout only. Stage 9 explicitly audits that no leakage occurred to other tracks.
+1. **13 new `{% when %}` cases** — one per shoe product handle, mapping to HUB-6 article slugs
+2. **7 new slug → Hebrew title/description entries** in both the Item 1 and Item 2 lookup tables
+3. **A shoes fallback group** in the fallback logic (currently fallback only covers winter/denim/gifting/everyday clothing)
+
+### MISSING OR BLOCKING ITEMS
+
+| # | Item | Severity | What's Needed |
+|---|------|----------|---------------|
+| 1 | **Shoe handles not in `bm-product-blog.liquid` case/when** | BLOCKING | Add 13 shoe product handles with their HUB-6 article slugs |
+| 2 | **HUB-6 slug → Hebrew title/desc lookup missing** | BLOCKING | Add 7 HUB-6 article entries to both Item 1 and Item 2 lookup tables |
+| 3 | **Shoes fallback group missing** | BLOCKING | Add fallback for shoe products not in reverse-index (e.g., title contains "נעל"/"shoes") |
+| 4 | **`product.shoes.json` missing `bm-product-blog` section** | BLOCKING | Add section entry to shoes template (on live Shopify) |
+| 5 | **Local copy of `bm-product-blog.liquid` missing** | NON-BLOCKING | State doc says it's on live only; local file not tracked |
+
+### EXACT FILES NEEDED FOR FIX
+
+1. **`sections/bm-product-blog.liquid`** (on Shopify live theme) — Add:
+   - 13 shoe `{% when %}` handle → slug mappings
+   - 7 HUB-6 slug → Hebrew title/description entries (both Item 1 & Item 2 tables)
+   - Shoes fallback group in fallback logic
+
+2. **`templates/product.shoes.json`** (on Shopify live theme) — Add:
+   - `"bm-product-blog": { "type": "bm-product-blog", "settings": {} }` section
+   - Insert in order between `bm_accordion` and `bm_urgency`
+
+### 7 HUB-6 ARTICLE SLUGS TO ADD
+
+| Slug | Cluster |
+|------|---------|
+| `bchira-naale-tinok-madrih-male` | HUB-6-Pillar |
+| `naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat` | HUB-6-C1 |
+| `solya-gmisha-naale-yeladim-mah-hahevdel` | HUB-6-C2 |
+| `mida-nachon-naale-yeladim-kacha-memdim-babayit` | HUB-6-C3 |
+| `naale-gan-yeladim-mah-kday-ladaat` | HUB-6-C4 |
+| `matay-lechahlif-naale-yeled-hassimanim` | HUB-6-C5 |
+| `chomrim-noshmim-naale-tinoket-mah-levakesh` | HUB-6-C6 |
+
+### RISK ASSESSMENT
+
+- **Low risk** — The section architecture is proven (live on clothing). Shoes rollout is additive — no changes to existing clothing logic.
+- The `case/when` pattern is well-established and understood.
+- No architectural changes needed — just data additions.
 
 ---
 
 **STAGE_VERDICT: PASS**
 
-**EVIDENCE:**
-1. LAYER 3 is explicitly blocked until LAYER 2 closes (state doc line 103)
-2. Open items in LAYER 2 are shoes rollout + shoes verify (lines 77-79). Visual verify clothing status shows "[חלקי]" in state doc — plan assumes it's closed by Eyal but doc not yet updated. This does not block the shoes rollout direction.
-3. Zero GSC/CTR/HUB-9/Product SEO execution in this plan
-4. Plan is Route A only — 10 stages all scoped to LAYER 2 shoes closure
+**EVIDENCE:** All components for shoes Product ↔ Blog rollout are identified. The section (`bm-product-blog.liquid`) exists on live and works for clothing. The reverse-index has all 13 shoe products mapped. The gap is precisely scoped: 2 files need updating (section Liquid + shoes template JSON) with specific, enumerable additions.
 
-**SYSTEM STATE:**
-- LAYER 2: OPEN — clothing verify partially confirmed, shoes rollout not started
-- Current task: Route A — LAYER 2 closure via shoes rollout
-- Next stage: STAGE-2 (audit shoes rollout readiness)
-- GSC backlog: PLANNED, NOT EXECUTED
-- HUB-9: not started, not planned in this route
+**SYSTEM STATE:** LAYER 2 shoes rollout is data-ready. Fix requires adding shoe handles + HUB-6 slugs to `bm-product-blog.liquid` and adding the section to `product.shoes.json`. Both changes are local-testable before live deployment.
