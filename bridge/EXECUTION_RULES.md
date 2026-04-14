@@ -78,3 +78,59 @@ SCOPE: [שם המשימה המדויקת]
 INPUT REQUIRED: [קבצים שחייבים להיות קיימים]
 OUTPUT EXPECTED: [מה צריך להיווצר]
 DO NOT TOUCH: [קבצים שאסור לגעת בהם]
+
+---
+
+## חוקים מערכתיים — לקחים מ-LAYER 3
+
+> נוצרו: 2026-04-14 | מקור: ביצוע plan `layer3-product-seo-aeo-priority-001` (18 stages)
+
+### 1. Generation stage — batch size
+- אם stage צפוי לעבור 300–400 שניות, לא להריץ כיחידה אחת
+- לבצע batch split מראש (12–15 מוצרים לבאץ')
+- לא לחכות ל-timeout כדי לגלות את זה
+
+### 2. Draft coverage gate לפני live push
+- אין לבצע live push אם draft coverage קטן מ-100%
+- `publisher.json` אינו תחליף ל-`seo_draft.json`
+- כל מוצר target חייב `seo_draft.json` תקין לפני write ל-live
+
+### 3. SKIP_EXISTING — חובה בכל generation stage
+- כל generation stage עתידי חייב לדעת לדלג על draft קיים ותקין
+- retry / resume בלי `skip_existing` נחשב recovery חלש
+
+### 4. Post-fail classification
+- אחרי FAIL של generation צריך לבדוק:
+  - האם נוצרו קבצים בפועל
+  - כמה נוצרו
+  - האם זה logic fail אמיתי או structural timeout
+- לא להניח שכל FAIL אומר אפס תוצאה
+
+### 5. Pre-live field map verification
+- לפני כתיבה ל-Shopify live חייב להיות אימות לשדות היעד
+- במקרה SEO:
+  - `global.title_tag`
+  - `global.description_tag`
+- לא להמשיך ל-live בלי field map verified
+
+### 6. Live verify — שער חובה
+- PASS של write לא מספיק
+- חייב verify חי אחרי כל push
+- אין לסגור שכבה בלי live verify אמיתי
+
+### 7. Recovery principle — סדר פעולות
+- אם הבעיה ב-input חסר, לא מתקנים ב-live ישירות
+- סדר חובה: השלמת drafts חסרים → re-push → live verify
+
+### 8. Runtime rule — Python path
+- להשתמש בנתיב Python המלא: `C:/Users/3024e/AppData/Local/Python/pythoncore-3.14-64/python.exe`
+- לא להשתמש ב-WindowsApps python stub
+- שימוש ב-stub גורם ל-double-process / false duplicate detection ב-conductor
+
+### 9. Scope rule — recovery ממוקד
+- בזמן recovery אסור לגעת במוצרים שכבר עברו verify
+- recovery חייב להיות ממוקד רק על failed / missing subset
+
+### 10. Documentation rule — לקחים בכתב
+- כל recovery משמעותי חייב להיכנס ל-state/journal
+- לא להשאיר לקחים רק בצ'אט
