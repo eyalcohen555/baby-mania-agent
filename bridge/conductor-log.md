@@ -318,3 +318,10 @@
 | 2026-04-16 12:09:28 | PLAN STOPPED: layer4-geo-priority-001 at STAGE-6 |
 | 2026-04-16 12:10:19 | RESUMED: layer4-geo-priority-001 |
 | 2026-04-16 12:10:19 | STARTED STAGE-7 [conductor-layer4-geo-priority-001-STAGE-7-20260416-121019] |
+| 2026-04-16 12:15:39 |   STAGE-7 | FAIL |
+| 2026-04-16 12:15:39 | PLAN STOPPED: layer4-geo-priority-001 at STAGE-7 |
+| 2026-04-16 12:17:23 | RESUMED: layer4-geo-priority-001 |
+| 2026-04-16 12:17:23 | STARTED STAGE-6 [conductor-layer4-geo-priority-001-STAGE-6-20260416-121723] |
+| 2026-04-16 12:29:23 | TIMEOUT STAGE-6 |
+| 2026-04-16 12:29:23 |   STAGE-6 | UNKNOWN |
+| 2026-04-16 12:29:23 | PLAN STOPPED: layer4-geo-priority-001 at STAGE-6 |
