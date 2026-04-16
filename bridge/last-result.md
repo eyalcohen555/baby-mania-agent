@@ -1,19 +1,15 @@
-task_id: 20260416-115103
+task_id: 20260416-115501
 ---
-**STAGE-3 COMPLETE**
+---
+
+## STAGE-4 Result
 
 ```
-TEMPLATES_CREATED: 4 (shoes, clothing, reborn, accessories)
-FILE: output/stage-outputs/layer4_geo_templates.json
+PRODUCTS_PROCESSED: 0
+PRODUCTS_SKIPPED_EXISTING: 0
+OUTPUT_FILES_CREATED: 0
+FAILURES: 0
 STAGE_VERDICT: PASS
+EVIDENCE: STAGE-2 audit confirmed 0 reborn products in scope (active_in_scope=false, product_count=0 in layer4_geo_templates.json). No drafts required. stage-progress.md written with STATUS=COMPLETE.
+SYSTEM STATE: STAGE-4 complete. 0 reborn products processed (none exist in scope). Ready for STAGE-5 (Retest — Reborn GEO quality) which will also be a no-op, then STAGE-6 (Shoes batch) is where real generation begins.
 ```
-
-**What was built:**
-- **geo_who_for** templates — persona-based, answer-first, with selection logic per product attributes (age, type, price, design)
-- **geo_use_case** templates — situation/timing-based, problem→solution→product flow, with selection logic per product type and season
-- **geo_comparison** templates — high-priority only, differentiation-based, no brand names or unverifiable claims
-- Each template includes: format spec, example, forbidden overlaps (against sealed faq/benefits), and product selection logic
-
-**Active scope:** shoes (51) + clothing (242) = 293 products. Reborn/accessories = 0 (templates defined for future use).
-
-**Next:** STAGE-4 (Reborn GEO drafts) — but since reborn=0 in scope, conductor should evaluate skipping to STAGE-6 (Shoes).
