@@ -7,6 +7,7 @@
     shoe_accordion metafield → gap-fill מ-insight blocks
     shoe_faq metafield      → gap-fill מ-faq blocks
   RTL עברית · ללא JavaScript
+  DATA CONTRACT: metafield accordion_blocks uses key "desc" (not "body") — do not revert
 {% endcomment %}
 
 {% comment %} ── Data sources ──────────────────────────────────────────
@@ -20,7 +21,7 @@
 
 {%- assign bm_sa_has = false -%}
 {%- if section.settings.show_section -%}
-  {%- if bm_sa_mf_acc and bm_sa_mf_acc.size > 0 -%}{%- assign bm_sa_has = true -%}
+  {%- if bm_sa_mf_acc and bm_sa_mf_acc.first -%}{%- assign bm_sa_has = true -%}
   {%- elsif bm_sa_mf_faq and bm_sa_mf_faq.size > 0 -%}{%- assign bm_sa_has = true -%}
   {%- elsif bm_sa_ins_blk.size > 0 -%}{%- assign bm_sa_has = true -%}
   {%- elsif bm_sa_faq_blk.size > 0 -%}{%- assign bm_sa_has = true -%}
@@ -43,7 +44,7 @@
     direction: rtl;
     text-align: right;
     background: transparent;
-    padding: 48px 16px;
+    padding: 48px 16px 128px; /* bottom=128px: 48px normal + 80px sticky-bar clearance */
   }
 
   /* ===== BM-SA: Inner Container ===== */
@@ -75,8 +76,16 @@
     background: linear-gradient(180deg, #FFF8F2 0%, #FFFFFF 70%);
     border: 1px solid #E8E1D8;
     border-radius: 14px;
-    overflow: hidden;
+    /* overflow:hidden removed — was clipping max-height animation on iOS Safari/Chrome mobile */
     box-shadow: 0 2px 12px rgba(139, 94, 60, 0.06);
+  }
+
+  /* Corner clipping without overflow:hidden — applied to question/answer at card edges */
+  .bm-sa-item:first-child .bm-sa-question {
+    border-radius: 14px 14px 0 0;
+  }
+  .bm-sa-item:last-child .bm-sa-answer {
+    border-radius: 0 0 14px 14px;
   }
 
   /* ===== BM-SA: Item ===== */
@@ -92,12 +101,16 @@
   /* ===== BM-SA: Hidden Checkbox (CSS-only toggle) ===== */
   .bm-sa-toggle {
     position: absolute;
-    left: -9999px;
-    opacity: 0;
     width: 1px;
     height: 1px;
+    padding: 0;
+    margin: -1px;
     overflow: hidden;
-    /* pointer-events: none הוסר — גורם לכשל ב-mobile עם label→checkbox */
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+    /* left:-9999px removed — was creating 9999px horizontal page overflow → scroll jump on click */
   }
 
   /* ===== BM-SA: Question / Title Label ===== */
@@ -206,7 +219,7 @@
   /* ===== BM-SA: Responsive ===== */
   @media (max-width: 520px) {
     .bm-sa-wrapper {
-      padding: 36px 12px;
+      padding: 36px 12px 116px; /* bottom=116px: 36px normal + 80px sticky-bar clearance */
     }
 
     .bm-sa-title {
@@ -247,12 +260,12 @@
       ══════════════════════════════════════════════════ {% endcomment %}
 
       {%- assign bm_sa_acc_count = 0 -%}
-      {%- if bm_sa_mf_acc and bm_sa_mf_acc.size > 0 -%}
+      {%- if bm_sa_mf_acc and bm_sa_mf_acc.first -%}
         {%- assign bm_sa_acc_count = bm_sa_mf_acc.size -%}
         {%- if bm_sa_acc_count > 5 -%}{%- assign bm_sa_acc_count = 5 -%}{%- endif -%}
       {%- endif -%}
 
-      {%- if bm_sa_mf_acc and bm_sa_mf_acc.size > 0 -%}
+      {%- if bm_sa_mf_acc and bm_sa_mf_acc.first -%}
         {%- for item in bm_sa_mf_acc limit: 5 -%}
           {%- assign bm_sa_id = 'bm-sa-ins-' | append: section.id | append: '-' | append: forloop.index -%}
           <div class="bm-sa-item">
@@ -266,8 +279,8 @@
               </span>
             </label>
             <div class="bm-sa-answer" role="region" aria-labelledby="{{ bm_sa_id }}">
-              {%- if item.body != blank -%}
-                <p class="bm-sa-answer-text">{{ item.body }}</p>
+              {%- if item.desc != blank -%}
+                <p class="bm-sa-answer-text">{{ item.desc }}</p>
               {%- endif -%}
               {%- if item.connection != blank -%}
                 <p class="bm-sa-connection">{{ item.connection }}</p>
