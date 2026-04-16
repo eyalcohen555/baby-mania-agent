@@ -335,3 +335,8 @@
 | 2026-04-16 12:48:50 | STARTED STAGE-9 [conductor-layer4-geo-priority-001-STAGE-9-20260416-124850] |
 | 2026-04-16 12:54:45 |   STAGE-9 | UNKNOWN |
 | 2026-04-16 12:54:45 | PLAN STOPPED: layer4-geo-priority-001 at STAGE-9 |
+| 2026-04-16 13:02:12 | RESUMED: layer4-geo-priority-001 |
+| 2026-04-16 13:02:12 | STARTED STAGE-8 [conductor-layer4-geo-priority-001-STAGE-8-20260416-130212] |
+| 2026-04-16 13:14:12 | TIMEOUT STAGE-8 |
+| 2026-04-16 13:14:12 |   STAGE-8 | UNKNOWN |
+| 2026-04-16 13:14:12 | PLAN STOPPED: layer4-geo-priority-001 at STAGE-8 |
