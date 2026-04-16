@@ -1,33 +1,24 @@
-task_id: 20260416-123226
+task_id: 20260416-125518
 ---
----
+**STAGE-9 Sample Retest: FAIL**
 
-## STAGE-7 RESULT — Shoes GEO Quality Validation
+Results for 30-product GEO quality sample:
 
-```
-PRODUCTS_VALIDATED: 65
-PRODUCTS_PASSED: 65 (62 initial + 3 fixed)
-PRODUCTS_FAILED: 0
-FAILED_PIDS: []
-CROSS_DUPLICATION_FOUND: NO
-RISK_NOTES: None
-```
+| Criterion | Score |
+|---|---|
+| product-specificity | **14/30** |
+| no-duplication-sealed | 30/30 |
+| answer-first | 30/30 |
+| audience-first | 30/30 |
+| no-false-promises | 28/30 |
+| cross-uniqueness | **FAIL** |
 
-**Fixes applied** — 3 drafts had `geo_who_for` starting with product name instead of audience:
-- `9096634499385` — "סנדל שמתאים..." → "הורים שמחפשים..."
-- `9888961462585` — "נעל שמתאימה..." → "הורים שרוצים..."
-- `9940845756729` — "נעל מים שמתאימה..." → "הורים שלוקחים..."
+**17 products failed.** Key findings:
 
-**All 5 criteria PASS** across all 65 drafts:
-- Product-specificity: 65/65
-- No sealed-field duplication: 65/65
-- Answer-first: 65/65
-- No false promises: 65/65
-- Audience-first: 65/65 (after fixes)
-- Cross-product uniqueness: 0 duplicate pairs
+1. **Clothing template problem (16/21 clothing failed):** The clothing GEO generator uses ~6 persona-based templates and only swaps the product name. 7 duplicate clusters found — e.g., 6 products share the exact same `geo_use_case` sentence, 6 share the same `geo_comparison`. Shoes generator (9/9 passed) does not have this issue.
 
-```
-STAGE_VERDICT: PASS
-EVIDENCE: 65/65 shoes GEO drafts validated and compliant
-SYSTEM STATE: STAGE-7 complete. Ready for STAGE-8 (Clothing GEO drafts).
-```
+2. **Misclassified product:** PID `9881362759993` ("מנורת לילה להירדמות מהירה לתינוק") is a night light, not clothing. GEO content describes generic clothing — entirely fabricated.
+
+3. **Fabricated claim:** PID `9615669461305` claims glitter is durable and won't peel — unverifiable.
+
+**Root cause:** The clothing GEO generator needs to produce product-specific content rather than template-filling by persona category.

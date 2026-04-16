@@ -1,10 +1,10 @@
-STAGE_ID: STAGE-6
+STAGE_ID: STAGE-8
 PLAN_ID: layer4-geo-priority-001
-BATCH_CURRENT: 5
-BATCH_TOTAL: 5
-PRODUCTS_DONE: 65
-PRODUCTS_TOTAL: 65
-LAST_PID: '9940751417657'
+BATCH_CURRENT: 19
+BATCH_TOTAL: 19
+PRODUCTS_DONE: 242
+PRODUCTS_TOTAL: 242
+LAST_PID: '9855017582905'
 STATUS: COMPLETE
-TIMESTAMP: 2026-04-16 12:45:00
-NOTE: All 65 shoes geo drafts generated. 3 pre-existing SKIP_EXISTING kept. 62 new drafts created in 5 batches. Uniqueness validation PASS (0 pairs >0.6 similarity). All new geo_who_for start with audience, not product name.
+TIMESTAMP: 2026-04-16 13:05:00
+NOTE: All 242 clothing geo drafts accounted for. 228 new drafts generated in 19 batches. 14 pre-existing drafts (shoes products misclassified in gap map) kept as-is with SKIP_EXISTING. 1 duplicate use_case fixed manually. 0 failures. Comparison texts generated for 101 high-priority products.
