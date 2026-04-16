@@ -300,3 +300,7 @@
 | 2026-04-16 10:06:48 | STARTED STAGE-1 [conductor-layer4-geo-priority-001-STAGE-1-20260416-100648] |
 | 2026-04-16 10:07:23 |   STAGE-1 | PASS |
 | 2026-04-16 10:07:28 | STARTED STAGE-2 [conductor-layer4-geo-priority-001-STAGE-2-20260416-100728] |
+| 2026-04-16 10:19:08 |   STAGE-2 | UNKNOWN |
+| 2026-04-16 10:19:08 | PLAN STOPPED: layer4-geo-priority-001 at STAGE-2 |
+| 2026-04-16 10:20:09 | RESUMED: layer4-geo-priority-001 |
+| 2026-04-16 10:20:09 | STARTED STAGE-2 [conductor-layer4-geo-priority-001-STAGE-2-20260416-102009] |
