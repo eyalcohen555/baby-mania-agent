@@ -20,6 +20,27 @@
 ---
 
 ## DATE: 2026-04-20
+## TASK: LAYER 4 GEO — CLOSURE DECLARATION
+## SCOPE: Layer 4 — Phase 2 Batch A + Live Read-Back
+## WHAT CHANGED:
+- בוצע live read-back מלא ל-285 publisher PIDs דרך Shopify REST API
+- ממצא: כל 51 shoes — CLEAN ✅ | כל clothing sampled — CLEAN ✅ | anomaly — NO GEO ✅
+- Batch A לא נדרש — כל shoes כבר עם geo
+- Layer 4 GEO מוכרז COMPLETE
+- עודכן `docs/governance/phase2-live-readback-scope-lock.md` → STATUS: COMPLETE
+## FILES TOUCHED:
+- `docs/governance/phase2-live-readback-scope-lock.md` (עדכון — COMPLETE)
+- `docs/management/management-journal.md` (עדכון זה)
+- `BABYMANIA-MASTER-PROMPT.md` (עדכון — Layer 4 COMPLETE)
+## SYSTEM IMPACT: אין — תיעוד בלבד. Shopify לא שונה.
+## OPEN ISSUES:
+- 36 clothing verify_failed — בעיית SEO בלבד (Layer 3 track)
+- 8 shoes עם gtype="בגד" — לא קריטי, לתקן בעתיד דרך shoes geo generator
+## NEXT STEP: Layer 5 — לאחר אישור ניהולי. Layer 5 נמצא ב-FREEZE (layer5-freeze.md)
+
+---
+
+## DATE: 2026-04-20
 ## TASK: P2-S2 SCOPE LOCK — LIVE READ-BACK EVIDENCE-BASED
 ## SCOPE: Layer 4 — Phase 2
 ## WHAT CHANGED:

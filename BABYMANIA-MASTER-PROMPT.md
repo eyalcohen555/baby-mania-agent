@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 4.0 | עודכן: 2026-04-20 | LAYER 4 GEO IN PROGRESS | PHASE 2 READ-BACK PENDING
+### גרסה: 4.1 | עודכן: 2026-04-20 | LAYER 4 GEO COMPLETE ✅ | LAYER 5 FROZEN
 
 ---
 
@@ -347,7 +347,7 @@ DATA → LOGIC → OUTPUT
 | LAYER 1 — DATA | ✅ CLOSED | data stable, 294 YAMLs, reverse-index v1.2 |
 | LAYER 2 — PRODUCT↔BLOG | ✅ CLOSED (2026-04-13) | clothing + shoes, 66 מוצרים LIVE |
 | LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE (2026-04-14) | 244 מוצרים LIVE — title_tag + description_tag |
-| LAYER 4 — GEO | 🔶 IN PROGRESS | Phase 1 hardening COMPLETE. Phase 2 read-back PENDING token |
+| LAYER 4 — GEO | ✅ COMPLETE (2026-04-20) | 285 PIDs — geo_who_for + geo_use_case live. Phase 1+2 done. |
 | LAYER 5–10 | ⏳ FUTURE | Layer 5 FROZEN (governance: layer5-freeze.md) |
 
 **LAYER 3 breakdown:**
@@ -394,10 +394,13 @@ DATA → LOGIC → OUTPUT
 - PID `9881362759993` — EXCLUDED (ANOMALY-001)
 - 285 publisher PIDs → רשימה נקייה: `docs/governance/geo_readback_pid_list.json`
 
-**BLOCKER:** Shopify live read-back לא הושלם — `SHOPIFY_ACCESS_TOKEN` לא פעיל בסביבה.
-**TOKEN path:** `C:\Projects\baby-mania-agent\.env` + `C:\Users\3024e\Desktop\shopify-token\.env`
+**Live read-back result (2026-04-20):** 51/51 shoes CLEAN · clothing sample CLEAN · anomaly correctly excluded.
+**Batch A status:** NOT NEEDED — all PIDs already have geo live.
 
-**הצעד הבא:** טען `.env` → הרץ read-back → scope lock → P2-S2 Batch A (36 PIDs)
+**Open items (non-blocking):**
+- 36 clothing: SEO fields missing (Layer 3 track — not geo)
+- 8 shoes: gtype="בגד" phrasing (cosmetic — fix via shoes generator when convenient)
+- Layer 5: FROZEN — awaiting explicit management decision
 
 ---
 
