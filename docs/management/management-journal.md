@@ -20,6 +20,22 @@
 ---
 
 ## DATE: 2026-04-20
+## TASK: Layer 4 post-closure — gen_clothing_geo shoes guard
+## SCOPE: Layer 4 — LOGIC fix (prevention only, no Shopify write)
+## WHAT CHANGED:
+- Audit: 51 shoes PIDs נסרקו live — נמצא 1 PID גבולי (לא 8 כנטען)
+- שורש: `gen_clothing_geo.py` חסר shoes classification → gtype defaults to "בגד"
+- Fix: הוסף guard בשורה 119 שחוסם shoes PIDs מלהיכנס לclothing generator
+- אין write לShopify — הoutput ב-live תקין
+## FILES TOUCHED:
+- `scripts/gen_clothing_geo.py` (guard נוסף)
+## SYSTEM IMPACT: מניעה — ריצה עתידית של clothing geo לא תוכל לכלול shoes PIDs
+## OPEN ISSUES: 1 PID גבולי (9096634106169) — geo_who_for מקובל, לא מצריך שינוי
+## NEXT STEP: 36 clothing SEO — track נפרד (Layer 3)
+
+---
+
+## DATE: 2026-04-20
 ## TASK: LAYER 4 GEO — CLOSURE DECLARATION
 ## SCOPE: Layer 4 — Phase 2 Batch A + Live Read-Back
 ## WHAT CHANGED:
