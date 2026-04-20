@@ -20,6 +20,27 @@
 ---
 
 ## DATE: 2026-04-20
+## TASK: P2-S2 SCOPE LOCK — LIVE READ-BACK EVIDENCE-BASED
+## SCOPE: Layer 4 — Phase 2
+## WHAT CHANGED:
+- נוצר `docs/governance/phase2-live-readback-scope-lock.md` — LOCKED ✅
+- ממצא קריטי: 241 clothing כבר תקינים — recovery אומת מ-artifacts
+- ממצא קריטי: 51 shoes — geo לא נכתב מעולם — הם ה-Batch A האמיתי
+- 36 verify_failed = בעיית SEO בלבד, לא geo — סקופ נפרד לחלוטין
+- Shoes geo path צריך generate נפרד דרך shoes generator
+## FILES TOUCHED:
+- `docs/governance/phase2-live-readback-scope-lock.md` (חדש — LOCKED)
+- `docs/management/management-journal.md` (עדכון זה)
+## SYSTEM IMPACT: אין — תיעוד בלבד
+## OPEN ISSUES:
+- אישור אייל נדרש לפני Batch A
+- 8 shoes עם gtype="בגד" — לתקן אחרי Batch A
+- 36 SEO failures — Layer 3 track נפרד
+## NEXT STEP: אישור אייל → Batch A — shoes geo generation (51 PIDs)
+
+---
+
+## DATE: 2026-04-20
 ## TASK: PHASE 2 LIVE READBACK PREP — PID LIST BUILD
 ## SCOPE: Layer 4 — Phase 2 Recovery Prep
 ## WHAT CHANGED:
