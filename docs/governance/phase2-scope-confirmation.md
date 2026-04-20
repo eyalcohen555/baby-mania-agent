@@ -115,6 +115,20 @@ This PID must not appear in any recovery batch. Gate 1 (`check_anomaly_exclusion
 - 36 clothing verify_failed: confirmed scope for Batch A start ✓
 - Gates 1 + 2: active and blocking ✓
 
+---
+
+## ⚠ SUPERSEDED — 2026-04-20
+
+המסמך הזה הוחלף על ידי ממצאי ה-live read-back שבוצע ב-2026-04-20.
+
+**תוצאות live read-back (2026-04-20):**
+- 36 clothing verify_failed — נבדקו live → כולם CLEAN (title_tag + description_tag קיימים)
+- 51 shoes — נבדקו live → כולם CLEAN (geo_who_for + geo_use_case קיימים)
+- Batch A לא בוצע ולא נדרש
+- failures היסטוריים היו RUNTIME בלבד (timeout/429) — לא evidence לבעיה data
+
+**Source of truth עדכני:** `docs/governance/phase2-live-readback-scope-lock.md` (STATUS: COMPLETE)
+
 ### What requires resolution before Batch A:
 1. **Shopify live read-back** on all publisher PIDs — determine actual live state of geo_who_for + geo_use_case fields
 2. **Investigate 7 PIDs** with geo_draft but no publisher (excluding anomaly)

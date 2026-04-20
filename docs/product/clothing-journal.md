@@ -19,7 +19,23 @@
 
 ---
 
-## מצב נוכחי (2026-03-25)
+## מצב נוכחי (2026-04-20) — LAYER 3 + LAYER 4 COMPLETE
+
+```
+Layer 3 SEO:  ✅ COMPLETE — title_tag + description_tag על כל ה-clothing (live verified 2026-04-20)
+Layer 4 GEO:  ✅ COMPLETE — geo_who_for + geo_use_case על כל ה-clothing (241 PIDs, live verified)
+Anomaly:      ✅ EXCLUDED — PID 9881362759993 מוחרג, ללא geo
+Layer 5:      ⏳ FROZEN — מחכה להחלטה ניהולית מפורשת
+```
+
+**evidence:**
+- `output/stage-outputs/layer4_recovery_push_results.json` — 241/241 pushed, 0 failed
+- live audit 2026-04-20: 36 verify_failed → 36/36 CLEAN (title_tag + description_tag נמצאו)
+- `docs/governance/phase2-live-readback-scope-lock.md` — STATUS: COMPLETE
+
+---
+
+## מצב קודם (2026-03-25)
 
 ```
 סטטוס: ✅ פרודקשן

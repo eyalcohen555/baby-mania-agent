@@ -19,12 +19,88 @@
 
 ---
 
-## מצב נוכחי (2026-03-30)
+## מצב נוכחי (2026-04-20) — LAYER 4 GEO COMPLETE
+
+```
+Layer 4 GEO:  ✅ COMPLETE — geo_who_for + geo_use_case על 51 shoes PIDs (live verified 2026-04-20)
+Pipeline:     ✅ ACTIVE — shoes rollout pipeline מוכן לבאצ'ים נוספים
+gen guard:    ✅ gen_clothing_geo.py חסום לשמור shoes מחוץ לclothing generator
+Layer 5:      ⏳ FROZEN — מחכה להחלטה ניהולית מפורשת
+```
+
+**evidence:**
+- live audit 2026-04-20: 51/51 shoes → CLEAN (geo_who_for + geo_use_case נמצאו עם ערכים)
+- `scripts/gen_clothing_geo.py` — shoes guard נוסף (ValueError אם shoes title מזוהה)
+- `docs/governance/phase2-live-readback-scope-lock.md` — STATUS: COMPLETE
+
+**open non-blocking:**
+- PID `9179135017273` — metafield sync ממתין (publisher בלבד, לא קריטי)
+- PID `9096634106169` — geo_who_for גבולי ("להלביש בסגנון"), לא מצריך שינוי
+
+---
+
+## מצב קודם (2026-04-14)
 
 ```
 שכבה 6 — Production
-סטטוס: ✅ Rollout הושלם — 6 מוצרים לייב
+סטטוס: ✅ Benefits section architecture — FIXED & LIVE
+סטטוס: ⚠ PID 9179135017273 — metafield sync ממתין (publisher בלבד)
+סטטוס: ✅ 66+ מוצרים LIVE על Shopify
 ```
+
+---
+
+## DATE: 2026-04-14
+## TASK: Benefits Section Architecture Fix — bm-shoes-benefits.liquid
+## SCOPE: theme_assets/sections/bm-shoes-benefits.liquid בלבד
+## APPROVAL_TIER: T2
+
+## WHAT CHANGED:
+- `bm-shoes-benefits.liquid` עבר מארכיטקטורה ישנה לארכיטקטורה נכונה
+- **ישן:** 5 static hardcoded cards תמיד + עד 3 dynamic מ-metafield → max 8, agent output נסתר
+- **חדש:** dynamic metafield first (עד 6) → gap-fill מ-blocks → full fallback → max 6
+- 5 הכרטיסים הקשיחים הוסרו לחלוטין (developmental + style categories)
+- `shoe_category` select הוסר מ-schema (שימש רק לstatic cards)
+- `max_blocks` עלה מ-3 ל-6
+- Presets עודכנו ל-6 blocks עם תוכן L3 (משמשים כgap-fill בלבד)
+- field contract: `benefit.body` primary | `benefit.description` backward-compat fallback
+- `bm_sb_has_content` guard נוסף — section לא מרנדרת HTML ריק
+- `data-bm-count` attribute נוסף לדיבאג
+
+## FILES TOUCHED:
+- `theme_assets/sections/bm-shoes-benefits.liquid` (local + pushed to live)
+
+## PUSH RESULT:
+- Theme: Copy of Dawn new (id=183668179257)
+- HTTP: 200
+- SHA match local/live: CONFIRMED (45f1c2ecf865)
+- Updated at: 2026-04-14T19:21:43+03:00
+- Has static: False
+- Has dynamic: True
+
+## LIVE VERIFY:
+- PID 9096635515193 (מגפון פרווה אוסטרלי — שירוש):
+  VERDICT: PASS
+  count=6, all via body, no description, no empty, no static titles, bodies unique
+- PID 9179135017273 (נעלי בובה נסיכותיות — נויה):
+  VERDICT: PARTIAL FAIL — לא נובע מה-section fix
+  count=4 ב-live metafield (ישן מ-rollout קודם)
+  local stage-output קיים עם 6 items חדשים אך לא בוצע re-push
+  section מציגה 4 מה-metafield + gap-fill 2 מ-blocks (אם הוגדרו)
+
+## SYSTEM IMPACT:
+- benefits section עובדת עם מודל נכון: dynamic content במרכז
+- agent מייצר 6 benefits → כולם מוצגים (לא 3 בלבד כמו לפני)
+- static cards שעוקפים validation — הוסרו לחלוטין
+
+## OPEN ISSUES:
+- [ ] PID 9179135017273 — re-push publisher בלבד כדי לסנכרן 6 benefits חדשים מ-03b
+      → זו משימת pipeline/metafield sync, לא משימת section
+      → אסור לפתוח מחדש את benefits section בגלל PID זה
+
+## NEXT STEP:
+re-push publisher output לPID 9179135017273 בלבד, דרך orchestrator רגיל.
+benefits section — CLOSED.
 
 ---
 
@@ -218,6 +294,211 @@ Agent prompt tuning before next batch:
 ## FAQ_FORBIDDEN_LEAK: NO — morning_ease + stability_confidence לא נמצאו בתשובות
 ## FAILURE_PATTERNS: NONE
 ## TOTAL_LIVE: 13 מוצרי נעליים LIVE על Shopify
+## NOTE: בפועל אומת בדיעבד (shoes-pre-scale-fixes) שהיו 4 PIDs נוספים כבר live מבאצ'ים לא ממופים — total אמיתי באותה עת: 17
 ## RISK_LEVEL: LOW
 ## READY_TO_CONTINUE: YES
 ## NEXT_STEP: shoes-rollout-003 — batch נוסף של 5–8 PIDs מהרשימה הממתינה (נותרו ~45 PIDs)
+
+---
+
+## DATE: 2026-04-09
+## TASK: fix-9606764429625 — Re-run 03b→04→07→push→verify (contract fix)
+## SCOPE: single PID — 9606764429625 | נעלי בובה חגיגיות לבנות
+## ROOT_CAUSE: rollout-003 subagent generated 4 benefits (misread thinking.yaml "4 or 6" note). Contract = 6 always.
+## WHAT_CHANGED:
+- benefits.json regenerated: 4 → 6 items (added independence_milestone + event_occasion clusters)
+- validator.txt: updated to PASS 6/6
+- publisher.json: regenerated with 6 benefits (accordion + faq preserved unchanged)
+- push + verify: PASS — required_keys=3, body_html empty
+## FIX_VERDICT: PASS
+## LIVE: YES — contract violation resolved
+## TOTAL_LIVE: 24 (unchanged — product was already live, now contract-correct)
+## NEXT_STEP: shoes-rollout-004 — נותרו ~45 PIDs מהרשימה הממתינה
+
+---
+
+## DATE: 2026-04-09
+## TASK: shoes-rollout-003 — Controlled Scale Batch
+## APPROVAL_TIER: T2
+## PIDs:
+- 9615376089401 | נעל חורף צעד ראשון אופנתיות
+- 9607363658041 | נעל מעבר צעד ראשון לתינוק
+- 9606764298553 | נעלי אופנה קז'ואל מונעות החלקה לתינוקות
+- 9615376417081 | נעל צעד ראשון אלגנטית לבנים
+- 9606764462393 | נעל קז'ואל במיוחד לתינוקות
+- 9607365067065 | נעלי אורות דינוזאור לתינוק
+- 9606764429625 | נעלי בובה חגיגיות לבנות
+## WHAT_CHANGED:
+- 7 PIDs עברו pipeline מלא: 03b → 04 → 04b → 04c → 07 → push → verify
+- faq_overwrite=true + product_template_type=shoes הוגדרו בכל 7 context YAMLs
+- 7 מוצרים נדחפו ל-Shopify ואומתו (required_keys=3, body_html empty, verify OK)
+## BATCH_VERDICT: PASS
+## LIVE_COUNT: 7/7
+## FAILURE_PATTERNS: NONE
+## KNOWN_ISSUES:
+- PID 9606764429625: benefits=4 (agent פרש track=style כ-4 cards) — contract = 6 always. דורש re-run של 03b+04+07+push לפני rollout-004.
+- Accordion block_3 נגזר עקיפין בכל 7 PIDs (thinking.yaml קבע 2 blocks בלבד). תוקן ב-shoes-pre-scale-fixes (note עודכן ל-3 required).
+## TOTAL_LIVE_ACTUAL: 24 מוצרי נעליים LIVE על Shopify
+## TOTAL_LIVE_BREAKDOWN:
+- rollout-001: 6 PIDs
+- stabilization-002: 2 PIDs
+- rollout-002: 5 PIDs
+- untracked (prior batches): 4 PIDs
+- rollout-003: 7 PIDs
+## RISK_LEVEL: LOW
+## READY_TO_CONTINUE: YES — אחרי re-run של PID 9606764429625
+## NEXT_STEP: shoes-pre-scale-fixes → shoes-rollout-004 (10–12 PIDs)
+
+---
+
+## DATE: 2026-04-09
+## TASK: shoes-pre-scale-fixes — Pre-Rollout-004 Contract Fixes
+## SCOPE: 3 ממצאים מ-rollout-003
+## WHAT_CHANGED:
+1. REPORTING: total published אומת = 24 (לא 13). rollout-002 entry תוקן עם NOTE.
+2. VALIDATOR CONTRACT: הכרעה — contract = 6 benefits תמיד (track-independent).
+   "4 or 6 per track" ב-thinking.yaml schema הוא שגוי. validator עודכן עם CONTRACT NOTE.
+3. THINKING LAYER: note ב-accordion_blocks שונה מ-"2-3 blocks. Delete the rest" ל-"3 blocks required."
+   note ב-benefits שונה מ-"4 or 6" ל-"6 cards required always."
+   card_6 נוסף לschema.
+## FILES_UPDATED:
+- docs/product/shoes-journal.md — this entry + rollout-002 NOTE
+- teams/product/agents/04-shoes-validator.md — CONTRACT NOTE ב-Rule 1
+- .claude/agents/02b-shoes-thinking.md — benefits/accordion notes + card_6 + block_3 guidance (requires user approval for .claude/ edit)
+## OPEN_ISSUES:
+- PID 9606764429625: 4 benefits בלייב — needs re-run (03b+04+07+push) לפני rollout-004
+- .claude/agents/02b-shoes-thinking.md: עריכה נדחתה (sensitive file) — נדרש אישור ידני
+## NEXT_STEP: shoes-rollout-004 לאחר re-run של 9606764429625 ואישור עריכת thinking agent
+
+---
+
+## DATE: 2026-04-09
+## TASK: shoes-rollout-004 — Controlled Scale Batch
+## APPROVAL_TIER: T2
+## PIDs:
+- 9179135017273 | נעלי בובה נסיכותיות דגם פרפר, נגד החלקה - נויה
+- 9607363330361 | נעלי גומי כריש - דויד
+- 9794582708537 | נעלי דיסני אלזה עם מנורות לד
+- 9888961462585 | נעלי חורף לילדים - חימום מושלם בכל צעד
+- 9888961528121 | נעלי ילדים מונעות החלקה - סגירה חכמה ללא שרוכים
+- 9607363526969 | סניקרס ארנבים לתינוקת
+- 9731753017657 | סניקרס מהממות לבנים דגם ישראל
+## WHAT_CHANGED:
+- 7 PIDs עברו pipeline מלא: 01 -> 02b -> 03b -> 04 -> 04b -> 04c -> 07 -> push -> verify
+- faq_overwrite=true + product_template_type=shoes הוגדרו בכל 7 context YAMLs לפני הריצה
+- PIDs 9607363526969 ו-9731753017657: intelligence נבנה מחדש via product_intelligence_builder.py
+- 7 מוצרים נדחפו ל-Shopify ואומתו (required_keys=3, body_html empty, verify OK)
+## BATCH_VERDICT: PASS
+## LIVE_COUNT: 7/7
+## FAILURE_PATTERNS: NONE
+## BENEFITS_CONTRACT: 6/6 בכל המוצרים
+## ACCORDION_CONTRACT: 3 blocks בכל המוצרים
+## TOTAL_LIVE_BREAKDOWN:
+- rollout-001: 6 PIDs
+- stabilization-002: 2 PIDs
+- rollout-002: 5 PIDs
+- untracked (prior batches): 5 PIDs (כולל 9615376023865 שאומת כ-live)
+- rollout-003: 7 PIDs
+- fix-9606764429625: 0 (כבר נמנה ב-rollout-003)
+- rollout-004: 7 PIDs
+## TOTAL_LIVE_ACTUAL: 32 מוצרי נעליים LIVE על Shopify
+## RISK_LEVEL: LOW
+## READY_TO_CONTINUE: YES
+## NEXT_STEP: shoes-rollout-005 — נותרו ~35 PIDs ללא ctx (נדרש fetch לפני pipeline)
+
+---
+
+## DATE: 2026-04-10
+## TASK: shoes-full-rollout — Auto Context Build + Full Pipeline (34 PIDs)
+## APPROVAL_TIER: T3
+## SCOPE: כל הPIDs הנותרים ברשימה ללא context
+## PIDs_COUNT: 34
+## PIDs:
+- 9888961560889 | נעלי ילדים נסגרות בקלות דגם סתיו
+- 9607363428665 | נעלי ילדים עם אורות פפיון
+- 9888961429817 | נעלי ילדים עם סגירה חכמה
+- 9940845756729 | נעלי מים לילדים מונעות החלקה
+- 9731768680761 | נעלי סניקרס כוכבים מדליקות אורות דגם שירה
+- 9179140194617 | נעלי סניקרס נוחות - יוני
+- 9615375827257 | נעלי סניקרס צעד ראשון
+- 9179139047737 | נעלי ספורט זוהרות בסגנון גרביים - לידור
+- 9607363395897 | נעלי ספורט מעוצבות
+- 9606764527929 | נעלי ספורט-אופנה לתינוקות
+- 9794582741305 | נעלי ספיידרמן עם אורות דגם ארז
+- 9615378186553 | נעלי קרוקס לתינוק
+- 9606864765241 | נעליים מונעות החלקה ליילוד
+- 10011382677817 | נעליים מונעות החלקה צעד ראשון דגם אליאב
+- 9179175354681 | סנדל אלגנטי - מאיה
+- 9179143995705 | סנדל בובה אלגנטי בשילוב פפיון - נועה
+- 9096634106169 | סנדל בוהו מעוצב - אוריוש
+- 9096634499385 | סנדל גומי - איזי
+- 9179132199225 | סנדל הליכה נוח - חיוכי
+- 9179139342649 | סנדל מלא מונע החלקה מתאים לחוף - גיאצ'ו
+- 9179144651065 | סנדל נסיכותי בשילוב פנינים - ליאן
+- 9096634695993 | סנדל פסטל מעוצב - מדריד
+- 9892620861753 | סנדל פרחוני מעוצב דגם אלין
+- 9607363690809 | סנדל פשוט לקיץ לתינוק
+- 9179175813433 | סנדל קטיפתי - קורל
+- 9096633221433 | סנדל רצועות נוח - מיכאלה
+- 9096634597689 | סנדלי גלדיאטור - שרונה
+- 9179149926713 | סנדלי פנינים יוקרתיות - סנדרה
+- 9179148779833 | סנדלי פפיון יוקרתיות בשילוב פנינים - לוראן
+- 9892196483385 | סנדלי קיץ פירחוניות דגם שלו
+- 9607363559737 | סנדלים אופנתיים לתינוקות צעד ראשון
+- 9096635089209 | סניקרס סטייל - גולדן
+- 9096634925369 | סניקרס קלאסיות - דיויד
+- 9096633090361 | סניקרס - אנג'לינו
+## WHAT_CHANGED:
+- כל 34 PIDs עברו: fetch מ-Shopify -> context YAML patch (faq_overwrite=true + product_template_type=shoes)
+- כל 34 PIDs עברו pipeline מלא: 01 -> 02b -> 03b -> 04 -> 04b -> 04c -> 07 -> push -> verify
+- 34 מוצרים נדחפו ל-Shopify ואומתו (required_keys=3, body_html empty, verify OK)
+## BATCH_VERDICT: PASS
+## LIVE_COUNT: 34/34
+## FAILURE_PATTERNS: NONE
+## BENEFITS_CONTRACT: 6/6 בכל המוצרים
+## ACCORDION_CONTRACT: 3 blocks בכל המוצרים
+## TOTAL_LIVE_BREAKDOWN:
+- rollout-001: 6 PIDs
+- stabilization-002: 2 PIDs
+- rollout-002: 5 PIDs
+- untracked (prior batches): 5 PIDs
+- rollout-003: 7 PIDs
+- rollout-004: 7 PIDs
+- shoes-full-rollout: 34 PIDs
+## TOTAL_LIVE_ACTUAL: 66 מוצרי נעליים LIVE על Shopify
+## RISK_LEVEL: LOW
+## FULL_ROLLOUT_COMPLETE: YES — כל PIDs ברשימה shoes_rollout_list.json הושלמו
+## NEXT_STEP: ניטור. לא נותרו PIDs ממתינים ברשימה הנוכחית.
+
+## LAYER-4 GEO ROLLOUT — STAGE-16 CLOSURE
+## DATE: 2026-04-19 04:24:15
+## PLAN_ID: layer4-geo-priority-001
+
+## ROLLOUT_SUMMARY:
+- Products pushed: 292
+- Fields written: baby_mania.geo_who_for, baby_mania.geo_use_case, baby_mania.geo_comparison
+- PID excluded: 9881362759993 (night light — known anomaly, zero geo writes confirmed)
+- geo_comparison written: 20 products (comparison_eligible=true only)
+- geo_comparison null: 272 products (comparison_eligible=false — by design)
+
+## STAGE_RESULTS:
+- STAGE-13: Pre-push audit — PASS (292 approved, 0 sealed violations, 0 fabricated)
+- STAGE-14: Live push — PASS (292 pushed, 0 failed, exit_code=0)
+- STAGE-15: Shopify read-back verify — PASS (10/10 sample OK, excluded PID clean)
+- STAGE-16: Documentation & state sync — COMPLETE
+
+## ISSUES_RESOLVED_DURING_LAYER4:
+- template-filled clothing generation (הוחלפה בgeneration אמיתית)
+- fabricated social proof (נחסמה בQA audit)
+- misclassified shoes in clothing scope (הוסרו לפני bundle)
+- missing/local-only artifacts (STAGE-13 flagged ונפתר)
+
+## LESSONS_LEARNED (vs. Layer 3 failures):
+- לא להסתמך על artifacts שאינם committed — תמיד לאמת path פיזי לפני push
+- להבדיל בין runtime state לבין local worktree state (worktrees אינם main)
+- לאשר exclusion anomalies (כגון PID 9881362759993) לפני כל live push
+- geo_comparison=null is valid — verify חייב להיות bundle-aware ולא flat
+
+## RISK_LEVEL: LOW
+## LAYER_STATUS: COMPLETE
+## NEXT: STAGE-17

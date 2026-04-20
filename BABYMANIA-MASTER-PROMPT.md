@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 4.1 | עודכן: 2026-04-20 | LAYER 4 GEO COMPLETE ✅ | LAYER 5 FROZEN
+### גרסה: 4.2 | עודכן: 2026-04-20 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE | LAYER 5 FROZEN ⏳
 
 ---
 
@@ -346,9 +346,14 @@ DATA → LOGIC → OUTPUT
 |------|--------|--------|
 | LAYER 1 — DATA | ✅ CLOSED | data stable, 294 YAMLs, reverse-index v1.2 |
 | LAYER 2 — PRODUCT↔BLOG | ✅ CLOSED (2026-04-13) | clothing + shoes, 66 מוצרים LIVE |
-| LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE (2026-04-14) | 244 מוצרים LIVE — title_tag + description_tag |
-| LAYER 4 — GEO | ✅ COMPLETE (2026-04-20) | 285 PIDs — geo_who_for + geo_use_case live. Phase 1+2 done. |
-| LAYER 5–10 | ⏳ FUTURE | Layer 5 FROZEN (governance: layer5-freeze.md) |
+| LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE (2026-04-20) | כל clothing נקי — title_tag + description_tag. 36 verify_failed היו RUNTIME בלבד. |
+| LAYER 4 — GEO | ✅ COMPLETE (2026-04-20) | 285 PIDs — geo_who_for + geo_use_case live. 241 clothing + 51 shoes audited. |
+| LAYER 5–10 | ⏳ FROZEN | Layer 5 FROZEN — נדרשת החלטה ניהולית מפורשת לפתיחה (layer5-freeze.md) |
+
+**⚠ LAYER 3 + LAYER 4 CLOSURE NOTE (2026-04-20):**
+היסטוריית verify_failed (36 clothing) ו-stage16 (60.8%) — RUNTIME failures בלבד (timeout/429).
+Live audit 2026-04-20 אימת: כל ה-clothing + כל ה-shoes נקיים. Batch A לא בוצע ולא נדרש.
+Source of truth: `docs/governance/phase2-live-readback-scope-lock.md`
 
 **LAYER 3 breakdown:**
 - Reborn: 6 · Shoes: 13 · Clothing: 219 · Accessories: 6

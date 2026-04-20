@@ -20,6 +20,32 @@
 ---
 
 ## DATE: 2026-04-20
+## TASK: OFFICIAL CLOSURE — LAYER 3 + LAYER 4
+## SCOPE: ניהול — סגירה רשמית של שתי שכבות
+## WHAT CHANGED:
+- Layer 3 SEO: מוכרז COMPLETE — live audit אימת 36/36 clothing נקיים
+- Layer 4 GEO: מוכרז COMPLETE — live audit אימת 241 clothing + 51 shoes נקיים
+- failures היסטוריים (verify_failed, stage16 60.8%) — RUNTIME בלבד, לא data issue
+- Batch A לא בוצע ולא נדרש — הכל היה תקין כבר
+- clothing-journal.md עודכן עם מצב 2026-04-20
+- shoes-journal.md עודכן עם מצב 2026-04-20
+- phase2-scope-confirmation.md — סומן SUPERSEDED
+- BABYMANIA-MASTER-PROMPT.md → v4.2 — שתי שכבות COMPLETE, Layer 5 FROZEN
+## FILES TOUCHED:
+- `docs/product/clothing-journal.md`
+- `docs/product/shoes-journal.md`
+- `docs/governance/phase2-scope-confirmation.md` (SUPERSEDED note)
+- `docs/management/management-journal.md` (עדכון זה)
+- `BABYMANIA-MASTER-PROMPT.md` (v4.2)
+## SYSTEM IMPACT: תיעוד בלבד — אין שינוי ב-Shopify
+## OPEN ISSUES:
+- Layer 5: FROZEN — נדרשת החלטה ניהולית מפורשת של אייל לפתיחה
+- PID 9179135017273 — metafield sync ממתין (non-blocking)
+## NEXT STEP: החלטה ניהולית על Layer 5 בלבד
+
+---
+
+## DATE: 2026-04-20
 ## TASK: Layer 4 post-closure — gen_clothing_geo shoes guard
 ## SCOPE: Layer 4 — LOGIC fix (prevention only, no Shopify write)
 ## WHAT CHANGED:
