@@ -1,12 +1,13 @@
 {
   "description": "BabyMania Organic Team — רישום מרכזי של כל ה-HUBs",
   "version": "2.0",
-  "last_updated": "2026-04-13",
+  "last_updated": "2026-04-20",
   "blog_id": 109164036409,
   "blog_url": "https://babymania-il.com/blogs/news",
   "topic_hubs_knowledge": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic צוות/docs/TOPIC-HUBS-KNOWLEDGE.md",
-  "last_published": "HUB-8",
-  "next_hub": "HUB-9",
+  "last_published": "HUB-9",
+  "next_hub": "HUB-9 Clusters C1-C6",
+  "hub9_direction_override": "REBORN — החלפה רשמית של כיוון קודם 'רשימת קניות לתינוק' (2026-04-20)",
   "hubs": [
     {
       "hub_id": "HUB-1",
@@ -228,9 +229,69 @@
       "writing_order": ["Pillar", "C3", "C5", "C1", "C2", "C4"],
       "published_at": "2026-04-09",
       "publish_results_file": "HUB8_PUBLISH_RESULTS.json",
-      "gsc_indexing": "PENDING",
+      "gsc_status": "gsc_manual_requested",
+      "gsc_inspection_result": "unknown",
+      "gsc_note": "Inspection ran 2026-04-20 — URL unknown to Google. Manual Request Indexing completed via GSC UI 2026-04-20.",
       "demand_validation_required": false,
       "notes": "פורסם 09/04/2026 — 6 מאמרים. Sleep Routine נדחה בגלל חפיפה עם HUB-1. מאמר C5 (3 חודשים) נוסף על בסיס ביקוש גבוה מאומת. state doc היה ready_to_publish — תוקן ל-published ב-13/04/2026."
+    },
+    {
+      "hub_id": "HUB-9",
+      "hub_name": "Reborn Dolls",
+      "hub_name_he": "בובת ריבורן",
+      "status": "published",
+      "direction_override": "HUB-9 שונה מ'רשימת קניות לתינוק' ל-Reborn — החלטה ניהולית 2026-04-20",
+      "approved_pillar": "בובת ריבורן — המדריך המלא: מה זה, איך לבחור ולמי זה מתאים",
+      "pillar_keyword": "בובת ריבורן",
+      "pillar_keyword_he": "בובת ריבורן",
+      "gsc_signal": "pos 2.7 — store top GSC performer",
+      "writing_angle": "הורים, מתנות פרמיום, אספנים — מה הריבורן הנכון לכל מטרה",
+      "approved_clusters": [
+        "C1: איך לבחור בובת ריבורן — מדריך לרוכש הראשון",
+        "C2: בגדי ריבורן — מה לובשים ואיפה מוצאים [PRIORITY — pos 1.5 keyword]",
+        "C3: בובת ריבורן כמתנה — מי זה מתאים לו ומה לבקש",
+        "C4: איך לטפל בבובת ריבורן — שמירה, ניקוי, אחסון",
+        "C5: ריבורן לילדים vs. ריבורן לאספנים — מה ההבדל",
+        "C6: השוואת בובות ריבורן — מידות, חומרים, מחירים"
+      ],
+      "cluster_priority": "C2 — 'בגדי ריבורן' pos 1.5, highest GSC signal after pillar keyword",
+      "articles_count": 7,
+      "product_bridge": {
+        "reborn_pids": [
+          "9689589383481",
+          "9690182385977",
+          "9690182418745",
+          "9690182451513",
+          "9690247627065",
+          "9690247659833"
+        ],
+        "clothing_bridge": "C2 → clothing products (baby-sized garments that fit Reborn dolls)",
+        "gift_bridge": "C3 → HUB-5 cross-link (Reborn as premium gift)"
+      },
+      "internal_linking": {
+        "pillar_to_clusters": "bidirectional — all 6 clusters",
+        "C2_to": "HUB-2 pillar (Newborn Clothing) + clothing product pages",
+        "C3_to": "HUB-5 pillar (Baby Gifts)",
+        "HUB5_C3_to": "HUB-9 Pillar (Reborn as premium gift — cross-link)"
+      },
+      "protect_winners_note": "כלל 'Protect reborn winners' = לא לגעת בדפי מוצר/דפי דירוג קיימים. HUB-9 יוצר דפים חדשים בלבד — לא מגע בדפים קיימים.",
+      "plan_file": "output/hub9-reborn/HUB9_plan.json",
+      "pillar_file": "output/hub9-reborn/HUB9_Pillar_blog_article.html",
+      "pillar_status": "PUBLISHED",
+      "pillar": {
+        "title": "בובת ריבורן — המדריך המלא: מה זה, איך לבחור ולמי זה מתאים",
+        "handle": "bobat-reborn-madrih-male-ma-ze-ech-livhor",
+        "article_id": 685558825273,
+        "url": "https://babymania-il.com/blogs/news/bobat-reborn-madrih-male-ma-ze-ech-livhor",
+        "published_at": "2026-04-20"
+      },
+      "planned_at": "2026-04-20",
+      "published_at": "2026-04-20",
+      "gsc_status": "gsc_manual_requested",
+      "gsc_inspection_result": "unknown",
+      "gsc_note": "Inspection ran 2026-04-20 — URL unknown to Google. Manual Request Indexing completed via GSC UI 2026-04-20.",
+      "previous_direction_rejected": "רשימת קניות לתינוק — pos 36, deferred to HUB-10",
+      "notes": "נושא נבחר על בסיס GSC winners: בובת ריבורן pos 2.7, בגדי ריבורן pos 1.5 — הקטגוריה החזקה ביותר בחנות ללא HUB תומך. 6 מוצרי Reborn קיימים ב-Shopify עם SEO Layer 3 מלא."
     }
   ]
 }

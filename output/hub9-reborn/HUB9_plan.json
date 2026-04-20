@@ -1,0 +1,272 @@
+{
+  "hub_id": "HUB-9",
+  "hub_name": "בובת ריבורן",
+  "plan_version": "1.0",
+  "planned_at": "2026-04-20",
+  "status": "READY_TO_WRITE",
+  "scope": "Pillar only — clusters not yet planned in detail",
+
+  "pillar": {
+    "title": "בובת ריבורן — המדריך המלא: מה זה, איך לבחור ולמי זה מתאים",
+    "handle_proposed": "bobat-reborn-madrih-male-ma-ze-ech-livhor",
+    "word_count_target": "1800–2400",
+    "language": "עברית",
+    "tone": "חם, מקצועי, ממוקד הורה/קונה — לא אקדמי"
+  },
+
+  "keywords": {
+    "primary": "בובת ריבורן",
+    "primary_gsc_position": 2.7,
+    "secondary": [
+      { "kw": "ריבורן מה זה", "intent": "awareness" },
+      { "kw": "איך לבחור בובת ריבורן", "intent": "commercial — hands off to C1" },
+      { "kw": "בובת ריבורן מתנה", "intent": "gift — hands off to C3" },
+      { "kw": "בובת ריבורן סיליקון", "intent": "material comparison" },
+      { "kw": "בובת ריבורן לילדים", "intent": "audience — hands off to C5" },
+      { "kw": "בובת ריבורן ויניל", "intent": "material comparison" }
+    ],
+    "do_not_target_in_pillar": [
+      "בגדי ריבורן — C2 owns this keyword (pos 1.5)",
+      "השוואת בובות ריבורן מחיר — C6 owns this",
+      "ריבורן לאספנים — C5 owns this"
+    ]
+  },
+
+  "search_intent": "Mixed: Awareness (מה זה ריבורן) → Validation (האם זה מתאים לנו) → Soft commercial (איפה לקנות). Searcher is parent, grandparent, or gift-buyer who has HEARD of Reborn but doesn't know exactly what it is.",
+
+  "writing_angle": "המדריך של הרוכש הנבון — מאמר שהופך קונה מבולבל לקונה בטוח. לא דף מוצר, לא קטלוג. מדריך שמתחיל ב'מה זה' ומסתיים ב'בחרתי'.",
+
+  "promise": "אחרי שתקרא את המאמר הזה תדע בדיוק מה זו בובת ריבורן, לאיזה ילד/גיל היא מתאימה, ואיך לבחור את הדגם הנכון — בלי להתבלבל.",
+
+  "product_inventory": [
+    {
+      "pid": "9689589383481",
+      "name": "לוי 48 ס\"מ ויניל — שיער צבוע",
+      "material": "ויניל",
+      "size_cm": 48,
+      "special": "שיער צבוע ביד",
+      "audience": "ילדים 3+, אספנים מתחילים",
+      "handle": "19-inches-levi-reborn-baby-realistic-vinyl-body-alive-lol-bebe-newborn-finished-hair-painted-doll-children-girls-gift-dolls"
+    },
+    {
+      "pid": "9690182385977",
+      "name": "BZDoll 55 ס\"מ סיליקון מלא",
+      "material": "סיליקון מלא",
+      "size_cm": 55,
+      "special": "מגע רך במיוחד, מציאותי",
+      "audience": "ילדות, טיפול רגשי, אספנים",
+      "handle": "bzdoll-55-cm-22-inch-reborn-dolls-realistic-full-silicone-baby-bebe-newborn-girl-doll-princess-toddler-toy-gift"
+    },
+    {
+      "pid": "9690182418745",
+      "name": "BZDoll 60 ס\"מ סיליקון רך — ציור 3D",
+      "material": "סיליקון רך + ציור עור 3D",
+      "size_cm": 60,
+      "special": "ורידים נראים, הגדולה בקולקציה, ברמה מקצועית",
+      "audience": "אספנים מנוסים, מתנת פרמיום",
+      "handle": "bzdoll-realistic-60cm-24inch-soft-silicone-reborn-baby-doll-with-3d-painting-skin-and-vascular-vein-handmade-girl-birthday-gift"
+    },
+    {
+      "pid": "9690182451513",
+      "name": "לולו 50 ס\"מ ויניל-סיליקון + גוף בד",
+      "material": "ויניל-סיליקון (ראש) + בד (גוף)",
+      "size_cm": 50,
+      "special": "גוף בד — ניתן לחיבוק וישיבה, תנועה טבעית",
+      "audience": "ילדות שרוצות לחבק, משחק יום-יומי",
+      "handle": "50cm-realistic-finished-bebe-reborn-silicone-vinyl-cloth-body-doll-loulou-handmade-toy-for-girls-christmas-gift"
+    },
+    {
+      "pid": "9690247627065",
+      "name": "לוי 48 ס\"מ — עור 3D ורידים",
+      "material": "ויניל + טכנולוגיית עור 3D",
+      "size_cm": 48,
+      "special": "ורידים נראים לעין, רמה מקצועית בגודל קומפקטי",
+      "audience": "אספנים, מתנה מיוחדת לילדה בוגרת",
+      "handle": "npk-19inch-already-painted-finished-reborn-baby-doll-levi-awake-newborn-baby-size-3d-skin-visible-veins-collectible-art-doll"
+    },
+    {
+      "pid": "9690247659833",
+      "name": "מאדי 50 ס\"מ ויניל עמיד במים",
+      "material": "ויניל מלא — עמיד במים",
+      "size_cm": 50,
+      "special": "ניתן לרחוץ במים — תכונה ייחודית בקטגוריה",
+      "audience": "ילדות שאוהבות אמבטיה, הורים שרוצים קלות תחזוקה",
+      "handle": "50cm-full-vinyl-body-girl-waterproof-reborn-doll-maddie-hand-detailed-painted-with-visible-veins-lifelike-3d-skin-tone-toy-gift"
+    }
+  ],
+
+  "outline": [
+    {
+      "section": "S1",
+      "title": "מה זו בובת ריבורן?",
+      "type": "intro + definition",
+      "content_notes": "הגדרה קצרה: בובה ריאליסטית, חומרים רכים, צבועה ביד, מידות דמויות תינוק. למה שונה מבובה רגילה. 3 משפטים + bullet קצר. לא לכתוב יותר מדי — להשאיר את הקורא רוצה להמשיך.",
+      "product_cards": false,
+      "internal_links": false
+    },
+    {
+      "section": "S2",
+      "title": "חומרים: ויניל, סיליקון, גוף בד — מה ההבדל?",
+      "type": "educational — material guide",
+      "content_notes": "3 חומרים, כל אחד 3-4 שורות. ויניל: עמיד, פירוט גבוה. סיליקון: רך יותר, מציאותי. גוף בד: ניתן לחיבוק. לא לדרג — כל אחד מתאים למשהו אחר.",
+      "product_cards": [
+        { "pid": "9690182451513", "reason": "מדגים גוף בד — לולו", "placement": "אחרי ויניל-בד" },
+        { "pid": "9690182385977", "reason": "מדגים סיליקון מלא — BZDoll 55", "placement": "אחרי סיליקון" },
+        { "pid": "9690247659833", "reason": "מדגים ויניל עמיד — מאדי", "placement": "אחרי ויניל" }
+      ],
+      "internal_links": false
+    },
+    {
+      "section": "S3",
+      "title": "מידות: מה לבחור לפי גיל ומטרה",
+      "type": "educational — size guide",
+      "content_notes": "48cm: קטן, ילדים צעירים 3-6. 50-55cm: גודל תינוק אמיתי, ורסטילי. 60cm: גדולה, אספנות ותצוגה. טבלה קצרה בסוף: מידה / מתאים ל- / דגמים.",
+      "product_cards": [
+        { "pid": "9689589383481", "reason": "לוי 48cm — קטן", "placement": "בטבלה/ליד 48cm" },
+        { "pid": "9690182451513", "reason": "לולו 50cm", "placement": "ליד 50cm" },
+        { "pid": "9690182385977", "reason": "BZDoll 55cm", "placement": "ליד 55cm" },
+        { "pid": "9690182418745", "reason": "BZDoll 60cm — גדולה לאספנים", "placement": "ליד 60cm" }
+      ],
+      "internal_links": false
+    },
+    {
+      "section": "S4",
+      "title": "למי זו מתאימה? — 3 פרופילים",
+      "type": "audience segmentation",
+      "content_notes": "פרופיל 1: ילדה 3-8 — משחק יום-יומי → ויניל/בד, גודל 48-50. פרופיל 2: מתנת פרמיום (יום הולדת, חג) → כל הדגמים, תלוי תקציב. פרופיל 3: אספנ/ת מבוגר/ת → סיליקון 3D, BZDoll גדול. קצר — 3-4 שורות לכל פרופיל.",
+      "product_cards": false,
+      "internal_links": [
+        { "target": "C3", "anchor": "למידע נוסף על ריבורן כמתנה →", "placement": "אחרי פרופיל 2 — מתנה" },
+        { "target": "C5", "anchor": "ריבורן לילדים vs. אספנים — מה ההבדל →", "placement": "אחרי פרופיל 3 — אספנים" }
+      ]
+    },
+    {
+      "section": "S5",
+      "title": "בגדי ריבורן — קצר בכוונה",
+      "type": "teaser — hands off to C2",
+      "content_notes": "2-3 שורות בלבד: בובות ריבורן לובשות בגדי תינוק רגילים (מידה 0-3 חודשים בד\"כ). לא לפתח — C2 הוא הבית לנושא הזה. לסיים בלינק ל-C2.",
+      "product_cards": false,
+      "internal_links": [
+        { "target": "C2", "anchor": "מדריך מלא: בגדי ריבורן — מה לובשים ואיפה מוצאים →", "placement": "סוף S5", "priority": "HIGH — pos 1.5 keyword" }
+      ],
+      "cannibalization_guard": "אין לרשום שמות בגדים ספציפיים ואין לתאר collection — שלא ייראה כ-inventory לבגדי ריבורן"
+    },
+    {
+      "section": "S6",
+      "title": "השוואה מהירה — כל הדגמים במקום אחד",
+      "type": "comparison table — short",
+      "content_notes": "טבלה קצרה: דגם / חומר / מידה / מתאים ל- / מה מיוחד. 6 שורות, ללא מחירים. לסיים ב-CTA ראשי. לשמור קצר — C6 יעשה את ההשוואה המלאה.",
+      "product_cards": false,
+      "cta": {
+        "text": "לכל בובות הריבורן שלנו ←",
+        "destination": "collection page — Reborn",
+        "placement": "אחרי הטבלה"
+      },
+      "cannibalization_guard": "אין מחירים, אין 'הכי טוב', אין ranking — שלא ייאכל את C6"
+    },
+    {
+      "section": "S7",
+      "title": "שאלות נפוצות",
+      "type": "FAQ — AEO",
+      "content_notes": "4-5 שאלות: מאיזה גיל? (3+) / אפשר לרחוץ? (תלוי דגם: מאדי כן, אחרות ניגוב בלבד) / מה המשלוח? (7-14 ימים) / האם בטוחה לילדים? (כן, חומרים לא רעילים) / מה ההבדל בין ויניל לסיליקון? (קצר — ל-S2 לפרטים).",
+      "product_cards": false,
+      "internal_links": false
+    },
+    {
+      "section": "S8",
+      "title": "המשך הקריאה — מאמרי ריבורן",
+      "type": "internal linking hub — cluster nav",
+      "content_notes": "פסקת סיכום קצרה + רשימת links לכל 6 clusters. כל link עם משפט הסבר.",
+      "internal_links": [
+        { "target": "C1", "anchor": "איך לבחור בובת ריבורן — מדריך לרוכש הראשון" },
+        { "target": "C2", "anchor": "בגדי ריבורן — מה לובשים ואיפה מוצאים [HIGH PRIORITY]" },
+        { "target": "C3", "anchor": "בובת ריבורן כמתנה — מי זה מתאים לו ומה לבקש" },
+        { "target": "C4", "anchor": "איך לטפל בבובת ריבורן — שמירה, ניקוי, אחסון" },
+        { "target": "C5", "anchor": "ריבורן לילדים vs. ריבורן לאספנים — מה ההבדל" },
+        { "target": "C6", "anchor": "השוואת בובות ריבורן — מידות, חומרים, מחירים" }
+      ]
+    }
+  ],
+
+  "product_card_summary": {
+    "total_cards": 7,
+    "placements": [
+      { "section": "S2", "pids": ["9690182451513", "9690182385977", "9690247659833"] },
+      { "section": "S3", "pids": ["9689589383481", "9690182451513", "9690182385977", "9690182418745"] }
+    ],
+    "pids_not_featured_as_cards": ["9690247627065"],
+    "note_on_9690247627065": "לוי 3D מופיע בטבלת S6 — לא כ-card נפרד כדי לא לכפול לוי 48 שכבר ב-S3"
+  },
+
+  "internal_linking_map": {
+    "pillar_to_clusters": ["C1", "C2", "C3", "C4", "C5", "C6"],
+    "cluster_cross_links": {
+      "C2": { "from_pillar_section": "S5", "priority": "HIGH", "reason": "בגדי ריבורן pos 1.5 — C2 owns the keyword" },
+      "C3": { "from_pillar_section": "S4", "priority": "MEDIUM", "reason": "gift intent in audience section" },
+      "C5": { "from_pillar_section": "S4", "priority": "MEDIUM", "reason": "collector segmentation" }
+    },
+    "external_hub_links": {
+      "HUB-5": { "note": "C3 article will link to HUB-5 — NOT the Pillar. Pillar stays focused on Reborn." }
+    }
+  },
+
+  "rebound_protection": {
+    "rule_source": "docs/organic/מצב-הפרויקט-האורגני.md §11 — 'לא לגעת בדפי ריבורן שמדורגים טוב. לנטר בלבד.'",
+    "interpretation": "כלל זה חל על עמודי מוצר ועמודי דירוג קיימים — לא על יצירת דפי בלוג חדשים",
+    "pillar_targets_generic_queries": true,
+    "product_pages_target_specific_product_queries": true,
+    "overlap_risk": "NONE — Pillar → 'מה זה ריבורן / איך לבחור'; Product pages → 'ריבורן לוי', 'ריבורן מאדי' (product-specific)",
+    "pillar_strengthens_product_pages_by": [
+      "Internal links from Pillar to all 6 product pages (via product cards)",
+      "Building topical authority around 'בובת ריבורן' category — lifts all pages under the topic",
+      "Capturing informational queries that product pages cannot satisfy"
+    ],
+    "forbidden_in_pillar": [
+      "Superlatives: 'הטוב ביותר', 'הזול ביותר', 'הכי מומלץ' — no evidence",
+      "Therapeutic/medical claims: 'מרפא טראומה', 'מסייע לאוטיזם', 'טיפול רגשי מוכח' — no clinical data in repo",
+      "Age below 3 — all products explicitly state 3+",
+      "Specific prices — can change, creates stale content",
+      "Guarantee language: 'אסופה מובטחת', 'ערך השקעה' — no evidence",
+      "Inventory claims: 'הקולקציה הגדולה ביותר בישראל' — unverifiable",
+      "Specific product rankings: 'לוי עדיף על מאדי' — competitor to C6"
+    ]
+  },
+
+  "cta_strategy": {
+    "primary_cta": {
+      "text": "לכל בובות הריבורן שלנו ←",
+      "placement": "S6 — אחרי טבלת ההשוואה",
+      "destination": "Reborn collection page"
+    },
+    "secondary_ctas": [
+      { "text": "מדריך מלא: בגדי ריבורן →", "placement": "S5", "target": "C2" },
+      { "text": "ריבורן כמתנה — למי זה מתאים →", "placement": "S4 after gift profile", "target": "C3" }
+    ]
+  },
+
+  "writing_pipeline": {
+    "agent": "04-blog-writer",
+    "input_files": [
+      "output/hub9-reborn/HUB9_plan.json (this file)",
+      "output/stage-outputs/9689589383481_seo_draft.json",
+      "output/stage-outputs/9690182385977_seo_draft.json",
+      "output/stage-outputs/9690182418745_seo_draft.json",
+      "output/stage-outputs/9690182451513_seo_draft.json",
+      "output/stage-outputs/9690247627065_seo_draft.json",
+      "output/stage-outputs/9690247659833_seo_draft.json"
+    ],
+    "output_target": "output/hub9-reborn/HUB9_Pillar.html",
+    "review_before_publish": true
+  },
+
+  "risk_assessment": {
+    "level": "LOW",
+    "reasons": [
+      "New pages only — no existing page is modified",
+      "Pillar targets generic queries, not product-specific queries",
+      "Product cards send TO existing pages — no cannibalization",
+      "Forbidden claims list prevents legal/accuracy risk",
+      "C2 keyword ('בגדי ריבורן' pos 1.5) is deliberately handed off — Pillar stays narrow"
+    ]
+  }
+}

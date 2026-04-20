@@ -20,6 +20,134 @@
 ---
 
 ## DATE: 2026-04-20
+## TASK: DOCS SYNC — HUB-9 publish + GSC manual request indexing complete
+## SCOPE: ניהול — סנכרון סופי אחרי HUB-9 publish + GSC manual requests
+
+## WHAT CHANGED:
+- כל מסמכי המקור עודכנו לאחר: HUB-9 Pillar publish + inspection HUB-8/9 + manual Request Indexing
+- `gsc_pending_manual_request` → `gsc_manual_requested` עבור HUB-8 + HUB-9
+- Pipeline line תוקן: "GSC submit" → "GSC inspect → manual Request Indexing"
+- hub-registry.json: last_published=HUB-9, next_hub=HUB-9 Clusters C1-C6
+
+## FILES TOUCHED:
+- `BABYMANIA-MASTER-PROMPT.md` — pipeline line + HUBs table (HUB-8 + HUB-9 GSC)
+- `teams/organic/hub-registry.json` — gsc_status + last_published + next_hub
+- `docs/organic/מצב-הפרויקט-האורגני.md` — HUB-8 + HUB-9 GSC column
+- `docs/organic/organic-journal.md` — entry added
+
+## SYSTEM STATE:
+- HUBs: 9 live (HUB-1..HUB-9 Pillar) | 48 articles
+- HUB-8: gsc_manual_requested ✅ | HUB-9 Pillar: gsc_manual_requested ✅
+- HUB-9 C1-C6: pending
+
+## OPEN ISSUES:
+- [ ] HUB-9 Clusters C1-C6 כתיבה + פרסום
+- [ ] HUB-6 + HUB-7 Manual Request Indexing (נדחה)
+
+## NEXT STEP:
+- HUB-9 C2 "בגדי ריבורן" — execution
+
+---
+
+## DATE: 2026-04-20
+## TASK: GSC WORKFLOW FINALIZATION — inspection + manual request model
+## SCOPE: ניהול — workflow correction, status model
+
+## WHAT CHANGED:
+- API PROVEN: Search Console URL Inspection API = inspection only. `urlInspection.index()` has one method: `inspect`. No request indexing endpoint exists.
+- Google Indexing API = not suitable for blog articles (URL ownership verification fails for non-JobPosting/BroadcastEvent content).
+- `scripts/submit_gsc.py` שוכתב להשתמש ב-URL Inspection API. output: `unknown` / `indexed` / `crawled_not_indexed` / `inspection_failed`
+- Status model עודכן:
+  - הוסר: `gsc_submitted`, `gsc_requested`, `pending_gsc_permission`
+  - נוסף: `gsc_pending`, `gsc_pending_manual_request`, `gsc_inspected`
+  - נשאר: `gsc_unknown`, `gsc_indexed`, `gsc_crawled_not_indexed`
+- HUB-8 + HUB-9: inspection רץ (result: unknown) → סטטוס = `gsc_pending_manual_request`
+- post-publish flow קנוני: publish → verify → inspect(script) → manual request(GSC UI) → docs
+
+## FILES TOUCHED:
+- `docs/management/update-policy.md`
+- `BABYMANIA-MASTER-PROMPT.md`
+- `teams/organic/hub-registry.json`
+- `scripts/submit_gsc.py`
+- `docs/management/management-journal.md`
+
+## SYSTEM IMPACT:
+- אין יותר בלבול בין inspect לבין request indexing
+- workflow אמיתי ומוכח תועד בכל מסמכי המקור
+
+## OPEN ISSUES:
+- [ ] Manual Request Indexing ב-GSC UI עבור HUB-8 + HUB-9
+- [ ] Manual Request Indexing עבור HUB-6 + HUB-7 (גם הם pending)
+
+## NEXT STEP:
+- GSC UI → Request Indexing → HUB-8 + HUB-9 → עדכן gsc_status ל-`gsc_indexed` לאחר אישור
+
+---
+
+## DATE: 2026-04-20
+## TASK: GSC POST-PUBLISH FLOW — הגדרה רשמית כשלב חובה
+## SCOPE: ניהול — workflow change, organic post-publish
+
+## WHAT CHANGED:
+- GSC submission הוגדר רשמית כשלב חובה ב-post-publish flow אורגני
+- Pipeline רשמי עודכן: `11 → 03 → 04 → 08 → publish → verify → GSC submit → docs update`
+- `scripts/submit_gsc.py` נוצר — integration קבוע ל-Google Indexing API
+- סטטוסים רשמיים נקבעו: `gsc_submitted` / `pending_gsc_permission` / `gsc_pending` / `gsc_indexed`
+- כלל: publish complete ≠ FULLY COMPLETE. FULLY COMPLETE = publish + gsc_submitted.
+- HUB-8 + HUB-9 Pillar סומנו `pending_gsc_permission` ב-hub-registry.json
+
+## PERMISSION BLOCKER:
+- service account `gsc-access@babymania-001.iam.gserviceaccount.com` — צריך הרשאת Owner
+- GSC → babymania-il.com → Settings → Users and permissions → Add user → Owner
+- אחרי הוספה: `python scripts/submit_gsc.py <url>` — submit יעבור
+
+## FILES TOUCHED:
+- `docs/management/update-policy.md` — Post-Publish Flow section + סטטוסים
+- `BABYMANIA-MASTER-PROMPT.md` — pipeline + HUBs table + GSC integration note
+- `teams/organic/hub-registry.json` — gsc_status + gsc_note ל-HUB-8 + HUB-9
+- `docs/organic/organic-journal.md` — entry GSC integration
+- `docs/organic/מצב-הפרויקט-האורגני.md` — post-publish flow + blocker
+- `scripts/submit_gsc.py` — new
+
+## SYSTEM IMPACT:
+- כל HUB עתידי חייב לעבור 4 שלבים לפני שנחשב complete
+- GSC לא יישכח — מתועד ב-hub-registry per HUB
+
+## OPEN ISSUES:
+- [ ] הוסף `gsc-access@babymania-001.iam.gserviceaccount.com` כ-Owner ב-GSC
+- [ ] הרץ: `python scripts/submit_gsc.py` עבור HUB-8 + HUB-9 Pillar + HUB-6 + HUB-7
+
+## NEXT STEP:
+- הוספת service account כ-Owner ב-GSC → re-run submit → עדכן gsc_status ל-`gsc_submitted`
+
+---
+
+## DATE: 2026-04-20
+## TASK: HUB-9 DIRECTION CHANGE — רשימת קניות → בובת ריבורן
+## SCOPE: ניהול — שינוי עדיפות אורגנית
+
+## WHAT CHANGED:
+- HUB-9 שונה רשמית מ"רשימת קניות לתינוק" ל"בובת ריבורן"
+- נימוק: Reborn = קטגוריה #1 בחנות (בובת ריבורן pos 2.7, בגדי ריבורן pos 1.5), 6 מוצרים קיימים, אפס HUB תומך
+- "רשימת קניות לתינוק" (pos 36) נדחה ל-HUB-10
+
+## FILES TOUCHED:
+- `teams/organic/hub-registry.json` — HUB-9 added (planned, Reborn)
+- `docs/organic/organic-journal.md` — entry 2026-04-20
+- `docs/organic/מצב-הפרויקט-האורגני.md` — HUB-9 בטבלה + override note
+
+## SYSTEM IMPACT:
+- HUB-9 = בובת ריבורן. ממתין ל-execution plan.
+
+## OPEN ISSUES:
+- [ ] execution plan לכתיבת Pillar HUB-9 Reborn
+
+## NEXT STEP:
+- הכנת execution plan לכתיבת Pillar
+
+---
+
+## DATE: 2026-04-20
 ## TASK: OFFICIAL CLOSURE — LAYER 3 + LAYER 4
 ## SCOPE: ניהול — סגירה רשמית של שתי שכבות
 ## WHAT CHANGED:

@@ -1,0 +1,670 @@
+<!--
+  HUB: HUB-9 — בובת ריבורן
+  article_id: HUB9-Pillar
+  article_type: pillar
+  cluster_position: pillar
+  target_keyword: בובת ריבורן
+  secondary_keywords: ריבורן מה זה, בובת ריבורן סיליקון, בובת ריבורן ויניל
+  writing_angle: המדריך של הרוכש הנבון — הופך קונה מבולבל לקונה בטוח
+  content_layer: TOFU 60% + awareness 25% + soft-commercial 15%
+  word_count: ~2100
+  product_bridge: 6 Reborn PIDs — 9689589383481, 9690182385977, 9690182418745, 9690182451513, 9690247627065, 9690247659833
+  status: READY_FOR_REVIEW — לא לפרסם ללא אישור
+  generated: 2026-04-20
+  plan_file: output/hub9-reborn/HUB9_plan.json
+
+  KEYWORD OWNERSHIP:
+  - Pillar owns: "בובת ריבורן", "ריבורן מה זה", "בובת ריבורן סיליקון/ויניל"
+  - C2 owns: "בגדי ריבורן" — S5 teaser only, 2 שורות + link
+  - C1 owns: "איך לבחור בובת ריבורן" — S4 teaser only
+  - C5 owns: "ריבורן לאספנים" — S4 teaser only
+  - C6 owns: "השוואת מחירים" — S6 table is intentionally shallow
+
+  IMAGES: resolved 2026-04-20 — Shopify CDN URLs from PIDs 9690182418745 + 9689589383481
+
+  CLUSTER LINKS: marked [CLUSTER-URL:Cx] — resolve before publish via article-linker.
+-->
+
+<p style="text-align:right">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+</p>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAF7F4;
+    --warm: #F2EBE2;
+    --brown: #7D5A3C;
+    --dark: #1E1510;
+    --text: #3A2E25;
+    --muted: #9A8878;
+    --accent: #C4876A;
+    --green: #6B9970;
+    --radius: 18px;
+  }
+  body { font-family: 'Heebo', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.85; }
+
+  .hero { position: relative; height: 520px; overflow: hidden; background: #2A1A0E; }
+  .hero img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0.75; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(30,21,16,0.05) 0%, rgba(30,21,16,0.70) 100%); }
+  .hero-content { position: absolute; bottom: 0; right: 0; left: 0; padding: 44px 52px; color: white; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600; letter-spacing: 2.5px; padding: 7px 18px; border-radius: 3px; margin-bottom: 16px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.2); }
+  .hero h1 { font-size: clamp(26px, 4vw, 44px); font-weight: 900; line-height: 1.2; margin-bottom: 14px; text-shadow: 0 2px 20px rgba(0,0,0,0.35); max-width: 680px; }
+  .hero-meta { font-size: 13px; opacity: 0.8; display: flex; gap: 22px; flex-wrap: wrap; }
+
+  .page-wrap { max-width: 800px; margin: 0 auto; padding: 0 24px 100px; }
+
+  .intro-box { background: white; border-radius: var(--radius); padding: 30px 36px; margin: 44px 0 32px; border-right: 5px solid var(--accent); box-shadow: 0 4px 24px rgba(196,135,106,0.10); }
+  .intro-box p { font-size: 18px; line-height: 1.85; }
+
+  .quick-answer { background: var(--warm); border-radius: 12px; padding: 18px 24px; margin: 0 0 36px; font-size: 15px; line-height: 1.75; }
+  .qa-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); display: block; margin-bottom: 8px; }
+
+  .toc { background: var(--warm); border-radius: var(--radius); padding: 26px 32px; margin: 0 0 40px; }
+  .toc-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+  .toc ol { padding-right: 20px; }
+  .toc li { margin-bottom: 9px; font-size: 15px; }
+  .toc a { color: var(--brown); text-decoration: none; font-weight: 500; }
+  .toc a:hover { text-decoration: underline; }
+
+  .article-body h2 { font-size: 25px; font-weight: 800; color: var(--dark); margin: 52px 0 18px; display: flex; align-items: center; gap: 10px; }
+  .article-body h2::before { content: ''; display: inline-block; width: 5px; height: 26px; background: var(--accent); border-radius: 3px; flex-shrink: 0; }
+  .article-body h3 { font-size: 18px; font-weight: 700; color: var(--brown); margin: 28px 0 10px; }
+  .article-body p { margin-bottom: 18px; }
+  .article-body ul { padding-right: 22px; margin-bottom: 20px; }
+  .article-body li { margin-bottom: 10px; }
+  .article-body strong { color: var(--dark); }
+
+  .tip-box { background: #EDF6EE; border-right: 4px solid var(--green); border-radius: var(--radius); padding: 20px 26px; margin: 28px 0; display: flex; gap: 14px; align-items: flex-start; }
+  .tip-icon { font-size: 22px; flex-shrink: 0; }
+  .tip-box p { margin: 0; font-size: 16px; color: #2A4A2E; line-height: 1.7; }
+  .tip-box .box-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green); display: block; margin-bottom: 6px; }
+
+  .note-box { background: #FFF9F0; border-right: 4px solid var(--accent); border-radius: var(--radius); padding: 18px 24px; margin: 24px 0; font-size: 15px; color: var(--brown); line-height: 1.7; }
+  .note-box strong { color: var(--brown); }
+
+  .material-card { background: white; border-radius: 14px; padding: 22px 26px; margin: 18px 0; border: 1px solid var(--warm); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .material-card h3 { margin-top: 0; margin-bottom: 10px; }
+  .material-card p { margin: 0; font-size: 15px; color: var(--muted); line-height: 1.7; }
+  .material-tag { display: inline-block; background: var(--warm); color: var(--brown); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+
+  .product-mention { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: white; border-radius: 12px; padding: 16px 20px; margin: 16px 0 24px; border: 1px solid var(--warm); box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+  .product-mention-info { flex: 1; }
+  .product-mention-name { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .product-mention-desc { font-size: 13px; color: var(--muted); }
+  .product-mention-link { font-size: 13px; font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; border: 1px solid var(--accent); padding: 8px 18px; border-radius: 20px; transition: all 0.2s; flex-shrink: 0; }
+  .product-mention-link:hover { background: var(--accent); color: white; }
+
+  .size-table { width: 100%; border-collapse: collapse; margin: 24px 0 36px; font-size: 15px; }
+  .size-table th { background: var(--brown); color: white; padding: 12px 16px; font-weight: 700; text-align: right; }
+  .size-table td { padding: 12px 16px; border-bottom: 1px solid var(--warm); vertical-align: top; }
+  .size-table tr:nth-child(even) td { background: #FAF7F4; }
+
+  .profile-card { background: white; border-radius: 14px; padding: 24px 28px; margin: 20px 0; border-right: 4px solid var(--accent); box-shadow: 0 3px 14px rgba(0,0,0,0.05); }
+  .profile-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 8px; }
+  .profile-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 17px; }
+  .profile-card p { margin: 0; font-size: 15px; color: var(--muted); line-height: 1.7; }
+  .profile-link { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--brown); text-decoration: none; }
+  .profile-link:hover { text-decoration: underline; }
+
+  .teaser-box { background: var(--warm); border-radius: 12px; padding: 20px 26px; margin: 32px 0; font-size: 15px; line-height: 1.8; }
+  .teaser-box a { color: var(--brown); font-weight: 700; text-decoration: none; }
+  .teaser-box a:hover { text-decoration: underline; }
+
+  .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; font-size: 14px; }
+  .compare-table th { background: var(--dark); color: white; padding: 11px 14px; font-weight: 700; text-align: right; }
+  .compare-table td { padding: 11px 14px; border-bottom: 1px solid var(--warm); vertical-align: top; line-height: 1.6; }
+  .compare-table tr:nth-child(even) td { background: #FAF7F4; }
+  .compare-table .model-name { font-weight: 700; color: var(--dark); }
+
+  .cta-banner { background: linear-gradient(135deg, #5C3D28 0%, var(--accent) 100%); border-radius: var(--radius); padding: 40px 44px; margin: 48px 0; color: white; text-align: center; position: relative; overflow: hidden; }
+  .cta-banner::before { content: '🪆'; position: absolute; font-size: 110px; opacity: 0.07; top: -15px; left: -15px; line-height: 1; }
+  .cta-banner h3 { font-size: 22px; font-weight: 900; margin-bottom: 10px; color: white; position: relative; }
+  .cta-banner p { font-size: 15px; opacity: 0.88; margin-bottom: 22px; color: white; position: relative; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .cta-btn { display: inline-block; background: white; color: var(--brown); font-weight: 800; font-size: 15px; padding: 13px 28px; border-radius: 50px; text-decoration: none; transition: all 0.25s; font-family: 'Heebo', sans-serif; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+  .faq-section { margin: 52px 0 0; }
+  .faq-title { font-size: 25px; font-weight: 800; color: var(--dark); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+  .faq-title::before { content: ''; display: inline-block; width: 5px; height: 26px; background: var(--accent); border-radius: 3px; }
+  details { background: white; border-radius: 14px; margin-bottom: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); overflow: hidden; }
+  details summary { padding: 19px 24px; font-weight: 700; font-size: 16px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--dark); }
+  details summary:hover { background: var(--warm); }
+  details summary::after { content: '▾'; color: var(--accent); font-size: 16px; }
+  details[open] summary::after { content: '▴'; }
+  details p { padding: 16px 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--warm); margin: 0; }
+
+  .cluster-nav { background: var(--warm); border-radius: var(--radius); padding: 30px 36px; margin: 52px 0 0; }
+  .cluster-nav h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 20px; }
+  .cluster-nav ul { list-style: none; padding: 0; margin: 0; }
+  .cluster-nav li { margin-bottom: 14px; }
+  .cluster-nav a { color: var(--brown); font-weight: 700; font-size: 15px; text-decoration: none; display: flex; align-items: flex-start; gap: 10px; }
+  .cluster-nav a:hover { text-decoration: underline; }
+  .cluster-nav .cluster-desc { font-size: 13px; color: var(--muted); font-weight: 400; display: block; margin-top: 2px; }
+  .cluster-arrow { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+
+  .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 52px; padding-top: 28px; border-top: 1px solid var(--warm); }
+  .tag { background: var(--warm); color: var(--brown); font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 20px; }
+
+  @media (max-width: 600px) {
+    .hero { height: 420px; }
+    .hero-content { padding: 24px 20px; }
+    .page-wrap { padding: 0 16px 60px; }
+    .cta-banner { padding: 28px 20px; }
+    .compare-table { font-size: 12px; }
+    .compare-table th, .compare-table td { padding: 9px 10px; }
+    .size-table { font-size: 13px; }
+  }
+</style>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section class="hero" dir="rtl">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sc65457105edf484ab6d358f635cf3d31V.webp?v=1730196946"
+    alt="בובת ריבורן ריאליסטית — המדריך המלא לבחירה נכונה"
+    loading="eager">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-tag">✦ מדריך בובות ריבורן</span>
+    <h1>בובת ריבורן — המדריך המלא: מה זה, איך לבחור ולמי זה מתאים</h1>
+    <div class="hero-meta">
+      <span>⏱ 7 דקות קריאה</span>
+      <span>📅 אפריל 2026</span>
+      <span>✅ מדריך מלא ומעודכן</span>
+    </div>
+  </div>
+</section>
+
+<div class="page-wrap" dir="rtl">
+
+<!-- ═══════════════════════════════════════════════
+     INTRO
+════════════════════════════════════════════════ -->
+<div class="intro-box">
+  <p>
+    שמעתם על בובות ריבורן. ראיתם תמונה, ואולי תהיתם: זה בובה? זה אמיתי? ולמה כולם מדברים עליהן פתאום?
+  </p>
+  <p>
+    המדריך הזה נכתב בשביל כל מי שרוצה להבין לפני שקונה. לא תמצאו כאן קטלוג — תמצאו כאן בדיוק מה שצריך לדעת כדי לבחור נכון.
+  </p>
+</div>
+
+<div class="quick-answer">
+  <span class="qa-label">בקצרה</span>
+  בובת ריבורן היא בובה ריאליסטית שנראית, מרגישה ושוקלת כמו תינוק אמיתי. היא עשויה ויניל, סיליקון, או שילוב עם גוף בד — וכל יחידה נצבעת ביד. מתאימה לגיל 3 ומעלה, לשימוש כמשחק, כמתנה מיוחדת, ולאספנות.
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     TOC
+════════════════════════════════════════════════ -->
+<nav class="toc">
+  <div class="toc-title">📋 במדריך הזה</div>
+  <ol>
+    <li><a href="#mah-ze">מה זו בובת ריבורן — ולמה היא שונה מבובה רגילה</a></li>
+    <li><a href="#chomer">חומרים: ויניל, סיליקון, גוף בד — מה ההבדל?</a></li>
+    <li><a href="#midot">מידות: מה לבחור לפי גיל ומטרה</a></li>
+    <li><a href="#lemiy">למי זו מתאימה? — 3 פרופילים של קונה</a></li>
+    <li><a href="#bgadim">בגדי ריבורן — מה שצריך לדעת</a></li>
+    <li><a href="#hashvaa">השוואה מהירה — כל הדגמים במקום אחד</a></li>
+    <li><a href="#faq">שאלות נפוצות</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     S1 — מה זו בובת ריבורן
+════════════════════════════════════════════════ -->
+<div class="article-body">
+
+<h2 id="mah-ze">מה זו בובת ריבורן — ולמה היא שונה מבובה רגילה</h2>
+
+<p>
+  בובת ריבורן (<em>Reborn Doll</em>) היא בובה שנועדה לדמות תינוק אמיתי בצורה המדויקת ביותר האפשרית. לא "בובה שנראית כמו תינוק" — אלא מוצר שמחושב מהגודל, המשקל, המרקם ועד לגוון העור כדי לייצר חוויה שונה לגמרי מבובת פלסטיק רגילה.
+</p>
+
+<p>
+  מה שמייחד אותה:
+</p>
+
+<ul>
+  <li><strong>מידות תינוק אמיתיות</strong> — בין 48 ל-60 ס"מ, מגודל ניובורן ועד תינוק בן כמה חודשים</li>
+  <li><strong>ציור ידני בשכבות</strong> — גוון עור, ורידים, שיער, גוני לחיים — מוחלים ביד על ידי אמן. אין שתי בובות זהות לחלוטין</li>
+  <li><strong>מגע שנועד להרגיש אמיתי</strong> — החומרים (ויניל, סיליקון) נבחרים כדי לדמות את מרקם עור התינוק</li>
+  <li><strong>משקל מחושב</strong> — הבובה לא קלה כמו צעצוע רגיל. המשקל נועד לגרום לנשיאה להרגיש טבעית</li>
+</ul>
+
+<p>
+  בובה רגילה היא צעצוע. בובת ריבורן היא חפץ שיוצר רגש.
+  זה מסביר למה היא מושכת קהלים שונים לחלוטין — מילדות קטנות שרוצות "תינוק שלהן" ועד אספנים מבוגרים שמחפשים רמת גימור מקצועית.
+</p>
+
+<figure class="article-image" dir="rtl">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S22ee37aef9a04eb09ae709259f2c07819.webp?v=1765229503"
+    alt="בובת ריבורן — פירוט ציור ידני ומגע מציאותי"
+    loading="lazy">
+  <figcaption>כל יחידה נצבעת ביד — גוון עור, ורידים ופרטי פנים מוחלים בשכבות</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════
+     S2 — חומרים
+════════════════════════════════════════════════ -->
+<h2 id="chomer">חומרים: ויניל, סיליקון, גוף בד — מה ההבדל?</h2>
+
+<p>
+  השאלה הנפוצה ביותר כשמסתכלים על דגמים שונים: מה זה ויניל, מה זה סיליקון, ואיזה מהם "יותר טוב"? התשובה: אין יותר טוב. יש מתאים יותר — לפי השימוש, לפי הגיל ולפי מה שמחפשים.
+</p>
+
+<div class="material-card">
+  <span class="material-tag">ויניל</span>
+  <h3>ויניל — עמיד, פירוט גבוה</h3>
+  <p>
+    הויניל הוא החומר הנפוץ ביותר בבובות ריבורן. יציב יותר לאורך זמן, מחזיק פירוטים קטנים — שיער צבוע, ורידים, טקסטורת עור — בצורה חדה ומדויקת.
+    ניתן לניקוי בניגוב עם מטלית לחה. חלק מדגמי הויניל עמידים גם במים.
+  </p>
+</div>
+
+<!-- PRODUCT CARD: מאדי — ויניל עמיד במים -->
+<div class="product-mention">
+  <div class="product-mention-info">
+    <div class="product-mention-name">בובת ריבורן מאדי 50 ס"מ — ויניל עמיד במים</div>
+    <div class="product-mention-desc">גוף ויניל מלא · ניתן לרחוץ · ורידים וציור ידני</div>
+  </div>
+  <a class="product-mention-link" href="/products/50cm-full-vinyl-body-girl-waterproof-reborn-doll-maddie-hand-detailed-painted-with-visible-veins-lifelike-3d-skin-tone-toy-gift">לפרטים ←</a>
+</div>
+
+<div class="material-card">
+  <span class="material-tag">סיליקון מלא</span>
+  <h3>סיליקון מלא — רך, מציאותי למגע</h3>
+  <p>
+    סיליקון רך יותר מויניל — המגע קרוב יותר לתחושת עור אמיתי.
+    מתאים במיוחד למי שמחפש חוויית נשיאה מציאותית, ולאספנים שמדגישים את תחושת החומר.
+    דגמי הסיליקון גדולים יותר בדרך כלל ובעלי רמת גימור גבוהה יותר.
+  </p>
+</div>
+
+<!-- PRODUCT CARD: BZDoll 55 — סיליקון מלא -->
+<div class="product-mention">
+  <div class="product-mention-info">
+    <div class="product-mention-name">בובת ריבורן 55 ס"מ — סיליקון מלא</div>
+    <div class="product-mention-desc">גוף סיליקון מלא · מגע רך ומציאותי · 55 ס"מ</div>
+  </div>
+  <a class="product-mention-link" href="/products/bzdoll-55-cm-22-inch-reborn-dolls-realistic-full-silicone-baby-bebe-newborn-girl-doll-princess-toddler-toy-gift">לפרטים ←</a>
+</div>
+
+<div class="material-card">
+  <span class="material-tag">ויניל-סיליקון + גוף בד</span>
+  <h3>ויניל-סיליקון עם גוף בד — ניתן לחיבוק</h3>
+  <p>
+    הראש, הידיים והרגליים עשויים ויניל-סיליקון עם פירוט מלא.
+    הגוף עשוי בד — מה שמאפשר לבובה לשבת, להתכופף, ולהחזיק עמדות טבעיות.
+    הגוף הגמיש מקל על חיבוק ונשיאה — מבחינת ילדות שרוצות לשחק יום-יום, זו לרוב הבחירה הנוחה ביותר.
+  </p>
+</div>
+
+<!-- PRODUCT CARD: לולו — ויניל-סיליקון + גוף בד -->
+<div class="product-mention">
+  <div class="product-mention-info">
+    <div class="product-mention-name">בובת ריבורן לולו 50 ס"מ — ויניל-סיליקון + גוף בד</div>
+    <div class="product-mention-desc">גוף בד גמיש · ניתן לחיבוק · ראש ויניל-סיליקון עם ציור ידני</div>
+  </div>
+  <a class="product-mention-link" href="/products/50cm-realistic-finished-bebe-reborn-silicone-vinyl-cloth-body-doll-loulou-handmade-toy-for-girls-christmas-gift">לפרטים ←</a>
+</div>
+
+<div class="tip-box">
+  <span class="tip-icon">💡</span>
+  <div>
+    <span class="box-label">טיפ בחירת חומר</span>
+    <p>
+      לילדה שרוצה לשחק ולחבק — גוף בד מתאים יותר לנשיאה יום-יומית.
+      לאספן/ת שמדגיש/ה מראה — ויניל או סיליקון עם ציור 3D.
+      אם רוצים שאפשר יהיה לרחוץ את הבובה בפועל — רק דגמי ויניל עמיד.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     S3 — מידות
+════════════════════════════════════════════════ -->
+<h2 id="midot">מידות: מה לבחור לפי גיל ומטרה</h2>
+
+<p>
+  מידת הבובה היא ההחלטה הראשונה שצריך לקבל. לא כי "גדולה יותר = טובה יותר" — אלא כי כל גודל מתאים לשימוש אחר.
+</p>
+
+<table class="size-table">
+  <thead>
+    <tr>
+      <th>גודל</th>
+      <th>מתאים ל-</th>
+      <th>הערות</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>48 ס"מ</strong></td>
+      <td>ילדות גיל 3–7, נשיאה קלה</td>
+      <td>גודל ניובורן — קל יותר לנשיאה ולמשחק יום-יום</td>
+    </tr>
+    <tr>
+      <td><strong>50 ס"מ</strong></td>
+      <td>ילדות ומבוגרים, ורסטילי</td>
+      <td>גודל תינוק בן 1-2 חודשים — הנפוץ ביותר</td>
+    </tr>
+    <tr>
+      <td><strong>55 ס"מ</strong></td>
+      <td>מבוגרים, אספנים, מתנות פרמיום</td>
+      <td>נוכחות גדולה יותר, מציאותי מאוד</td>
+    </tr>
+    <tr>
+      <td><strong>60 ס"מ</strong></td>
+      <td>אספנים, תצוגה</td>
+      <td>הגדולה בקולקציה — ציור 3D מקצועי</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- PRODUCT CARDS: 4 דגמים לפי מידה -->
+
+<!-- לוי 48 -->
+<div class="product-mention">
+  <div class="product-mention-info">
+    <div class="product-mention-name">בובת ריבורן לוי 48 ס"מ — ויניל, שיער צבוע ביד</div>
+    <div class="product-mention-desc">48 ס"מ · ויניל · שיער צבוע · מתאים לגיל 3+</div>
+  </div>
+  <a class="product-mention-link" href="/products/19-inches-levi-reborn-baby-realistic-vinyl-body-alive-lol-bebe-newborn-finished-hair-painted-doll-children-girls-gift-dolls">לפרטים ←</a>
+</div>
+
+<!-- לולו 50 -->
+<div class="product-mention">
+  <div class="product-mention-info">
+    <div class="product-mention-name">בובת ריבורן לולו 50 ס"מ — גוף בד</div>
+    <div class="product-mention-desc">50 ס"מ · גוף בד גמיש · ניתן לחיבוק</div>
+  </div>
+  <a class="product-mention-link" href="/products/50cm-realistic-finished-bebe-reborn-silicone-vinyl-cloth-body-doll-loulou-handmade-toy-for-girls-christmas-gift">לפרטים ←</a>
+</div>
+
+<!-- BZDoll 55 -->
+<div class="product-mention">
+  <div class="product-mention-info">
+    <div class="product-mention-name">בובת ריבורן 55 ס"מ — סיליקון מלא</div>
+    <div class="product-mention-desc">55 ס"מ · סיליקון מלא · מגע מציאותי</div>
+  </div>
+  <a class="product-mention-link" href="/products/bzdoll-55-cm-22-inch-reborn-dolls-realistic-full-silicone-baby-bebe-newborn-girl-doll-princess-toddler-toy-gift">לפרטים ←</a>
+</div>
+
+<!-- BZDoll 60 -->
+<div class="product-mention">
+  <div class="product-mention-info">
+    <div class="product-mention-name">בובת ריבורן 60 ס"מ — סיליקון רך, ציור 3D</div>
+    <div class="product-mention-desc">60 ס"מ · ציור עור 3D · ורידים נראים · לאספנים</div>
+  </div>
+  <a class="product-mention-link" href="/products/bzdoll-realistic-60cm-24inch-soft-silicone-reborn-baby-doll-with-3d-painting-skin-and-vascular-vein-handmade-girl-birthday-gift">לפרטים ←</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     S4 — פרופילי קונה
+════════════════════════════════════════════════ -->
+<h2 id="lemiy">למי זו מתאימה? — 3 פרופילים של קונה</h2>
+
+<p>
+  בובת ריבורן מגיעה לידיים שונות מאוד — וזה בדיוק מה שהופך אותה לנושא מעניין לכתוב עליו.
+  הנה שלושת הפרופילים הנפוצים ביותר, ומה כדאי לכל אחד מהם לחפש.
+</p>
+
+<div class="profile-card">
+  <div class="profile-label">פרופיל 1</div>
+  <h3>ילדה בין 3 ל-8 — משחק יום-יומי</h3>
+  <p>
+    היא רוצה "תינוק" שלה. לטפל בו, ללבוש אותו, לקחת אותו לכל מקום.
+    בשבילה, המשקל הנכון חשוב יותר מרמת הפירוט — ולכן ויניל קטן (48 ס"מ) או גוף בד (50 ס"מ) הם הבחירות הנכונות.
+    גוף בד גמיש מקל על הנשיאה וההחזקה. ויניל קומפקטי — עמיד ולא יכבד את הידיים.
+    לא צריך כאן ציור 3D ברמה מקצועית — הפירוט לא מוסיף לה כלום בגיל הזה.
+  </p>
+</div>
+
+<div class="profile-card">
+  <div class="profile-label">פרופיל 2</div>
+  <h3>מתנת פרמיום — יום הולדת, חג, ברית</h3>
+  <p>
+    מחפשים מתנה שנזכרים בה. לא עוד צעצוע שמצטרף לערמה — אלא משהו שמרגיש מיוחד.
+    כל דגמי הריבורן יכולים לשמש כמתנה מיוחדת — שאלת ההתאמה היא בעיקר גיל ותקציב.
+    לילדה — לוי 48 ס"מ או לולו 50 ס"מ. למבוגרת — BZDoll 55 ס"מ או 60 ס"מ.
+  </p>
+  <!-- C3 link -->
+  <a class="profile-link" href="[CLUSTER-URL:C3]">← בובת ריבורן כמתנה — מה לבדוק לפני שקונים</a>
+</div>
+
+<div class="profile-card">
+  <div class="profile-label">פרופיל 3</div>
+  <h3>אספנ/ת מבוגר/ת — רמת גימור מקצועית</h3>
+  <p>
+    מחפשים ציור ידני ברמה גבוהה, חומרים שמרגישים אמיתיים, פירוט שכדאי להסתכל עליו מקרוב.
+    BZDoll 60 ס"מ עם ציור עור 3D וורידים נראים לעין — זו הרמה הגבוהה ביותר בקולקציה.
+    גם לוי 48 ס"מ עם טכנולוגיית עור 3D מציע גימור מקצועי בגודל קומפקטי יותר.
+  </p>
+  <!-- C5 link -->
+  <a class="profile-link" href="[CLUSTER-URL:C5]">← ריבורן לילדים vs. ריבורן לאספנים — מה שכדאי להכיר</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     S5 — בגדי ריבורן (teaser only)
+════════════════════════════════════════════════ -->
+<h2 id="bgadim">בגדי ריבורן — מה שצריך לדעת</h2>
+
+<p>
+  בובות ריבורן לובשות בגדי תינוק רגילים — בדרך כלל מידה 0–3 חודשים, תלוי בגודל הבובה.
+  זה אחד הדברים הנוחים בקטגוריה: לא צריך לחפש ביגוד ייעודי.
+</p>
+
+<!-- C2 teaser + link — HIGH PRIORITY — "בגדי ריבורן" pos 1.5 -->
+<div class="teaser-box">
+  על מה לובשים, איזה מידה מתאימה לכל דגם, ואיפה למצוא — יש מדריך מלא:
+  <br><br>
+  <a href="[CLUSTER-URL:C2]">← בגדי ריבורן — מה לובשים ואיפה מוצאים (מדריך מלא)</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     S6 — השוואה מהירה
+════════════════════════════════════════════════ -->
+<h2 id="hashvaa">השוואה מהירה — כל הדגמים במקום אחד</h2>
+
+<p>
+  לנוחותכם — סיכום כל ששת הדגמים בטבלה אחת. לא מדורגים — כל דגם מתאים לקהל אחר.
+</p>
+
+<table class="compare-table">
+  <thead>
+    <tr>
+      <th>דגם</th>
+      <th>חומר</th>
+      <th>מידה</th>
+      <th>מיוחד ב-</th>
+      <th>מתאים ל-</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="model-name">לוי — שיער צבוע</span></td>
+      <td>ויניל</td>
+      <td>48 ס"מ</td>
+      <td>שיער צבוע ביד</td>
+      <td>ילדות 3+, מתחילים</td>
+    </tr>
+    <tr>
+      <td><span class="model-name">לוי — עור 3D</span></td>
+      <td>ויניל + 3D</td>
+      <td>48 ס"מ</td>
+      <td>ורידים נראים, 3D skin</td>
+      <td>אספנים, מתנה לבוגרת</td>
+    </tr>
+    <tr>
+      <td><span class="model-name">לולו</span></td>
+      <td>ויניל-סיליקון + בד</td>
+      <td>50 ס"מ</td>
+      <td>גוף בד — ניתן לחיבוק</td>
+      <td>ילדות, משחק יום-יום</td>
+    </tr>
+    <tr>
+      <td><span class="model-name">מאדי</span></td>
+      <td>ויניל עמיד</td>
+      <td>50 ס"מ</td>
+      <td>עמיד במים — ניתן לרחוץ</td>
+      <td>ילדות שאוהבות אמבטיה</td>
+    </tr>
+    <tr>
+      <td><span class="model-name">BZDoll 55</span></td>
+      <td>סיליקון מלא</td>
+      <td>55 ס"מ</td>
+      <td>מגע רך ומציאותי</td>
+      <td>מבוגרים, אספנים</td>
+    </tr>
+    <tr>
+      <td><span class="model-name">BZDoll 60</span></td>
+      <td>סיליקון רך + 3D</td>
+      <td>60 ס"מ</td>
+      <td>ציור 3D מקצועי, הגדולה ביותר</td>
+      <td>אספנים, תצוגה</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note-box">
+  <strong>הערה:</strong> לא ניתן להשוות מחירים כאן — המחירים עשויים להשתנות. לפרטים ומחיר עדכני לכל דגם — ראו את דף המוצר.
+</div>
+
+<!-- PRIMARY CTA -->
+<div class="cta-banner">
+  <h3>רוצים לראות את כל הדגמים?</h3>
+  <p>קולקציית הריבורן המלאה — כל הגדלים, כל החומרים, במקום אחד.</p>
+  <div class="cta-buttons">
+    <a class="cta-btn" href="/search?q=ריבורן">לכל בובות הריבורן שלנו ←</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     S7 — FAQ / AEO
+════════════════════════════════════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="faq-title">שאלות נפוצות</div>
+
+  <details>
+    <summary>מאיזה גיל מתאימה בובת ריבורן?</summary>
+    <p>
+      כל הדגמים בקולקציה מיועדים לגיל 3 ומעלה. זה לא סתם מספר — בגיל הזה הילד מבין שמדובר בבובה, לא בתינוק אמיתי, ויכול לשחק בה בצורה מתאימה. לגילאים מתחת ל-3 לא מומלץ.
+    </p>
+  </details>
+
+  <details>
+    <summary>האם אפשר לרחוץ את הבובה?</summary>
+    <p>
+      תלוי בדגם. בובת מאדי (ויניל עמיד) — כן, ניתן לרחוץ במים פושרים עם סבון עדין וייבוש באוויר.
+      שאר הדגמים — ניגוב עדין במטלית לחה בלבד. גוף בד (לולו) — אין להרטיב את חלק הבד.
+    </p>
+  </details>
+
+  <details>
+    <summary>האם הבובה בטוחה לילדים?</summary>
+    <p>
+      כן. כל הדגמים עשויים מחומרים לא רעילים. הבובות מיועדות לגיל 3 ומעלה ובדוקות לשימוש בטוח.
+      יש לשמור מחוץ להישג ידם של תינוקות ופעוטות מתחת לגיל 3.
+    </p>
+  </details>
+
+  <details>
+    <summary>מה זמן המשלוח?</summary>
+    <p>
+      7–14 ימי עסקים לכל רחבי הארץ. לאחר ביצוע ההזמנה תקבלו מספר מעקב לשליחה.
+    </p>
+  </details>
+
+  <details>
+    <summary>מה ההבדל בין ויניל לסיליקון?</summary>
+    <p>
+      ויניל יציב ועמיד יותר, מחזיק פירוטים חדים, ניתן לניגוב קל. סיליקון רך יותר, מגע שמזכיר עור, נוכחות מציאותית יותר למגע.
+      שניהם חומרים מצוינים — ראו את סעיף החומרים למעלה להסבר מורחב.
+    </p>
+  </details>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     S8 — CLUSTER NAV
+════════════════════════════════════════════════ -->
+<div class="cluster-nav">
+  <h2>המשך הקריאה — מדריכי ריבורן נוספים</h2>
+  <ul>
+    <li>
+      <a href="[CLUSTER-URL:C1]">
+        <span class="cluster-arrow">←</span>
+        <div>
+          איך לבחור בובת ריבורן — מדריך לרוכש הראשון
+          <span class="cluster-desc">שאלות שצריך לשאול לפני הקנייה, מה לשים לב אליו ואיך להשוות בין דגמים</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="[CLUSTER-URL:C2]">
+        <span class="cluster-arrow">←</span>
+        <div>
+          בגדי ריבורן — מה לובשים ואיפה מוצאים
+          <span class="cluster-desc">מידות, סגנונות ואיך למצוא ביגוד שמתאים לבובה שלכם</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="[CLUSTER-URL:C3]">
+        <span class="cluster-arrow">←</span>
+        <div>
+          בובת ריבורן כמתנה — מי זה מתאים לו ומה לבקש
+          <span class="cluster-desc">מדריך לרוכש מתנה: לפי גיל, תקציב ואוכלוסיית היעד</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="[CLUSTER-URL:C4]">
+        <span class="cluster-arrow">←</span>
+        <div>
+          איך לטפל בבובת ריבורן — שמירה, ניקוי ואחסון
+          <span class="cluster-desc">הנחיות לשמירה על הבובה לאורך זמן — לפי סוג החומר</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="[CLUSTER-URL:C5]">
+        <span class="cluster-arrow">←</span>
+        <div>
+          ריבורן לילדים vs. ריבורן לאספנים — מה ההבדל
+          <span class="cluster-desc">שני קהלים שונים לחלוטין — ואיך לקנות נכון לכל אחד</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="[CLUSTER-URL:C6]">
+        <span class="cluster-arrow">←</span>
+        <div>
+          השוואת בובות ריבורן — מידות, חומרים ומחירים
+          <span class="cluster-desc">השוואה מפורטת בין כל הדגמים לפני הקנייה</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- TAGS -->
+<div class="article-tags">
+  <span class="tag">בובת ריבורן</span>
+  <span class="tag">בובות ריאליסטיות</span>
+  <span class="tag">מתנות לילדים</span>
+  <span class="tag">ויניל</span>
+  <span class="tag">סיליקון</span>
+  <span class="tag">גיל 3+</span>
+  <span class="tag">מדריך קנייה</span>
+</div>
+
+</div><!-- /article-body -->
+</div><!-- /page-wrap -->

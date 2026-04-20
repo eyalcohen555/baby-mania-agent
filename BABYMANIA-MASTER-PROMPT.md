@@ -361,7 +361,7 @@ Source of truth: `docs/governance/phase2-live-readback-scope-lock.md`
 - Plan: `layer3-product-seo-aeo-priority-001` — 18 stages, PASS
 - Recovery: timeout batches (clothing/accessories) + targeted re-push → all 244 verified PASS
 
-**GSC backlog:** PLANNED ONLY — לא לבצע לפני אישור ניהולי מפורש.
+**GSC integration:** `scripts/submit_gsc.py` — URL Inspection API (webmasters scope). Status check only — no programmatic request-indexing for blog articles. Request indexing via GSC UI manually.
 
 ---
 
@@ -521,7 +521,18 @@ milestones שנסגרו:
 | 12-hub-planner | תכנון HUBs | ✅ |
 
 ### Pipeline
-`11 → 03 → 04 → 08 → publish`
+`11 → 03 → 04 → 08 → publish → verify → GSC inspect → manual Request Indexing → docs update`
+
+### Post-Publish Flow (חובה לכל HUB/מאמר חדש)
+```
+1. publish       → POST Shopify → expect 201
+2. verify        → GET article_id → confirm published_at
+3. GSC inspect   → python scripts/submit_gsc.py <url>  [status check only]
+3b. GSC request  → GSC UI → URL Inspection → "Request Indexing"  [manual]
+4. docs          → hub-registry + organic-journal + מצב-הפרויקט-האורגני
+```
+**GSC statuses:** `gsc_pending` | `gsc_unknown` | `gsc_pending_manual_request` | `gsc_inspected` | `gsc_indexed` | `gsc_crawled_not_indexed`
+**API note:** Search Console URL Inspection API = inspect only (proven: `urlInspection.index()` has only `inspect` method). Request Indexing = manual via GSC UI only. No programmatic request-indexing exists for blog articles.
 
 ### מצב HUBs
 
@@ -532,9 +543,10 @@ milestones שנסגרו:
 | HUB-3 | Baby Bath | 5 | ✅ | ✅ |
 | HUB-4 | Sensitive Skin | 5 | ✅ | ✅ |
 | HUB-5 | Baby Gifts | 7 | ✅ | ✅ |
-| HUB-6 | נעלי תינוק | 7 | ✅ | ⏳ |
-| HUB-7 | בטיחות תינוק | 6 | ✅ | ⏳ |
-| HUB-8 | Baby Daily Routine | 6 | ✅ פורסם (2026-04-09) | ⏳ |
+| HUB-6 | נעלי תינוק | 7 | ✅ | ⏳ pending_gsc_permission |
+| HUB-7 | בטיחות תינוק | 6 | ✅ | ⏳ pending_gsc_permission |
+| HUB-8 | Baby Daily Routine | 6 | ✅ פורסם (2026-04-09) | ✅ gsc_manual_requested |
+| HUB-9 | בובת ריבורן | 7 (Pillar LIVE) | ✅ Pillar LIVE (2026-04-20) | ✅ gsc_manual_requested |
 
 ### מפת HUB Registry
 `teams/organic/hub-registry.json` — מקור האמת למצב HUBs

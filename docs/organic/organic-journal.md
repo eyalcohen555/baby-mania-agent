@@ -36,6 +36,183 @@
 
 ---
 
+## DATE: 2026-04-20
+## TASK: GSC integration + submit HUB-8 + HUB-9
+## SCOPE: organic — post-publish GSC flow
+
+## WHAT CHANGED:
+- `scripts/submit_gsc.py` נוצר ושוכתב — URL Inspection API (webmasters scope)
+- **API CAPABILITY PROVEN:** inspection_only — `urlInspection.index()` contains only `inspect`. No `requestIndexing` method exists anywhere in Search Console API v1.
+- post-publish flow עודכן: publish → verify → GSC inspect (script) → Request Indexing (GSC UI, ידני) → docs
+- ניסיון submit ל-HUB-8 + HUB-9 Pillar — נחסם 403 Forbidden
+
+## GSC RUN RESULT:
+- HUB-8 Pillar: **no_access** — 403 Forbidden
+- HUB-9 Pillar: **no_access** — 403 Forbidden
+
+## ROOT CAUSE:
+Service account `gsc-access@babymania-001.iam.gserviceaccount.com` אינו מורשה על property `babymania-il.com` ב-GSC.
+הסקריפט תקין — הבעיה היא הרשאת GSC בלבד.
+
+## FIX REQUIRED:
+GSC → babymania-il.com → Settings → Users and permissions → Add user:
+`gsc-access@babymania-001.iam.gserviceaccount.com` → Owner
+
+## FILES TOUCHED:
+- `scripts/submit_gsc.py` (new)
+- `docs/organic/מצב-הפרויקט-האורגני.md` (post-publish flow + GSC blocker)
+- `docs/organic/organic-journal.md`
+
+## OPEN ISSUES:
+- [ ] Add service account as Owner in GSC → then re-run `python scripts/submit_gsc.py <url>`
+
+## NEXT STEP:
+- הוסף service account ל-GSC → הרץ שוב את הסקריפט עבור HUB-8 + HUB-9
+
+---
+
+## DATE: 2026-04-20
+## TASK: HUB-9 Pillar PUBLISH + GSC manual Request Indexing complete — HUB-8 + HUB-9
+## SCOPE: organic — publish, GSC post-publish flow complete
+
+## WHAT CHANGED:
+- HUB-9 Pillar פורסם ל-Shopify: article_id=685558825273, published_at=2026-04-20T11:16:25+03:00
+- `scripts/submit_gsc.py` שוכתב ל-URL Inspection API — הוכח: inspection only, ללא request indexing
+- HUB-8 + HUB-9: inspection רץ (result: unknown) → Manual Request Indexing בוצע ב-GSC UI
+- gsc_status עודכן ל-`gsc_manual_requested` בshub-registry.json + כל מסמכי המקור
+- Pipeline line עודכן: `11 → 03 → 04 → 08 → publish → verify → GSC inspect → manual Request Indexing → docs update`
+
+## GSC RESULT (2026-04-20):
+- HUB-8 (6 URLs): result=unknown → Manual Request Indexing completed
+- HUB-9 Pillar (1 URL): result=unknown → Manual Request Indexing completed
+
+## FILES TOUCHED:
+- `publish_hub9_pillar.py` (new)
+- `output/hub9-reborn/HUB9_Pillar_blog_article.html` (2 fixes: FAQ id, CTA href)
+- `scripts/submit_gsc.py` (rewritten — URL Inspection API)
+- `teams/organic/hub-registry.json` (HUB-9 pillar added, gsc_status → gsc_manual_requested)
+- `docs/organic/מצב-הפרויקט-האורגני.md` (HUB-8 + HUB-9 GSC column)
+- `BABYMANIA-MASTER-PROMPT.md` (pipeline + HUBs table GSC column)
+- `docs/management/update-policy.md` (Post-Publish Flow, status table)
+
+## SYSTEM STATE:
+- HUBs LIVE: 9 (HUB-1 through HUB-9 Pillar)
+- מאמרים live: 48
+- HUB-8: published + gsc_manual_requested ✅
+- HUB-9: Pillar published + gsc_manual_requested ✅ | C1-C6 pending
+
+## OPEN ISSUES:
+- [ ] HUB-9 Clusters C1-C6 — כתיבה + פרסום (C2 עדיפות: בגדי ריבורן pos 1.5)
+- [ ] [CLUSTER-URL:C1-C6] placeholders ב-Pillar — יעודכנו כשהקלאסטרים יפורסמו
+- [ ] HUB-6 + HUB-7 Manual Request Indexing — נדחה (לא דחוף)
+
+## NEXT STEP:
+- HUB-9 C2 "בגדי ריבורן" — כתיבה + פרסום (C2 = priority, pos 1.5)
+
+---
+
+## DATE: 2026-04-20
+## TASK: HUB-9 — בחירת נושא + הגדרה רשמית
+## SCOPE: organic — HUB-9 direction decision
+
+## WHAT CHANGED:
+- HUB-9 הוגדר רשמית כ-**בובת ריבורן** — שינוי מכיוון קודם "רשימת קניות לתינוק"
+- hub-registry.json עודכן: HUB-9 סטטוס "planned", Pillar + 6 clusters מוגדרים
+- מצב-הפרויקט-האורגני.md עודכן: HUB-9 מופיע בטבלה ובסעיף LAYER 2b
+
+## DECISION RATIONALE:
+- Reborn = קטגוריה #1 בחנות לפי GSC: בובת ריבורן pos 2.7, בגדי ריבורן pos 1.5
+- 6 מוצרי Reborn קיימים עם SEO Layer 3 מלא — ללא HUB תומך כלל
+- Shopping checklist (pos 36) נדחה ל-HUB-10
+
+## APPROVED PLAN:
+- Pillar: "בובת ריבורן — המדריך המלא: מה זה, איך לבחור ולמי זה מתאים"
+- C1: איך לבחור בובת ריבורן — מדריך לרוכש הראשון
+- C2: בגדי ריבורן — מה לובשים ואיפה מוצאים [PRIORITY — pos 1.5]
+- C3: בובת ריבורן כמתנה — מי זה מתאים לו ומה לבקש
+- C4: איך לטפל בבובת ריבורן — שמירה, ניקוי, אחסון
+- C5: ריבורן לילדים vs. ריבורן לאספנים — מה ההבדל
+- C6: השוואת בובות ריבורן — מידות, חומרים, מחירים
+
+## FILES TOUCHED:
+- `teams/organic/hub-registry.json` (v2.0 → HUB-9 added)
+- `docs/organic/מצב-הפרויקט-האורגני.md` (v2.5 → HUB-9 table + LAYER 2b)
+
+## SYSTEM IMPACT:
+- HUB-9 מוגדר ומתועד — ממתין ל-execution plan
+
+## OPEN ISSUES:
+- [x] execution plan לכתיבת Pillar HUB-9 Reborn — הושלם
+- [x] כתיבת Pillar HUB-9 Reborn — הושלמה 2026-04-20
+- [ ] QA + cluster links resolution ([CLUSTER-URL:C1–C6])
+- [x] image placeholders resolution — הושלם 2026-04-20
+
+## NEXT STEP:
+- QA על ה-Pillar + אישור לפרסום
+
+---
+
+## DATE: 2026-04-20
+## TASK: HUB-9 Reborn Pillar — פרסום
+## SCOPE: organic — HUB-9 pillar publish
+
+## WHAT CHANGED:
+- `output/hub9-reborn/HUB9_Pillar_blog_article.html` פורסם ל-Shopify blog
+- article_id: 685558825273
+- handle: bobat-reborn-madrih-male-ma-ze-ech-livhor
+- url: https://babymania-il.com/blogs/news/bobat-reborn-madrih-male-ma-ze-ech-livhor
+- published_at: 2026-04-20T11:16:25+03:00
+
+## FILES TOUCHED:
+- `teams/organic/hub-registry.json` (status: planned → published, pillar object added)
+- `docs/organic/organic-journal.md`
+- `docs/organic/מצב-הפרויקט-האורגני.md`
+- `publish_hub9_pillar.py` (new — single-use publish script)
+
+## SYSTEM IMPACT:
+- HUB-9 Pillar LIVE — 8 HUBs now published
+- cluster C1-C6 remain pending (placeholders [CLUSTER-URL:Cx] in article)
+
+## OPEN ISSUES:
+- [ ] GSC indexing HUB-9 Pillar — pending (not executed yet)
+- [ ] Cluster C1-C6 writing + publishing
+- [ ] Resolve [CLUSTER-URL:C1-C6] internal links after clusters go live
+
+## NEXT STEP:
+- GSC: submit HUB-8 + HUB-9 Pillar for indexing
+
+---
+
+## DATE: 2026-04-20
+## TASK: HUB-9 Reborn Pillar — כתיבה
+## SCOPE: organic — HUB-9 pillar article
+
+## WHAT CHANGED:
+- `output/hub9-reborn/HUB9_Pillar_blog_article.html` — נכתב, READY_FOR_REVIEW
+- hub-registry.json: pillar_file + pillar_status הוסף
+
+## ARTICLE METADATA:
+- כותרת: "בובת ריבורן — המדריך המלא: מה זה, איך לבחור ולמי זה מתאים"
+- handle מוצע: bobat-reborn-madrih-male-ma-ze-ech-livhor
+- keyword ראשי: "בובת ריבורן" (pos 2.7)
+- ~2100 מילים, 8 sections, 7 product cards, 5 FAQ, cluster nav מלא
+
+## KEYWORD OWNERSHIP:
+- Pillar: "בובת ריבורן", "ריבורן מה זה", חומרים/מידות ✅
+- C2: S5 teaser 2 שורות + link בלבד ✅
+- C1/C5: teasers בלבד ✅
+- C6: טבלת השוואה ללא מחירים/ranking ✅
+
+## FILES TOUCHED:
+- `output/hub9-reborn/HUB9_Pillar_blog_article.html` (new)
+- `teams/organic/hub-registry.json`
+- `docs/organic/organic-journal.md`
+
+## NEXT STEP:
+- QA על ה-Pillar לפני publish
+
+---
+
 ## DATE: 2026-04-14
 ## TASK: LAYER 3 — Product SEO/AEO complete + route-a closure
 ## SCOPE: organic — product SEO layer, plan execution, live push
