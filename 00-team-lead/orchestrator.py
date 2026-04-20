@@ -306,8 +306,9 @@ def run_push_stage(pid: str) -> int:
     # ── Stage 2 guard — validator must include T01–T08 thinking-layer results ─
     # Pre-Stage-2 validator.txt files contain STATUS: PASS but no Stage 2 block.
     # A stale record must not be able to authorize a push.
+    # NOTE: shoes exception removed (Phase 2 hardening) — shoes must pass same guard.
     _early_category = ctx.get("product_template_type", "")
-    if _early_category != "shoes" and "Stage 2 result: PASS" not in validator_txt:
+    if "Stage 2 result: PASS" not in validator_txt:
         audit.end_stage("push_preflight", "fail",
                         error="validator output is pre-Stage-2 — missing T01–T08 thinking-layer results")
         audit.finalize("failed")
@@ -350,6 +351,44 @@ def run_push_stage(pid: str) -> int:
             log.warning("[push] page_validator.json parse error (skipping check): %s", e)
     # File absent → skip (backward-compatible with pre-stage-8 products)
 
+    # ── Gate 1 Extended (P1-S6) — structure hardening ────────────────────────
+    # Checks: empty publisher values, duplicate content keys, anomaly exclusion
+    try:
+        import importlib.util as _ilu
+        _g1_spec = _ilu.spec_from_file_location("gate1", BASE_DIR / "scripts" / "gate1_hardening.py")
+        _g1 = _ilu.module_from_spec(_g1_spec); _g1_spec.loader.exec_module(_g1)
+        _gate1_result = _g1.run_gate1_extended(pid, pub_data)
+        if _gate1_result["status"] == "FAIL":
+            for _fr in _gate1_result["fail_reasons"]:
+                log.error("[push] GATE1 FAIL [%s]: %s", _fr["check"], _fr["detail"])
+            audit.end_stage("push_preflight", "fail",
+                            error=f"Gate 1 extended FAIL: {_gate1_result['fail_reasons']}")
+            audit.finalize("failed")
+            audit.save()
+            return 1
+        log.info("[push] Gate 1 extended: PASS")
+    except Exception as _e:
+        log.warning("[push] Gate 1 extended skipped (load error): %s", _e)
+
+    # ── Gate 2 Semantic (P1-S6) — checks A–D active, E disabled ─────────────
+    try:
+        _g2_spec = _ilu.spec_from_file_location("gate2", BASE_DIR / "scripts" / "gate2_semantic.py")
+        _g2 = _ilu.module_from_spec(_g2_spec); _g2_spec.loader.exec_module(_g2)
+        import yaml as _yaml
+        _ctx_data = _yaml.safe_load(ctx_path.read_text(encoding="utf-8")) or {}
+        _gate2_result = _g2.run_gate2(pid, pub_data, _ctx_data)
+        if _gate2_result["status"] == "FAIL":
+            for _fr in _gate2_result["fail_reasons"]:
+                log.error("[push] GATE2 FAIL [%s]: %s", _fr["check"], _fr["detail"])
+            audit.end_stage("push_preflight", "fail",
+                            error=f"Gate 2 semantic FAIL: {_gate2_result['fail_reasons']}")
+            audit.finalize("failed")
+            audit.save()
+            return 1
+        log.info("[push] Gate 2 semantic: PASS | check_e=%s", _gate2_result.get("check_e_status"))
+    except Exception as _e:
+        log.warning("[push] Gate 2 semantic skipped (load error): %s", _e)
+
     audit.end_stage("push_preflight", "pass")
     audit.set_state("validated")
 
@@ -357,6 +396,31 @@ def run_push_stage(pid: str) -> int:
     current_suffix        = ctx.get("template_suffix_current", "")
     product_template_type = pub_data.get("product_template_type", "")
     metafields            = pub_data.get("metafields", {})
+
+    # ── Template type guard — reject invalid or handle-like suffixes ──────────
+    _VALID_TEMPLATE_TYPES = {"clothing", "shoes", "accessories", "easy-sleep", "reborn", "tempio"}
+    if product_template_type and product_template_type not in _VALID_TEMPLATE_TYPES:
+        audit.end_stage("push_preflight", "fail",
+                        error=f"INVALID product_template_type='{product_template_type}' — allowed: {sorted(_VALID_TEMPLATE_TYPES)}")
+        audit.finalize("failed")
+        audit.save()
+        log.error("[push] ABORTED — product_template_type='%s' is not a valid template type", product_template_type)
+        log.error("  Allowed: %s", sorted(_VALID_TEMPLATE_TYPES))
+        log.error("  Fix: update publisher JSON to use a valid type, then re-run push.")
+        return 1
+
+    # ── Stale context guard — reject if generated.template_suffix/key still present ──
+    _gen_ctx = ctx.get("generated", {}) or {}
+    _stale_fields = [f for f in ("template_suffix", "template_key") if f in _gen_ctx]
+    if _stale_fields:
+        audit.end_stage("push_preflight", "fail",
+                        error=f"stale generated fields in context: {_stale_fields}")
+        audit.finalize("failed")
+        audit.save()
+        log.error("[push] ABORTED — context has stale legacy fields: generated.%s",
+                  ", generated.".join(_stale_fields))
+        log.error("  Fix: remove generated.template_suffix and generated.template_key from context YAML.")
+        return 1
 
     # Save preview — audit trail
     def _read_opt(name: str) -> str:
@@ -398,6 +462,8 @@ def run_push_stage(pid: str) -> int:
     audit.set_state("published")
 
     ctx["generated"].update({"published": True})
+    if product_template_type:
+        ctx["product_template_type"] = product_template_type
     save_ctx(ctx)
     audit.save()
 
@@ -451,6 +517,25 @@ def run_verify_stage(pid: str) -> int:
         except Exception as e:
             errors.append(f"metafields check error: {e}")
 
+    # 1b. Shoes-specific: accordion_blocks must be stored as type=json
+    if _category == "shoes" and vcfg.get("check_metafields_written"):
+        try:
+            resp      = shopify_get(f"products/{pid}/metafields.json?namespace=baby_mania&limit=250")
+            mf_types  = {mf["key"]: mf["type"] for mf in resp.get("metafields", [])}
+            acc_type  = mf_types.get("accordion_blocks")
+            if acc_type is None:
+                errors.append("accordion_blocks metafield missing (shoes product)")
+            elif acc_type != "json":
+                errors.append(
+                    f"accordion_blocks type='{acc_type}' — must be 'json' for shoes. "
+                    f"Run DELETE+POST repair to fix type mismatch."
+                )
+                log.error("  ✗ accordion_blocks type mismatch: '%s' (expected 'json')", acc_type)
+            else:
+                log.info("  ✓ accordion_blocks type: json")
+        except Exception as e:
+            errors.append(f"accordion_blocks type check error: {e}")
+
     # 2. body_html is empty
     if vcfg.get("check_body_html_empty"):
         try:
@@ -461,6 +546,136 @@ def run_verify_stage(pid: str) -> int:
                 log.info("  ✓ body_html: empty")
         except Exception as e:
             errors.append(f"body_html check error: {e}")
+
+    # 3. Live template_suffix is valid (not a fallback-to-product.json risk)
+    _VALID_LIVE_SUFFIXES = {"clothing", "shoes", "accessories", "easy-sleep", "reborn", "tempio",
+                            "test", "test-template", "blank", ""}
+    try:
+        live_suffix = (_get_product().get("template_suffix") or "")
+        if live_suffix not in _VALID_LIVE_SUFFIXES:
+            errors.append(
+                f"template_suffix='{live_suffix}' is not a known theme template "
+                f"— Shopify will silently fall back to product.json (no BabyMania sections)"
+            )
+            log.error("  ✗ template_suffix: '%s' is INVALID — fallback to product.json", live_suffix)
+        else:
+            log.info("  ✓ template_suffix: '%s'", live_suffix or "(default product.json)")
+    except Exception as e:
+        errors.append(f"template_suffix check error: {e}")
+
+    # 4. Shoes-specific: count checks + live parity + accordion structure
+    if _category == "shoes":
+        publisher_path = STAGE_OUT_DIR / f"{pid}_publisher.json"
+        pub_data = None
+        if not publisher_path.exists():
+            errors.append("publisher.json missing — cannot run shoes count/parity checks")
+        else:
+            try:
+                pub_data = json.loads(publisher_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as e:
+                errors.append(f"publisher.json parse error: {e}")
+
+        if pub_data is not None:
+            pub_metafields = pub_data.get("metafields", {})
+            local_benefits  = pub_metafields.get("benefits", [])
+            local_accordion = pub_metafields.get("accordion_blocks", [])
+            local_benefits_count  = len(local_benefits)  if isinstance(local_benefits,  list) else 0
+            local_accordion_count = len(local_accordion) if isinstance(local_accordion, list) else 0
+
+            # 4a. Count checks (local publisher.json)
+            if local_benefits_count != 6:
+                errors.append(f"benefits count={local_benefits_count}, expected=6")
+            else:
+                log.info("  ✓ benefits count: 6")
+
+            if local_accordion_count != 3:
+                errors.append(f"accordion_blocks count={local_accordion_count}, expected=3")
+            else:
+                log.info("  ✓ accordion_blocks count: 3")
+
+            # 4b. Local benefit key checks
+            _REQUIRED_BENEFIT_KEYS = {"title", "body"}
+            for _i, _benefit in enumerate(local_benefits if isinstance(local_benefits, list) else []):
+                if not isinstance(_benefit, dict):
+                    continue
+                _missing = _REQUIRED_BENEFIT_KEYS - set(_benefit.keys())
+                if _missing:
+                    errors.append(f"publisher benefits[{_i}] missing required key(s): {sorted(_missing)}")
+
+            # 4c. Live parity + accordion structure checks
+            try:
+                _live_resp = shopify_get(f"products/{pid}/metafields.json?namespace=baby_mania&limit=250")
+                _live_mf   = {mf["key"]: mf for mf in _live_resp.get("metafields", [])}
+
+                # Benefits parity (count)
+                _live_benefits_count = 0
+                if "benefits" in _live_mf:
+                    try:
+                        _live_benefits_val = json.loads(_live_mf["benefits"]["value"])
+                        _live_benefits_count = len(_live_benefits_val) if isinstance(_live_benefits_val, list) else 0
+                    except json.JSONDecodeError:
+                        errors.append("live/local parity FAIL — benefits live value is not valid JSON")
+                if _live_benefits_count != local_benefits_count:
+                    errors.append(
+                        f"live/local parity FAIL — benefits count: "
+                        f"live={_live_benefits_count}, local={local_benefits_count}"
+                    )
+                else:
+                    log.info("  ✓ benefits live/local parity: %d", _live_benefits_count)
+
+                # Accordion parity + structure
+                if "accordion_blocks" in _live_mf:
+                    try:
+                        _live_acc = json.loads(_live_mf["accordion_blocks"]["value"])
+                        if not isinstance(_live_acc, list):
+                            errors.append(
+                                "live/local parity FAIL — accordion_blocks structure: "
+                                "expected array, got wrapper object"
+                            )
+                        else:
+                            _live_acc_count = len(_live_acc)
+                            if _live_acc_count != local_accordion_count:
+                                errors.append(
+                                    f"live/local parity FAIL — accordion_blocks count: "
+                                    f"live={_live_acc_count}, local={local_accordion_count}"
+                                )
+                            else:
+                                log.info("  ✓ accordion_blocks live/local parity: %d", _live_acc_count)
+
+                            _REQUIRED_ACC_KEYS  = {"title", "body", "connection"}
+                            _FORBIDDEN_ACC_KEYS = {"closing"}
+                            for _j, _block in enumerate(_live_acc):
+                                if not isinstance(_block, dict):
+                                    errors.append(
+                                        f"live accordion_blocks[{_j}] is not an object — wrapper structure detected"
+                                    )
+                                    continue
+                                _forbidden = _FORBIDDEN_ACC_KEYS & set(_block.keys())
+                                if _forbidden:
+                                    errors.append(
+                                        f"live accordion_blocks[{_j}] contains legacy key(s): {sorted(_forbidden)}"
+                                    )
+                                _missing_acc = _REQUIRED_ACC_KEYS - set(_block.keys())
+                                if _missing_acc:
+                                    errors.append(
+                                        f"live accordion_blocks[{_j}] missing required key(s): {sorted(_missing_acc)}"
+                                    )
+                            if not any("accordion_blocks" in e for e in errors if "parity" in e or "legacy" in e or "missing" in e or "wrapper" in e):
+                                log.info("  ✓ accordion_blocks structure: keys valid, no legacy keys")
+                    except json.JSONDecodeError:
+                        errors.append("live/local parity FAIL — accordion_blocks live value is not valid JSON")
+
+            except Exception as _e:
+                errors.append(f"live parity check error: {_e}")
+
+    # 5. Storefront URL + manual check instruction (shoes)
+    if _category == "shoes":
+        _handle          = ctx.get("product_handle", pid)
+        _storefront_url  = f"https://www.babymania.co.il/products/{_handle}"
+        log.info("")
+        log.info("  STOREFRONT URL:  %s", _storefront_url)
+        log.info("  MANUAL REQUIRED: open storefront URL and confirm dynamic content renders (not static cards)")
+        log.info("")
 
     if errors:
         audit.end_stage("verification", "fail", error="; ".join(errors))
