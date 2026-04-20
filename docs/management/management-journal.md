@@ -19,6 +19,24 @@
 
 ---
 
+## DATE: 2026-04-20
+## TASK: PHASE 2 LIVE READBACK PREP — PID LIST BUILD
+## SCOPE: Layer 4 — Phase 2 Recovery Prep
+## WHAT CHANGED:
+- נבנתה רשימת PID נקייה ל-live read-back
+- מקור: `output/stage-outputs/*_publisher.json`
+- סך הכל: 285 PIDs — 0 כפילויות — anomaly 9881362759993 לא נמצא ברשימה
+- נשמר: `C:/Windows/Temp/geo_readback_pid_list.json`
+## FILES TOUCHED:
+- `C:/Windows/Temp/geo_readback_pid_list.json` (חדש)
+- `docs/management/management-journal.md` (עדכון זה)
+## SYSTEM IMPACT: אין — הכנה בלבד
+## OPEN ISSUES:
+- Shopify live read-back טרם בוצע — מחכה ל-SHOPIFY_ACCESS_TOKEN פעיל
+## NEXT STEP: live read-back עם token → scope lock → P2-S2 Batch A
+
+---
+
 ## DATE: 2026-03-25
 ## TASK: בניית מערכת תיעוד ניהולי רשמית
 ## SCOPE: ניהול — כלל הפרויקט

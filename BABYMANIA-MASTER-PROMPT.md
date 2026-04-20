@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 3.0 | עודכן: 2026-04-14 | LAYER 3 COMPLETE | READY FOR LAYER 4 GEO
+### גרסה: 4.0 | עודכן: 2026-04-20 | LAYER 4 GEO IN PROGRESS | PHASE 2 READ-BACK PENDING
 
 ---
 
@@ -53,6 +53,14 @@ milestone / blocker נסגר → גם master snapshot
 | `docs/product/infrastructure-journal.md` | orchestrator, config |
 | `docs/organic/organic-journal.md` | HUBs, organic pipeline |
 | `docs/organic/מצב-הפרויקט-האורגני.md` | **מצב תפעולי מחייב** — חובה לקרוא לפני כל משימה אורגנית |
+| `docs/governance/layer5-freeze.md` | Layer 5 freeze declaration (P1-S1) |
+| `docs/governance/phase1-closure-declaration.md` | Phase 1 hardening PASS — סגירה רשמית |
+| `docs/governance/phase2-scope-confirmation.md` | P2-S1 — scope confirmation, Batch A blocked pending read-back |
+| `docs/governance/geo_readback_pid_list.json` | 285 publisher PIDs — רשימה נקייה ל-live read-back |
+| `docs/management/AUTOMATION-HARDENING-PLAN-v1.md` | תוכנית ה-hardening הרשמית — P1 עד P2 |
+| `docs/operations/known-anomalies-registry.md` | חריגים ידועים — ANOMALY-001: PID 9881362759993 |
+| `docs/operations/semantic-gate-spec.md` | Gate 2 semantic spec v1.1 (Checks A–D active, E disabled) |
+| `docs/operations/visual-qa-checklist.md` | Visual QA — 8 checks חובה לפני כל push |
 
 ### קבצים היסטוריים (לא לעדכן)
 - `shared_memory.md` — עיצוב מוקדם, לפני הpipeline הנוכחי
@@ -339,8 +347,8 @@ DATA → LOGIC → OUTPUT
 | LAYER 1 — DATA | ✅ CLOSED | data stable, 294 YAMLs, reverse-index v1.2 |
 | LAYER 2 — PRODUCT↔BLOG | ✅ CLOSED (2026-04-13) | clothing + shoes, 66 מוצרים LIVE |
 | LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE (2026-04-14) | 244 מוצרים LIVE — title_tag + description_tag |
-| LAYER 4 — GEO | ⏳ NEXT | AI answers: Perplexity, ChatGPT, Gemini |
-| LAYER 5–10 | ⏳ FUTURE | — |
+| LAYER 4 — GEO | 🔶 IN PROGRESS | Phase 1 hardening COMPLETE. Phase 2 read-back PENDING token |
+| LAYER 5–10 | ⏳ FUTURE | Layer 5 FROZEN (governance: layer5-freeze.md) |
 
 **LAYER 3 breakdown:**
 - Reborn: 6 · Shoes: 13 · Clothing: 219 · Accessories: 6
@@ -349,6 +357,47 @@ DATA → LOGIC → OUTPUT
 - Recovery: timeout batches (clothing/accessories) + targeted re-push → all 244 verified PASS
 
 **GSC backlog:** PLANNED ONLY — לא לבצע לפני אישור ניהולי מפורש.
+
+---
+
+## 🌍 LAYER 4 — GEO Metafields Status
+
+**מטרה:** כתיבת `baby_mania.geo_who_for` + `baby_mania.geo_use_case` לכל המוצרים.
+
+### Phase 1 — Automation Hardening ✅ COMPLETE (2026-04-19)
+
+| שלב | תיאור | סטטוס |
+|-----|--------|--------|
+| P1-S1 | Layer 5 Freeze | ✅ |
+| P1-S2 | Known Anomalies Registry — ANOMALY-001 רשום | ✅ |
+| P1-S3 | Gate 1 Audit | ✅ |
+| P1-S4 | Gate 2 Semantic Gate Spec v1.1 (T2 approved) | ✅ |
+| P1-S5 | Visual QA Checklist — 8 checks | ✅ |
+| P1-S6 | Gates implemented + test batch 9/9 PASS | ✅ |
+| P1-S7 | Phase 1 closure declaration signed | ✅ |
+
+- **Gate 1:** `scripts/gate1_hardening.py` — empty values, duplicates, anomaly exclusion
+- **Gate 2:** `scripts/gate2_semantic.py` — Checks A–D active, Check E disabled (ספי Jaccard טעונים אישור)
+- **Anomaly:** PID `9881362759993` מוחרג מכל recovery — Gate 1 חוסם אוטומטית
+
+### Phase 2 — Live Recovery 🔶 IN PROGRESS
+
+| שלב | תיאור | סטטוס |
+|-----|--------|--------|
+| P2-S1 | Scope Confirmation | ✅ PARTIAL |
+| P2-S2 | Batch A (36 PIDs) | ⛔ BLOCKED |
+
+**Scope מאומת לוקלית:**
+- 36 clothing PIDs — `verify_failed` — confirmed affected → Batch A
+- 43 PIDs — `push_success` — geo pushed, SEO verified OK
+- 7 PIDs — geo_draft ללא publisher — REVIEW REQUIRED לפני Batch A
+- PID `9881362759993` — EXCLUDED (ANOMALY-001)
+- 285 publisher PIDs → רשימה נקייה: `docs/governance/geo_readback_pid_list.json`
+
+**BLOCKER:** Shopify live read-back לא הושלם — `SHOPIFY_ACCESS_TOKEN` לא פעיל בסביבה.
+**TOKEN path:** `C:\Projects\baby-mania-agent\.env` + `C:\Users\3024e\Desktop\shopify-token\.env`
+
+**הצעד הבא:** טען `.env` → הרץ read-back → scope lock → P2-S2 Batch A (36 PIDs)
 
 ---
 
