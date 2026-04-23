@@ -20,6 +20,36 @@
 ---
 
 ## DATE: 2026-04-23
+## TASK: CHECK E ACTIVATION — Gate 2 Template Repetition Check
+## SCOPE: Layer 4 — Gate 2 Semantic hardening, Check E
+## APPROVAL_TIER: T1
+
+## WHAT CHANGED:
+- Check E (Template Repetition) הופעל ב-`scripts/gate2_semantic.py`
+- ספים שאושרו על ידי אייל: PAIR_WARN=0.6, BATCH_FAIL=0.8
+- נוספו קבועים `PAIR_WARN` ו-`BATCH_FAIL` — literals 0.6/0.8 הוחלפו בקבועים
+- `check_e` נוסף ל-`check_results` בפלט Gate 2 (תאימות למפרט)
+- `docs/operations/semantic-gate-spec.md` עודכן ל-v1.2
+
+## FILES TOUCHED:
+- `scripts/gate2_semantic.py` (CHECK_E_ENABLED: False → True, thresholds כקבועים)
+- `docs/operations/semantic-gate-spec.md` (v1.1-draft → v1.2, Check E active)
+- `docs/management/management-journal.md` (entry זה)
+- `BABYMANIA-MASTER-PROMPT.md` (snapshot עדכון — Check E active)
+
+## SYSTEM IMPACT:
+- Gate 2 כעת רץ כל 5 checks (A–E) — Check E ברמת batch בלבד
+- ספי אישור: PAIR_WARN ≥ 0.6 (pair warning), BATCH_FAIL ≥ 0.8 ב-2+ זוגות (batch stop)
+- semantic_signature: true ניתן רק אם Check E לא BATCH_WARN/FAIL ברמת ה-batch
+
+## OPEN ISSUES: NONE
+
+## NEXT STEP:
+HUB-9 clusters C1-C6 | Layer 5 unfreeze (Eyal decision)
+
+---
+
+## DATE: 2026-04-23
 ## TASK: LAYER 3 — L3-1 CLOSURE: 36 clothing PIDs SEO live verification
 ## SCOPE: Layer 3 — סגירת אמביגואיות אחרונה ב-verify_failed clothing
 ## APPROVAL_TIER: T0 (read-only)

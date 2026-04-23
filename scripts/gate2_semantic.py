@@ -4,7 +4,7 @@ Gate 2 — Semantic Gate
 AUTOMATION-HARDENING-PLAN v1 | P1-S6
 Checks: A (Technical Fingerprint), B (Type Consistency),
         C (Fabricated Claim), D (Description Bleed),
-        E (Template Repetition — DISABLED pending Ayel threshold approval)
+        E (Template Repetition — ENABLED, thresholds 0.6/0.8 approved 2026-04-23)
 
 Usage:
   python gate2_semantic.py <pid>
@@ -25,9 +25,38 @@ BASE_DIR      = Path(__file__).parent.parent
 STAGE_OUT_DIR = BASE_DIR / "output" / "stage-outputs"
 CONTEXT_DIR   = BASE_DIR / "shared" / "product-context"
 
-# ── Check E: DISABLED — awaiting Ayel threshold approval ─────────────────────
-# Set to True only after Ayel approves Jaccard thresholds (0.6 / 0.8)
-CHECK_E_ENABLED: bool = False
+# ── Check E: ENABLED — Ayel approved thresholds 2026-04-23 ───────────────────
+PAIR_WARN: float    = 0.6   # Jaccard similarity ≥ PAIR_WARN → PAIR_WARN per pair
+BATCH_FAIL: float   = 0.8   # Jaccard similarity ≥ BATCH_FAIL in 2+ pairs → BATCH_FAIL
+CHECK_E_ENABLED: bool = True
+
+
+# ── Supplementary Draft Loader ────────────────────────────────────────────────
+
+def load_supplementary_sections(pid: str) -> dict[str, str]:
+    """Load geo and SEO draft content for additional validation.
+    Gracefully returns empty dict if draft files don't exist."""
+    extra: dict[str, str] = {}
+    geo_path = STAGE_OUT_DIR / f"{pid}_geo_draft.json"
+    if geo_path.exists():
+        try:
+            geo = json.loads(geo_path.read_text(encoding="utf-8"))
+            for key in ("geo_who_for", "geo_use_case"):
+                if geo.get(key):
+                    extra[key] = str(geo[key])
+        except (json.JSONDecodeError, OSError):
+            pass
+    seo_path = STAGE_OUT_DIR / f"{pid}_seo_draft.json"
+    if seo_path.exists():
+        try:
+            seo = json.loads(seo_path.read_text(encoding="utf-8"))
+            if seo.get("seo_title"):
+                extra["seo_title"] = str(seo["seo_title"])
+            if seo.get("meta_description"):
+                extra["seo_meta"] = str(seo["meta_description"])
+        except (json.JSONDecodeError, OSError):
+            pass
+    return extra
 
 
 # ── Text Extraction ───────────────────────────────────────────────────────────
@@ -118,6 +147,39 @@ def check_a_technical_fingerprint(pid: str, sections: dict[str, str]) -> dict:
 
 # ── Check B — Product Type Consistency ───────────────────────────────────────
 
+# Phrases that indicate clothing generator was used on a shoe product
+_CLOTHING_GEO_ARTIFACTS: list[str] = [
+    "בגד דגם",   # gen_clothing_geo.py old template artifact
+    "בגד",       # generic clothing word — never in shoes geo content
+    "סרבל",      # overalls — clothing only
+    "חליפה",     # suit — clothing only
+    "שמלה",      # dress — clothing only
+    "בכביסות",   # laundry context — clothing only
+    "מהבגדים",
+]
+
+# ── SEO Draft Length Validation ──────────────────────────────────────────────
+
+def check_seo_draft_lengths(pid: str, sections: dict[str, str]) -> dict:
+    """Fail if seo_title or seo_meta from draft file exceeds character limits.
+    Only fires when the draft file exists (sections key present and non-empty)."""
+    seo_title = sections.get("seo_title", "")
+    seo_meta  = sections.get("seo_meta", "")
+    if seo_title and len(seo_title) > 70:
+        return {
+            "check": "check_seo",
+            "status": "FAIL",
+            "fail_reason": f"seo_title from draft too long ({len(seo_title)} chars, max 70)",
+        }
+    if seo_meta and len(seo_meta) > 320:
+        return {
+            "check": "check_seo",
+            "status": "FAIL",
+            "fail_reason": f"seo_meta from draft too long ({len(seo_meta)} chars, max 320)",
+        }
+    return {"check": "check_seo", "status": "PASS"}
+
+
 # Terms that must NOT appear in hero_headline when product_template_type is as listed
 _TYPE_MISMATCH_RULES: dict[str, list[str]] = {
     "clothing": ["נעל", "סנדל", "מגף", "כפכף", "סוליה", "שרוכים", "צייזל"],
@@ -128,7 +190,8 @@ _TYPE_MISMATCH_RULES: dict[str, list[str]] = {
 _SHOE_ANATOMY_TERMS = ["סוליה", "שרוכים", "צייזל", "מדרס", "קרסול"]
 
 def check_b_type_consistency(pid: str, pub_data: dict, sections: dict[str, str]) -> dict:
-    """Fail if hero_headline or geo_who_for contains terms from a different product type."""
+    """Fail if hero_headline/subheadline contains type-forbidden terms, or if shoes geo
+    contains clothing-generator artifacts (e.g. 'בגד דגם', 'כביסה')."""
     product_type = pub_data.get("product_template_type", "")
     headline     = sections.get("hero_headline", "")
     subheadline  = sections.get("hero_subheadline", "")
@@ -158,6 +221,20 @@ def check_b_type_consistency(pid: str, pub_data: dict, sections: dict[str, str])
                     f"product_type='{product_type}' (found in headline/subheadline)"
                 ),
             }
+
+    # Rule 3: clothing-generator artifact in shoes geo content
+    if product_type == "shoes":
+        geo_combined = sections.get("geo_who_for", "") + " " + sections.get("geo_use_case", "")
+        for term in _CLOTHING_GEO_ARTIFACTS:
+            if term in geo_combined:
+                return {
+                    "check": "check_b",
+                    "status": "FAIL",
+                    "fail_reason": (
+                        f"Clothing artifact '{term}' detected in geo content "
+                        f"for product_type='shoes' (possible generator misclassification)"
+                    ),
+                }
 
     return {"check": "check_b", "status": "PASS"}
 
@@ -264,13 +341,12 @@ def check_d_description_bleed(
     return {"check": "check_d", "status": "PASS"}
 
 
-# ── Check E — Template Repetition (DISABLED) ─────────────────────────────────
+# ── Check E — Template Repetition (ENABLED 2026-04-23) ──────────────────────
 
 def check_e_template_repetition_batch(batch_pub_data: list[dict]) -> dict:
     """
     Batch-level check: 4-gram Jaccard similarity on hero_headline.
-    DISABLED BY DEFAULT — awaiting Ayel threshold approval.
-    Thresholds: PAIR_WARN ≥ 0.6, BATCH_FAIL ≥ 0.8 in 2+ pairs (proposed).
+    Thresholds (approved 2026-04-23): PAIR_WARN=0.6, BATCH_FAIL=0.8 in 2+ pairs.
     """
     if not CHECK_E_ENABLED:
         return {
@@ -299,9 +375,9 @@ def check_e_template_repetition_batch(batch_pub_data: list[dict]) -> dict:
             if not g_a or not g_b:
                 continue
             similarity = len(g_a & g_b) / len(g_a | g_b)
-            if similarity >= 0.8:
+            if similarity >= BATCH_FAIL:
                 batch_fails.append((pid_a, pid_b, round(similarity, 3)))
-            elif similarity >= 0.6:
+            elif similarity >= PAIR_WARN:
                 pair_warns.append((pid_a, pid_b, round(similarity, 3)))
 
     if len(batch_fails) >= 2:
@@ -335,6 +411,7 @@ def run_gate2(
     Returns gate2_result dict.
     """
     sections = extract_all_text(pub_data)
+    sections.update(load_supplementary_sections(pid))
     all_text = " ".join(sections.values())
 
     checks: list[dict] = [
@@ -342,6 +419,7 @@ def run_gate2(
         check_b_type_consistency(pid, pub_data, sections),
         check_c_fabricated_claim(pid, all_text, ctx),
         check_d_description_bleed(pid, all_text, ctx, batch_product_titles),
+        check_seo_draft_lengths(pid, sections),
     ]
 
     failed = [c for c in checks if c["status"] == "FAIL"]
@@ -350,14 +428,18 @@ def run_gate2(
     # Note: Check E batch status must be evaluated separately and merged before issuing signature
     all_pass = len(failed) == 0
 
+    check_e_status = "DISABLED" if not CHECK_E_ENABLED else "PENDING_BATCH"
     result = {
         "product_id": pid,
         "gate": "gate2_semantic",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "status": "FAIL" if failed else "PASS",
-        "semantic_signature": all_pass,  # May be overridden if batch has BATCH_WARN
-        "check_e_status": "DISABLED" if not CHECK_E_ENABLED else "PENDING_BATCH",
-        "check_results": {c["check"]: c["status"] for c in checks},
+        "semantic_signature": all_pass,  # May be overridden if batch has BATCH_WARN/FAIL
+        "check_e_status": check_e_status,
+        "check_results": {
+            **{c["check"]: c["status"] for c in checks},
+            "check_e": check_e_status,
+        },
         "fail_reasons": [
             {"check": c["check"], "detail": c["fail_reason"]}
             for c in failed

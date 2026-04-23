@@ -1,15 +1,15 @@
 # SEMANTIC GATE SPEC
 
-**גרסה:** v1.1-draft
-**תאריך עדכון:** 2026-04-19
+**גרסה:** v1.2
+**תאריך עדכון:** 2026-04-23
 **שייך ל:** P1-S4.1 / AUTOMATION-HARDENING-PLAN v1
-**סטטוס הבא הנדרש:** T2 review שני לפני implementation
+**סטטוס:** Checks A–E פעילים. Check E הופעל 2026-04-23.
 
 ---
 
 ## STATUS
 
-טיוטת מפרט v1.1 — בלוקרים מ-T2 review תוקנו — ממתין ל-T2 review שני
+v1.2 — Checks A–E פעילים. Check E הופעל 2026-04-23 (PAIR_WARN=0.6, BATCH_FAIL=0.8, אישור אייל).
 
 ---
 
@@ -196,7 +196,7 @@ similarity = |4grams(A) ∩ 4grams(B)| / |4grams(A) ∪ 4grams(B)|
 - similarity ≥ 0.6 ב-3+ זוגות שונים → BATCH_WARN (batch מושהה)
 - similarity ≥ 0.8 בין 2+ מוצרים → BATCH_FAIL (batch נעצר)
 
-**הסף הסופי (0.6 / 0.8 / מספר הזוגות):** **טעון אישור אייל לפני implementation** — הערכים לעיל הם הצעת מוצא בלבד.
+**הסף הסופי:** PAIR_WARN = 0.6 | BATCH_FAIL = 0.8 — **אושר על ידי אייל 2026-04-23, פעיל.**
 
 #### EXAMPLES OF FAIL
 - 7 מתוך 8 מוצרים פותחים ב: `"בגד איכותי שנבחר בקפידה עבור תינוקך"`
@@ -260,9 +260,9 @@ similarity = |4grams(A) ∩ 4grams(B)| / |4grams(A) ∪ 4grams(B)|
 | Check B: type mismatch חוזר | ≥2 מוצרים | batch נעצר לבדיקה |
 | Check C: fabricated claim | כל מקרה = 1 | FAIL מיידי. אם ≥2 מוצרים — batch נעצר |
 | Check D: bleed חוזר | ≥2 מוצרים מאותו מקור | batch נעצר |
-| Check E: template repetition | **טעון אישור אייל** | עצירה + המתנה |
+| Check E: template repetition | PAIR_WARN ≥ 0.6 → warn pair; BATCH_FAIL ≥ 0.8 ב-2+ זוגות → batch stop | עצירה + הודעה לאייל |
 
-**הערה לגבי סף Check E:** מספרים מדויקים לסף Check E לא נקבעו — הם תלויים בגודל ה-batch הרגיל ובאחוז repetition מקובל. יש לקבוע עם אייל לפני implementation.
+**ספי Check E:** PAIR_WARN = 0.6 | BATCH_FAIL = 0.8 — אושרו על ידי אייל 2026-04-23.
 
 **כלל על-כולם:** כל batch-level stop מחייב הודעה מפורשת לאייל ואסור auto-continue.
 
@@ -285,5 +285,5 @@ Gate 2 **לא** בודק את הדברים הבאים — כדי לא לערבב
 
 ---
 
-*SEMANTIC GATE SPEC v1.1-draft — BabyMania Layer 4 — P1-S4.1 / AUTOMATION-HARDENING-PLAN v1*
-*בלוקרים מ-T2 review תוקנו — ממתין ל-T2 review שני*
+*SEMANTIC GATE SPEC v1.2 — BabyMania Layer 4 — P1-S4.1 / AUTOMATION-HARDENING-PLAN v1*
+*Checks A–E פעילים. Check E הופעל 2026-04-23 (PAIR_WARN=0.6, BATCH_FAIL=0.8).*

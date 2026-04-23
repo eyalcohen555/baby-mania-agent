@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 4.5 | עודכן: 2026-04-23 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 FROZEN ⏳
+### גרסה: 4.6 | עודכן: 2026-04-23 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 FROZEN ⏳ | Gate 2 Check E ACTIVE ✅
 
 ---
 
@@ -59,7 +59,7 @@ milestone / blocker נסגר → גם master snapshot
 | `docs/governance/geo_readback_pid_list.json` | 285 publisher PIDs — רשימה נקייה ל-live read-back |
 | `docs/management/AUTOMATION-HARDENING-PLAN-v1.md` | תוכנית ה-hardening הרשמית — P1 עד P2 |
 | `docs/operations/known-anomalies-registry.md` | חריגים ידועים — ANOMALY-001: PID 9881362759993 |
-| `docs/operations/semantic-gate-spec.md` | Gate 2 semantic spec v1.1 (Checks A–D active, E disabled) |
+| `docs/operations/semantic-gate-spec.md` | Gate 2 semantic spec v1.2 (Checks A–E active, PAIR_WARN=0.6, BATCH_FAIL=0.8) |
 | `docs/operations/visual-qa-checklist.md` | Visual QA — 8 checks חובה לפני כל push |
 
 ### קבצים היסטוריים (לא לעדכן)
@@ -392,7 +392,7 @@ Source of truth: `docs/product/shoes-journal.md` (entry 2026-04-21)
 | P1-S7 | Phase 1 closure declaration signed | ✅ |
 
 - **Gate 1:** `scripts/gate1_hardening.py` — empty values, duplicates, anomaly exclusion
-- **Gate 2:** `scripts/gate2_semantic.py` — Checks A–D active, Check E disabled (ספי Jaccard טעונים אישור)
+- **Gate 2:** `scripts/gate2_semantic.py` — Checks A–E active (Check E: PAIR_WARN=0.6, BATCH_FAIL=0.8, approved 2026-04-23)
 - **Anomaly:** PID `9881362759993` מוחרג מכל recovery — Gate 1 חוסם אוטומטית
 
 ### Phase 2 — Live Recovery 🔶 IN PROGRESS
