@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 4.2 | עודכן: 2026-04-20 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE | LAYER 5 FROZEN ⏳
+### גרסה: 4.5 | עודכן: 2026-04-23 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 FROZEN ⏳
 
 ---
 
@@ -346,17 +346,27 @@ DATA → LOGIC → OUTPUT
 |------|--------|--------|
 | LAYER 1 — DATA | ✅ CLOSED | data stable, 294 YAMLs, reverse-index v1.2 |
 | LAYER 2 — PRODUCT↔BLOG | ✅ CLOSED (2026-04-13) | clothing + shoes, 66 מוצרים LIVE |
-| LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE (2026-04-20) | כל clothing נקי — title_tag + description_tag. 36 verify_failed היו RUNTIME בלבד. |
+| LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE + VERIFIED (2026-04-20 / verified 2026-04-23) | כל clothing נקי — title_tag + description_tag. 36 verify_failed מאושרים RUNTIME only — live check 36/36 PRESENT. |
 | LAYER 4 — GEO | ✅ COMPLETE (2026-04-20) | 285 PIDs — geo_who_for + geo_use_case live. 241 clothing + 51 shoes audited. |
 | LAYER 5–10 | ⏳ FROZEN | Layer 5 FROZEN — נדרשת החלטה ניהולית מפורשת לפתיחה (layer5-freeze.md) |
 
-**⚠ LAYER 3 + LAYER 4 CLOSURE NOTE (2026-04-20):**
+**⚠ LAYER 3 + LAYER 4 CLOSURE NOTE (verified 2026-04-23):**
 היסטוריית verify_failed (36 clothing) ו-stage16 (60.8%) — RUNTIME failures בלבד (timeout/429).
-Live audit 2026-04-20 אימת: כל ה-clothing + כל ה-shoes נקיים. Batch A לא בוצע ולא נדרש.
-Source of truth: `docs/governance/phase2-live-readback-scope-lock.md`
+Live audit 2026-04-20 אימת: כל ה-clothing נקיים (GEO) + כל 51 shoes נקיים (GEO). Batch A לא בוצע ולא נדרש.
+**SEO verification 2026-04-23:** live check ייעודי — 36/36 verify_failed clothing עם title_tag + description_tag PRESENT. Layer 3 CLOSED ✅ ללא exceptions.
+Source of truth: `docs/governance/phase2-live-readback-scope-lock.md` · Artifact: `output/stage-outputs/layer3_36pid_live_check.json`
+
+**⚠ LAYER 3 SHOES — POST-CLOSURE FIX (2026-04-21):**
+audit נוסף גילה 38 shoes PIDs עם title_tag גנרי שלא טופלו ב-Layer 3 המקורי.
+- false positive: PID 9615375925561 — ARCHIVED (ANOMALY-002)
+- ANOMALY-003: GraphQL fuzzy match על template_suffix:shoes — מתועד
+- ANOMALY-004: is_sneaker לא היה בשרשרת הסיווג — תוקן
+- dry-run bug של "לד" תוקן לפני push
+- 38/38 נדחפו live ואומתו PASS. Layer 3 shoes = COMPLETE על 51 PIDs.
+Source of truth: `docs/product/shoes-journal.md` (entry 2026-04-21)
 
 **LAYER 3 breakdown:**
-- Reborn: 6 · Shoes: 13 · Clothing: 219 · Accessories: 6
+- Reborn: 6 · Shoes: 51 (13 מLayer 3 המקורי + 38 מaudit 2026-04-21) · Clothing: 219 · Accessories: 6
 - Fields written: `global.title_tag` + `global.description_tag`
 - Plan: `layer3-product-seo-aeo-priority-001` — 18 stages, PASS
 - Recovery: timeout batches (clothing/accessories) + targeted re-push → all 244 verified PASS
@@ -402,9 +412,14 @@ Source of truth: `docs/governance/phase2-live-readback-scope-lock.md`
 **Live read-back result (2026-04-20):** 51/51 shoes CLEAN · clothing sample CLEAN · anomaly correctly excluded.
 **Batch A status:** NOT NEEDED — all PIDs already have geo live.
 
+**Geo content defects — CLOSED ✅ (T3, 2026-04-21):**
+- `9096636236089` (כפכף פרווה): regenerated + pushed — gtype=sandal, ללא fingerprint. PASS verify.
+- 8 PIDs סניקרס: regenerated + pushed — fingerprints הוסרו מכולם. PASS verify.
+- 9/9 push PASS · 9/9 verify PASS (`output/stage-outputs/t3_geo_regen_results.json`)
+
 **Open items (non-blocking):**
 - 36 clothing: SEO fields missing (Layer 3 track — not geo)
-- 8 shoes: gtype="בגד" phrasing (cosmetic — fix via shoes generator when convenient)
+- `9096634106169`: geo_who_for borderline phrasing — acceptable, no action needed
 - Layer 5: FROZEN — awaiting explicit management decision
 
 ---

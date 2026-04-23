@@ -19,6 +19,175 @@
 
 ---
 
+## DATE: 2026-04-23
+## TASK: LAYER 3 — L3-1 CLOSURE: 36 clothing PIDs SEO live verification
+## SCOPE: Layer 3 — סגירת אמביגואיות אחרונה ב-verify_failed clothing
+## APPROVAL_TIER: T0 (read-only)
+
+## WHAT CHANGED:
+- live API check (T0) על 36 verify_failed clothing PIDs — `global.title_tag` + `global.description_tag`
+- תוצאה: 36/36 PRESENT — 0 MISSING, 0 EMPTY, 0 HTTP errors
+- title_tag: 38–63 תווים (כולם ≤ 70 ✅) | description_tag: 105–143 תווים (כולם ≤ 160 ✅)
+- הטענה "verify_failed היו RUNTIME only (timeout/429)" — **מאושרת לחלוטין**
+
+## FILES TOUCHED:
+- `output/stage-outputs/layer3_36pid_live_check.json` (artifact — נוצר)
+- `docs/governance/phase2-live-readback-scope-lock.md` (SCOPE CORRECTIONS + VERDICT + SUMMARY עודכנו)
+- `BABYMANIA-MASTER-PROMPT.md` (v4.5 — Layer 3 verified note)
+- `docs/management/management-journal.md` (entry זה)
+
+## SYSTEM IMPACT:
+- L3-1 מה-backlog — **סגור**
+- Layer 3 COMPLETE ✅ מאושר ללא exceptions — אין recovery track נדרש
+- Layer 3 + Layer 4 — שניהם סגורים ומאומתים live
+
+## OPEN ISSUES: NONE
+
+## NEXT STEP:
+Check E thresholds (Eyal approval) | Layer 5 unfreeze (Eyal decision) | Organic HUB-9 clusters
+
+---
+
+## DATE: 2026-04-21
+## TASK: GAP MAP — RECLASSIFY PID 9096636236089 (כפכף) FROM CLOTHING → SHOES
+## SCOPE: output/stage-outputs/layer4_geo_gap_map.json — classification fix
+## APPROVAL_TIER: T1
+
+## WHAT CHANGED:
+- PID `9096636236089` (כפכף פרווה אוסטרלי עדידוש) הועבר מ-clothing ל-shoes בgap_map
+- מטרה: מניעת חזרה של ANOMALY-005 אם geo יירגנרט בעתיד
+
+## FILES TOUCHED:
+- `output/stage-outputs/layer4_geo_gap_map.json`
+  - `categories.shoes.missing`: 51 → 52
+  - `categories.clothing.missing`: 242 → 241
+  - `categories.shoes.pids_missing`: PID נוסף
+  - `categories.clothing.pids_missing`: PID הוסר
+  - `all_products_by_category.shoes`: PID נוסף
+  - `all_products_by_category.clothing`: PID הוסר
+  - `comparison_candidates`: לא שונה (רשימה aggregate)
+
+## VALIDATION:
+- JSON parse: PASS
+- in shoes.pids_missing: True | in clothing.pids_missing: False
+- in all_products shoes: True | in all_products clothing: False
+- ללא כפילויות | total_missing=293 (ללא שינוי)
+
+## SYSTEM IMPACT:
+- שינוי local בלבד — אין Shopify write
+- אם geo יירגנרט ל-9096636236089 בעתיד, הוא ישתמש ב-shoes generator ולא ב-clothing generator
+
+## OPEN ISSUES: NONE
+
+## NEXT STEP:
+gap_map fix CLOSED. ANOMALY-005 root cause addressed at data layer.
+
+---
+
+## DATE: 2026-04-21
+## TASK: LAYER 4 GEO — SHOES GEO CONTENT DEFECTS AUDIT
+## SCOPE: Layer 4 — post-closure audit על geo content quality
+
+## WHAT CHANGED:
+- audit ישיר על geo_draft files + gap_map גילה שניסוח "8 shoes עם gtype=בגד" בreadback doc — **שגוי**
+- תוקן תיעוד ב-5 מסמכים (ראה FILES TOUCHED)
+
+## FINDINGS (תיעוד בלבד — אין Shopify writes):
+1. PID 9096636236089 (כפכף פרווה): geo live עם gtype=בגד + fingerprint (6089) — ANOMALY-005
+2. 8 PIDs סניקרס: geo live עם pid fingerprints — gtype נכון — ANOMALY-006
+3. PID 9096634106169: borderline phrasing — אין פעולה נדרשת
+4. "Content is clean, no fingerprints" בreadback doc — **לא נכון** — תוקן
+
+## ROOT CAUSE (מתועד):
+- gen_clothing_geo.py גרסה ישנה (bak): ללא shoes guard + unique_ref עם pid[-4:]
+- generate_shoes_geo.py גרסה ישנה: גם כן השתמש ב-pid[-4:]
+- gap_map סיווג 9 shoes כclothing — כפכף בכלל clothing list
+- Stage-14 דחף כל 242 clothing PIDs כולל כפכף
+
+## FILES TOUCHED:
+- `docs/governance/phase2-live-readback-scope-lock.md` (KNOWN ISSUE — תוקן)
+- `BABYMANIA-MASTER-PROMPT.md` (Open items — תוקן)
+- `docs/operations/known-anomalies-registry.md` (ANOMALY-005 + ANOMALY-006 נוספו)
+- `docs/product/shoes-journal.md` (open issues + STAGE-16 correction)
+- `docs/management/management-journal.md` (entry זה)
+
+## SYSTEM IMPACT: תיעוד בלבד — אין שינוי ב-Shopify
+
+## OPEN ISSUES:
+- [x] regenerate + push geo ל-9096636236089 (T3) — **DONE 2026-04-21**
+- [x] regenerate + push geo ל-8 PIDs סניקרס (T3) — **DONE 2026-04-21**
+
+## NEXT STEP:
+~~אישור אייל → geo regeneration plan לכל 9 PIDs~~ — CLOSED
+
+---
+
+## DATE: 2026-04-21
+## TASK: LAYER 4 GEO — T3 REGEN + PUSH ל-9 PIDs (ANOMALY-005 + ANOMALY-006)
+## SCOPE: Layer 4 — geo content defects fix, Shopify live write
+## APPROVAL_TIER: T3 (אושר על ידי אייל)
+
+## WHAT CHANGED:
+- geo regenerated + pushed לכל 9 PIDs: 1 כפכף (ANOMALY-005) + 8 סניקרס (ANOMALY-006)
+- fingerprints (pid[-4:]) הוסרו מכל הטקסט הגלוי ללקוח
+- כפכף: gtype תוקן מ"בגד" ל-sandal
+- dry-run בוצע לפני push — validated: 0 fingerprints, 0 clothing phrases
+- push: 9/9 HTTP 200 PASS
+- verify live: 9/9 PASS — content match, clean
+
+## FILES TOUCHED:
+- `scripts/t3_geo_regen_push.py` (נוצר — T3 push + verify script)
+- `scripts/t3_geo_regen_dryrun.py` (נוצר — dry-run script)
+- `fetch_tmp/nine_pids_raw.json` (נוצר — product data ל-9 PIDs)
+- `output/stage-outputs/t3_geo_regen_results.json` (נוצר — results artifact)
+- `docs/operations/known-anomalies-registry.md` (ANOMALY-005 + ANOMALY-006 → CLOSED)
+- `docs/product/shoes-journal.md` (מצב נוכחי עודכן)
+- `docs/management/management-journal.md` (entry זה)
+- `BABYMANIA-MASTER-PROMPT.md` (v4.4 — geo defects CLOSED, open items עודכנו)
+
+## SYSTEM IMPACT:
+- 9 PIDs live בShopify קיבלו geo חדש ונקי
+- ANOMALY-005 + ANOMALY-006 סגורים
+- Layer 4 GEO נקי לחלוטין
+
+## OPEN ISSUES:
+- אין — Layer 4 GEO כל 9 PIDs נקיים
+- Layer 5: FROZEN — מחכה להחלטה ניהולית
+
+## NEXT STEP:
+Layer 5 — decision needed (FROZEN). לא נדרשת שום פעולה ב-Layer 4.
+
+---
+
+## DATE: 2026-04-21
+## TASK: LAYER 3 SHOES — title_tag AUDIT + FIX — 38/38 LIVE
+## SCOPE: Layer 3 — shoes title_tag + description_tag closure
+
+## WHAT CHANGED:
+- בוצע audit ייעודי על מוצרי נעליים — נמצאו 38 PIDs עם title_tag גנרי
+- false positive: PID 9615375925561 נפסל — ARCHIVED בShopify (ראה ANOMALY-002)
+- ANOMALY-003 זוהה ותועד: GraphQL fuzzy match על query של template_suffix:shoes
+- ANOMALY-004 זוהה ותועד: is_sneaker מוגדר בschema אך לא היה בשרשרת הסיווג
+- dry-run bug של "לד" תוקן לפני push
+- 38/38 PIDs נדחפו live ואומתו PASS
+
+## FILES TOUCHED:
+- `docs/operations/known-anomalies-registry.md` (ANOMALY-003 + ANOMALY-004 נוספו)
+- `docs/product/shoes-journal.md` (entry חדש)
+- `BABYMANIA-MASTER-PROMPT.md` (closure note + Layer 3 shoes count מעודכן)
+- `docs/management/management-journal.md` (עדכון זה)
+
+## SYSTEM IMPACT:
+- Layer 3 shoes = COMPLETE. 51 PIDs נקיים (13 מLayer 3 המקורי + 38 מaudit זה)
+- אין שינוי ב-Shopify מעבר לpush המאושר של 38 PIDs
+
+## OPEN ISSUES: NONE — shoes Layer 3 CLOSED
+
+## NEXT STEP:
+- המשך HUB-9 clusters / החלטה ניהולית על Layer 5
+
+---
+
 ## DATE: 2026-04-20
 ## TASK: DOCS SYNC — HUB-9 publish + GSC manual request indexing complete
 ## SCOPE: ניהול — סנכרון סופי אחרי HUB-9 publish + GSC manual requests

@@ -1,6 +1,6 @@
 # PHASE 2 — LIVE READ-BACK SCOPE LOCK
-**DATE: 2026-04-20**
-**STATUS: COMPLETE ✅ — LAYER 4 GEO DONE**
+**DATE: 2026-04-20 | LAYER 3 SEO VERIFIED: 2026-04-23**
+**STATUS: COMPLETE ✅ — LAYER 4 GEO DONE · LAYER 3 SEO VERIFIED**
 **METHOD: Full live read-back via Shopify REST API**
 
 ---
@@ -69,17 +69,52 @@ Zero PIDs require action. All 285 publisher PIDs verified CLEAN.
 | Prior Claim | Corrected Finding |
 |-------------|-------------------|
 | "241 fixed — UNVERIFIABLE" | VERIFIED — artifacts exist in `output/stage-outputs/` |
-| "36 clothing — Batch A scope" | CORRECTED — 36 failed on SEO fields, not geo. Geo was pushed to all 36 |
+| "36 clothing — Batch A scope" | CORRECTED — verify_failed was RUNTIME only (timeout/429). Geo was pushed to all 36. SEO live check 2026-04-23: 36/36 title_tag + description_tag PRESENT. No SEO failure. |
 | "8 shoes affected" | CORRECTED — 51 shoes with no geo at all |
 | "shoes scope unconfirmed" | CONFIRMED — 51 shoes PIDs, geo never written |
 
 ---
 
-## KNOWN ISSUE — NON-BLOCKING
+## GEO CONTENT DEFECTS — CLOSED ✅ (T3 FIX COMPLETE 2026-04-21)
 
-8 shoes PIDs received `gtype="בגד"` (clothing classifier) from clothing geo generator.
-Content is clean, no fingerprints. Phrasing suboptimal but not user-facing critical.
-**Action:** regenerate via shoes geo generator after Batch A.
+**⚠ תיקון ממצא (2026-04-21):** הניסוח המקורי "8 shoes עם gtype=בגד, content clean, no fingerprints" — **שגוי**. audit ישיר על קבצי geo_draft ו-live data מצא 3 רמות נפרדות.
+
+**T3 FIX (2026-04-21):** כל 9 PIDs regenerated + pushed. 9/9 push PASS · 9/9 verify PASS. ראה `output/stage-outputs/t3_geo_regen_results.json`.
+
+---
+
+### רמה א — 1 PID: gtype=בגד + fingerprint — **FIXED ✅**
+
+| PID | מוצר | בעיה שהייתה | סטטוס |
+|-----|------|-------------|-------|
+| `9096636236089` | כפכף פרווה אוסטרלי עדידוש | geo_draft: category=clothing, gtype=בגד. fingerprint `(6089)` מופיע 3 פעמים. נדחף כclothing, לא זוהה בreadback. | ✅ FIXED — geo regenerated (type=sandal), fingerprint הוסר, verify PASS |
+
+**Root cause:** PID נכנס ל-gap_map clothing list → עובד ע"י gen_clothing_geo.py (גרסה ישנה לפני guard) → gtype defaulted ל"בגד" + unique_ref השתמש ב-`pid[-4:]` → fingerprint.
+
+---
+
+### רמה ב — 8 PIDs: gtype=סניקרס (נכון) + fingerprint — **FIXED ✅**
+
+| PID | מוצר | fingerprint שהיה | סטטוס |
+|-----|------|-----------------|-------|
+| `9096635089209` | סניקרס סטייל- גולדן | `(9209)` | ✅ FIXED |
+| `9096633090361` | סניקרס- אנג׳לינו | `(0361)` | ✅ FIXED |
+| `9615669100857` | סניקרס חלקות קלאסיות לבנות | `(0857)` | ✅ FIXED |
+| `9607363526969` | סניקרס ארנבים לתינוקת | `(6969)` | ✅ FIXED |
+| `9731753017657` | סניקרס מהממות לבנים דגם ישראל | `(7657)` | ✅ FIXED |
+| `9096634925369` | סניקרס קלאסיות- דיויד | `(5369)` | ✅ FIXED |
+| `9606764200249` | סניקרס לתינוקות מונעות החלקה | `(0249)` | ✅ FIXED |
+| `9607365132601` | נעל אולסטאר צעד ראשון לתינוק | `(2601)` | ✅ FIXED |
+
+---
+
+### רמה ג — 1 PID: borderline phrasing בלבד (non-blocking)
+
+| PID | מוצר | בעיה |
+|-----|------|------|
+| `9096634106169` | סנדל בוהו מעוצב - אוריוש | geo_who_for מכיל "להלביש בסגנון" — clothing phrasing רך. אין fingerprint. לא מחייב תיקון. |
+
+**Action:** none — acceptable as-is.
 
 ---
 
@@ -90,7 +125,7 @@ Content is clean, no fingerprints. Phrasing suboptimal but not user-facing criti
 | Confirmed clean — clothing | 241 | None — geo complete |
 | Confirmed clean — shoes | 51 | None — geo complete |
 | Anomaly excluded | 1 | None — permanently excluded |
-| SEO-only issue (clothing) | 36 | Separate track — Layer 3 SEO recovery |
+| Confirmed clean — clothing (SEO) | 36 | ✅ CLOSED — live-verified 2026-04-23, 36/36 PRESENT |
 
 ---
 
@@ -101,7 +136,9 @@ All 285 publisher PIDs have geo_who_for + geo_use_case live on Shopify.
 Anomaly PID 9881362759993 correctly has NO geo — excluded as designed.
 
 Batch A execution: NOT NEEDED — all shoes already clean.
-Remaining open item: 36 clothing SEO failures (Layer 3 track, not Layer 4).
+~~Remaining open item: 36 clothing SEO failures~~ — **CLOSED ✅ 2026-04-23**
+Live check 36/36: title_tag PRESENT (38–63 chars), description_tag PRESENT (105–143 chars). verify_failed was RUNTIME only.
+Artifact: `output/stage-outputs/layer3_36pid_live_check.json`
 
 ---
 
