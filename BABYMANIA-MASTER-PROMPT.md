@@ -561,7 +561,7 @@ milestones שנסגרו:
 | HUB-6 | נעלי תינוק | 7 | ✅ | ⏳ pending_gsc_permission |
 | HUB-7 | בטיחות תינוק | 6 | ✅ | ⏳ pending_gsc_permission |
 | HUB-8 | Baby Daily Routine | 6 | ✅ פורסם (2026-04-09) | ✅ gsc_manual_requested |
-| HUB-9 | בובת ריבורן | 7 (Pillar LIVE) | ✅ Pillar LIVE (2026-04-20) | ✅ gsc_manual_requested |
+| HUB-9 | בובת ריבורן | 7 (ALL LIVE) | ✅ ALL LIVE (2026-04-23) | ✅ gsc_pending_manual_request |
 
 ### מפת HUB Registry
 `teams/organic/hub-registry.json` — מקור האמת למצב HUBs

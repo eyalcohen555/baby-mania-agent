@@ -20,6 +20,31 @@
 ---
 
 ## DATE: 2026-04-23
+## TASK: HUB-9 Clusters C1-C6 — פרסום מלא
+## SCOPE: organic — HUB-9 Reborn cluster pipeline completion
+
+## WHAT CHANGED:
+- 6 cluster articles פורסמו ל-Shopify בלוג (C2→C1→C3→C4→C5→C6), כולם VERIFIED
+- Placeholders [CLUSTER-URL:Cx] + [HUB-2-PILLAR-URL] הוחלפו ב-7 קבצי HTML, PUT בחזרה ל-Shopify
+- GSC Inspection: כל 6 URLs — unknown/new (צפוי)
+- HUB-9 מוגדר כ-FULLY COMPLETE: 7 מאמרים live
+
+## FILES TOUCHED:
+- `teams/organic/hub-registry.json`
+- `docs/organic/מצב-הפרויקט-האורגני.md`
+- `docs/organic/organic-journal.md`
+- `output/hub9-reborn/` (7 HTML files)
+
+## SYSTEM IMPACT:
+- Live articles: 48 → 54
+- next_hub: HUB-10
+
+## OPEN ISSUES: GSC Manual Request Indexing — יש לבצע ידנית ב-GSC UI עבור C1-C6
+## NEXT STEP: HUB-10
+
+---
+
+## DATE: 2026-04-23
 ## TASK: CHECK E ACTIVATION — Gate 2 Template Repetition Check
 ## SCOPE: Layer 4 — Gate 2 Semantic hardening, Check E
 ## APPROVAL_TIER: T1

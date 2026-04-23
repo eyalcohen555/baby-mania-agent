@@ -1,0 +1,68 @@
+[
+  {
+    "id": "C2",
+    "status": "PASS",
+    "article_id": 686018724153,
+    "handle": "bigdei-reborn-ma-hilobshot-eizeh-midah-matima",
+    "url": "https://babymania-il.com/blogs/news/bigdei-reborn-ma-hilobshot-eizeh-midah-matima",
+    "published_at": "2026-04-23T19:16:15+03:00",
+    "verify": "PASS",
+    "published_at_confirmed": "2026-04-23T19:16:15+03:00",
+    "url_ok": true
+  },
+  {
+    "id": "C1",
+    "status": "PASS",
+    "article_id": 686018756921,
+    "handle": "eich-livhor-bobat-reborn-madrih-larokhesh-harishon",
+    "url": "https://babymania-il.com/blogs/news/eich-livhor-bobat-reborn-madrih-larokhesh-harishon",
+    "published_at": "2026-04-23T19:16:17+03:00",
+    "verify": "PASS",
+    "published_at_confirmed": "2026-04-23T19:16:17+03:00",
+    "url_ok": true
+  },
+  {
+    "id": "C3",
+    "status": "PASS",
+    "article_id": 686018789689,
+    "handle": "bobat-reborn-kematana-mi-matim-mah-levakesh",
+    "url": "https://babymania-il.com/blogs/news/bobat-reborn-kematana-mi-matim-mah-levakesh",
+    "published_at": "2026-04-23T19:16:18+03:00",
+    "verify": "PASS",
+    "published_at_confirmed": "2026-04-23T19:16:18+03:00",
+    "url_ok": true
+  },
+  {
+    "id": "C4",
+    "status": "PASS",
+    "article_id": 686018822457,
+    "handle": "eich-letapel-bobat-reborn-shmirah-nikuy-achsun",
+    "url": "https://babymania-il.com/blogs/news/eich-letapel-bobat-reborn-shmirah-nikuy-achsun",
+    "published_at": "2026-04-23T19:16:20+03:00",
+    "verify": "PASS",
+    "published_at_confirmed": "2026-04-23T19:16:20+03:00",
+    "url_ok": true
+  },
+  {
+    "id": "C5",
+    "status": "PASS",
+    "article_id": 686018855225,
+    "handle": "reborn-leyeladim-vs-reborn-leasefanim-mah-hahedel",
+    "url": "https://babymania-il.com/blogs/news/reborn-leyeladim-vs-reborn-leasefanim-mah-hahedel",
+    "published_at": "2026-04-23T19:16:21+03:00",
+    "verify": "PASS",
+    "published_at_confirmed": "2026-04-23T19:16:21+03:00",
+    "url_ok": true
+  },
+  {
+    "id": "C6",
+    "status": "PASS",
+    "article_id": 686018887993,
+    "handle": "hashvahat-bobot-reborn-midot-khomrim-tekhunyot",
+    "url": "https://babymania-il.com/blogs/news/hashvahat-bobot-reborn-midot-khomrim-tekhunyot",
+    "published_at": "2026-04-23T19:16:23+03:00",
+    "verify": "PASS",
+    "published_at_confirmed": "2026-04-23T19:16:23+03:00",
+    "url_ok": true
+  }
+]

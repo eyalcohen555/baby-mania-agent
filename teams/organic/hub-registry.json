@@ -1,12 +1,12 @@
 {
   "description": "BabyMania Organic Team — רישום מרכזי של כל ה-HUBs",
   "version": "2.0",
-  "last_updated": "2026-04-20",
+  "last_updated": "2026-04-23",
   "blog_id": 109164036409,
   "blog_url": "https://babymania-il.com/blogs/news",
   "topic_hubs_knowledge": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic צוות/docs/TOPIC-HUBS-KNOWLEDGE.md",
-  "last_published": "HUB-9",
-  "next_hub": "HUB-9 Clusters C1-C6",
+  "last_published": "HUB-9 Clusters C1-C6",
+  "next_hub": "HUB-10",
   "hub9_direction_override": "REBORN — החלפה רשמית של כיוון קודם 'רשימת קניות לתינוק' (2026-04-20)",
   "hubs": [
     {
@@ -285,11 +285,70 @@
         "url": "https://babymania-il.com/blogs/news/bobat-reborn-madrih-male-ma-ze-ech-livhor",
         "published_at": "2026-04-20"
       },
+      "clusters": [
+        {
+          "cluster_id": "C1",
+          "title": "איך לבחור בובת ריבורן — מדריך לרוכש הראשון",
+          "handle": "eich-livhor-bobat-reborn-madrih-larokhesh-harishon",
+          "article_id": 686018756921,
+          "url": "https://babymania-il.com/blogs/news/eich-livhor-bobat-reborn-madrih-larokhesh-harishon",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C2",
+          "title": "בגדי ריבורן — מה לובשים, איזה מידה מתאימה ואיפה מוצאים",
+          "handle": "bigdei-reborn-ma-hilobshot-eizeh-midah-matima",
+          "article_id": 686018724153,
+          "url": "https://babymania-il.com/blogs/news/bigdei-reborn-ma-hilobshot-eizeh-midah-matima",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C3",
+          "title": "בובת ריבורן כמתנה — מי זה מתאים לו ומה לבקש",
+          "handle": "bobat-reborn-kematana-mi-matim-mah-levakesh",
+          "article_id": 686018789689,
+          "url": "https://babymania-il.com/blogs/news/bobat-reborn-kematana-mi-matim-mah-levakesh",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C4",
+          "title": "איך לטפל בבובת ריבורן — שמירה, ניקוי ואחסון",
+          "handle": "eich-letapel-bobat-reborn-shmirah-nikuy-achsun",
+          "article_id": 686018822457,
+          "url": "https://babymania-il.com/blogs/news/eich-letapel-bobat-reborn-shmirah-nikuy-achsun",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C5",
+          "title": "ריבורן לילדים vs. ריבורן לאספנים — מה ההבדל ואיזה מתאים לכם",
+          "handle": "reborn-leyeladim-vs-reborn-leasefanim-mah-hahedel",
+          "article_id": 686018855225,
+          "url": "https://babymania-il.com/blogs/news/reborn-leyeladim-vs-reborn-leasefanim-mah-hahedel",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C6",
+          "title": "השוואת בובות ריבורן — מידות, חומרים ותכונות: כל הדגמים במקום אחד",
+          "handle": "hashvahat-bobot-reborn-midot-khomrim-tekhunyot",
+          "article_id": 686018887993,
+          "url": "https://babymania-il.com/blogs/news/hashvahat-bobot-reborn-midot-khomrim-tekhunyot",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        }
+      ],
+      "cluster_status": "ALL LIVE",
       "planned_at": "2026-04-20",
       "published_at": "2026-04-20",
+      "clusters_published_at": "2026-04-23",
       "gsc_status": "gsc_manual_requested",
       "gsc_inspection_result": "unknown",
       "gsc_note": "Inspection ran 2026-04-20 — URL unknown to Google. Manual Request Indexing completed via GSC UI 2026-04-20.",
+      "clusters_gsc_note": "C1-C6 inspected 2026-04-23 — all unknown/new. Manual Request Indexing required via GSC UI.",
       "previous_direction_rejected": "רשימת קניות לתינוק — pos 36, deferred to HUB-10",
       "notes": "נושא נבחר על בסיס GSC winners: בובת ריבורן pos 2.7, בגדי ריבורן pos 1.5 — הקטגוריה החזקה ביותר בחנות ללא HUB תומך. 6 מוצרי Reborn קיימים ב-Shopify עם SEO Layer 3 מלא."
     }

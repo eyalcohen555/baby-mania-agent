@@ -36,6 +36,37 @@
 
 ---
 
+## DATE: 2026-04-23
+## TASK: HUB-9 Clusters C1-C6 פרסום
+## SCOPE: organic — HUB-9 Reborn cluster content
+
+## WHAT CHANGED:
+- C2 (בגדי ריבורן) — article_id 686018724153, LIVE
+- C1 (איך לבחור בובת ריבורן) — article_id 686018756921, LIVE
+- C3 (ריבורן כמתנה) — article_id 686018789689, LIVE
+- C4 (טיפול בריבורן) — article_id 686018822457, LIVE
+- C5 (ריבורן לילדים vs. אספנים) — article_id 686018855225, LIVE
+- C6 (השוואת ריבורן) — article_id 686018887993, LIVE
+- Pillar + C1-C6: [CLUSTER-URL:Cx] + [HUB-2-PILLAR-URL] placeholders resolved, PUT back to Shopify
+
+## FILES TOUCHED:
+- `output/hub9-reborn/HUB9_Pillar_blog_article.html` (placeholders resolved)
+- `output/hub9-reborn/HUB9_C1_blog_article.html` through `HUB9_C6_blog_article.html`
+- `teams/organic/hub-registry.json` (C1-C6 added, next_hub=HUB-10)
+- `docs/organic/מצב-הפרויקט-האורגני.md` (HUB-9 row updated)
+- `docs/organic/organic-journal.md` (this entry)
+- `docs/management/management-journal.md`
+
+## SYSTEM IMPACT:
+- HUB-9 fully complete: 7 articles LIVE (Pillar + 6 Clusters)
+- Internal links resolved — no dead placeholders in Shopify content
+- Total live articles: 54
+
+## OPEN ISSUES: GSC Manual Request Indexing pending (C1-C6) — requires GSC UI
+## NEXT STEP: HUB-10
+
+---
+
 ## DATE: 2026-04-20
 ## TASK: GSC integration + submit HUB-8 + HUB-9
 ## SCOPE: organic — post-publish GSC flow
