@@ -24,6 +24,10 @@
 | `docs/product/shoes-journal.md` | Shoes — blockers, pipeline, rollout | שוטף |
 | `docs/product/clothing-journal.md` | Clothing — production status, issues | שוטף |
 | `docs/product/infrastructure-journal.md` | Infrastructure — orchestrator, config, routing | שוטף |
+| `docs/product/reborn/REBORN-MASTER-PROMPT.md` | Reborn — שליטה + חוקים + כפיפות למאסטר | PLANNING |
+| `docs/product/reborn/reborn-product-page-state.md` | Reborn — מצב תפעולי + כיוון מאושר | שוטף |
+| `docs/product/reborn/reborn-task-checklist.md` | Reborn — צ'ק ליסט שלבים (PHASE 1–9) | שוטף |
+| `docs/product/reborn/reborn-first-summary-report.md` | Reborn — דוח מחקר שוק ראשון (reference input בלבד) | REFERENCE |
 | `docs/organic/organic-journal.md` | Organic — HUBs, content pipeline | שוטף |
 | `docs/organic/מצב-הפרויקט-האורגני.md` | **Organic state תפעולי** — checklist + layer state | **חובה לקרוא לפני משימה אורגנית** |
 
