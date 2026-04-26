@@ -31,6 +31,24 @@
 
 סדר ביצוע: **אמת מוצרית → היררכיית דף → קופי → סוכנים**
 
+**כלל Avatar Psychology (מאושר אייל — 2026-04-26):**
+- Landing page must lead with trust + avatar dream before product links.
+- The page must answer why the customer buys: not just a doll, but a meaningful gift that creates excitement, caring play, and confidence that the parent chose correctly.
+- Main landing page objection: fear of disappointment / not like photos / wrong choice.
+- Every section must serve at least one of: אמון / חלום / פחד / בחירה נכונה / ערך רגשי / מעבר למוצר.
+
+**החלטות אייל — 2026-04-26:**
+- Hebrew names approved for Reborn dolls — each doll gets a personal Hebrew name to build emotional connection.
+- Reborn accessories entry point approved as future landing-page element, dependent on real inventory. Not to be presented as available until products exist.
+- "Our story / who is BabyMania" may appear in FAQ / trust area — no final copy yet.
+- Homepage category entry for Reborn is a future task and must not be executed without separate explicit approval from Eyal.
+
+**החלטות אייל — ביקורות ו-FAQ:**
+- Landing page reviews will not mention AliExpress — not as a source, not by name.
+- Reviews section approved as 4 short visual video cards (5–10 sec each, CapCut) based on real customer reviews.
+- If video is illustrative (not real customer footage), must be labeled: "תגובות אמיתיות של לקוחות, מוצגות בהמחשה ויזואלית." Never present as real UGC unless it is.
+- FAQ on landing page approved as 5–6 strong questions only. Detailed product/material FAQ moves to individual product pages.
+
 **מאושש מהדוח:**
 - אווטאר ראשי מאושש: הורה/סבתא קונה מתנה לילדה בת 5–10
 - זווית ראשית מאושרת: "הבובה שמגיעה בדיוק כמו בתמונות — או החזר מלא"
@@ -97,12 +115,15 @@
 **כלל מחייב: אין קופי לפני אמת מוצרית.**
 
 לפני כתיבת שורה אחת:
-- [ ] לאמת מה בדיוק כולל כל מוצר (חומר, גודל, שיער, עיניים)
-- [ ] לאמת מה מגיע בקופסה (אביזרים כלולים? מה בדיוק?)
+- [x] סוגי הבובה: Fabric type / Silicone type — מאומת מהספקית
+- [ ] לאמת מה בדיוק כולל כל מוצר (גודל, שיער, עיניים)
+- [ ] לאמת תכולת קופסה מלאה (מוצץ מגנטי? בקבוק? אביזר שלישי?)
 - [ ] לאמת מה ניתן להבטיח מול הספקית
 - [ ] לאמת מה לא ניתן להבטיח
+- [ ] תעודות בטיחות (EN71 / ASTM F963)
 
-**מצב נוכחי:** חסום — ממתין לתשובת ספקית
+**מצב נוכחי:** קלט חלקי התקבל — ממתין להשלמה
+**מקור:** `reborn-product-truth-collection.md`
 
 ---
 
@@ -165,15 +186,18 @@
 ## 14. Open Questions
 
 **שאלות מוצר — חייבות תשובה לפני PHASE 6 (קופי):**
-- [ ] מהו חומר הבובות BabyMania? (ויניל מלא / סיליקון / היברידי?)
-- [ ] מה בדיוק כלול בכל אחת מ-6 הבובות הקיימות?
-- [ ] האם המוצץ מחובר במגנט? (top complaint בשוק — 17% מהביקורות)
+- [x] מהו סוג הבובה? → Fabric type / Silicone type (מאומת מספקית)
+- [x] האם ניתן לרחוץ? → תלוי בסוג: Silicone = כן, Fabric = לא (מאומת)
+- [ ] האם המוצץ מגנטי? (נראה רגיל בתמונה — לא מאומת)
+- [ ] מה הפריט הנוסף הלא מזוהה בתמונת הספקית?
+- [ ] האם הבקבוק כלול בכל גרסה?
 - [ ] האם הבגדים מתאימים למידת הבובה?
 - [ ] האם השיער עמיד (לא נושר, לא מתייבש)?
 - [ ] האם יש הסמכת EN71 / ASTM F963 / BPA-free / phthalate-free?
 - [ ] האם יש תמונות אמיתיות (לא סטוק) של כל SKU?
 - [ ] האם יש UGC קיים מלקוחות?
 - [ ] מהי מדיניות ההחזרה בפועל (14 יום? 30 יום? על חשבון מי)?
+- [ ] מה חומר הסיליקון בדיוק (standard / platinum)?
 
 **שאלות אסטרטגיות:**
 - [ ] האם הספקית מאשרת הבטחות על חומרים?
@@ -189,13 +213,16 @@
 ## 15. System State
 
 ```
-PHASE:        PLANNING — documentation complete
-BLOCKER:      Product truth — ממתין לתשובת ספקית
-CURRENT TASK: Import + update reborn docs from first summary report
+PHASE:        PLANNING — Blueprint Draft open
+BLOCKER:      (1) Blueprint awaiting Eyal approval  (2) Product truth partial — awaiting supplier
+CURRENT TASK: Prepare Reborn landing page blueprint for Eyal review
 CODE STATUS:  אין קוד — documentation only
 SHOPIFY:      לא נגעו
 AGENTS:       לא נבנו
 REPORT:       reborn-first-summary-report.md imported 2026-04-24
+SUPPLIER:     Partial input from Beaulia Fang — fabric vs silicone types confirmed
+MARKETING:    Play & Nurture angle added as raw input (reborn-marketing-inputs.md)
+BLUEPRINT:    reborn-landing-page-blueprint.md created 2026-04-26 — draft, not approved
 ```
 
 ---
@@ -218,10 +245,21 @@ REPORT:       reborn-first-summary-report.md imported 2026-04-24
 
 ## 17. Current Task
 
-ייבוא דוח הסיכום הראשון + עדכון תיעוד ריבורן על פי ממצאיו.
+**מצב:** Blueprint לדף נחיתה ריבורן — Draft נפתח, ממתין לאישור אייל.
+
+**מסר מאושר עקרונית מאייל:**
+> "לילדים, הבחירה הנכונה היא לא תמיד הבובה הכי יקרה — אלא הבובה שהכי מתאימה למשחק, חיבוק ושימוש יומיומי."
+
+**קובץ נוצר:** `docs/product/reborn/reborn-landing-page-blueprint.md`
+**שלב:** PHASE 2 / PHASE 3 — Blueprint Draft + Avatar Psychology Layer
+
 **לא נגעים בקוד. לא נגעים ב-Shopify. לא בונים סוכנים.**
 
-**המשימה הבאה:** PHASE 5 — איסוף אמת מוצרית (ממתין לאישור אייל).
+**Task:** Prepare Reborn landing page content plan for Eyal review.
+
+**Note:** Blueprint approved. Content plan in progress (`reborn-landing-page-content-plan.md`). No final copy yet.
+
+**המשימה הבאה:** אישור אייל על Blueprint + PHASE 5 — איסוף אמת מוצרית.
 
 ---
 
