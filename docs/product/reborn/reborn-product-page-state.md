@@ -72,6 +72,12 @@
   Approved framing: נגישות + התאמה לילדים — לא הוזלת איכות.
 - Visual Rhythm rule approved: **תמונה → טקסט → תמונה → טקסט**. No back-to-back text sections. Every section must include at least one visual asset (image / video / infographic / badge). Verify compliance at spec stage before build.
 
+**החלטות אייל — FAQ דף נחיתה (2026-04-26):**
+- Landing FAQ approved for planning as 4 questions only.
+- FAQ must not duplicate existing landing page sections. Non-duplication rule: if a topic is already answered in another section — it does not enter FAQ.
+- Contact email appears as a small line under FAQ accordion — not as a FAQ question.
+- Approved 4 questions: (1) לאיזה גיל מתאימה? (2) האם נראית אמיתית ולא מפחידה? (3) איך יודעים איזו מתאימה לילדה שלי? (4) מה קורה אם הבובה לא הייתה כמו שציפיתי?
+
 **מאושש מהדוח:**
 - אווטאר ראשי מאושש: הורה/סבתא קונה מתנה לילדה בת 5–10
 - זווית ראשית מאושרת: "הבובה שמגיעה בדיוק כמו בתמונות — או החזר מלא"
