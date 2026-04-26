@@ -140,6 +140,7 @@ def rewrite_care(care_list: list, season: str, fabric_type: str = "") -> list:
         icon = card.get("icon_type", "")
 
         # hand_wash: replace with safe default if not justified by fabric data
+        # Guard: skip replacement if card_title is already the correct positive framing
         if icon == "hand_wash" and not _hand_wash_justified(fabric_type):
             rewritten.append(dict(HAND_WASH_DEFAULT))
             continue

@@ -52,7 +52,7 @@ model: claude-sonnet-4-6
 | אם intelligence מכיל | כתוב טיפול שמתאים ל... |
 |---------------------|------------------------|
 | `fabric_known = true` | הוראות ספציפיות לבד (fabric_type) |
-| `fabric_known = false` | הוראות כלליות — hand_wash בלבד (לא wash_60) |
+| `fabric_known = false` | הוראות כלליות — wash_60 כברירת מחדל (לא hand_wash) |
 | `print` מוגדר | הדגש שמירה על הדפס: "שומרת על הדפס לאורך זמן" |
 | `season = "winter"` | "שומר על החמימות אחרי כביסה" |
 
@@ -105,7 +105,7 @@ model: claude-sonnet-4-6
 | no_bleach      | ללא אקונומיקה / לא להלבין    |
 | repeat         | כביסה חוזרת — עמיד           |
 | no_tumble_dry  | ללא מייבש חשמלי               |
-| hand_wash      | כביסת יד                      |
+| hand_wash      | כביסה עדינה ביד                      |
 
 ## חוקים
 - **בדיוק 5 הוראות — לא פחות, לא יותר**
@@ -114,25 +114,31 @@ model: claude-sonnet-4-6
 - בחר icon_type מהרשימה בלבד — ללא המצאות
 - בסס על fabric_type. אם ריק — קרא תחילה את **כלל FABRIC_EMPTY** (למטה), אחר כך בחר variation path:
 
-### FABRIC_EMPTY — חסימה מוחלטת
+### FABRIC_EMPTY — כלל ברירת מחדל
 
 **אם `fabric_empty=true` או `fabric_known=false` ב-intelligence.json:**
-- `wash_60` אסור לחלוטין בכל נתיב
-- הכרטיס הראשון חייב להיות `hand_wash` בלבד
+- `hand_wash` **אסור** ככרטיס ראשון — ללא בד עדין מוכח אין הצדקה לכביסת יד
+- `wash_60` הוא הכרטיס הראשון המועדף: "כביסה עד 60°" / "בגד עמיד — נשמר כחדש"
 - כלל זה גובר על כל נתיב — כולל Path A ו-Path B
 
 **אם fabric_type ידוע (fabric_empty=false / fabric_known=true):**
-- ניתן להשתמש ב-`wash_60` בהתאם לנתיב המתאים
+- בחר לפי fabric_type: בד עדין → hand_wash מותר; בד רגיל → wash_60
 
 ---
 
   - **Path A — focus: print/design** (אם `special_feature` כולל דפוס): `no_bleach` עם מסר שמירת הדפס + `sun_dry` + `no_tumble_dry` + `iron` + `repeat`
     *(אם fabric_empty=true: החלף כל wash_60 ב-hand_wash)*
-  - **Path B — focus: durability/daily** (main_use = יומיומי, אין דפוס): `hand_wash` + `repeat` + `sun_dry` + `no_tumble_dry` + `iron`
-    *(wash_60 הוסר מ-Path B — hand_wash חובה כשאין מידע על בד)*
+  - **Path B — focus: durability/daily** (main_use = יומיומי, אין דפוס): `wash_60` + `repeat` + `sun_dry` + `no_tumble_dry` + `iron`
   - **Path C — focus: delicate/gift** (occasion = gift OR product_type includes set): `hand_wash` + `sun_dry` + `no_bleach` + `no_tumble_dry` + `iron`
   - אם thinking.yaml חסר או care לא מוגדר — השתמש ב-Path B כ-fallback של fallback
   - **אסור** לשכפל את אותן 5 שורות בדיוק בין שני מוצרים ברצף עם fabric_empty
+
+### כלל גלובלי — hand_wash כרטיס ראשון (חובה)
+
+**אסור ש-`hand_wash` יהיה הכרטיס הראשון** אלא אם `fabric_type` מכיל בד עדין מוכח:
+- בדים עדינים שמצדיקים hand_wash ראשון: `צמר`, `קשמיר`, `משי`, `לייקרה`, `אנגורה`, `שיפון`
+- בכל מקרה אחר — הכרטיס הראשון חייב להיות `wash_60`, `no_bleach`, או `sun_dry`
+- כלל זה גובר על כל נתיב ועל FABRIC_EMPTY
 - עברית בלבד לטקסט
 
 ## פלט נדרש — פורמט מדויק

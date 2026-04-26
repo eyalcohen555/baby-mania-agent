@@ -51,7 +51,7 @@ FIXED_FAQ = [
         "answer": "כן. רבים מהלקוחות שלנו בוחרים את הבגדים כמתנה ללידה. העיצוב העדין והבד הנעים הופכים אותו למתנה שימושית ונעימה להורים ולתינוק.",
     },
     {
-        "question": "מי אנחנו?",
+        "question": "הסיפור שלנו",
         "answer": "BabyMania הוא מותג לביגוד ונעלי תינוקות שנולד מתוך חוויית הורות אמיתית. אנחנו זוג הורים לשבעה ילדים והקמנו את החנות בשנת 2020 אחרי אינספור חיפושים אחר בגדים יפים ונוחים לתינוקות. את הפריטים שאנחנו בוחרים לאתר אנחנו קודם כל מלבישים לילדים שלנו ורק אז מציעים אותם בחנות.",
     },
 ]
@@ -143,6 +143,27 @@ def verify_faq(pid):
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
+
+# Safety gate — prevents accidental bulk overwrite of all clothing FAQ metafields
+_CONFIRM_FLAG = "--confirm-bulk-faq-overwrite"
+if _CONFIRM_FLAG not in sys.argv:
+    print("=" * 65)
+    print("BLOCKED: publish_faq_clothing.py")
+    print("=" * 65)
+    print()
+    print("This script overwrites baby_mania.faq for ALL clothing products.")
+    print("It BYPASSES the 06-validator pipeline gate entirely.")
+    print()
+    print(f"Re-run with:  python scripts/publish_faq_clothing.py {_CONFIRM_FLAG}")
+    print()
+    sys.exit(1)
+
+# Guard: refuse if FIXED_FAQ contains the forbidden question title
+for _q in FIXED_FAQ:
+    if "מי אנחנו" in _q.get("question", ""):
+        print("ERROR: FIXED_FAQ contains forbidden question title 'מי אנחנו?'")
+        print("       Update to 'הסיפור שלנו' before running.")
+        sys.exit(1)
 
 if not TOKEN:
     print("ERROR: SHOPIFY_ACCESS_TOKEN not set")
