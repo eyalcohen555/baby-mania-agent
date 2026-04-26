@@ -49,6 +49,29 @@
 - If video is illustrative (not real customer footage), must be labeled: "תגובות אמיתיות של לקוחות, מוצגות בהמחשה ויזואלית." Never present as real UGC unless it is.
 - FAQ on landing page approved as 5–6 strong questions only. Detailed product/material FAQ moves to individual product pages.
 
+**החלטות אייל — WhatsApp, יצירת קשר, FAQ, הסיפור שלנו, URL (2026-04-26):**
+- WhatsApp not included in initial landing page. Future — only when Eyal provides phone/WhatsApp number.
+- Contact option for launch: email link only (for customers with additional questions). Final address and wording TBD.
+- Our story ("מי עומד מאחורי BabyMania?") appears only inside FAQ — not a separate trust section.
+- FAQ should answer main category-level questions before product selection — not product-specific FAQ.
+- Hebrew URL preferred if technically safe (Shopify/Dawn compatible). Final URL still open — requires research + recommendation before decision.
+- Contact section will reuse existing BabyMania contact section (as in Clothing), adapted for Reborn. Approved email: babymania.israel@gmail.com
+- No new sections may be created without explicit Eyal approval — reuse existing sections first.
+- Reborn Video Review Cards is the only currently approved new-section candidate. Planning/spec only — no code until spec is approved by Eyal.
+
+**החלטות אייל — Hero ו-Trust Promise (2026-04-26):**
+- Hero headline approved for planning: "בובת ריבורן שהיא הרבה יותר ממתנה"
+- Hero subtitle approved for planning: "לא עוד צעצוע שנשכח — אלא בובה שמכניסה חום, דמיון ורגעים של אחריות אמיתית."
+- Trust promise approved: "הבובה מגיעה כמו בתמונות — אחרת תקבלו את כספכם חזרה"
+- "עד 14 יום לפי מדיניות ההחזרות" must NOT appear inside the trust badge / main visual. May appear as a small separate link only if needed.
+
+**החלטות אייל — מיצוב מחיר ו-Visual Rhythm (2026-04-26):**
+- Accessibility Positioning approved for planning: BabyMania focuses on child-suitable dolls via overseas specialized manufacturers — enables accessible pricing vs. Israeli handmade collector dolls.
+  Blocked framing: "זול כי מחו"ל" — לא לנסח כך.
+  Blocked claim: "עבודת יד" per specific doll without PHASE 5 verification.
+  Approved framing: נגישות + התאמה לילדים — לא הוזלת איכות.
+- Visual Rhythm rule approved: **תמונה → טקסט → תמונה → טקסט**. No back-to-back text sections. Every section must include at least one visual asset (image / video / infographic / badge). Verify compliance at spec stage before build.
+
 **מאושש מהדוח:**
 - אווטאר ראשי מאושש: הורה/סבתא קונה מתנה לילדה בת 5–10
 - זווית ראשית מאושרת: "הבובה שמגיעה בדיוק כמו בתמונות — או החזר מלא"
@@ -255,11 +278,11 @@ BLUEPRINT:    reborn-landing-page-blueprint.md created 2026-04-26 — draft, not
 
 **לא נגעים בקוד. לא נגעים ב-Shopify. לא בונים סוכנים.**
 
-**Task:** Prepare Reborn landing page content plan for Eyal review.
+**Task:** Prepare section reuse/spec plan before landing page copy/build.
 
-**Note:** Blueprint approved. Content plan in progress (`reborn-landing-page-content-plan.md`). No final copy yet.
+**Note:** Blueprint + Content Plan created. WhatsApp/FAQ/contact/URL decisions recorded. No final copy yet.
 
-**המשימה הבאה:** אישור אייל על Blueprint + PHASE 5 — איסוף אמת מוצרית.
+**המשימה הבאה:** (1) לבחור כתובת מייל להצגה בדף. (2) לבדוק URL בעברית מול Shopify/Dawn ולהחזיר המלצה. (3) אישור אייל על Content Plan → PHASE 6.
 
 ---
 
