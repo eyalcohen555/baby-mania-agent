@@ -154,6 +154,11 @@
 **מצב נוכחי:** קלט חלקי התקבל — ממתין להשלמה
 **מקור:** `reborn-product-truth-collection.md`
 
+**Product-specific truth file created — 2026-04-27:**
+- PID 9689589383481 (Levi Reborn — best seller): `docs/product/reborn/products/9689589383481-levi-reborn-product-truth.md`
+- Supplier info (Beaulia Fang) applies only to PID 9689589383481, not all Reborn dolls.
+- Other SKUs require independent verification before any copy or claims.
+
 ---
 
 ## 10. Doll Types Research

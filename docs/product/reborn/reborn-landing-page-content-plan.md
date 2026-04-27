@@ -215,6 +215,12 @@ Silicone type = ניתן לרחיצה, זמין כבן/בת.
 - "Medical-grade silicone" — לא מאומת
 - תעודות בטיחות ספציפיות — ממתין ל-PHASE 5
 
+**⚠️ Product Truth Note:**
+PID 9689589383481 (Levi Reborn) has a product-specific truth file:
+`docs/product/reborn/products/9689589383481-levi-reborn-product-truth.md`
+Landing page copy must stay category-level — does not reflect all dolls.
+Product-specific details (accessories, pacifier, exact silicone, boy/girl difference) go to Levi product page only.
+
 **Open questions for Eyal:**
 - האם להציג כ-2 שורות לכל סוג, או כטבלת השוואה?
 - אם רוב הבובות הן מסוג אחד — האם להפשיט לקריאה יחידה?

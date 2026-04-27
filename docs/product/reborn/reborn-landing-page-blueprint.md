@@ -214,6 +214,10 @@ No final copy, no Shopify work, no code, and no section lock before Eyal approva
 - Silicone type → זמין כבן/בת, ניתן לרחיצה
 **מה אסור לומר (NOT VERIFIED):**
 - "סיליקון מלא" / "Medical-grade" / תעודות בטיחות ספציפיות
+**⚠️ הערת מערכת — Product Truth:**
+המידע המפורט מהספקית (Beaulia Fang) נשמר בקובץ מוצר ספציפי ל-PID 9689589383481 בלבד:
+`docs/product/reborn/products/9689589383481-levi-reborn-product-truth.md`
+דף הנחיתה נשאר כללי ברמת קטגוריה — לא מבטיח שכל הבובות זהות בחומר, גודל, תכולה או אפשרות רחיצה.
 **שאלות לאייל:**
 - האם להציג כסעיף קצר של 2 שורות לכל סוג, או כטבלת השוואה?
 - האם לכלול טווח מחירים בשלב זה?
