@@ -272,9 +272,21 @@
 
 ## BUILD PREP — לפני בנייה בפועל
 
-סטטוס: **עתידי — לפני PHASE 6 build**
+סטטוס: **חלקי — Hero images נוצרו, שאר ה-assets חסומים**
 
 - [x] פלטת BabyMania בפועל חולצה מה-theme ואושרה לתכנון ריבורן (ראה blueprint § 3b).
+- [x] Hero Desktop Image (AI) — `assets/reborn/landing/reborn-hero-desktop.webp` — 1920×960 WebP — נוצר ואושר לפריוויו מקומי (2026-04-27).
+- [x] Hero Mobile Image (AI) — `assets/reborn/landing/reborn-hero-mobile.webp` — 768×960 WebP — נוצר ואושר לפריוויו מקומי (2026-04-27).
+- [x] Hero images מחוברות ל-`output/pages/reborn-landing/reborn-landing-preview.html` via `<picture>` / `<source>` — local preview only. Shopify לא נגע.
+- [x] S5 Lifestyle Image (AI) — אושרה ויזואלית (2026-04-27) — ילדה מחבקת בובת ריבורן עם אוזני ארנב, אינטריאור קרם.
+- [x] S5 Lifestyle Image — מחוברת לפריוויו: `assets/reborn/landing/reborn-s5-lifestyle.webp` (800×1000 WebP, local only, 2026-04-27).
+- [ ] S5 Lifestyle Video — ⛔ POSTPONED — Veo quota 0/0 גם לאחר תיקון כרטיס אשראי. S5 ממשיך כתמונה בלבד. לא חוסם המשך. סקריפט מוכן ב-`_reborn_s5_video_test.py` (לא committed).
+- [ ] **FOLLOW-UP: לחקור כיצד לפתוח Veo quota ב-Google AI Studio** — Gemini/Imagen תקינים, Veo בלבד חסום. ייתכן שדורש Vertex AI / plan שונה / הפעלה ידנית בקונסול.
+- [x] **כלל card ratio נקבע (2026-04-27):** תמונות עתידיות לכרטיסים (S4/S7 ועוד) = 1:1, ברירת מחדל 900×900 WebP. לא חל על Hero/S3/S5 שכבר אושרו.
+- [x] S4 Fabric Body Image — `assets/reborn/landing/reborn-s4-fabric-body.webp` — 900×900 WebP — מחובר לפריוויו (2026-04-27).
+- [x] S4 Silicone Body Image — `assets/reborn/landing/reborn-s4-silicone-body.webp` — 900×900 WebP — מחובר לפריוויו (2026-04-27).
+- [x] S3 Gift Lifestyle Image (AI) — אושרה ויזואלית (2026-04-27) — סבתא מחזיקה בובת ריבורן עם שמלה לבנה ליד שולחן מתנה.
+- [x] S3 Gift Lifestyle Image — מחוברת לפריוויו: `assets/reborn/landing/reborn-s3-gift-lifestyle.webp` (1000×600 WebP, local only).
 - [ ] לוודא בבנייה שכל CSS משתמש בפלטה המאושרת — אסור להשתמש בצבעים חסומים.
 - [ ] למפות סקשנים קיימים במערכת לפני כל בנייה — לזהות מה ניתן למחזר.
 - [ ] לזהות את סקשן יצירת הקשר הקיים בביגוד ולהתאים לריבורן.

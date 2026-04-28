@@ -9,7 +9,7 @@ import time
 import requests
 from pathlib import Path
 from shopify_client import _headers, BASE_URL
-from qa_gate import preflight_qa_check, check_article_qa
+from qa_gate import preflight_qa_check, check_article_qa, check_product_links
 
 BLOG_ID = 109164036409
 STAGE_DIR = Path(r"C:\Projects\baby-mania-agent\output\stage-outputs")
@@ -106,6 +106,7 @@ for i, art in enumerate(ARTICLES, 1):
 
     html_text = filepath.read_text(encoding="utf-8")
     body_html = extract_body_html(html_text)
+    check_product_links(body_html, art["cluster_id"])
 
     article = create_article(
         blog_id=BLOG_ID,

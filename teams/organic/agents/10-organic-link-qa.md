@@ -125,6 +125,22 @@ Reason: HUB-1 cycle — C1 and C4 had staged anchors that were never wrapped (pl
 
 ---
 
+### 18. Hebrew Grammar — "תינוק בן X חודשים" ⛔ (added 2026-04-11)
+
+Scan all `<summary>` tags and `"name":` fields inside `<script type="application/ld+json">` in FAQ sections.
+
+| Result | Condition |
+|--------|-----------|
+| PASS | Every FAQ question that refers to a baby by age uses "תינוק **בן** X חודשים" |
+| FAIL | Any FAQ question contains "תינוק X חודשים" (missing "בן") |
+
+Note: This check applies ONLY to `<summary>` and JSON-LD `"name"` fields — NOT to H1/H2 keywords.
+Regex to scan: `תינוק \d+ חודשים` (without בן between תינוק and the number)
+
+Reason: HUB-8 cycle (2026-04-11) — C2 and C5 had "תינוק 3 חודשים" in FAQ summaries (grammatically incorrect Hebrew). The SEO keyword form is acceptable in headings but not in visible question text.
+
+---
+
 ### 15. Inline Styles Check ⛔ (added v3.0 — Presentation Spec Lock)
 
 Scan full body_html for inline style attributes.
@@ -154,23 +170,59 @@ Reason: Presentation Spec v1.0 — hero architecture moved to Liquid template. H
 
 ---
 
-### 14. Product Handle Live Validation ⛔ (added 2026-03-10)
+### 14. Product Handle Live Validation ⛔ (added 2026-03-10, enforced 2026-04-12)
 
 For every `/products/{handle}` href in the article:
 
 | Result | Condition |
 |--------|-----------|
-| PASS | HTTP GET returns 200 or 301→200 |
+| PASS | Handle found verbatim in `shared/product-context/*.yaml` (`product_handle` field) AND HTTP GET returns 200 |
 | FAIL | HTTP 404 on any product handle |
-| FAIL | Handle matches known broken list: `easy-sleep`, `easysleep`, `easy-sleep-tm` |
+| FAIL | Handle matches known broken list: `easy-sleep`, `easysleep`, `easy-sleep-tm`, `baby-sleep-pro` |
+| FAIL | Handle not found in any `shared/product-context/*.yaml` file |
+| FAIL | Handle contains Hebrew characters, `™`, `%`-encoding, uppercase letters, or spaces |
 
-**HUB-1 canonical product URL:**
+**Character pattern check (applied before HTTP check):**
+Handle must match exactly: `^[a-z0-9\-]+$`
+If it doesn't → **FAIL immediately, do not proceed to HTTP check.**
+
+**YAML source check:**
+The handle string must appear verbatim as the value of `product_handle:` in a file under `shared/product-context/`.
+If no YAML file contains this handle → **FAIL. Block publish.**
+
+**Known broken handles (never use):**
+- `easy-sleep`, `easysleep`, `easy-sleep-tm` — HUB-1 retrofit cycle (2026-03-10)
+- `baby-sleep-pro` — HUB-8 cycle (2026-04-11) — handle doesn't exist in store
+
+**BabySleep Pro canonical URL:**
 `/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine`
 Source: `shared/product-context/babysleep-pro.yaml`
 
-Reason: HUB-1 retrofit cycle (2026-03-10) — all 5 articles had `/products/easy-sleep` (HTTP 404) as product links.
-Root cause: `template_suffix_current: easy-sleep` in product YAML was mistakenly treated as the URL handle.
-Rule: always HTTP-verify product handles before accepting them as valid link targets.
+Reason: HUB-1 retrofit cycle (2026-03-10) — all 5 articles had `/products/easy-sleep` (HTTP 404).
+HUB-8 cycle (2026-04-11) — 5 articles had `/products/baby-sleep-pro` (HTTP 404).
+Root cause: agent04 invented short-form handles instead of using the verified handle from product YAML.
+Rule: YAML source is the only permitted origin for product handles. No slug generation, no shortening.
+
+---
+
+### 17. Image Uniqueness Check ⛔ (added 2026-04-11)
+
+For every `<img src="...">` in the article HTML:
+
+| Result | Condition |
+|--------|-----------|
+| PASS | Every `src` URL appears exactly once in the article |
+| FAIL | Any `src` URL appears more than once (same image used twice) |
+| FAIL | Any `src` URL that appears in a `product-card-inline` also appears in a `figure.article-image` |
+| FAIL | Two `product-card-inline` elements share the same `/products/{handle}` href |
+
+**How to check:**
+1. Extract all `src=` values from the HTML
+2. Run `sort | uniq -d` — any output = FAIL
+3. Cross-check: `product-card-inline img src` vs `figure.article-image img src` — overlap = FAIL
+4. Extract all `product-card-inline` hrefs — duplicates = FAIL
+
+Reason: HUB-8 cycle (2026-04-11) — product card images reused article body images (same `src`), and same product appeared in two cards. Root cause: agent04 used whatever CDN image was already in context without checking uniqueness.
 
 ---
 

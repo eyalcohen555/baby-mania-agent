@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import requests
 from shopify_client import _headers, BASE_URL
-from qa_gate import preflight_qa_check, check_article_qa
+from qa_gate import preflight_qa_check, check_article_qa, check_product_links
 
 BLOG_ID = 109164036409
 HUB4_DIR = Path(r"C:\Users\3024e\Downloads\קלוד קוד\teams\organic\hub4-sensitive-baby-skin")
@@ -79,6 +79,7 @@ def publish_article(article_def: dict) -> dict:
     check_article_qa(HUB4_DIR, article_def)  # Gate: blocks if QA missing or FAIL
     filepath = HUB4_DIR / article_def["file"]
     body_html = read_body_html(filepath)
+    check_product_links(body_html, article_def["cluster_id"])
 
     url = f"{BASE_URL}/blogs/{BLOG_ID}/articles.json"
     payload = {

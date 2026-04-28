@@ -349,6 +349,27 @@ def extract_field(content: str, field: str) -> str:
     return ""
 
 
+def send_result_body(result_content: str):
+    """
+    Send full result body to Telegram.
+    - Empty → sends NO RESULT BODY notice.
+    - ≤ 4000 chars → single message.
+    - > 4000 chars → chunked messages labeled (חלק 1/N ...).
+    """
+    CHUNK = 4000
+    if not result_content or not result_content.strip():
+        send("📋 תוצאה:\nNO RESULT BODY")
+        return
+    text = result_content.strip()
+    if len(text) <= CHUNK:
+        send(f"📋 תוצאה:\n{text}")
+        return
+    chunks = [text[i:i + CHUNK] for i in range(0, len(text), CHUNK)]
+    total  = len(chunks)
+    for idx, chunk in enumerate(chunks, 1):
+        send(f"📋 תוצאה (חלק {idx}/{total}):\n{chunk}")
+
+
 def extract_snippet(content, event_type, max_len=200):
     """
     Return a short, relevant excerpt from last-result.md for Telegram display.
@@ -489,7 +510,7 @@ def handle_callback(call):
     elif data == "reply":
         _set_waiting(True)
         bot.answer_callback_query(call.id, "שלח את התשובה שלך")
-        send("✏️ שלח את התשובה שלך עכשיו — ההודעה הבאה תישלח ל-Claude")
+        send("✏️ שלח את התשובה שלך עכשיו — ההודעה הבאה תועבר למערכת")
 
     elif data == "skip":
         write_response("skip")
@@ -514,13 +535,13 @@ def handle_callback(call):
             send("⚠️ אין משימה ממתינה לאישור")
             return
         if is_bridge_busy():
-            bot.answer_callback_query(call.id, "Bridge עסוק!")
-            send("🔒 ה-Bridge עסוק כרגע — נסה שוב אחרי שהמשימה הנוכחית תסתיים")
+            bot.answer_callback_query(call.id, "המערכת עסוקה!")
+            send("🔒 המערכת עסוקה כרגע — נסה שוב אחרי שהמשימה הנוכחית תסתיים")
             _clear_pending_task()
             return
         if write_task(task_text):
             bot.answer_callback_query(call.id, "משימה נשלחה!")
-            send(f"📤 משימה נכתבה ל-Bridge:\n{task_text[:200]}")
+            send(f"📤 המשימה נשלחה למערכת:\n{task_text[:200]}")
         else:
             bot.answer_callback_query(call.id, "שגיאה בכתיבה")
             send("⚠️ שגיאה בכתיבת המשימה — נסה שוב")
@@ -587,26 +608,24 @@ def monitor_loop(stop_event):
                     pass  # silent consume
 
                 elif current_status == "running":
-                    pass  # suppressed — no STARTED/RUNNING notifications per exception policy
+                    task_id = extract_field(current_status_content, "task_id")
+                    tier    = extract_field(current_status_content, "approval_tier")
+                    id_str  = f"[{task_id}] " if task_id else ""
+                    tier_str = f" ({tier})" if tier else ""
+                    detail_short = current_detail[:120] if current_detail else ""
+                    send(f"🔄 {id_str}משימה התחילה\n{detail_short}")
 
                 elif current_status in ("done", "pushed"):
-                    # Only notify for T2/T3 — T1 tasks complete silently
+                    # All tiers — completion notice + full result body
                     tier    = extract_field(current_status_content, "approval_tier")
                     task_id = extract_field(current_status_content, "task_id")
                     id_str  = f"[{task_id}] " if task_id else ""
-                    if tier in ("T2", "T3"):
-                        send(f"✅ {id_str}משימה הסתיימה (tier: {tier})\n{current_detail}")
-                        current_result = read_file(RESULT_FILE)
-                        if current_result and current_result != last_result_sent:
-                            result_preview = current_result[:1500]
-                            if len(current_result) > 1500:
-                                result_preview += "\n\n... (/result לתוצאה מלאה)"
-                            send(f"📋 תוצאה:\n{result_preview}")
-                            last_result_sent = current_result
-                            result_sent_this_cycle = True
-                    # T1 done — update dedup state silently
-                    elif tier == "T1":
-                        print(f"[monitor] T1 DONE [{task_id}] — suppressed per exception policy")
+                    send(f"✅ {id_str}משימה הסתיימה\n{current_detail}")
+                    current_result = read_file(RESULT_FILE)
+                    if current_result != last_result_sent:
+                        send_result_body(current_result)
+                        last_result_sent = current_result
+                        result_sent_this_cycle = True
 
                 elif current_status == "failed":
                     # BLOCKED event (Phase 2 — with buttons)
@@ -652,16 +671,16 @@ def cmd_start(message):
     status, _ = parse_status(status_content)
     emoji = status_emoji(status) if status else "⏳"
     send(
-        f"BabyMania Bridge Bot\n"
+        f"בוט BabyMania\n"
         f"מצב: {emoji} {status or 'לא ידוע'}\n\n"
         "━━━ פקודות ━━━\n"
-        "/status — מצב Bridge + משימה ממתינה\n"
+        "/status — מצב המערכת + משימה ממתינה\n"
         "/result — תוצאה אחרונה\n"
         "/cancel — בטל משימה בתור\n"
         "/log    — היסטוריית משימות\n"
         "/ping   — בדוק חיבור\n\n"
         "━━━ שליחת משימה ━━━\n"
-        "שלח הודעה חופשית → כפתור אישור → Bridge מריץ\n\n"
+        "שלח הודעה חופשית → כפתור אישור → המערכת מריצה\n\n"
         "━━━ כפתורים אוטומטיים ━━━\n"
         "⚠️ אישור → אשר / דחה\n"
         "❓ שאלה → שלח תשובה / דלג\n"
@@ -676,7 +695,7 @@ def cmd_ping(message):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     status_content = read_file(STATUS_FILE)
     status, _ = parse_status(status_content)
-    send(f"pong — {ts}\nbridge: {status or 'unknown'}")
+    send(f"✅ מחובר — {ts}\nמצב: {status or 'לא ידוע'}")
 
 
 @bot.message_handler(commands=["status"])
@@ -687,7 +706,7 @@ def cmd_status(message):
     content = read_file(STATUS_FILE)
     if content:
         first_line = content.splitlines()[0]
-        msg = f"{status_emoji(first_line)} סטטוס Bridge\n{content}"
+        msg = f"{status_emoji(first_line)} מצב מערכת\n{content}"
         # Show pending task if any
         pending = read_file(TASK_FILE)
         if pending:
@@ -695,7 +714,7 @@ def cmd_status(message):
             msg += f"\n\n📋 משימה ממתינה:\n{preview}"
         send(msg)
     else:
-        send("bridge/status.md לא נמצא או ריק")
+        send("המערכת אינה זמינה כרגע")
 
 
 @bot.message_handler(commands=["result"])
@@ -707,7 +726,7 @@ def cmd_result(message):
     if content:
         send(f"📋 תוצאה אחרונה:\n{content}")
     else:
-        send("bridge/last-result.md לא נמצא או ריק")
+        send("אין תוצאה זמינה כרגע")
 
 
 @bot.message_handler(commands=["cancel"])
@@ -720,7 +739,7 @@ def cmd_cancel(message):
     task_id = extract_field(status_content, "task_id")
 
     if current_status in ("running", "waiting_response"):
-        send(f"⚠️ משימה רצה כרגע [{task_id}] — לא ניתן לבטל. שלח 'stop' דרך הכפתורים אם נחסמה.")
+        send(f"⚠️ משימה רצה כרגע [{task_id}] — לא ניתן לבטל. השתמש בכפתור 'עצור' אם המשימה נתקעה.")
         return
 
     removed = cancel_task()
@@ -731,7 +750,7 @@ def cmd_cancel(message):
         log_task(removed, f"CANCELLED_BY_USER{id_str}")
         send(f"🗑️ משימה בוטלה{id_str}:\n{removed[:200]}")
     else:
-        send("אין משימה בתור לביטול — Bridge במצב idle")
+        send("אין משימה בתור לביטול — המערכת פנויה")
 
 
 @bot.message_handler(commands=["log"])
@@ -769,7 +788,7 @@ def catch_all(message):
     # Guard: bridge must be idle
     if is_bridge_busy():
         send(
-            "🔒 ה-Bridge עסוק כרגע — לא ניתן לשלוח משימה חדשה\n"
+            "🔒 המערכת עסוקה כרגע — לא ניתן לשלוח משימה חדשה\n"
             "השתמש ב-/status לבדוק מצב"
         )
         return
@@ -790,14 +809,14 @@ def catch_all(message):
         telebot.types.InlineKeyboardButton("❌ בטל",       callback_data="task_cancel"),
     )
     preview = text[:300] + ("..." if len(text) > 300 else "")
-    send_with_markup(f"📝 משימה חדשה:\n\n{preview}\n\nלשלוח ל-Bridge?", markup)
+    send_with_markup(f"📝 משימה חדשה:\n\n{preview}\n\nלשלוח למערכת?", markup)
 
 
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     print(f"[TG Bot] starting — chat_id={CHAT_ID}")
-    send("BabyMania Bridge Bot מחובר ופעיל\nשלח הודעה = משימה חדשה | /help לתפריט")
+    send("בוט BabyMania מחובר ופעיל\nשלח הודעה = משימה חדשה | /help לתפריט")
 
     stop_event = threading.Event()
     monitor_thread = threading.Thread(

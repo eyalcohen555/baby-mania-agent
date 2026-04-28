@@ -140,7 +140,7 @@ def write_metafields(product_id: str, metafields: dict, skip_if_exists: set = fr
     skip_if_exists: keys to skip if they already exist in Shopify (preserve approved values).
     """
     namespace = "baby_mania"
-    json_keys = {"benefits", "care_instructions", "faq", "fabric_tags"}
+    json_keys = {"benefits", "care_instructions", "faq", "fabric_tags", "accordion_blocks"}
 
     existing_resp = shopify_get(
         f"products/{product_id}/metafields.json?namespace={namespace}&limit=250"

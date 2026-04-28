@@ -9,6 +9,7 @@ Usage:
 
 import argparse
 import os
+import re
 import subprocess
 import sys
 from datetime import datetime
@@ -109,12 +110,16 @@ def analyze_output(output: str, task_text: str, round_num: int) -> str:
 
     # 4. False success — claims PASS but no meaningful content
     has_evidence = any(kw in lower for kw in (
-        "files_updated", "changes_made", "updated:", "created:", "fixed", "wrote"
-    ))
+        "files_updated", "changes_made", "updated:", "created:", "fixed", "wrote",
+        "no further actions", "no further steps", "task complete", "contains the",
+    )) or bool(re.search(r"`[^`]+\.[a-z]{2,5}`", output))  # file path in backticks
     false_success_signals = [
-        "status: pass" in lower and len(output.strip()) < 120 and not has_evidence,
-        output.strip().lower() in ("done", "ok", "pass") and len(output.strip()) < 10,
-        output.strip().endswith("?"),           # ended with a question
+        # "STATUS: PASS" with trivially short output and zero evidence
+        "status: pass" in lower and len(output.strip()) < 80 and not has_evidence,
+        # Single-word non-answer (exact match only)
+        output.strip().lower() in ("done", "ok", "pass"),
+        # Ended with a question — Claude asking instead of doing
+        output.strip().endswith("?"),
     ]
     if any(false_success_signals):
         return FALSE_SUCCESS

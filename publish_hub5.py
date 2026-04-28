@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import requests
 from shopify_client import _headers, BASE_URL
-from qa_gate import preflight_qa_check, check_article_qa
+from qa_gate import preflight_qa_check, check_article_qa, check_product_links
 
 BLOG_ID = 109164036409
 HUB5_DIR = Path("C:/Projects/baby-mania-agent/output/hub5-baby-gifts")
@@ -121,6 +121,7 @@ def publish_article(article_def: dict) -> dict:
         }
 
     body_html = read_body_html(filepath)
+    check_product_links(body_html, article_def["cluster_id"])
 
     payload = {
         "article": {

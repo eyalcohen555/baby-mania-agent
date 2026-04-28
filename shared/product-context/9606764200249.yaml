@@ -53,15 +53,16 @@ description_raw: '👟 סניקרס אופנתיות לתינוקות – בטי
   הזמינו עכשיו את הסניקרס שכולם מדברים עליהן ותיהנו מהשילוב המושלם של אופנה, בטיחות
   ונוחות. כי צעדים ראשונים עושים עם ביטחון. ועם סטייל.'
 fabric_type: ''
+faq_overwrite: true
 fetched_at: '2026-03-17T22:03:45.217152'
 generated:
-  published: false
+  published: true
   validated: false
 main_use: ''
 price: '169.00'
 product_handle: childrens-sneakers-boys-girls-soft-sole-non-slip-casual-student-running-shoes-baby-kids-school-sports-shoes-warm-cotton-shoes
 product_id: '9606764200249'
-product_template_type: ''
+product_template_type: shoes
 product_title: סניקרס לתינוקות מונעות החלקה מבית בייבי מניה
 product_type: ''
 tags: []

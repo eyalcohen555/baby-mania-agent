@@ -68,6 +68,24 @@ model: claude-sonnet-4-6
 - אסור לשנות שום שדה אחר במוצר — רק תגיות
 - אסור תגיות בעברית
 
+### כללים canonical (חובה לשמור)
+
+**Use-case:**
+- השתמש תמיד ב-`everyday-baby-wear` — אסור `everyday-wear`
+
+**Gift:**
+- `baby-gift` — תמיד מותר
+- `baby-shower-gift` — רק אם המוצר מתאים במיוחד למתנה: סט, לבוש חגיגי, או מוצר פרימיום
+
+**Category:**
+- מקסימום 2 תגיות category למוצר
+- category = תגית שמתארת **מה** המוצר (למשל: `baby-dress`, `baby-sandals`)
+
+**Anti-duplicate:**
+- אין יותר מתגית אחת לאותו concept
+- אם יש overlap בין שתי תגיות — בחר את הספציפית יותר
+- דוגמה: `toddler-girl-dress` + `girls-clothing` → השאר רק `toddler-girl-dress`
+
 ## דוגמה
 
 עבור מוצר "WarmNest™ אוברול חורף" עם fabric_type "פליז":

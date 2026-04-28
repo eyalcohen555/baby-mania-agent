@@ -351,14 +351,15 @@ message_budget:
     card_3: {cluster: independence_milestone, message: "..."}
     card_4: {cluster: style_emotion,          message: "..."}
     card_5: {cluster: event_occasion,         message: "..."}
-    note: "4 or 6 cards per track. Delete irrelevant fields."
+    card_6: {cluster: stability_confidence,   message: "..."}
+    note: "6 required always. Do not delete."
     forbidden: [sizing_fit, development_movement]
 
   accordion_blocks:
     block_1: {cluster: development_movement,   angle: "..."}
     block_2: {cluster: independence_milestone, angle: "..."}
-    block_3: {cluster: morning_ease,           angle: "..."}
-    note: "2-3 blocks per track. Delete the rest."
+    block_3: {cluster: stability_confidence,   angle: "..."}
+    note: "3 blocks required. Do not delete."
     forbidden: [sizing_fit, style_emotion, event_occasion]
 
   faq:

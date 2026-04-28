@@ -75,6 +75,9 @@ DATA → LOGIC → OUTPUT
 | `docs/product/reborn/REBORN-MASTER-PROMPT.md` | מסמך זה — שליטה + חוקים |
 | `docs/product/reborn/reborn-product-page-state.md` | מצב תפעולי + כיוון מאושר |
 | `docs/product/reborn/reborn-task-checklist.md` | צ'ק ליסט שלבים + פריטים |
+| `docs/product/reborn/reborn-first-summary-report.md` | דוח מחקר שוק ראשון — reference input בלבד |
+| `docs/product/reborn/reborn-product-truth-collection.md` | אמת מוצרית מהספקית — מקור יחיד לקופי |
+| `docs/product/reborn/reborn-marketing-inputs.md` | קלטי שיווק גולמיים — ממתינים לעיבוד PHASE 6 |
 
 ---
 

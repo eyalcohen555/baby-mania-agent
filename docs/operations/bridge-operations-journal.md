@@ -214,3 +214,20 @@ bridge.py (singleton-safe) ← Task Scheduler (BabyMania Bridge AutoStart)
 - [ ] לוודא ש-`ANTHROPIC_API_KEY` מוגדר ב-GitHub Secrets של הrepo
 
 ## NEXT STEP: shoes pipeline test-run
+
+---
+
+## DATE: 2026-03-30
+## TASK: Document Real Python Start Rule
+## SCOPE: master prompt + runtime docs — תיעוד בלבד
+## WHAT CHANGED:
+- `BABYMANIA-MASTER-PROMPT.md`: שכתוב סקציית startup — הפרדה ברורה בין אוטומטי (bat) לידני (Python מלא), הוספת דוגמאות conductor (plan/dry-run/resume), סימון "אסור" מפורש ל-`python bridge.py`
+- `docs/operations/bridge-runtime-status.md`: עדכון "אם bridge לא רץ" — נתיב Python מלא במקום start-bridge.bat
+
+## FILES TOUCHED:
+- `BABYMANIA-MASTER-PROMPT.md`
+- `docs/operations/bridge-runtime-status.md`
+
+## SYSTEM IMPACT: תיעוד בלבד — אין שינוי קוד
+## OPEN ISSUES: none
+## NEXT STEP: —

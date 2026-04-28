@@ -105,6 +105,148 @@
         "padding_bottom": 12
       }
     },
+    "bm_hero": {
+      "type": "bm-store-hero",
+      "settings": {
+        "eyebrow": "",
+        "headline": "",
+        "subheadline": "",
+        "show_trust_bar": true
+      }
+    },
+    "bm_store_banner": {
+      "type": "bm-store-banner",
+      "settings": {
+        "msg1_before": "קנייה מעל ₪299 –",
+        "msg1_highlight": "מתנה חינם",
+        "msg2": "משלוחים חינם לכל הארץ",
+        "rotation_interval": 4,
+        "show_banner": true
+      }
+    },
+    "bm_benefits": {
+      "type": "bm-store-benefits",
+      "settings": {
+        "show_header": true,
+        "eyebrow": "",
+        "title": "",
+        "subtitle": ""
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌿",
+            "title": "נעים ללבישה",
+            "description": "נבחר כדי להעניק תחושת נוחות נעימה לאורך כל היום."
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "💧",
+            "title": "נושם ומסדיר חום",
+            "description": "מאפשר מחזור אוויר טבעי ומונע הזעה יתרה."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "✂️",
+            "title": "תפירה מוקפדת",
+            "description": "תפרים שטוחים פנימה — ללא חיכוך מיותר על העור."
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🔄",
+            "title": "שומר צורה",
+            "description": "נשאר נעים ושלם אחרי כביסות חוזרות ונשנות."
+          }
+        },
+        "benefit_5": {
+          "type": "benefit",
+          "settings": {
+            "icon": "⚡",
+            "title": "הלבשה קלה",
+            "description": "נפתח בשתי ידיים בקלות — גם בשעות הלילה."
+          }
+        },
+        "benefit_6": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🎨",
+            "title": "בד שנשמר לאורך זמן",
+            "description": "שומר על הרכות והצורה גם אחרי כביסות רבות"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4",
+        "benefit_5",
+        "benefit_6"
+      ]
+    },
+    "bm_fabric": {
+      "type": "bm-store-fabric",
+      "settings": {
+        "title": "",
+        "body": "",
+        "body_2": "",
+        "highlight_quote": ""
+      }
+    },
+    "bm_whats_special": {
+      "type": "bm-store-whats-special",
+      "settings": {}
+    },
+    "bm_sizes": {
+      "type": "bm-store-sizes",
+      "settings": {
+        "section_title": "מדריך מידות",
+        "note_text": "לתינוקות גבוהים לגילם — מומלץ מידה אחת מעלה"
+      }
+    },
+    "bm_care": {
+      "type": "bm-store-care",
+      "settings": {}
+    },
+    "bm_faq": {
+      "type": "bm-store-faq",
+      "settings": {}
+    },
+    "bm-product-blog": {
+      "type": "bm-product-blog",
+      "settings": {
+        "title": "מדריכים שיעזרו לך לבחור נכון"
+      }
+    },
+    "bm_urgency": {
+      "type": "bm-store-urgency",
+      "settings": {
+        "enabled": true,
+        "sold_pct_override": 0,
+        "headline": "המלאי אוזל מהר",
+        "label_above_bar": "כבר נמכר ממלאי זה:",
+        "stock_units": 8,
+        "label_sold": "נמכר",
+        "label_remain": "יחידות נותרו",
+        "btn_text": "הוסיפו לעגלה"
+      }
+    },
+    "bm_contact": {
+      "type": "bm-store-contact",
+      "settings": {
+        "heading": "אנחנו כאן בשבילכם",
+        "subheading": "שאלה על מידות? לא בטוחים מה לבחור? נשמח לעזור!",
+        "button_text": "צרו קשר",
+        "button_url": "\/pages\/contact"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -136,6 +278,17 @@
     "bm_sticky_bar",
     "bm_main_overrides",
     "main",
+    "bm_hero",
+    "bm_store_banner",
+    "bm_benefits",
+    "bm_fabric",
+    "bm_whats_special",
+    "bm_sizes",
+    "bm_care",
+    "bm_faq",
+    "bm-product-blog",
+    "bm_urgency",
+    "bm_contact",
     "related-products"
   ]
 }

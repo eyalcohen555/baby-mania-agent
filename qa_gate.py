@@ -135,3 +135,18 @@ def preflight_qa_check(hub_dir: Path, articles: list, hub_name: str) -> None:
 
     print(f"All {len(passed)} articles passed QA. Proceeding to publish.")
     print(f"{'─'*60}\n")
+
+
+def check_product_links(html: str, cluster_id: str, min_links: int = 2) -> None:
+    """
+    Gate: article must contain at least `min_links` product links.
+    A product link matches /products/<handle> (relative or absolute URL).
+    Raises SystemExit if the condition is not met.
+    """
+    import re
+    links = re.findall(r'href=["\'][^"\']*?/products/[^"\']+["\']', html)
+    if len(links) < min_links:
+        print(f"\n  [BLOCKED] BLOCKED: Missing product links — {cluster_id}")
+        print(f"  Found {len(links)} product link(s), minimum required: {min_links}")
+        print(f"  Add at least {min_links} /products/<handle> links before publishing.")
+        sys.exit(1)

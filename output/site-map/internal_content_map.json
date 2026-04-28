@@ -1248,9 +1248,8 @@
         "rank": 4,
         "status": "published",
         "http_verified": true,
-        "product_links_out": [],
-        "collection_links_noted": [
-          { "href": "/collections/baby-clothing", "note": "collection link only — no specific product handle present in article" }
+        "product_links_out": [
+          { "link_id": "PL-HUB7C4-001", "product_id": "9688934940985", "product_handle": "baby-bear-cozy-set", "cta_text": "לצפייה במוצר" }
         ]
       },
       {

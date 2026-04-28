@@ -8,8 +8,9 @@
 
 ## Status
 
-Asset planning only — no images generated yet.
-לא לייצר תמונות לפני אישור אייל לכל asset.
+**S1 Hero — DONE (local preview only).**
+Desktop + Mobile hero images נוצרו, אושרו ויזואלית על ידי אייל, ומחוברות לפריוויו המקומי (2026-04-27).
+Shopify live לא נגע. שאר ה-assets: planning only — לא לייצר לפני אישור אייל.
 
 ---
 
@@ -25,6 +26,8 @@ Asset planning only — no images generated yet.
 | טקסט / לוגו בתמונה | אסור ב-AI image ללא אישור נפרד. |
 | פלטה | כל תמונה חייבת להיות במגמה חמה / קרם / נחושת — תואמת BabyMania palette. |
 | AliExpress | לא לציין כמקור בשום תמונה או כיתוב. |
+| **Card image ratio (מכאן והלאה)** | **כרטיסים / cards: 1:1 ברירת מחדל — 900×900 WebP. גרסה קלה: 768×768 WebP. לא מייצרים desktop/mobile נפרד לכרטיסים אלא אם יש סיבה חריגה.** |
+| **Existing assets — ללא שינוי** | Hero desktop/mobile, S3 gift, S5 lifestyle — אינם מושפעים. כלל ה-1:1 חל מכאן והלאה בלבד. |
 
 ---
 
@@ -42,6 +45,12 @@ Asset planning only — no images generated yet.
 | **Visual direction** | ספה בצבע בז'/קרם, תאורה טבעית, עומק שדה רך, בובות מסודרות לא מדויקות |
 | **What it must NOT imply** | אלו המוצרים המדויקים שנמכרים / אריזה / לוגו / ילד/ה מזוהה |
 | **Priority** | **HIGH — קובע את כל השפה הוויזואלית** |
+| **STATUS** | ✓ DONE — local preview only (2026-04-27) |
+| **Desktop file** | `assets/reborn/landing/reborn-hero-desktop.webp` — 1920×960 |
+| **Mobile file** | `assets/reborn/landing/reborn-hero-mobile.webp` — 768×960 |
+| **Source** | ChatGPT Image — 3 בובות על ספה. Desktop: 1774×887 → scaled. Mobile: 1122×1402 → scaled. ללא חיתוך (יחסי aspect ratio תואמים). |
+| **Connected to** | `output/pages/reborn-landing/reborn-landing-preview.html` — `<picture>` + `<source media="(max-width: 768px)">` |
+| **Shopify** | לא נגע |
 
 ---
 
@@ -82,6 +91,9 @@ Asset planning only — no images generated yet.
 | **Visual direction** | תמונות נקיות על רקע בהיר / לבן. כרטיס 1: חיבוק. כרטיס 2: מים/ניקיון. |
 | **What it must NOT imply** | "סיליקון מלא" / "Medical-grade" / "בטוח לשימוש רפואי" |
 | **Source note** | PID 9689589383481 — ספקית אישרה תמונות אמיתיות ל-fabric + silicone girl. silicone boy — ממתין לאישור. |
+| **Target size** | 900×900 WebP (1:1) |
+| **Fabric file** | `assets/reborn/landing/reborn-s4-fabric-body.webp` — ✓ CONNECTED (local, 2026-04-27) |
+| **Silicone file** | `assets/reborn/landing/reborn-s4-silicone-body.webp` — ✓ CONNECTED (local, 2026-04-27) |
 | **Priority** | HIGH — הסבר ישיר על חומר, חייב תמונה אמיתית |
 
 ---
@@ -96,6 +108,16 @@ Asset planning only — no images generated yet.
 | **Visual direction** | ילדה על ספה / שטיח, בובה בחיק, תאורה טבעית ביתית, צבעי קרם/חמים |
 | **What it must NOT imply** | הבובה הספציפית שנמכרת / שיוך UGC / הילדה היא לקוחה אמיתית |
 | **Priority** | HIGH — הסקשן הרגשי המרכזי, ריק בלי תמונה |
+| **IMAGE STATUS** | ✓ Desktop approved (2026-04-27) — ילדה מחבקת בובת ריבורן עם אוזני ארנב, אינטריאור קרם |
+| **IMAGE STATUS** | ✓ Mobile approved (2026-04-27) — אותה קומפוזיציה, פורמט אנכי |
+| **VIDEO STATUS** | ⛔ POSTPONED — S5 video attempted via `models/veo-3.0-fast-generate-001` (2026-04-27) |
+| **VIDEO FAILURE** | `429 RESOURCE_EXHAUSTED` — Veo quota 0/0. כרטיס אשראי תוקן אך Veo עדיין חסום. Gemini/Imagen — מכסות תקינות. |
+| **VIDEO ROOT CAUSE** | Veo quota אפסי ב-Google AI Studio — לא בעיית קוד / תמונה / פרומפט. מחייב חקירה נפרדת. |
+| **VIDEO DECISION** | S5 נשאר כתמונה בלבד. דף הנחיתה לא עוצר בגלל הווידאו. |
+| **VIDEO FOLLOW-UP** | משימה פתוחה: לבדוק איך פותחים/מתקנים Veo quota עבור Google AI Studio / Gemini API. |
+| **Script** | `_reborn_s5_video_test.py` — שמור ב-root, לא committed, מוכן לריצה חוזרת כשיש quota |
+| **PREVIEW FILE** | `assets/reborn/landing/reborn-s5-lifestyle.webp` — 800×1000 WebP — מחובר ל-preview (local only) |
+| **PREVIEW STATUS** | ✓ CONNECTED — `output/pages/reborn-landing/reborn-landing-preview.html` S5 section. Shopify לא נגע. |
 
 ---
 
@@ -124,6 +146,7 @@ Asset planning only — no images generated yet.
 | **Asset type** | AI allowed — category card backgrounds (illustrative) |
 | **Purpose** | כניסה קלה לכל נושא — גייטוויי ויזואלי |
 | **What it must NOT imply** | אביזרים זמינים בפועל אם אין מלאי / מוצרים ספציפיים לפני PHASE 5 |
+| **Target size (future)** | **900×900 WebP (1:1) לכל כרטיס — כלל card ratio החדש** |
 | **Priority** | MEDIUM — כרטיס 2 חסום עד שיש מלאי אביזרים |
 
 ---
@@ -202,13 +225,14 @@ Palette:   #FFFDF9 bg / #F5EDE4 sofa / #D4B99A accent tones
 
 ```
 PRIORITY HIGH:
-[ ] Hero image — AI brief מוכן (ראה §3)
-[ ] Lifestyle image — child caring for doll (S5)
-[ ] Body type images — fabric + silicone (S4) — ממתין לאישור תמונות מספקית
+[x] Hero image — Desktop 1920×960 + Mobile 768×960 — נוצר ואושר לפריוויו מקומי (2026-04-27)
+[x] Lifestyle image — Desktop + Mobile approved (S5) — 2026-04-27
+[ ] Lifestyle VIDEO — S5 ⛔ BLOCKED (Veo quota 0/0) — fallback: תמונה / CapCut manual
+[x] Body type images — fabric + silicone (S4) — 900×900 WebP, מחוברים לפריוויו (2026-04-27)
 [ ] Review videos × 4 — CapCut, 5–10s, 9:16 (S6) — תלוי ב-spec אישור
 
 PRIORITY MEDIUM:
-[ ] Lifestyle / gift image — parent choosing (S3)
+[x] Lifestyle / gift image — S3 approved + connected to preview (2026-04-27) — reborn-s3-gift-lifestyle.webp 1000×600
 [ ] Category card image — "כל הבובות שלנו" (S7)
 [ ] Category card image — "מדריכי ריבורן" (S7)
 
@@ -228,19 +252,21 @@ EXTERNAL DECISION REQUIRED:
 
 ## 7. Next Recommended Image To Create
 
-**התחל מתמונת Hero בלבד.**
+**Hero — DONE. הבא: S5 Lifestyle.**
 
-**למה:**
-- Hero קובע את השפה הוויזואלית של כל הדף
-- כל תמונת lifestyle אחרת תצטרך להתאים ל-Hero
-- בלי Hero — כל שאר התמונות עלולות להיות מנותקות זו מזו
-- Hero הוא ה-asset היחיד שניתן לייצר ב-AI כרגע ללא חסמים
+**Hero status (2026-04-27):**
+- Desktop + Mobile נוצרו ואושרו ויזואלית על ידי אייל.
+- מחוברות לפריוויו המקומי בלבד. Shopify לא נגע.
+- שפה ויזואלית נקבעה: ספה קרם, תאורה חמה, 3 בובות.
 
-**Brief מוכן:** ראה §3 לעיל.
+**S5 — Image: DONE. Video: POSTPONED.**
 
-**פלט מצופה:**
-קובץ תמונה, יחס 16:9, ייצוא גם 1:1 למובייל.
-לא להכניס לדף חי לפני אישור אייל.
+S5 Desktop + Mobile images אושרו (2026-04-27).
+S5 Video נדחה — Veo quota 0/0 גם לאחר תיקון כרטיס אשראי. החלטה: S5 ממשיך עם תמונה בלבד.
+משימה פתוחה: לחקור כיצד לפתוח Veo quota ב-Google AI Studio. לא לעצור את דף הנחיתה.
+
+**הבא לפי עדיפות (לאחר S5 video blocker):**
+S3 — Lifestyle/gift image: הורה/סבתא בוחרת מתנה, אווירת בית, תאורה רכה.
 
 ---
 

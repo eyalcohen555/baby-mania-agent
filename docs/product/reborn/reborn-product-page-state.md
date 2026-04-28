@@ -249,14 +249,31 @@
 ```
 PHASE:        PLANNING — Blueprint Draft open
 BLOCKER:      (1) Blueprint awaiting Eyal approval  (2) Product truth partial — awaiting supplier
-CURRENT TASK: Prepare Reborn landing page blueprint for Eyal review
-CODE STATUS:  אין קוד — documentation only
+CURRENT TASK: Landing page local preview assets — S3 + S4 + S5 connected. Next: S7 category cards.
+CARD_RATIO:   מכאן והלאה — כרטיסים (S4/S7 ועתידיים) יהיו 1:1 ברירת מחדל: 900×900 WebP (קל: 768×768).
+              לא מייצרים desktop/mobile נפרד לכרטיסים. נכסים שכבר אושרו (Hero/S3/S5) — ללא שינוי.
+CODE STATUS:  אין קוד Shopify — local preview HTML בלבד
 SHOPIFY:      לא נגעו
 AGENTS:       לא נבנו
 REPORT:       reborn-first-summary-report.md imported 2026-04-24
 SUPPLIER:     Partial input from Beaulia Fang — fabric vs silicone types confirmed
 MARKETING:    Play & Nurture angle added as raw input (reborn-marketing-inputs.md)
 BLUEPRINT:    reborn-landing-page-blueprint.md created 2026-04-26 — draft, not approved
+HERO ASSETS:  Desktop 1920×960 + Mobile 768×960 WebP — created 2026-04-27
+              Visually approved by Eyal for local preview only
+              Connected to output/pages/reborn-landing/reborn-landing-preview.html
+              Shopify live NOT touched
+S5 IMAGE:     Desktop + Mobile approved (2026-04-27) — ילדה מחבקת בובת ריבורן עם אוזני ארנב
+S5 IMAGE:     ✓ CONNECTED TO PREVIEW — reborn-s5-lifestyle.webp (800×1000 WebP, local only)
+              Source: ChatGPT Image Apr 27, 2026, 06_01_58 PM.png
+              Section: play-section in reborn-landing-preview.html
+S5 VIDEO:     ⛔ POSTPONED — Veo quota 0/0 (Google AI Studio)
+              Attempted: models/veo-3.0-fast-generate-001 — 429 RESOURCE_EXHAUSTED
+              Billing card fixed — Veo still shows 0/0. Gemini/Imagen quotas: OK.
+              Root cause: Veo quota not enabled — not code / image / prompt
+              Decision: S5 proceeds as image-only. Landing page not blocked.
+              Script ready: _reborn_s5_video_test.py (root, uncommitted)
+              Follow-up: investigate how to restore/open Veo quota in Google AI Studio
 ```
 
 ---
@@ -281,19 +298,31 @@ BLUEPRINT:    reborn-landing-page-blueprint.md created 2026-04-26 — draft, not
 
 **מצב:** Blueprint לדף נחיתה ריבורן — Draft נפתח, ממתין לאישור אייל.
 
+**Hero Assets Checkpoint — 2026-04-27:**
+- `assets/reborn/landing/reborn-hero-desktop.webp` — 1920×960 — נוצר מ-ChatGPT Image, scaled ללא חיתוך
+- `assets/reborn/landing/reborn-hero-mobile.webp` — 768×960 — נוצר מ-ChatGPT Image, scaled ללא חיתוך
+- שניהם אושרו ויזואלית על ידי אייל בפריוויו מקומי
+- `output/pages/reborn-landing/reborn-landing-preview.html` עודכן עם `<picture>` + `<source>`
+- Shopify live לא נגע. לא נדחף theme.
+
 **מסר מאושר עקרונית מאייל:**
 > "לילדים, הבחירה הנכונה היא לא תמיד הבובה הכי יקרה — אלא הבובה שהכי מתאימה למשחק, חיבוק ושימוש יומיומי."
 
 **קובץ נוצר:** `docs/product/reborn/reborn-landing-page-blueprint.md`
 **שלב:** PHASE 2 / PHASE 3 — Blueprint Draft + Avatar Psychology Layer
 
-**לא נגעים בקוד. לא נגעים ב-Shopify. לא בונים סוכנים.**
+**לא נגעים ב-Shopify. לא בונים סוכנים.**
 
-**Task:** Prepare section reuse/spec plan before landing page copy/build.
+**Task:** המשך landing page local preview — assets נוספים / תיקוני preview. לא live deployment.
 
 **Note:** Blueprint + Content Plan created. WhatsApp/FAQ/contact/URL decisions recorded. No final copy yet.
 
-**המשימה הבאה:** (1) לבחור כתובת מייל להצגה בדף. (2) לבדוק URL בעברית מול Shopify/Dawn ולהחזיר המלצה. (3) אישור אייל על Content Plan → PHASE 6.
+**S5 — 2026-04-27:**
+S5 Desktop + Mobile images אושרו ויזואלית.
+S5 Video נדחה — Veo quota 0/0 גם לאחר תיקון כרטיס אשראי. הסקריפט תקין ומוכן ב-`_reborn_s5_video_test.py`.
+החלטה: S5 ממשיך עם תמונה בלבד. דף הנחיתה לא עוצר.
+
+**המשימה הבאה:** (1) לחקור כיצד לפתוח Veo quota ב-Google AI Studio — משימת follow-up פתוחה. (2) להמשיך לנכסי landing הבאים (S3 Lifestyle gift image). (3) לבחור כתובת מייל להצגה בדף. (4) לבדוק URL בעברית מול Shopify/Dawn ולהחזיר המלצה. (5) אישור אייל על Content Plan → PHASE 6.
 
 ---
 

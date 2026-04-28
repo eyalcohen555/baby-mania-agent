@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import requests
 from shopify_client import _headers, BASE_URL
+from qa_gate import check_product_links
 
 BLOG_ID = 109164036409
 HUB7_DIR = Path("C:/Projects/baby-mania-agent/output/hub7")
@@ -164,6 +165,7 @@ def publish_article(article: dict) -> dict:
         return {"cluster_id": article["cluster_id"], "status": "ERROR", "error": f"File not found: {filepath}"}
 
     body_html = read_body_html(filepath)
+    check_product_links(body_html, article["cluster_id"])
 
     payload = {
         "article": {

@@ -19,10 +19,11 @@
 
 ---
 
-## מצב נוכחי (2026-04-20) — LAYER 4 GEO COMPLETE
+## מצב נוכחי (2026-04-21) — LAYER 4 GEO COMPLETE + GEO DEFECTS CLOSED
 
 ```
-Layer 4 GEO:  ✅ COMPLETE — geo_who_for + geo_use_case על 51 shoes PIDs (live verified 2026-04-20)
+Layer 4 GEO:  ✅ COMPLETE — geo_who_for + geo_use_case על 51+9 shoes PIDs clean
+Geo defects:  ✅ CLOSED (2026-04-21) — ANOMALY-005 + ANOMALY-006 תוקנו, 9/9 verify PASS
 Pipeline:     ✅ ACTIVE — shoes rollout pipeline מוכן לבאצ'ים נוספים
 gen guard:    ✅ gen_clothing_geo.py חסום לשמור shoes מחוץ לclothing generator
 Layer 5:      ⏳ FROZEN — מחכה להחלטה ניהולית מפורשת
@@ -30,8 +31,14 @@ Layer 5:      ⏳ FROZEN — מחכה להחלטה ניהולית מפורשת
 
 **evidence:**
 - live audit 2026-04-20: 51/51 shoes → CLEAN (geo_who_for + geo_use_case נמצאו עם ערכים)
+- T3 geo regen 2026-04-21: 9/9 push PASS · 9/9 verify PASS — fingerprints הוסרו, gtype תוקן
 - `scripts/gen_clothing_geo.py` — shoes guard נוסף (ValueError אם shoes title מזוהה)
 - `docs/governance/phase2-live-readback-scope-lock.md` — STATUS: COMPLETE
+- `output/stage-outputs/t3_geo_regen_results.json` — results artifact
+
+**open non-blocking:**
+- PID `9179135017273` — metafield sync ממתין (publisher בלבד, לא קריטי)
+- PID `9096634106169` — geo_who_for גבולי ("להלביש בסגנון"), לא מצריך שינוי
 
 **open non-blocking:**
 - PID `9179135017273` — metafield sync ממתין (publisher בלבד, לא קריטי)
@@ -470,6 +477,57 @@ Agent prompt tuning before next batch:
 ## FULL_ROLLOUT_COMPLETE: YES — כל PIDs ברשימה shoes_rollout_list.json הושלמו
 ## NEXT_STEP: ניטור. לא נותרו PIDs ממתינים ברשימה הנוכחית.
 
+---
+
+## DATE: 2026-04-21
+## TASK: Layer 3 SEO — title_tag audit + fix — 38 shoes PIDs
+## SCOPE: Layer 3 — title_tag + description_tag — shoes בלבד
+## APPROVAL_TIER: T2
+
+## AUDIT FINDINGS:
+- נמצאו 38 מוצרי נעליים עם title_tag גנרי (ערך default/placeholder)
+- שאילתת GraphQL עם `template_suffix:shoes` הניבה fuzzy matches → סונן לscope מדויק (ראה ANOMALY-003)
+- PID 9615375925561 (נעל אופנתית ונוחה לתינוק): נפסל — ARCHIVED בShopify, false positive (ראה ANOMALY-002)
+- ANOMALY-004: is_sneaker מוגדר בschema של intelligence_builder אך לא היה בשרשרת הסיווג — תוקן לפני generation
+
+## FALSE POSITIVES REJECTED:
+- PID 9615375925561: ARCHIVED — לא בסקופ live. לא נדרשת שום פעולת תיקון. ANOMALY-002 מתועד.
+- false positives נוספים מGraphQL fuzzy: סוננו על בסיס exact template_suffix validation לאחר שאילתה
+
+## LOGIC FIX APPLIED:
+- `is_sneaker` שולב בשרשרת הסיווג לפני generation (תיקון פנימי, אין Shopify write)
+- GraphQL scope filtering תוקן — exact match validation לאחר שאילתה
+
+## DRY-RUN BUG:
+- נמצא bug בdry-run: מוצרים שהכילו את המחרוזת "לד" ב-title קיבלו עיבוד שגוי
+- תוקן לפני push live — לא השפיע על תוצאת הsnapshot הסופי
+
+## WHAT CHANGED:
+- 38 PIDs עברו generation חדש של title_tag ו-description_tag
+- כל 38 PIDs נדחפו ל-Shopify ואומתו
+
+## PUSH RESULT:
+- LIVE_COUNT: 38/38
+- BATCH_VERDICT: PASS
+- FAILURE_PATTERNS: NONE
+
+## FILES TOUCHED:
+- `docs/operations/known-anomalies-registry.md` — ANOMALY-003 + ANOMALY-004 נוספו
+- `docs/product/shoes-journal.md` — entry זה
+- `docs/management/management-journal.md` — milestone entry
+
+## SYSTEM IMPACT:
+- Layer 3 shoes — כעת מכסה 51 PIDs (13 מLayer 3 המקורי + 38 מaudio זה)
+- כל 51 shoes PIDs נקיים עבור title_tag + description_tag
+- Layer 3 shoes: CLOSED
+
+## OPEN ISSUES: NONE
+
+## NEXT STEP:
+Layer 3 shoes — CLOSED. כל 51 shoes PIDs נקיים. ניתן להמשיך לLayer 5 (pending ניהולי) או לHUB-9 clusters.
+
+---
+
 ## LAYER-4 GEO ROLLOUT — STAGE-16 CLOSURE
 ## DATE: 2026-04-19 04:24:15
 ## PLAN_ID: layer4-geo-priority-001
@@ -490,7 +548,7 @@ Agent prompt tuning before next batch:
 ## ISSUES_RESOLVED_DURING_LAYER4:
 - template-filled clothing generation (הוחלפה בgeneration אמיתית)
 - fabricated social proof (נחסמה בQA audit)
-- misclassified shoes in clothing scope (הוסרו לפני bundle)
+- misclassified shoes in clothing scope (חלקם הוסרו לפני bundle — אך PID 9096636236089 לא זוהה ונדחף. ראה ANOMALY-005)
 - missing/local-only artifacts (STAGE-13 flagged ונפתר)
 
 ## LESSONS_LEARNED (vs. Layer 3 failures):

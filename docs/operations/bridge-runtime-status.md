@@ -78,12 +78,42 @@ logs/bridge.log         ← log ריצה מלא
 cat C:/Projects/baby-mania-agent/bridge/bridge.lock
 # אם קיים — בדוק אם ה-PID חי. אם מת — bridge.py ינקה אוטומטית בהפעלה הבאה.
 
-# הפעל ידנית (PowerShell)
+# הפעל דרך Task Scheduler
 Start-ScheduledTask -TaskName "BabyMania Bridge AutoStart"
 
-# הפעל ישירות (cmd)
-C:\Projects\baby-mania-agent\start-bridge.bat
+# הפעל ישירות — חובה נתיב Python מלא (לא stub!)
+cd C:\Projects\baby-mania-agent
+C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe bridge.py
 ```
+
+---
+
+## ⚠️ כלל Python path — ריצה ידנית / conductor
+
+**בעיה ידועה:** הרצת `python bridge.py` דרך Windows stub יוצרת שרשרת:
+`WindowsApps\python.exe bridge.py` → `pythoncore-3.14-64\python.exe bridge.py`
+
+שני הprocesses מכילים `bridge.py` ב-commandline — conductor סופר אותם כ-2 instances ונכשל בpreflight עם:
+`PREFLIGHT FAILED: Multiple bridge.py instances running (2)`
+
+**פתרון — השתמש בנתיב Python המלא:**
+```powershell
+# bridge (הפעלה ידנית)
+cd C:\Projects\baby-mania-agent
+C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe bridge.py
+
+# conductor
+C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe teams/team-lead/conductor.py plans/<plan>.yaml
+```
+
+**אבחון לפני kill — בדוק command line מלא:**
+```powershell
+Get-WmiObject Win32_Process -Filter "name='python.exe'" |
+  Where-Object { $_.CommandLine -like '*bridge.py*' -and $_.CommandLine -notlike '*github-bridge*' } |
+  Select-Object ProcessId,CommandLine | Format-List
+```
+אם רואים stub (WindowsApps) + real (pythoncore) — זה **לא** duplicate, זו שרשרת launcher.
+פתרון: הפעל עם נתיב מלא → תקבל process אחד בלבד.
 
 ---
 
@@ -107,6 +137,13 @@ Unregister-ScheduledTask -TaskName "BabyMania Bridge AutoStart" -Confirm:$false
 
 ## הפעלה ידנית ואימות
 
+**⚠️ הפעלה ידנית נקייה — תמיד עם נתיב Python מלא:**
+```powershell
+cd C:\Projects\baby-mania-agent
+C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe bridge.py
+```
+
+**דרך Task Scheduler:**
 ```powershell
 # הפעל עכשיו
 Start-ScheduledTask -TaskName "BabyMania Bridge AutoStart"

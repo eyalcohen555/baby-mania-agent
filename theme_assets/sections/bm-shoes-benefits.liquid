@@ -331,14 +331,26 @@
   }
 </style>
 
-{% comment %}
-  ── Data sources ────────────────────────────────────────────────
-  Fixed:   5 cards hardcoded per shoe_category (developmental / style)
-  Extra:   up to 3 cards — metafield shoe_benefits first, gap-fill from blocks
+{% comment %} ── Data sources ─────────────────────────────────────────────
+  Architecture: dynamic-first (clothing model — v2)
+  Priority:  product.metafields.baby_mania.benefits (up to 6 — all rendered)
+  Gap-fill:  section.blocks type="shoe_benefit" (fills slots if metafield < 6)
+  Fallback:  blocks-only path if no metafield at all
+  Field contract:
+    benefit.body        — primary (from 03b-shoes-benefits agent)
+    benefit.description — backward compat fallback (older pipeline outputs)
+  Max cards: 6
 {% endcomment %}
-{%- assign bm_sb_cat    = section.settings.shoe_category | default: 'developmental' -%}
-{%- assign bm_sb_mf     = product.metafields.baby_mania.benefits.value -%}
-{%- assign bm_sb_blocks = section.blocks | where: "type", "shoe_benefit" -%}
+{%- assign bm_sb_benefits = product.metafields.baby_mania.benefits.value -%}
+{%- assign bm_sb_blocks   = section.blocks | where: "type", "shoe_benefit" -%}
+
+{%- comment -%} Has any renderable content? {%- endcomment -%}
+{%- assign bm_sb_has_content = false -%}
+{%- if bm_sb_benefits and bm_sb_benefits.size > 0 -%}
+  {%- assign bm_sb_has_content = true -%}
+{%- elsif bm_sb_blocks.size > 0 -%}
+  {%- assign bm_sb_has_content = true -%}
+{%- endif -%}
 
 {%- comment -%} Resolve header text with fallbacks {%- endcomment -%}
 {%- assign bm_sb_eyebrow  = section.settings.eyebrow -%}
@@ -346,18 +358,14 @@
 {%- assign bm_sb_subtitle = section.settings.subtitle -%}
 {%- if bm_sb_eyebrow  == blank -%}{%- assign bm_sb_eyebrow  = 'למה הנעליים שלנו' -%}{%- endif -%}
 {%- if bm_sb_heading  == blank -%}{%- assign bm_sb_heading  = 'נבחרו בקפידה' -%}{%- endif -%}
-{%- if bm_sb_subtitle == blank -%}
-  {%- if bm_sb_cat == 'style' -%}
-    {%- assign bm_sb_subtitle = 'נעליים שנראות מדהים ומרגישות טוב — בלי לבחור בין סטייל לנוחות.' -%}
-  {%- else -%}
-    {%- assign bm_sb_subtitle = 'כל פרט בנעל נבחר כדי לתמוך בהתפתחות הרגל הצומחת — צעד אחר צעד.' -%}
-  {%- endif -%}
-{%- endif -%}
+{%- if bm_sb_subtitle == blank -%}{%- assign bm_sb_subtitle = 'כל פרט בנעל נבחר כדי לתמוך בהתפתחות הרגל הצומחת — צעד אחר צעד.' -%}{%- endif -%}
 
+{% if bm_sb_has_content %}
 <section
   class="bm-sb-root"
   id="bm-sb-{{ section.id }}"
   aria-labelledby="bm-sb-heading-{{ section.id }}"
+  data-bm-count="{{ bm_sb_benefits.size | default: 0 }}"
 >
   <div class="bm-sb-blob bm-sb-blob--1" aria-hidden="true"></div>
   <div class="bm-sb-blob bm-sb-blob--2" aria-hidden="true"></div>
@@ -375,105 +383,10 @@
 
     <div class="bm-sb-grid" role="list">
 
-      {% comment %} ── 1. FIXED CARDS per shoe_category ── {% endcomment %}
-      {% if bm_sb_cat == 'style' %}
+      {% if bm_sb_benefits and bm_sb_benefits.size > 0 %}
 
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">✨</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">עיצוב שמושך עיניים</h3>
-            <p class="bm-sb-card-desc">כל הגננות ישאלו מאיפה הנעליים</p>
-          </div>
-        </article>
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">👗</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">משלימה כל לוק</h3>
-            <p class="bm-sb-card-desc">מתאימה לשמלה, לחליפה ולכל אירוע</p>
-          </div>
-        </article>
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">🤗</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">נוחה למרות העיצוב</h3>
-            <p class="bm-sb-card-desc">יפה מבחוץ, רכה מבפנים — בלי ויתורים</p>
-          </div>
-        </article>
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">👣</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">ריפוד פנימי רך</h3>
-            <p class="bm-sb-card-desc">הילד לא מוריד אותן אחרי 10 דקות</p>
-          </div>
-        </article>
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">🎀</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">גימורים איכותיים</h3>
-            <p class="bm-sb-card-desc">פרטים קטנים שעושים את ההבדל</p>
-          </div>
-        </article>
-
-      {% else %}{% comment %} developmental (default) {% endcomment %}
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">🦶</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">סוליה גמישה</h3>
-            <p class="bm-sb-card-desc">הרגליים מתפתחות כמו שצריך — בלי שאתם צריכים לחשוב על זה</p>
-          </div>
-        </article>
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">🪶</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">קלה במיוחד</h3>
-            <p class="bm-sb-card-desc">הילד זז חופשי כל היום — בלי להתעייף ובלי לבקש הפסקות</p>
-          </div>
-        </article>
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">💨</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">חומרים נושמים</h3>
-            <p class="bm-sb-card-desc">כף הרגל יבשה — הילד לא מתלונן ולא מוריד אחרי שעה</p>
-          </div>
-        </article>
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">🔒</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">סגירה מתכווננת</h3>
-            <p class="bm-sb-card-desc">הילד נועל לבד בלי לבקש עזרה — פחות מריבות בבוקר</p>
-          </div>
-        </article>
-
-        <article class="bm-sb-card" role="listitem">
-          <div class="bm-sb-icon-wrap" aria-hidden="true">🛡️</div>
-          <div class="bm-sb-card-body">
-            <h3 class="bm-sb-card-title">מונעת החלקה</h3>
-            <p class="bm-sb-card-desc">הילד רץ, מטפס, חוקר — אתם רגועים</p>
-          </div>
-        </article>
-
-      {% endif %}
-
-      {% comment %}
-        ── 2. EXTRA CARDS: metafield first, gap-fill from blocks ──
-        Priority: shoe_benefits metafield (up to 3) → blocks fill the rest
-      {% endcomment %}
-      {%- assign bm_sb_mf_count   = 0 -%}
-      {%- if bm_sb_mf and bm_sb_mf.size > 0 -%}
-        {%- assign bm_sb_mf_count = bm_sb_mf.size -%}
-        {%- if bm_sb_mf_count > 3 -%}{%- assign bm_sb_mf_count = 3 -%}{%- endif -%}
-      {%- endif -%}
-
-      {%- if bm_sb_mf and bm_sb_mf.size > 0 -%}
-        {%- for benefit in bm_sb_mf limit: 3 -%}
+        {% comment %} ── PRIMARY: metafield benefits (all rendered, cap at 6) ── {% endcomment %}
+        {% for benefit in bm_sb_benefits limit: 6 %}
           <article class="bm-sb-card" role="listitem">
             {%- if benefit.icon != blank -%}
               <div class="bm-sb-icon-wrap" aria-hidden="true">{{ benefit.icon }}</div>
@@ -482,22 +395,45 @@
               {%- if benefit.title != blank -%}
                 <h3 class="bm-sb-card-title">{{ benefit.title }}</h3>
               {%- endif -%}
+              {%- comment -%}
+                Field: body (primary — 03b-shoes-benefits contract)
+                Fallback: description (backward compat for pre-v2 outputs only)
+              {%- endcomment -%}
               {%- if benefit.body != blank -%}
                 <p class="bm-sb-card-desc">{{ benefit.body }}</p>
               {%- elsif benefit.description != blank -%}
                 <p class="bm-sb-card-desc">{{ benefit.description }}</p>
-              {%- elsif benefit.desc != blank -%}
-                <p class="bm-sb-card-desc">{{ benefit.desc }}</p>
               {%- endif -%}
             </div>
           </article>
-        {%- endfor -%}
-      {%- endif -%}
+        {% endfor %}
 
-      {%- comment -%} Gap-fill: blocks fill slots not covered by metafield {%- endcomment -%}
-      {%- assign bm_sb_fill = 3 | minus: bm_sb_mf_count -%}
-      {%- if bm_sb_fill > 0 and bm_sb_blocks.size > 0 -%}
-        {%- for block in bm_sb_blocks limit: bm_sb_fill -%}
+        {% comment %} ── GAP FILL: top-up to 6 from section blocks ── {% endcomment %}
+        {%- assign bm_sb_mf_count    = bm_sb_benefits.size -%}
+        {%- if bm_sb_mf_count > 6 -%}{%- assign bm_sb_mf_count = 6 -%}{%- endif -%}
+        {%- assign bm_sb_fill_needed = 6 | minus: bm_sb_mf_count -%}
+        {% if bm_sb_fill_needed > 0 and bm_sb_blocks.size > 0 %}
+          {% for block in bm_sb_blocks limit: bm_sb_fill_needed %}
+            <article class="bm-sb-card" role="listitem" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                <div class="bm-sb-icon-wrap" aria-hidden="true">{{ block.settings.icon }}</div>
+              {%- endif -%}
+              <div class="bm-sb-card-body">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="bm-sb-card-title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.body != blank -%}
+                  <p class="bm-sb-card-desc">{{ block.settings.body }}</p>
+                {%- endif -%}
+              </div>
+            </article>
+          {% endfor %}
+        {% endif %}
+
+      {% else %}
+
+        {% comment %} ── FULL FALLBACK: block-only path (no metafield) ── {% endcomment %}
+        {% for block in bm_sb_blocks limit: 6 %}
           <article class="bm-sb-card" role="listitem" {{ block.shopify_attributes }}>
             {%- if block.settings.icon != blank -%}
               <div class="bm-sb-icon-wrap" aria-hidden="true">{{ block.settings.icon }}</div>
@@ -511,31 +447,22 @@
               {%- endif -%}
             </div>
           </article>
-        {%- endfor -%}
-      {%- endif -%}
+        {% endfor %}
+
+      {% endif %}
 
     </div>
   </div>
 </section>
+{% endif %}
 
 {% schema %}
 {
   "name": "BM Shoes — יתרונות",
   "tag": "div",
   "class": "bm-shoes-benefits-section",
-  "max_blocks": 3,
+  "max_blocks": 6,
   "settings": [
-    {
-      "type": "select",
-      "id": "shoe_category",
-      "label": "קטגוריית נעל",
-      "default": "developmental",
-      "options": [
-        { "value": "developmental", "label": "התפתחותיות" },
-        { "value": "style",         "label": "סטייל / אירועים" }
-      ],
-      "info": "קובע את 5 הכרטיסים הקבועים המוצגים תמיד."
-    },
     {
       "type": "checkbox",
       "id": "show_header",
@@ -559,26 +486,26 @@
       "type": "text",
       "id": "subtitle",
       "label": "כותרת משנה",
-      "info": "אם ריק — ימולא אוטומטית לפי קטגוריה."
+      "info": "אם ריק — ימולא אוטומטית."
     }
   ],
   "blocks": [
     {
       "type": "shoe_benefit",
-      "name": "יתרון נוסף",
+      "name": "יתרון נעליים",
       "settings": [
         {
           "type": "text",
           "id": "icon",
           "label": "אייקון (Emoji)",
-          "default": "🌟",
+          "default": "🦶",
           "info": "Emoji אחד שיוצג על רקע עגול."
         },
         {
           "type": "text",
           "id": "title",
           "label": "כותרת היתרון",
-          "default": "יתרון נוסף"
+          "default": "יתרון נעל"
         },
         {
           "type": "textarea",
@@ -592,9 +519,56 @@
   "presets": [
     {
       "name": "BM Shoes — יתרונות",
-      "settings": {
-        "shoe_category": "developmental"
-      }
+      "blocks": [
+        {
+          "type": "shoe_benefit",
+          "settings": {
+            "icon": "🦶",
+            "title": "סוליה גמישה",
+            "body": "הרגליים מתפתחות כמו שצריך — בלי שאתם צריכים לחשוב על זה"
+          }
+        },
+        {
+          "type": "shoe_benefit",
+          "settings": {
+            "icon": "🪶",
+            "title": "קלה במיוחד",
+            "body": "הילד זז חופשי כל היום — בלי להתעייף ובלי לבקש הפסקות"
+          }
+        },
+        {
+          "type": "shoe_benefit",
+          "settings": {
+            "icon": "🛡️",
+            "title": "מונעת החלקה",
+            "body": "הילד רץ, מטפס, חוקר — אתם רגועים"
+          }
+        },
+        {
+          "type": "shoe_benefit",
+          "settings": {
+            "icon": "⚡",
+            "title": "הלבשה קלה",
+            "body": "הילד נועל לבד בשניות — יוצאים בזמן בלי ויכוח"
+          }
+        },
+        {
+          "type": "shoe_benefit",
+          "settings": {
+            "icon": "💨",
+            "title": "חומרים נושמים",
+            "body": "כף הרגל יבשה — הילד לא מתלונן ולא מוריד אחרי שעה"
+          }
+        },
+        {
+          "type": "shoe_benefit",
+          "settings": {
+            "icon": "👣",
+            "title": "תומכת בצעד הראשון",
+            "body": "כשהקטן עושה את הצעד הראשון, הנעל תומכת בדיוק במקום הנכון"
+          }
+        }
+      ]
     }
   ]
 }

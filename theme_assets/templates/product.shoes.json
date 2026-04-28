@@ -190,6 +190,12 @@
         "btn_text": "הוסיפו לעגלה"
       }
     },
+    "bm-product-blog": {
+      "type": "bm-product-blog",
+      "settings": {
+        "title": "מדריכים שיעזרו לך לבחור נכון"
+      }
+    },
     "bm_contact": {
       "type": "bm-store-contact",
       "settings": {
@@ -227,6 +233,7 @@
     "bm_benefits",
     "bm_sizes",
     "bm_accordion",
+    "bm-product-blog",
     "bm_urgency",
     "bm_contact",
     "related_products"
