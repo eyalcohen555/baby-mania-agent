@@ -37,6 +37,78 @@
 ---
 
 ## DATE: 2026-04-29
+## TASK: Second-terminal live findings sync — GSC, redirects, SEO quality, billing, collections
+## SCOPE: organic — documentation sync only. אין publishing, אין Shopify live, אין Layer 6.
+
+## WHAT WAS CHECKED:
+- Sitemap.xml (הוגש 21.4) + Google indexing status
+- GSC indexing status per HUB (HUB-9 / HUB-10 / HUB-11)
+- 301 redirects validation
+- Google Cloud billing status + GSC service account
+- Collection meta update (15 קולקציות)
+- Product SEO quality (10-product report vs. Chozen + Shilav)
+- Layer 3/4 quality audit — ציון 5.25/10
+- GSC SEO opportunities (4 זיהויים)
+- Duplicate content: בגדי-חורף-1
+- Security: GSC verification token לא בשימוש
+
+## LIVE FINDINGS:
+| ממצא | סטטוס |
+|------|--------|
+| Sitemap.xml הוגש ל-GSC (2026-04-21) | ✅ — 460 דפים זוהו |
+| HUB-9 GSC indexing | ✅ 7/7 submitted to index |
+| HUB-10 GSC indexing | ⏳ 5/7 submitted (Pillar+C1-C4) — C5-C6 טרם |
+| 53 redirects 301 הועלו ל-Shopify | ✅ validation 5/5 PASS |
+| 311 דפי 404 הוגשו ל-GSC לאימות | ✅ |
+| 15 קולקציות מטא עודכנו ב-Shopify | ✅ validation 5/5 PASS |
+| 1/5 קולקציות הוגשה ל-GSC | ⏳ 4 נותרות |
+| 10-product meta report נוצר | ✅ לא בוצע שינוי |
+| Pink Noise article research | ✅ future idea only |
+
+## INFRASTRUCTURE BLOCKERS:
+| בלוק | סיבה | פעולה |
+|------|------|--------|
+| Google Cloud billing | Mastercard 0400 rejected — account terminated | אייל: חידוש |
+| GSC service account | gsc-access@babymania-001 לא Owner ב-GSC | אייל: GSC Settings |
+| ⇒ submit_gsc.py | לא אוטומטי עד שנפתרים | — |
+
+## QUALITY FINDING:
+- Layer 3/4 technically COMPLETE — ציון 5.25/10 vs. מתחרים (Chozen, Shilav)
+- 244 כותרות מועמדות לשיפור — prompt קיים, לא בוצע
+- 4 הזדמנויות GSC SEO זוהו — לא נפתחה עבודה
+- תועד ב: docs/organic/seo-quality-backlog-2026-04-29.md
+- Layer 3/4 סטטוס: COMPLETE טכנית — לא השתנה
+
+## OPEN (פעולות אייל בלבד):
+| פריט | עדיפות |
+|------|--------|
+| Google Cloud billing renewal | HIGH |
+| Service account → GSC Owner | HIGH |
+| HUB-10 GSC C5-C6 Manual Request Indexing | MEDIUM |
+| HUB-11 GSC C2-C6 Manual Request Indexing | MEDIUM |
+| 4 collections GSC indexing | MEDIUM |
+| Duplicate content "בגדי-חורף-1" — מיזוג vs. תוכן ייחודי | MEDIUM |
+| GSC verification token cleanup | LOW |
+
+## NOT DOING NOW:
+- לא מבצעים שיפור 244 כותרות (backlog only)
+- לא פותחים B-03 / HUB חדש (ממתין לאישור אייל)
+- לא פותחים Layer 6 (NOT OPEN)
+- לא מריצים GSC automation (חסום)
+
+## FILES TOUCHED:
+- docs/organic/organic-journal.md (this entry)
+- docs/organic/מצב-הפרויקט-האורגני.md (GSC status + open actions + sections 8+10+11)
+- BABYMANIA-MASTER-PROMPT.md (HUB table + quality/blockers note)
+- docs/organic/seo-quality-backlog-2026-04-29.md (CREATED)
+
+## NEXT STEP:
+אייל: חדש Google Cloud billing + הוסף service account כ-Owner ב-GSC.
+לאחר מכן: Manual Request Indexing לHUB-10 C5-C6 + HUB-11 C2-C6 ב-GSC UI.
+
+---
+
+## DATE: 2026-04-29
 ## TASK: Layer 5 Gap Map Planning — הכרזת סגירה רשמית
 ## SCOPE: organic — Layer 5 Gap Map Planning closure declaration, documentation only
 

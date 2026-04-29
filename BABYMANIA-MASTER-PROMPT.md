@@ -373,6 +373,17 @@ Source of truth: `docs/product/shoes-journal.md` (entry 2026-04-21)
 
 **GSC integration:** `scripts/submit_gsc.py` — URL Inspection API (webmasters scope). Status check only — no programmatic request-indexing for blog articles. Request indexing via GSC UI manually.
 
+**⚠ GSC AUTOMATION BLOCKERS (2026-04-29):**
+- Google Cloud billing: Mastercard ending 0400 rejected — account terminated. Blocks AI/Veo/automation dependent on Google Cloud.
+- Service account `gsc-access@babymania-001.iam.gserviceaccount.com` not added as Owner in GSC — `scripts/submit_gsc.py` לא אוטומטי.
+- Manual workaround only: GSC UI → URL Inspection → "Request Indexing" (Ayal action).
+
+**⚠ LAYER 3/4 QUALITY BACKLOG (2026-04-29):**
+Layers 3 and 4 remain technically COMPLETE (closure status unchanged). Quality audit found SEO gap: score 5.25/10 vs. competitors (Chozen, Shilav).
+- 244 product titles identified as candidates for improvement — NOT executed.
+- Full backlog + priorities: `docs/organic/seo-quality-backlog-2026-04-29.md`
+- Layer 3/4 closure status: UNCHANGED ✅ — this is a quality improvement backlog, not a re-open.
+
 ---
 
 ## 🌍 LAYER 4 — GEO Metafields Status
@@ -561,9 +572,9 @@ milestones שנסגרו:
 | HUB-6 | נעלי תינוק | 7 | ✅ | ⏳ pending_gsc_permission |
 | HUB-7 | בטיחות תינוק | 6 | ✅ | ⏳ pending_gsc_permission |
 | HUB-8 | Baby Daily Routine | 6 | ✅ פורסם (2026-04-09) | ✅ gsc_manual_requested |
-| HUB-9 | בובת ריבורן | 7 (ALL LIVE) | ✅ ALL LIVE (2026-04-23) | ✅ gsc_pending_manual_request |
-| HUB-10 | יתרונות ריבורן לילדים | 7 (ALL LIVE) | ✅ ALL LIVE (2026-04-28) | ⏳ pending_manual_request |
-| HUB-11 | בגדי קיץ לתינוק | 7 (ALL LIVE) | ✅ COMPLETE (2026-04-29) — Post-HUB Audit pending | ⏳ C2-C6 pending |
+| HUB-9 | בובת ריבורן | 7 (ALL LIVE) | ✅ ALL LIVE (2026-04-23) | ✅ 7/7 submitted to index (2026-04-29) |
+| HUB-10 | יתרונות ריבורן לילדים | 7 (ALL LIVE) | ✅ ALL LIVE (2026-04-28) | ⏳ 5/7 submitted (Pillar+C1-C4) — C5-C6 pending |
+| HUB-11 | בגדי קיץ לתינוק | 7 (ALL LIVE) | ✅ COMPLETE (2026-04-29) — Post-HUB Audit pending | ⏳ C2-C6 pending manual (5 URLs) |
 
 ### מפת HUB Registry
 `teams/organic/hub-registry.json` — מקור האמת למצב HUBs
