@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 4.6 | עודכן: 2026-04-23 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 FROZEN ⏳ | Gate 2 Check E ACTIVE ✅
+### גרסה: 4.9 | עודכן: 2026-04-29 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live
 
 ---
 
@@ -348,7 +348,7 @@ DATA → LOGIC → OUTPUT
 | LAYER 2 — PRODUCT↔BLOG | ✅ CLOSED (2026-04-13) | clothing + shoes, 66 מוצרים LIVE |
 | LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE + VERIFIED (2026-04-20 / verified 2026-04-23) | כל clothing נקי — title_tag + description_tag. 36 verify_failed מאושרים RUNTIME only — live check 36/36 PRESENT. |
 | LAYER 4 — GEO | ✅ COMPLETE (2026-04-20) | 285 PIDs — geo_who_for + geo_use_case live. 241 clothing + 51 shoes audited. |
-| LAYER 5–10 | ⏳ FROZEN | Layer 5 FROZEN — נדרשת החלטה ניהולית מפורשת לפתיחה (layer5-freeze.md) |
+| LAYER 5 | ✅ OPEN (execution) / Gap Map Planning: ✅ CLOSED (2026-04-29) | 12 gaps mapped (G-01–G-12), 12 backlog items. DONE: B-01 HUB-11 + B-02 Audit. WAITING: B-03–B-12. Layer 6 NOT OPEN. `docs/organic/layer5-gap-map-backlog.md` v1.4. |
 
 **⚠ LAYER 3 + LAYER 4 CLOSURE NOTE (verified 2026-04-23):**
 היסטוריית verify_failed (36 clothing) ו-stage16 (60.8%) — RUNTIME failures בלבד (timeout/429).
@@ -562,12 +562,15 @@ milestones שנסגרו:
 | HUB-7 | בטיחות תינוק | 6 | ✅ | ⏳ pending_gsc_permission |
 | HUB-8 | Baby Daily Routine | 6 | ✅ פורסם (2026-04-09) | ✅ gsc_manual_requested |
 | HUB-9 | בובת ריבורן | 7 (ALL LIVE) | ✅ ALL LIVE (2026-04-23) | ✅ gsc_pending_manual_request |
+| HUB-10 | יתרונות ריבורן לילדים | 7 (ALL LIVE) | ✅ ALL LIVE (2026-04-28) | ⏳ pending_manual_request |
+| HUB-11 | בגדי קיץ לתינוק | 7 (ALL LIVE) | ✅ COMPLETE (2026-04-29) — Post-HUB Audit pending | ⏳ C2-C6 pending |
 
 ### מפת HUB Registry
 `teams/organic/hub-registry.json` — מקור האמת למצב HUBs
 
 ### Site Map
-- `output/site-map/internal_content_map.json` — v4.0 — HUB-1 עד HUB-8, 47 clusters ממופים (47 פורסמו)
+- `output/site-map/internal_content_map.json` — v5.9 — HUB-1 עד HUB-11, 68 clusters ממופים (68 פורסמו)
+- `docs/organic/layer5-gap-map-backlog.md` — Layer 5 Gap Map Backlog + Post-HUB Audit rule
 - `output/site-map/product-reverse-index.json` — v1.2 — 25 products, 25/25 yaml_verified
 - `shared/product-context/` — 294 קבצי YAML
 - `docs/organic/מצב-הפרויקט-האורגני.md` — source of truth תפעולי אורגני

@@ -36,6 +36,400 @@
 
 ---
 
+## DATE: 2026-04-29
+## TASK: Layer 5 Gap Map Planning — הכרזת סגירה רשמית
+## SCOPE: organic — Layer 5 Gap Map Planning closure declaration, documentation only
+
+## WHAT CHANGED:
+- **`docs/organic/layer5-gap-map-backlog.md`** — v1.3 → v1.4 | Gap Map Planning: CLOSED ✅
+- **`docs/organic/מצב-הפרויקט-האורגני.md`** — Layer 5 status עודכן
+- **`BABYMANIA-MASTER-PROMPT.md`** — Layer snapshot עודכן
+
+## CLOSURE DECLARATION:
+Layer 5 Gap Map Planning הוכרז סגור רשמית (2026-04-29).
+
+| פרמטר | ערך |
+|-------|-----|
+| Gap Map items | 12 (G-01–G-12) |
+| Backlog items | 12 (B-01–B-12) |
+| DONE | 2: B-01 HUB-11 (7 מאמרים live), B-02 Post-HUB Linking Audit |
+| WAITING | 10: B-03–B-12 |
+| BLOCKED | 0 |
+| Execution backlog | ACTIVE — פתוח לבחירה עתידית |
+| Layer 6 | NOT OPEN |
+
+## OPEN ACTIONS (לא חלק מסגירה זו):
+- GSC C2-C6 Manual Indexing Request — פעולת אייל ב-GSC UI
+- Product→Article live implementation (16 מוצרים) — ממתין T1 approval
+- B-03 selection — ממתין אישור אייל (UNBLOCKED)
+- G-12 reverse-index rebuild — MEDIUM priority, future execution
+
+## NEXT STEP:
+Layer 5 execution ממשיך. בחירת B-03 דורשת אישור אייל.
+Layer 6 Opening Audit — משימה נפרדת, לא בוצעה.
+
+---
+
+## DATE: 2026-04-29
+## TASK: Layer 5 — G-12/B-12 נוסף + הכנה לסגירת Gap Map Planning
+## SCOPE: organic — Layer 5 Gap Map completion, documentation only
+
+## WHAT CHANGED:
+- **`docs/organic/layer5-gap-map-backlog.md`** — v1.2 → v1.3
+  - G-12 נוסף: product-reverse-index.json rebuild v2.0 (System gap)
+  - B-12 נוסף: MEDIUM priority, WAITING
+  - סעיף 3a חדש: Layer 5 closure preparation summary
+  - Gap Map: 12 גאפים | Backlog: 12 פריטים
+
+## G-12 DETAILS:
+- type: System gap
+- gap: product-reverse-index.json v1.2 מכסה HUB-1–8 בלבד (25 מוצרים)
+- missing: HUB-9 (Reborn), HUB-10 (Reborn Benefits), HUB-11 (Summer Clothing) — לא כלולים
+- future scope: rebuild v2.0 לכלול ~50+ מוצרים נוספים, אימות מול internal_content_map v5.9+
+- execution: NOT NOW — backlog item MEDIUM priority
+
+## LAYER 5 STATUS:
+- Gap Map Planning: READY FOR CLOSURE DECLARATION (לא סגור עדיין)
+- Gap Map: 12 gaps (G-01–G-12) — כל קטגוריות הפערים הידועות מכוסות
+- Backlog: 12 items (B-01–B-12) | DONE: 2 | WAITING: 10
+- Layer 5 execution ממשיך (B-03 unblocked, ממתין לאישור אייל)
+
+## NEXT STEP:
+- Layer 5 Formal Closure Declaration — משימה נפרדת (T1 approval)
+- B-03 selection — ממתין לאישור אייל
+
+---
+
+## DATE: 2026-04-29
+## TASK: Layer 5 Gap Map — Future Product Gaps נוספו (B-09, B-10, B-11)
+## SCOPE: organic — Layer 5 Gap Map completion, documentation only
+
+## WHAT CHANGED:
+- **`docs/organic/layer5-gap-map-backlog.md`** — v1.1 → v1.2
+  - Gap Map: הוספו G-09 / G-10 / G-11 (Future Product Gaps)
+  - Backlog: הוספו B-09 / B-10 / B-11
+  - סעיף 3b חדש: Future Product Gaps מדיניות + פירוט לפי פריט
+
+## FUTURE PRODUCT GAPS ADDED:
+| פריט | קטגוריה | עדיפות |
+|------|---------|--------|
+| B-09 (G-09) | אביזרים לבובת ריבורן | HIGH |
+| B-10 (G-10) | רחפן משחק | MEDIUM-HIGH |
+| B-11 (G-11) | רובוט AI לילדים TOYA | HIGH |
+
+## CONSTRAINTS:
+- אין מוצרים live — אלה מוצרים מתוכננים בלבד
+- ביצוע כל פריט מותנה ב-T1 approval + product data
+- לא מעורבבים עם orphan products קיימים
+
+## NEXT STEP:
+- Layer 5 Gap Map Completion Audit — לאחר הוספת Future Gaps
+- B-03 — בגדי שמחה / שמלות חגיגיות (UNBLOCKED — ממתין לאישור אייל)
+
+---
+
+## DATE: 2026-04-29
+## TASK: B-02 — Post-HUB-11 Linking Audit COMPLETE + Product→Article Plan
+## SCOPE: organic — HUB-11 post-publish audit, product mapping
+
+## WHAT CHANGED:
+- **B-02 סגור** — Post-HUB-11 Linking Audit הושלם
+- **`docs/organic/hub11-product-to-article-plan.md` נוצר** — 16 מוצרים ממופו לעמודי מאמר HUB-11
+- **`docs/organic/layer5-gap-map-backlog.md`** — B-02 סטטוס ⏳ WAITING → ✅ COMPLETE, B-03 UNBLOCKED
+
+## AUDIT RESULTS SUMMARY:
+| בדיקה | תוצאה |
+|-------|-------|
+| Article → Product | ✅ PASS — product_mention בכל 7 מאמרים |
+| Product → Article | ✅ MAPPED — 16 מוצרים (ממתין T1 implementation) |
+| Article → Article | ✅ PASS — cross-links תקינים |
+| Hub → Hub | ✅ חלקי — 4 cross-hub links אומתו HTTP 200 |
+| HTTP 200 verify | ✅ כל 7 URLs תקינים |
+| GSC indexing | ⏳ PENDING — C2-C6 (פעולת אייל) |
+
+## PRODUCT→ARTICLE MAPPING:
+- C4 — שמלות קיץ: 5 מוצרים
+- C2 — בגד ים: 3 מוצרים
+- C5 — חליפת פשתן: 3 מוצרים
+- C1 — הלבשת קיץ: 2 מוצרים
+- C3 — כובע שמש: 1 מוצר
+- C6 — בריכה: 1 מוצר
+- Pillar: 1 מוצר
+
+## WARNINGS:
+- W-01: Pillar לא מקשר ל-C1–C6 (T1 נפרד)
+- W-02: Pillar לא מקשר ל-HUB-5 (T1 נפרד)
+
+## OPEN ACTIONS (פעולת אייל):
+- GSC Manual Request Indexing — C2–C6 (5 URLs)
+- T1 approval לפני Product→Article implementation ב-Shopify
+
+## NEXT STEP:
+- B-03 UNBLOCKED — בגדי שמחה / שמלות חגיגיות (אישור אייל לפני פתיחה)
+
+---
+
+## DATE: 2026-04-29
+## TASK: Layer 5 Gap Map Backlog + Post-HUB Rule — תכנון ותיעוד
+## SCOPE: organic — Layer 5 planning, no publishing
+
+## WHAT CHANGED:
+- **`docs/organic/layer5-gap-map-backlog.md` נוצר** — Gap Map מלא, Backlog ממוין (B-01–B-08), Post-HUB Linking Audit rule מוגדר
+- **BABYMANIA-MASTER-PROMPT.md** — v4.8: Layer 5 FROZEN→OPEN, HUB-11 COMPLETE, map reference נוסף
+- **`מצב-הפרויקט-האורגני.md`** — v2.7: Gap Map reference, Post-HUB rule, Layer 5 OPEN
+- **`organic-journal.md`** — entry זה נוסף
+
+## GAP MAP SUMMARY:
+- 8 גאפים מזוהים (G-01–G-08)
+- 8 פריטי Backlog (B-01–B-08)
+- B-01 (HUB-11) = COMPLETE
+- B-02 (Post-HUB-11 Audit) = WAITING — הבא
+
+## POST-HUB RULE:
+מוגדר ומחייב: HUB לא "סגור" עד שPost-HUB Linking Audit (Article→Product, Product→Article, Article→Article, Hub→Hub, HTTP 200, GSC) נסגר.
+
+## NEXT STEP:
+- B-02 — Post-HUB-11 Linking Audit (mapping בלבד, לא live edit)
+- GSC Manual Indexing Request לC2-C6 — פעולת אייל
+
+---
+
+## DATE: 2026-04-29
+## TASK: HUB-11 C2-C6 BATCH — כתיבה, QA, פרסום ואימות
+## SCOPE: organic — HUB-11 C2–C6 batch publish (5 articles)
+
+## WHAT CHANGED:
+- **HUB-11 C2 נכתב ופורסם** — "בגד ים לתינוקת — איך לבחור, מה לבדוק ואיזה קרם הגנה להשתמש" | article_id: 686727070009 | HTTP 201+200 ✓
+- **HUB-11 C3 נכתב ופורסם** — "כובע שמש לתינוק — למה זה חובה וכיצד לבחור נכון" | article_id: 686727528761 | HTTP 201+200 ✓
+- **HUB-11 C4 נכתב ופורסם** — "שמלות קיץ לתינוקת — הדגמים הכי נוחים לחום הישראלי" | article_id: 686727790905 | HTTP 201+200 ✓
+- **HUB-11 C5 נכתב ופורסם** — "חליפת פשתן לתינוק — היתרונות, איך לבחור ומתי ללבוש" | article_id: 686728216889 | HTTP 201+200 ✓
+- **HUB-11 C6 נכתב ופורסם** — "בריכה עם תינוק — בטיחות, ציוד ושעות מומלצות" | article_id: 686728479033 | HTTP 201+200 ✓
+- **QA כל 5 מאמרים** — 16/16 בדיקות PASS לכל מאמר | no style blocks, no hero, 2× figure.article-image
+
+## URLS LIVE:
+- C2: https://www.babymania-il.com/blogs/news/bgad-yam-letineket-eikh-livkhor-ma-livdok-ukrem-haganah
+- C3: https://www.babymania-il.com/blogs/news/kovah-shemesh-letinok-lama-zeh-hova-vekheytsad-livkhor-nakhon
+- C4: https://www.babymania-il.com/blogs/news/smlot-kayts-letineket-hadgamim-yoter-nonhim-lahom-hayisraeli
+- C5: https://www.babymania-il.com/blogs/news/khalifat-pishtan-letinok-hayitronot-eikh-livkhor-umatay-lilbosh
+- C6: https://www.babymania-il.com/blogs/news/brekha-im-tinok-bitakhon-tsiyud-ushahot-hamumlatsot
+
+## SYSTEM IMPACT:
+- מאמרים live: 68 (63 + C2 + C3 + C4 + C5 + C6)
+- HUB-11: 7/7 COMPLETE
+- hub-registry.json: HUB-11 status → complete
+- internal_content_map.json: v5.9 עם כל 7 מאמרי HUB-11
+
+## NEXT STEP (פעולת אייל):
+- GSC Manual Request Indexing לכל 5 URLs: C2–C6
+
+---
+
+## DATE: 2026-04-29
+## TASK: HUB-11 C1 — כתיבה, QA, פרסום ואימות
+## SCOPE: organic — HUB-11 C1 article publish
+
+## WHAT CHANGED:
+- **HUB-11 C1 נכתב** — "איך להלביש תינוק בקיץ — המדריך לפי גיל, חום ושעות היום"
+- **QA עבר** — 16/16 בדיקות PASS | tip-box×2, warning-box×1, pull-quote×1, product-mention×2, FAQ×4, JSON-LD ✓
+- **פורסם ל-Shopify** — POST HTTP 201 | article_id: 686705443129 | blog_id: 109164036409
+- **URL אומת** — HTTP 200 ✓
+- Internal links: → HUB-11 Pillar ✓ | → HUB-7-C3 (overheating) ✓
+
+## ARTICLE DETAILS:
+- Title: איך להלביש תינוק בקיץ — המדריך לפי גיל, חום ושעות היום
+- URL: https://www.babymania-il.com/blogs/news/eikh-lhalbisht-tinok-bakayts-madrikh-lfi-gil-khom-ushaot
+- article_id: 686705443129
+- Products: סרבל קיצי (9605887689017) + חליפת קיץ 1977 (9179159888185)
+
+## SYSTEM IMPACT:
+- מאמרים live: 63 (61 + Pillar + C1)
+- HUB-11: 2/7 live
+
+## NEXT STEP:
+- T1 — HUB-11 C2 בתור
+
+---
+
+## DATE: 2026-04-28
+## TASK: HUB-11 Pillar — כתיבה, QA, פרסום ואימות
+## SCOPE: organic — HUB-11 Pillar article publish
+
+## WHAT CHANGED:
+- **HUB-11 Pillar נכתב** — 4 H2 sections, ~1,700 מילים, Presentation Spec v3.0 LOCKED
+- **QA עבר** — tip-box×2, warning-box×1, pull-quote×1, product-mention×2, FAQ×4, JSON-LD ✓
+- **פורסם ל-Shopify** — POST HTTP 201 | article_id: 686702362937 | blog_id: 109164036409
+- **URL אומת** — HTTP 200 ✓
+
+## FILES TOUCHED:
+- `output/hub11-summer-clothing/HUB11_Pillar_blog_article.html` — מאמר Pillar (NEW)
+- `output/hub11-summer-clothing/HUB11_Pillar_PUBLISH_RESULT.json` — publish result (NEW)
+- `publish_hub11_pillar.py` — publish script (NEW)
+- `teams/organic/hub-registry.json` — HUB-11-Pillar status: planned → live, article_id + live_url נוספו
+
+## ARTICLE DETAILS:
+- Title: בגדי קיץ לתינוק — המדריך המלא: מה ללבוש, מה לקחת לים ואיך לבחור נכון
+- URL: https://www.babymania-il.com/blogs/news/bgdey-kayts-letinok-madrikh-male-ma-lilbosh-ma-lakakhat-layam
+- article_id: 686702362937
+- Target keyword: בגדי קיץ לתינוק
+- Products: שמלת שמש (9605887590713) + סט Breeze™ (10025300853049)
+
+## SYSTEM IMPACT:
+- HUBs live: 10 | מאמרים live: 62 (61 + Pillar HUB-11)
+- HUB-11 Pillar: LIVE 2026-04-28
+
+## OPEN ISSUES:
+- [ ] GSC Manual Request Indexing — HUB-11 Pillar URL
+- [ ] HUB-11 C1-C6 — נשאר 6 מאמרים להשלמת HUB
+
+## NEXT STEP:
+- T1 — כתיבת HUB-11 C1: איך להלביש תינוק בקיץ
+- GSC Request Indexing לאחר C1-C6 live
+
+---
+
+## DATE: 2026-04-28
+## TASK: HUB-11 — רישום רשמי — Layer 5
+## SCOPE: organic — HUB-11 planning registration
+
+## WHAT CHANGED:
+- HUB-11 נרשם רשמית ב-hub-registry.json כ-**בגדי קיץ לתינוק**
+- Layer 5 נפתח רשמית (אישור אייל 2026-04-28) לאחר Gap Map Audit PASS + HUB Selection Audit PASS
+- 7 מאמרים מתוכננים: Pillar + C1-C6
+- 17+ מוצרים orphan ימופו לתוכן תומך
+
+## HUB-11 PLAN:
+- Pillar: בגדי קיץ לתינוק — המדריך המלא
+- C1: איך להלביש תינוק בקיץ
+- C2: בגד ים לתינוקת — איך לבחור
+- C3: כובע שמש לתינוק — למה זה חובה
+- C4: שמלות קיץ לתינוקת — מה ההבדל
+- C5: חליפת פשתן לתינוק — למה הבחירה הכי חכמה
+- C6: בריכה עם תינוק — הציוד שצריך
+
+## FILES TOUCHED:
+- `teams/organic/hub-registry.json` — HUB-11 entry נוסף, next_hub עודכן
+- `docs/organic/מצב-הפרויקט-האורגני.md` — HUB-11 row נוסף לטבלה, section 5 עודכן
+- `docs/organic/organic-journal.md` — entry זה
+- `BABYMANIA-MASTER-PROMPT.md` — HUBs table עודכן
+
+## SYSTEM IMPACT:
+- HUBs registered: 11 | HUBs live: 10 | מאמרים live: 61
+- hub-registry: next_hub = HUB-11 PLANNED
+- Layer 5: OPEN — Gap Map PASS → HUB Selection PASS → Registration PASS
+
+## OPEN ISSUES:
+- [ ] GSC Manual Request Indexing — 7 URLs HUB-10 (ידני ב-GSC UI)
+- [ ] HUB-11 article generation — T1 task הבא
+
+## NEXT STEP:
+- T1 — כתיבת Pillar HUB-11 (agent pipeline: 11 → 03 → 04 → 08 → publish)
+- לאחר Pillar LIVE: C1 בראשית, לפי writing_order
+
+---
+
+## DATE: 2026-04-28
+## TASK: HUB-10 C6 — live polish
+## SCOPE: organic — C6 article post-publish fix
+
+## WHAT CHANGED:
+- שגיאת כתיב: "עקבות" → "עקביות" (חסרה אות י) — תוקנה ב-Shopify live
+- תמונת featured/hero: null → Sc65457105edf484ab6d358f635cf3d31V.webp (CDN HTTP 200)
+- Shopify PUT: HTTP 200 | article 686682571065 | body_len 12015 | published_at ללא שינוי
+- API GET verify: typo_fixed ✓ | old_typo_gone ✓ | no_hero_inline_style ✓
+
+## FILES TOUCHED:
+- `output/hub10-reborn-benefits/HUB10_C6_blog_article.html` (typo fixed local)
+- `output/hub10-reborn-benefits/HUB10_C6_POLISH_RESULT.json` (result log — new)
+
+## SYSTEM IMPACT:
+- C6 live: כתיב מתוקן, featured image מוגדר — תמונות גוף ללא שינוי (img1+img2 HTTP 200)
+
+## OPEN ISSUES: none — polish complete
+## NEXT STEP:
+- GSC Manual Request Indexing — 7 URLs של HUB-10 (ידני ב-GSC UI)
+- HUB-11: בחירת נושא (TBD)
+
+---
+
+## DATE: 2026-04-28
+## TASK: HUB-10 — סגירה תיעודית — ALL LIVE
+## SCOPE: organic — HUB-10 closure docs
+
+## WHAT CHANGED:
+- HUB-10 נסגר: 7 מאמרים ALL LIVE ב-2026-04-28
+- internal_content_map.json עודכן → v5.7 (61 מאמרים)
+- hub-registry.json: status planned → published, clusters array הוסף
+- GSC: pending_manual_request — נדרש Manual Request Indexing ידני ב-GSC UI
+
+## LIVE ARTICLES:
+| מאמר | article_id | handle | published_at |
+|---|---|---|---|
+| Pillar | 686621098297 | yitronot-bobat-reborn-leyladim-regshiyim-chevratiyim-histapdutiyim | 2026-04-28T10:18:19+03:00 |
+| C1 | 686651507001 | bobat-reborn-intelignatzia-regshit-mishak | 2026-04-28T12:42:34+03:00 |
+| C2 | 686673527097 | reborn-bitachon-chevrati-yeladim-mehussim | 2026-04-28T13:47:28+03:00 |
+| C3 | 686676443449 | gil-matim-lebobat-reborn | 2026-04-28T13:56:00+03:00 |
+| C4 | 686676541753 | bobat-reborn-empathia-yeladim | 2026-04-28T14:02:06+03:00 |
+| C5 | 686678147385 | bobat-reborn-yeled-ragish | 2026-04-28T14:13:47+03:00 |
+| C6 | 686682571065 | reborn-achrayut-yeladim | 2026-04-28T14:27:38+03:00 |
+
+## FILES TOUCHED:
+- `docs/organic/organic-journal.md` (this entry)
+- `docs/organic/מצב-הפרויקט-האורגני.md` (HUB-10 row → ALL LIVE, totals updated)
+- `teams/organic/hub-registry.json` (HUB-10 status → published, clusters added)
+
+## SYSTEM IMPACT:
+- HUBs live: 10 | מאמרים live: 61
+- internal_content_map: v5.7
+- hub-registry: last_published = HUB-10 ALL LIVE, next_hub = HUB-11 (TBD)
+
+## OPEN ISSUES:
+- [ ] GSC Manual Request Indexing — נדרש ידנית ב-GSC UI עבור 7 URLs של HUB-10
+
+## NEXT STEP:
+- GSC UI → Request Indexing לכל 7 URLs של HUB-10
+- HUB-11: בחירת נושא (TBD)
+
+---
+
+## DATE: 2026-04-28
+## TASK: HUB-10 — הגדרת נושא + תכנון רשמי
+## SCOPE: organic — HUB-10 direction decision
+
+## WHAT CHANGED:
+- HUB-10 הוגדר רשמית כ-**יתרונות בובת הריבורן לילדים**
+- "רשימת קניות לתינוק" נדחה לצמיתות — החנות לא מוכרת ציוד כללי (עריסות, עגלות וכד')
+- הרחבת topical authority על ריבורן — ממשיכה מ-HUB-9 לעומק פסיכולוגי/התפתחותי
+
+## DECISION RATIONALE:
+- HUB-9 כבר מכסה: בחירה, ביגוד, מתנה, טיפול, השוואה, גיל
+- מה שחסר (ומה שהורה מהסס מחפש): **למה הריבורן טוב לילד שלי?**
+- keywords חדשים: "בובת ריבורן אינטליגנציה רגשית", "ריבורן ביטחון עצמי", "גיל מתאים לבובת ריבורן"
+- product bridge: 6 PIDs ריבורן קיימים → CTA: /search?q=ריבורן
+- cross-links: ↔ HUB-9 Pillar + HUB-9 C1 + HUB-9 C5
+
+## APPROVED PLAN:
+- Pillar: "בובת ריבורן לילדים — יתרונות רגשיים, חברתיים והתפתחותיים"
+- C1: בובת ריבורן ואינטליגנציה רגשית — מה פסיכולוגים אומרים [PRIORITY]
+- C2: ריבורן וביטחון חברתי — איך הבובה עוזרת לילדים מהוססים
+- C3: מאיזה גיל בובת ריבורן מתאימה — מדריך לפי שלב התפתחותי
+- C4: בובת ריבורן ואמפתיה — ילדים שלומדים לדאוג לאחרים
+- C5: בובת ריבורן לילד רגיש — למה זה עובד
+- C6: ריבורן ואחריות — מה הבובה מלמדת ילדים
+
+## FILES TOUCHED:
+- `teams/organic/hub-registry.json` (HUB-10 added)
+- `docs/organic/מצב-הפרויקט-האורגני.md` (HUB-10 table + LAYER 10 + next step)
+- `docs/organic/organic-journal.md` (this entry)
+
+## BLOCKERS BEFORE WRITING:
+- [ ] תקן agent 04: מחק PART A hero מ-body_html (מתנגש עם QA Rule 9)
+- [ ] עדכן internal_content_map.json → v5.0 עם HUB-9 Pillar + C1-C6
+
+## OPEN ISSUES: none — planning complete
+## NEXT STEP: תקן blockers → כתוב HUB-10 Pillar
+
+---
+
 ## DATE: 2026-04-23
 ## TASK: HUB-9 Clusters C1-C6 פרסום
 ## SCOPE: organic — HUB-9 Reborn cluster content

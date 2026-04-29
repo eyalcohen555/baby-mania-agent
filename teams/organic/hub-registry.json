@@ -1,12 +1,12 @@
 {
   "description": "BabyMania Organic Team — רישום מרכזי של כל ה-HUBs",
   "version": "2.0",
-  "last_updated": "2026-04-23",
+  "last_updated": "2026-04-28",
   "blog_id": 109164036409,
   "blog_url": "https://babymania-il.com/blogs/news",
   "topic_hubs_knowledge": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic צוות/docs/TOPIC-HUBS-KNOWLEDGE.md",
-  "last_published": "HUB-9 Clusters C1-C6",
-  "next_hub": "HUB-10",
+  "last_published": "HUB-11 C6 LIVE 2026-04-29",
+  "next_hub": "HUB-11 — בגדי קיץ לתינוק (COMPLETE — כל 7 מאמרים LIVE 2026-04-29)",
   "hub9_direction_override": "REBORN — החלפה רשמית של כיוון קודם 'רשימת קניות לתינוק' (2026-04-20)",
   "hubs": [
     {
@@ -351,6 +351,232 @@
       "clusters_gsc_note": "C1-C6 inspected 2026-04-23 — all unknown/new. Manual Request Indexing required via GSC UI.",
       "previous_direction_rejected": "רשימת קניות לתינוק — pos 36, deferred to HUB-10",
       "notes": "נושא נבחר על בסיס GSC winners: בובת ריבורן pos 2.7, בגדי ריבורן pos 1.5 — הקטגוריה החזקה ביותר בחנות ללא HUB תומך. 6 מוצרי Reborn קיימים ב-Shopify עם SEO Layer 3 מלא."
+    },
+    {
+      "hub_id": "HUB-10",
+      "hub_name": "Reborn Emotional Benefits",
+      "hub_name_he": "יתרונות בובת הריבורן לילדים",
+      "status": "published",
+      "cluster_status": "ALL LIVE",
+      "direction_decision": "HUB-10 שונה מ'רשימת קניות לתינוק' ל-Reborn Benefits — החלטה ניהולית 2026-04-28. סיבה: החנות לא מוכרת ציוד כללי. הרחבת topical authority על ריבורן = אסטרטגיה נכונה.",
+      "approved_pillar": "בובת ריבורן לילדים — יתרונות רגשיים, חברתיים והתפתחותיים",
+      "pillar_keyword": "יתרונות בובת ריבורן לילדים",
+      "pillar_keyword_he": "יתרונות בובת ריבורן לילדים",
+      "writing_angle": "הורה שמהסס — האם הריבורן ילמד משהו טוב לילד שלי?",
+      "articles_count": 7,
+      "pillar_status": "PUBLISHED",
+      "pillar": {
+        "title": "בובת ריבורן לילדים — יתרונות רגשיים, חברתיים והתפתחותיים",
+        "handle": "yitronot-bobat-reborn-leyladim-regshiyim-chevratiyim-histapdutiyim",
+        "article_id": 686621098297,
+        "url": "https://babymania-il.com/blogs/news/yitronot-bobat-reborn-leyladim-regshiyim-chevratiyim-histapdutiyim",
+        "published_at": "2026-04-28"
+      },
+      "clusters": [
+        {
+          "cluster_id": "C1",
+          "title": "בובת ריבורן ואינטליגנציה רגשית — מה פסיכולוגים אומרים",
+          "handle": "bobat-reborn-intelignatzia-regshit-mishak",
+          "article_id": 686651507001,
+          "url": "https://babymania-il.com/blogs/news/bobat-reborn-intelignatzia-regshit-mishak",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C2",
+          "title": "ריבורן וביטחון חברתי — איך הבובה עוזרת לילדים מהוססים",
+          "handle": "reborn-bitachon-chevrati-yeladim-mehussim",
+          "article_id": 686673527097,
+          "url": "https://babymania-il.com/blogs/news/reborn-bitachon-chevrati-yeladim-mehussim",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C3",
+          "title": "מאיזה גיל בובת ריבורן מתאימה — מדריך לפי שלב התפתחותי",
+          "handle": "gil-matim-lebobat-reborn",
+          "article_id": 686676443449,
+          "url": "https://babymania-il.com/blogs/news/gil-matim-lebobat-reborn",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C4",
+          "title": "בובת ריבורן ואמפתיה — ילדים שלומדים לדאוג לאחרים",
+          "handle": "bobat-reborn-empathia-yeladim",
+          "article_id": 686676541753,
+          "url": "https://babymania-il.com/blogs/news/bobat-reborn-empathia-yeladim",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C5",
+          "title": "בובת ריבורן לילד רגיש — למה זה עובד",
+          "handle": "bobat-reborn-yeled-ragish",
+          "article_id": 686678147385,
+          "url": "https://babymania-il.com/blogs/news/bobat-reborn-yeled-ragish",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C6",
+          "title": "ריבורן ואחריות — מה הבובה מלמדת ילדים",
+          "handle": "reborn-achrayut-yeladim",
+          "article_id": 686682571065,
+          "url": "https://babymania-il.com/blogs/news/reborn-achrayut-yeladim",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        }
+      ],
+      "product_bridge": {
+        "reborn_pids": [
+          "9689589383481",
+          "9690182385977",
+          "9690182418745",
+          "9690182451513",
+          "9690247627065",
+          "9690247659833"
+        ],
+        "cta_url": "/search?q=ריבורן",
+        "note": "אין collection ייעודי לריבורן — CTA מפנה ל-search"
+      },
+      "previous_direction_rejected": "רשימת קניות לתינוק — לא רלוונטי לחנות שלא מוכרת ציוד כללי",
+      "planned_at": "2026-04-28",
+      "published_at": "2026-04-28",
+      "clusters_published_at": "2026-04-28",
+      "files_location": "C:/Projects/baby-mania-agent/output/hub10-reborn-benefits/",
+      "file_prefix": "HUB10_",
+      "internal_content_map_version": "5.7",
+      "total_articles_after": 61,
+      "gsc_status": "pending_manual_request",
+      "gsc_note": "HUB-10 ALL LIVE 2026-04-28. Manual Request Indexing required via GSC UI for all 7 URLs.",
+      "notes": "הרחבת topical authority על ריבורן. ממשיך מ-HUB-9 לעומק — זווית פסיכולוגית/התפתחותית. 7 מאמרים ALL LIVE 2026-04-28. internal_content_map v5.7."
+    },
+    {
+      "hub_id": "HUB-11",
+      "hub_name": "Baby Summer Clothing",
+      "hub_name_he": "בגדי קיץ לתינוק",
+      "status": "complete",
+      "priority": "HIGH",
+      "layer": 5,
+      "business_reason": "Covers high-value summer clothing, swimwear, hats, and seasonal orphan products. 17+ orphan products gain content support.",
+      "seasonality": "April–September",
+      "approved_pillar": "בגדי קיץ לתינוק — המדריך המלא: מה ללבוש, מה לקחת לים ואיך לבחור נכון",
+      "pillar_keyword": "בגדי קיץ לתינוק",
+      "pillar_keyword_he": "בגדי קיץ לתינוק",
+      "writing_angle": "הורה שמכין את התינוק לקיץ ישראלי — מה לקנות, מה לבחור, ואיך להגן",
+      "articles_count": 7,
+      "articles": [
+        {
+          "id": "HUB-11-Pillar",
+          "title": "בגדי קיץ לתינוק — המדריך המלא: מה ללבוש, מה לקחת לים ואיך לבחור נכון",
+          "target_keyword": "בגדי קיץ לתינוק",
+          "role": "pillar",
+          "intent": "informational",
+          "status": "live",
+          "article_id": 686702362937,
+          "live_url": "https://www.babymania-il.com/blogs/news/bgdey-kayts-letinok-madrikh-male-ma-lilbosh-ma-lakakhat-layam",
+          "published_at": "2026-04-28",
+          "connected_products": ["9605887590713", "10025300853049", "9179162083641", "9606864666937"]
+        },
+        {
+          "id": "HUB-11-C1",
+          "title": "איך להלביש תינוק בקיץ — המדריך לפי גיל, חום ושעות היום",
+          "target_keyword": "איך להלביש תינוק בקיץ",
+          "role": "cluster",
+          "intent": "practical",
+          "status": "live",
+          "article_id": 686705443129,
+          "live_url": "https://www.babymania-il.com/blogs/news/eikh-lhalbisht-tinok-bakayts-madrikh-lfi-gil-khom-ushaot",
+          "published_at": "2026-04-29",
+          "connected_products": ["9605887689017", "9179159888185", "9605887820089"]
+        },
+        {
+          "id": "HUB-11-C2",
+          "title": "בגד ים לתינוקת — איך לבחור, מה לבדוק ואיזה קרם הגנה להשתמש",
+          "target_keyword": "בגד ים לתינוקת",
+          "role": "cluster",
+          "intent": "commercial",
+          "status": "live",
+          "article_id": 686727070009,
+          "live_url": "https://www.babymania-il.com/blogs/news/bgad-yam-letineket-eikh-livkhor-ma-livdok-ukrem-haganah",
+          "published_at": "2026-04-29",
+          "connected_products": ["9179162083641", "9179162804537", "9179164344633"]
+        },
+        {
+          "id": "HUB-11-C3",
+          "title": "כובע שמש לתינוק — למה זה חובה וכיצד לבחור נכון",
+          "target_keyword": "כובע שמש לתינוק",
+          "role": "cluster",
+          "intent": "informational_commercial",
+          "status": "live",
+          "article_id": 686727528761,
+          "live_url": "https://www.babymania-il.com/blogs/news/kovah-shemesh-letinok-lama-zeh-hova-vekheytsad-livkhor-nakhon",
+          "published_at": "2026-04-29",
+          "connected_products": ["9606864666937"]
+        },
+        {
+          "id": "HUB-11-C4",
+          "title": "שמלות קיץ לתינוקת — הדגמים הכי נוחים לחום הישראלי",
+          "target_keyword": "שמלת קיץ לתינוקת",
+          "role": "cluster",
+          "intent": "commercial_educational",
+          "status": "live",
+          "article_id": 686727790905,
+          "live_url": "https://www.babymania-il.com/blogs/news/smlot-kayts-letineket-hadgamim-yoter-nonhim-lahom-hayisraeli",
+          "published_at": "2026-04-29",
+          "connected_products": ["9605887590713", "9605887721785", "9179162444089", "9179150516537"]
+        },
+        {
+          "id": "HUB-11-C5",
+          "title": "חליפת פשתן לתינוק — היתרונות, איך לבחור ומתי ללבוש",
+          "target_keyword": "חליפת פשתן לתינוק",
+          "role": "cluster",
+          "intent": "educational_commercial",
+          "status": "live",
+          "article_id": 686728216889,
+          "live_url": "https://www.babymania-il.com/blogs/news/khalifat-pishtan-letinok-hayitronot-eikh-livkhor-umatay-lilbosh",
+          "published_at": "2026-04-29",
+          "connected_products": ["9605887754553", "9179158479161", "9179170144569"]
+        },
+        {
+          "id": "HUB-11-C6",
+          "title": "בריכה עם תינוק — בטיחות, ציוד ושעות מומלצות",
+          "target_keyword": "בריכה עם תינוק",
+          "role": "cluster",
+          "intent": "informational",
+          "status": "live",
+          "article_id": 686728479033,
+          "live_url": "https://www.babymania-il.com/blogs/news/brekha-im-tinok-bitakhon-tsiyud-ushahot-hamumlatsot",
+          "published_at": "2026-04-29",
+          "connected_products": ["9838580662585", "9179162083641", "9179162804537", "9606864666937"]
+        }
+      ],
+      "product_bridge": {
+        "summer_clothing": ["9605887590713", "10025300853049", "9179159888185", "9605887689017", "9605887820089", "9605887754553", "9179158479161", "9179170144569", "9179162444089", "9179150516537", "9605887721785"],
+        "swimwear": ["9179162083641", "9179162804537", "9179164344633"],
+        "swimming_accessories": ["9838580662585"],
+        "hats": ["9606864666937"]
+      },
+      "internal_links_planned": {
+        "to_existing_hubs": [
+          "HUB-7-C3 (מניעת התחממות יתר) — from C1",
+          "HUB-2-C1 (best fabric for baby skin) — from C5",
+          "HUB-4-Pillar (sensitive skin) — from C3",
+          "HUB-3-Pillar (Baby Bath) — from C6",
+          "HUB-5-Pillar (Baby Gifts) — from Pillar"
+        ],
+        "from_existing_hubs": [
+          "HUB-2-C1 → HUB-11-C5",
+          "HUB-4-Pillar → HUB-11-C3",
+          "HUB-7-C3 → HUB-11-C1"
+        ]
+      },
+      "files_location": "C:/Projects/baby-mania-agent/output/hub11-summer-clothing/",
+      "file_prefix": "HUB11_",
+      "planned_at": "2026-04-28",
+      "gsc_status": "pending_indexing_request",
+      "notes": "HUB-11 — בגדי קיץ לתינוק. COMPLETE 2026-04-29. כל 7 מאמרים LIVE (Pillar + C1-C6). 17+ מוצרים orphan מקבלים תמיכה. GSC Manual Indexing Request נדרש לכל 5 URLs החדשים (C2-C6) — פעולת אייל."
     }
   ]
 }
