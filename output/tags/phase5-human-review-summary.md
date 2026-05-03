@@ -39,9 +39,24 @@ NO_AGE_FOUND אמיתי לטיפול: ~18 מוצרי clothing/shoes (לא 31).
 
 ---
 
+## 🆕 Phase 5c — Taxonomy Planning Decisions
+
+| החלטה | ערך |
+|---|---|
+| `type-sleep-soother` | טיפוס חדש — פיל נושם, מוצרי הרגעה, white noise, night lights |
+| תווית לקוח | מוצרי שינה והרגעה |
+| `type-*` | מה המוצר הוא (פיזי) |
+| `collection-*` | איך החנות מציגה אותו (מרצ'נדייזינג) |
+| `occ-*` | שימוש |
+| `collection-special-picks` | "המיוחדים שלנו" — לא type, לא occ |
+| `collection-new-arrivals` | "חדשים" — טמפוררי, לא type |
+| דוגמת שילוב | פיל נושם: `type-sleep-soother` + `occ-sleep` + `occ-calming` + `collection-special-picks` |
+
+---
+
 ## סיכונים עיקריים שזוהו
 
-1. **type-reborn-doll שגוי (מוצר 13):** פיל פלאש קיבל type-reborn-doll — בעיית type בלבד (גיל לא נדרש, Phase 5b).
+1. **type-reborn-doll שגוי (מוצר 13):** פיל פלאש קיבל type-reborn-doll — **תוקן ל-`type-sleep-soother`** (Phase 5c taxonomy decision). גיל לא נדרש.
 2. **ניגוד גיל בנעל (מוצר 3):** תג קיים "newborn-clothing" מול הסקת גיל 6-12m מ-"first-walker".
 3. **handle "0-to-3-years-old" עם age-2-3y (מוצר 4):** המערכת לא חסמה גיל למרות הטווח הרחב.
 4. **Tempio מדחום (מוצר 10):** taxonomy gap (type-bath-accessory חסר בסכמה) — גיל לא נדרש (Phase 5b).

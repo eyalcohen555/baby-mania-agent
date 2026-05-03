@@ -9,7 +9,8 @@
 | Internal Tag | תווית לקוח | דוגמת מוצר | מתאים לתפריט |
 |---|---|---|---|
 | `type-bodysuit` | בגד גוף | בגד גוף אלגנטי - מייקל | YES |
-| `type-reborn-doll` | בובות ריבורן | בובה נושמת פיל ועוד חיות מחמד | YES |
+| `type-reborn-doll` | בובות ריבורן | בובת ריבורן אמיתית מבית בייבי מניה | YES |
+| `type-sleep-soother` | מוצרי שינה והרגעה | בובה נושמת פיל ועוד חיות מחמד | YES |
 | `type-romper` | אוברולים | אוברול אריה חמוד דגם שמר | YES |
 | `type-sandals` | סנדלים | נעל סנדל צעד ראשון מונעת החלקה – גמישה ב | YES |
 | `type-set` | סטים | Boys Khaki Letter Print Half Zip Hooded  | YES |
@@ -77,6 +78,19 @@
 | `style-modern` | מודרני | אוברול בייבי מניה דגם חן | YES |
 | `style-striped` | פסים | אוברול חגיגי דגם אנה | YES |
 | `style-teddy` | דובי | אוברול דובי אם רגלית דגם אוריאל | YES |
+
+## קולקציות (collection-*) — שכבת מרצ'נדייזינג
+
+> **כלל אדריכלי:** `type-*` = מה המוצר הוא. `collection-*` = איך החנות מציגה אותו. `occ-*` = שימוש.  
+> תגי collection-* מוסיפים **על** תגי type/occ — לא מחליפים.
+
+| Internal Tag | תווית לקוח | דוגמת מוצר | מתאים לתפריט |
+|---|---|---|---|
+| `collection-special-picks` | המיוחדים שלנו | בובה נושמת פיל | YES |
+| `collection-new-arrivals` | חדשים | מוצר חדש בחנות | YES |
+
+**דוגמת שילוב — פיל נושם:**  
+`type-sleep-soother` + `occ-sleep` + `occ-calming` + `collection-special-picks`
 
 ---
 

@@ -13,8 +13,8 @@ ALLOWED_VALUES: dict[str, set[str]] = {
         "type-pants", "type-top", "type-hat", "type-swimwear",
         "type-shoes", "type-sandals", "type-sneakers", "type-boots",
         "type-coat", "type-reborn-doll", "type-toy", "type-plush-toy",
-        "type-accessory", "type-bath-accessory", "type-swimming-ring",
-        "type-unknown",
+        "type-sleep-soother", "type-accessory", "type-bath-accessory",
+        "type-swimming-ring", "type-unknown",
     },
     "CAT-B": {
         "age-0-3m", "age-3-6m", "age-6-12m", "age-12-18m",
@@ -54,8 +54,8 @@ CLOTHING_SHOES_TYPES: set[str] = {
     "type-shoes", "type-sandals", "type-sneakers", "type-boots",
 }
 NON_AGE_TYPES: set[str] = {
-    "type-toy", "type-plush-toy", "type-reborn-doll", "type-swimming-ring",
-    "type-bath-accessory", "type-accessory", "type-unknown",
+    "type-toy", "type-plush-toy", "type-reborn-doll", "type-sleep-soother",
+    "type-swimming-ring", "type-bath-accessory", "type-accessory", "type-unknown",
 }
 
 ALL_ALLOWED: set[str] = set().union(*ALLOWED_VALUES.values())

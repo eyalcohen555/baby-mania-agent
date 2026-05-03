@@ -36,7 +36,7 @@ CAT-B (age) נדרש **רק** עבור ביגוד (clothing) ונעליים (sho
 **השפעה על דוח זה:**
 - **מוצר 10 (Tempio מדחום):** type-unknown → **אין כשל גיל.** הבעיה היחידה: taxonomy gap (אין `type-bath-accessory` בסכמה).
 - **מוצר 12 (Teddy Bear):** type-toy → **אין כשל גיל.** PASS מוצדק.
-- **מוצר 13 (בובה נושמת פיל):** reborn_toys → **אין כשל גיל.** הבעיה היחידה: type-reborn-doll שגוי לפיל פלאש.
+- **מוצר 13 (בובה נושמת פיל):** reborn_toys → **אין כשל גיל.** הבעיה היחידה: type-reborn-doll שגוי → **תוקן ל-`type-sleep-soother`** (החלטת taxonomy Phase 5c).
 
 **עדכון D1:** NO_AGE_FOUND רלוונטי כבעיה רק לביגוד/נעליים. לא לאביזרים/צעצועים/ריבורן.  
 **עדכון D3:** החלטה סופית — **אין חובת age לריבורן/צעצועים.** רק אם גיל מומלץ כתוב במפורש.
@@ -505,7 +505,7 @@ CAT-B (age) נדרש **רק** עבור ביגוד (clothing) ונעליים (sho
 
 ---
 
-### מוצר 13 — ✅ PASS (reborn_toys, yaml_gap) — ⚠️ type-reborn-doll שגוי (בעיה יחידה — גיל לא נדרש)
+### מוצר 13 — ✅ PASS (reborn_toys, yaml_gap) — ⚠️ type-reborn-doll שגוי → type-sleep-soother
 
 - **product_id:** 9587715244345
 - **title:** בובה נושמת פיל ועוד חיות מחמד
@@ -515,17 +515,21 @@ CAT-B (age) נדרש **רק** עבור ביגוד (clothing) ונעליים (sho
 - **quality_score:** 79.8
 - **current_tags:** (ריק)
 - **proposed_native_tags:** `type-reborn-doll`, `season-winter`, `fabric-fleece`, `occ-calming`, `occ-gift`, `gender-unknown`, `style-animal-print`
-- **customer_labels_he:** **בובות ריבורן** | חורף | פליז | הרגעה | מתנה | הדפס חיות
+- **customer_labels_he:** **מוצרי שינה והרגעה** | חורף | פליז | הרגעה | מתנה | הדפס חיות
 - **blocked_tags:** —
 
 **⚠️ אזהרה:** מוצר זה הוא **פיל פלאש מרגיע** — לא בובת ריבורן! המערכת זיהתה "doll" בה-handle ושיבצה type-reborn-doll. הסיווג שגוי.
 
-⚡ **Phase 5b:** reborn_toys/toys → **אין חובת גיל.** DOLL_NO_AGE_APPLICABLE = תקין. **הבעיה היחידה: type שגוי** — `type-reborn-doll` במקום `type-toy` / `type-plush-toy`.
+⚡ **Phase 5b:** sleep-soother/toys → **אין חובת גיל.** NON_CLOTHING_SHOES = תקין. **הבעיה היחידה: type שגוי** — `type-reborn-doll` במקום `type-sleep-soother`.
 
-**missing / review reason:** type-reborn-doll שגוי — "doll" בה-handle הטעה את המערכת. המוצר הוא פיל פלאש מרגיע. season-winter מהסקת fleece — ייתכן שמטעה.
+**תגיות מומלצות (Phase 5c taxonomy decision):**  
+`type-sleep-soother` + `occ-sleep` + `occ-calming` + `collection-special-picks`  
+תווית לקוח: **מוצרי שינה והרגעה**
+
+**missing / review reason:** type-reborn-doll שגוי — "doll" בה-handle הטעה את המערכת. המוצר הוא פיל פלאש מרגיע — `type-sleep-soother` לפי החלטת taxonomy Phase 5c.
 
 **למה המערכת הציעה את התגיות:**
-- `type-reborn-doll` — ה-handle מכיל "doll" → מסווג כ-reborn_toys → type-reborn-doll
+- `type-reborn-doll` — ה-handle מכיל "doll" → מסווג כ-reborn_toys → type-reborn-doll (שגוי — יתוקן בPhase 6)
 - `season-winter` — ה-handle מכיל חומר שהמערכת פירשה כחורף (fleece)
 - `fabric-fleece` — הכותרת "פלאש" = fleece
 - `occ-calming` — הסקה לפי סוג reborn_toys → הרגעה
@@ -533,13 +537,13 @@ CAT-B (age) נדרש **רק** עבור ביגוד (clothing) ונעליים (sho
 - `style-animal-print` — הכותרת מכילה "פיל" = הדפס חיות
 
 **מה אייל צריך לבדוק:**
-- [ ] סוג מוצר: `type-reborn-doll` — **שגוי! זה פיל פלאש, לא ריבורן!** → `type-toy` / `type-plush-toy`?
-- [ ] ~~גיל~~: **Phase 5b — אין חובת גיל לצעצוע** ✅
+- [x] סוג מוצר: `type-reborn-doll` → **תוקן ל-`type-sleep-soother`** (החלטת taxonomy Phase 5c) ✅
+- [ ] ~~גיל~~: **Phase 5b — אין חובת גיל ל-sleep-soother** ✅
 - [ ] עונה: `season-winter` מהסקת fleece — האם מטעה? לצעצוע?
-- [ ] **תווית: "בובות ריבורן" לפיל פלאש עלול להטעות לקוח → FAIL על type**
-- [ ] לבדוק מוצרים דומים בחנות (plush + "doll" בה-handle)
+- [ ] **collection: האם להוסיף `collection-special-picks`?**
+- [ ] לבדוק מוצרים דומים בחנות (plush + "doll" בה-handle → כולם צריכים type-sleep-soother?)
 
-**החלטת אייל:** `APPROVE / APPROVE_WITH_NOTE / FAIL`  
+**החלטת אייל:** `APPROVE_WITH_NOTE — type יתוקן ל-type-sleep-soother בPhase 6`  
 **הערת אייל:** _____________
 
 ---
@@ -628,7 +632,10 @@ CAT-B (age) נדרש **רק** עבור ביגוד (clothing) ונעליים (sho
 | `type-set` | סטים | [ ] | הופיע ב-Phase 4 ✓ |
 | `type-shoes` | נעליים | [ ] | הופיע ב-Phase 4 ✓ |
 | `type-sandals` | סנדלים | [ ] | הופיע ב-Phase 4 ✓ |
-| `type-reborn-doll` | בובות ריבורן | [ ] | הופיע ✓ — ⚠️ ראה מוצר 13 (פיל פלאש!) |
+| `type-reborn-doll` | בובות ריבורן | [ ] | הופיע ✓ — ⚠️ מוצר 13 תוקן ל-`type-sleep-soother` |
+| `type-sleep-soother` | מוצרי שינה והרגעה | [ ] | **חדש (Phase 5c)** — פיל נושם, מוצרי הרגעה |
+| `collection-special-picks` | המיוחדים שלנו | [ ] | **חדש (Phase 5c)** — שכבת מרצ'נדייזינג |
+| `collection-new-arrivals` | חדשים | [ ] | **חדש (Phase 5c)** — שכבת מרצ'נדייזינג |
 | `season-summer` | קיץ | [ ] | ⚠️ "קיץ" או "בגדי קיץ"? לאחד |
 | `season-winter` | חורף | [ ] | ⚠️ "חורף" או "בגדי חורף"? לאחד |
 | `age-0-3m` | 0-3 חודשים | [ ] | **לא הופיע ב-Phase 4** — לבדוק בנפרד |
