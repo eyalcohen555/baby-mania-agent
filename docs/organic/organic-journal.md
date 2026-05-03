@@ -20,6 +20,39 @@
 ---
 
 ## DATE: 2026-05-03
+## TASK: Layer 6 Phase 5d — Rerun after Phase 5b/5c logic updates
+## SCOPE: Layer 6 — validation rerun, no Shopify writes
+## WHAT CHANGED:
+- הרצה חוזרת על 59 מוצרים עם לוגיקה מעודכנת Phase 5b/5c
+- type-sleep-soother מזוהה לפני type-reborn-doll ב-CAT-A (מוצר 13 תוקן)
+- Phase 5b: CAT-B פטור לסוגים שאינם ביגוד/נעליים (NON_AGE_TYPES)
+- מוצר 13 (פיל נושם): type-reborn-doll → type-sleep-soother, score 79.8→95.1
+- Avg quality score: 77.7 → 82.3 (+4.6 — Phase 5b counts CAT-B as present for exempt types)
+- PASS/NEEDS_REVIEW: 30/29 (ללא שינוי בחלוקה — לא נמצאו products עם YAML שמטיפוס non-age)
+- BLOCKED: 0 (ללא שינוי)
+- taxonomy gaps: 0 (ללא שינוי)
+- Phase5b_exempt: 0 (כי מוצרי reborn_toys הם yaml_gap, exempt דרך YAML_GAP לא Phase5b)
+- sleep_soother_count: 1 ✅
+## FILES TOUCHED:
+- scripts/tags/run_layer6_phase5d_rerun.py (new)
+- output/tags/phase5d-rerun-sample-59.json (new)
+- output/tags/phase5d-rerun-report.json (new)
+- output/tags/phase5d-rerun-report.md (new)
+- output/tags/phase5d-rerun-comparison.md (new)
+## SYSTEM IMPACT:
+- Layer 6 Phase 5d CREATED — WAITING AYAL REVIEW
+- Shopify live: NO
+- Phase 6 NOT OPEN
+- ממוצע quality score שיפור: 77.7 → 82.3
+## OPEN ISSUES:
+- D1 NO_AGE_FOUND: ~18 clothing/shoes — עדיין ממתין
+- D2 RANGE_TOO_BROAD: 4 מוצרים — עדיין ממתין
+- Phase 6 candidates: 5+ מוצרים זמינים (PASS + score>=80 + no yaml_gap)
+## NEXT STEP: Phase 5d Ayal Review ← WAITING
+
+---
+
+## DATE: 2026-05-03
 ## TASK: Layer 6 Phase 5b — CAT-B Rule Update
 ## SCOPE: Layer 6 — logic update, no Shopify writes
 ## WHAT CHANGED:
