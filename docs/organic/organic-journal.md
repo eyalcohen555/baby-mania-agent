@@ -20,6 +20,28 @@
 ---
 
 ## DATE: 2026-05-03
+## TASK: Layer 6 Phase 1 — Taxonomy Spec created
+## SCOPE: Layer 6 — taxonomy planning only
+## WHAT CHANGED:
+- נוצר docs/organic/layer6-taxonomy-spec-v1.md
+- 7 קטגוריות (CAT-A עד CAT-G), 61 allowed values
+- Native Shopify tags policy, YAML_GAP policy, forbidden tags
+- Phase 1 = planning only — אין Shopify write
+## FILES TOUCHED:
+- docs/organic/layer6-taxonomy-spec-v1.md (new)
+## SYSTEM IMPACT:
+- Layer 6 Phase 1 Taxonomy Spec CREATED — WAITING AYAL REVIEW
+- Layer 6 execution NOT OPEN
+- Shopify live: NO
+## OPEN ISSUES:
+- D1: legacy tags migration vs coexistence — ממתין לאייל
+- D2: 3-6M6-9M (1 product) — ממתין לאישור
+- D3: 124 YAML_GAP — timeline לא מוגדר
+## NEXT STEP: Phase 2 Source Mapping — לאחר אישור אייל על Phase 1
+
+---
+
+## DATE: 2026-05-03
 ## TASK: Layer 6 Pre-Phase-1 Tag Cleanup — CL-1/CL-3
 ## SCOPE: Layer 6 — tag system prep
 ## WHAT CHANGED:
