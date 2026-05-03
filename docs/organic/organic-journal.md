@@ -19,6 +19,31 @@
 
 ---
 
+## DATE: 2026-05-05
+## TASK: Layer 6 Phase 2 — Source Mapping Sample (30 products)
+## SCOPE: Layer 6 — source mapping, read-only
+## WHAT CHANGED:
+- נוצרו output/tags/phase2-source-map-sample-30.json + .md
+- 30 מוצרים: 10 clothing+YAML, 10 shoes+YAML, 5 reborn_gap, 5 YAML_GAP
+- Quality: PASS=13, NEEDS_REVIEW=13, BLOCKED=4 | avg score=71.6
+- CAT-B (age) נמוך (10/30) — titles לא תמיד מציינים גיל מפורש
+- CAT-D (fabric) 3/30 — yaml_fabric ריק ברוב המוצרים, כצפוי מ-Phase 1 spec
+## FILES TOUCHED:
+- output/tags/phase2-source-map-sample-30.json (new)
+- output/tags/phase2-source-map-sample-30.md (new)
+- scripts/layer6-phase2-source-map.py (new)
+## SYSTEM IMPACT:
+- Layer 6 Phase 2 COMPLETE — source map sample ready for Ayal review
+- Shopify live: NO — read-only analysis only
+## OPEN ISSUES:
+- D1: legacy tags migration vs coexistence — ממתין לאייל
+- D2: 3-6M6-9M (1 product) — ממתין לאישור
+- D3: 124 YAML_GAP — timeline לא מוגדר
+- CAT-B coverage נמוכה — שיפור age extraction אפשרי ב-Phase 3
+## NEXT STEP: Phase 3 Validation Gates — לאחר Ayal review על Phase 2
+
+---
+
 ## DATE: 2026-05-03
 ## TASK: Layer 6 Phase 1 — Taxonomy Spec created
 ## SCOPE: Layer 6 — taxonomy planning only
