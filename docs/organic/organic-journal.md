@@ -20,6 +20,33 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 6 Phase 2b — CAT-B Age Extraction Hardening
+## SCOPE: Layer 6 — age mapping hardening, read-only
+## WHAT CHANGED:
+- שיפור מיפוי CAT-B age group על אותם 30 מוצרים של Phase 2
+- נוצרו output/tags/phase2b-age-hardening-sample-30.json + .md
+- הוסרו 8 age tags שגויים (age-0-3m הוסק מטעות מטווחים רחבים / מוצרי reborn)
+- נוספו 5 age tags לגיטימיים חדשים (toddler→2-3y, 1-3y, first-walker, Hebrew tags)
+- תוקנו 2 age tags (WarmNest: Hebrew tags; נעל חורף מחממת: toddler→2-3y)
+- RANGE_TOO_BROAD: 9 מוצרים תויגו במפורש (0-18m, 3-24m, 0-8y וכו')
+- DOLL_NO_AGE_APPLICABLE: 5 מוצרי reborn/בובה — גיל לא רלוונטי
+- no misleading age tags: YES ✅
+## FILES TOUCHED:
+- output/tags/phase2b-age-hardening-sample-30.json (new)
+- output/tags/phase2b-age-hardening-sample-30.md (new)
+## SYSTEM IMPACT:
+- CAT-B valid coverage: 10→7 (פחות אבל מדויק)
+- PASS: 13→14 | NEEDS_REVIEW: 13→12 | BLOCKED: 4→4 | avg: 71.6→70.3
+- Shopify live: NO — read-only analysis only
+## OPEN ISSUES:
+- D1: legacy tags coexistence — confirmed (no migration)
+- 9 מוצרים עם RANGE_TOO_BROAD — ממתינים להחלטת אייל על טיפול
+- 9 מוצרים NO_AGE_FOUND — title/YAML ללא מידע גיל
+## NEXT STEP: Phase 3 Validation Gates — לאחר Ayal review על Phase 2b
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 6 Phase 2 — Source Mapping Sample (30 products)
 ## SCOPE: Layer 6 — source mapping, read-only
 ## WHAT CHANGED:
