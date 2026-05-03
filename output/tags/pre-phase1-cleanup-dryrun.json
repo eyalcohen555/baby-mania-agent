@@ -1,0 +1,203 @@
+{
+  "scope": "CL-1 + CL-3",
+  "date": "2026-05-03",
+  "cl2_note": "CL-2 = 0 products. Phase 0 reported garbled Hebrew but data is valid UTF-8. No garbled tags exist.",
+  "products_affected": 76,
+  "cl1_count": 75,
+  "cl3_count": 3,
+  "overlap_both": 2,
+  "valid_tags_removed": 0,
+  "no_valid_tags_removed": true,
+  "tags_to_remove": [
+    "Copy AI",
+    "All categories"
+  ],
+  "sample_before_after": [
+    {
+      "product_id": "9166992900409",
+      "title": "BABY MANIA™  בובה  נושמת מבית",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179155693881",
+      "title": "אוברול אלגנט דגם עומרי",
+      "before": [
+        "Copy AI",
+        "אוברול"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": [
+        "אוברול"
+      ]
+    },
+    {
+      "product_id": "9179176141113",
+      "title": "אוברול דובונים מכותנה - ליאור",
+      "before": [
+        "Copy AI",
+        "אוברול"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": [
+        "אוברול"
+      ]
+    },
+    {
+      "product_id": "9179161231673",
+      "title": "אוברול כותנה קיצי - נועה",
+      "before": [
+        "Copy AI",
+        "אוברול"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": [
+        "אוברול"
+      ]
+    },
+    {
+      "product_id": "9179137933625",
+      "title": "אוברול מתוק מכותנה מלאה ללא כתפיות - נויה",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179158479161",
+      "title": "אוברול פשתן וכותנה וינטג׳ - קייגו",
+      "before": [
+        "Copy AI",
+        "אוברול"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": [
+        "אוברול"
+      ]
+    },
+    {
+      "product_id": "9179138457913",
+      "title": "אוברול קיצי מתוק סטייל קז'ואל - יואבי",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179152482617",
+      "title": "בגד גוף אלגנטי - מייקל",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179165753657",
+      "title": "בגד גוף כותנה טטרה - פריחת האביב",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179154612537",
+      "title": "בגד גוף כיווצים - גאיה",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179168964921",
+      "title": "בגד גוף כיווצים אלגנטי - נטלי",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179152154937",
+      "title": "בגד גוף מלמלות - קיטי",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179167129913",
+      "title": "בגד גוף מלמלות וכיווצים פרחוני - שיילי",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179172733241",
+      "title": "בגד גוף פסים אלגנטי - ריף",
+      "before": [
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": []
+    },
+    {
+      "product_id": "9179166671161",
+      "title": "בגד גוף שמלה ג׳ינס מכותנה - הרפר",
+      "before": [
+        "12-18 חודש",
+        "18-24M",
+        "3-6 חודש",
+        "6-12 חודש",
+        "Copy AI"
+      ],
+      "remove": [
+        "Copy AI"
+      ],
+      "after": [
+        "12-18 חודש",
+        "18-24M",
+        "3-6 חודש",
+        "6-12 חודש"
+      ]
+    }
+  ]
+}

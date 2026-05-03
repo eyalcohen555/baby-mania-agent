@@ -19,6 +19,30 @@
 
 ---
 
+## DATE: 2026-05-03
+## TASK: Layer 6 Pre-Phase-1 Tag Cleanup — CL-1/CL-3
+## SCOPE: Layer 6 — tag system prep
+## WHAT CHANGED:
+- הוסרו תגיות `Copy AI` (75 מוצרים) ו-`All categories` (3 מוצרים) מ-Shopify
+- CL-2 (garbled Hebrew) = 0 — Phase 0 report היה שגוי, התגיות תקינות
+- 76 מוצרים עודכנו בהצלחה — 0 שגיאות
+- Verify: 76/76 PASS — כל תג תקין נשמר
+## FILES TOUCHED:
+- output/tags/pre-phase1-cleanup-backup.json
+- output/tags/pre-phase1-cleanup-dryrun.json / .md
+- output/tags/pre-phase1-cleanup-verify.json / .md
+- output/tags/phase0-audit-report.md (הוסף סעיף 12)
+## SYSTEM IMPACT:
+- Shopify: 76 מוצרים נקיים מתגיות spurious
+- Layer 6 Phase 0: COMPLETE + Cleanup COMPLETE
+## OPEN ISSUES:
+- A2: בחירת tag field (Native vs Metafields) — ממתין לאייל
+- A3: אישור פתיחת Phase 1 (Taxonomy Spec) — ממתין לאייל
+- A4: 124 active products ללא YAML — החלטה ממתינה
+## NEXT STEP: Phase 1 Taxonomy Spec — לאחר אישור אייל
+
+---
+
 ## מצב נוכחי (2026-03-25)
 
 | HUB | נושא | מאמרים | סטטוס | GSC |

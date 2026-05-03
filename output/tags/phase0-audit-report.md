@@ -197,3 +197,21 @@
 ---
 
 *Phase 0 הורץ: 2026-04-29 | read-only | T0 | אין שינוי ב-Shopify*
+
+---
+
+## 12. Pre-Phase-1 Cleanup Result — 2026-05-03
+
+| שדה | ערך |
+|-----|-----|
+| תאריך | 2026-05-03 |
+| תגיות שהוסרו | `Copy AI` (75 מוצרים), `All categories` (3 מוצרים) |
+| תגיות garbled | 0 — Phase 0 report היה שגוי (בעיית תצוגת טרמינל בלבד) |
+| מוצרים שעודכנו | **76** |
+| שגיאות | **0** |
+| תגיות תקינות שנמחקו | **0** |
+| verify status | **PASS 76/76** |
+| CL-1 status | ✅ COMPLETE |
+| CL-2 status | ✅ N/A — אין garbled |
+| CL-3 status | ✅ COMPLETE |
+| Backup | output/tags/pre-phase1-cleanup-backup.json |
