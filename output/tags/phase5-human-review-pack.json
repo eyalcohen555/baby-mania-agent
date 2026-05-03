@@ -14,8 +14,24 @@
       "age_status": "OK",
       "yaml_gap": false,
       "review_category": "PASS_GOOD",
-      "proposed_native_tags": ["type-romper", "age-newborn", "season-summer", "fabric-denim", "occ-everyday", "gender-girl", "style-casual"],
-      "customer_labels_he": ["אוברולים", "יילוד", "קיץ", "ג'ינס", "יומיומי", "בנות", "קז'ואל"],
+      "proposed_native_tags": [
+        "type-romper",
+        "age-newborn",
+        "season-summer",
+        "fabric-denim",
+        "occ-everyday",
+        "gender-girl",
+        "style-casual"
+      ],
+      "customer_labels_he": [
+        "אוברולים",
+        "יילוד",
+        "קיץ",
+        "ג'ינס",
+        "יומיומי",
+        "בנות",
+        "קז'ואל"
+      ],
       "blocked_tags": [],
       "review_reason": "PASS — כל 7 קטגוריות נמצאו. מקורות ברורים. דוגמה מלאה.",
       "flags": [],
@@ -40,11 +56,29 @@
       "age_status": "OK",
       "yaml_gap": false,
       "review_category": "PASS_GOOD",
-      "proposed_native_tags": ["type-romper", "age-2-3y", "season-spring-fall", "fabric-denim", "occ-everyday", "gender-girl", "style-modern"],
-      "customer_labels_he": ["אוברולים", "2-3 שנים", "אביב/סתיו", "ג'ינס", "יומיומי", "בנות", "מודרני"],
+      "proposed_native_tags": [
+        "type-romper",
+        "age-2-3y",
+        "season-spring-fall",
+        "fabric-denim",
+        "occ-everyday",
+        "gender-girl",
+        "style-modern"
+      ],
+      "customer_labels_he": [
+        "אוברולים",
+        "2-3 שנים",
+        "אביב/סתיו",
+        "ג'ינס",
+        "יומיומי",
+        "בנות",
+        "מודרני"
+      ],
       "blocked_tags": [],
       "review_reason": "PASS — handle מכיל toddler + infant, הסקת גיל 2-3y מ-toddler_heuristic. לבדוק איזה גיל נכון.",
-      "flags": ["handle_toddler_vs_infant"],
+      "flags": [
+        "handle_toddler_vs_infant"
+      ],
       "checklist": [
         "סוג מוצר: type-romper — נכון?",
         "גיל: handle מכיל 'toddler' ו-'infant' — המוצר מיועד ל-2-3y או לתינוק?",
@@ -66,11 +100,32 @@
       "age_status": "OK",
       "yaml_gap": false,
       "review_category": "PASS_GOOD",
-      "proposed_native_tags": ["type-shoes", "age-6-12m", "season-unknown", "occ-gift", "occ-special-event", "occ-everyday", "occ-first-step", "gender-girl", "style-elegant"],
-      "customer_labels_he": ["נעליים", "6-12 חודשים", "מתנה", "אירוע מיוחד", "יומיומי", "צעד ראשון", "בנות", "אלגנטי"],
+      "proposed_native_tags": [
+        "type-shoes",
+        "age-6-12m",
+        "season-unknown",
+        "occ-gift",
+        "occ-special-event",
+        "occ-everyday",
+        "occ-first-step",
+        "gender-girl",
+        "style-elegant"
+      ],
+      "customer_labels_he": [
+        "נעליים",
+        "6-12 חודשים",
+        "מתנה",
+        "אירוע מיוחד",
+        "יומיומי",
+        "צעד ראשון",
+        "בנות",
+        "אלגנטי"
+      ],
       "blocked_tags": [],
       "review_reason": "PASS — תג קיים 'newborn-clothing' מנוגד לגיל המוצע 6-12m (מ-first_walker_heuristic). לאמת איזה גיל נכון.",
-      "flags": ["existing_tag_conflict: newborn-clothing vs age-6-12m"],
+      "flags": [
+        "existing_tag_conflict: newborn-clothing vs age-6-12m"
+      ],
       "checklist": [
         "סוג מוצר: type-shoes — נכון?",
         "גיל: 'newborn-clothing' קיים בשופיפיי VS 'first-walker' = 6-12m — איזה נכון?",
@@ -92,11 +147,28 @@
       "age_status": "OK",
       "yaml_gap": false,
       "review_category": "PASS_GOOD",
-      "proposed_native_tags": ["type-shoes", "age-2-3y", "season-unknown", "occ-gift", "occ-everyday", "gender-neutral", "style-casual"],
-      "customer_labels_he": ["נעליים", "2-3 שנים", "מתנה", "יומיומי", "ניוטרלי", "קז'ואל"],
+      "proposed_native_tags": [
+        "type-shoes",
+        "age-2-3y",
+        "season-unknown",
+        "occ-gift",
+        "occ-everyday",
+        "gender-neutral",
+        "style-casual"
+      ],
+      "customer_labels_he": [
+        "נעליים",
+        "2-3 שנים",
+        "מתנה",
+        "יומיומי",
+        "ניוטרלי",
+        "קז'ואל"
+      ],
       "blocked_tags": [],
       "review_reason": "PASS — handle מכיל '0-to-3-years-old' אבל toddler_heuristic נתן age-2-3y (לא חסם). לבדוק האם 2-3y נכון.",
-      "flags": ["handle_wide_range_vs_toddler_heuristic: 0-to-3-years-old"],
+      "flags": [
+        "handle_wide_range_vs_toddler_heuristic: 0-to-3-years-old"
+      ],
       "checklist": [
         "סוג מוצר: type-shoes — נכון?",
         "גיל: handle מכיל '0-to-3-years-old' (טווח רחב) אבל המערכת נתנה age-2-3y — האם נכון?",
@@ -117,11 +189,29 @@
       "age_status": "OK",
       "yaml_gap": true,
       "review_category": "PASS_GOOD",
-      "proposed_native_tags": ["type-set", "age-3-6m", "season-summer", "fabric-knit", "occ-everyday", "gender-boy", "style-striped"],
-      "customer_labels_he": ["סטים", "3-6 חודשים", "קיץ", "סריג", "יומיומי", "בנים", "פסים"],
+      "proposed_native_tags": [
+        "type-set",
+        "age-3-6m",
+        "season-summer",
+        "fabric-knit",
+        "occ-everyday",
+        "gender-boy",
+        "style-striped"
+      ],
+      "customer_labels_he": [
+        "סטים",
+        "3-6 חודשים",
+        "קיץ",
+        "סריג",
+        "יומיומי",
+        "בנים",
+        "פסים"
+      ],
       "blocked_tags": [],
       "review_reason": "PASS — yaml_gap, אין תגים קיימים. מקור גיל 'yaml_desc' עם yaml_gap=True — לא עקבי. נדרש אימות.",
-      "flags": ["source_label_mismatch: yaml_desc with yaml_gap=True"],
+      "flags": [
+        "source_label_mismatch: yaml_desc with yaml_gap=True"
+      ],
       "checklist": [
         "סוג מוצר: type-set — נכון?",
         "גיל: age-3-6m — לבדוק בתיאור המוצר בשופיפיי (מקור לא ברור)",
@@ -142,11 +232,24 @@
       "age_status": "NO_AGE_FOUND",
       "yaml_gap": false,
       "review_category": "NEEDS_REVIEW_NO_AGE",
-      "proposed_native_tags": ["type-romper", "season-unknown", "occ-everyday", "gender-unknown"],
-      "customer_labels_he": ["אוברולים", "יומיומי"],
+      "proposed_native_tags": [
+        "type-romper",
+        "season-unknown",
+        "occ-everyday",
+        "gender-unknown"
+      ],
+      "customer_labels_he": [
+        "אוברולים",
+        "יומיומי"
+      ],
       "blocked_tags": [],
       "review_reason": "NO_AGE_FOUND — handle קצר מאוד 'baby-bear-cozy-set', אין גיל, אין מגדר, אין עונה.",
-      "flags": ["no_age", "no_gender", "no_season", "short_handle"],
+      "flags": [
+        "no_age",
+        "no_gender",
+        "no_season",
+        "short_handle"
+      ],
       "checklist": [
         "סוג מוצר: type-romper — נכון? (ייתכן שזה 'set')",
         "גיל: חסר לחלוטין — מה הגיל של 'Baby Bear Cozy Set'?",
@@ -167,11 +270,28 @@
       "age_status": "NO_AGE_FOUND",
       "yaml_gap": false,
       "review_category": "NEEDS_REVIEW_NO_AGE",
-      "proposed_native_tags": ["type-romper", "season-summer", "fabric-cotton", "occ-gift", "gender-unknown", "style-modern"],
-      "customer_labels_he": ["אוברולים", "קיץ", "כותנה", "מתנה", "מודרני"],
+      "proposed_native_tags": [
+        "type-romper",
+        "season-summer",
+        "fabric-cotton",
+        "occ-gift",
+        "gender-unknown",
+        "style-modern"
+      ],
+      "customer_labels_he": [
+        "אוברולים",
+        "קיץ",
+        "כותנה",
+        "מתנה",
+        "מודרני"
+      ],
       "blocked_tags": [],
       "review_reason": "NO_AGE_FOUND — handle עברי 'אוברול-בייבי-מניה-דגם-חן-מתנה'. אין גיל, gender-unknown.",
-      "flags": ["no_age", "no_gender", "hebrew_handle"],
+      "flags": [
+        "no_age",
+        "no_gender",
+        "hebrew_handle"
+      ],
       "checklist": [
         "סוג מוצר: type-romper — נכון?",
         "גיל: חסר — מה הגיל של 'דגם חן'?",
@@ -192,11 +312,28 @@
       "age_status": "NO_AGE_FOUND",
       "yaml_gap": false,
       "review_category": "NEEDS_REVIEW_NO_AGE",
-      "proposed_native_tags": ["type-shoes", "season-summer", "occ-gift", "occ-everyday", "gender-girl", "style-casual"],
-      "customer_labels_he": ["נעליים", "קיץ", "מתנה", "יומיומי", "בנות", "קז'ואל"],
+      "proposed_native_tags": [
+        "type-shoes",
+        "season-summer",
+        "occ-gift",
+        "occ-everyday",
+        "gender-girl",
+        "style-casual"
+      ],
+      "customer_labels_he": [
+        "נעליים",
+        "קיץ",
+        "מתנה",
+        "יומיומי",
+        "בנות",
+        "קז'ואל"
+      ],
       "blocked_tags": [],
       "review_reason": "NO_AGE_FOUND — תגים קיימים 'baby' ו-'kids' לא נותנים גיל ספציפי. handle מכיל 'sandals' אבל type-shoes הוצע.",
-      "flags": ["no_age", "possible_type_mismatch: sandals_in_handle_vs_type_shoes"],
+      "flags": [
+        "no_age",
+        "possible_type_mismatch: sandals_in_handle_vs_type_shoes"
+      ],
       "checklist": [
         "סוג מוצר: type-shoes — נכון? (handle מכיל 'sandals' — האם type-sandals?)",
         "גיל: חסר — 'hello kitty' + 'kids' — מה גיל המוצר?",
@@ -216,11 +353,25 @@
       "age_status": "NO_AGE_FOUND",
       "yaml_gap": false,
       "review_category": "NEEDS_REVIEW_NO_AGE",
-      "proposed_native_tags": ["type-sandals", "season-unknown", "occ-first-step", "gender-unknown"],
-      "customer_labels_he": ["סנדלים", "צעד ראשון"],
+      "proposed_native_tags": [
+        "type-sandals",
+        "season-unknown",
+        "occ-first-step",
+        "gender-unknown"
+      ],
+      "customer_labels_he": [
+        "סנדלים",
+        "צעד ראשון"
+      ],
       "blocked_tags": [],
       "review_reason": "NO_AGE_FOUND — handle עברי קצר, תג קיים 'Copy AI' בלבד. 'צעד ראשון' מרמז 6-12m אבל לא נרשם.",
-      "flags": ["no_age", "no_gender", "no_season", "hebrew_handle", "minimal_source"],
+      "flags": [
+        "no_age",
+        "no_gender",
+        "no_season",
+        "hebrew_handle",
+        "minimal_source"
+      ],
       "checklist": [
         "סוג מוצר: type-sandals — נכון?",
         "גיל: 'צעד ראשון' = בד\"כ 6-12m — האם לאשר age-6-12m?",
@@ -240,16 +391,26 @@
       "age_status": "NO_AGE_FOUND",
       "yaml_gap": true,
       "review_category": "NEEDS_REVIEW_NO_AGE",
-      "proposed_native_tags": ["type-unknown", "season-unknown", "occ-everyday", "gender-unknown"],
-      "customer_labels_he": ["יומיומי"],
+      "proposed_native_tags": [
+        "type-unknown",
+        "season-unknown",
+        "occ-everyday",
+        "gender-unknown"
+      ],
+      "customer_labels_he": [
+        "יומיומי"
+      ],
       "blocked_tags": [],
-      "review_reason": "type-unknown — מדחום מים, לא ביגוד/נעל/בובה. שאלה: האם שייך ל-Layer 6 Tag System?",
-      "flags": ["non_clothing_product", "type_unknown", "no_age", "no_gender"],
+      "review_reason": "Phase 5b: type-unknown אין חובת גיל לאביזר. הבעיה היחידה: taxonomy gap — type-bath-accessory לא בסכמה.",
+      "flags": [
+        "non_clothing_product",
+        "taxonomy_gap_no_bath_accessory_type"
+      ],
       "checklist": [
-        "האם מוצר זה שייך ל-Layer 6 Tag System בכלל?",
-        "אם כן — מה type נכון? (אין קטגוריה 'מוצרי תינוק' עדיין)",
-        "אם לא — לסמן כ-EXCLUDED מ-Layer 6",
-        "האם יש מוצרים דומים (מוצרי עזר, אלקטרוניקה) שצריך לטפל בהם?"
+        "Phase 5b: אין חובת גיל לאביזר/מדחום ✅",
+        "type: האם type-bath-accessory נכון? (לא בסכמה עדיין)",
+        "האם מוצר זה שייך ל-Layer 6 בכלל, או EXCLUDED?",
+        "האם יש מוצרים דומים שצריך טיפול?"
       ],
       "ayal_decision": null,
       "ayal_note": null
@@ -263,11 +424,30 @@
       "age_status": "OK",
       "yaml_gap": true,
       "review_category": "YAML_GAP",
-      "proposed_native_tags": ["type-set", "age-2-3y", "season-summer", "fabric-knit", "occ-everyday", "gender-boy", "style-casual"],
-      "customer_labels_he": ["סטים", "2-3 שנים", "קיץ", "סריג", "יומיומי", "בנים", "קז'ואל"],
+      "proposed_native_tags": [
+        "type-set",
+        "age-2-3y",
+        "season-summer",
+        "fabric-knit",
+        "occ-everyday",
+        "gender-boy",
+        "style-casual"
+      ],
+      "customer_labels_he": [
+        "סטים",
+        "2-3 שנים",
+        "קיץ",
+        "סריג",
+        "יומיומי",
+        "בנים",
+        "קז'ואל"
+      ],
       "blocked_tags": [],
       "review_reason": "PASS yaml_gap — אין YAML, אין תגים קיימים. כל מקורות מ-title/handle/body. גיל 2-3y מהתיאור — לאמת.",
-      "flags": ["yaml_gap", "no_existing_tags"],
+      "flags": [
+        "yaml_gap",
+        "no_existing_tags"
+      ],
       "checklist": [
         "סוג מוצר: type-set — נכון?",
         "גיל: age-2-3y מהתיאור — לבדוק בשופיפיי",
@@ -288,18 +468,33 @@
       "age_status": "NO_AGE_FOUND",
       "yaml_gap": true,
       "review_category": "YAML_GAP",
-      "proposed_native_tags": ["type-toy", "season-unknown", "fabric-fleece", "occ-gift", "gender-unknown", "style-teddy"],
-      "customer_labels_he": ["צעצועים", "פליז", "מתנה", "דובי"],
+      "proposed_native_tags": [
+        "type-toy",
+        "season-unknown",
+        "fabric-fleece",
+        "occ-gift",
+        "gender-unknown",
+        "style-teddy"
+      ],
+      "customer_labels_he": [
+        "צעצועים",
+        "פליז",
+        "מתנה",
+        "דובי"
+      ],
       "blocked_tags": [],
-      "review_reason": "PASS yaml_gap — type-toy, אין גיל, אין מגדר. כותרת חצויה ('Gift for...'). 3 קטגוריות חסרות.",
-      "flags": ["yaml_gap", "no_age", "no_gender", "truncated_title"],
+      "review_reason": "Phase 5b: type-toy אין חובת גיל. PASS מוצדק. כותרת חצויה לבדיקה.",
+      "flags": [
+        "yaml_gap",
+        "truncated_title",
+        "no_existing_tags"
+      ],
       "checklist": [
         "סוג מוצר: type-toy — נכון?",
-        "גיל: מה הגיל המומלץ לדובי 30 ס\"מ?",
-        "עונה: season-unknown לצעצוע — בסדר?",
+        "Phase 5b: אין חובת גיל לצעצוע ✅ (אם יש גיל מפורש — ניתן להוסיף)",
         "בד: fabric-fleece — נכון לדובי?",
-        "מגדר: gender-unknown — האם gender-neutral לדובי?",
-        "כותרת חצויה בשופיפיי — לבדוק"
+        "מגדר: gender-unknown — האם gender-neutral?",
+        "כותרת חצויה בשופיפיי — לבדוק ולתקן"
       ],
       "ayal_decision": null,
       "ayal_note": null
@@ -313,18 +508,35 @@
       "age_status": "DOLL_NO_AGE_APPLICABLE",
       "yaml_gap": true,
       "review_category": "YAML_GAP",
-      "proposed_native_tags": ["type-reborn-doll", "season-winter", "fabric-fleece", "occ-calming", "occ-gift", "gender-unknown", "style-animal-print"],
-      "customer_labels_he": ["בובות ריבורן", "חורף", "פליז", "הרגעה", "מתנה", "הדפס חיות"],
+      "proposed_native_tags": [
+        "type-reborn-doll",
+        "season-winter",
+        "fabric-fleece",
+        "occ-calming",
+        "occ-gift",
+        "gender-unknown",
+        "style-animal-print"
+      ],
+      "customer_labels_he": [
+        "בובות ריבורן",
+        "חורף",
+        "פליז",
+        "הרגעה",
+        "מתנה",
+        "הדפס חיות"
+      ],
       "blocked_tags": [],
-      "review_reason": "ALERT — type-reborn-doll עלול להיות שגוי: זה פיל פלאש מרגיע, לא בובת ריבורן. season-winter מהסקת חומר.",
-      "flags": ["potential_type_error: reborn_doll_vs_plush_toy", "season_from_material_inference"],
+      "review_reason": "Phase 5b: reborn_toys אין חובת גיל. הבעיה היחידה: type-reborn-doll שגוי לפיל פלאש → type-toy / type-plush-toy.",
+      "flags": [
+        "type_error_reborn_doll_vs_plush_toy",
+        "phase5b_age_not_required"
+      ],
       "checklist": [
-        "סוג מוצר: type-reborn-doll — נכון? (זה פיל פלאש, לא ריבורן!)",
-        "אם לא — type-toy נכון יותר?",
-        "גיל: DOLL_NO_AGE_APPLICABLE — נכון לצעצוע פלאש?",
-        "עונה: season-winter מהסקת חומר (fleece) — האם מטעה?",
-        "תווית: 'בובות ריבורן' לפיל פלאש — עלול להטעות לקוח!",
-        "לבדוק מוצרים דומים בחנות עם אותה בעיה"
+        "סוג מוצר: type-reborn-doll שגוי — זה פיל פלאש! → type-toy / type-plush-toy",
+        "Phase 5b: אין חובת גיל לצעצוע/ריבורן ✅",
+        "עונה: season-winter מהסקת fleece — האם מטעה?",
+        "תווית: בובות ריבורן לפיל פלאש — עלול להטעות לקוח → FAIL על type",
+        "לבדוק מוצרים דומים בחנות"
       ],
       "ayal_decision": null,
       "ayal_note": null
@@ -338,11 +550,30 @@
       "age_status": "RANGE_TOO_BROAD",
       "yaml_gap": false,
       "review_category": "RANGE_TOO_BROAD",
-      "proposed_native_tags": ["type-romper", "season-winter", "fabric-cotton", "occ-everyday", "gender-girl", "style-modern"],
-      "customer_labels_he": ["אוברולים", "חורף", "כותנה", "יומיומי", "בנות", "מודרני"],
-      "blocked_tags": ["age-* (RANGE_TOO_BROAD: handle '0-24m')"],
+      "proposed_native_tags": [
+        "type-romper",
+        "season-winter",
+        "fabric-cotton",
+        "occ-everyday",
+        "gender-girl",
+        "style-modern"
+      ],
+      "customer_labels_he": [
+        "אוברולים",
+        "חורף",
+        "כותנה",
+        "יומיומי",
+        "בנות",
+        "מודרני"
+      ],
+      "blocked_tags": [
+        "age-* (RANGE_TOO_BROAD: handle '0-24m')"
+      ],
       "review_reason": "RANGE_TOO_BROAD — handle מכיל '0-24m'. גיל חסום. תגי גדלים קיימים: 3-6M, 9-18M, 18-24M.",
-      "flags": ["range_too_broad", "existing_size_tags: 3-6M 9-18M 18-24M"],
+      "flags": [
+        "range_too_broad",
+        "existing_size_tags: 3-6M 9-18M 18-24M"
+      ],
       "checklist": [
         "סוג מוצר: type-romper — נכון?",
         "גיל: חסום (0-24m רחב מדי) — האם להציג בלי גיל? לפצל? tag רחב?",
@@ -363,11 +594,27 @@
       "age_status": "NO_AGE_FOUND",
       "yaml_gap": false,
       "review_category": "EDGE_CASE",
-      "proposed_native_tags": ["type-bodysuit", "season-unknown", "occ-everyday", "gender-unknown", "style-elegant"],
-      "customer_labels_he": ["בגד גוף", "יומיומי", "אלגנטי"],
+      "proposed_native_tags": [
+        "type-bodysuit",
+        "season-unknown",
+        "occ-everyday",
+        "gender-unknown",
+        "style-elegant"
+      ],
+      "customer_labels_he": [
+        "בגד גוף",
+        "יומיומי",
+        "אלגנטי"
+      ],
       "blocked_tags": [],
       "review_reason": "EDGE CASE — handle עברי קצר, שם 'מייקל' לא מספיק למגדר, תג 'Copy AI' בלבד. חסר גיל ומגדר.",
-      "flags": ["no_age", "no_gender", "hebrew_handle", "short_handle", "copy_ai_tag"],
+      "flags": [
+        "no_age",
+        "no_gender",
+        "hebrew_handle",
+        "short_handle",
+        "copy_ai_tag"
+      ],
       "checklist": [
         "סוג מוצר: type-bodysuit = בגד גוף — נכון?",
         "גיל: חסר — מה גיל 'בגד גוף אלגנטי מייקל'?",
@@ -383,7 +630,7 @@
     {
       "id": "D1",
       "title": "NO_AGE_FOUND strategy",
-      "description": "31 מוצרים (52%) חסרים גיל. מה עושים?",
+      "description": "Phase 5b עדכון: NO_AGE_FOUND רלוונטי רק לביגוד/נעליים (~18 מוצרים). ריבורן/צעצועים/אביזרים = לא בעיה.",
       "options": [
         "A. לא להציג מוצרים כאלה בפילטר גיל עד שיש גיל מאומת",
         "B. להשתמש ב-age-unknown פנימי בלבד, לא לתפריט",
@@ -407,14 +654,14 @@
     {
       "id": "D3",
       "title": "Reborn / dolls age",
-      "description": "9 מוצרי reborn/toys עם DOLL_NO_AGE_APPLICABLE. מה עושים?",
+      "description": "החלטה סופית (Phase 5b): אין חובת age לריבורן/צעצועים/אביזרים.",
       "options": [
         "A. בלי age tag",
         "B. tag מיוחד כמו age-not-applicable",
         "C. להשתמש בגיל מומלץ רק אם כתוב במוצר"
       ],
       "recommendation": "A עכשיו, C בעתיד אם יש מקור",
-      "ayal_decision": null
+      "ayal_decision": "A — בלי age tag. C בעתיד אם גיל מפורש."
     },
     {
       "id": "D4",
@@ -437,5 +684,24 @@
     "major_pattern_found": null,
     "can_proceed_to_phase6_small_live_batch": null,
     "notes": null
+  },
+  "phase5b_rule": {
+    "catb_required_for": [
+      "clothing",
+      "shoes"
+    ],
+    "catb_not_required_for": [
+      "toy",
+      "plush-toy",
+      "reborn-doll",
+      "bath-accessory",
+      "accessory",
+      "unknown"
+    ],
+    "new_allowed_types": [
+      "type-bath-accessory",
+      "type-plush-toy"
+    ],
+    "impact_on_no_age_found": "Only ~18 clothing/shoes products are real NO_AGE_FOUND issues (not 31)"
   }
 }

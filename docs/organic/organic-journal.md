@@ -20,6 +20,34 @@
 ---
 
 ## DATE: 2026-05-03
+## TASK: Layer 6 Phase 5b — CAT-B Rule Update
+## SCOPE: Layer 6 — logic update, no Shopify writes
+## WHAT CHANGED:
+- כלל מחייב חדש: CAT-B (age) נדרש רק לביגוד/נעליים
+- לא נדרש age לצעצועים/ריבורן/אביזרים/type-unknown
+- עודכן scripts/tags/layer6_validate_tags.py: _catb_exempt + NON_AGE_TYPES + CLOTHING_SHOES_TYPES
+- נוספו type-bath-accessory + type-plush-toy לרשימת ערכים מותרים (CAT-A)
+- עודכנו phase5 docs: מוצרים 10/12/13 + D1 + D3 (החלטה סופית)
+- D3 החלטה סופית: A — אין age לריבורן/צעצועים. C בעתיד אם מפורש.
+- NO_AGE_FOUND אמיתי: ~18 clothing/shoes (לא 31)
+## FILES TOUCHED:
+- scripts/tags/layer6_validate_tags.py (updated: Phase 5b CAT-B rule)
+- output/tags/phase5-human-review-pack.md (updated: Phase 5b section + products 10/12/13 + D1/D3)
+- output/tags/phase5-human-review-pack.json (updated: D1/D3 + items 10/12/13 + phase5b_rule)
+- output/tags/phase5-human-review-summary.md (updated: risks + D3 decided)
+## SYSTEM IMPACT:
+- Layer 6 Phase 5b CREATED — WAITING AYAL REVIEW
+- Shopify live: NO
+- Phase 6 NOT OPEN
+## OPEN ISSUES:
+- D1 NO_AGE_FOUND: ~18 clothing/shoes — עדיין ממתין
+- D2 RANGE_TOO_BROAD: 4 מוצרים — עדיין ממתין
+- type-reborn-doll לפיל פלאש — classification rule לתיקון
+## NEXT STEP: Phase 5 Ayal Review ← WAITING
+
+---
+
+## DATE: 2026-05-03
 ## TASK: Layer 6 Phase 5 — Human Review Pack
 ## SCOPE: Layer 6 — review documentation, read-only (no Shopify writes)
 ## WHAT CHANGED:

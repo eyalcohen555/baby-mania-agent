@@ -12,8 +12,9 @@ ALLOWED_VALUES: dict[str, set[str]] = {
         "type-romper", "type-bodysuit", "type-dress", "type-set",
         "type-pants", "type-top", "type-hat", "type-swimwear",
         "type-shoes", "type-sandals", "type-sneakers", "type-boots",
-        "type-coat", "type-reborn-doll", "type-toy", "type-accessory",
-        "type-swimming-ring", "type-unknown",
+        "type-coat", "type-reborn-doll", "type-toy", "type-plush-toy",
+        "type-accessory", "type-bath-accessory", "type-swimming-ring",
+        "type-unknown",
     },
     "CAT-B": {
         "age-0-3m", "age-3-6m", "age-6-12m", "age-12-18m",
@@ -43,6 +44,18 @@ ALLOWED_VALUES: dict[str, set[str]] = {
         "style-floral", "style-animal-print", "style-teddy", "style-european",
         "style-unicorn", "style-striped", "style-modern", "style-unknown",
     },
+}
+
+# Phase 5b rule: CAT-B (age) required only for clothing and shoes.
+# Toys, plush toys, reborn dolls, bath accessories, accessories → age not required.
+CLOTHING_SHOES_TYPES: set[str] = {
+    "type-romper", "type-bodysuit", "type-dress", "type-set",
+    "type-pants", "type-top", "type-coat", "type-swimwear", "type-hat",
+    "type-shoes", "type-sandals", "type-sneakers", "type-boots",
+}
+NON_AGE_TYPES: set[str] = {
+    "type-toy", "type-plush-toy", "type-reborn-doll", "type-swimming-ring",
+    "type-bath-accessory", "type-accessory", "type-unknown",
 }
 
 ALL_ALLOWED: set[str] = set().union(*ALLOWED_VALUES.values())
@@ -98,6 +111,13 @@ def _catb_exempt(product: dict) -> tuple[bool, str]:
         return True, age_status or "reborn"
     if product.get("yaml_gap") and age_status == "NO_AGE_FOUND":
         return True, "YAML_GAP+NO_AGE_FOUND"
+    # Phase 5b: non-clothing/shoes types are exempt from CAT-B requirement.
+    proposed_type = next(
+        (t["tag"] for t in product.get("proposed_tags", []) if t["tag"].startswith("type-")),
+        None,
+    )
+    if proposed_type and proposed_type in NON_AGE_TYPES:
+        return True, f"NON_CLOTHING_SHOES:{proposed_type}"
     return False, ""
 
 

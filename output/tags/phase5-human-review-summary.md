@@ -32,24 +32,31 @@
 
 ---
 
+## ⚡ Phase 5b — כלל CAT-B מעודכן
+
+CAT-B (גיל) נדרש רק לביגוד/נעליים. לא לצעצועים/ריבורן/אביזרים.  
+NO_AGE_FOUND אמיתי לטיפול: ~18 מוצרי clothing/shoes (לא 31).
+
+---
+
 ## סיכונים עיקריים שזוהו
 
-1. **type-reborn-doll שגוי (מוצר 13):** פיל פלאש מרגיע קיבל type-reborn-doll כי ה-handle מכיל "doll". עלול להטעות לקוח.
+1. **type-reborn-doll שגוי (מוצר 13):** פיל פלאש קיבל type-reborn-doll — בעיית type בלבד (גיל לא נדרש, Phase 5b).
 2. **ניגוד גיל בנעל (מוצר 3):** תג קיים "newborn-clothing" מול הסקת גיל 6-12m מ-"first-walker".
 3. **handle "0-to-3-years-old" עם age-2-3y (מוצר 4):** המערכת לא חסמה גיל למרות הטווח הרחב.
-4. **מדחום מים בתוך המערכת (מוצר 10):** מוצר שאינו ביגוד/נעל/בובה קיבל type-unknown. שאלה: האם שייך ל-Layer 6?
-5. **NO_AGE_FOUND על 31 מוצרים (52%):** רוב הנעליים וחלק מהבגדים חסרים גיל — החלטת אסטרטגיה נדרשת.
+4. **Tempio מדחום (מוצר 10):** taxonomy gap (type-bath-accessory חסר בסכמה) — גיל לא נדרש (Phase 5b).
+5. **NO_AGE_FOUND על ~18 מוצרי clothing/shoes:** רוב הנעליים וחלק מהבגדים — החלטת D1 נדרשת.
 
 ---
 
 ## מה אייל צריך להחליט
 
-| החלטה | שאלה |
-|---|---|
-| D1 — NO_AGE_FOUND | לא לתת גיל? age-unknown? לפתוח YAML enrichment? |
-| D2 — RANGE_TOO_BROAD | לא לתת גיל? tag רחב חדש? לפצל? |
-| D3 — Reborn / doll age | בלי age tag? tag מיוחד? רק מקור מפורש? |
-| D4 — Phase 6 readiness | האם 12/15 אישורים מספיקים לpilot חי? |
+| החלטה | שאלה | מצב |
+|---|---|---|
+| D1 — NO_AGE_FOUND | age-unknown? YAML enrichment? | ממתין — clothing/shoes בלבד |
+| D2 — RANGE_TOO_BROAD | לא לתת גיל? tag רחב? | ממתין |
+| D3 — Reborn / doll age | בלי age? רק מפורש? | **הוחלט: A (Phase 5b)** |
+| D4 — Phase 6 readiness | 12/15 = מספיק? | ממתין לאחר review |
 
 ---
 
