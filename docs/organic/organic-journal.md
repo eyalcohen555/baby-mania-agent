@@ -20,6 +20,36 @@
 ---
 
 ## DATE: 2026-05-03
+## TASK: Layer 6 Phase 4 — Dry Run (59 products)
+## SCOPE: Layer 6 — full tag extraction pipeline, read-only (no Shopify writes)
+## WHAT CHANGED:
+- הורץ Phase 4 Dry Run על 59 מוצרים: 20 clothing_yaml + 15 shoes_yaml + 9 reborn_toys + 10 yaml_gap + 5 edge_cases
+- 7 extractors (CAT-A עד CAT-G) עם Phase 3b normalization inline (ללא gender-unisex, ללא type-doll, ללא fallback)
+- הורצו 8 validation gates על כל מוצר
+- Phase 4 PASS criteria: כל 8 קריטריונים עברו ✅
+- תוצאות: PASS 30/59 (50.8%) | NEEDS_REVIEW 29/59 (49.2%) | BLOCKED 0/59 (0%)
+- Avg quality score: 77.7 | RANGE_TOO_BROAD: 4 | NO_AGE_FOUND: 31 | doll_no_age: 9
+- gate fails: CATEGORY_COVERAGE 26 | QUALITY_SCORE 17 (נובע מ-CATEGORY_COVERAGE)
+- אין taxonomy gaps חדשים — כל טאגים עברו ALLOWED_VALUE
+## FILES TOUCHED:
+- scripts/tags/run_layer6_phase4_dryrun.py (new)
+- output/tags/phase4-dryrun-sample-60.json (new)
+- output/tags/phase4-dryrun-report.json (new)
+- output/tags/phase4-dryrun-report.md (new)
+- output/tags/phase4-dryrun-customer-labels-preview.md (new)
+## SYSTEM IMPACT:
+- Layer 6 Phase 4 CREATED — WAITING AYAL REVIEW
+- Shopify live: NO — read-only analysis only
+- Phase 5 NOT OPEN
+## OPEN ISSUES:
+- NO_AGE_FOUND×31: רוב reborn_toys (doll_no_age=9) + yaml_gap — החלטה נדרשת
+- RANGE_TOO_BROAD×4: טווח גיל רחב מדי — נדרשת אסטרטגיה
+- NEEDS_REVIEW×29: בעיקר CATEGORY_COVERAGE (CAT-B חסר) — מחכה לאישור
+## NEXT STEP: Phase 5 — לאחר Ayal review על Phase 4
+
+---
+
+## DATE: 2026-05-03
 ## TASK: Layer 6 Phase 3b — Taxonomy & Source Normalization
 ## SCOPE: Layer 6 — taxonomy normalization, read-only (no Shopify writes)
 ## WHAT CHANGED:

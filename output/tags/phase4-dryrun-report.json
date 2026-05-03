@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "phase": "Phase 4 — Dry Run",
+    "date": "2026-05-03",
+    "total": 59
+  },
+  "group_distribution": {
+    "clothing_yaml": 20,
+    "shoes_yaml": 15,
+    "reborn_toys": 9,
+    "yaml_gap": 10,
+    "edge_cases": 5
+  },
+  "status_summary": {
+    "PASS": 30,
+    "NEEDS_REVIEW": 29,
+    "BLOCKED": 0
+  },
+  "avg_quality_score": 77.7,
+  "pct_pass_or_needs_review": 100.0,
+  "blocked_pct": 0.0,
+  "stats": {
+    "total_proposed_tags": 335,
+    "total_blocked_tags": 4,
+    "range_too_broad": 4,
+    "no_age_found": 31,
+    "doll_no_age": 9,
+    "multi_age": 0,
+    "yaml_gap_impact": 18
+  },
+  "gate_fail_counts": {
+    "CATEGORY_COVERAGE": 26,
+    "QUALITY_SCORE": 17
+  },
+  "taxonomy_gaps": {},
+  "phase4_pass_criteria": {
+    "no_shopify_live": true,
+    "no_forbidden_tags": true,
+    "no_default_unisex_source": true,
+    "no_wide_range_age": true,
+    "native_tags_english_only": true,
+    "avg_score_gte_75": true,
+    "pct_pass_or_nr_gte_70": true,
+    "blocked_pct_lt_20": true
+  }
+}
