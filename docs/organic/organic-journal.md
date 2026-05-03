@@ -20,6 +20,35 @@
 ---
 
 ## DATE: 2026-05-03
+## TASK: Layer 6 Phase 3b — Taxonomy & Source Normalization
+## SCOPE: Layer 6 — taxonomy normalization, read-only (no Shopify writes)
+## WHAT CHANGED:
+- תוקנו taxonomy gaps שהתגלו ב-Phase 3 לפני Phase 4 Dry Run
+- gender-unisex×18: explicit src → gender-neutral (13), deprecated src → gender-unknown (5)
+- type-doll×5: reborn context → type-reborn-doll (4), no reborn → type-toy (1: BABY MANIA)
+- type-other×2: → type-unknown (src=category_default)
+- occ-sport×2, occ-holiday×1, style-cartoon×1: → BLOCKED (TAXONOMY_GAP)
+- default_unisex/fallback deprecated sources: → category_default
+- הורצו 8 gates מחדש: ALLOWED_VALUE 24 fail → 0 fail | SOURCE_TRACEABLE 6 fail → 0 fail
+- Overall PASS: 3/30 → 12/30 | negative tests: 10/10 ✅
+## FILES TOUCHED:
+- scripts/tags/run_layer6_phase3_gates.py (updated: --phase3b mode added)
+- output/tags/phase3b-normalized-source-map-sample-30.json (new)
+- output/tags/phase3b-validation-gates-report.json (new)
+- output/tags/phase3b-validation-gates-report.md (new)
+## SYSTEM IMPACT:
+- Layer 6 Phase 3b CREATED — WAITING AYAL REVIEW
+- Shopify live: NO — read-only analysis only
+- Phase 4 NOT OPEN
+## OPEN ISSUES:
+- CATEGORY_COVERAGE 17 fail: RANGE_TOO_BROAD×9, NO_AGE_FOUND×9 — structural, needs decision
+- DUPLICATE_CONFLICT 1 fail: WarmNest multi-age (3 tags) — CAT-B single vs multi-value decision
+- QUALITY_SCORE 13 fail: כולם נובעים מ-CATEGORY_COVERAGE בלבד (לא נפרדים)
+## NEXT STEP: Phase 4 Dry Run — לאחר Ayal review על Phase 3b
+
+---
+
+## DATE: 2026-05-03
 ## TASK: Layer 6 Phase 3 — Validation Gates
 ## SCOPE: Layer 6 — 8 validation gates, read-only analysis
 ## WHAT CHANGED:

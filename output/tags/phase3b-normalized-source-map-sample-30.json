@@ -1,0 +1,2532 @@
+{
+  "meta": {
+    "phase": "Phase 3b — Normalized Source Map",
+    "date": "2026-05-03",
+    "input": "output/tags/phase2b-age-hardening-sample-30.json",
+    "normalization_rules": {
+      "gender-unisex+explicit_src": "->gender-neutral",
+      "gender-unisex+deprecated_src": "->gender-unknown (src=category_default)",
+      "type-doll+reborn_context": "->type-reborn-doll",
+      "type-doll+no_reborn": "->type-toy",
+      "type-other": "->type-unknown (src=category_default)",
+      "occ-sport|occ-holiday|style-cartoon": "->BLOCKED"
+    },
+    "changes_applied": 24
+  },
+  "products": [
+    {
+      "product_id": "10029649002809",
+      "title": "Alure™ Baby",
+      "handle": "0-to-18-months-baby-girl-boy-sweater-romper-autumn-winter-clothes-striped-crew-neck-long-sleeve-full-length-jumpsuit",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "0-18m",
+      "age_change": "RANGE_FLAGGED",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "type_default",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=title)"
+        },
+        {
+          "tag": "style-striped",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-18m",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.8,
+        "estimated_score": 74.3,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 74.3,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=title)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10029649133881",
+      "title": "Lino™ – סט סריג רך לתינוקות בעיצוב אירופאי",
+      "handle": "toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-knit-set",
+        "baby-shower-gift",
+        "european-baby-style",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit"
+      ],
+      "age_before": [],
+      "age_after": [
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "1-3y_approximated_to_2-3y"
+        }
+      ],
+      "age_status": "OK",
+      "age_range_note": "",
+      "age_change": "ADDED",
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=existing_tag)"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "1-3y_approximated_to_2-3y"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [],
+      "quality_precheck": {
+        "required_categories_present": 4,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.842,
+        "estimated_score": 90.2,
+        "status": "PASS"
+      },
+      "score_before": 75.3,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=existing_tag)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10029648970041",
+      "title": "LumiBear™ חליפת פרמיום לחורף",
+      "handle": "3-24-months-newborn-baby-boy-winter-clothing-set-lattice-plush-long-sleeved-hooded-jumpsuit-fashion-cute-romper-warm-daily-wear",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-shower-gift",
+        "baby-suit",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "3-24m",
+      "age_change": "REMOVED_WRONG",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=existing_tag)"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:3-24m",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 1,
+        "avg_confidence": 0.863,
+        "estimated_score": 68.9,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 82.9,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=existing_tag)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10029649101113",
+      "title": "LUMI™  – אוברול נוחות יוקרתי לתינוקות",
+      "handle": "summer-unisex-newborn-baby-clothes-solid-color-baby-rompers-cotton-long-sleeve-toddler-romper-infant-clothing-3-18-months",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "אוברול"
+      ],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "title_regex",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "3-18m",
+      "age_change": "REMOVED_WRONG",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.8,
+          "source": "yaml_desc",
+          "rule": "explicit_source"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=title)"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:3-18m",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.833,
+        "estimated_score": 81.7,
+        "status": "PASS"
+      },
+      "score_before": 96.9,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=title)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9855017550137",
+      "title": "Veloura Baby™ חליפה פרחונית",
+      "handle": "ma-baby-0-18m-baby-girl-clothes-sets-newborn-infant-toddler-knit-jumpsuit-floral-print-shorts-headband-outfits-summer-clothing",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-shower-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "floral-baby",
+        "newborn-clothing",
+        "soft-knit"
+      ],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "0-18m",
+      "age_change": "REMOVED_WRONG",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-18m",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.842,
+        "estimated_score": 81.8,
+        "status": "PASS"
+      },
+      "score_before": 96.1,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9657091293497",
+      "title": "WarmNest™– אוברול חורף מחבק לתינוקות",
+      "handle": "newborn-baby-winter-jacket-warm-hooded-infant-romper-thicken-soft-cotton-boys-jumpsuit-cartoon-baby-girl-clothes-0-to-12-months",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "0-3 חודש",
+        "12-18 חודש",
+        "6-12 חודש",
+        "אוברול"
+      ],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "existing_tag_hebrew",
+          "rule": "age_hardening_v2",
+          "note": "exact_match:0-3 חודש"
+        },
+        {
+          "tag": "age-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "existing_tag_hebrew",
+          "rule": "age_hardening_v2",
+          "note": "exact_match:12-18 חודש"
+        },
+        {
+          "tag": "age-6-12m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "existing_tag_hebrew",
+          "rule": "age_hardening_v2",
+          "note": "exact_match:6-12 חודש"
+        }
+      ],
+      "age_status": "OK",
+      "age_range_note": "",
+      "age_change": "CORRECTED",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "type_default",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=title)"
+        },
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "existing_tag_hebrew",
+          "rule": "age_hardening_v2",
+          "note": "exact_match:0-3 חודש"
+        },
+        {
+          "tag": "age-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "existing_tag_hebrew",
+          "rule": "age_hardening_v2",
+          "note": "exact_match:12-18 חודש"
+        },
+        {
+          "tag": "age-6-12m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "existing_tag_hebrew",
+          "rule": "age_hardening_v2",
+          "note": "exact_match:6-12 חודש"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "style-cartoon",
+          "category": "CAT-G",
+          "reason": "TAXONOMY_GAP: 'style-cartoon' not in approved taxonomy (phase3b blocked)",
+          "rule": "phase3b_normalization",
+          "original_source": "handle",
+          "original_confidence": 0.8
+        }
+      ],
+      "missing_required_categories": [],
+      "quality_precheck": {
+        "required_categories_present": 4,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.838,
+        "estimated_score": 90.1,
+        "status": "PASS"
+      },
+      "score_before": 88.7,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=title)",
+        "style-cartoon->BLOCKED (TAXONOMY_GAP)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9687596728633",
+      "title": "אוברול Leopard Cozy",
+      "handle": "babys-casual-leopard-pattern-long-sleeve-romper-hairband-toddler-infant-girls-bodysuit",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "אוברול"
+      ],
+      "age_before": [],
+      "age_after": [
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "toddler_heuristic"
+        }
+      ],
+      "age_status": "OK",
+      "age_range_note": "",
+      "age_change": "ADDED",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "toddler_heuristic"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.83,
+        "estimated_score": 74.9,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 60.3,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9179155693881",
+      "title": "אוברול אלגנט דגם עומרי",
+      "handle": "אוברול-כותנה-אמירוש",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "אוברול"
+      ],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.8,
+          "source": "yaml_desc",
+          "rule": "explicit_source"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-unknown (deprecated src='default_unisex' -> category_default)"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.78,
+        "estimated_score": 65.6,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 65.6,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-unknown (deprecated src='default_unisex')"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9096606908729",
+      "title": "אוברול ארוך",
+      "handle": "אוברול-ארוך",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-overall",
+        "cotton-baby",
+        "everyday-wear",
+        "long-sleeve-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "sleepwear-baby"
+      ],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.8,
+          "source": "yaml_desc",
+          "rule": "explicit_source"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=existing_tag)"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.84,
+        "estimated_score": 66.8,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 66.8,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=existing_tag)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9096599994681",
+      "title": "אוברול ארוך עם רוכסן",
+      "handle": "אוברול-ארוך-עם-רוכסן",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=existing_tag)"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.85,
+        "estimated_score": 60.3,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 60.3,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=existing_tag)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9607363625273",
+      "title": "מגפי חורף לילדות דגם לין",
+      "handle": "kids-boots-for-girls-winter-warm-shoes-for-children-fur-boots-chelsea-ankle-girls-toddlers-platform-booties-pink-purple-black",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-boots",
+        "baby-gift",
+        "girls-clothing",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "winter-baby-wear"
+      ],
+      "age_before": [],
+      "age_after": [
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "toddler_heuristic"
+        }
+      ],
+      "age_status": "OK",
+      "age_range_note": "",
+      "age_change": "ADDED",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color"
+        },
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "toddler_heuristic"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [],
+      "quality_precheck": {
+        "required_categories_present": 4,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.833,
+        "estimated_score": 90.0,
+        "status": "PASS"
+      },
+      "score_before": 75.3,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9615669461305",
+      "title": "מגפי חורף נוצצים עם כוכבים",
+      "handle": "childrens-fashion-boots-black-low-lightweight-boys-girls-toddler-shoes-0-8-years-old-soft-bottom-non-slip-kids-baby-boots-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-boots",
+        "baby-gift",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "0-8y",
+      "age_change": "RANGE_FLAGGED",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=existing_tag)"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-8y",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.85,
+        "estimated_score": 75.3,
+        "status": "PASS"
+      },
+      "score_before": 75.3,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=existing_tag)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9615375794489",
+      "title": "מגפי חורף צעד ראשון",
+      "handle": "winter-snow-baby-boots-newborn-warm-booties-soft-sole-first-walkers-shoes-for-baby-girls-boys-infant-shoes-toddler-0-18months",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-boots",
+        "baby-gift",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "0-18m",
+      "age_change": "REMOVED_WRONG",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=existing_tag)"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-18m",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.85,
+        "estimated_score": 75.3,
+        "status": "PASS"
+      },
+      "score_before": 89.5,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=existing_tag)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9607365132601",
+      "title": "נעל אולסטאר צעד ראשון לתינוק",
+      "handle": "trendy-comfortable-sneakers-for-baby-girls-and-boys-lightweight-nonslip-shoes-for-indoor-outdoor-walking-all-seasons",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=existing_tag)"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.85,
+        "estimated_score": 60.3,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 60.3,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=existing_tag)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9607363756345",
+      "title": "נעל אופנתית אלגנטית לתינוק",
+      "handle": "baby-panda-sneakers-toddler-fashion-sports-shoes-for-boys-girls-flats-walking-shoes-soft-sole-kids-sneakers",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "age_before": [],
+      "age_after": [
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "toddler_heuristic"
+        }
+      ],
+      "age_status": "OK",
+      "age_range_note": "",
+      "age_change": "ADDED",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=title)"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "toddler_heuristic"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.817,
+        "estimated_score": 81.3,
+        "status": "PASS"
+      },
+      "score_before": 66.6,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=title)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9615375565113",
+      "title": "נעל אלגנטית צעד ראשון לבנות",
+      "handle": "girls-mary-jane-shoes-children-solid-color-bow-round-toe-bow-2024-new-kids-fashion-soft-moccasin-shoes-baby-first-walker-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "newborn-clothing"
+      ],
+      "age_before": [],
+      "age_after": [
+        {
+          "tag": "age-6-12m",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "first_walker_heuristic"
+        }
+      ],
+      "age_status": "OK",
+      "age_range_note": "",
+      "age_change": "ADDED",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "age-6-12m",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "first_walker_heuristic"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.825,
+        "estimated_score": 81.5,
+        "status": "PASS"
+      },
+      "score_before": 66.8,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9607363232057",
+      "title": "נעל הלו קיטי עם אורות לילדות",
+      "handle": "2024-summer-baby-led-light-sandals-for-girls-cute-hello-kitty-childrens-casual-shoes-anti-slip-kids-beach-shoes-outdoor-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "kids-clothing",
+        "neutral-baby-outfit"
+      ],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.842,
+        "estimated_score": 81.8,
+        "status": "PASS"
+      },
+      "score_before": 81.8,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9615376023865",
+      "title": "נעל חורף מחממת ואלגנטית צעד ראשון",
+      "handle": "2023-winter-snow-baby-boots-multiple-colors-warm-fluff-balls-indoor-colloidal-particle-sole-infant-newborn-toddler-baby-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "elegant-baby",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "toddler_heuristic"
+        }
+      ],
+      "age_status": "OK",
+      "age_range_note": "",
+      "age_change": "CORRECTED",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-unknown (deprecated src='default_unisex' -> category_default)"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "age-2-3y",
+          "category": "CAT-B",
+          "confidence": 0.75,
+          "source": "handle",
+          "rule": "age_hardening_v2",
+          "note": "toddler_heuristic"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [],
+      "quality_precheck": {
+        "required_categories_present": 4,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.786,
+        "estimated_score": 95.7,
+        "status": "PASS"
+      },
+      "score_before": 95.3,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-unknown (deprecated src='default_unisex')"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9615376089401",
+      "title": "נעל חורף צעד ראשון אופנתיות",
+      "handle": "autumn-winter-baby-boots-kids-girl-boys-winter-warm-shoes-solid-fashion-toddler-fuzzy-balls-first-walkers-kid-shoes-0-18m",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "0-18m",
+      "age_change": "REMOVED_WRONG",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=existing_tag)"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-18m",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.85,
+        "estimated_score": 75.3,
+        "status": "PASS"
+      },
+      "score_before": 89.5,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=existing_tag)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9607363461433",
+      "title": "נעל ספורט קז'ואל נוחה לתינוק",
+      "handle": "kids-casual-shoes-sneakers-boys-sport-breathable-tennis-sneaker-baby-children-girls-shoes-spring-fashion-white-flat-running-shoe",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "source_status": "full",
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "sporty-baby"
+      ],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-neutral (explicit src=title)"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 3,
+        "avg_confidence": 0.833,
+        "estimated_score": 81.7,
+        "status": "PASS"
+      },
+      "score_before": 81.7,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [
+        "gender-unisex->gender-neutral (src=title)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10190522810681",
+      "title": "46CM Finished Reborn Baby Doll Felicia Newborn Open Blue Eyes Doll Soft Hand-Rooted Hair 3D Skin Tone Visible Veins Gift Toy",
+      "handle": "46cm-finished-reborn-baby-doll-felicia-newborn-open-blue-eyes-doll-soft-hand-rooted-hair-3d-skin-tone-visible-veins-gift-toy",
+      "product_group": "reborn_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [],
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "age_range_note": "reborn_or_doll_product",
+      "age_change": "REMOVED_WRONG",
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "title_keyword",
+          "normalization": "type-doll->type-reborn-doll (reborn keyword or reborn_gap group)"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-unknown (deprecated src='default_unisex' -> category_default)"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        },
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "DOLL_NO_AGE_APPLICABLE:collector_doll",
+          "rule": "age_hardening_v2"
+        },
+        {
+          "tag": "occ-sport",
+          "category": "CAT-E",
+          "reason": "TAXONOMY_GAP: 'occ-sport' not in approved taxonomy (phase3b blocked)",
+          "rule": "phase3b_normalization",
+          "original_source": "body",
+          "original_confidence": 0.8
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.775,
+        "estimated_score": 58.8,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 73.1,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "type-doll->type-reborn-doll",
+        "occ-sport->BLOCKED (TAXONOMY_GAP)",
+        "gender-unisex->gender-unknown (deprecated src='default_unisex')"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10190523040057",
+      "title": "50CM  Whole Silicone Vinyl Reborn Doll 20 Inch Girl Painted Newborn Baby Doll With Rooted Hair For Kid's Christmas Gift",
+      "handle": "50cm-whole-silicone-vinyl-reborn-doll-20-inch-girl-painted-newborn-baby-doll-with-rooted-hair-for-kids-christmas-gift",
+      "product_group": "reborn_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [],
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "age_range_note": "reborn_or_doll_product",
+      "age_change": "REMOVED_WRONG",
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "body",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        },
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "DOLL_NO_AGE_APPLICABLE:collector_doll",
+          "rule": "age_hardening_v2"
+        },
+        {
+          "tag": "occ-holiday",
+          "category": "CAT-E",
+          "reason": "TAXONOMY_GAP: 'occ-holiday' not in approved taxonomy (phase3b blocked)",
+          "rule": "phase3b_normalization",
+          "original_source": "title",
+          "original_confidence": 0.8
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.85,
+        "estimated_score": 60.3,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 74.3,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "occ-holiday->BLOCKED (TAXONOMY_GAP)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10190522777913",
+      "title": "NPK 46CM Meadow Reborn Baby Doll - Soft Touch 3D Skin Hand Painted Multiple Layers Genesis Paint High Quality Art Doll",
+      "handle": "npk-46cm-meadow-reborn-baby-doll-soft-touch-3d-skin-hand-painted-multiple-layers-genesis-paint-high-quality-art-doll",
+      "product_group": "reborn_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "age_range_note": "reborn_or_doll_product",
+      "age_change": "DOLL_FLAGGED",
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "title_keyword",
+          "normalization": "type-doll->type-reborn-doll (reborn keyword or reborn_gap group)"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-unknown (deprecated src='default_unisex' -> category_default)"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        },
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "DOLL_NO_AGE_APPLICABLE:collector_doll",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 0,
+        "avg_confidence": 0.75,
+        "estimated_score": 45.0,
+        "status": "BLOCKED"
+      },
+      "score_before": 45.0,
+      "status_before": "BLOCKED",
+      "is_negative_test": false,
+      "normalization_log": [
+        "type-doll->type-reborn-doll",
+        "gender-unisex->gender-unknown (deprecated src='default_unisex')"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10190523072825",
+      "title": "NPK 50CM Full Body Maddie Reborn Baby Girl Doll - Soft Silicone Lifelike Touch Genesis Painted with Visible Veins",
+      "handle": "npk-50cm-full-body-maddie-reborn-baby-girl-doll-soft-silicone-lifelike-touch-genesis-painted-with-visible-veins",
+      "product_group": "reborn_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "title_keyword",
+          "normalization": "type-doll->type-reborn-doll (reborn keyword or reborn_gap group)"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 0,
+        "avg_confidence": 0.9,
+        "estimated_score": 48.0,
+        "status": "BLOCKED"
+      },
+      "score_before": 48.0,
+      "status_before": "BLOCKED",
+      "is_negative_test": false,
+      "normalization_log": [
+        "type-doll->type-reborn-doll"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10190523007289",
+      "title": "Open Mouth 33cm Pascale Full Body Silicone Reborn Girl Doll With Painted Skin Washable Soft Touch Reborn Girl  Silicone Doll",
+      "handle": "open-mouth-33cm-pascale-full-body-silicone-reborn-girl-doll-with-painted-skin-washable-soft-touch-reborn-girl-silicone-doll",
+      "product_group": "reborn_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "age_range_note": "reborn_or_doll_product",
+      "age_change": "DOLL_FLAGGED",
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "title_keyword",
+          "normalization": "type-doll->type-reborn-doll (reborn keyword or reborn_gap group)"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        },
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "DOLL_NO_AGE_APPLICABLE:collector_doll",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 0,
+        "avg_confidence": 0.9,
+        "estimated_score": 48.0,
+        "status": "BLOCKED"
+      },
+      "score_before": 48.0,
+      "status_before": "BLOCKED",
+      "is_negative_test": false,
+      "normalization_log": [
+        "type-doll->type-reborn-doll"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10190523334969",
+      "title": "0-18 Months old Newborn Baby boy Jumpsuit Cute Little Bear Short sleeved Jumpsuit Baby clothing Boy baby Summer Crawling Suit",
+      "handle": "0-18-months-old-newborn-baby-boy-jumpsuit-cute-little-bear-short-sleeved-jumpsuit-baby-clothing-boy-baby-summer-crawling-suit",
+      "product_group": "gap_clothing",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [
+        {
+          "tag": "age-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.6,
+          "source": "title_heuristic",
+          "rule": "regex_age_range"
+        }
+      ],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "0-18m",
+      "age_change": "REMOVED_WRONG",
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "body",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        },
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-18m",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.85,
+        "estimated_score": 75.3,
+        "status": "PASS"
+      },
+      "score_before": 89.5,
+      "status_before": "PASS",
+      "is_negative_test": false,
+      "normalization_log": [],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "10190522941753",
+      "title": "2Pcs Baby Boys' Sports and Leisure Set lapel Color blocked Short Sleeves and Shorts for 0-3 Year Toddlers Baby Boys Summer Set",
+      "handle": "2pcs-baby-boys-sports-and-leisure-set-lapel-color-blocked-short-sleeves-and-shorts-for-0-3-year-toddlers-baby-boys-summer-set",
+      "product_group": "gap_clothing",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "RANGE_TOO_BROAD",
+      "age_range_note": "0-Xy",
+      "age_change": "RANGE_FLAGGED",
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "title_keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        },
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-Xy",
+          "rule": "age_hardening_v2"
+        },
+        {
+          "tag": "occ-sport",
+          "category": "CAT-E",
+          "reason": "TAXONOMY_GAP: 'occ-sport' not in approved taxonomy (phase3b blocked)",
+          "rule": "phase3b_normalization",
+          "original_source": "body",
+          "original_confidence": 0.8
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 3,
+        "recommended_categories_present": 1,
+        "avg_confidence": 0.863,
+        "estimated_score": 68.9,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 68.9,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "occ-sport->BLOCKED (TAXONOMY_GAP)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9166992900409",
+      "title": "BABY MANIA™  בובה  נושמת מבית",
+      "handle": "babyz-בובת-לוטרה-נושמת",
+      "product_group": "gap_clothing",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "age_range_note": "reborn_or_doll_product",
+      "age_change": "DOLL_FLAGGED",
+      "proposed_tags": [
+        {
+          "tag": "type-toy",
+          "category": "CAT-A",
+          "confidence": 0.75,
+          "source": "title",
+          "rule": "title_keyword",
+          "normalization": "type-doll->type-toy (no clear reborn source)"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        },
+        {
+          "tag": "age-*",
+          "category": "CAT-B",
+          "reason": "DOLL_NO_AGE_APPLICABLE:collector_doll",
+          "rule": "age_hardening_v2"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 1,
+        "avg_confidence": 0.867,
+        "estimated_score": 54.0,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 54.0,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "type-doll->type-toy (no reborn context)"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9839001633081",
+      "title": "Babyfree100",
+      "handle": "babyfree100",
+      "product_group": "gap_clothing",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-unknown",
+          "category": "CAT-A",
+          "confidence": 0.5,
+          "source": "category_default",
+          "rule": "title_keyword",
+          "normalization": "type-other->type-unknown (taxonomy gap, deprecated src='fallback' -> category_default)"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "explicit_keyword_no_color",
+          "normalization": "gender-unisex->gender-unknown (deprecated src='default_unisex' -> category_default)"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 0,
+        "avg_confidence": 0.55,
+        "estimated_score": 41.0,
+        "status": "BLOCKED"
+      },
+      "score_before": 41.0,
+      "status_before": "BLOCKED",
+      "is_negative_test": false,
+      "normalization_log": [
+        "type-other->type-unknown (deprecated src='fallback')",
+        "gender-unisex->gender-unknown (deprecated src='default_unisex')"
+      ],
+      "phase3b_normalized": true
+    },
+    {
+      "product_id": "9839252472121",
+      "title": "BabySleep Pro – רעש לבן ואור מרגיע לשינה עמוקה לתינוק",
+      "handle": "baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine",
+      "product_group": "gap_clothing",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "source_status": "limited",
+      "current_tags": [],
+      "age_before": [],
+      "age_after": [],
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "age_change": "STILL_MISSING",
+      "proposed_tags": [
+        {
+          "tag": "type-unknown",
+          "category": "CAT-A",
+          "confidence": 0.5,
+          "source": "category_default",
+          "rule": "title_keyword",
+          "normalization": "type-other->type-unknown (taxonomy gap, deprecated src='fallback' -> category_default)"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.8,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "explicit_keyword_no_color"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "body",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "fabric-*",
+          "category": "CAT-D",
+          "reason": "BLOCKED:yaml_gap_no_explicit_source",
+          "rule": "yaml_gap_fabric_block"
+        }
+      ],
+      "missing_required_categories": [
+        "CAT-B",
+        "CAT-C"
+      ],
+      "quality_precheck": {
+        "required_categories_present": 2,
+        "recommended_categories_present": 2,
+        "avg_confidence": 0.75,
+        "estimated_score": 58.3,
+        "status": "NEEDS_REVIEW"
+      },
+      "score_before": 58.3,
+      "status_before": "NEEDS_REVIEW",
+      "is_negative_test": false,
+      "normalization_log": [
+        "type-other->type-unknown (deprecated src='fallback')"
+      ],
+      "phase3b_normalized": true
+    }
+  ]
+}
