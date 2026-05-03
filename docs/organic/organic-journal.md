@@ -20,6 +20,32 @@
 ---
 
 ## DATE: 2026-05-03
+## TASK: Layer 6 Phase 5 — Human Review Pack
+## SCOPE: Layer 6 — review documentation, read-only (no Shopify writes)
+## WHAT CHANGED:
+- נוצרה חבילת בדיקה ידנית מ-Phase 4 Dry Run עבור אייל
+- 15 מוצרים נבחרו לבדיקה: 5 PASS + 5 NO_AGE_FOUND + 3 YAML_GAP + 2 RANGE_BROAD/edge
+- זוהו 5 ממצאים חשובים: type-reborn-doll שגוי (פיל פלאש), ניגוד גיל נעל מוצר 3, טווח רחב מוצר 4, מדחום type-unknown, NO_AGE_FOUND×31
+- נוצרה טבלת Menu Label Review (16 תוויות)
+- נוצרו 4 Open Decisions: D1 NO_AGE_FOUND / D2 RANGE_TOO_BROAD / D3 Doll Age / D4 Phase 6 readiness
+## FILES TOUCHED:
+- output/tags/phase5-human-review-pack.md (new)
+- output/tags/phase5-human-review-pack.json (new)
+- output/tags/phase5-human-review-summary.md (new)
+## SYSTEM IMPACT:
+- Layer 6 Phase 5 CREATED — WAITING AYAL REVIEW
+- Shopify live: NO — review/documentation only
+- Phase 6 NOT OPEN
+## OPEN ISSUES:
+- type-reborn-doll שגוי על פיל פלאש (מוצר 13) — classification rule דורש תיקון
+- NO_AGE_FOUND×31 — החלטת D1 נדרשת
+- RANGE_TOO_BROAD×4 — החלטת D2 נדרשת
+- מדחום (type-unknown) — האם שייך ל-Layer 6? החלטת אייל נדרשת
+## NEXT STEP: Phase 6 Small Live Batch — רק לאחר Ayal VERDICT על Phase 5
+
+---
+
+## DATE: 2026-05-03
 ## TASK: Layer 6 Phase 4 — Dry Run (59 products)
 ## SCOPE: Layer 6 — full tag extraction pipeline, read-only (no Shopify writes)
 ## WHAT CHANGED:
