@@ -1,0 +1,2788 @@
+{
+  "meta": {
+    "phase": "Phase 3 — Validation Gates",
+    "date": "2026-05-03",
+    "gates": [
+      "SOURCE_EXISTS",
+      "FORMAT_VALID",
+      "ALLOWED_VALUE",
+      "SOURCE_TRACEABLE",
+      "NO_FORBIDDEN_INFERENCE",
+      "CATEGORY_COVERAGE",
+      "DUPLICATE_CONFLICT",
+      "QUALITY_SCORE"
+    ],
+    "source_files": {
+      "positive_sample": "output/tags/phase2b-age-hardening-sample-30.json",
+      "negative_tests": "output/tags/phase3-negative-test-cases.json"
+    }
+  },
+  "positive_sample": {
+    "summary": {
+      "label": "positive_sample",
+      "total": 30,
+      "overall_pass": 3,
+      "overall_fail": 27,
+      "gate_pass_counts": {
+        "SOURCE_EXISTS": 30,
+        "FORMAT_VALID": 30,
+        "SOURCE_TRACEABLE": 24,
+        "NO_FORBIDDEN_INFERENCE": 30,
+        "CATEGORY_COVERAGE": 13,
+        "DUPLICATE_CONFLICT": 29,
+        "QUALITY_SCORE": 18,
+        "ALLOWED_VALUE": 6
+      },
+      "gate_fail_counts": {
+        "ALLOWED_VALUE": 24,
+        "DUPLICATE_CONFLICT": 1,
+        "CATEGORY_COVERAGE": 17,
+        "QUALITY_SCORE": 12,
+        "SOURCE_TRACEABLE": 6
+      },
+      "taxonomy_gaps": {
+        "gender-unisex": 18,
+        "occ-holiday": 1,
+        "occ-sport": 2,
+        "style-cartoon": 1,
+        "type-doll": 5,
+        "type-other": 2
+      }
+    },
+    "products": [
+      {
+        "product_id": "10029649002809",
+        "title": "Alure™ Baby",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 89.3,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10029649133881",
+        "title": "Lino™ – סט סריג רך לתינוקות בעיצוב אירופאי",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 90.2,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10029648970041",
+        "title": "LumiBear™ חליפת פרמיום לחורף",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 83.9,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10029649101113",
+        "title": "LUMI™  – אוברול נוחות יוקרתי לתינוקות",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 96.7,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9855017550137",
+        "title": "Veloura Baby™ חליפה פרחונית",
+        "overall_pass": true,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 96.8,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9657091293497",
+        "title": "WarmNest™– אוברול חורף מחבק לתינוקות",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              },
+              {
+                "tag": "style-cartoon",
+                "category": "CAT-G",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-B",
+                "tags": [
+                  "age-0-3m",
+                  "age-12-18m",
+                  "age-6-12m"
+                ],
+                "reason": "conflict: multiple values in single-tag category"
+              }
+            ]
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 90.1,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex",
+          "style-cartoon"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9687596728633",
+        "title": "אוברול Leopard Cozy",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 74.9 < 75 threshold",
+                "score": 74.9
+              }
+            ],
+            "score": 74.9,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9179155693881",
+        "title": "אוברול אלגנט דגם עומרי",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "unrecognized source: 'default_unisex'"
+              }
+            ]
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-B",
+                "reason": "required category not covered"
+              },
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 65.6 < 75 threshold",
+                "score": 65.6
+              }
+            ],
+            "score": 65.6,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9096606908729",
+        "title": "אוברול ארוך",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-B",
+                "reason": "required category not covered"
+              },
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 66.8 < 75 threshold",
+                "score": 66.8
+              }
+            ],
+            "score": 66.8,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9096599994681",
+        "title": "אוברול ארוך עם רוכסן",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-B",
+                "reason": "required category not covered"
+              },
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 60.3 < 75 threshold",
+                "score": 60.3
+              }
+            ],
+            "score": 60.3,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9607363625273",
+        "title": "מגפי חורף לילדות דגם לין",
+        "overall_pass": true,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 90.0,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9615669461305",
+        "title": "מגפי חורף נוצצים עם כוכבים",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 90.3,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9615375794489",
+        "title": "מגפי חורף צעד ראשון",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 90.3,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9607365132601",
+        "title": "נעל אולסטאר צעד ראשון לתינוק",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-B",
+                "reason": "required category not covered"
+              },
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 60.3 < 75 threshold",
+                "score": 60.3
+              }
+            ],
+            "score": 60.3,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9607363756345",
+        "title": "נעל אופנתית אלגנטית לתינוק",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 81.3,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9615375565113",
+        "title": "נעל אלגנטית צעד ראשון לבנות",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 81.5,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9607363232057",
+        "title": "נעל הלו קיטי עם אורות לילדות",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-B",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 81.8,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9615376023865",
+        "title": "נעל חורף מחממת ואלגנטית צעד ראשון",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "unrecognized source: 'default_unisex'"
+              }
+            ]
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 95.7,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9615376089401",
+        "title": "נעל חורף צעד ראשון אופנתיות",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 90.3,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9607363461433",
+        "title": "נעל ספורט קז'ואל נוחה לתינוק",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-B",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 81.7,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10190522810681",
+        "title": "46CM Finished Reborn Baby Doll Felicia Newborn Open Blue Eyes Doll Soft Hand-Rooted Hair 3D Skin Tone Visible Veins Gift Toy",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-doll",
+                "category": "CAT-A",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              },
+              {
+                "tag": "occ-sport",
+                "category": "CAT-E",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              },
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "unrecognized source: 'default_unisex'"
+              }
+            ]
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 73.8 < 75 threshold",
+                "score": 73.8
+              }
+            ],
+            "score": 73.8,
+            "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "type-doll",
+          "occ-sport",
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10190523040057",
+        "title": "50CM  Whole Silicone Vinyl Reborn Doll 20 Inch Girl Painted Newborn Baby Doll With Rooted Hair For Kid's Christmas Gift",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "occ-holiday",
+                "category": "CAT-E",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 75.3,
+            "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "occ-holiday"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10190522777913",
+        "title": "NPK 46CM Meadow Reborn Baby Doll - Soft Touch 3D Skin Hand Painted Multiple Layers Genesis Paint High Quality Art Doll",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-doll",
+                "category": "CAT-A",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              },
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "unrecognized source: 'default_unisex'"
+              }
+            ]
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 60.0 < 75 threshold",
+                "score": 60.0
+              }
+            ],
+            "score": 60.0,
+            "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "type-doll",
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10190523072825",
+        "title": "NPK 50CM Full Body Maddie Reborn Baby Girl Doll - Soft Silicone Lifelike Touch Genesis Painted with Visible Veins",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-doll",
+                "category": "CAT-A",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: YAML_GAP+NO_AGE_FOUND"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 63.0 < 75 threshold",
+                "score": 63.0
+              }
+            ],
+            "score": 63.0,
+            "note": "CAT-B exempt (YAML_GAP+NO_AGE_FOUND): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "type-doll"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10190523007289",
+        "title": "Open Mouth 33cm Pascale Full Body Silicone Reborn Girl Doll With Painted Skin Washable Soft Touch Reborn Girl  Silicone Doll",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-doll",
+                "category": "CAT-A",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 63.0 < 75 threshold",
+                "score": 63.0
+              }
+            ],
+            "score": 63.0,
+            "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "type-doll"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10190523334969",
+        "title": "0-18 Months old Newborn Baby boy Jumpsuit Cute Little Bear Short sleeved Jumpsuit Baby clothing Boy baby Summer Crawling Suit",
+        "overall_pass": true,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 90.3,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "10190522941753",
+        "title": "2Pcs Baby Boys' Sports and Leisure Set lapel Color blocked Short Sleeves and Shorts for 0-3 Year Toddlers Baby Boys Summer Set",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "occ-sport",
+                "category": "CAT-E",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": "CAT-B exempt: RANGE_TOO_BROAD"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 83.9,
+            "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "occ-sport"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9166992900409",
+        "title": "BABY MANIA™  בובה  נושמת מבית",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-doll",
+                "category": "CAT-A",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 69.0 < 75 threshold",
+                "score": 69.0
+              }
+            ],
+            "score": 69.0,
+            "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "type-doll"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9839001633081",
+        "title": "Babyfree100",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-other",
+                "category": "CAT-A",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              },
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-other",
+                "category": "CAT-A",
+                "reason": "unrecognized source: 'fallback'"
+              },
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "unrecognized source: 'default_unisex'"
+              }
+            ]
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: YAML_GAP+NO_AGE_FOUND"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 56.0 < 75 threshold",
+                "score": 56.0
+              }
+            ],
+            "score": 56.0,
+            "note": "CAT-B exempt (YAML_GAP+NO_AGE_FOUND): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "type-other",
+          "gender-unisex"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      },
+      {
+        "product_id": "9839252472121",
+        "title": "BabySleep Pro – רעש לבן ואור מרגיע לשינה עמוקה לתינוק",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-other",
+                "category": "CAT-A",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-other",
+                "category": "CAT-A",
+                "reason": "unrecognized source: 'fallback'"
+              }
+            ]
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-C",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: YAML_GAP+NO_AGE_FOUND"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 73.3 < 75 threshold",
+                "score": 73.3
+              }
+            ],
+            "score": 73.3,
+            "note": "CAT-B exempt (YAML_GAP+NO_AGE_FOUND): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [
+          "type-other"
+        ],
+        "is_negative_test": false,
+        "expected_failures": []
+      }
+    ]
+  },
+  "negative_tests": {
+    "summary": {
+      "label": "negative_tests",
+      "total": 10,
+      "overall_pass": 0,
+      "overall_fail": 10,
+      "gate_pass_counts": {
+        "FORMAT_VALID": 9,
+        "ALLOWED_VALUE": 6,
+        "NO_FORBIDDEN_INFERENCE": 9,
+        "CATEGORY_COVERAGE": 8,
+        "DUPLICATE_CONFLICT": 9,
+        "QUALITY_SCORE": 8,
+        "SOURCE_EXISTS": 9,
+        "SOURCE_TRACEABLE": 8
+      },
+      "gate_fail_counts": {
+        "SOURCE_EXISTS": 1,
+        "SOURCE_TRACEABLE": 2,
+        "FORMAT_VALID": 1,
+        "ALLOWED_VALUE": 4,
+        "NO_FORBIDDEN_INFERENCE": 1,
+        "CATEGORY_COVERAGE": 2,
+        "QUALITY_SCORE": 2,
+        "DUPLICATE_CONFLICT": 1
+      },
+      "taxonomy_gaps": {
+        "Age-3M": 1,
+        "gender-unisex": 2,
+        "occ-sport": 1,
+        "style-boho": 1,
+        "style-cartoon": 1,
+        "type-pajama": 1
+      }
+    },
+    "verification": {
+      "total": 10,
+      "verified": 10,
+      "verification_failures": [],
+      "all_verified": true
+    },
+    "products": [
+      {
+        "product_id": "TC01",
+        "title": "TC01 — SOURCE_EXISTS: tag missing source field",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "age-6-12m",
+                "category": "CAT-B",
+                "reason": "source field missing or empty"
+              }
+            ]
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "age-6-12m",
+                "category": "CAT-B",
+                "reason": "unrecognized source: ''"
+              }
+            ]
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 77.7,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": true,
+        "expected_failures": [
+          "SOURCE_EXISTS"
+        ]
+      },
+      {
+        "product_id": "TC02",
+        "title": "TC02 — FORMAT_VALID: uppercase tag value",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "Age-3M",
+                "category": "CAT-B",
+                "reason": "invalid format (must be lowercase ASCII slug)"
+              }
+            ]
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "Age-3M",
+                "category": "CAT-B",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 77.5,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "Age-3M"
+        ],
+        "is_negative_test": true,
+        "expected_failures": [
+          "FORMAT_VALID",
+          "ALLOWED_VALUE"
+        ]
+      },
+      {
+        "product_id": "TC03",
+        "title": "TC03 — ALLOWED_VALUE: gender-unisex not in spec",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 77.4,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex"
+        ],
+        "is_negative_test": true,
+        "expected_failures": [
+          "ALLOWED_VALUE"
+        ]
+      },
+      {
+        "product_id": "TC04",
+        "title": "TC04 — SOURCE_TRACEABLE: deprecated source title_heuristic",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "age-6-12m",
+                "category": "CAT-B",
+                "reason": "deprecated source: 'title_heuristic'"
+              }
+            ]
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 76.5,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": true,
+        "expected_failures": [
+          "SOURCE_TRACEABLE"
+        ]
+      },
+      {
+        "product_id": "TC05",
+        "title": "TC05 — NO_FORBIDDEN_INFERENCE: age tag from wide-range handle",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "age-0-3m",
+                "category": "CAT-B",
+                "reason": "age inferred despite wide-range pattern in product (0-18m)"
+              }
+            ]
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 76.0,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": true,
+        "expected_failures": [
+          "NO_FORBIDDEN_INFERENCE"
+        ]
+      },
+      {
+        "product_id": "TC06",
+        "title": "TC06 — CATEGORY_COVERAGE: no type- tag (CAT-A missing)",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-A",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 62.5 < 75 threshold",
+                "score": 62.5
+              }
+            ],
+            "score": 62.5,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": true,
+        "expected_failures": [
+          "CATEGORY_COVERAGE",
+          "QUALITY_SCORE"
+        ]
+      },
+      {
+        "product_id": "TC07",
+        "title": "TC07 — DUPLICATE_CONFLICT: two type- tags",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-A",
+                "tags": [
+                  "type-romper",
+                  "type-dress"
+                ],
+                "reason": "conflict: multiple values in single-tag category"
+              }
+            ]
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 76.9,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": true,
+        "expected_failures": [
+          "DUPLICATE_CONFLICT"
+        ]
+      },
+      {
+        "product_id": "TC08",
+        "title": "TC08 — QUALITY_SCORE: only 1 required cat, low confidence",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": false,
+            "issues": [
+              {
+                "category": "CAT-A",
+                "reason": "required category not covered"
+              },
+              {
+                "category": "CAT-F",
+                "reason": "required category not covered"
+              }
+            ],
+            "note": "CAT-B exempt: YAML_GAP+NO_AGE_FOUND"
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": false,
+            "issues": [
+              {
+                "reason": "score 41.0 < 75 threshold",
+                "score": 41.0
+              }
+            ],
+            "score": 41.0,
+            "note": "CAT-B exempt (YAML_GAP+NO_AGE_FOUND): counted as present"
+          }
+        ],
+        "taxonomy_gaps": [],
+        "is_negative_test": true,
+        "expected_failures": [
+          "QUALITY_SCORE"
+        ]
+      },
+      {
+        "product_id": "TC09",
+        "title": "TC09 — TAXONOMY_GAP: type-pajama + style-cartoon not in spec",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "type-pajama",
+                "category": "CAT-A",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              },
+              {
+                "tag": "style-cartoon",
+                "category": "CAT-G",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 84.0,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "type-pajama",
+          "style-cartoon"
+        ],
+        "is_negative_test": true,
+        "expected_failures": [
+          "ALLOWED_VALUE"
+        ]
+      },
+      {
+        "product_id": "TC10",
+        "title": "TC10 — ALLOWED_VALUE: gender-unisex + occ-sport + style-boho not in spec",
+        "overall_pass": false,
+        "gates": [
+          {
+            "gate": "SOURCE_EXISTS",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "FORMAT_VALID",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "ALLOWED_VALUE",
+            "pass": false,
+            "issues": [
+              {
+                "tag": "gender-unisex",
+                "category": "CAT-F",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              },
+              {
+                "tag": "occ-sport",
+                "category": "CAT-E",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              },
+              {
+                "tag": "style-boho",
+                "category": "CAT-G",
+                "reason": "TAXONOMY_GAP: value not in allowed list"
+              }
+            ]
+          },
+          {
+            "gate": "SOURCE_TRACEABLE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "NO_FORBIDDEN_INFERENCE",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "CATEGORY_COVERAGE",
+            "pass": true,
+            "issues": [],
+            "note": ""
+          },
+          {
+            "gate": "DUPLICATE_CONFLICT",
+            "pass": true,
+            "issues": []
+          },
+          {
+            "gate": "QUALITY_SCORE",
+            "pass": true,
+            "issues": [],
+            "score": 89.6,
+            "note": ""
+          }
+        ],
+        "taxonomy_gaps": [
+          "gender-unisex",
+          "occ-sport",
+          "style-boho"
+        ],
+        "is_negative_test": true,
+        "expected_failures": [
+          "ALLOWED_VALUE"
+        ]
+      }
+    ]
+  }
+}

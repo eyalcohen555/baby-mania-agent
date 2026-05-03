@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "phase": "Phase 3 — Negative Test Cases",
+    "date": "2026-05-03",
+    "description": "10 synthetic products designed to intentionally fail specific validation gates",
+    "count": 10
+  },
+  "products": [
+    {
+      "product_id": "TC01",
+      "title": "TC01 — SOURCE_EXISTS: tag missing source field",
+      "handle": "baby-girl-dress-summer",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["SOURCE_EXISTS"],
+      "proposed_tags": [
+        {"tag": "type-dress",   "category": "CAT-A", "confidence": 0.9, "source": "handle", "rule": "keyword"},
+        {"tag": "age-6-12m",    "category": "CAT-B", "confidence": 0.88, "source": "",      "rule": "keyword"},
+        {"tag": "season-summer","category": "CAT-C", "confidence": 0.85, "source": "handle","rule": "keyword"},
+        {"tag": "gender-girl",  "category": "CAT-F", "confidence": 0.9,  "source": "title", "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC02",
+      "title": "TC02 — FORMAT_VALID: uppercase tag value",
+      "handle": "baby-romper-autumn",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["FORMAT_VALID", "ALLOWED_VALUE"],
+      "proposed_tags": [
+        {"tag": "type-romper",   "category": "CAT-A", "confidence": 0.9,  "source": "handle", "rule": "keyword"},
+        {"tag": "Age-3M",        "category": "CAT-B", "confidence": 0.85, "source": "handle", "rule": "keyword"},
+        {"tag": "season-winter", "category": "CAT-C", "confidence": 0.85, "source": "body",   "rule": "keyword"},
+        {"tag": "gender-neutral","category": "CAT-F", "confidence": 0.9,  "source": "title",  "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC03",
+      "title": "TC03 — ALLOWED_VALUE: gender-unisex not in spec",
+      "handle": "unisex-baby-set-spring",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["ALLOWED_VALUE"],
+      "proposed_tags": [
+        {"tag": "type-set",       "category": "CAT-A", "confidence": 0.9,  "source": "handle", "rule": "keyword"},
+        {"tag": "age-12-18m",     "category": "CAT-B", "confidence": 0.88, "source": "handle", "rule": "keyword"},
+        {"tag": "season-spring-fall","category": "CAT-C","confidence": 0.85,"source": "body",  "rule": "keyword"},
+        {"tag": "gender-unisex",  "category": "CAT-F", "confidence": 0.85, "source": "title",  "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC04",
+      "title": "TC04 — SOURCE_TRACEABLE: deprecated source title_heuristic",
+      "handle": "baby-shoes-first-step",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["SOURCE_TRACEABLE"],
+      "proposed_tags": [
+        {"tag": "type-shoes",    "category": "CAT-A", "confidence": 0.9,  "source": "handle",          "rule": "keyword"},
+        {"tag": "age-6-12m",     "category": "CAT-B", "confidence": 0.75, "source": "title_heuristic", "rule": "heuristic"},
+        {"tag": "season-all",    "category": "CAT-C", "confidence": 0.8,  "source": "category_default","rule": "default"},
+        {"tag": "gender-neutral","category": "CAT-F", "confidence": 0.85, "source": "title",           "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC05",
+      "title": "TC05 — NO_FORBIDDEN_INFERENCE: age tag from wide-range handle",
+      "handle": "0-to-18-months-baby-romper-cotton",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["NO_FORBIDDEN_INFERENCE"],
+      "proposed_tags": [
+        {"tag": "type-romper",   "category": "CAT-A", "confidence": 0.9,  "source": "handle", "rule": "keyword"},
+        {"tag": "age-0-3m",      "category": "CAT-B", "confidence": 0.7,  "source": "handle", "rule": "regex_age"},
+        {"tag": "season-all",    "category": "CAT-C", "confidence": 0.75, "source": "body",   "rule": "keyword"},
+        {"tag": "gender-neutral","category": "CAT-F", "confidence": 0.85, "source": "title",  "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC06",
+      "title": "TC06 — CATEGORY_COVERAGE: no type- tag (CAT-A missing)",
+      "handle": "baby-dress-summer-girl",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["CATEGORY_COVERAGE", "QUALITY_SCORE"],
+      "proposed_tags": [
+        {"tag": "age-3-6m",      "category": "CAT-B", "confidence": 0.88, "source": "handle", "rule": "keyword"},
+        {"tag": "season-summer", "category": "CAT-C", "confidence": 0.85, "source": "body",   "rule": "keyword"},
+        {"tag": "gender-girl",   "category": "CAT-F", "confidence": 0.9,  "source": "title",  "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC07",
+      "title": "TC07 — DUPLICATE_CONFLICT: two type- tags",
+      "handle": "baby-romper-dress-girl",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["DUPLICATE_CONFLICT"],
+      "proposed_tags": [
+        {"tag": "type-romper",   "category": "CAT-A", "confidence": 0.85, "source": "handle", "rule": "keyword"},
+        {"tag": "type-dress",    "category": "CAT-A", "confidence": 0.75, "source": "title",  "rule": "keyword"},
+        {"tag": "age-0-3m",      "category": "CAT-B", "confidence": 0.88, "source": "handle", "rule": "keyword"},
+        {"tag": "season-summer", "category": "CAT-C", "confidence": 0.85, "source": "body",   "rule": "keyword"},
+        {"tag": "gender-girl",   "category": "CAT-F", "confidence": 0.9,  "source": "title",  "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC08",
+      "title": "TC08 — QUALITY_SCORE: only 1 required cat, low confidence",
+      "handle": "mystery-baby-item",
+      "product_group": "clothing_yaml",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "age_status": "NO_AGE_FOUND",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["QUALITY_SCORE"],
+      "proposed_tags": [
+        {"tag": "season-winter", "category": "CAT-C", "confidence": 0.55, "source": "handle", "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC09",
+      "title": "TC09 — TAXONOMY_GAP: type-pajama + style-cartoon not in spec",
+      "handle": "baby-pajama-cartoon-print",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["ALLOWED_VALUE"],
+      "proposed_tags": [
+        {"tag": "type-pajama",   "category": "CAT-A", "confidence": 0.9,  "source": "handle", "rule": "keyword"},
+        {"tag": "age-0-3m",      "category": "CAT-B", "confidence": 0.88, "source": "handle", "rule": "keyword"},
+        {"tag": "season-winter", "category": "CAT-C", "confidence": 0.85, "source": "body",   "rule": "keyword"},
+        {"tag": "gender-neutral","category": "CAT-F", "confidence": 0.9,  "source": "title",  "rule": "keyword"},
+        {"tag": "style-cartoon", "category": "CAT-G", "confidence": 0.8,  "source": "handle", "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    },
+    {
+      "product_id": "TC10",
+      "title": "TC10 — ALLOWED_VALUE: gender-unisex + occ-sport + style-boho not in spec",
+      "handle": "baby-sport-boho-outfit-unisex",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "age_status": "OK",
+      "age_range_note": "",
+      "is_negative_test": true,
+      "expected_failures": ["ALLOWED_VALUE"],
+      "proposed_tags": [
+        {"tag": "type-top",      "category": "CAT-A", "confidence": 0.85, "source": "handle", "rule": "keyword"},
+        {"tag": "age-2-3y",      "category": "CAT-B", "confidence": 0.82, "source": "handle", "rule": "keyword"},
+        {"tag": "season-spring-fall","category": "CAT-C","confidence": 0.8,"source": "body",  "rule": "keyword"},
+        {"tag": "gender-unisex", "category": "CAT-F", "confidence": 0.85, "source": "title",  "rule": "keyword"},
+        {"tag": "occ-sport",     "category": "CAT-E", "confidence": 0.8,  "source": "handle", "rule": "keyword"},
+        {"tag": "style-boho",    "category": "CAT-G", "confidence": 0.75, "source": "handle", "rule": "keyword"}
+      ],
+      "age_after": [],
+      "blocked_tags": [],
+      "current_tags": []
+    }
+  ]
+}

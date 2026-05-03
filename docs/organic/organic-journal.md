@@ -19,6 +19,34 @@
 
 ---
 
+## DATE: 2026-05-03
+## TASK: Layer 6 Phase 3 — Validation Gates
+## SCOPE: Layer 6 — 8 validation gates, read-only analysis
+## WHAT CHANGED:
+- נוצרו scripts/tags/layer6_validate_tags.py (8 gates) + scripts/tags/run_layer6_phase3_gates.py
+- הורצו 8 gates על 30 המוצרים מ-Phase 2b + 10 negative test cases
+- נוצרו output/tags/phase3-validation-gates-report.json + .md
+- כל 10 negative tests עברו verification ✅
+- ממצאים עיקריים: ALLOWED_VALUE 24/30 fail (taxonomy gaps) | SOURCE_TRACEABLE 6/30 fail (deprecated sources)
+- Taxonomy gaps שהתגלו: gender-unisex×18, type-doll×5, occ-sport×2, type-other×2, style-cartoon×1, occ-holiday×1
+## FILES TOUCHED:
+- scripts/tags/layer6_validate_tags.py (new)
+- scripts/tags/run_layer6_phase3_gates.py (new)
+- output/tags/phase3-negative-test-cases.json (new)
+- output/tags/phase3-validation-gates-report.json (new)
+- output/tags/phase3-validation-gates-report.md (new)
+## SYSTEM IMPACT:
+- Layer 6 Phase 3 COMPLETE — validation gates ready
+- Overall PASS (כל 8 gates): 3/30 — נמוך עקב taxonomy gaps מ-Phase 2
+- Shopify live: NO — read-only analysis only
+## OPEN ISSUES:
+- Taxonomy gaps דורשים תיקון לפני Phase 4: gender-unisex→gender-neutral, type-doll→type-reborn-doll
+- Sources deprecated: default_unisex, fallback — Phase 4 code חייב להשתמש ב-VALID_SOURCES בלבד
+- 9 RANGE_TOO_BROAD + 9 NO_AGE_FOUND — ממתינים להחלטת אייל
+## NEXT STEP: Phase 4 Dry Run — לאחר Ayal review על Phase 3
+
+---
+
 ## DATE: 2026-05-05
 ## TASK: Layer 6 Phase 2b — CAT-B Age Extraction Hardening
 ## SCOPE: Layer 6 — age mapping hardening, read-only
