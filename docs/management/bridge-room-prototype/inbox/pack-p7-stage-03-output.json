@@ -1,0 +1,159 @@
+{
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-03",
+  "task_id": "TASK-P7-003",
+  "command_id": "CMD-P7-003",
+  "output_id": "OUT-P7-003",
+  "stage_type": "RETEST",
+  "written_by": "Claude",
+  "timestamp": "2026-05-04T11:10:00Z",
+
+  "retest_results": [
+    {
+      "target_id": "TGT-P7-01",
+      "file": "mock-target-p7-01.md",
+      "expected_state": "FIXED",
+      "retest_result": "PASS",
+      "checks": [
+        {
+          "field": "quality_standard",
+          "expected": "present and equal 'premium'",
+          "actual": "premium",
+          "check_result": "PASS"
+        },
+        {
+          "field": "review_status",
+          "expected": "approved",
+          "actual": "approved",
+          "check_result": "PASS"
+        },
+        {
+          "field": "product_name",
+          "expected": "present",
+          "actual": "BabyMania Organic Cotton Onesie Set",
+          "check_result": "PASS"
+        },
+        {
+          "field": "target_market",
+          "expected": "present",
+          "actual": "Israel",
+          "check_result": "PASS"
+        },
+        {
+          "field": "target_audience",
+          "expected": "present",
+          "actual": "Parents of newborns age 0–6 months",
+          "check_result": "PASS"
+        },
+        {
+          "field": "target_language",
+          "expected": "present",
+          "actual": "Hebrew",
+          "check_result": "PASS"
+        }
+      ],
+      "all_fields_valid": true,
+      "issue_ISS_P7_001_resolved": true,
+      "target_file_modified_at_retest": false
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "file": "mock-target-p7-02.md",
+      "expected_state": "ROLLED_BACK",
+      "retest_result": "PASS",
+      "rollback_verification": {
+        "snapshot_ref": "inbox/snapshots/pre-fix-target-p7-02.md.bak",
+        "matches_snapshot": true,
+        "review_status_value": "unreviewed",
+        "null_value_from_fix_not_present": true,
+        "rollback_complete": true
+      },
+      "note": "review_status: unreviewed — original issue ISS-P7-002 remains open. Requires follow-up pack.",
+      "target_file_modified_at_retest": false
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "file": "mock-target-p7-03.md",
+      "expected_state": "UNCHANGED",
+      "retest_result": "PASS",
+      "checks": [
+        {
+          "field": "product_name",
+          "actual": "BabyMania Bamboo Muslin Swaddle Blanket",
+          "check_result": "PASS"
+        },
+        {
+          "field": "quality_standard",
+          "actual": "premium",
+          "check_result": "PASS"
+        },
+        {
+          "field": "review_status",
+          "actual": "approved",
+          "check_result": "PASS"
+        }
+      ],
+      "not_in_any_write_list": true,
+      "unchanged_confirmed": true,
+      "target_file_modified_at_retest": false
+    }
+  ],
+
+  "overall_result": "PASS",
+  "pack_result": "PACK_PASS_PARTIAL",
+  "targets_fixed": ["TGT-P7-01"],
+  "targets_rolled_back": ["TGT-P7-02"],
+  "targets_unchanged": ["TGT-P7-03"],
+  "open_issues": [
+    {
+      "issue_id": "ISS-P7-002",
+      "target_id": "TGT-P7-02",
+      "field": "review_status",
+      "note": "Original issue preserved after rollback — review_status: unreviewed. Requires follow-up pack."
+    }
+  ],
+
+  "scope_check": {
+    "files_read": [
+      "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+      "docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json",
+      "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak"
+    ],
+    "files_written": [
+      "docs/management/bridge-room-prototype/inbox/pack-p7-stage-03-output.json"
+    ],
+    "target_files_modified": false,
+    "outside_scope_access": false,
+    "scope_violation": false
+  },
+
+  "evidence": [
+    {
+      "type": "FIELD_CHECK",
+      "result": "PASS",
+      "tgt_p7_01_all_fields_valid": true,
+      "tgt_p7_02_rollback_confirmed": true,
+      "tgt_p7_03_unchanged_confirmed": true
+    },
+    {
+      "type": "ROLLBACK_VERIFICATION",
+      "result": "PASS",
+      "matches_snapshot": true,
+      "null_value_not_present": true
+    },
+    {
+      "type": "SCOPE_CHECK",
+      "result": "PASS",
+      "details": "No target files modified at RETEST. All reads within allowed list."
+    },
+    {
+      "type": "VALIDATION",
+      "result": "PASS",
+      "details": "All 3 targets verified. Partial pack complete. Open issue recorded."
+    }
+  ],
+
+  "status": "PASS"
+}

@@ -1,0 +1,105 @@
+{
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-01",
+  "task_id": "TASK-P7-001",
+  "command_id": "CMD-P7-001",
+  "output_id": "OUT-P7-001",
+  "stage_type": "AUDIT",
+  "written_by": "Claude",
+  "timestamp": "2026-05-04T10:05:00Z",
+
+  "targets": [
+    {
+      "target_id": "TGT-P7-01",
+      "file": "mock-target-p7-01.md",
+      "audit_result": "FAIL",
+      "fields_checked": 6,
+      "fields_present": 5,
+      "fields_missing": 1,
+      "issues_found": 1,
+      "issues": [
+        {
+          "issue_id": "ISS-P7-001",
+          "field": "quality_standard",
+          "type": "MISSING_FIELD",
+          "severity": "critical",
+          "description": "Required field 'quality_standard' is absent from brief",
+          "fix_action": "ADD quality_standard: premium"
+        }
+      ]
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "file": "mock-target-p7-02.md",
+      "audit_result": "FAIL",
+      "fields_checked": 6,
+      "fields_present": 6,
+      "fields_invalid": 1,
+      "issues_found": 1,
+      "issues": [
+        {
+          "issue_id": "ISS-P7-002",
+          "field": "review_status",
+          "type": "INVALID_VALUE",
+          "severity": "critical",
+          "description": "Field 'review_status' has value 'unreviewed', expected 'approved'",
+          "actual_value": "unreviewed",
+          "expected_value": "approved",
+          "fix_action": "SET review_status: approved"
+        }
+      ]
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "file": "mock-target-p7-03.md",
+      "audit_result": "PASS",
+      "fields_checked": 6,
+      "fields_present": 6,
+      "fields_invalid": 0,
+      "issues_found": 0,
+      "issues": []
+    }
+  ],
+
+  "overall_result": "FAIL",
+  "targets_failing": ["TGT-P7-01", "TGT-P7-02"],
+  "targets_passing": ["TGT-P7-03"],
+  "total_issues_found": 2,
+  "next_action": "PRE_FIX_SNAPSHOT then FIX",
+
+  "scope_check": {
+    "files_read": [
+      "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-03.md"
+    ],
+    "files_written": [
+      "docs/management/bridge-room-prototype/inbox/pack-p7-stage-01-output.json"
+    ],
+    "target_files_modified": false,
+    "outside_scope_access": false,
+    "scope_violation": false
+  },
+
+  "evidence": [
+    {
+      "type": "FIELD_CHECK",
+      "result": "COMPLETED",
+      "items_checked": 18,
+      "items_passed": 16,
+      "items_failed": 2
+    },
+    {
+      "type": "SCOPE_CHECK",
+      "result": "PASS",
+      "details": "No target files modified. All reads within allowed list."
+    },
+    {
+      "type": "VALIDATION",
+      "result": "PASS",
+      "details": "Per-target results recorded. Issue IDs assigned. Evidence complete."
+    }
+  ],
+
+  "status": "FAIL"
+}

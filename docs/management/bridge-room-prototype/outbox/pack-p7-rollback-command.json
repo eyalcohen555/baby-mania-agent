@@ -1,0 +1,68 @@
+{
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-ROLLBACK",
+  "task_id": "TASK-P7-RB",
+  "command_id": "CMD-P7-RB",
+  "command_type": "ROLLBACK",
+  "issued_by": "Codex",
+  "issued_to": "Claude",
+  "timestamp": "2026-05-04T10:40:00Z",
+  "approval_tier": "T1",
+
+  "prerequisite_verdict": "VRD-P7-002",
+  "prerequisite_result": "ERROR",
+  "fix_output_ref": "OUT-P7-002",
+  "rollback_reason": "FIX ERROR on TGT-P7-02 — review_status written as null instead of approved",
+
+  "instruction": "Revert TGT-P7-02 from pre-fix snapshot. Read inbox/snapshots/pre-fix-target-p7-02.md.bak and restore mock-target-p7-02.md to that exact content. Do not touch TGT-P7-01 or TGT-P7-03.",
+
+  "rollback_target": {
+    "target_id": "TGT-P7-02",
+    "file": "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "snapshot_source": "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak",
+    "error_from_fix": {
+      "error_type": "WRITE_STRUCTURE_ERROR",
+      "error_detail": "review_status written as null instead of string 'approved'"
+    }
+  },
+
+  "files_allowed": {
+    "read": [
+      "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak",
+      "docs/management/bridge-room-prototype/inbox/pack-p7-stage-02-output.json"
+    ],
+    "write": [
+      "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json"
+    ]
+  },
+
+  "files_forbidden": [
+    "bridge/**",
+    "scripts/**",
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+    "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-01.md.bak"
+  ],
+
+  "output_required": {
+    "output_id": "OUT-P7-RB",
+    "location": "docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json",
+    "required_fields": [
+      "pack_id", "stage_id", "task_id", "command_id", "output_id",
+      "target_id", "snapshot_read", "revert_confirmed",
+      "scope_check", "evidence", "status"
+    ]
+  },
+
+  "allowed_status_values": ["ROLLBACK_PASS", "ROLLBACK_FAIL"],
+
+  "safety": {
+    "no_runtime": true,
+    "no_telegram": true,
+    "no_shopify": true,
+    "no_bridge": true,
+    "no_git": true,
+    "only_tgt_p7_02_may_be_modified": true
+  }
+}

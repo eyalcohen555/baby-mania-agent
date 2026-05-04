@@ -1,0 +1,64 @@
+{
+  "verdict_id": "VRD-P7-001",
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-01",
+  "task_id": "TASK-P7-001",
+  "command_id": "CMD-P7-001",
+  "reviewed_output_id": "OUT-P7-001",
+  "verdict_type": "AUDIT",
+  "issued_by": "Codex",
+  "timestamp": "2026-05-04T10:10:00Z",
+
+  "per_target_review": [
+    {
+      "target_id": "TGT-P7-01",
+      "claude_result": "FAIL",
+      "codex_confirms": true,
+      "issue_id": "ISS-P7-001",
+      "issue_type": "MISSING_FIELD",
+      "issue_field": "quality_standard",
+      "verdict": "FIX_REQUIRED"
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "claude_result": "FAIL",
+      "codex_confirms": true,
+      "issue_id": "ISS-P7-002",
+      "issue_type": "INVALID_VALUE",
+      "issue_field": "review_status",
+      "actual_value": "unreviewed",
+      "expected_value": "approved",
+      "verdict": "FIX_REQUIRED"
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "claude_result": "PASS",
+      "codex_confirms": true,
+      "issues_found": 0,
+      "verdict": "NO_ACTION_REQUIRED"
+    }
+  ],
+
+  "evidence_review": {
+    "field_check_present": true,
+    "scope_check_present": true,
+    "validation_present": true,
+    "target_files_not_modified": true,
+    "evidence_complete": true
+  },
+
+  "id_check": {
+    "pack_id_match": true,
+    "stage_id_match": true,
+    "task_id_match": true,
+    "command_id_match": true,
+    "output_id_match": true
+  },
+
+  "verdict": "FAIL",
+  "next_stage": "STAGE-02 (PRE_FIX_SNAPSHOT then FIX)",
+  "fix_targets": ["TGT-P7-01", "TGT-P7-02"],
+  "skip_targets": ["TGT-P7-03"],
+
+  "codex_notes": "AUDIT confirmed 2 issues: missing field on TGT-P7-01, invalid value on TGT-P7-02. TGT-P7-03 clean. Proceeding to FIX with PRE_FIX_SNAPSHOT required before any write."
+}

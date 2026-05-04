@@ -1,0 +1,109 @@
+{
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-02",
+  "task_id": "TASK-P7-002",
+  "command_id": "CMD-P7-002",
+  "output_id": "OUT-P7-002",
+  "stage_type": "FIX",
+  "written_by": "Claude",
+  "timestamp": "2026-05-04T10:30:00Z",
+
+  "snapshot_confirmation": {
+    "snapshots_written": [
+      {
+        "target_id": "TGT-P7-01",
+        "snapshot_id": "SNAP-P7-01",
+        "file": "inbox/snapshots/pre-fix-target-p7-01.md.bak",
+        "written_before_fix": true,
+        "timestamp": "2026-05-04T10:15:00Z"
+      },
+      {
+        "target_id": "TGT-P7-02",
+        "snapshot_id": "SNAP-P7-02",
+        "file": "inbox/snapshots/pre-fix-target-p7-02.md.bak",
+        "written_before_fix": true,
+        "timestamp": "2026-05-04T10:15:05Z"
+      }
+    ],
+    "all_snapshots_confirmed": true
+  },
+
+  "fix_results": [
+    {
+      "target_id": "TGT-P7-01",
+      "file": "mock-target-p7-01.md",
+      "issue_id": "ISS-P7-001",
+      "fix_attempted": "ADD quality_standard: premium",
+      "fix_result": "PASS",
+      "field_added": "quality_standard",
+      "value_written": "premium",
+      "pre_fix_snapshot_used": "SNAP-P7-01",
+      "file_modified": true
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "file": "mock-target-p7-02.md",
+      "issue_id": "ISS-P7-002",
+      "fix_attempted": "SET review_status: approved",
+      "fix_result": "ERROR",
+      "error_type": "WRITE_STRUCTURE_ERROR",
+      "error_detail": "review_status written as null instead of string 'approved' — wrong value type",
+      "value_written": null,
+      "expected_value": "approved",
+      "pre_fix_snapshot_used": "SNAP-P7-02",
+      "rollback_required": true,
+      "rollback_snapshot": "inbox/snapshots/pre-fix-target-p7-02.md.bak"
+    }
+  ],
+
+  "overall_result": "ERROR",
+  "fix_passed": ["TGT-P7-01"],
+  "fix_errored": ["TGT-P7-02"],
+  "tgt_p7_03_touched": false,
+
+  "scope_check": {
+    "files_read": [
+      "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "docs/management/bridge-room-prototype/inbox/pack-p7-stage-01-output.json"
+    ],
+    "files_written": [
+      "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-01.md.bak",
+      "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak",
+      "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "docs/management/bridge-room-prototype/inbox/pack-p7-stage-02-output.json"
+    ],
+    "mock_target_p7_03_accessed": false,
+    "outside_scope_access": false,
+    "scope_violation": false
+  },
+
+  "evidence": [
+    {
+      "type": "PRE_FIX_SNAPSHOT_CONFIRMED",
+      "result": "PASS",
+      "snapshots_written": 2,
+      "written_before_any_fix_write": true
+    },
+    {
+      "type": "FIX_APPLIED",
+      "result": "PARTIAL",
+      "targets_fixed": 1,
+      "targets_errored": 1,
+      "details": "TGT-P7-01 PASS. TGT-P7-02 ERROR — wrong type written."
+    },
+    {
+      "type": "SCOPE_CHECK",
+      "result": "PASS",
+      "details": "TGT-P7-03 not touched. All writes within allowed list."
+    },
+    {
+      "type": "VALIDATION",
+      "result": "PASS",
+      "details": "ERROR recorded with error_type and error_detail. rollback_required=true for TGT-P7-02."
+    }
+  ],
+
+  "status": "ERROR"
+}

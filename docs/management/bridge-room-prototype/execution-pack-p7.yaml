@@ -1,0 +1,338 @@
+pack_id: EXEC-PACK-P7-001
+pack_name: Execution Pack v1 — Prototype #7
+version: 1.0.0
+prototype: true
+created: 2026-05-04
+approval_tier: T1
+layer: 1
+isolated: true
+
+project: BabyMania Agent — Bridge Room Prototype Series
+
+goal: >
+  Prove Execution Pack v1 handles multi-file targets, selective FIX,
+  ERROR state, pack-level ROLLBACK, and RETEST with partial PACK_PASS.
+
+success_definition:
+  - "STAGE-01 AUDIT returns FAIL for TGT-P7-01 (missing quality_standard) and TGT-P7-02 (invalid review_status), PASS for TGT-P7-03."
+  - "PRE_FIX_SNAPSHOT writes .bak files for TGT-P7-01 and TGT-P7-02 before any FIX write."
+  - "STAGE-02 FIX returns PASS for TGT-P7-01 (quality_standard added) and ERROR for TGT-P7-02 (wrong structure written)."
+  - "STAGE-ROLLBACK reverts TGT-P7-02 from pre-fix snapshot. ROLLBACK verdict = ROLLBACK_PASS."
+  - "STAGE-03 RETEST confirms TGT-P7-01 fixed, TGT-P7-02 rolled back to pre-fix state, TGT-P7-03 unchanged."
+  - "pack-p7-final-report.json records PACK_PASS partial: targets_fixed=[TGT-P7-01], targets_rolled_back=[TGT-P7-02], targets_unchanged=[TGT-P7-03]."
+  - "pack-p7-safe-stop-state.json captures TOKEN_SAFE_STOP including rollback_state, targets_completed, snapshots_available."
+  - "TGT-P7-03 not modified at any stage."
+  - "All scope: docs/management/bridge-room-prototype/** only."
+
+description: >
+  Prototype #7 — Multi-File Execution Pack + ERROR Rollback.
+  Flow: AUDIT 3 targets → PRE_FIX_SNAPSHOT → FIX (01 PASS, 02 ERROR) → ROLLBACK 02 → RETEST → PACK_PASS partial.
+  New capabilities: multi-target AUDIT, selective FIX, ERROR state, ROLLBACK stage, partial PACK_PASS.
+
+approval_policy:
+  default_tier: T1
+  pack_tier: T1
+  escalation_rules:
+    - "Any write outside docs/management/bridge-room-prototype/** → STOP."
+    - "Any runtime, Telegram, Shopify, bridge, or git action → STOP."
+    - "ROLLBACK may only be issued after an ERROR verdict on FIX stage."
+    - "TGT-P7-03 must not be written at any stage."
+    - "PRE_FIX_SNAPSHOT required before any FIX write."
+
+global_rules:
+  codex_role: controller_reviewer
+  claude_role: executor
+  no_stage_skip: true
+  no_pass_without_evidence: true
+  no_out_of_scope_writes: true
+  allowed_root: "docs/management/bridge-room-prototype/**"
+  forbidden_runtime_connections:
+    - bridge.py
+    - bridge/github-bridge.py
+    - Telegram
+    - Shopify
+    - git
+  required_id_fields:
+    - pack_id
+    - task_id
+    - stage_id
+    - command_id
+    - output_id
+    - verdict_id
+  rollback_rules:
+    - ROLLBACK may only follow an ERROR verdict from FIX stage
+    - ROLLBACK command must reference the specific target_id that errored
+    - ROLLBACK must restore from the .bak snapshot written at PRE_FIX_SNAPSHOT
+    - ROLLBACK verdict must confirm pre_fix_hash matches restored file
+    - After ROLLBACK_PASS, RETEST must verify restored state explicitly
+
+stop_conditions:
+  - scope violation
+  - missing approval_tier
+  - missing required evidence
+  - weak PASS without validation
+  - ERROR verdict without rollback_required flag
+  - ROLLBACK attempted without prior ERROR verdict
+  - TGT-P7-03 modified at any stage
+  - PRE_FIX_SNAPSHOT missing before FIX
+  - runtime/Telegram/Shopify/git action attempted
+
+token_safe_stop:
+  enabled: true
+  artifact: docs/management/bridge-room-prototype/reports/pack-p7-safe-stop-state.json
+  required_fields:
+    - pack_id
+    - current_stage
+    - completed_stages
+    - pending_stage
+    - files_read
+    - files_written
+    - last_verdict
+    - next_required_action
+    - resume_instruction
+    - risk_level
+    - targets_completed
+    - targets_pending
+    - rollback_state
+    - snapshots_available
+
+reporting:
+  stage_report_required: true
+  final_pack_report_required: true
+  stage_outputs_location: "docs/management/bridge-room-prototype/inbox/"
+  verdicts_location: "docs/management/bridge-room-prototype/verdicts/"
+  final_report: "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json"
+  safe_stop_report: "docs/management/bridge-room-prototype/reports/pack-p7-safe-stop-state.json"
+  journal: "docs/management/bridge-room-prototype/journal/execution-pack-p7-log.jsonl"
+
+targets:
+  - target_id: TGT-P7-01
+    file: docs/management/bridge-room-prototype/mock-target-p7-01.md
+    description: Product brief — missing required field quality_standard
+    initial_state: BROKEN
+    expected_audit: FAIL
+    expected_fix: PASS
+  - target_id: TGT-P7-02
+    file: docs/management/bridge-room-prototype/mock-target-p7-02.md
+    description: Product brief — review_status has invalid value "unreviewed"
+    initial_state: BROKEN
+    expected_audit: FAIL
+    expected_fix: ERROR
+    expected_rollback: ROLLBACK_PASS
+  - target_id: TGT-P7-03
+    file: docs/management/bridge-room-prototype/mock-target-p7-03.md
+    description: Product brief — all fields valid, clean state
+    initial_state: CLEAN
+    expected_audit: PASS
+    must_not_be_modified: true
+
+stages:
+  - id: STAGE-01
+    stage_id: STAGE-01
+    type: AUDIT
+    task_id: TASK-P7-001
+    command_id: CMD-P7-001
+    output_id: OUT-P7-001
+    verdict_id: VRD-P7-001
+    approval_tier: T1
+    goal: "Audit all 3 mock targets. Return per-target PASS/FAIL. Overall FAIL if any target fails."
+    action: >
+      Read mock-target-p7-01.md, mock-target-p7-02.md, mock-target-p7-03.md.
+      Check each for required fields: product_name, target_market, target_audience,
+      target_language, quality_standard, review_status (must be "approved").
+      Return per-target result. Do not modify any target file.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-target-p7-01.md
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+        - docs/management/bridge-room-prototype/mock-target-p7-03.md
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-p7-stage-01-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-target-p7-01.md
+      - docs/management/bridge-room-prototype/mock-target-p7-02.md
+      - docs/management/bridge-room-prototype/mock-target-p7-03.md
+    evidence_required:
+      - FIELD_CHECK
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - All 3 targets pass all field checks
+    fail_conditions:
+      - One or more targets missing required field or invalid value
+    next_on_pass: DONE
+    next_on_fail: PRE_FIX_SNAPSHOT
+    read_only_targets: true
+
+  - id: STAGE-02
+    stage_id: STAGE-02
+    type: FIX
+    task_id: TASK-P7-002
+    command_id: CMD-P7-002
+    output_id: OUT-P7-002
+    verdict_id: VRD-P7-002
+    approval_tier: T1
+    goal: "Fix TGT-P7-01 (add quality_standard) and TGT-P7-02 (set review_status: approved). TGT-P7-03 not touched."
+    pre_step: PRE_FIX_SNAPSHOT
+    action: >
+      Write snapshots before modifying any target.
+      Fix mock-target-p7-01.md: add quality_standard: premium.
+      Fix mock-target-p7-02.md: set review_status to approved
+        — intentionally write wrong type (review_status: null) to trigger ERROR.
+      Do not touch mock-target-p7-03.md.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-target-p7-01.md
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+        - docs/management/bridge-room-prototype/inbox/pack-p7-stage-01-output.json
+      write:
+        - docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-01.md.bak
+        - docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak
+        - docs/management/bridge-room-prototype/mock-target-p7-01.md
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+        - docs/management/bridge-room-prototype/inbox/pack-p7-stage-02-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-target-p7-03.md
+    evidence_required:
+      - PRE_FIX_SNAPSHOT_CONFIRMED
+      - FIX_APPLIED
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - All targeted fixes applied correctly
+    fail_conditions:
+      - Fix written but does not resolve original issue
+    error_conditions:
+      - Fix written with wrong structure or wrong type
+    next_on_pass: STAGE-03
+    next_on_error: ROLLBACK
+    next_on_fail: HOLD
+
+  - id: STAGE-ROLLBACK
+    stage_id: STAGE-ROLLBACK
+    type: ROLLBACK
+    task_id: TASK-P7-RB
+    command_id: CMD-P7-RB
+    output_id: OUT-P7-RB
+    verdict_id: VRD-P7-RB
+    approval_tier: T1
+    prerequisite: ERROR verdict from STAGE-02 on TGT-P7-02
+    goal: "Revert TGT-P7-02 from pre-fix snapshot. Confirm restoration."
+    action: >
+      Read inbox/snapshots/pre-fix-target-p7-02.md.bak.
+      Restore mock-target-p7-02.md to pre-fix state.
+      Do not touch TGT-P7-01 or TGT-P7-03.
+      Write rollback output confirming restoration.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak
+        - docs/management/bridge-room-prototype/inbox/pack-p7-stage-02-output.json
+      write:
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+        - docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-target-p7-01.md
+      - docs/management/bridge-room-prototype/mock-target-p7-03.md
+    evidence_required:
+      - SNAPSHOT_READ
+      - REVERT_CONFIRMED
+      - SCOPE_CHECK
+    pass_conditions:
+      - TGT-P7-02 content matches pre-fix snapshot
+      - No other target files modified
+    fail_conditions:
+      - Revert incomplete or wrong snapshot applied
+    next_on_pass: STAGE-03
+    next_on_fail: HOLD
+
+  - id: STAGE-03
+    stage_id: STAGE-03
+    type: RETEST
+    task_id: TASK-P7-003
+    command_id: CMD-P7-003
+    output_id: OUT-P7-003
+    verdict_id: VRD-P7-003
+    approval_tier: T1
+    goal: "Verify TGT-P7-01 fixed, TGT-P7-02 rolled back, TGT-P7-03 unchanged."
+    action: >
+      Read all 3 targets and the rollback output.
+      Confirm TGT-P7-01 has quality_standard: premium.
+      Confirm TGT-P7-02 matches pre-fix snapshot (review_status: unreviewed — original state restored).
+      Confirm TGT-P7-03 unchanged (all fields valid).
+      Do not modify any target file.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-target-p7-01.md
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+        - docs/management/bridge-room-prototype/mock-target-p7-03.md
+        - docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json
+        - docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-p7-stage-03-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-target-p7-01.md
+      - docs/management/bridge-room-prototype/mock-target-p7-02.md
+      - docs/management/bridge-room-prototype/mock-target-p7-03.md
+    evidence_required:
+      - FIELD_CHECK
+      - ROLLBACK_VERIFICATION
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - TGT-P7-01 quality_standard present and valid
+      - TGT-P7-02 content matches pre-fix-target-p7-02.md.bak
+      - TGT-P7-03 unchanged from initial clean state
+    fail_conditions:
+      - TGT-P7-01 still missing quality_standard after FIX
+      - TGT-P7-02 not matching snapshot (rollback incomplete)
+    next_on_pass: PACK_COMPLETE
+    read_only_targets: true
+
+ownership:
+  claude_writes:
+    - inbox/snapshots/pre-fix-target-p7-01.md.bak
+    - inbox/snapshots/pre-fix-target-p7-02.md.bak
+    - inbox/pack-p7-stage-01-output.json
+    - inbox/pack-p7-stage-02-output.json
+    - inbox/pack-p7-rollback-output.json
+    - inbox/pack-p7-stage-03-output.json
+    - mock-target-p7-01.md (FIX write — STAGE-02 only)
+    - mock-target-p7-02.md (ROLLBACK write — STAGE-ROLLBACK only)
+  codex_writes:
+    - outbox/pack-p7-stage-01-command.json
+    - outbox/pack-p7-stage-02-command.json
+    - outbox/pack-p7-rollback-command.json
+    - outbox/pack-p7-stage-03-command.json
+    - verdicts/pack-p7-stage-01-verdict.json
+    - verdicts/pack-p7-stage-02-verdict.json
+    - verdicts/pack-p7-rollback-verdict.json
+    - verdicts/pack-p7-stage-03-verdict.json
+    - reports/pack-p7-final-report.json
+    - reports/pack-p7-safe-stop-state.json
+    - journal/execution-pack-p7-log.jsonl
+
+allowed_status_values:
+  - PASS
+  - FAIL
+  - BLOCKED
+  - ERROR
+  - ROLLBACK_PASS
+  - ROLLBACK_FAIL
+
+safety:
+  bridge_connection: false
+  runtime_connection: false
+  telegram: false
+  shopify_writes: false
+  git_operations: false
+  scope: docs/management/bridge-room-prototype/**
+  outside_scope_writes: false
+  prototypes_1_to_6_frozen: true

@@ -1,0 +1,28 @@
+# Product Brief: BabyMania Knit Wool Sleep Sack
+
+**target_id:** TGT-P7-02
+**snapshot_type:** PRE_FIX
+**snapshot_taken:** 2026-05-04T10:15:05Z
+**snapshot_id:** SNAP-P7-02
+**taken_before_stage:** STAGE-02 FIX
+
+---
+
+## Required Fields (pre-fix state)
+
+- **product_name:** BabyMania Knit Wool Sleep Sack
+- **target_market:** Israel
+- **target_audience:** Parents of infants age 3–12 months
+- **target_language:** Hebrew
+- **quality_standard:** standard
+- **review_status:** unreviewed
+
+<!-- ERROR: review_status must be "approved" — issue ISS-P7-002 -->
+
+---
+
+## Snapshot Notes
+
+This file is a read-only snapshot of mock-target-p7-02.md taken before STAGE-02 FIX.
+Used as ROLLBACK restore source after FIX ERROR on TGT-P7-02.
+ROLLBACK confirmed: mock-target-p7-02.md content matches this snapshot.

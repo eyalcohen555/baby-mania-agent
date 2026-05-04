@@ -1,0 +1,105 @@
+{
+  "report_id": "SST-P7-001",
+  "pack_id": "EXEC-PACK-P7-001",
+  "safe_to_stop": true,
+  "captured_at": "2026-05-04T11:22:00Z",
+
+  "current_stage": "STAGE-03",
+  "current_stage_status": "COMPLETE",
+
+  "completed_stages": [
+    "STAGE-01 — AUDIT — VRD-P7-001 — FAIL",
+    "STAGE-02 — FIX — VRD-P7-002 — ERROR",
+    "STAGE-ROLLBACK — ROLLBACK — VRD-P7-RB — ROLLBACK_PASS",
+    "STAGE-03 — RETEST — VRD-P7-003 — PACK_PASS_PARTIAL"
+  ],
+
+  "pending_stage": null,
+
+  "files_read": [
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+    "docs/management/bridge-room-prototype/inbox/pack-p7-stage-01-output.json",
+    "docs/management/bridge-room-prototype/inbox/pack-p7-stage-02-output.json",
+    "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-01.md.bak",
+    "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak",
+    "docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json"
+  ],
+
+  "files_written": [
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-01.md.bak",
+    "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak",
+    "docs/management/bridge-room-prototype/inbox/pack-p7-stage-01-output.json",
+    "docs/management/bridge-room-prototype/inbox/pack-p7-stage-02-output.json",
+    "docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json",
+    "docs/management/bridge-room-prototype/inbox/pack-p7-stage-03-output.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p7-stage-01-verdict.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p7-stage-02-verdict.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p7-rollback-verdict.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p7-stage-03-verdict.json",
+    "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+    "docs/management/bridge-room-prototype/reports/pack-p7-safe-stop-state.json",
+    "docs/management/bridge-room-prototype/journal/execution-pack-p7-log.jsonl"
+  ],
+
+  "last_verdict": {
+    "verdict_id": "VRD-P7-003",
+    "stage_id": "STAGE-03",
+    "result": "PACK_PASS_PARTIAL"
+  },
+
+  "next_required_action": null,
+  "resume_instruction": "Pack complete. No resume required. Prototype #7 PASS.",
+  "risk_level": "none",
+
+  "targets_completed": [
+    {
+      "target_id": "TGT-P7-01",
+      "final_state": "FIXED",
+      "issue_resolved": true
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "final_state": "ROLLED_BACK",
+      "issue_resolved": false,
+      "open_issue": "ISS-P7-002"
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "final_state": "UNCHANGED",
+      "issue_resolved": "N/A"
+    }
+  ],
+
+  "targets_pending": [],
+
+  "rollback_state": "ROLLBACK_PASS",
+
+  "snapshots_available": [
+    {
+      "snapshot_id": "SNAP-P7-01",
+      "target_id": "TGT-P7-01",
+      "file": "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-01.md.bak",
+      "used_for_rollback": false
+    },
+    {
+      "snapshot_id": "SNAP-P7-02",
+      "target_id": "TGT-P7-02",
+      "file": "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak",
+      "used_for_rollback": true,
+      "rollback_result": "ROLLBACK_PASS"
+    }
+  ],
+
+  "safety": {
+    "bridge_connection": false,
+    "runtime_connection": false,
+    "telegram": false,
+    "shopify_writes": false,
+    "git_operations": false,
+    "outside_scope_files_touched": false
+  }
+}

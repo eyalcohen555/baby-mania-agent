@@ -1,0 +1,161 @@
+{
+  "report_id": "RPT-P7-001",
+  "pack_id": "EXEC-PACK-P7-001",
+  "pack_name": "Execution Pack v1 — Prototype #7",
+  "prototype": true,
+  "isolated": true,
+  "approval_tier": "T1",
+  "created": "2026-05-04T11:20:00Z",
+
+  "pack_result": "PACK_PASS_PARTIAL",
+  "prototype_result": "PASS",
+
+  "flow_executed": "AUDIT → PRE_FIX_SNAPSHOT → FIX (01 PASS, 02 ERROR) → ROLLBACK → RETEST → PACK_PASS_PARTIAL",
+
+  "stage_summary": [
+    {
+      "stage_id": "STAGE-01",
+      "type": "AUDIT",
+      "verdict_id": "VRD-P7-001",
+      "result": "FAIL",
+      "targets_failing": 2,
+      "targets_passing": 1
+    },
+    {
+      "stage_id": "STAGE-02",
+      "type": "FIX + PRE_FIX_SNAPSHOT",
+      "verdict_id": "VRD-P7-002",
+      "result": "ERROR",
+      "targets_fixed": 1,
+      "targets_errored": 1,
+      "snapshots_written": 2
+    },
+    {
+      "stage_id": "STAGE-ROLLBACK",
+      "type": "ROLLBACK",
+      "verdict_id": "VRD-P7-RB",
+      "result": "ROLLBACK_PASS",
+      "targets_rolled_back": 1
+    },
+    {
+      "stage_id": "STAGE-03",
+      "type": "RETEST",
+      "verdict_id": "VRD-P7-003",
+      "result": "PASS",
+      "pack_result": "PACK_PASS_PARTIAL"
+    }
+  ],
+
+  "target_results": [
+    {
+      "target_id": "TGT-P7-01",
+      "file": "mock-target-p7-01.md",
+      "initial_state": "BROKEN",
+      "issue_id": "ISS-P7-001",
+      "issue_type": "MISSING_FIELD",
+      "issue_field": "quality_standard",
+      "fix_result": "PASS",
+      "final_state": "FIXED",
+      "issue_resolved": true
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "file": "mock-target-p7-02.md",
+      "initial_state": "BROKEN",
+      "issue_id": "ISS-P7-002",
+      "issue_type": "INVALID_VALUE",
+      "issue_field": "review_status",
+      "fix_result": "ERROR",
+      "rollback_result": "ROLLBACK_PASS",
+      "final_state": "ROLLED_BACK",
+      "issue_resolved": false,
+      "issue_status": "OPEN — requires follow-up pack"
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "file": "mock-target-p7-03.md",
+      "initial_state": "CLEAN",
+      "fix_result": "SKIP",
+      "final_state": "UNCHANGED",
+      "issue_resolved": "N/A"
+    }
+  ],
+
+  "targets_fixed": ["TGT-P7-01"],
+  "targets_rolled_back": ["TGT-P7-02"],
+  "targets_unchanged": ["TGT-P7-03"],
+  "open_issues": ["ISS-P7-002 — TGT-P7-02 review_status: unreviewed"],
+
+  "new_capabilities_proven": [
+    "Multi-target AUDIT with per-target PASS/FAIL result",
+    "Selective FIX — only AUDIT-failing targets receive fix",
+    "ERROR state distinct from FAIL and BLOCKED (with error_type + error_detail)",
+    "PRE_FIX_SNAPSHOT written before any FIX write",
+    "ROLLBACK stage triggered only after ERROR verdict",
+    "ROLLBACK restores from .bak snapshot",
+    "ROLLBACK_PASS verdict with matches_snapshot confirmation",
+    "Partial PACK_PASS with per-target result table",
+    "TGT-P7-03 confirmed unchanged throughout all stages",
+    "TOKEN_SAFE_STOP includes rollback_state, targets_completed, snapshots_available"
+  ],
+
+  "id_chain": {
+    "pack_id": "EXEC-PACK-P7-001",
+    "stage_01": {"task": "TASK-P7-001", "cmd": "CMD-P7-001", "out": "OUT-P7-001", "vrd": "VRD-P7-001"},
+    "stage_02": {"task": "TASK-P7-002", "cmd": "CMD-P7-002", "out": "OUT-P7-002", "vrd": "VRD-P7-002"},
+    "stage_rb": {"task": "TASK-P7-RB",  "cmd": "CMD-P7-RB",  "out": "OUT-P7-RB",  "vrd": "VRD-P7-RB"},
+    "stage_03": {"task": "TASK-P7-003", "cmd": "CMD-P7-003", "out": "OUT-P7-003", "vrd": "VRD-P7-003"},
+    "id_matching_valid": true
+  },
+
+  "artifact_count": 21,
+  "artifacts": [
+    "execution-pack-p7.yaml",
+    "mock-target-p7-01.md",
+    "mock-target-p7-02.md",
+    "mock-target-p7-03.md",
+    "outbox/pack-p7-stage-01-command.json",
+    "outbox/pack-p7-stage-02-command.json",
+    "outbox/pack-p7-rollback-command.json",
+    "outbox/pack-p7-stage-03-command.json",
+    "inbox/pack-p7-stage-01-output.json",
+    "inbox/snapshots/pre-fix-target-p7-01.md.bak",
+    "inbox/snapshots/pre-fix-target-p7-02.md.bak",
+    "inbox/pack-p7-stage-02-output.json",
+    "inbox/pack-p7-rollback-output.json",
+    "inbox/pack-p7-stage-03-output.json",
+    "verdicts/pack-p7-stage-01-verdict.json",
+    "verdicts/pack-p7-stage-02-verdict.json",
+    "verdicts/pack-p7-rollback-verdict.json",
+    "verdicts/pack-p7-stage-03-verdict.json",
+    "reports/pack-p7-final-report.json",
+    "reports/pack-p7-safe-stop-state.json",
+    "journal/execution-pack-p7-log.jsonl"
+  ],
+
+  "safety": {
+    "bridge_connection": false,
+    "runtime_connection": false,
+    "telegram": false,
+    "shopify_writes": false,
+    "git_operations": false,
+    "scope": "docs/management/bridge-room-prototype/**",
+    "outside_scope_files_touched": false,
+    "prototypes_1_to_6_modified": false
+  },
+
+  "flags": {
+    "prototype_7_pass": true,
+    "multi_target_audit_proven": true,
+    "selective_fix_proven": true,
+    "error_state_proven": true,
+    "pre_fix_snapshot_proven": true,
+    "rollback_stage_proven": true,
+    "rollback_pass_verdict_proven": true,
+    "partial_pack_pass_proven": true,
+    "tgt_p7_03_unchanged_confirmed": true,
+    "token_safe_stop_with_rollback_fields_proven": true,
+    "ready_for_codex_review": true,
+    "runtime_integration_approved": false
+  }
+}

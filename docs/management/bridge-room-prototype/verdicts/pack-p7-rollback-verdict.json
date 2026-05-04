@@ -1,0 +1,48 @@
+{
+  "verdict_id": "VRD-P7-RB",
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-ROLLBACK",
+  "task_id": "TASK-P7-RB",
+  "command_id": "CMD-P7-RB",
+  "reviewed_output_id": "OUT-P7-RB",
+  "verdict_type": "ROLLBACK",
+  "issued_by": "Codex",
+  "timestamp": "2026-05-04T10:58:00Z",
+
+  "rollback_review": {
+    "target_id": "TGT-P7-02",
+    "snapshot_read_confirmed": true,
+    "snapshot_id": "SNAP-P7-02",
+    "revert_applied": true,
+    "matches_snapshot": true,
+    "review_status_restored_to": "unreviewed",
+    "null_value_from_fix_not_present": true,
+    "only_tgt_p7_02_modified": true
+  },
+
+  "non_target_check": {
+    "tgt_p7_01_untouched": true,
+    "tgt_p7_03_untouched": true,
+    "snap_p7_01_untouched": true
+  },
+
+  "evidence_review": {
+    "snapshot_read_present": true,
+    "revert_confirmed_present": true,
+    "scope_check_present": true,
+    "evidence_complete": true
+  },
+
+  "id_check": {
+    "pack_id_match": true,
+    "stage_id_match": true,
+    "task_id_match": true,
+    "command_id_match": true,
+    "output_id_match": true
+  },
+
+  "verdict": "ROLLBACK_PASS",
+  "next_stage": "STAGE-03 RETEST",
+
+  "codex_notes": "ROLLBACK confirmed. TGT-P7-02 restored to pre-fix state from SNAP-P7-02. review_status: unreviewed confirmed. Null value from FIX not present. TGT-P7-01 and TGT-P7-03 untouched. Proceeding to RETEST."
+}

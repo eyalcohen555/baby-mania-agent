@@ -1,0 +1,82 @@
+{
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-03",
+  "task_id": "TASK-P7-003",
+  "command_id": "CMD-P7-003",
+  "command_type": "RETEST",
+  "issued_by": "Codex",
+  "issued_to": "Claude",
+  "timestamp": "2026-05-04T11:00:00Z",
+  "approval_tier": "T1",
+
+  "prerequisite_verdict": "VRD-P7-RB",
+  "prerequisite_result": "ROLLBACK_PASS",
+  "rollback_output_ref": "OUT-P7-RB",
+
+  "instruction": "Read all 3 targets and the rollback output. Verify: (1) TGT-P7-01 has quality_standard: premium. (2) TGT-P7-02 content matches pre-fix snapshot. (3) TGT-P7-03 is clean and unchanged. Do not modify any target file.",
+
+  "retest_targets": [
+    {
+      "target_id": "TGT-P7-01",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "expected_state": "FIXED",
+      "check": "quality_standard must be present and equal 'premium'"
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "expected_state": "ROLLED_BACK",
+      "check": "content must match pre-fix-target-p7-02.md.bak exactly",
+      "snapshot_ref": "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak"
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+      "expected_state": "UNCHANGED",
+      "check": "all required fields present and valid, file not in any write list"
+    }
+  ],
+
+  "files_allowed": {
+    "read": [
+      "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+      "docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json",
+      "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak"
+    ],
+    "write": [
+      "docs/management/bridge-room-prototype/inbox/pack-p7-stage-03-output.json"
+    ]
+  },
+
+  "files_forbidden": [
+    "bridge/**",
+    "scripts/**",
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md (write)",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md (write)",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md (write)"
+  ],
+
+  "output_required": {
+    "output_id": "OUT-P7-003",
+    "location": "docs/management/bridge-room-prototype/inbox/pack-p7-stage-03-output.json",
+    "required_fields": [
+      "pack_id", "stage_id", "task_id", "command_id", "output_id",
+      "retest_results", "overall_result", "pack_result",
+      "targets_fixed", "targets_rolled_back", "targets_unchanged",
+      "scope_check", "evidence", "status"
+    ]
+  },
+
+  "allowed_status_values": ["PASS", "FAIL"],
+
+  "safety": {
+    "no_runtime": true,
+    "no_telegram": true,
+    "no_shopify": true,
+    "no_bridge": true,
+    "no_git": true,
+    "all_target_files_read_only": true
+  }
+}

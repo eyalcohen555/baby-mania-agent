@@ -1,0 +1,84 @@
+{
+  "verdict_id": "VRD-P7-003",
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-03",
+  "task_id": "TASK-P7-003",
+  "command_id": "CMD-P7-003",
+  "reviewed_output_id": "OUT-P7-003",
+  "verdict_type": "RETEST",
+  "issued_by": "Codex",
+  "timestamp": "2026-05-04T11:18:00Z",
+
+  "per_target_review": [
+    {
+      "target_id": "TGT-P7-01",
+      "expected_state": "FIXED",
+      "claude_result": "PASS",
+      "codex_confirms": true,
+      "quality_standard_present": true,
+      "quality_standard_value": "premium",
+      "all_fields_valid": true,
+      "issue_ISS_P7_001_resolved": true,
+      "file_not_modified_at_retest": true
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "expected_state": "ROLLED_BACK",
+      "claude_result": "PASS",
+      "codex_confirms": true,
+      "matches_snapshot": true,
+      "review_status_value": "unreviewed",
+      "null_value_absent": true,
+      "rollback_complete": true,
+      "file_not_modified_at_retest": true,
+      "open_issue_noted": "ISS-P7-002 still open — requires follow-up pack"
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "expected_state": "UNCHANGED",
+      "claude_result": "PASS",
+      "codex_confirms": true,
+      "unchanged_confirmed": true,
+      "not_in_any_write_list": true,
+      "file_not_modified_at_retest": true
+    }
+  ],
+
+  "evidence_review": {
+    "field_check_present": true,
+    "rollback_verification_present": true,
+    "scope_check_present": true,
+    "validation_present": true,
+    "target_files_not_modified": true,
+    "evidence_complete": true
+  },
+
+  "id_check": {
+    "pack_id_match": true,
+    "stage_id_match": true,
+    "task_id_match": true,
+    "command_id_match": true,
+    "output_id_match": true
+  },
+
+  "verdict": "PACK_PASS",
+  "pack_result": "PACK_PASS_PARTIAL",
+  "targets_fixed": ["TGT-P7-01"],
+  "targets_rolled_back": ["TGT-P7-02"],
+  "targets_unchanged": ["TGT-P7-03"],
+  "open_issues": ["ISS-P7-002 on TGT-P7-02 — requires follow-up pack"],
+
+  "prototype_result": "PASS",
+  "new_capabilities_proven": [
+    "Multi-target AUDIT with per-target result",
+    "Selective FIX (only AUDIT-failing targets)",
+    "ERROR state distinct from FAIL and BLOCKED",
+    "PRE_FIX_SNAPSHOT before any write",
+    "ROLLBACK stage after ERROR",
+    "ROLLBACK_PASS verdict",
+    "Partial PACK_PASS with per-target summary",
+    "TGT-P7-03 unchanged throughout all stages"
+  ],
+
+  "codex_notes": "RETEST PASS. All 3 targets verified. TGT-P7-01 fixed. TGT-P7-02 rolled back correctly. TGT-P7-03 unchanged. Prototype #7 PASS."
+}

@@ -1,0 +1,81 @@
+{
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-01",
+  "task_id": "TASK-P7-001",
+  "command_id": "CMD-P7-001",
+  "command_type": "AUDIT",
+  "issued_by": "Codex",
+  "issued_to": "Claude",
+  "timestamp": "2026-05-04T10:00:00Z",
+  "approval_tier": "T1",
+
+  "instruction": "Audit all 3 mock target files. Check each for all required fields. Return per-target PASS or FAIL with issue details.",
+
+  "targets": [
+    {
+      "target_id": "TGT-P7-01",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-01.md"
+    },
+    {
+      "target_id": "TGT-P7-02",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-02.md"
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-03.md"
+    }
+  ],
+
+  "required_fields": [
+    "product_name",
+    "target_market",
+    "target_audience",
+    "target_language",
+    "quality_standard",
+    "review_status"
+  ],
+
+  "field_constraints": {
+    "review_status": "must equal 'approved'"
+  },
+
+  "files_allowed": {
+    "read": [
+      "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "docs/management/bridge-room-prototype/mock-target-p7-03.md"
+    ],
+    "write": [
+      "docs/management/bridge-room-prototype/inbox/pack-p7-stage-01-output.json"
+    ]
+  },
+
+  "files_forbidden": [
+    "bridge/**",
+    "scripts/**",
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md (write)",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md (write)",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md (write)"
+  ],
+
+  "output_required": {
+    "output_id": "OUT-P7-001",
+    "location": "docs/management/bridge-room-prototype/inbox/pack-p7-stage-01-output.json",
+    "required_fields": [
+      "pack_id", "stage_id", "task_id", "command_id", "output_id",
+      "targets", "overall_result", "targets_failing", "targets_passing",
+      "scope_check", "evidence", "status"
+    ]
+  },
+
+  "allowed_status_values": ["PASS", "FAIL", "BLOCKED", "ERROR"],
+
+  "safety": {
+    "no_runtime": true,
+    "no_telegram": true,
+    "no_shopify": true,
+    "no_bridge": true,
+    "no_git": true,
+    "target_files_read_only": true
+  }
+}

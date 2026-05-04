@@ -1,0 +1,86 @@
+{
+  "pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-ROLLBACK",
+  "task_id": "TASK-P7-RB",
+  "command_id": "CMD-P7-RB",
+  "output_id": "OUT-P7-RB",
+  "stage_type": "ROLLBACK",
+  "written_by": "Claude",
+  "timestamp": "2026-05-04T10:50:00Z",
+
+  "rollback_target": {
+    "target_id": "TGT-P7-02",
+    "file": "mock-target-p7-02.md",
+    "error_from_fix": {
+      "error_type": "WRITE_STRUCTURE_ERROR",
+      "error_detail": "review_status written as null instead of string 'approved'"
+    }
+  },
+
+  "snapshot_read": {
+    "snapshot_id": "SNAP-P7-02",
+    "file": "inbox/snapshots/pre-fix-target-p7-02.md.bak",
+    "readable": true,
+    "content_valid": true
+  },
+
+  "revert_confirmed": {
+    "file": "mock-target-p7-02.md",
+    "revert_applied": true,
+    "fields_restored": [
+      "product_name",
+      "target_market",
+      "target_audience",
+      "target_language",
+      "quality_standard",
+      "review_status"
+    ],
+    "review_status_restored_to": "unreviewed",
+    "matches_snapshot": true,
+    "original_issue_note": "review_status: unreviewed — original issue preserved after rollback, requires follow-up pack"
+  },
+
+  "files_not_touched": [
+    "mock-target-p7-01.md",
+    "mock-target-p7-03.md",
+    "inbox/snapshots/pre-fix-target-p7-01.md.bak"
+  ],
+
+  "scope_check": {
+    "files_read": [
+      "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak",
+      "docs/management/bridge-room-prototype/inbox/pack-p7-stage-02-output.json"
+    ],
+    "files_written": [
+      "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "docs/management/bridge-room-prototype/inbox/pack-p7-rollback-output.json"
+    ],
+    "tgt_p7_01_touched": false,
+    "tgt_p7_03_touched": false,
+    "snap_p7_01_touched": false,
+    "outside_scope_access": false,
+    "scope_violation": false
+  },
+
+  "evidence": [
+    {
+      "type": "SNAPSHOT_READ",
+      "result": "PASS",
+      "snapshot_id": "SNAP-P7-02",
+      "readable": true
+    },
+    {
+      "type": "REVERT_CONFIRMED",
+      "result": "PASS",
+      "matches_snapshot": true,
+      "only_tgt_p7_02_modified": true
+    },
+    {
+      "type": "SCOPE_CHECK",
+      "result": "PASS",
+      "details": "Only TGT-P7-02 modified. TGT-P7-01 and TGT-P7-03 untouched."
+    }
+  ],
+
+  "status": "ROLLBACK_PASS"
+}

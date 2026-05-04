@@ -1,10 +1,10 @@
 # Bridge Room V1 — Prototype Closure Report
 
-**STATUS: CLOSED — PROTOTYPES 1–3, 5–6 PASSED**
+**STATUS: CLOSED — PROTOTYPES 1–3, 5–7 PASSED**
 **APPROVAL TIER:** T1
 **LAYER:** 1
-**CLOSED:** 2026-05-03
-**NEXT STEP:** Safe design continuation only — no runtime integration
+**CLOSED:** 2026-05-04
+**NEXT STEP:** Safe next sandbox design only — no runtime integration
 
 ---
 
@@ -17,6 +17,7 @@
 | #3 | AUDIT → BLOCKED → USER_DECISION → RESUME → PASS | PASS | PASS | PASS | CLOSED |
 | #5 | Execution Pack v1: AUDIT → FIX → RETEST → PACK_PASS | PASS | PASS | PASS | CLOSED |
 | #6 | Execution Pack v1: AUDIT → BLOCKED → USER_DECISION → RESUME → RETEST → PACK_PASS + TOKEN_SAFE_STOP | PASS | PASS | PASS | CLOSED |
+| #7 | Execution Pack v1: AUDIT 3 targets → PRE_FIX_SNAPSHOT → FIX (01 PASS, 02 ERROR) → ROLLBACK → RETEST → PACK_PASS_PARTIAL | PASS | PASS | PASS | CLOSED |
 
 ---
 
@@ -89,6 +90,24 @@
 - `stop_conditions` and `next_on_blocked: USER_DECISION` defined for all stages
 - All 13 files confirmed inside `docs/management/bridge-room-prototype/**` — no scope violations
 
+### Prototype #7 — Multi-File Execution Pack + ERROR Rollback
+
+- Execution Pack v1 proven on **3 simultaneous mock targets** with per-target PASS/FAIL at AUDIT
+- `targets[]` array in AUDIT output tracks each target independently: TGT-P7-01 FAIL, TGT-P7-02 FAIL, TGT-P7-03 PASS
+- **Selective FIX**: only AUDIT-failing targets (TGT-P7-01, TGT-P7-02) included in FIX stage; TGT-P7-03 untouched
+- **PRE_FIX_SNAPSHOT**: SNAP-P7-01 and SNAP-P7-02 written to `inbox/snapshots/*.bak` before any FIX write — `written_before_fix: true` verified in verdict
+- TGT-P7-01 FIX PASS: `quality_standard: premium` added correctly (ISS-P7-001 resolved)
+- TGT-P7-02 FIX ERROR: `review_status: null` written instead of `"approved"` — **ERROR state** (not FAIL, not BLOCKED) enforced with `error_type: WRITE_STRUCTURE_ERROR`, `error_detail`, `rollback_required: true`
+- **ROLLBACK stage** triggered only after ERROR verdict (VRD-P7-002) — `CMD-P7-RB` issued 2 minutes after ERROR verdict in journal
+- ROLLBACK reads SNAP-P7-02, restores `mock-target-p7-02.md` — `matches_snapshot: true`, `null_value_from_fix_not_present: true`
+- **ROLLBACK_PASS** verdict issued; TGT-P7-01 and TGT-P7-03 confirmed untouched by ROLLBACK
+- RETEST verifies: TGT-P7-01 fixed (6/6 fields valid), TGT-P7-02 rolled back (snapshot match confirmed), TGT-P7-03 unchanged (`not_in_any_write_list: true`)
+- **PACK_PASS_PARTIAL**: `targets_fixed=[TGT-P7-01]`, `targets_rolled_back=[TGT-P7-02]`, `targets_unchanged=[TGT-P7-03]`
+- Open issue ISS-P7-002 (TGT-P7-02 `review_status: unreviewed`) recorded as pending follow-up pack
+- **TOKEN_SAFE_STOP extended** with 4 new fields: `targets_completed`, `targets_pending`, `rollback_state: ROLLBACK_PASS`, `snapshots_available`
+- All 21 artifacts confirmed in `bridge-room-prototype/**` — zero scope violations
+- 15-event journal traces full flow from PACK_START to PACK_COMPLETE
+
 ---
 
 ## What Is Still NOT Ready
@@ -103,8 +122,11 @@
 | Persistent decision store (beyond mock file) | NOT DESIGNED | Only mock JSON demonstrated |
 | Real user input channel (Telegram / UI) | NOT DESIGNED | Only `user-decision-mock.json` demonstrated |
 | Execution Pack v1 runtime integration | NOT APPROVED | Sandbox-only; requires T2 design + approval |
-| Multi-file target packs (more than one target file) | NOT PROTOTYPED | Only single-file target demonstrated |
-| Pack-level rollback on ERROR | NOT DESIGNED | Stop conditions defined but no rollback mechanism |
+| Multi-file target packs (more than one target file) | **PROVEN IN #7** | 3-target AUDIT + selective FIX demonstrated |
+| Pack-level rollback on ERROR | **PROVEN IN #7** | ROLLBACK stage + ROLLBACK_PASS verdict demonstrated |
+| Conditional stage routing (skip clean targets) | **PROVEN IN #7** | TGT-P7-03 skipped at FIX and ROLLBACK |
+| Pack chaining (Pack A output feeds Pack B) | NOT DESIGNED | Required for multi-phase real tasks |
+| Real Codex/Claude context separation | NOT TESTED | Both roles in same session |
 
 ---
 
@@ -116,6 +138,7 @@ Prototype #2 PASS:                                      YES
 Prototype #3 PASS:                                      YES
 Prototype #5 PASS:                                      YES
 Prototype #6 PASS:                                      YES
+Prototype #7 PASS:                                      YES
 Evidence Schema v1 enforced:                            YES
 ID matching verified:                                   YES
 Ownership boundary verified:                            YES
@@ -125,10 +148,15 @@ AUDIT → FIX → RETEST inside pack PASS:                 YES
 Decision lifecycle (BLOCKED → RESUME → RETEST) PASS:   YES
 Single-use decision enforcement PASS:                   YES
 TOKEN_SAFE_STOP artifact proven:                        YES
+Multi-file Execution Pack sandbox proof PASS:           YES
+ERROR state handling sandbox proof PASS:                YES
+Pack-level rollback sandbox proof PASS:                 YES
+Selective FIX (skip clean targets) PASS:                YES
+PRE_FIX_SNAPSHOT before write PASS:                     YES
+TOKEN_SAFE_STOP extended (P7 fields) PASS:              YES
 Telegram integration approved:                          NO
 Runtime integration approved:                           NO
 Execution Pack runtime integration approved:            NO
-READY FOR SAFE NEXT DESIGN:                            YES
 READY FOR NEXT SANDBOX DESIGN:                         YES
 READY FOR RUNTIME INTEGRATION:                         NO
 READY FOR FULL IMPLEMENTATION:                         NO
@@ -174,6 +202,27 @@ READY FOR FULL IMPLEMENTATION:                         NO
 | `codex-resume-verdict.json` | #3 | Final verdict VRD-P3-002 (PASS) |
 | `room-state.json` | all | Current room state (P3 final) |
 | `journal/stage-log.jsonl` | all | Append-only event log (20 entries, P2+P3) |
+| `execution-pack-p7.yaml` | #7 | Execution Pack P7 plan — 3 targets, 4 stages, rollback_rules, token_safe_stop (14 fields) |
+| `mock-target-p7-01.md` | #7 | Fix target — FIXED state (quality_standard: premium added) |
+| `mock-target-p7-02.md` | #7 | Rollback target — ROLLED BACK state (review_status: unreviewed restored) |
+| `mock-target-p7-03.md` | #7 | Clean target — UNCHANGED throughout all stages |
+| `outbox/pack-p7-stage-01-command.json` | #7 | AUDIT command CMD-P7-001 (3 targets) |
+| `outbox/pack-p7-stage-02-command.json` | #7 | FIX command CMD-P7-002 (with PRE_FIX_SNAPSHOT pre-step) |
+| `outbox/pack-p7-rollback-command.json` | #7 | ROLLBACK command CMD-P7-RB (TGT-P7-02 only) |
+| `outbox/pack-p7-stage-03-command.json` | #7 | RETEST command CMD-P7-003 |
+| `inbox/pack-p7-stage-01-output.json` | #7 | AUDIT result OUT-P7-001 (FAIL, 2 issues, per-target) |
+| `inbox/snapshots/pre-fix-target-p7-01.md.bak` | #7 | PRE_FIX_SNAPSHOT SNAP-P7-01 (TGT-P7-01 pre-fix state) |
+| `inbox/snapshots/pre-fix-target-p7-02.md.bak` | #7 | PRE_FIX_SNAPSHOT SNAP-P7-02 (TGT-P7-02 pre-fix state, used for ROLLBACK) |
+| `inbox/pack-p7-stage-02-output.json` | #7 | FIX result OUT-P7-002 (TGT-P7-01 PASS, TGT-P7-02 ERROR) |
+| `inbox/pack-p7-rollback-output.json` | #7 | ROLLBACK result OUT-P7-RB (ROLLBACK_PASS, matches_snapshot=true) |
+| `inbox/pack-p7-stage-03-output.json` | #7 | RETEST result OUT-P7-003 (PACK_PASS_PARTIAL) |
+| `verdicts/pack-p7-stage-01-verdict.json` | #7 | Verdict VRD-P7-001 (FIX_REQUIRED x2, NO_ACTION TGT-03) |
+| `verdicts/pack-p7-stage-02-verdict.json` | #7 | Verdict VRD-P7-002 (ERROR, ROLLBACK_REQUIRED TGT-P7-02) |
+| `verdicts/pack-p7-rollback-verdict.json` | #7 | Verdict VRD-P7-RB (ROLLBACK_PASS) |
+| `verdicts/pack-p7-stage-03-verdict.json` | #7 | Verdict VRD-P7-003 (PACK_PASS, 8 new capabilities) |
+| `reports/pack-p7-final-report.json` | #7 | Final pack report RPT-P7-001 (PACK_PASS_PARTIAL, 10 capabilities proven) |
+| `reports/pack-p7-safe-stop-state.json` | #7 | TOKEN_SAFE_STOP SST-P7-001 (14 fields, rollback_state=ROLLBACK_PASS) |
+| `journal/execution-pack-p7-log.jsonl` | #7 | Pack event log (15 events, PACK_START to PACK_COMPLETE) |
 | `execution-pack.yaml` | #5 | Execution Pack v1 plan — pack schema + 3 stage definitions |
 | `mock-pack-target.md` | #5 | Fix target — broken state → fixed by STAGE-02 |
 | `outbox/pack-stage-01-command.json` | #5 | AUDIT command CMD-P5-001 |

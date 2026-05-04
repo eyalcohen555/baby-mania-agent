@@ -1,0 +1,27 @@
+# Product Brief: BabyMania Organic Cotton Onesie Set
+
+**target_id:** TGT-P7-01
+**snapshot_type:** PRE_FIX
+**snapshot_taken:** 2026-05-04T10:15:00Z
+**snapshot_id:** SNAP-P7-01
+**taken_before_stage:** STAGE-02 FIX
+
+---
+
+## Required Fields (pre-fix state)
+
+- **product_name:** BabyMania Organic Cotton Onesie Set
+- **target_market:** Israel
+- **target_audience:** Parents of newborns age 0–6 months
+- **target_language:** Hebrew
+- **review_status:** approved
+
+<!-- MISSING: quality_standard — this is the issue detected by STAGE-01 AUDIT (ISS-P7-001) -->
+
+---
+
+## Snapshot Notes
+
+This file is a read-only snapshot of mock-target-p7-01.md taken before STAGE-02 FIX.
+Used to verify fix was applied correctly (field added, not replaced).
+Not used in ROLLBACK (TGT-P7-01 fix succeeded).
