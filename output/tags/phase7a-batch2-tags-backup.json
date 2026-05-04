@@ -1,0 +1,80 @@
+{
+  "backup_timestamp": "2026-05-04T16:13:26.007595+00:00",
+  "phase": "Phase 7A batch 2 pre-write backup",
+  "products": [
+    {
+      "candidate": "P-B2-1",
+      "product_id": "9606694437177",
+      "title": "חליפת פולו קצרה סרוגה לתינוקות",
+      "type": "type-set",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit"
+      ],
+      "proposed_new_tags": [
+        "type-set",
+        "season-summer",
+        "fabric-knit",
+        "gender-neutral",
+        "style-striped"
+      ],
+      "timestamp": "2026-05-04T16:13:27.695337+00:00"
+    },
+    {
+      "candidate": "P-B2-2",
+      "product_id": "9688885985593",
+      "title": "אוברול פיל מתוק דגם נאיה",
+      "type": "type-romper",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_new_tags": [
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-newborn",
+        "season-spring-fall",
+        "gender-girl"
+      ],
+      "timestamp": "2026-05-04T16:13:28.222450+00:00"
+    },
+    {
+      "candidate": "P-B2-3",
+      "product_id": "9688934973753",
+      "title": "אוברול פיל פסים דגם ליאו",
+      "type": "type-romper",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_new_tags": [
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "style-striped"
+      ],
+      "timestamp": "2026-05-04T16:13:28.875729+00:00"
+    },
+    {
+      "candidate": "P-B2-4",
+      "product_id": "10190523138361",
+      "title": "Boys' summer white striped short-sleeved shorts with pockets, fashionable two-piece set, suitable for children over 3 years old",
+      "type": "type-set",
+      "current_tags": [],
+      "proposed_new_tags": [
+        "type-set",
+        "size-3y",
+        "season-summer",
+        "gender-boy",
+        "style-striped"
+      ],
+      "timestamp": "2026-05-04T16:13:29.407729+00:00"
+    }
+  ]
+}

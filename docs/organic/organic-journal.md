@@ -20,6 +20,35 @@
 ---
 
 ## DATE: 2026-05-04
+## TASK: Layer 7 Phase 7A — Batch 2 Live (4 מוצרים SAFE שנותרו)
+## SCOPE: Layer 7 — Shopify live tag write — 4 products
+## WHAT CHANGED:
+- Phase 7A batch 2 בוצע — T3 approval מאייל התקבל
+- 4 מוצרים קיבלו תגיות Layer 6/7 חיות (2 type-set, 2 type-romper)
+- גיבוי נוצר לפני הכתיבה: output/tags/phase7a-batch2-tags-backup.json
+- כל 4 מוצרים עברו verify PASS (PUT 200 + GET confirm)
+- Shopify live: YES — 19 products total (15 קודמים + 4 batch 2)
+- אין age-* tags. אין rollback.
+## FILES TOUCHED:
+- output/tags/phase7a-batch2-tags-backup.json
+- output/tags/phase7a-batch2-live-verify.md
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- 9606694437177 (חליפת פולו קצרה): type-set, season-summer, fabric-knit, gender-neutral, style-striped
+- 9688885985593 (אוברול פיל מתוק): type-romper, size-3-6m, size-6-9m, size-newborn, season-spring-fall, gender-girl
+- 9688934973753 (אוברול פיל פסים): type-romper, size-0-3m..12-18m, style-striped
+- 10190523138361 (Boys summer striped set): type-set, size-3y, season-summer, gender-boy, style-striped
+## OPEN ISSUES:
+- EU shoe sizes — אין מיפוי מאושר עדיין
+- 6 REVIEW_ONLY ממתינים לבדיקה ידנית (phase7a-diverse-rollout-candidates.md)
+## NEXT STEP:
+- Phase 7B — candidate expansion toward 50+ products from 4+ types
+- target: 50+ מוצרים מ-4+ סוגים לפני Phase 8 (collections)
+
+---
+
+## DATE: 2026-05-04
 ## TASK: Layer 7 Phase 7A — Batch 1 Live (10 מוצרים מגוונים)
 ## SCOPE: Layer 7 — Shopify live tag write — 10 products diverse types
 ## WHAT CHANGED:
