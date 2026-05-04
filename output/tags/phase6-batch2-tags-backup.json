@@ -1,0 +1,66 @@
+{
+  "backup_timestamp": "2026-05-04T14:15:39.932871+00:00",
+  "phase": "Phase 6 batch 2 pre-write backup",
+  "products": [
+    {
+      "candidate": "C5",
+      "product_id": "9687579033913",
+      "title": "אוברול לבבות דגם הילה",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_new_tags": [
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "season-winter",
+        "fabric-cotton",
+        "gender-girl"
+      ],
+      "final_tags_after_write": [
+        "אוברול",
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "season-winter",
+        "fabric-cotton",
+        "gender-girl"
+      ],
+      "timestamp": "2026-05-04T14:15:39.932871+00:00"
+    },
+    {
+      "candidate": "C1",
+      "product_id": "9688932909369",
+      "title": "אוברול אריה חמוד דגם שמר",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_new_tags": [
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "gender-boy",
+        "style-casual"
+      ],
+      "final_tags_after_write": [
+        "אוברול",
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "gender-boy",
+        "style-casual"
+      ],
+      "timestamp": "2026-05-04T14:15:39.932871+00:00"
+    }
+  ]
+}
