@@ -20,6 +20,27 @@
 ---
 
 ## DATE: 2026-05-04
+## TASK: Layer 7 Phase 7B — Dry Run re-confirm (374/222/108/44 — consistent)
+## SCOPE: Layer 7 — dry run only — אין כתיבה ל-Shopify
+## WHAT CHANGED:
+- dry run רץ שנית על 374 מוצרים (אימות תוצאות קודמות)
+- תוצאות עקביות: 222 SAFE | 108 REVIEW_ONLY | 44 REJECT
+- output files זהים — phase7b-dryrun-candidates.md/.json בgit ללא שינוי
+- recommended batch: 20 מוצרים (5 dress + 5 bodysuit + 5 set + 5 romper) — מאושר
+## FILES TOUCHED:
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- אין שינוי. Shopify live = 19 מוצרים.
+## OPEN ISSUES:
+- ממתין לאישור T3 מאייל לפני live batch
+- EU shoes: עדיין חסום
+## NEXT STEP:
+- Phase 7B live batch — T3 approval from Ayal → write to Shopify
+- IDs recommended: 9606691324217, 9895864369465, 9892557848889, 9179146256697, 9606694175033, 10190522908985, 9179165753657, 9179154612537, 9179152154937, 9179167129913, 10190522941753, 10190523203897, 10190523105593, 10190523236665, 10190522843449, 10029649101113, 9657091293497, 9687596728633, 10029649002809, 10029648970041
+
+---
+
+## DATE: 2026-05-04
 ## TASK: Layer 7 Phase 7B — Dry Run (374 מועמדים, 222 SAFE)
 ## SCOPE: Layer 7 — dry run only — אין כתיבה ל-Shopify
 ## WHAT CHANGED:
