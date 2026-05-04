@@ -1,0 +1,990 @@
+{
+  "backup_timestamp": "2026-05-04T19:32:02.524230+00:00",
+  "phase": "Phase 7B live batch 1 pre-write backup",
+  "t3_approval": "Ayal — Phase 7B live batch — 20 products",
+  "products": [
+    {
+      "product_id": 9606691324217,
+      "title_from_shopify": "שמלה אופנתית קלאסית לאירועים לתינוקת",
+      "status_before": "active",
+      "current_tags": [
+        "baby-dress",
+        "baby-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-dress",
+        "occ-gift",
+        "occ-everyday",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "type-dress"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9895864369465,
+      "title_from_shopify": "שמלה חגיגית פרחונית דגם מורן",
+      "status_before": "active",
+      "current_tags": [
+        "baby-dress",
+        "baby-gift",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "floral-baby",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-dress",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-18-24m",
+        "occ-gift",
+        "occ-everyday",
+        "gender-girl",
+        "style-floral"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-floral",
+          "source": "title",
+          "conf": 0.87,
+          "rule": "CAT-G"
+        }
+      ],
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-12-18m",
+        "size-18-24m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "style-floral",
+        "type-dress"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9892557848889,
+      "title_from_shopify": "שמלה כחולה כהה אם דוגמא קלאסית דגם אוראל",
+      "status_before": "active",
+      "current_tags": [
+        "baby-dress",
+        "baby-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-dress",
+        "occ-gift",
+        "occ-everyday",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "type-dress"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9179146256697,
+      "title_from_shopify": "שמלה נסיכותית מפתשן וכותנה, מלאה בסטייל - נועה",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress",
+        "fabric-cotton"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "fabric-cotton",
+          "source": "title",
+          "conf": 0.92,
+          "rule": "CAT-D"
+        }
+      ],
+      "final_tags_before_write": [
+        "fabric-cotton",
+        "type-dress"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9606694175033,
+      "title_from_shopify": "שמלה קיצית עם מלמלה לבנות",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-dress"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10190522908985,
+      "title_from_shopify": "Summer Toddler Kids Stripe Bodysuit Boys Loose Turndown Collar Jumpsuit Girls Baby Thin Crawlwear Onesie Clothes One Piece",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "size-6-9m",
+        "size-3-6m",
+        "season-summer",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9m→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6m→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "season-summer",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "season-summer",
+        "size-3-6m",
+        "size-6-9m",
+        "type-bodysuit"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9179165753657,
+      "title_from_shopify": "בגד גוף כותנה טטרה - פריחת האביב",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "season-spring-fall",
+        "fabric-cotton"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "season-spring-fall",
+          "source": "title",
+          "conf": 0.85,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "fabric-cotton",
+          "source": "title",
+          "conf": 0.92,
+          "rule": "CAT-D"
+        }
+      ],
+      "final_tags_before_write": [
+        "fabric-cotton",
+        "season-spring-fall",
+        "type-bodysuit"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9179154612537,
+      "title_from_shopify": "בגד גוף כיווצים - גאיה",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-bodysuit"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        }
+      ],
+      "final_tags_before_write": [
+        "type-bodysuit"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9179152154937,
+      "title_from_shopify": "בגד גוף מלמלות - קיטי",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-bodysuit"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        }
+      ],
+      "final_tags_before_write": [
+        "type-bodysuit"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9179167129913,
+      "title_from_shopify": "בגד גוף מלמלות וכיווצים פרחוני - שיילי",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "style-floral"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "style-floral",
+          "source": "title",
+          "conf": 0.87,
+          "rule": "CAT-G"
+        }
+      ],
+      "final_tags_before_write": [
+        "style-floral",
+        "type-bodysuit"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10190522941753,
+      "title_from_shopify": "2Pcs Baby Boys' Sports and Leisure Set lapel Color blocked Short Sleeves and Shorts for 0-3 Year Toddlers Baby Boys Summer Set",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set",
+        "size-12-18m",
+        "size-9-12m",
+        "size-6-9m",
+        "size-3-6m",
+        "size-18-24m",
+        "season-summer",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "season-summer",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "season-summer",
+        "size-12-18m",
+        "size-18-24m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "type-set"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10190523203897,
+      "title_from_shopify": "Boys Khaki Letter Print Half Zip Hooded 2Pcs Summer Set, Short Sleeve Hoodie + Shorts, Kids Casual Outfit 3-12Y",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set",
+        "season-summer",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "season-summer",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "season-summer",
+        "type-set"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10190523105593,
+      "title_from_shopify": "Boys' Summer Knitted Set, Contrast Color Short-Sleeved With Pocket and Shorts Clothes Sets, Children Comfort Soft 2-Piece Set",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set",
+        "season-summer",
+        "fabric-knit",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "season-summer",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "fabric-knit",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-D"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "fabric-knit",
+        "gender-boy",
+        "season-summer",
+        "type-set"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10190523236665,
+      "title_from_shopify": "Infant Baby Boys Short Sets Patchwork Sleeveless Vest Tops with Pocket + Shorts 2pcs Summer Outfits for Toddler 6-36M",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set",
+        "season-summer",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "season-summer",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "season-summer",
+        "type-set"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10190522843449,
+      "title_from_shopify": "Kids Baby Boy Summer Clothes Sets Casual Letters Short Sleeve O Neck T-Shirt and Elastic Band Shorts Infants Boys Activewear",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set",
+        "season-summer",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "season-summer",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "season-summer",
+        "type-set"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10029649101113,
+      "title_from_shopify": "LUMI™  – אוברול נוחות יוקרתי לתינוקות",
+      "status_before": "active",
+      "current_tags": [
+        "אוברול"
+      ],
+      "current_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        }
+      ],
+      "final_tags_before_write": [
+        "type-romper",
+        "אוברול"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9657091293497,
+      "title_from_shopify": "WarmNest™– אוברול חורף מחבק לתינוקות",
+      "status_before": "active",
+      "current_tags": [
+        "0-3 חודש",
+        "12-18 חודש",
+        "6-12 חודש",
+        "אוברול"
+      ],
+      "current_tags_count": 4,
+      "proposed_new_tags": [
+        "type-romper",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "season-winter",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "season-winter",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "0-3 חודש",
+        "12-18 חודש",
+        "6-12 חודש",
+        "gender-girl",
+        "season-winter",
+        "size-12-18m",
+        "size-6-9m",
+        "size-9-12m",
+        "type-romper",
+        "אוברול"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 9687596728633,
+      "title_from_shopify": "אוברול Leopard Cozy",
+      "status_before": "active",
+      "current_tags": [
+        "אוברול"
+      ],
+      "current_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "size-12-18m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "type-romper",
+        "אוברול"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10029649002809,
+      "title_from_shopify": "Alure™ Baby",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-romper",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        }
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-romper"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    },
+    {
+      "product_id": 10029648970041,
+      "title_from_shopify": "LumiBear™ חליפת פרמיום לחורף",
+      "status_before": "active",
+      "current_tags": [
+        "baby-gift",
+        "baby-shower-gift",
+        "baby-suit",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-18-24m",
+        "size-9-12m",
+        "size-12-18m",
+        "season-winter",
+        "occ-gift",
+        "gender-boy",
+        "style-teddy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "season-winter",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-teddy",
+          "source": "title",
+          "conf": 0.87,
+          "rule": "CAT-G"
+        }
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-shower-gift",
+        "baby-suit",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-gift",
+        "season-winter",
+        "size-12-18m",
+        "size-18-24m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "style-teddy",
+        "type-romper",
+        "winter-baby-wear"
+      ],
+      "timestamp": "2026-05-04T19:32:02.524230+00:00"
+    }
+  ]
+}
