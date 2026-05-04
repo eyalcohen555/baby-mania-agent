@@ -131,7 +131,7 @@ def fetch_shopify_products(pids, token):
     import urllib.request
     url = (
         f"{SHOP_URL}/admin/api/{API_VERSION}/products.json"
-        f"?ids={','.join(pids)}&limit=250&fields=id,title,handle,tags,body_html,product_type"
+        f"?ids={','.join(pids)}&limit=250&fields=id,title,handle,tags,body_html,product_type,variants"
     )
     req = urllib.request.Request(
         url,
@@ -321,22 +321,28 @@ def extract_cat_b(pid, title, handle, tags_list, body, yaml_desc, is_reborn, var
 
     # Source 1: Shopify variant option values (highest priority)
     VARIANT_SIZE_MAP = {
-        "nb": "size-newborn", "newborn": "size-newborn",
-        "0-3m": "size-0-3m", "0-3": "size-0-3m",
-        "3-6m": "size-3-6m", "3-6": "size-3-6m",
-        "6-9m": "size-6-9m", "6-9": "size-6-9m",
-        "9-12m": "size-9-12m", "9-12": "size-9-12m",
-        "12-18m": "size-12-18m", "12-18": "size-12-18m",
-        "18-24m": "size-18-24m", "18-24": "size-18-24m",
-        "2y": "size-2y", "2t": "size-2y",
-        "3y": "size-3y", "3t": "size-3y",
-        "4y": "size-4y", "4t": "size-4y",
+        # English / international
+        "nb": "size-newborn", "newborn": "size-newborn", "ניו בורן": "size-newborn",
+        "0-3m": "size-0-3m", "0-3": "size-0-3m", "0-3 חודשים": "size-0-3m", "0-3 חודש": "size-0-3m",
+        "3-6m": "size-3-6m", "3-6": "size-3-6m", "3-6 חודשים": "size-3-6m", "3-6 חודש": "size-3-6m",
+        "6-9m": "size-6-9m", "6-9": "size-6-9m", "6-9 חודשים": "size-6-9m", "6-9 חודש": "size-6-9m",
+        "9-12m": "size-9-12m", "9-12": "size-9-12m", "9-12 חודשים": "size-9-12m", "9-12 חודש": "size-9-12m",
+        "12-18m": "size-12-18m", "12-18": "size-12-18m", "12-18 חודשים": "size-12-18m", "12-18 חודש": "size-12-18m",
+        "18-24m": "size-18-24m", "18-24": "size-18-24m", "18-24 חודשים": "size-18-24m", "18-24 חודש": "size-18-24m",
+        "2y": "size-2y", "2t": "size-2y", "מידה 2": "size-2y", "גיל 2": "size-2y", "2 שנים": "size-2y",
+        "3y": "size-3y", "3t": "size-3y", "מידה 3": "size-3y", "גיל 3": "size-3y", "3 שנים": "size-3y",
+        "4y": "size-4y", "4t": "size-4y", "מידה 4": "size-4y", "גיל 4": "size-4y", "4 שנים": "size-4y",
     }
     if variants:
         seen: set[str] = set()
         results = []
         for v in variants:
-            for opt in (v.get("option1", ""), v.get("option2", ""), v.get("option3", "")):
+            # check option1/2/3 and the variant title (which may contain size like "3-6M / Blue")
+            opts = [
+                v.get("option1") or "", v.get("option2") or "", v.get("option3") or "",
+                (v.get("title") or "").split(" / ")[0],
+            ]
+            for opt in opts:
                 key = opt.strip().lower()
                 if key in VARIANT_SIZE_MAP:
                     tag_val = VARIANT_SIZE_MAP[key]
@@ -658,7 +664,7 @@ def extract_cat_g(title, handle, tags_list, body, yaml_desc):
 TAXONOMY_GAP_BLOCK = {"occ-sport", "occ-holiday", "style-cartoon", "occ-christmas"}
 
 
-def tag_product(pid, title, handle, current_tags_str, body_html, product_type_raw, product_group, has_yaml, yaml_data):
+def tag_product(pid, title, handle, current_tags_str, body_html, product_type_raw, product_group, has_yaml, yaml_data, variants=None):
     tags_list = [t.strip() for t in current_tags_str.split(",") if t.strip()] if current_tags_str else []
     body = strip_html(body_html)
     yaml_desc = strip_html(str(yaml_data.get("description_raw", "")))
@@ -687,7 +693,7 @@ def tag_product(pid, title, handle, current_tags_str, body_html, product_type_ra
         notes.append("Phase5c: type-sleep-soother, is_reborn overridden to False")
 
     # CAT-B
-    age_tags, age_status, range_note = extract_cat_b(pid, title, handle, tags_list, body, yaml_desc, is_reborn)
+    age_tags, age_status, range_note = extract_cat_b(pid, title, handle, tags_list, body, yaml_desc, is_reborn, variants=variants)
     if age_status == "DOLL_NO_AGE_APPLICABLE":
         notes.append("age not applicable (reborn/doll)")
     elif age_status == "RANGE_TOO_BROAD":
@@ -812,6 +818,7 @@ def build_technical_report(products_tagged, sample_groups):
         "range_too_broad": 0, "no_size_found": 0, "doll_no_size": 0,
         "multi_size": 0, "yaml_gap_impact": 0,
         "phase5b_exempt": 0, "sleep_soother_count": 0,
+        "variant_size_count": 0,
     }
     scores = []
 
@@ -828,6 +835,8 @@ def build_technical_report(products_tagged, sample_groups):
         size_tags = [t for t in p["proposed_tags"] if t["tag"].startswith("size-")]
         if len(size_tags) > 1:
             stats["multi_size"] += 1
+        if any(t.get("rule") == "variant_option" for t in p["proposed_tags"]):
+            stats["variant_size_count"] += 1
         if p["yaml_gap"]:
             stats["yaml_gap_impact"] += 1
         if "Phase5b" in p.get("catb_exempt_reason", ""):
@@ -1231,10 +1240,11 @@ def main():
             tags_str = shop.get("tags") or base.get("tags", "")
             body_html = shop.get("body_html", "")
             product_type_raw = shop.get("product_type", "")
+            variants = shop.get("variants") or []
             has_yaml = pid in yaml_ids
             yaml_data = load_yaml(pid) if has_yaml else {}
             result = tag_product(pid, title, handle, tags_str, body_html,
-                                 product_type_raw, grp, has_yaml, yaml_data)
+                                 product_type_raw, grp, has_yaml, yaml_data, variants=variants)
             result["product_group"] = grp
             products_tagged.append(result)
 

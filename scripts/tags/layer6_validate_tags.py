@@ -232,10 +232,11 @@ def gate_category_coverage(product: dict) -> dict:
 
 # ─── Gate 7: DUPLICATE_CONFLICT ──────────────────────────────────────────────
 def gate_duplicate_conflict(product: dict) -> dict:
-    """No two different values for the same single-tag category (A, B, C, F).
-    Multi-tag categories D, E, G are allowed to repeat.
+    """No two different values for the same single-tag category (A, C, F).
+    CAT-B (size) is multi-valued — a product can come in multiple sizes.
+    Multi-tag categories B, D, E, G are allowed to repeat.
     """
-    SINGLE_TAG_CATS = {"CAT-A", "CAT-B", "CAT-C", "CAT-F"}
+    SINGLE_TAG_CATS = {"CAT-A", "CAT-C", "CAT-F"}
     cat_tags: dict[str, list[str]] = {}
     for t in _get_all_tags(product):
         cat = _cat_of(t)
