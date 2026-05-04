@@ -343,7 +343,7 @@ def extract_cat_b(pid, title, handle, tags_list, body, yaml_desc, is_reborn, var
                 (v.get("title") or "").split(" / ")[0],
             ]
             for opt in opts:
-                key = opt.strip().lower()
+                key = re.sub(r'\s+', '', opt.strip().lower())
                 if key in VARIANT_SIZE_MAP:
                     tag_val = VARIANT_SIZE_MAP[key]
                     if tag_val not in seen:
