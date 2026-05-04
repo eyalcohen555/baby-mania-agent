@@ -1,0 +1,39 @@
+{
+  "verdict_id": "VRD-P8-001",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-01",
+  "stage_type": "ISSUE_AUDIT",
+  "reviewed_output_id": "OUT-P8-001",
+  "issued_by": "Codex",
+  "issued_at": "2026-05-04T12:15:00Z",
+  "approval_tier": "T1",
+
+  "verdict": "CONFIRMED",
+
+  "review": {
+    "prior_pack_read_valid": true,
+    "iss_p7_002_found_in_report": true,
+    "current_file_checked": true,
+    "review_status_value_confirmed": "unreviewed",
+    "review_status_is_not_approved": true,
+    "issue_confirmed_open": true,
+    "evidence_blocks_present": ["PRIOR_PACK_READ", "FIELD_CHECK", "SCOPE_CHECK", "VALIDATION"],
+    "all_evidence_pass": true,
+    "target_files_modified": false,
+    "scope_violation": false
+  },
+
+  "issue_audit_result": {
+    "issue_id": "ISS-P7-002",
+    "target_id": "TGT-P7-02",
+    "field": "review_status",
+    "current_value": "unreviewed",
+    "issue_status": "CONFIRMED_OPEN"
+  },
+
+  "codex_notes": "ISS-P7-002 confirmed open. P7 report readable, open_issues field found with correct entry. File check confirms review_status: unreviewed. Proceeding to STAGE-02 FIX.",
+
+  "next_stage": "STAGE-02 PRE_FIX_SNAPSHOT + FIX",
+  "proceed": true
+}

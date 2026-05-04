@@ -1,0 +1,44 @@
+# PRE-FIX SNAPSHOT — PROTOTYPE #8
+# Snapshot ID: SNAP-P8-01
+# Pack ID: EXEC-PACK-P8-001
+# Prior Pack ID: EXEC-PACK-P7-001
+# Target ID: TGT-P7-02
+# Captured at: 2026-05-04T12:25:00Z
+# Captured before: STAGE-02 FIX write
+# Source file: docs/management/bridge-room-prototype/mock-target-p7-02.md
+# Purpose: P8 rollback source (if FIX produces ERROR)
+# NOTE: This is a P8-specific snapshot. Do NOT confuse with P7 snapshot (pre-fix-target-p7-02.md.bak).
+# P7 snapshot: restored file to this state (unreviewed) after P7 FIX ERROR.
+# P8 snapshot: captures same state before P8 FIX attempt.
+
+---
+
+# Product Brief: BabyMania Knit Wool Sleep Sack
+
+**target_id:** TGT-P7-02
+**prototype:** P7
+**initial_state:** BROKEN — `review_status` has invalid value "unreviewed"
+**final_state:** ROLLED BACK — restored to pre-fix state after FIX ERROR
+
+---
+
+## Required Fields
+
+- **product_name:** BabyMania Knit Wool Sleep Sack
+- **target_market:** Israel
+- **target_audience:** Parents of infants age 3–12 months
+- **target_language:** Hebrew
+- **quality_standard:** standard
+- **review_status:** unreviewed
+
+<!-- ERROR: review_status must be "approved" — original issue preserved after ROLLBACK -->
+
+---
+
+## Notes
+
+This file represents the ROLLED BACK state of TGT-P7-02.
+Pre-fix state (snapshot): `inbox/snapshots/pre-fix-target-p7-02.md.bak`
+FIX attempt result: ERROR — wrong type written (review_status: null).
+ROLLBACK result: ROLLBACK_PASS — file restored from pre-fix snapshot.
+Underlying issue (`review_status: unreviewed`) remains open — requires follow-up pack.

@@ -1,0 +1,69 @@
+{
+  "command_id": "CMD-P8-002",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "task_id": "TASK-P8-002",
+  "stage_id": "STAGE-02",
+  "stage_type": "FIX",
+  "issued_by": "Codex",
+  "issued_at": "2026-05-04T12:18:00Z",
+  "approval_tier": "T1",
+
+  "prerequisite_met": {
+    "verdict_id": "VRD-P8-001",
+    "verdict": "CONFIRMED",
+    "stage": "STAGE-01",
+    "issue_confirmed_open": true
+  },
+
+  "pre_step": "PRE_FIX_SNAPSHOT",
+  "pre_step_instructions": [
+    "Before writing any FIX: read current mock-target-p7-02.md",
+    "Write its content to inbox/snapshots/pre-fix-target-p8-02.md.bak",
+    "Snapshot ID: SNAP-P8-01",
+    "Do NOT use P7 snapshots (pre-fix-target-p7-02.md.bak) — P8 uses its own snapshot",
+    "Confirm snapshot written before proceeding to FIX"
+  ],
+
+  "action": "FIX",
+  "instructions": [
+    "Fix docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "Set review_status to string 'approved' — exact match, case-sensitive",
+    "Type must be string — NOT null, NOT int, NOT bool",
+    "Update final_state in the file header to reflect P8 fix",
+    "Do NOT touch mock-target-p7-01.md or mock-target-p7-03.md",
+    "Include evidence: PRE_FIX_SNAPSHOT_CONFIRMED, FIX_APPLIED, TYPE_CHECK, SCOPE_CHECK, VALIDATION"
+  ],
+
+  "fix_target": {
+    "target_id": "TGT-P7-02",
+    "file": "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "field": "review_status",
+    "current_value": "unreviewed",
+    "required_value": "approved",
+    "required_type": "string"
+  },
+
+  "files_to_read": [
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-01-output.json"
+  ],
+  "files_to_write": [
+    "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p8-02.md.bak",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-02-output.json"
+  ],
+  "files_forbidden": [
+    "bridge/**",
+    "scripts/**",
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+    "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak"
+  ],
+
+  "expected_output_id": "OUT-P8-002",
+  "expected_verdict_id": "VRD-P8-002",
+  "next_on_pass": "STAGE-03 RETEST",
+  "next_on_error": "STAGE-ROLLBACK",
+  "next_on_fail": "HOLD"
+}

@@ -1,0 +1,46 @@
+{
+  "verdict_id": "VRD-P8-002",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-02",
+  "stage_type": "FIX",
+  "reviewed_output_id": "OUT-P8-002",
+  "issued_by": "Codex",
+  "issued_at": "2026-05-04T12:42:00Z",
+  "approval_tier": "T1",
+
+  "verdict": "PASS",
+
+  "review": {
+    "snapshot_written_before_fix": true,
+    "snapshot_id": "SNAP-P8-01",
+    "p7_snapshot_not_used": true,
+    "fix_field": "review_status",
+    "fix_value": "approved",
+    "fix_type": "string",
+    "type_check_pass": true,
+    "case_check_pass": true,
+    "tgt_p7_01_untouched": true,
+    "tgt_p7_03_untouched": true,
+    "rollback_required": false,
+    "scope_violation": false,
+    "evidence_blocks_present": ["PRE_FIX_SNAPSHOT_CONFIRMED", "FIX_APPLIED", "TYPE_CHECK", "SCOPE_CHECK", "VALIDATION"],
+    "all_evidence_pass": true
+  },
+
+  "fix_review": {
+    "target_id": "TGT-P7-02",
+    "field": "review_status",
+    "pre_fix_value": "unreviewed",
+    "post_fix_value": "approved",
+    "written_as_string": true,
+    "written_as_null": false,
+    "issue_id": "ISS-P7-002",
+    "fix_verdict": "PASS"
+  },
+
+  "codex_notes": "FIX PASS. review_status correctly written as string 'approved'. Type check passes — not null, not int. Snapshot SNAP-P8-01 written before fix. TGT-P7-01 and TGT-P7-03 untouched. No rollback needed. Proceeding to STAGE-03 RETEST.",
+
+  "next_stage": "STAGE-03 RETEST",
+  "proceed": true
+}

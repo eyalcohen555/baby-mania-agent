@@ -1,0 +1,76 @@
+{
+  "command_id": "CMD-P8-003",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "task_id": "TASK-P8-003",
+  "stage_id": "STAGE-03",
+  "stage_type": "RETEST",
+  "issued_by": "Codex",
+  "issued_at": "2026-05-04T12:45:00Z",
+  "approval_tier": "T1",
+
+  "prerequisite_met": {
+    "verdict_id": "VRD-P8-002",
+    "verdict": "PASS",
+    "stage": "STAGE-02",
+    "fix_result": "PASS",
+    "rollback_required": false
+  },
+
+  "action": "RETEST",
+  "instructions": [
+    "Read all 3 target files",
+    "Verify TGT-P7-02: review_status = 'approved' (ISS-P7-002 resolved by P8 FIX)",
+    "Verify TGT-P7-01: quality_standard = 'premium', review_status = 'approved' (P7-fixed state must be preserved — P8 must NOT have touched this file)",
+    "Verify TGT-P7-03: all 6 required fields present and valid, file must NOT be in any P8 write list",
+    "Do NOT modify any target file",
+    "Include evidence: FIELD_CHECK, CROSS_PACK_STATE_CHECK, SCOPE_CHECK, VALIDATION",
+    "Return pack_result: PACK_COMPLETE if all 3 targets pass"
+  ],
+
+  "verification_matrix": [
+    {
+      "target_id": "TGT-P7-02",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "check": "review_status = 'approved'",
+      "source": "P8 FIX",
+      "expected_state": "FIXED"
+    },
+    {
+      "target_id": "TGT-P7-01",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "check": "quality_standard = 'premium'",
+      "source": "P7 FIX — must survive P8",
+      "expected_state": "FIXED (P7)"
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+      "check": "all fields valid, not in P8 write list",
+      "source": "UNCHANGED through P7 and P8",
+      "expected_state": "UNCHANGED"
+    }
+  ],
+
+  "files_to_read": [
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-02-output.json"
+  ],
+  "files_to_write": [
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-03-output.json"
+  ],
+  "files_forbidden": [
+    "bridge/**",
+    "scripts/**",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md"
+  ],
+
+  "expected_output_id": "OUT-P8-003",
+  "expected_verdict_id": "VRD-P8-003",
+  "next_on_pass": "PACK_COMPLETE",
+  "next_on_fail": "HOLD"
+}

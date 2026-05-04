@@ -1,0 +1,88 @@
+{
+  "output_id": "OUT-P8-001",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "task_id": "TASK-P8-001",
+  "stage_id": "STAGE-01",
+  "stage_type": "ISSUE_AUDIT",
+  "command_id": "CMD-P8-001",
+  "written_by": "Claude",
+  "written_at": "2026-05-04T12:08:00Z",
+
+  "status": "CONFIRMED",
+  "issue_status": "OPEN",
+
+  "prior_pack_read": {
+    "report_path": "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+    "readable": true,
+    "pack_id_in_report": "EXEC-PACK-P7-001",
+    "pack_result_in_report": "PACK_PASS_PARTIAL",
+    "open_issues_field_present": true,
+    "open_issues": ["ISS-P7-002 — TGT-P7-02 review_status: unreviewed"],
+    "iss_p7_002_found": true,
+    "iss_p7_002_status_in_report": "OPEN — requires follow-up pack"
+  },
+
+  "current_file_check": {
+    "file": "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "readable": true,
+    "field": "review_status",
+    "current_value": "unreviewed",
+    "expected_value": "approved",
+    "match": false,
+    "issue_confirmed_in_file": true
+  },
+
+  "evidence": {
+    "PRIOR_PACK_READ": {
+      "status": "PASS",
+      "detail": "pack-p7-final-report.json readable. ISS-P7-002 found in open_issues. Source pack result: PACK_PASS_PARTIAL."
+    },
+    "FIELD_CHECK": {
+      "status": "PASS",
+      "items": [
+        {"field": "review_status", "file": "mock-target-p7-02.md", "current": "unreviewed", "expected": "approved", "result": "OPEN"}
+      ],
+      "total_checked": 1,
+      "open_count": 1,
+      "resolved_count": 0
+    },
+    "SCOPE_CHECK": {
+      "status": "PASS",
+      "files_read": [
+        "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+        "docs/management/bridge-room-prototype/mock-target-p7-02.md"
+      ],
+      "files_written": [],
+      "target_files_modified": false,
+      "outside_scope": false
+    },
+    "VALIDATION": {
+      "status": "PASS",
+      "id_chain_valid": true,
+      "pack_id": "EXEC-PACK-P8-001",
+      "prior_pack_id": "EXEC-PACK-P7-001",
+      "command_id": "CMD-P8-001",
+      "output_id": "OUT-P8-001",
+      "stage_id": "STAGE-01",
+      "issue_confirmed": true,
+      "proceed_to_fix": true
+    }
+  },
+
+  "audit_summary": {
+    "iss_p7_002": {
+      "issue_id": "ISS-P7-002",
+      "target_id": "TGT-P7-02",
+      "field": "review_status",
+      "current_value": "unreviewed",
+      "required_value": "approved",
+      "open_in_p7_report": true,
+      "confirmed_in_file": true,
+      "status": "CONFIRMED"
+    }
+  },
+
+  "overall_status": "CONFIRMED",
+  "recommended_next": "STAGE-02 PRE_FIX_SNAPSHOT + FIX — proceed"
+}

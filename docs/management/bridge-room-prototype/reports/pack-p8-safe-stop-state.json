@@ -1,0 +1,127 @@
+{
+  "report_id": "SST-P8-001",
+  "pack_id": "EXEC-PACK-P8-001",
+  "safe_to_stop": true,
+  "captured_at": "2026-05-04T13:08:00Z",
+
+  "current_stage": "STAGE-03",
+  "current_stage_status": "COMPLETE",
+
+  "completed_stages": [
+    "STAGE-01 — ISSUE_AUDIT — VRD-P8-001 — CONFIRMED",
+    "STAGE-02 — FIX + PRE_FIX_SNAPSHOT — VRD-P8-002 — PASS",
+    "STAGE-03 — RETEST — VRD-P8-003 — PACK_COMPLETE"
+  ],
+
+  "pending_stage": null,
+
+  "files_read": [
+    "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-01-output.json",
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-02-output.json"
+  ],
+
+  "files_written": [
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-01-output.json",
+    "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p8-02.md.bak",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-02-output.json",
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-03-output.json",
+    "docs/management/bridge-room-prototype/outbox/pack-p8-stage-01-command.json",
+    "docs/management/bridge-room-prototype/outbox/pack-p8-stage-02-command.json",
+    "docs/management/bridge-room-prototype/outbox/pack-p8-stage-03-command.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p8-stage-01-verdict.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p8-stage-02-verdict.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p8-stage-03-verdict.json",
+    "docs/management/bridge-room-prototype/reports/pack-p8-final-report.json",
+    "docs/management/bridge-room-prototype/reports/pack-p8-safe-stop-state.json",
+    "docs/management/bridge-room-prototype/journal/execution-pack-p8-log.jsonl"
+  ],
+
+  "last_verdict": {
+    "verdict_id": "VRD-P8-003",
+    "stage_id": "STAGE-03",
+    "result": "PACK_COMPLETE"
+  },
+
+  "next_required_action": null,
+  "resume_instruction": "Pack complete. No resume required. Prototype #8 PASS. ISS-P7-002 resolved.",
+  "risk_level": "none",
+
+  "targets_completed": [
+    {
+      "target_id": "TGT-P7-02",
+      "final_state": "FIXED",
+      "fixed_by": "EXEC-PACK-P8-001",
+      "issue_resolved": true,
+      "issue_id": "ISS-P7-002"
+    },
+    {
+      "target_id": "TGT-P7-01",
+      "final_state": "FIXED (P7 — preserved through P8)",
+      "fixed_by": "EXEC-PACK-P7-001",
+      "issue_resolved": true,
+      "issue_id": "ISS-P7-001",
+      "p8_preserved": true
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "final_state": "UNCHANGED",
+      "issue_resolved": "N/A",
+      "unchanged_confirmed": true
+    }
+  ],
+
+  "targets_pending": [],
+
+  "rollback_state": "NOT_REQUIRED",
+
+  "snapshots_available": [
+    {
+      "snapshot_id": "SNAP-P8-01",
+      "pack_id": "EXEC-PACK-P8-001",
+      "target_id": "TGT-P7-02",
+      "file": "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p8-02.md.bak",
+      "used_for_rollback": false,
+      "note": "P8 snapshot — separate from P7 snapshots"
+    }
+  ],
+
+  "prior_pack_id": "EXEC-PACK-P7-001",
+
+  "prior_pack_report": "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+
+  "inherited_fixed_targets": [
+    {
+      "target_id": "TGT-P7-01",
+      "fixed_by": "EXEC-PACK-P7-001",
+      "issue_id": "ISS-P7-001",
+      "p8_verification": "RETEST confirmed quality_standard: premium and review_status: approved — preserved"
+    }
+  ],
+
+  "inherited_open_issues": [
+    {
+      "issue_id": "ISS-P7-002",
+      "target_id": "TGT-P7-02",
+      "field": "review_status",
+      "carried_from": "EXEC-PACK-P7-001",
+      "resolution_status": "RESOLVED by EXEC-PACK-P8-001 STAGE-02 FIX"
+    }
+  ],
+
+  "safety": {
+    "bridge_connection": false,
+    "runtime_connection": false,
+    "telegram": false,
+    "shopify_writes": false,
+    "git_operations": false,
+    "outside_scope_files_touched": false,
+    "p7_artifacts_frozen": true,
+    "mock_target_p7_01_modified": false,
+    "mock_target_p7_03_modified": false
+  }
+}

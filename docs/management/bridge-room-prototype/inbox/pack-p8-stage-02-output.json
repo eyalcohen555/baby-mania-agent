@@ -1,0 +1,91 @@
+{
+  "output_id": "OUT-P8-002",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "task_id": "TASK-P8-002",
+  "stage_id": "STAGE-02",
+  "stage_type": "FIX",
+  "command_id": "CMD-P8-002",
+  "written_by": "Claude",
+  "written_at": "2026-05-04T12:35:00Z",
+
+  "status": "PASS",
+  "overall_result": "PASS",
+
+  "snapshot_confirmation": {
+    "snapshot_id": "SNAP-P8-01",
+    "file": "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p8-02.md.bak",
+    "written_before_fix": true,
+    "captured_at": "2026-05-04T12:25:00Z",
+    "source_file": "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "captured_value": "review_status: unreviewed",
+    "p7_snapshot_used": false,
+    "p7_snapshot_frozen": true
+  },
+
+  "fix_result": {
+    "target_id": "TGT-P7-02",
+    "file": "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "field": "review_status",
+    "pre_fix_value": "unreviewed",
+    "post_fix_value": "approved",
+    "value_type": "string",
+    "type_check": "PASS",
+    "exact_match": true,
+    "case_correct": true,
+    "fix_result": "PASS"
+  },
+
+  "evidence": {
+    "PRE_FIX_SNAPSHOT_CONFIRMED": {
+      "status": "PASS",
+      "snapshot_id": "SNAP-P8-01",
+      "written_before_fix": true,
+      "file": "inbox/snapshots/pre-fix-target-p8-02.md.bak",
+      "p7_snapshot_not_used": true
+    },
+    "FIX_APPLIED": {
+      "status": "PASS",
+      "field": "review_status",
+      "pre_fix": "unreviewed",
+      "post_fix": "approved",
+      "issue_id": "ISS-P7-002"
+    },
+    "TYPE_CHECK": {
+      "status": "PASS",
+      "field": "review_status",
+      "written_type": "string",
+      "written_value": "approved",
+      "is_null": false,
+      "is_int": false,
+      "is_bool": false,
+      "is_string": true,
+      "rollback_required": false
+    },
+    "SCOPE_CHECK": {
+      "status": "PASS",
+      "files_written": [
+        "docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p8-02.md.bak",
+        "docs/management/bridge-room-prototype/mock-target-p7-02.md"
+      ],
+      "tgt_p7_01_touched": false,
+      "tgt_p7_03_touched": false,
+      "p7_snapshot_touched": false,
+      "outside_scope": false
+    },
+    "VALIDATION": {
+      "status": "PASS",
+      "id_chain_valid": true,
+      "pack_id": "EXEC-PACK-P8-001",
+      "prior_pack_id": "EXEC-PACK-P7-001",
+      "command_id": "CMD-P8-002",
+      "output_id": "OUT-P8-002",
+      "stage_id": "STAGE-02",
+      "fix_pass": true,
+      "rollback_required": false
+    }
+  },
+
+  "targets_not_touched": ["TGT-P7-01", "TGT-P7-03"],
+  "rollback_required": false
+}

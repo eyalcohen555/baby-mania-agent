@@ -1,6 +1,6 @@
 # Bridge Room V1 — Safe Prototype
 
-**STATUS:** PROTOTYPES 1–3, 5–7 CLOSED — ALL PASSED  
+**STATUS:** PROTOTYPES 1–3, 5–8 CLOSED — ALL PASSED  
 **CLOSURE DOC:** [PROTOTYPE-CLOSURE.md](PROTOTYPE-CLOSURE.md)  
 **APPROVAL TIER:** T1  
 **LAYER:** 1  
@@ -95,12 +95,18 @@ bridge-room-prototype/
 | Prototype #5 PASS | YES |
 | Prototype #6 PASS | YES |
 | Prototype #7 PASS | YES |
+| Prototype #8 PASS | YES |
 | Execution Pack v1 sandbox proof PASS | YES |
 | Decision lifecycle + TOKEN_SAFE_STOP sandbox proof PASS | YES |
 | Multi-file Execution Pack sandbox proof PASS | YES |
 | ERROR state handling sandbox proof PASS | YES |
 | Pack-level rollback sandbox proof PASS | YES |
 | TOKEN_SAFE_STOP extended (P7 fields) PASS | YES |
+| Follow-up pack sandbox proof PASS | YES |
+| Pack chaining P7 → P8 sandbox proof PASS | YES |
+| ISS-P7-002 resolved by follow-up pack | YES |
+| Cross-pack state preservation PASS | YES |
+| TOKEN_SAFE_STOP 18 fields (P8 extended) PASS | YES |
 | Telegram integration approved | NO |
 | Runtime integration approved | NO |
 | Execution Pack runtime integration approved | NO |

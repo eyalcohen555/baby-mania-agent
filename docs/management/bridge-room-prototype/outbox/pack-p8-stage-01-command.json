@@ -1,0 +1,52 @@
+{
+  "command_id": "CMD-P8-001",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "task_id": "TASK-P8-001",
+  "stage_id": "STAGE-01",
+  "stage_type": "ISSUE_AUDIT",
+  "issued_by": "Codex",
+  "issued_at": "2026-05-04T12:00:00Z",
+  "approval_tier": "T1",
+
+  "context": {
+    "source_pack": "EXEC-PACK-P7-001",
+    "source_issue": "ISS-P7-002",
+    "source_report": "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+    "pack_chaining": true,
+    "reason": "P7 closed PACK_PASS_PARTIAL with ISS-P7-002 open. TGT-P7-02 review_status was not fixed due to FIX ERROR and ROLLBACK. P8 is the follow-up pack to resolve this issue."
+  },
+
+  "action": "ISSUE_AUDIT",
+  "instructions": [
+    "Read docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+    "Locate the open_issues field — confirm ISS-P7-002 is present",
+    "Read docs/management/bridge-room-prototype/mock-target-p7-02.md",
+    "Confirm current value of review_status field",
+    "Return status CONFIRMED if review_status != 'approved'",
+    "Return status RESOLVED if review_status already equals 'approved' (no FIX needed)",
+    "Return status BLOCKED if P7 final report is not readable",
+    "Do NOT modify any target file",
+    "Include evidence: PRIOR_PACK_READ, FIELD_CHECK, SCOPE_CHECK, VALIDATION"
+  ],
+
+  "files_to_read": [
+    "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+    "docs/management/bridge-room-prototype/mock-target-p7-02.md"
+  ],
+  "files_to_write": [
+    "docs/management/bridge-room-prototype/inbox/pack-p8-stage-01-output.json"
+  ],
+  "files_forbidden": [
+    "bridge/**",
+    "scripts/**",
+    "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+    "docs/management/bridge-room-prototype/mock-target-p7-03.md"
+  ],
+
+  "expected_output_id": "OUT-P8-001",
+  "expected_verdict_id": "VRD-P8-001",
+  "next_on_confirmed": "STAGE-02 PRE_FIX_SNAPSHOT + FIX",
+  "next_on_resolved": "PACK_EXIT_CLEAN",
+  "next_on_blocked": "HOLD"
+}

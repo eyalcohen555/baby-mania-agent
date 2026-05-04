@@ -1,0 +1,55 @@
+{
+  "verdict_id": "VRD-P8-003",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "stage_id": "STAGE-03",
+  "stage_type": "RETEST",
+  "reviewed_output_id": "OUT-P8-003",
+  "issued_by": "Codex",
+  "issued_at": "2026-05-04T13:03:00Z",
+  "approval_tier": "T1",
+
+  "verdict": "PACK_PASS",
+  "pack_result": "PACK_COMPLETE",
+
+  "review": {
+    "tgt_p7_02_review_status_approved": true,
+    "tgt_p7_02_iss_p7_002_resolved": true,
+    "tgt_p7_01_quality_standard_premium": true,
+    "tgt_p7_01_p7_fix_preserved": true,
+    "tgt_p7_01_not_in_p8_write_list": true,
+    "tgt_p7_03_all_fields_valid": true,
+    "tgt_p7_03_not_in_p8_write_list": true,
+    "tgt_p7_03_unchanged_confirmed": true,
+    "all_18_fields_pass": true,
+    "cross_pack_state_valid": true,
+    "scope_violation": false,
+    "evidence_blocks_present": ["FIELD_CHECK", "CROSS_PACK_STATE_CHECK", "SCOPE_CHECK", "VALIDATION"],
+    "all_evidence_pass": true
+  },
+
+  "target_final_states": [
+    {"target_id": "TGT-P7-02", "final_state": "FIXED", "fixed_by": "EXEC-PACK-P8-001", "issue_resolved": true,  "issue_id": "ISS-P7-002"},
+    {"target_id": "TGT-P7-01", "final_state": "FIXED", "fixed_by": "EXEC-PACK-P7-001", "p8_preserved": true,     "issue_resolved": true, "issue_id": "ISS-P7-001"},
+    {"target_id": "TGT-P7-03", "final_state": "UNCHANGED", "fixed_by": null,           "unchanged_confirmed": true}
+  ],
+
+  "new_capabilities_proven": [
+    "Pack chaining — P8 input derived from P7 final report (prior_pack_id)",
+    "ISSUE_AUDIT stage — confirms open issue before any FIX is authorized",
+    "Single-target follow-up pack — 1 active target, 2 read-only cross-pack verification targets",
+    "Cross-pack state preservation — TGT-P7-01 (P7-fixed) survives P8 intact",
+    "Prior pack fields in TOKEN_SAFE_STOP — prior_pack_id, prior_pack_report, inherited_fixed_targets, inherited_open_issues",
+    "ISS-P7-002 resolved — open_issues: [] in P8 final report",
+    "P8-specific snapshot (SNAP-P8-01) — separate lineage from P7 snapshots",
+    "Correct string FIX — review_status: 'approved' written as string (not null as in P7 ERROR)"
+  ],
+
+  "resolved_issues": ["ISS-P7-002"],
+  "open_issues": [],
+
+  "codex_notes": "PACK_COMPLETE. All 3 targets in expected state. TGT-P7-02 fixed (ISS-P7-002 resolved). TGT-P7-01 P7-fix preserved. TGT-P7-03 unchanged. 8 new capabilities proven. Prototype #8 PASS.",
+
+  "next_stage": "PACK_COMPLETE",
+  "prototype_result": "PASS"
+}

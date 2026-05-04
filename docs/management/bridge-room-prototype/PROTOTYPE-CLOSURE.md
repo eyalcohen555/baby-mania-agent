@@ -1,6 +1,6 @@
 # Bridge Room V1 — Prototype Closure Report
 
-**STATUS: CLOSED — PROTOTYPES 1–3, 5–7 PASSED**
+**STATUS: CLOSED — PROTOTYPES 1–3, 5–8 PASSED**
 **APPROVAL TIER:** T1
 **LAYER:** 1
 **CLOSED:** 2026-05-04
@@ -18,6 +18,7 @@
 | #5 | Execution Pack v1: AUDIT → FIX → RETEST → PACK_PASS | PASS | PASS | PASS | CLOSED |
 | #6 | Execution Pack v1: AUDIT → BLOCKED → USER_DECISION → RESUME → RETEST → PACK_PASS + TOKEN_SAFE_STOP | PASS | PASS | PASS | CLOSED |
 | #7 | Execution Pack v1: AUDIT 3 targets → PRE_FIX_SNAPSHOT → FIX (01 PASS, 02 ERROR) → ROLLBACK → RETEST → PACK_PASS_PARTIAL | PASS | PASS | PASS | CLOSED |
+| #8 | Follow-Up Pack / Pack Chaining: ISSUE_AUDIT (P7 report → ISS-P7-002 CONFIRMED) → PRE_FIX_SNAPSHOT → FIX (PASS) → RETEST → PACK_COMPLETE | PASS | PASS | PASS | CLOSED |
 
 ---
 
@@ -108,6 +109,23 @@
 - All 21 artifacts confirmed in `bridge-room-prototype/**` — zero scope violations
 - 15-event journal traces full flow from PACK_START to PACK_COMPLETE
 
+### Prototype #8 — Follow-Up Pack / Pack Chaining
+
+- **Pack chaining proven**: EXEC-PACK-P8-001 reads `pack-p7-final-report.json` as its authoritative input — `prior_pack_id: EXEC-PACK-P7-001` present in all 14 P8 artifacts
+- **ISSUE_AUDIT stage** (new stage type): reads prior pack report + current file state before any FIX is authorized — CONFIRMED verdict required to proceed
+- ISS-P7-002 confirmed open via ISSUE_AUDIT: P7 report `open_issues` field + file check (`review_status: unreviewed`) both verified before FIX issued
+- **Single-target follow-up pack**: 1 active write target (TGT-P7-02), 2 read-only cross-pack verification targets (TGT-P7-01, TGT-P7-03) — ownership correctly enforced
+- **PRE_FIX_SNAPSHOT (P8-specific)**: SNAP-P8-01 written to `inbox/snapshots/pre-fix-target-p8-02.md.bak` — separate lineage from P7 snapshots; P7 `.bak` files frozen and not used as P8 rollback source
+- **FIX PASS**: `review_status` written as string `"approved"` — TYPE_CHECK confirms not null / not int / not bool (P7 ERROR avoided)
+- **Cross-pack state preservation**: RETEST confirms TGT-P7-01 (P7-fixed: `quality_standard: premium`) survives P8 intact — `p8_did_not_touch: true`, `in_p8_write_list: false`
+- **Cross-pack RETEST**: all 3 targets verified — TGT-P7-02 FIXED (ISS-P7-002 resolved), TGT-P7-01 FIXED (P7 state preserved), TGT-P7-03 UNCHANGED (through P7 and P8)
+- **ISS-P7-002 RESOLVED**: `resolved_issues: ["ISS-P7-002"]`, `open_issues: []` in final report
+- **TOKEN_SAFE_STOP extended to 18 fields**: 10 P6 fields + 4 P7 fields + 4 new P8 fields (`prior_pack_id`, `prior_pack_report`, `inherited_fixed_targets`, `inherited_open_issues`)
+- PACK_COMPLETE (not PACK_PASS_PARTIAL) — all targets resolved across both packs
+- All 14 new P8 artifacts confirmed in `docs/management/bridge-room-prototype/**` — zero scope violations
+- 12-event journal traces full flow from PACK_START to PACK_COMPLETE
+- P7 artifacts (outputs, verdicts, reports, P7 snapshots) frozen throughout — not modified
+
 ---
 
 ## What Is Still NOT Ready
@@ -125,8 +143,10 @@
 | Multi-file target packs (more than one target file) | **PROVEN IN #7** | 3-target AUDIT + selective FIX demonstrated |
 | Pack-level rollback on ERROR | **PROVEN IN #7** | ROLLBACK stage + ROLLBACK_PASS verdict demonstrated |
 | Conditional stage routing (skip clean targets) | **PROVEN IN #7** | TGT-P7-03 skipped at FIX and ROLLBACK |
-| Pack chaining (Pack A output feeds Pack B) | NOT DESIGNED | Required for multi-phase real tasks |
+| Pack chaining (Pack A output feeds Pack B) | **PROVEN IN #8** | P7 final report → P8 input; prior_pack_id + ISSUE_AUDIT stage demonstrated |
 | Real Codex/Claude context separation | NOT TESTED | Both roles in same session |
+| Multi-hop pack chains (A → B → C) | NOT DESIGNED | P8 proves A → B only; C requires next sandbox |
+| Pack chaining with branching / conditional exits | NOT DESIGNED | RESOLVED exit path proven conceptually only |
 
 ---
 
@@ -154,6 +174,13 @@ Pack-level rollback sandbox proof PASS:                 YES
 Selective FIX (skip clean targets) PASS:                YES
 PRE_FIX_SNAPSHOT before write PASS:                     YES
 TOKEN_SAFE_STOP extended (P7 fields) PASS:              YES
+Prototype #8 PASS:                                      YES
+Follow-up pack sandbox proof PASS:                      YES
+Pack chaining P7 → P8 PASS:                             YES
+ISS-P7-002 RESOLVED:                                    YES
+Cross-pack state preservation PASS:                     YES
+TOKEN_SAFE_STOP 18 fields (P8 extended) PASS:           YES
+ISSUE_AUDIT stage type proven:                          YES
 Telegram integration approved:                          NO
 Runtime integration approved:                           NO
 Execution Pack runtime integration approved:            NO
@@ -250,3 +277,18 @@ READY FOR FULL IMPLEMENTATION:                         NO
 | `reports/pack-p6-final-report.json` | #6 | Final pack report RPT-P6-001 (PACK_PASS) |
 | `reports/pack-safe-stop-state.json` | #6 | TOKEN_SAFE_STOP snapshot (safe_to_stop=true) |
 | `journal/execution-pack-p6-log.jsonl` | #6 | Pack event log (13 events) |
+| `execution-pack-p8.yaml` | #8 | Execution Pack P8 plan — prior_pack_id, ISSUE_AUDIT stage, 1 active target, token_safe_stop (18 fields) |
+| `mock-target-p7-02.md` | #7/#8 | P7 rollback target → P8 FIX target — FIXED by P8 (review_status: approved, ISS-P7-002 resolved) |
+| `outbox/pack-p8-stage-01-command.json` | #8 | ISSUE_AUDIT command CMD-P8-001 (read P7 report + file) |
+| `outbox/pack-p8-stage-02-command.json` | #8 | FIX command CMD-P8-002 (PRE_FIX_SNAPSHOT + fix review_status) |
+| `outbox/pack-p8-stage-03-command.json` | #8 | RETEST command CMD-P8-003 (all 3 targets, cross-pack check) |
+| `inbox/pack-p8-stage-01-output.json` | #8 | ISSUE_AUDIT result OUT-P8-001 (CONFIRMED, ISS-P7-002 open) |
+| `inbox/snapshots/pre-fix-target-p8-02.md.bak` | #8 | PRE_FIX_SNAPSHOT SNAP-P8-01 (P8 snapshot — separate from P7 snapshots) |
+| `inbox/pack-p8-stage-02-output.json` | #8 | FIX result OUT-P8-002 (PASS, review_status: approved as string, TYPE_CHECK pass) |
+| `inbox/pack-p8-stage-03-output.json` | #8 | RETEST result OUT-P8-003 (PACK_COMPLETE, all 3 targets verified) |
+| `verdicts/pack-p8-stage-01-verdict.json` | #8 | Verdict VRD-P8-001 (CONFIRMED, ISS-P7-002 confirmed open) |
+| `verdicts/pack-p8-stage-02-verdict.json` | #8 | Verdict VRD-P8-002 (PASS, string type confirmed, no rollback) |
+| `verdicts/pack-p8-stage-03-verdict.json` | #8 | Verdict VRD-P8-003 (PACK_PASS, PACK_COMPLETE, 8 new capabilities) |
+| `reports/pack-p8-final-report.json` | #8 | Final pack report RPT-P8-001 (PACK_COMPLETE, resolved_issues=[ISS-P7-002]) |
+| `reports/pack-p8-safe-stop-state.json` | #8 | TOKEN_SAFE_STOP SST-P8-001 (18 fields, prior_pack_id, inherited_fixed_targets, inherited_open_issues) |
+| `journal/execution-pack-p8-log.jsonl` | #8 | Pack event log (12 events, PACK_START to PACK_COMPLETE) |

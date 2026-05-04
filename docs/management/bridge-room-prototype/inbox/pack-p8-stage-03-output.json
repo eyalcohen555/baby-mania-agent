@@ -1,0 +1,132 @@
+{
+  "output_id": "OUT-P8-003",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "task_id": "TASK-P8-003",
+  "stage_id": "STAGE-03",
+  "stage_type": "RETEST",
+  "command_id": "CMD-P8-003",
+  "written_by": "Claude",
+  "written_at": "2026-05-04T12:55:00Z",
+
+  "status": "PASS",
+  "pack_result": "PACK_COMPLETE",
+
+  "target_results": [
+    {
+      "target_id": "TGT-P7-02",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+      "source_pack": "EXEC-PACK-P8-001",
+      "fields_checked": {
+        "product_name": {"value": "BabyMania Knit Wool Sleep Sack", "status": "PASS"},
+        "target_market": {"value": "Israel", "status": "PASS"},
+        "target_audience": {"value": "Parents of infants age 3–12 months", "status": "PASS"},
+        "target_language": {"value": "Hebrew", "status": "PASS"},
+        "quality_standard": {"value": "standard", "status": "PASS"},
+        "review_status": {"value": "approved", "type": "string", "status": "PASS"}
+      },
+      "fields_total": 6,
+      "fields_pass": 6,
+      "fields_fail": 0,
+      "issue_iss_p7_002_resolved": true,
+      "review_status_is_approved": true,
+      "in_p8_write_list": true,
+      "result": "PASS",
+      "final_state": "FIXED"
+    },
+    {
+      "target_id": "TGT-P7-01",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+      "source_pack": "EXEC-PACK-P7-001",
+      "fields_checked": {
+        "product_name": {"value": "BabyMania Organic Cotton Onesie Set", "status": "PASS"},
+        "target_market": {"value": "Israel", "status": "PASS"},
+        "target_audience": {"value": "Parents of newborns age 0–6 months", "status": "PASS"},
+        "target_language": {"value": "Hebrew", "status": "PASS"},
+        "quality_standard": {"value": "premium", "status": "PASS"},
+        "review_status": {"value": "approved", "status": "PASS"}
+      },
+      "fields_total": 6,
+      "fields_pass": 6,
+      "fields_fail": 0,
+      "p7_fix_preserved": true,
+      "in_p8_write_list": false,
+      "p8_did_not_touch": true,
+      "result": "PASS",
+      "final_state": "FIXED (P7 — preserved through P8)"
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "file": "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+      "source_pack": "UNCHANGED",
+      "fields_checked": {
+        "product_name": {"value": "BabyMania Bamboo Muslin Swaddle Blanket", "status": "PASS"},
+        "target_market": {"value": "Israel", "status": "PASS"},
+        "target_audience": {"value": "Parents of newborns age 0–3 months", "status": "PASS"},
+        "target_language": {"value": "Hebrew", "status": "PASS"},
+        "quality_standard": {"value": "premium", "status": "PASS"},
+        "review_status": {"value": "approved", "status": "PASS"}
+      },
+      "fields_total": 6,
+      "fields_pass": 6,
+      "fields_fail": 0,
+      "in_p8_write_list": false,
+      "in_p7_write_list": false,
+      "unchanged_confirmed": true,
+      "p8_did_not_touch": true,
+      "result": "PASS",
+      "final_state": "UNCHANGED (through P7 and P8)"
+    }
+  ],
+
+  "evidence": {
+    "FIELD_CHECK": {
+      "status": "PASS",
+      "total_fields_checked": 18,
+      "total_pass": 18,
+      "total_fail": 0,
+      "tgt_p7_02_all_fields_pass": true,
+      "tgt_p7_01_all_fields_pass": true,
+      "tgt_p7_03_all_fields_pass": true
+    },
+    "CROSS_PACK_STATE_CHECK": {
+      "status": "PASS",
+      "tgt_p7_02_fixed_by_p8": true,
+      "tgt_p7_01_fixed_by_p7_preserved_by_p8": true,
+      "tgt_p7_03_unchanged_through_p7_and_p8": true,
+      "inherited_state_valid": true,
+      "cross_pack_integrity": "CONFIRMED"
+    },
+    "SCOPE_CHECK": {
+      "status": "PASS",
+      "files_read": [
+        "docs/management/bridge-room-prototype/mock-target-p7-02.md",
+        "docs/management/bridge-room-prototype/mock-target-p7-01.md",
+        "docs/management/bridge-room-prototype/mock-target-p7-03.md",
+        "docs/management/bridge-room-prototype/inbox/pack-p8-stage-02-output.json"
+      ],
+      "target_files_modified": false,
+      "outside_scope": false
+    },
+    "VALIDATION": {
+      "status": "PASS",
+      "id_chain_valid": true,
+      "pack_id": "EXEC-PACK-P8-001",
+      "prior_pack_id": "EXEC-PACK-P7-001",
+      "command_id": "CMD-P8-003",
+      "output_id": "OUT-P8-003",
+      "stage_id": "STAGE-03",
+      "all_targets_pass": true,
+      "pack_result": "PACK_COMPLETE"
+    }
+  },
+
+  "targets_fixed": ["TGT-P7-02"],
+  "targets_fixed_in_prior_pack_preserved": ["TGT-P7-01"],
+  "targets_unchanged": ["TGT-P7-03"],
+  "resolved_issues": ["ISS-P7-002"],
+  "open_issues": [],
+
+  "overall_status": "PASS",
+  "pack_result": "PACK_COMPLETE"
+}

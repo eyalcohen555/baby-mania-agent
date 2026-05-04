@@ -1,0 +1,157 @@
+{
+  "report_id": "RPT-P8-001",
+  "pack_id": "EXEC-PACK-P8-001",
+  "prior_pack_id": "EXEC-PACK-P7-001",
+  "pack_name": "Execution Pack v1 — Prototype #8",
+  "prototype": true,
+  "isolated": true,
+  "approval_tier": "T1",
+  "created": "2026-05-04T13:05:00Z",
+
+  "pack_result": "PACK_COMPLETE",
+  "prototype_result": "PASS",
+
+  "source_issue": "ISS-P7-002",
+  "source_report": "docs/management/bridge-room-prototype/reports/pack-p7-final-report.json",
+  "flow_executed": "ISSUE_AUDIT (CONFIRMED) → PRE_FIX_SNAPSHOT → FIX (PASS) → RETEST → PACK_COMPLETE",
+
+  "stage_summary": [
+    {
+      "stage_id": "STAGE-01",
+      "type": "ISSUE_AUDIT",
+      "verdict_id": "VRD-P8-001",
+      "result": "CONFIRMED",
+      "issue_confirmed_open": true,
+      "source_pack_report_read": true
+    },
+    {
+      "stage_id": "STAGE-02",
+      "type": "FIX + PRE_FIX_SNAPSHOT",
+      "verdict_id": "VRD-P8-002",
+      "result": "PASS",
+      "snapshot_id": "SNAP-P8-01",
+      "snapshot_written_before_fix": true,
+      "review_status_written_as_string": true,
+      "rollback_required": false
+    },
+    {
+      "stage_id": "STAGE-03",
+      "type": "RETEST",
+      "verdict_id": "VRD-P8-003",
+      "result": "PASS",
+      "pack_result": "PACK_COMPLETE",
+      "all_targets_verified": true
+    }
+  ],
+
+  "target_results": [
+    {
+      "target_id": "TGT-P7-02",
+      "file": "mock-target-p7-02.md",
+      "p7_state": "ROLLED_BACK",
+      "issue_id": "ISS-P7-002",
+      "issue_type": "INVALID_VALUE",
+      "issue_field": "review_status",
+      "p7_fix_result": "ERROR",
+      "p8_fix_result": "PASS",
+      "final_state": "FIXED",
+      "issue_resolved": true,
+      "fixed_by_pack": "EXEC-PACK-P8-001"
+    },
+    {
+      "target_id": "TGT-P7-01",
+      "file": "mock-target-p7-01.md",
+      "p7_state": "FIXED",
+      "issue_id": "ISS-P7-001",
+      "p7_fix_result": "PASS",
+      "p8_action": "NONE (read-only in RETEST only)",
+      "final_state": "FIXED (P7 — preserved through P8)",
+      "issue_resolved": true,
+      "fixed_by_pack": "EXEC-PACK-P7-001",
+      "p8_preserved": true
+    },
+    {
+      "target_id": "TGT-P7-03",
+      "file": "mock-target-p7-03.md",
+      "p7_state": "UNCHANGED",
+      "p8_action": "NONE (read-only in RETEST only)",
+      "final_state": "UNCHANGED (through P7 and P8)",
+      "issue_resolved": "N/A",
+      "unchanged_confirmed": true
+    }
+  ],
+
+  "targets_fixed_by_p8": ["TGT-P7-02"],
+  "targets_fixed_by_prior_pack_preserved": ["TGT-P7-01"],
+  "targets_unchanged": ["TGT-P7-03"],
+  "resolved_issues": ["ISS-P7-002"],
+  "open_issues": [],
+
+  "new_capabilities_proven": [
+    "Pack chaining — P8 ingests P7 final report as authoritative input via prior_pack_id",
+    "ISSUE_AUDIT stage — new stage type reading prior report + current file before FIX",
+    "Single-target follow-up pack — 1 active target, 2 read-only cross-pack verification targets",
+    "Cross-pack state preservation — TGT-P7-01 P7-fix survives P8 intact",
+    "Cross-pack RETEST — verifies all 3 targets including P7-fixed and P7-clean",
+    "Prior pack fields in TOKEN_SAFE_STOP — 4 new P8 fields (18 total)",
+    "RESOLVED issue closure — resolved_issues: [ISS-P7-002], open_issues: []",
+    "P8-specific snapshot (SNAP-P8-01) — separate lineage from P7 snapshots"
+  ],
+
+  "id_chain": {
+    "pack_id": "EXEC-PACK-P8-001",
+    "prior_pack_id": "EXEC-PACK-P7-001",
+    "stage_01": {"task": "TASK-P8-001", "cmd": "CMD-P8-001", "out": "OUT-P8-001", "vrd": "VRD-P8-001"},
+    "stage_02": {"task": "TASK-P8-002", "cmd": "CMD-P8-002", "out": "OUT-P8-002", "vrd": "VRD-P8-002"},
+    "stage_03": {"task": "TASK-P8-003", "cmd": "CMD-P8-003", "out": "OUT-P8-003", "vrd": "VRD-P8-003"},
+    "snapshot": "SNAP-P8-01",
+    "id_matching_valid": true
+  },
+
+  "artifact_count": 15,
+  "artifacts": [
+    "execution-pack-p8.yaml",
+    "outbox/pack-p8-stage-01-command.json",
+    "outbox/pack-p8-stage-02-command.json",
+    "outbox/pack-p8-stage-03-command.json",
+    "inbox/pack-p8-stage-01-output.json",
+    "inbox/snapshots/pre-fix-target-p8-02.md.bak",
+    "inbox/pack-p8-stage-02-output.json",
+    "inbox/pack-p8-stage-03-output.json",
+    "verdicts/pack-p8-stage-01-verdict.json",
+    "verdicts/pack-p8-stage-02-verdict.json",
+    "verdicts/pack-p8-stage-03-verdict.json",
+    "reports/pack-p8-final-report.json",
+    "reports/pack-p8-safe-stop-state.json",
+    "journal/execution-pack-p8-log.jsonl",
+    "mock-target-p7-02.md (modified — FIX applied)"
+  ],
+
+  "safety": {
+    "bridge_connection": false,
+    "runtime_connection": false,
+    "telegram": false,
+    "shopify_writes": false,
+    "git_operations": false,
+    "scope": "docs/management/bridge-room-prototype/**",
+    "outside_scope_files_touched": false,
+    "prototypes_1_to_7_frozen": true,
+    "p7_snapshots_frozen": true,
+    "p7_artifacts_frozen": true,
+    "mock_target_p7_01_modified": false,
+    "mock_target_p7_03_modified": false
+  },
+
+  "flags": {
+    "prototype_8_pass": true,
+    "pack_chaining_proven": true,
+    "issue_audit_stage_proven": true,
+    "single_target_follow_up_proven": true,
+    "cross_pack_state_preservation_proven": true,
+    "prior_pack_fields_in_token_safe_stop_proven": true,
+    "iss_p7_002_resolved": true,
+    "p8_snapshot_separate_from_p7_proven": true,
+    "ready_for_codex_review": true,
+    "runtime_integration_approved": false
+  }
+}

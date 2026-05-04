@@ -1,0 +1,329 @@
+pack_id: EXEC-PACK-P8-001
+pack_name: Execution Pack v1 — Prototype #8
+version: 1.0.0
+prototype: true
+created: 2026-05-04
+approval_tier: T1
+layer: 1
+isolated: true
+
+project: BabyMania Agent — Bridge Room Prototype Series
+
+prior_pack_id: EXEC-PACK-P7-001
+source_issue: ISS-P7-002
+source_report: docs/management/bridge-room-prototype/reports/pack-p7-final-report.json
+
+goal: >
+  Prove pack chaining: read P7 final report, confirm ISS-P7-002 still open,
+  fix TGT-P7-02 (review_status: "approved") without touching TGT-P7-01 or TGT-P7-03.
+  RETEST confirms all 3 targets in expected state. ISS-P7-002 resolved.
+
+success_definition:
+  - "STAGE-01 ISSUE_AUDIT reads pack-p7-final-report.json, confirms ISS-P7-002 open, confirms review_status: unreviewed in mock-target-p7-02.md."
+  - "PRE_FIX_SNAPSHOT writes pre-fix-target-p8-02.md.bak before any FIX write."
+  - "STAGE-02 FIX writes review_status as string 'approved' — not null, not int."
+  - "STAGE-03 RETEST: TGT-P7-02 shows review_status: approved. TGT-P7-01 shows quality_standard: premium (P7-fixed, untouched by P8). TGT-P7-03 unchanged."
+  - "pack-p8-final-report.json records resolved_issues: [ISS-P7-002], prior_pack_id: EXEC-PACK-P7-001."
+  - "TOKEN_SAFE_STOP includes all 18 fields (10 P6 + 4 P7 + 4 P8)."
+  - "TGT-P7-01 and TGT-P7-03 not written at any P8 stage."
+  - "All scope: docs/management/bridge-room-prototype/** only."
+
+description: >
+  Prototype #8 — Follow-Up Pack / Pack Chaining.
+  Flow: ISSUE_AUDIT → PRE_FIX_SNAPSHOT → FIX (target-02 only) → RETEST (all 3) → PACK_COMPLETE.
+  New capabilities: pack chaining, ISSUE_AUDIT stage, single-target follow-up, cross-pack state preservation,
+  prior_pack fields in TOKEN_SAFE_STOP, ISS-P7-002 resolved.
+
+approval_policy:
+  default_tier: T1
+  pack_tier: T1
+  escalation_rules:
+    - "Any write outside docs/management/bridge-room-prototype/** → STOP."
+    - "Any runtime, Telegram, Shopify, bridge, or git action → STOP."
+    - "FIX may only proceed after CONFIRMED verdict from ISSUE_AUDIT."
+    - "TGT-P7-01 and TGT-P7-03 must not be written at any stage."
+    - "PRE_FIX_SNAPSHOT required before any FIX write."
+    - "P7 snapshots (pre-fix-target-p7-*.md.bak) must not be used as P8 rollback source."
+    - "ROLLBACK may only be issued after an ERROR verdict on FIX stage."
+
+global_rules:
+  codex_role: controller_reviewer
+  claude_role: executor
+  no_stage_skip: true
+  no_pass_without_evidence: true
+  no_out_of_scope_writes: true
+  allowed_root: "docs/management/bridge-room-prototype/**"
+  forbidden_runtime_connections:
+    - bridge.py
+    - bridge/github-bridge.py
+    - Telegram
+    - Shopify
+    - git
+  required_id_fields:
+    - pack_id
+    - prior_pack_id
+    - task_id
+    - stage_id
+    - command_id
+    - output_id
+    - verdict_id
+  rollback_rules:
+    - ROLLBACK may only follow an ERROR verdict from FIX stage
+    - ROLLBACK must use pre-fix-target-p8-02.md.bak (P8 snapshot only)
+    - P7 snapshots (pre-fix-target-p7-*.md.bak) are frozen — not valid P8 rollback sources
+    - ROLLBACK verdict must confirm matches_snapshot=true
+
+stop_conditions:
+  - scope violation
+  - missing approval_tier
+  - missing required evidence
+  - weak PASS without validation
+  - FIX attempted without CONFIRMED verdict from ISSUE_AUDIT
+  - review_status written as non-string type (null/int/bool) → ERROR
+  - TGT-P7-01 or TGT-P7-03 written at any stage
+  - PRE_FIX_SNAPSHOT missing before FIX
+  - P7 snapshot used as P8 rollback source
+  - runtime/Telegram/Shopify/git action attempted
+
+token_safe_stop:
+  enabled: true
+  artifact: docs/management/bridge-room-prototype/reports/pack-p8-safe-stop-state.json
+  field_count: 18
+  required_fields:
+    # P6 fields (10)
+    - pack_id
+    - current_stage
+    - completed_stages
+    - pending_stage
+    - files_read
+    - files_written
+    - last_verdict
+    - next_required_action
+    - resume_instruction
+    - risk_level
+    # P7 fields (4)
+    - targets_completed
+    - targets_pending
+    - rollback_state
+    - snapshots_available
+    # P8 fields (4)
+    - prior_pack_id
+    - prior_pack_report
+    - inherited_fixed_targets
+    - inherited_open_issues
+
+reporting:
+  stage_report_required: true
+  final_pack_report_required: true
+  stage_outputs_location: "docs/management/bridge-room-prototype/inbox/"
+  verdicts_location: "docs/management/bridge-room-prototype/verdicts/"
+  final_report: "docs/management/bridge-room-prototype/reports/pack-p8-final-report.json"
+  safe_stop_report: "docs/management/bridge-room-prototype/reports/pack-p8-safe-stop-state.json"
+  journal: "docs/management/bridge-room-prototype/journal/execution-pack-p8-log.jsonl"
+
+targets:
+  - target_id: TGT-P7-02
+    file: docs/management/bridge-room-prototype/mock-target-p7-02.md
+    description: Product brief — review_status has invalid value "unreviewed" (ISS-P7-002, carried from P7)
+    initial_state: ROLLED_BACK (P7 post-rollback state)
+    issue_id: ISS-P7-002
+    source_pack: EXEC-PACK-P7-001
+    expected_audit: CONFIRMED_OPEN
+    expected_fix: PASS
+    active: true
+  - target_id: TGT-P7-01
+    file: docs/management/bridge-room-prototype/mock-target-p7-01.md
+    description: Product brief — fixed by P7, must remain fixed
+    initial_state: FIXED (P7)
+    active: false
+    must_not_be_modified: true
+    retest_check: "quality_standard: premium"
+  - target_id: TGT-P7-03
+    file: docs/management/bridge-room-prototype/mock-target-p7-03.md
+    description: Product brief — clean through P7 and P8
+    initial_state: UNCHANGED (P7)
+    active: false
+    must_not_be_modified: true
+    retest_check: "all fields valid, review_status: approved"
+
+stages:
+  - id: STAGE-01
+    stage_id: STAGE-01
+    type: ISSUE_AUDIT
+    task_id: TASK-P8-001
+    command_id: CMD-P8-001
+    output_id: OUT-P8-001
+    verdict_id: VRD-P8-001
+    approval_tier: T1
+    goal: "Read P7 final report + mock-target-p7-02.md. Confirm ISS-P7-002 still open."
+    action: >
+      Read docs/management/bridge-room-prototype/reports/pack-p7-final-report.json.
+      Locate open_issues field — confirm ISS-P7-002 present.
+      Read mock-target-p7-02.md — confirm review_status != "approved".
+      Return CONFIRMED if issue is still open. Do not modify any file.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/reports/pack-p7-final-report.json
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-p8-stage-01-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-target-p7-01.md
+      - docs/management/bridge-room-prototype/mock-target-p7-02.md
+      - docs/management/bridge-room-prototype/mock-target-p7-03.md
+    evidence_required:
+      - PRIOR_PACK_READ
+      - FIELD_CHECK
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - P7 report readable and ISS-P7-002 in open_issues
+      - mock-target-p7-02.md review_status != "approved"
+    confirmed_conditions:
+      - Both conditions above met → status: CONFIRMED
+    resolved_conditions:
+      - review_status already "approved" → status: RESOLVED (pack exits cleanly, no FIX needed)
+    blocked_conditions:
+      - P7 final report not readable or not found
+    next_on_confirmed: PRE_FIX_SNAPSHOT
+    next_on_resolved: PACK_EXIT_CLEAN
+    next_on_blocked: HOLD
+    read_only_targets: true
+
+  - id: STAGE-02
+    stage_id: STAGE-02
+    type: FIX
+    task_id: TASK-P8-002
+    command_id: CMD-P8-002
+    output_id: OUT-P8-002
+    verdict_id: VRD-P8-002
+    approval_tier: T1
+    prerequisite: CONFIRMED verdict from STAGE-01
+    goal: "Write P8 snapshot, fix TGT-P7-02 review_status to 'approved'. Do not touch TGT-P7-01 or TGT-P7-03."
+    pre_step: PRE_FIX_SNAPSHOT
+    action: >
+      Write inbox/snapshots/pre-fix-target-p8-02.md.bak from current mock-target-p7-02.md.
+      Then fix mock-target-p7-02.md: set review_status to string "approved".
+      Do not touch mock-target-p7-01.md or mock-target-p7-03.md.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+        - docs/management/bridge-room-prototype/inbox/pack-p8-stage-01-output.json
+      write:
+        - docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p8-02.md.bak
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+        - docs/management/bridge-room-prototype/inbox/pack-p8-stage-02-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-target-p7-01.md
+      - docs/management/bridge-room-prototype/mock-target-p7-03.md
+      - docs/management/bridge-room-prototype/inbox/snapshots/pre-fix-target-p7-02.md.bak
+    evidence_required:
+      - PRE_FIX_SNAPSHOT_CONFIRMED
+      - FIX_APPLIED
+      - TYPE_CHECK
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - review_status written as string "approved" (exact match, case-sensitive)
+    fail_conditions:
+      - review_status written as wrong string (e.g., "Approved", "APPROVED")
+    error_conditions:
+      - review_status written as null, int, or bool → rollback_required: true
+    next_on_pass: STAGE-03
+    next_on_error: ROLLBACK
+    next_on_fail: HOLD
+
+  - id: STAGE-03
+    stage_id: STAGE-03
+    type: RETEST
+    task_id: TASK-P8-003
+    command_id: CMD-P8-003
+    output_id: OUT-P8-003
+    verdict_id: VRD-P8-003
+    approval_tier: T1
+    goal: "Verify TGT-P7-02 fixed (review_status: approved), TGT-P7-01 still fixed (quality_standard: premium), TGT-P7-03 still unchanged."
+    action: >
+      Read all 3 target files.
+      Confirm TGT-P7-02: review_status = "approved".
+      Confirm TGT-P7-01: quality_standard = "premium", review_status = "approved" (P7-fixed state preserved).
+      Confirm TGT-P7-03: all 6 fields valid, not in any P8 write list.
+      Do not modify any target file.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-target-p7-02.md
+        - docs/management/bridge-room-prototype/mock-target-p7-01.md
+        - docs/management/bridge-room-prototype/mock-target-p7-03.md
+        - docs/management/bridge-room-prototype/inbox/pack-p8-stage-02-output.json
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-p8-stage-03-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-target-p7-02.md
+      - docs/management/bridge-room-prototype/mock-target-p7-01.md
+      - docs/management/bridge-room-prototype/mock-target-p7-03.md
+    evidence_required:
+      - FIELD_CHECK
+      - CROSS_PACK_STATE_CHECK
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - TGT-P7-02 review_status = "approved" (ISS-P7-002 resolved)
+      - TGT-P7-01 quality_standard = "premium" (P7 fix preserved, P8 untouched)
+      - TGT-P7-03 all fields valid, not in P8 write list
+    fail_conditions:
+      - TGT-P7-02 still shows review_status != "approved"
+      - TGT-P7-01 quality_standard missing or changed
+      - TGT-P7-03 modified
+    next_on_pass: PACK_COMPLETE
+    read_only_targets: true
+
+ownership:
+  claude_writes:
+    - inbox/snapshots/pre-fix-target-p8-02.md.bak
+    - inbox/pack-p8-stage-01-output.json
+    - inbox/pack-p8-stage-02-output.json
+    - inbox/pack-p8-stage-03-output.json
+    - mock-target-p7-02.md (FIX write — STAGE-02 only)
+  codex_writes:
+    - outbox/pack-p8-stage-01-command.json
+    - outbox/pack-p8-stage-02-command.json
+    - outbox/pack-p8-stage-03-command.json
+    - verdicts/pack-p8-stage-01-verdict.json
+    - verdicts/pack-p8-stage-02-verdict.json
+    - verdicts/pack-p8-stage-03-verdict.json
+    - reports/pack-p8-final-report.json
+    - reports/pack-p8-safe-stop-state.json
+    - journal/execution-pack-p8-log.jsonl
+    - execution-pack-p8.yaml
+
+allowed_status_values:
+  - PASS
+  - FAIL
+  - BLOCKED
+  - ERROR
+  - CONFIRMED
+  - RESOLVED
+  - PACK_COMPLETE
+  - ROLLBACK_PASS
+  - ROLLBACK_FAIL
+
+safety:
+  bridge_connection: false
+  runtime_connection: false
+  telegram: false
+  shopify_writes: false
+  git_operations: false
+  scope: docs/management/bridge-room-prototype/**
+  outside_scope_writes: false
+  prototypes_1_to_7_frozen: true
+  p7_snapshots_frozen: true
+  p7_artifacts_frozen: true
+  allowed_target_write: mock-target-p7-02.md (STAGE-02 FIX only)
+  forbidden_target_writes:
+    - mock-target-p7-01.md
+    - mock-target-p7-03.md
