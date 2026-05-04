@@ -20,6 +20,44 @@
 ---
 
 ## DATE: 2026-05-04
+## TASK: Layer 7 Phase 7A — Batch 1 Live (10 מוצרים מגוונים)
+## SCOPE: Layer 7 — Shopify live tag write — 10 products diverse types
+## WHAT CHANGED:
+- Phase 7A batch 1 בוצע — T3 approval מאייל התקבל
+- 10 מוצרים קיבלו תגיות Layer 6/7 חיות (type-dress, type-bodysuit, type-set)
+- גיבוי נוצר לפני הכתיבה: output/tags/phase7a-batch1-tags-backup.json
+- כל 10 מוצרים עברו verify PASS (PUT 200 + GET confirm)
+- Shopify live: YES — 15 products total (5 Phase6 + 10 Phase7A)
+- אין age-* tags. אין rollback.
+## FILES TOUCHED:
+- output/tags/phase7a-batch1-tags-backup.json
+- output/tags/phase7a-batch1-live-verify.md
+- scripts/tags/run_phase7a_batch1_live.py
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- 9731768746297 (סט בגדי תינוקות גינס ושמלה): type-dress, season-summer, fabric-denim, gender-girl
+- 9179166671161 (בגד גוף שמלה ג׳ינס): type-bodysuit, size-12-18m, size-3-6m, fabric-cotton
+- 9874906382649 (בגד גוף פו הדוב): type-bodysuit, size-0-3m..18-24m, season-summer, fabric-cotton, gender-girl, style-teddy
+- 9874906546489 (חליפת דובי): type-set, size-3-6m/9-12m, season-spring-fall, gender-boy, style-teddy
+- 9688660377913 (חליפת קואלה): type-set, size-0-3m..18-24m, season-spring-fall, gender-girl, style-casual
+- 9688976326969 (חליפה דוב מופתע): type-set, size-0-3m..12-18m, gender-boy, style-casual
+- 9688964989241 (חליפה דוב מקסימה): type-set, size-9-12m, season-winter, fabric-polyester, gender-boy, style-teddy
+- 9688674566457 (חליפה לבנים): type-set, size-0-3m/3-6m/12-18m/18-24m, gender-boy, style-casual
+- 9688976294201 (חליפה רקמת דובי): type-set, size-6-9m..18-24m, season-winter, gender-boy, style-casual
+- 10190523302201 (Boys Summer Set): type-set, size-3-6m..18-24m, season-summer, gender-boy, style-casual
+## OPEN ISSUES:
+- EU shoe sizes — אין מיפוי מאושר עדיין
+- 4 SAFE_FOR_PHASE7A נותרו ל-batch הבא (9606694437177, 9688885985593, 9688934973753, 10190523138361)
+- 6 REVIEW_ONLY ממתינים לבדיקה ידנית
+## NEXT STEP:
+- post-live monitor ל-15 מוצרים
+- batch נוסף Phase 7A (4 נותרים SAFE)
+- target: 50+ מוצרים מ-4+ סוגים לפני Phase 8 (collections)
+
+---
+
+## DATE: 2026-05-04
 ## TASK: Layer 6 Phase 6 — Batch 2 Live (C5, C1)
 ## SCOPE: Layer 6 — Shopify live tag write — 2 products
 ## WHAT CHANGED:
