@@ -16,10 +16,56 @@
 | T3 approval (אייל) | PENDING |
 | CAT-B pivot | age-* → size-* |
 | Source pivot | handle/heuristics → variants/tags/title מפורשים |
+| Git HEAD | 16c280c — "docs+logic(layer6): pivot CAT-B from age to size" |
 
 ---
 
-## 2. Phase 5h vs Phase 5f — השוואה
+## 2. החלטה עסקית: גיל הוחלף במידה
+
+BabyMania אינה דורשת תגיות גיל על מוצרים.
+ביגוד ונעליים ישתמשו בתגיות **מידה** (size-*) בלבד.
+שאר המוצרים (צעצועים, ריבורן, אביזרים) פטורים ממידה חובה.
+
+**לפני (Phase 5f):** `CAT-B = age-*` — מקורות: handle keywords, heuristics
+**אחרי (Phase 5h):** `CAT-B = size-*` — מקורות: variants, tags, title מפורשים בלבד
+
+| לפני (Phase 5f) | אחרי (Phase 5h) |
+|---|---|
+| `age-0-3m` | `size-0-3m` |
+| `age-3-6m` | `size-3-6m` |
+| `age-6-12m` | הוסר — מוחלף ב-`size-6-9m` + `size-9-12m` |
+| `age-12-18m` | `size-12-18m` |
+| `age-18-24m` | `size-18-24m` |
+| `age-2-3y` | `size-2y` |
+| `age-3-5y` | הוסר — מוחלף ב-`size-3y` + `size-4y` |
+| `age-0-6m` | הוסר — לא מידה variant תקינה |
+| `age-newborn` | `size-newborn` |
+| `age-unknown` | `size-unknown` |
+
+---
+
+## 3. קבצים ששונו
+
+| קובץ | שינוי |
+|------|-------|
+| `docs/organic/layer6-taxonomy-spec-v1.md` | Section 4: CAT-B Age → Size; ALLOWED VALUES; YAML_GAP row |
+| `docs/organic/layer6-full-tag-system-navigation-planning-spec-v1.md` | CAT-B row → "Size"; labels updated |
+| `scripts/tags/layer6_validate_tags.py` | `ALLOWED_VALUES["CAT-B"]` = size-*; `PREFIX_TO_CAT["size"]="CAT-B"`; `NON_SIZE_TYPES` |
+| `scripts/tags/run_layer6_phase5d_rerun.py` | `CUSTOMER_LABELS` age-* → size-*; `extract_cat_b()` rewritten; stats renamed |
+| `scripts/tags/run_layer6_phase5h_dryrun.py` | new wrapper with phase5h output paths |
+| `output/tags/phase5g-age-to-size-taxonomy-pivot.md` | business decision document |
+| `output/tags/phase5h-size-taxonomy-dryrun-report.md` | this report |
+| `output/tags/phase5h-size-taxonomy-dryrun-report.json` | dry-run stats JSON |
+| `output/tags/phase5h-size-taxonomy-sample-58.json` | 58-product sample results |
+
+**לא שונו (DO NOT TOUCH):**
+- `docs/product/reborn/*`
+- `teams/organic/agents/04-organic-blog-writer.md`
+- `output/tags/phase5g-age-source-human-review-pack.md` (לא נכנס לגיט)
+
+---
+
+## 4. תוצאות לפני / אחרי
 
 | מדד | Phase 5f | Phase 5h | שינוי |
 |---|---|---|---|
@@ -37,49 +83,49 @@
 | taxonomy_gaps | 0 | 0 | 0 |
 | CATEGORY_COVERAGE fails | 33 | 33 | 0 |
 | QUALITY_SCORE fails | 18 | 18 | 0 |
-
-**הסבר +3 ב-NO_SIZE_FOUND:** שלושה מוצרים שנמצאו בעבר עם `age-*` ממיפוי Hebrew tags (למשל "6-12 חודש") — כעת לא ממופים למידה מכיוון שהם מייצגים טווחי גיל ולא מידות variant מפורשות. נדרש YAML/variant source.
-
----
-
-## 3. Pivot: CAT-B age-* → size-*
-
-| לפני (Phase 5f) | אחרי (Phase 5h) |
-|---|---|
-| `age-0-3m` | `size-0-3m` |
-| `age-3-6m` | `size-3-6m` |
-| `age-6-12m` | הוסר — מוחלף ב-`size-6-9m` + `size-9-12m` |
-| `age-12-18m` | `size-12-18m` |
-| `age-18-24m` | `size-18-24m` |
-| `age-2-3y` | `size-2y` |
-| `age-3-5y` | הוסר — מוחלף ב-`size-3y` + `size-4y` |
-| `age-0-6m` | הוסר — לא מידה variant תקינה |
-| `age-newborn` | `size-newborn` |
-| `age-unknown` | `size-unknown` |
-| — | `size-6-9m` (חדש) |
-| — | `size-9-12m` (חדש) |
-| — | `size-3y` (חדש) |
-| — | `size-4y` (חדש) |
-
-**Prefix שינוי:** `age-` → `size-`
+| age-* tags generated | 41 | **0** | -41 ✅ |
+| size-* tags generated | 0 | **3** | +3 ✅ |
 
 ---
 
-## 4. New ALLOWED_VALUES — CAT-B
+## 5. בדיקת 9 מועמדי Phase 6 המקוריים
 
-```python
-"CAT-B": {
-    "size-newborn", "size-0-3m", "size-3-6m", "size-6-9m", "size-9-12m",
-    "size-12-18m", "size-18-24m", "size-2y", "size-3y", "size-4y",
-    "size-unknown",
-}
-```
+מועמדים מ-Phase 5f בודקים שוב תחת size taxonomy.
 
-`PREFIX_TO_CAT` עדכון: `"age" → "size"` — כל תגית `size-*` ממופה ל-`CAT-B`.
+| # | product_id | Phase 5f status | Phase 5h status | size tag | score | Phase 5h verdict |
+|---|---|---|---|---|---|---|
+| C1 | 9688932909369 | NEEDS_REVIEW NO_AGE_FOUND | NEEDS_REVIEW NO_SIZE_FOUND | — | 71.1 | REVIEW_ONLY |
+| C2 | 9874906349881 | PASS age-newborn | PASS size-newborn | size-newborn | 96.5 | **SAFE_FOR_PHASE6** |
+| C3 | 9688660312377 | NEEDS_REVIEW NO_AGE_FOUND | NEEDS_REVIEW NO_SIZE_FOUND | — | 81.4 | REVIEW_ONLY |
+| C4 | 9895864205625 | NEEDS_REVIEW NO_AGE_FOUND | NEEDS_REVIEW NO_SIZE_FOUND | — | 78.4 | REVIEW_ONLY |
+| C5 | 9687579033913 | NEEDS_REVIEW NO_AGE_FOUND | NEEDS_REVIEW NO_SIZE_FOUND | — | 75.0 | REVIEW_ONLY |
+| C6 | 9615375565113 | NEEDS_REVIEW NO_AGE_FOUND | NEEDS_REVIEW NO_SIZE_FOUND | — | 80.4 | REVIEW_ONLY |
+| C7 | 9606764462393 | PASS RANGE_TOO_BROAD | PASS RANGE_TOO_BROAD | — | 94.4 | KEEP_BLOCKED |
+| C8 | 9606764298553 | NEEDS_REVIEW NO_AGE_FOUND | NEEDS_REVIEW NO_SIZE_FOUND | — | 79.5 | REVIEW_ONLY |
+| C9 | 9838580662585 | PASS Phase5b:type-swimming-ring | PASS Phase5b:type-swimming-ring | — | 80.2 | EXEMPT_NON_SIZE |
+
+**הערות:**
+- C2: size-newborn מ-YAML/title — מקור מהימן. SAFE_FOR_PHASE6.
+- C1,C3-C6,C8: type clothing/shoes + NO_SIZE_FOUND — ממתינים ל-variant data.
+- C7: handle מכיל "0-to-3-years-old" — RANGE_TOO_BROAD נשאר חסום.
+- C9: type-swimming-ring — Phase5b exempt, לא דורש מידה.
 
 ---
 
-## 5. Source Hierarchy — CAT-B (size)
+## 6. ספירה
+
+| קטגוריה | כמות | מועמדים |
+|---------|------|---------|
+| **SAFE_FOR_PHASE6** | **1** | C2 |
+| **REVIEW_ONLY** | **6** | C1, C3, C4, C5, C6, C8 |
+| **KEEP_BLOCKED** | **1** | C7 (RANGE_TOO_BROAD) |
+| **EXEMPT_NON_SIZE** | **1** | C9 (type-swimming-ring) |
+
+**סה"כ מועמדים:** 9 | **SAFE ≥ 5 נדרשים ל-Phase 6:** ❌ (רק 1 SAFE)
+
+---
+
+## 7. Source Hierarchy — CAT-B (size)
 
 | עדיפות | source | דוגמה | confidence |
 |--------|--------|-------|-----------|
@@ -92,93 +138,68 @@
 
 ---
 
-## 6. Gate Results
+## 8. Gate Results
 
 | Gate | כשלונות | פירוש |
 |---|---|---|
 | SOURCE_EXISTS | 0/58 | ✅ |
 | FORMAT_VALID | 0/58 | ✅ |
-| ALLOWED_VALUE | 0/58 | ✅ — כל size-* תגים בטקסונומיה |
+| ALLOWED_VALUE | 0/58 | ✅ — כל size-* tags בטקסונומיה |
 | SOURCE_TRACEABLE | 0/58 | ✅ |
 | NO_FORBIDDEN_INFERENCE | 0/58 | ✅ |
 | CATEGORY_COVERAGE | 33/58 | ⚠️ NO_SIZE_FOUND על clothing/shoes |
 | DUPLICATE_CONFLICT | 0/58 | ✅ |
 | QUALITY_SCORE | 18/58 | ⚠️ קשור ל-CATEGORY_COVERAGE |
 
-**taxonomy_gaps:** 0 — כל size-* tags חוקיים. ✅
-
----
-
-## 7. PASS Products (23/58)
-
-מוצרים שעברו PASS קיבלו size tag מאחד מ-3 sources מורשים (variant/tag/title).
-
-| קטגוריה | PASS (אומדן) |
-|---------|------------|
-| clothing_yaml | ~11 |
-| shoes_yaml | ~6 |
-| reborn_toys | 6 (exempt Phase5b) |
-| accessories | 1 (exempt Phase5b) |
-| yaml_gap | ~1 |
-| edge_cases | ~2 |
-
----
-
-## 8. NEEDS_REVIEW Analysis (35/58)
-
-| סיבה עיקרית | כמות (אומדן) |
-|------------|------------|
-| NO_SIZE_FOUND (clothing/shoes) | ~27 |
-| RANGE_TOO_BROAD | 5 |
-| YAML_GAP+NO_SIZE_FOUND (exempt) | ~17 |
-
-**מסקנה:** רוב ה-NEEDS_REVIEW נובע מ-NO_SIZE_FOUND — מוצרי ביגוד/נעליים ללא variant option data.
-
 ---
 
 ## 9. NO_SIZE_FOUND Breakdown (44 products)
 
+**שורש הבעיה:** ה-fetch הנוכחי אינו כולל `variants` ב-fields:
+```python
+# נדרש ל-Phase 5i:
+fields=id,title,handle,tags,body_html,product_type,variants
+```
+
 | סיבה | כמות (אומדן) |
 |------|------------|
-| אין variants עם size option בנתוני ה-fetch הנוכחי | ~20 |
+| אין variants עם size option בנתוני ה-fetch | ~20 |
 | Hebrew tags מייצגים גיל ולא מידה variant | ~8 |
 | handle/title לא כולל size מפורש | ~12 |
 | YAML_GAP + אין title size | ~4 |
 
-**שורש הבעיה:** ה-fetch הנוכחי לא מכלול `variants` ב-fields:
-```python
-# נדרש לעדכן:
-fields=id,title,handle,tags,body_html,product_type,variants
-```
-לאחר הוספת variants — מצופה שרוב מוצרי clothing/shoes יקבלו size-* מ-variant options.
+לאחר הוספת `variants` — מצופה ש-6 ה-REVIEW_ONLY candidates יקבלו size-* מ-variant options.
 
 ---
 
-## 10. Phase 5h Pass Criteria
+## 10. אישורים
 
-| תנאי | סטטוס |
-|------|-------|
-| no_shopify_live | ✅ |
-| no_forbidden_tags | ✅ |
-| no_type_reborn_on_sleep_soother | ✅ |
-| no_wide_range_bypass | ✅ |
-| all_size_tags_in_allowed_values | ✅ (0 taxonomy gaps) |
-| prefix_to_cat_updated | ✅ ("size" → CAT-B) |
-| no_age_prefix_in_proposed_tags | ✅ (0 age-* tags generated) |
-| avg_score_gte_75 | ✅ (80.7) |
-| blocked_pct_lt_20 | ✅ (0.0%) |
-| validator_accepts_size_tags | ✅ |
-| docs_updated_taxonomy_nav_spec | ✅ |
+| בדיקה | תוצאה |
+|-------|-------|
+| age-* tags שיצאו בדוח | **0** ✅ |
+| size-* tags שיצאו בדוח | **3** ✅ |
+| Phase 6 פתוח | **NO** ✅ |
+| Shopify live | **NO** ✅ |
+| כתיבה ל-Shopify | **NO** ✅ |
+| taxonomy_gaps | **0** ✅ |
+| blocked_pct | **0.0%** ✅ |
+| avg_score ≥ 75 | **80.7** ✅ |
 
 ---
 
-## 11. Phase 6 Verdict + הצעד הבא
+## 11. Verdict סופי
 
-**PHASE6_STILL_BLOCKED** — נדרשים:
+**PHASE6_STILL_BLOCKED**
 
-1. **Phase 5i — Variant data fetch** — הוספת `variants` ל-`fields` ב-`fetch_shopify_products()`.
-2. **≥5 SAFE candidates** — לאחר variant fetch צפוי מספיק מוצרי PASS עם size tag מ-variant source.
-3. **T3 approval (אייל)** — אישור לפני Phase 6 live.
+סיבות:
+1. SAFE_FOR_PHASE6 = 1/9 (נדרש ≥ 5)
+2. 6 candidates ממתינים ל-variant size data
+3. T3 approval (אייל) טרם התקבל
+
+**הצעד הבא — Phase 5i:**
+- הוסף `variants` ל-`fetch_shopify_products()` fields
+- הרץ dry-run מחדש
+- צפוי: 6 REVIEW_ONLY → SAFE לאחר variant fetch
 
 **Phase 6 NOT OPEN** — Shopify live: NO.
 
