@@ -1,0 +1,2047 @@
+{
+  "meta": {
+    "phase": "Phase 7A — Diverse Rollout Dry Run",
+    "date": "2026-05-04",
+    "total_candidates": 20,
+    "safe": 14,
+    "review_only": 6,
+    "reject": 0
+  },
+  "type_distribution": {
+    "type-bodysuit": 6,
+    "type-set": 10,
+    "type-dress": 1,
+    "type-sandals": 1,
+    "type-romper": 2
+  },
+  "products": [
+    {
+      "product_id": "9179166671161",
+      "title": "בגד גוף שמלה ג׳ינס מכותנה - הרפר",
+      "type": "type-bodysuit",
+      "current_tags": [
+        "12-18 חודש",
+        "18-24M",
+        "3-6 חודש",
+        "6-12 חודש"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-bodysuit",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "size-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "existing_tag_hebrew",
+          "rule": "heb_tag",
+          "note": "from tag: 12-18 חודש"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.9,
+          "source": "existing_tag_hebrew",
+          "rule": "heb_tag",
+          "note": "from tag: 3-6 חודש"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-bodysuit",
+        "size-12-18m",
+        "size-3-6m",
+        "fabric-cotton"
+      ],
+      "source_trace": {
+        "type-bodysuit": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "size-12-18m": {
+          "source": "existing_tag_hebrew",
+          "rule": "heb_tag",
+          "conf": 0.9
+        },
+        "size-3-6m": {
+          "source": "existing_tag_hebrew",
+          "rule": "heb_tag",
+          "conf": 0.9
+        },
+        "season-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "fabric-cotton": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "gender-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 95.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9606694437177",
+      "title": "חליפת פולו קצרה סרוגה לתינוקות",
+      "type": "type-set",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-knit",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-striped",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "season-summer",
+        "fabric-knit",
+        "gender-neutral",
+        "style-striped"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "season-summer": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "fabric-knit": {
+          "source": "existing_tag",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "gender-neutral": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.9
+        },
+        "style-striped": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "NO_SIZE_FOUND",
+      "size_note": "",
+      "score": 85.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9731768746297",
+      "title": "סט בגדי תינוקות גינס ושמלה דגם טליה",
+      "type": "type-dress",
+      "current_tags": [],
+      "proposed_all": [
+        {
+          "tag": "type-dress",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-denim",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-dress",
+        "season-summer",
+        "fabric-denim",
+        "gender-girl"
+      ],
+      "source_trace": {
+        "type-dress": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "season-summer": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "fabric-denim": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "gender-girl": {
+          "source": "handle",
+          "rule": "keyword",
+          "conf": 0.9
+        }
+      },
+      "size_status": "NO_SIZE_FOUND",
+      "size_note": "",
+      "score": 85.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9607363559737",
+      "title": "סנדלים אופנתיים לתינוקות צעד ראשון",
+      "type": "type-sandals",
+      "current_tags": [
+        "baby-gift",
+        "baby-sandals",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-sandals",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-sandals",
+        "season-summer",
+        "gender-neutral"
+      ],
+      "source_trace": {
+        "type-sandals": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "season-summer": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "gender-neutral": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.9
+        }
+      },
+      "size_status": "RANGE_TOO_BROAD",
+      "size_note": "0-18m",
+      "score": 85.0,
+      "has_yaml": true,
+      "verdict": "REVIEW_ONLY",
+      "reason": "size range too broad"
+    },
+    {
+      "product_id": "9179165753657",
+      "title": "בגד גוף כותנה טטרה - פריחת האביב",
+      "type": "type-bodysuit",
+      "current_tags": [],
+      "proposed_all": [
+        {
+          "tag": "type-bodysuit",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.82,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-bodysuit",
+        "season-spring-fall",
+        "fabric-cotton"
+      ],
+      "source_trace": {
+        "type-bodysuit": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "season-spring-fall": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.82
+        },
+        "fabric-cotton": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "gender-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        }
+      },
+      "size_status": "NO_SIZE_FOUND",
+      "size_note": "",
+      "score": 75.0,
+      "has_yaml": true,
+      "verdict": "REVIEW_ONLY",
+      "reason": "score 75.0 < 85 minimum"
+    },
+    {
+      "product_id": "9179168964921",
+      "title": "בגד גוף כיווצים אלגנטי - נטלי",
+      "type": "type-bodysuit",
+      "current_tags": [],
+      "proposed_all": [
+        {
+          "tag": "type-bodysuit",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-bodysuit",
+        "style-elegant"
+      ],
+      "source_trace": {
+        "type-bodysuit": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "season-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "gender-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "style-elegant": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "NO_SIZE_FOUND",
+      "size_note": "",
+      "score": 70.0,
+      "has_yaml": true,
+      "verdict": "REVIEW_ONLY",
+      "reason": "score 70.0 < 85 minimum"
+    },
+    {
+      "product_id": "9179152154937",
+      "title": "בגד גוף מלמלות - קיטי",
+      "type": "type-bodysuit",
+      "current_tags": [],
+      "proposed_all": [
+        {
+          "tag": "type-bodysuit",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-bodysuit"
+      ],
+      "source_trace": {
+        "type-bodysuit": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "season-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "gender-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        }
+      },
+      "size_status": "NO_SIZE_FOUND",
+      "size_note": "",
+      "score": 70.0,
+      "has_yaml": true,
+      "verdict": "REVIEW_ONLY",
+      "reason": "score 70.0 < 85 minimum"
+    },
+    {
+      "product_id": "9179167129913",
+      "title": "בגד גוף מלמלות וכיווצים פרחוני - שיילי",
+      "type": "type-bodysuit",
+      "current_tags": [],
+      "proposed_all": [
+        {
+          "tag": "type-bodysuit",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "style-floral",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-bodysuit",
+        "style-floral"
+      ],
+      "source_trace": {
+        "type-bodysuit": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "season-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "gender-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "style-floral": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "NO_SIZE_FOUND",
+      "size_note": "",
+      "score": 70.0,
+      "has_yaml": true,
+      "verdict": "REVIEW_ONLY",
+      "reason": "score 70.0 < 85 minimum"
+    },
+    {
+      "product_id": "9874906382649",
+      "title": "בגד גוף פו הדוב דגם לירון",
+      "type": "type-bodysuit",
+      "current_tags": [
+        "baby-bodysuit",
+        "baby-gift",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-bodysuit",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-18-24m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-9-12m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-6-9m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-teddy",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "existing_tag",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-bodysuit",
+        "size-18-24m",
+        "size-0-3m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-3-6m",
+        "size-6-9m",
+        "season-summer",
+        "fabric-cotton",
+        "gender-girl",
+        "style-teddy"
+      ],
+      "source_trace": {
+        "type-bodysuit": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-18-24m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-0-3m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-9-12m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-12-18m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-3-6m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-6-9m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-summer": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "fabric-cotton": {
+          "source": "existing_tag",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "gender-girl": {
+          "source": "handle",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-teddy": {
+          "source": "existing_tag",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9688885985593",
+      "title": "אוברול פיל מתוק דגם נאיה",
+      "type": "type-romper",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-6-9m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-newborn",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.82,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-newborn",
+        "season-spring-fall",
+        "gender-girl"
+      ],
+      "source_trace": {
+        "type-romper": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-3-6m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-6-9m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-newborn": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-spring-fall": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.82
+        },
+        "gender-girl": {
+          "source": "handle",
+          "rule": "keyword",
+          "conf": 0.9
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9688934973753",
+      "title": "אוברול פיל פסים דגם ליאו",
+      "type": "type-romper",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-6-9m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-9-12m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "style-striped",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "style-striped"
+      ],
+      "source_trace": {
+        "type-romper": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-0-3m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-3-6m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-6-9m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-9-12m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-12-18m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "gender-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "style-striped": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 95.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9874906546489",
+      "title": "חליפת דובי  מלאה בסטייל דגם מאור",
+      "type": "type-set",
+      "current_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-9-12m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.82,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-teddy",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "existing_tag",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "size-3-6m",
+        "size-9-12m",
+        "season-spring-fall",
+        "gender-boy",
+        "style-teddy"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-3-6m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-9-12m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-spring-fall": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.82
+        },
+        "gender-boy": {
+          "source": "handle",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-teddy": {
+          "source": "existing_tag",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9688660377913",
+      "title": "חליפת קואלה דגם שני",
+      "type": "type-set",
+      "current_tags": [
+        "animal-print-baby",
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-6-9m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-9-12m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-18-24m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.82,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-18-24m",
+        "season-spring-fall",
+        "gender-girl",
+        "style-casual"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-0-3m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-3-6m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-6-9m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-9-12m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-12-18m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-18-24m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-spring-fall": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.82
+        },
+        "gender-girl": {
+          "source": "handle",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-casual": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9688976326969",
+      "title": "חליפה דוב מופתע דגם ליאל",
+      "type": "type-set",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-6-9m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-9-12m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "gender-boy",
+        "style-casual"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-0-3m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-3-6m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-6-9m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-9-12m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-12-18m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "gender-boy": {
+          "source": "handle",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-casual": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9688964989241",
+      "title": "חליפה דוב מקסימה דגם אריאל",
+      "type": "type-set",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-9-12m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-polyester",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-teddy",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "existing_tag",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "size-9-12m",
+        "season-winter",
+        "fabric-polyester",
+        "gender-boy",
+        "style-teddy"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-9-12m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-winter": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.85
+        },
+        "fabric-polyester": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "gender-boy": {
+          "source": "handle",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-teddy": {
+          "source": "existing_tag",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9688674566457",
+      "title": "חליפה לבנים דגם אימרי",
+      "type": "type-set",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "boys-clothing",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-0-3m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-18-24m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "none",
+          "rule": "fallback"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "size-0-3m",
+        "size-3-6m",
+        "size-12-18m",
+        "size-18-24m",
+        "gender-boy",
+        "style-casual"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-0-3m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-3-6m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-12-18m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-18-24m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-unknown": {
+          "source": "none",
+          "rule": "fallback",
+          "conf": 0.0
+        },
+        "gender-boy": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.9
+        },
+        "style-casual": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "9688976294201",
+      "title": "חליפה מהממת רקמת דובי חמוד דגם אלי",
+      "type": "type-set",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-6-9m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-9-12m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-18-24m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-18-24m",
+        "season-winter",
+        "gender-boy",
+        "style-casual"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "existing_tag",
+          "rule": "tag_map",
+          "conf": 0.88
+        },
+        "size-6-9m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-9-12m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-12-18m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-18-24m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-winter": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.85
+        },
+        "gender-boy": {
+          "source": "handle",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-casual": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": true,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "10190523302201",
+      "title": "Children’s Summer New Arrival Boys’ Regular Striped Teddy Bear Short T-Shirt and Shorts Casual Sport Two-Piece Set",
+      "type": "type-set",
+      "current_tags": [],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "size-18-24m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-9-12m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-12-18m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-3-6m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "size-6-9m",
+          "category": "CAT-B",
+          "confidence": 0.95,
+          "source": "variant",
+          "rule": "variant_option"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "size-18-24m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-3-6m",
+        "size-6-9m",
+        "season-summer",
+        "gender-boy",
+        "style-casual"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.85
+        },
+        "size-18-24m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-9-12m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-12-18m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-3-6m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "size-6-9m": {
+          "source": "variant",
+          "rule": "variant_option",
+          "conf": 0.95
+        },
+        "season-summer": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "gender-boy": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-casual": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": false,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    },
+    {
+      "product_id": "10190523203897",
+      "title": "Boys Khaki Letter Print Half Zip Hooded 2Pcs Summer Set, Short Sleeve Hoodie + Shorts, Kids Casual Outfit 3-12Y",
+      "type": "type-set",
+      "current_tags": [],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "season-summer",
+        "gender-boy",
+        "style-casual"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.85
+        },
+        "season-summer": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "gender-boy": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-casual": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "NO_SIZE_FOUND",
+      "size_note": "",
+      "score": 80.0,
+      "has_yaml": false,
+      "verdict": "REVIEW_ONLY",
+      "reason": "score 80.0 < 85 minimum"
+    },
+    {
+      "product_id": "10190523138361",
+      "title": "Boys' summer white striped short-sleeved shorts with pockets, fashionable two-piece set, suitable for children over 3 years old",
+      "type": "type-set",
+      "current_tags": [],
+      "proposed_all": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "size-3y",
+          "category": "CAT-B",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "regex_narrow"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title_handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-striped",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "proposed_live_tags": [
+        "type-set",
+        "size-3y",
+        "season-summer",
+        "gender-boy",
+        "style-striped"
+      ],
+      "source_trace": {
+        "type-set": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.85
+        },
+        "size-3y": {
+          "source": "title",
+          "rule": "regex_narrow",
+          "conf": 0.88
+        },
+        "season-summer": {
+          "source": "title_handle",
+          "rule": "keyword",
+          "conf": 0.88
+        },
+        "gender-boy": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.9
+        },
+        "style-striped": {
+          "source": "title",
+          "rule": "keyword",
+          "conf": 0.82
+        }
+      },
+      "size_status": "OK",
+      "size_note": "",
+      "score": 100.0,
+      "has_yaml": false,
+      "verdict": "SAFE_FOR_PHASE7A",
+      "reason": ""
+    }
+  ]
+}
