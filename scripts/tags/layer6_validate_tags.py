@@ -79,6 +79,8 @@ WIDE_RANGE_PATS = [
     (r"\b0[\s\-]+(?:to[\s\-]+)?24(?:m|months?)?", "0-24m"),
     (r"\b3[\s\-]+18(?:m|months?)?", "3-18m"),
     (r"\b3[\s\-]+24(?:m|months?)?", "3-24m"),
+    # Bug3 fix: explicit pattern for "0-to-3-years-old" and similar spelled-out ranges
+    (r"\b0[\s\-]+to[\s\-]+[2-9][\s\-]years?(?:[\s\-]old)?\b", "0-to-Xy"),
     (r"\b0[\s\-]+(?:to[\s\-]+)?[3-9]\s*y(?:ear)?s?", "0-Xy"),
     (r"\b0[\s\-]+8\b", "0-8y"),
 ]
@@ -106,7 +108,7 @@ def _cat_of(t: dict) -> str | None:
 
 def _catb_exempt(product: dict) -> tuple[bool, str]:
     age_status = product.get("age_status", "")
-    is_reborn = product.get("product_group", "") == "reborn"
+    is_reborn = product.get("product_group", "") in ("reborn", "reborn_toys")
     if age_status in ("RANGE_TOO_BROAD", "DOLL_NO_AGE_APPLICABLE") or is_reborn:
         return True, age_status or "reborn"
     if product.get("yaml_gap") and age_status == "NO_AGE_FOUND":

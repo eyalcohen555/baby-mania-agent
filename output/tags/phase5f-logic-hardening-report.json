@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "phase": "Phase 5d — Rerun after Phase 5b/5c",
+    "date": "2026-05-04",
+    "total": 58
+  },
+  "group_distribution": {
+    "clothing_yaml": 20,
+    "shoes_yaml": 15,
+    "reborn_toys": 7,
+    "accessories": 1,
+    "yaml_gap": 10,
+    "edge_cases": 5
+  },
+  "status_summary": {
+    "NEEDS_REVIEW": 35,
+    "PASS": 23,
+    "BLOCKED": 0
+  },
+  "avg_quality_score": 80.6,
+  "pct_pass_or_needs_review": 100.0,
+  "blocked_pct": 0.0,
+  "stats": {
+    "total_proposed_tags": 323,
+    "total_blocked_tags": 5,
+    "range_too_broad": 5,
+    "no_age_found": 41,
+    "doll_no_age": 6,
+    "multi_age": 0,
+    "yaml_gap_impact": 17,
+    "phase5b_exempt": 1,
+    "sleep_soother_count": 1
+  },
+  "gate_fail_counts": {
+    "CATEGORY_COVERAGE": 33,
+    "QUALITY_SCORE": 18
+  },
+  "taxonomy_gaps": {},
+  "phase5d_pass_criteria": {
+    "no_shopify_live": true,
+    "no_forbidden_tags": true,
+    "no_type_reborn_on_sleep_soother": true,
+    "no_wide_range_age": true,
+    "native_tags_english_only": true,
+    "avg_score_gte_75": true,
+    "pct_pass_or_nr_gte_70": true,
+    "blocked_pct_lt_20": true
+  }
+}

@@ -84,6 +84,8 @@ WIDE_RANGE_PATS = [
     (r"\b0[\s\-]+(?:to[\s\-]+)?24(?:m|months?)?", "0-24m"),
     (r"\b3[\s\-]+18(?:m|months?)?", "3-18m"),
     (r"\b3[\s\-]+24(?:m|months?)?", "3-24m"),
+    # Bug3 fix: explicit pattern for "0-to-3-years-old" and similar spelled-out ranges
+    (r"\b0[\s\-]+to[\s\-]+[2-9][\s\-]years?(?:[\s\-]old)?\b", "0-to-Xy"),
     (r"\b0[\s\-]+(?:to[\s\-]+)?[3-9]\s*y(?:ear)?s?", "0-Xy"),
     (r"\b0[\s\-]+8\b", "0-8y"),
 ]
@@ -153,9 +155,14 @@ def classify_product(pid, title, handle, tags_raw):
     h = handle.lower()
     combined = t + " " + h
     is_reborn = any(w in combined for w in ["reborn", "doll", "silicone vinyl"])
+    # Bug7 fix: swimming ring / float / swim accessories are NOT reborn_toys
+    # Use word-boundary for "float" to avoid matching "floating"
+    is_swim_accessory = (
+        any(w in combined for w in ["swim ring", "swimming-ring", "swimming ring"])
+        or bool(re.search(r'\bfloat\b', combined))
+    )
     is_toy = any(w in combined for w in [
-        "noise machine", "sound player", "swim ring", "swimming-ring", "float",
-        "swimming ring", "white noise",
+        "noise machine", "sound player", "white noise",
     ])
     is_shoe = any(w in combined for w in [
         "shoe", "sandal", "sneaker", "boot", "walker", "slipper", "footwear",
@@ -163,13 +170,15 @@ def classify_product(pid, title, handle, tags_raw):
     ])
     if is_reborn or is_toy:
         return "reborn_toys"
+    if is_swim_accessory:
+        return "accessories"
     if is_shoe:
         return "shoes"
     return "clothing"
 
 
 def select_sample(phase0, yaml_ids):
-    clothing_yaml, shoes_yaml, reborn_toys, yaml_gap = [], [], [], []
+    clothing_yaml, shoes_yaml, reborn_toys, yaml_gap, accessories = [], [], [], [], []
     all_by_id = {str(p["id"]): p for p in phase0}
 
     for p in phase0:
@@ -180,6 +189,8 @@ def select_sample(phase0, yaml_ids):
         group = classify_product(pid, p.get("title", ""), p.get("handle", ""), p.get("tags", ""))
         if group == "reborn_toys":
             reborn_toys.append(pid)
+        elif group == "accessories":
+            accessories.append(pid)
         elif not has_yaml:
             yaml_gap.append(pid)
         elif group == "shoes":
@@ -190,7 +201,8 @@ def select_sample(phase0, yaml_ids):
     sample = {
         "clothing_yaml": clothing_yaml[:20],
         "shoes_yaml":    shoes_yaml[:15],
-        "reborn_toys":   reborn_toys[:10],
+        "reborn_toys":   reborn_toys[:9],
+        "accessories":   accessories[:1],
         "yaml_gap":      yaml_gap[:10],
     }
     used = set(pid for pids in sample.values() for pid in pids)
@@ -265,9 +277,24 @@ def extract_cat_a(title, handle, tags_list, body, yaml_desc):
         "baby-coat": "type-coat",
     }
 
+    # Bug5 fix: generic existing_tag can be overridden by more-specific handle/title keyword
+    GENERIC_SHOE_OVERRIDES = {
+        "baby-shoes": [
+            (["sneaker", "סניקרס"], "type-sneakers", 0.92),
+            (["sandal", "סנדל"],    "type-sandals",  0.92),
+            (["boot", "מגף"],       "type-boots",    0.92),
+        ]
+    }
     for et in tags_list:
-        if et.lower() in EXISTING_TAG_MAP:
-            return [_tag(EXISTING_TAG_MAP[et.lower()], "CAT-A", 0.88, "existing_tag", "tag_map")]
+        et_lower = et.lower()
+        if et_lower in EXISTING_TAG_MAP:
+            base_type = EXISTING_TAG_MAP[et_lower]
+            if et_lower in GENERIC_SHOE_OVERRIDES:
+                for kws, specific_type, specific_conf in GENERIC_SHOE_OVERRIDES[et_lower]:
+                    if any(kw in combined for kw in kws):
+                        src = "title" if any(kw in title.lower() for kw in kws) else "handle"
+                        return [_tag(specific_type, "CAT-A", specific_conf, src, "keyword_override")]
+            return [_tag(base_type, "CAT-A", 0.88, "existing_tag", "tag_map")]
 
     for kws, tag_val, conf in TYPE_KEYWORDS:
         if any(kw in combined for kw in kws):
@@ -337,10 +364,19 @@ def extract_cat_b(pid, title, handle, tags_list, body, yaml_desc, is_reborn):
         if re.search(pat, desc_text, re.IGNORECASE):
             return [_tag(tag_val, "CAT-B", 0.82, "yaml_desc", "regex_narrow_desc")], "OK", ""
 
+    # Bug1 fix: heuristics return confidence 0.75 < 0.85 minimum → NO_AGE_FOUND
+    # Bug2 fix: detect handle conflicts before applying heuristic
     if re.search(r"\bfirst[\s\-]walker\b", combined, re.IGNORECASE):
-        return [_tag("age-6-12m", "CAT-B", 0.75, "handle", "first_walker_heuristic")], "OK", ""
+        conflict = any(et.lower() in ("newborn-clothing", "newborn") for et in tags_list) or \
+                   re.search(r"\bnewborn\b|\b0[\s\-]3m\b|\binfant\b", combined, re.IGNORECASE)
+        if conflict:
+            return [], "NO_AGE_FOUND", "first_walker_conflict"
+        return [], "NO_AGE_FOUND", "first_walker_heuristic_below_threshold"
     if re.search(r"\btoddler\b", combined, re.IGNORECASE):
-        return [_tag("age-2-3y", "CAT-B", 0.75, "handle", "toddler_heuristic")], "OK", ""
+        conflict = re.search(r"\bnewborn\b|\binfant\b|\b0[\s\-]3m\b", combined, re.IGNORECASE)
+        if conflict:
+            return [], "NO_AGE_FOUND", "toddler_infant_conflict"
+        return [], "NO_AGE_FOUND", "toddler_heuristic_below_threshold"
 
     if re.search(r"\bnewborn\b", desc_text, re.IGNORECASE):
         return [_tag("age-newborn", "CAT-B", 0.72, "body", "newborn_desc")], "OK", ""
@@ -375,7 +411,13 @@ def extract_cat_c(title, handle, tags_list, body, yaml_desc, type_tag):
     ]
     for pat, val, conf in SEASON_PATS:
         if re.search(pat, combined, re.IGNORECASE):
-            src = "title" if re.search(pat, (title + " " + handle).lower()) else "existing_tag"
+            # Bug6 fix: distinguish title vs handle vs existing_tag correctly
+            if re.search(pat, title.lower(), re.IGNORECASE):
+                src = "title"
+            elif re.search(pat, handle.lower(), re.IGNORECASE):
+                src = "handle"
+            else:
+                src = "existing_tag"
             return [_tag(val, "CAT-C", conf, src, "keyword")]
 
     if type_tag in ("type-swimwear", "type-swimming-ring"):
@@ -429,7 +471,13 @@ def extract_cat_d(title, handle, tags_list, body, yaml_desc):
     results = []
     for pat, val, conf in FABRIC_PATS:
         if re.search(pat, combined, re.IGNORECASE):
-            src = "title" if re.search(pat, (title + " " + handle).lower()) else "existing_tag"
+            # Bug6 fix: distinguish title vs handle vs existing_tag correctly
+            if re.search(pat, title.lower(), re.IGNORECASE):
+                src = "title"
+            elif re.search(pat, handle.lower(), re.IGNORECASE):
+                src = "handle"
+            else:
+                src = "existing_tag"
             results.append(_tag(val, "CAT-D", conf, src, "keyword"))
             break
 
@@ -518,15 +566,37 @@ def extract_cat_f(title, handle, tags_list, body, yaml_desc):
             val, conf = TAG_GENDER[et.lower()]
             return [_tag(val, "CAT-F", conf, "existing_tag", "tag_map")]
 
+    # Bug4 fix: check title first (higher authority); add יוניסקס; detect boys+girls combo → neutral
+    NEUTRAL_PAT = r"\bunisex\b|\bneutral\b|\bניוטרלי\b|\bיוניסקס\b"
+    GIRL_PAT    = r"\bgirls?\b|\bבנות\b|\bbanot\b"
+    BOY_PAT     = r"\bboys?\b|\bבנים\b|\bbanim\b"
+
+    # Unisex in title overrides everything
+    if re.search(NEUTRAL_PAT, title, re.IGNORECASE):
+        return [_tag("gender-neutral", "CAT-F", 0.85, "title", "keyword")]
+
+    # boys+girls combo anywhere → neutral (handle "boys-girls" case)
+    has_girl = re.search(GIRL_PAT, all_text, re.IGNORECASE)
+    has_boy  = re.search(BOY_PAT,  all_text, re.IGNORECASE)
+    if has_girl and has_boy:
+        src = "title" if re.search(GIRL_PAT, title, re.IGNORECASE) or re.search(BOY_PAT, title, re.IGNORECASE) else "handle"
+        return [_tag("gender-neutral", "CAT-F", 0.85, src, "boys_girls_combo")]
+
+    # Single gender — title takes priority over handle
     GENDER_PATS = [
-        (r"\bgirls?\b|\bבנות\b|\bbanot\b",  "gender-girl",    0.90),
-        (r"\bboys?\b|\bבנים\b|\bbanim\b",    "gender-boy",     0.90),
-        (r"\bunisex\b|\bneutral\b|\bניוטרלי\b", "gender-neutral", 0.85),
+        (GIRL_PAT, "gender-girl", 0.90),
+        (BOY_PAT,  "gender-boy",  0.90),
+        (NEUTRAL_PAT, "gender-neutral", 0.85),
     ]
     for pat, val, conf in GENDER_PATS:
-        if re.search(pat, all_text, re.IGNORECASE):
-            src = "title" if re.search(pat, title.lower()) else ("handle" if re.search(pat, handle.lower()) else "existing_tag")
-            return [_tag(val, "CAT-F", conf, src, "keyword")]
+        if re.search(pat, title, re.IGNORECASE):
+            return [_tag(val, "CAT-F", conf, "title", "keyword")]
+    for pat, val, conf in GENDER_PATS:
+        if re.search(pat, handle, re.IGNORECASE):
+            return [_tag(val, "CAT-F", conf, "handle", "keyword")]
+    for pat, val, conf in GENDER_PATS:
+        if re.search(pat, " ".join(tags_list), re.IGNORECASE):
+            return [_tag(val, "CAT-F", conf, "existing_tag", "keyword")]
 
     return [_tag("gender-unknown", "CAT-F", 0.00, "category_default", "fallback")]
 
@@ -586,11 +656,12 @@ def tag_product(pid, title, handle, current_tags_str, body_html, product_type_ra
     yaml_desc = strip_html(str(yaml_data.get("description_raw", "")))
     combined_lower = (title + " " + handle).lower()
 
+    # Bug7b fix: accessories (swim ring etc.) are NOT reborn — only true reborn_toys group counts
     is_reborn = (
         "reborn" in combined_lower
         or "doll" in combined_lower
         or "silicone vinyl" in combined_lower
-        or product_group == "reborn_toys"
+        or (product_group == "reborn_toys")
     )
 
     proposed = []
