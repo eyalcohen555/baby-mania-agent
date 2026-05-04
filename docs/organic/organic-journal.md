@@ -20,6 +20,38 @@
 ---
 
 ## DATE: 2026-05-04
+## TASK: Layer 7 Phase 7B — Dry Run (374 מועמדים, 222 SAFE)
+## SCOPE: Layer 7 — dry run only — אין כתיבה ל-Shopify
+## WHAT CHANGED:
+- dry run רץ על 374 active products untapped (מתוך 393 total)
+- 222 SAFE_FOR_PHASE7B | 108 REVIEW_ONLY | 44 REJECT
+- תוקנו 3 misclassifications מ-handle: 2 נעליים + 1 אוברול שסומנו כ-dress בגלל "dress" בhandle
+- classifier: הוסרה בדיקת "dress" בhandle (היתה רחבה מדי) → נשמרו רק "smlat"/"smla"
+- recommended batch: 20 מוצרים מ-4 סוגים (5 dress + 5 bodysuit + 5 set + 5 romper)
+- verdict: READY_FOR_PHASE7B_T3_APPROVAL
+## FILES TOUCHED:
+- output/tags/phase7b-dryrun-candidates.json
+- output/tags/phase7b-dryrun-candidates.md
+- scripts/phase7b_dryrun.py
+- scripts/phase7b_build_report.py
+- scripts/phase7b_patch_report.py
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- pool: 222 SAFE candidates (type-set:97 | type-romper:56 | type-dress:27 | type-shoes:14 | type-bodysuit:9 | type-hat:7 | type-sandals:4 | type-swimwear:3 | type-coat:3 | other:2)
+- recommended batch ready for T3 approval: 9606691324217, 9895864369465, 9892557848889, 9179146256697, 9606694175033, 10190522908985, 9179165753657, 9179154612537, 9179152154937, 9179167129913, 10190522941753, 10190523203897, 10190523105593, 10190523236665, 10190522843449, 10029649101113, 9657091293497, 9687596728633, 10029649002809, 10029648970041
+- אין כתיבה ל-Shopify. Shopify live עדיין 19 מוצרים.
+## OPEN ISSUES:
+- EU shoe sizes — עדיין אין מיפוי מאושר (type-shoes/sandals = 18 blocked products)
+- handle-based type: 2 romper products בbatch עם handle-only source (לבדיקה T3)
+- Phase 8 collections: חסום — אחרי batch יהיו 39 (עוד 11 חסרים ל-50)
+## NEXT STEP:
+- Phase 7B live batch — לאחר T3 approval מאייל
+- batch 1: עד 20 מוצרים מ-4 סוגים (recommended list בדוח)
+- batch 2 לאחר מכן: עוד 11+ כדי להגיע ל-50+
+
+---
+
+## DATE: 2026-05-04
 ## TASK: Layer 7 Phase 7A — Batch 2 Live (4 מוצרים SAFE שנותרו)
 ## SCOPE: Layer 7 — Shopify live tag write — 4 products
 ## WHAT CHANGED:
