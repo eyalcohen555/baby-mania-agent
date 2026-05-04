@@ -17,9 +17,9 @@ ALLOWED_VALUES: dict[str, set[str]] = {
         "type-swimming-ring", "type-unknown",
     },
     "CAT-B": {
-        "age-0-3m", "age-3-6m", "age-6-12m", "age-12-18m",
-        "age-18-24m", "age-2-3y", "age-3-5y", "age-0-6m",
-        "age-newborn", "age-unknown",
+        "size-newborn", "size-0-3m", "size-3-6m", "size-6-9m", "size-9-12m",
+        "size-12-18m", "size-18-24m", "size-2y", "size-3y", "size-4y",
+        "size-unknown",
     },
     "CAT-C": {
         "season-summer", "season-winter", "season-spring-fall",
@@ -46,22 +46,23 @@ ALLOWED_VALUES: dict[str, set[str]] = {
     },
 }
 
-# Phase 5b rule: CAT-B (age) required only for clothing and shoes.
-# Toys, plush toys, reborn dolls, bath accessories, accessories → age not required.
+# Phase 5b rule: CAT-B (size) required only for clothing and shoes.
+# Toys, plush toys, reborn dolls, bath accessories, accessories → size not required.
 CLOTHING_SHOES_TYPES: set[str] = {
     "type-romper", "type-bodysuit", "type-dress", "type-set",
     "type-pants", "type-top", "type-coat", "type-swimwear", "type-hat",
     "type-shoes", "type-sandals", "type-sneakers", "type-boots",
 }
-NON_AGE_TYPES: set[str] = {
+NON_SIZE_TYPES: set[str] = {
     "type-toy", "type-plush-toy", "type-reborn-doll", "type-sleep-soother",
     "type-swimming-ring", "type-bath-accessory", "type-accessory", "type-unknown",
 }
+NON_AGE_TYPES = NON_SIZE_TYPES  # backward-compat alias
 
 ALL_ALLOWED: set[str] = set().union(*ALLOWED_VALUES.values())
 
 PREFIX_TO_CAT: dict[str, str] = {
-    "type": "CAT-A", "age": "CAT-B", "season": "CAT-C",
+    "type": "CAT-A", "size": "CAT-B", "season": "CAT-C",
     "fabric": "CAT-D", "occ": "CAT-E", "gender": "CAT-F", "style": "CAT-G",
 }
 
@@ -111,14 +112,14 @@ def _catb_exempt(product: dict) -> tuple[bool, str]:
     is_reborn = product.get("product_group", "") in ("reborn", "reborn_toys")
     if age_status in ("RANGE_TOO_BROAD", "DOLL_NO_AGE_APPLICABLE") or is_reborn:
         return True, age_status or "reborn"
-    if product.get("yaml_gap") and age_status == "NO_AGE_FOUND":
-        return True, "YAML_GAP+NO_AGE_FOUND"
+    if product.get("yaml_gap") and age_status in ("NO_SIZE_FOUND", "NO_AGE_FOUND"):
+        return True, "YAML_GAP+NO_SIZE_FOUND"
     # Phase 5b: non-clothing/shoes types are exempt from CAT-B requirement.
     proposed_type = next(
         (t["tag"] for t in product.get("proposed_tags", []) if t["tag"].startswith("type-")),
         None,
     )
-    if proposed_type and proposed_type in NON_AGE_TYPES:
+    if proposed_type and proposed_type in NON_SIZE_TYPES:
         return True, f"NON_CLOTHING_SHOES:{proposed_type}"
     return False, ""
 
@@ -200,12 +201,12 @@ def gate_no_forbidden_inference(product: dict) -> dict:
     issues = []
     if wide_match:
         for t in _get_all_tags(product):
-            if (_cat_of(t) == "CAT-B" or t["tag"].startswith("age-")) and \
+            if (_cat_of(t) == "CAT-B" or t["tag"].startswith("size-")) and \
                t.get("source") != "existing_tag_hebrew":
                 issues.append({
                     "tag": t["tag"],
                     "category": "CAT-B",
-                    "reason": f"age inferred despite wide-range pattern in product ({wide_match})",
+                    "reason": f"size inferred despite wide-range pattern in product ({wide_match})",
                 })
     return {"gate": "NO_FORBIDDEN_INFERENCE", "pass": not issues, "issues": issues}
 

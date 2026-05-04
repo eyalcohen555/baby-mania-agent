@@ -1,0 +1,7712 @@
+{
+  "meta": {
+    "phase": "Phase 5d — Rerun after Phase 5b/5c",
+    "date": "2026-05-04",
+    "total": 58
+  },
+  "products": [
+    {
+      "product_id": "9688932909369",
+      "title": "אוברול אריה חמוד דגם שמר",
+      "handle": "babys-little-lion-print-casual-long-sleeve-romper-hat-baby-mittens-toddler-infant-boys-bodysuit",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 71.1 < 75 threshold",
+              "score": 71.1
+            }
+          ],
+          "score": 71.1,
+          "note": ""
+        }
+      ],
+      "quality_score": 71.1,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9678573240633",
+      "title": "אוברול אריה מתוק דגם שמר",
+      "handle": "newborn-babys-cartoon-lion-pattern-long-sleeve-footie-toddler-infant-boys-comfy-footed-outdoor-romper",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-newborn",
+          "category": "CAT-B",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "regex_narrow"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 79.7,
+          "note": ""
+        }
+      ],
+      "quality_score": 79.7,
+      "final_status": "PASS",
+      "age_status": "OK",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "size-newborn",
+          "customer_label_he": "יילוד"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "product_id": "9688934940985",
+      "title": "אוברול בייבי  לתינוק – Baby Bear Cozy Set",
+      "handle": "baby-bear-cozy-set",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 59.1 < 75 threshold",
+              "score": 59.1
+            }
+          ],
+          "score": 59.1,
+          "note": ""
+        }
+      ],
+      "quality_score": 59.1,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10005779808569",
+      "title": "אוברול בייבי מניה דגם חן",
+      "handle": "autumn-baby-clothes-bodysuit-one-pieces-boys-girls-newborn-rompers-solid-color-100-cotton-0-24m-long-sleeve-loungewear-outfit",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "18-24M",
+        "3-6M6-9M",
+        "9-18M",
+        "אוברול",
+        "חורף",
+        "לבן",
+        "תינוקות 0-3Y"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "boys_girls_combo"
+        },
+        {
+          "tag": "style-modern",
+          "category": "CAT-G",
+          "confidence": 0.78,
+          "source": "body",
+          "rule": "keyword_desc"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "size-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-24m",
+          "rule": "size_hardening_v1"
+        }
+      ],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: RANGE_TOO_BROAD"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.4,
+          "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+        }
+      ],
+      "quality_score": 96.4,
+      "final_status": "PASS",
+      "age_status": "RANGE_TOO_BROAD",
+      "catb_exempt_reason": "RANGE_TOO_BROAD",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-winter",
+          "customer_label_he": "חורף"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-modern",
+          "customer_label_he": "מודרני"
+        }
+      ],
+      "notes": [
+        "RANGE_TOO_BROAD:0-24m"
+      ]
+    },
+    {
+      "product_id": "10026520445241",
+      "title": "אוברול בייבי מניה דגם חן",
+      "handle": "אוברול-בייבי-מניה-דגם-חן-מתנה",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.8,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "style-modern",
+          "category": "CAT-G",
+          "confidence": 0.78,
+          "source": "body",
+          "rule": "keyword_desc"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 78.8,
+          "note": ""
+        }
+      ],
+      "quality_score": 78.8,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "style-modern",
+          "customer_label_he": "מודרני"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9874906349881",
+      "title": "אוברול ג'ינס מתוק מבית בייבי מניה דגם זוהר",
+      "handle": "baby-summer-clothing-denim-rompers-toddler-newborn-baby-boys-girls-sleeveless-button-pocket-rompers-jumpsuits-casual-outfits",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "size-newborn",
+          "category": "CAT-B",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "regex_narrow"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-denim",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "boys_girls_combo"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.5,
+          "note": ""
+        }
+      ],
+      "quality_score": 96.5,
+      "final_status": "PASS",
+      "age_status": "OK",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "size-newborn",
+          "customer_label_he": "יילוד"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-denim",
+          "customer_label_he": "ג'ינס"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "product_id": "9858268430649",
+      "title": "אוברול גינס מהמם דגם רוית",
+      "handle": "summer-essential-lightweight-romper-for-baby-girls-casual-machine-washable-perfect-for-outdoor",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 74.6 < 75 threshold",
+              "score": 74.6
+            }
+          ],
+          "score": 74.6,
+          "note": ""
+        }
+      ],
+      "quality_score": 74.6,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9688660312377",
+      "title": "אוברול ג׳ינס דגם אתי",
+      "handle": "babys-stylish-ruffled-ripped-denim-long-sleeve-belted-romper-toddler-infant-girls-button-down-bodysuit-for-spring-fall-outdoor-wear",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-denim",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-modern",
+          "category": "CAT-G",
+          "confidence": 0.78,
+          "source": "body",
+          "rule": "keyword_desc"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 81.4,
+          "note": ""
+        }
+      ],
+      "quality_score": 81.4,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-spring-fall",
+          "customer_label_he": "אביב/סתיו"
+        },
+        {
+          "internal_tag": "fabric-denim",
+          "customer_label_he": "ג'ינס"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        },
+        {
+          "internal_tag": "style-modern",
+          "customer_label_he": "מודרני"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9895864205625",
+      "title": "אוברול ג’ינס יוניסקס לתינוקות דגם שלו",
+      "handle": "diimuu-baby-children-boys-clothes-rompers-toddler-kids-overalls-denim-pants-casual-jumpsuits-long-sleeve-fashion-trousers",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-denim",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 78.4,
+          "note": ""
+        }
+      ],
+      "quality_score": 78.4,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "fabric-denim",
+          "customer_label_he": "ג'ינס"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9688965087545",
+      "title": "אוברול דוב מתוק דגם אייל",
+      "handle": "round-neck-cute-bear-graphic-toddler-baby-long-sleeve-bodysuit-boys-onesie-suitable-for-indoor-and-outdoor-wear",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 63.6 < 75 threshold",
+              "score": 63.6
+            }
+          ],
+          "score": 63.6,
+          "note": ""
+        }
+      ],
+      "quality_score": 63.6,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9179176141113",
+      "title": "אוברול דובונים מכותנה - ליאור",
+      "handle": "אוברול-דובונים-ליאור",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 59.1 < 75 threshold",
+              "score": 59.1
+            }
+          ],
+          "score": 59.1,
+          "note": ""
+        }
+      ],
+      "quality_score": 59.1,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9719189635385",
+      "title": "אוברול דובי אם רגלית דגם אוריאל",
+      "handle": "2-picec-baby-four-seasons-tie-feet-bodysuit-for-boys-little-bear-creative-baby-cute-bodysuit-made-of-pure-cotton-soft-comforta",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-teddy",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 78.8,
+          "note": ""
+        }
+      ],
+      "quality_score": 78.8,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-teddy",
+          "customer_label_he": "דובי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9717957525817",
+      "title": "אוברול דובי דגם דניאל",
+      "handle": "0-18m-cute-baby-girls-boys-rompers-infant-clothes-bear-print-crew-neck-long-sleeve-toddler-fall-bodysuits-jumpsuits-with-hat",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "boys_girls_combo"
+        },
+        {
+          "tag": "style-teddy",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "size-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-18m",
+          "rule": "size_hardening_v1"
+        }
+      ],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: RANGE_TOO_BROAD"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 89.5,
+          "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+        }
+      ],
+      "quality_score": 89.5,
+      "final_status": "PASS",
+      "age_status": "RANGE_TOO_BROAD",
+      "catb_exempt_reason": "RANGE_TOO_BROAD",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-spring-fall",
+          "customer_label_he": "אביב/סתיו"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-teddy",
+          "customer_label_he": "דובי"
+        }
+      ],
+      "notes": [
+        "RANGE_TOO_BROAD:0-18m"
+      ]
+    },
+    {
+      "product_id": "9864947827001",
+      "title": "אוברול חגיגי דגם אנה",
+      "handle": "1pc-cute-summer-striped-romper-for-baby-girl-v-neck-short-sleeve-adjustable-strap-dress-with-bow-detail-lightweight-breathable-fabric-perfect-for-outdoor-play-parties-and-casual-outings-casual-baby-clothes-playfu",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-striped",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 74.8 < 75 threshold",
+              "score": 74.8
+            }
+          ],
+          "score": 74.8,
+          "note": ""
+        }
+      ],
+      "quality_score": 74.8,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        },
+        {
+          "internal_tag": "style-striped",
+          "customer_label_he": "פסים"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10005779841337",
+      "title": "אוברול חורפי לתינוקות דגם אנגל",
+      "handle": "aynigiell-0-12m-cartoon-newborn-bodysuit-warm-romperssoft-newborn-baby-clothes-flannel-autumn-winter-baby-boys-girls-jumpsuit",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "boys_girls_combo"
+        },
+        {
+          "tag": "style-european",
+          "category": "CAT-G",
+          "confidence": 0.78,
+          "source": "body",
+          "rule": "keyword_desc"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "size-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-12m",
+          "rule": "size_hardening_v1"
+        }
+      ],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: RANGE_TOO_BROAD"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.0,
+          "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+        }
+      ],
+      "quality_score": 96.0,
+      "final_status": "PASS",
+      "age_status": "RANGE_TOO_BROAD",
+      "catb_exempt_reason": "RANGE_TOO_BROAD",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-winter",
+          "customer_label_he": "חורף"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-european",
+          "customer_label_he": "אירופאי"
+        }
+      ],
+      "notes": [
+        "RANGE_TOO_BROAD:0-12m"
+      ]
+    },
+    {
+      "product_id": "9179161231673",
+      "title": "אוברול כותנה קיצי - נועה",
+      "handle": "אוברול-פשתן-נועה",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 67.9 < 75 threshold",
+              "score": 67.9
+            }
+          ],
+          "score": 67.9,
+          "note": ""
+        }
+      ],
+      "quality_score": 67.9,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9687579033913",
+      "title": "אוברול לבבות דגם הילה",
+      "handle": "babys-cartoon-heart-full-print-ruffle-decor-ribbed-long-sleeve-cotton-romper-toddler-infant-girls-bodysuit-hairband-suitable-for-fall-winter-outdoor-activities",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 75.0,
+          "note": ""
+        }
+      ],
+      "quality_score": 75.0,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-winter",
+          "customer_label_he": "חורף"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10005779743033",
+      "title": "אוברול לתינוקות דגם סטייסי",
+      "handle": "2024-autumn-baby-romper-solid-color-bear-jumpsuit-cotton-spring-newborn-one-pieces-clothing-for-boys-girls-infant-onesie-0-18m",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "boys_girls_combo"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "size-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-18m",
+          "rule": "size_hardening_v1"
+        }
+      ],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: RANGE_TOO_BROAD"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 89.7,
+          "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+        }
+      ],
+      "quality_score": 89.7,
+      "final_status": "PASS",
+      "age_status": "RANGE_TOO_BROAD",
+      "catb_exempt_reason": "RANGE_TOO_BROAD",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-spring-fall",
+          "customer_label_he": "אביב/סתיו"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        }
+      ],
+      "notes": [
+        "RANGE_TOO_BROAD:0-18m"
+      ]
+    },
+    {
+      "product_id": "9096607138105",
+      "title": "אוברול מכופתרת",
+      "handle": "אוברול-מכופתרת",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 72.4 < 75 threshold",
+              "score": 72.4
+            }
+          ],
+          "score": 72.4,
+          "note": ""
+        }
+      ],
+      "quality_score": 72.4,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9179137933625",
+      "title": "אוברול מתוק מכותנה מלאה ללא כתפיות - נויה",
+      "handle": "אוברול-מתוק-מכותנה-מלאה-ללא-כתפיות-נויה",
+      "product_group": "clothing_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "Copy AI"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 59.2 < 75 threshold",
+              "score": 59.2
+            }
+          ],
+          "score": 59.2,
+          "note": ""
+        }
+      ],
+      "quality_score": 59.2,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9615375565113",
+      "title": "נעל אלגנטית צעד ראשון לבנות",
+      "handle": "girls-mary-jane-shoes-children-solid-color-bow-round-toe-bow-2024-new-kids-fashion-soft-moccasin-shoes-baby-first-walker-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-first-step",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 80.4,
+          "note": ""
+        }
+      ],
+      "quality_score": 80.4,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-shoes",
+          "customer_label_he": "נעליים"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-special-event",
+          "customer_label_he": "אירוע מיוחד"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "occ-first-step",
+          "customer_label_he": "צעד ראשון"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        },
+        {
+          "internal_tag": "style-elegant",
+          "customer_label_he": "אלגנטי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9607363232057",
+      "title": "נעל הלו קיטי עם אורות לילדות",
+      "handle": "2024-summer-baby-led-light-sandals-for-girls-cute-hello-kitty-childrens-casual-shoes-anti-slip-kids-beach-shoes-outdoor-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "kids-clothing",
+        "neutral-baby-outfit"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sandals",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 82.5,
+          "note": ""
+        }
+      ],
+      "quality_score": 82.5,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sandals",
+          "customer_label_he": "סנדלים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9179143569721",
+      "title": "נעל סנדל צעד ראשון מונעת החלקה – גמישה בטוחה ונוחה לתינוק דגם רוני",
+      "handle": "סנדל-אופנתי-נח-מונע-החלקה-רוני",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "Copy AI"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sandals",
+          "category": "CAT-A",
+          "confidence": 0.95,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-first-step",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 60.9 < 75 threshold",
+              "score": 60.9
+            }
+          ],
+          "score": 60.9,
+          "note": ""
+        }
+      ],
+      "quality_score": 60.9,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sandals",
+          "customer_label_he": "סנדלים"
+        },
+        {
+          "internal_tag": "occ-first-step",
+          "customer_label_he": "צעד ראשון"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9615376417081",
+      "title": "נעל צעד ראשון אלגנטית לבנים",
+      "handle": "baby-boy-shoes-new-pu-leather-casual-sneakers-anti-slip-infant-sport-first-walkers-christening",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "boys-clothing",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sneakers",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-first-step",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 80.5,
+          "note": ""
+        }
+      ],
+      "quality_score": 80.5,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sneakers",
+          "customer_label_he": "סניקרס"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-special-event",
+          "customer_label_he": "אירוע מיוחד"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "occ-first-step",
+          "customer_label_he": "צעד ראשון"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-elegant",
+          "customer_label_he": "אלגנטי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9606764462393",
+      "title": "נעל קז'ואל במיוחד לתינוקות",
+      "handle": "baby-toddler-shoes-four-seasons-shoes-0-to-3-years-old-baby-shoes-soft-bottom-non-slip-girls-boys-mesh-breathable-single-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [
+        {
+          "tag": "size-*",
+          "category": "CAT-B",
+          "reason": "RANGE_TOO_BROAD:0-to-Xy",
+          "rule": "size_hardening_v1"
+        }
+      ],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: RANGE_TOO_BROAD"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 94.4,
+          "note": "CAT-B exempt (RANGE_TOO_BROAD): counted as present"
+        }
+      ],
+      "quality_score": 94.4,
+      "final_status": "PASS",
+      "age_status": "RANGE_TOO_BROAD",
+      "catb_exempt_reason": "RANGE_TOO_BROAD",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-shoes",
+          "customer_label_he": "נעליים"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "RANGE_TOO_BROAD:0-to-Xy"
+      ]
+    },
+    {
+      "product_id": "9606764298553",
+      "title": "נעלי אופנה קז'ואל מונעות החלקה לתינוקות",
+      "handle": "childrens-sneakers-kids-fashion-design-white-non-slip-casual-shoes-for-boys-girls-hook-breathable-sneakers-toddler-outdoor-shoe",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sneakers",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 79.5,
+          "note": ""
+        }
+      ],
+      "quality_score": 79.5,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sneakers",
+          "customer_label_he": "סניקרס"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9607365067065",
+      "title": "נעלי אורות דינוזאור לתינוק",
+      "handle": "tennis-shoes-led-children-trainer-cartoon-boy-casual-sneaker-for-boy-kid-shoe-girl-mesh-breathable-shoe-baby-illuminated-shoe",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sneakers",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 79.5,
+          "note": ""
+        }
+      ],
+      "quality_score": 79.5,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sneakers",
+          "customer_label_he": "סניקרס"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9606764429625",
+      "title": "נעלי בובה חגיגיות לבנות",
+      "handle": "2023-baby-girls-walking-shoes-kids-pu-leather-big-flower-summer-princess-non-slip-shoes-party-wedding-baby-girls-dance-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "newborn-clothing",
+        "special-occasion-baby"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-baby-shower",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-special-event",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-floral",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 82.6,
+          "note": ""
+        }
+      ],
+      "quality_score": 82.6,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-shoes",
+          "customer_label_he": "נעליים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-baby-shower",
+          "customer_label_he": "מקלחת תינוק"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "occ-special-event",
+          "customer_label_he": "אירוע מיוחד"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        },
+        {
+          "internal_tag": "style-floral",
+          "customer_label_he": "פרחוני"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9179135017273",
+      "title": "נעלי בובה נסיכותיות דגם פרפר, נגד החלקה - נויה",
+      "handle": "נעלי-בובה-פרפר-נגד-החלקה-נויה",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "Copy AI"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.95,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 59.4 < 75 threshold",
+              "score": 59.4
+            }
+          ],
+          "score": 59.4,
+          "note": ""
+        }
+      ],
+      "quality_score": 59.4,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-shoes",
+          "customer_label_he": "נעליים"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9607363330361",
+      "title": "נעלי גומי כריש - דויד",
+      "handle": "three-dimensional-childrens-shark-hole-shoes-summer-home-baby-non-slip-platform-sandals-cute-cartoon-soft-sole-kids-slippe",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sandals",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 76.1,
+          "note": ""
+        }
+      ],
+      "quality_score": 76.1,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sandals",
+          "customer_label_he": "סנדלים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9794582708537",
+      "title": "נעלי דיסני אלזה עם מנורות לד – נעליים מוארות לבנות בעיצוב אלזה",
+      "handle": "disney-girls-casual-shoes-led-lights-mesh-breathable-childrens-sports-princess-elsa-pink-purple-shoes-sneakers-size-22-35",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sneakers",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 79.6,
+          "note": ""
+        }
+      ],
+      "quality_score": 79.6,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sneakers",
+          "customer_label_he": "סניקרס"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9888961462585",
+      "title": "נעלי חורף לילדים – חימום מושלם בכל צעד",
+      "handle": "winter-kids-shoes-boys-non-slip-sport-shoes-outdoor-snow-ankle-boots-waterproof-warm-sneakers-child-high-top-cotton-casual-shoes",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "boys-clothing",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "winter-baby-wear"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sneakers",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 82.6,
+          "note": ""
+        }
+      ],
+      "quality_score": 82.6,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sneakers",
+          "customer_label_he": "סניקרס"
+        },
+        {
+          "internal_tag": "season-winter",
+          "customer_label_he": "חורף"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9888961528121",
+      "title": "נעלי ילדים מונעות החלקה – סגירה חכמה ללא שרוכים",
+      "handle": "no-tie-knob-parent-child-daddy-shoes-womens-new-autumn-thick-soled-running-childrens-sports-casual-shoes-for-girls-and-boys",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "kids-clothing",
+        "neutral-baby-outfit"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-shoes",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 82.2,
+          "note": ""
+        }
+      ],
+      "quality_score": 82.2,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-shoes",
+          "customer_label_he": "נעליים"
+        },
+        {
+          "internal_tag": "season-spring-fall",
+          "customer_label_he": "אביב/סתיו"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9888961560889",
+      "title": "נעלי ילדים נסגרות בקלות דגם סתיו",
+      "handle": "children-shoes-girl-shoes-kids-sneakers-pu-leather-sports-tennis-baby-boy-shoes-school-running-casual-sneaker-walking-shoe",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "autumn-baby-wear",
+        "baby-gift",
+        "baby-shoes",
+        "kids-clothing",
+        "neutral-baby-outfit"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sneakers",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-spring-fall",
+          "category": "CAT-C",
+          "confidence": 0.85,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 75.7,
+          "note": ""
+        }
+      ],
+      "quality_score": 75.7,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sneakers",
+          "customer_label_he": "סניקרס"
+        },
+        {
+          "internal_tag": "season-spring-fall",
+          "customer_label_he": "אביב/סתיו"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9607363428665",
+      "title": "נעלי ילדים עם אורות פפיון",
+      "handle": "children-glowing-sneakers-kid-princess-bow-for-girls-led-shoes-cute-baby-sneakers-with-light-shoes-size-21-30",
+      "product_group": "shoes_yaml",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-shoes",
+        "everyday-baby-wear",
+        "kids-clothing",
+        "neutral-baby-outfit"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-sneakers",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword_override"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 72.6 < 75 threshold",
+              "score": 72.6
+            }
+          ],
+          "score": 72.6,
+          "note": ""
+        }
+      ],
+      "quality_score": 72.6,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sneakers",
+          "customer_label_he": "סניקרס"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9587715244345",
+      "title": "בובה נושמת פיל ועוד חיות מחמד",
+      "handle": "4-modes-baby-breathing-soothing-elephant-plush-doll-toy-sleeping-companion-music-and-light-doll-sensory-stuffed-toy-kids-gift",
+      "product_group": "reborn_toys",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-sleep-soother",
+          "category": "CAT-A",
+          "confidence": 0.92,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-winter",
+          "category": "CAT-C",
+          "confidence": 0.78,
+          "source": "handle",
+          "rule": "material_inference"
+        },
+        {
+          "tag": "fabric-fleece",
+          "category": "CAT-D",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-sleep",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "occ-calming",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "style-animal-print",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 95.1,
+          "note": "CAT-B exempt (NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 95.1,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-sleep-soother",
+          "customer_label_he": "מוצרי שינה והרגעה"
+        },
+        {
+          "internal_tag": "season-winter",
+          "customer_label_he": "חורף"
+        },
+        {
+          "internal_tag": "fabric-fleece",
+          "customer_label_he": "פליז"
+        },
+        {
+          "internal_tag": "occ-sleep",
+          "customer_label_he": "שינה"
+        },
+        {
+          "internal_tag": "occ-calming",
+          "customer_label_he": "הרגעה"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "style-animal-print",
+          "customer_label_he": "הדפס חיות"
+        }
+      ],
+      "notes": [
+        "Phase5c: type-sleep-soother, is_reborn overridden to False",
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9690182385977",
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "bzdoll-55-cm-22-inch-reborn-dolls-realistic-full-silicone-baby-bebe-newborn-girl-doll-princess-toddler-toy-gift",
+      "product_group": "reborn_toys",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-silicone",
+          "category": "CAT-D",
+          "confidence": 0.95,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-calming",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 95.3,
+          "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+        }
+      ],
+      "quality_score": 95.3,
+      "final_status": "PASS",
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "catb_exempt_reason": "DOLL_NO_AGE_APPLICABLE",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-reborn-doll",
+          "customer_label_he": "בובות ריבורן"
+        },
+        {
+          "internal_tag": "fabric-silicone",
+          "customer_label_he": "סיליקון"
+        },
+        {
+          "internal_tag": "occ-calming",
+          "customer_label_he": "הרגעה"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        }
+      ],
+      "notes": [
+        "age not applicable (reborn/doll)"
+      ]
+    },
+    {
+      "product_id": "9690182451513",
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "50cm-realistic-finished-bebe-reborn-silicone-vinyl-cloth-body-doll-loulou-handmade-toy-for-girls-christmas-gift",
+      "product_group": "reborn_toys",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-silicone",
+          "category": "CAT-D",
+          "confidence": 0.95,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-calming",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 95.3,
+          "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+        }
+      ],
+      "quality_score": 95.3,
+      "final_status": "PASS",
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "catb_exempt_reason": "DOLL_NO_AGE_APPLICABLE",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-reborn-doll",
+          "customer_label_he": "בובות ריבורן"
+        },
+        {
+          "internal_tag": "fabric-silicone",
+          "customer_label_he": "סיליקון"
+        },
+        {
+          "internal_tag": "occ-calming",
+          "customer_label_he": "הרגעה"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        }
+      ],
+      "notes": [
+        "age not applicable (reborn/doll)"
+      ]
+    },
+    {
+      "product_id": "9690247627065",
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "npk-19inch-already-painted-finished-reborn-baby-doll-levi-awake-newborn-baby-size-3d-skin-visible-veins-collectible-art-doll",
+      "product_group": "reborn_toys",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-calming",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 76.1,
+          "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+        }
+      ],
+      "quality_score": 76.1,
+      "final_status": "PASS",
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "catb_exempt_reason": "DOLL_NO_AGE_APPLICABLE",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-reborn-doll",
+          "customer_label_he": "בובות ריבורן"
+        },
+        {
+          "internal_tag": "occ-calming",
+          "customer_label_he": "הרגעה"
+        }
+      ],
+      "notes": [
+        "age not applicable (reborn/doll)"
+      ]
+    },
+    {
+      "product_id": "9690247659833",
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "50cm-full-vinyl-body-girl-waterproof-reborn-doll-maddie-hand-detailed-painted-with-visible-veins-lifelike-3d-skin-tone-toy-gift",
+      "product_group": "reborn_toys",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-calming",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 87.9,
+          "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+        }
+      ],
+      "quality_score": 87.9,
+      "final_status": "PASS",
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "catb_exempt_reason": "DOLL_NO_AGE_APPLICABLE",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-reborn-doll",
+          "customer_label_he": "בובות ריבורן"
+        },
+        {
+          "internal_tag": "occ-calming",
+          "customer_label_he": "הרגעה"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        }
+      ],
+      "notes": [
+        "age not applicable (reborn/doll)"
+      ]
+    },
+    {
+      "product_id": "9689589383481",
+      "title": "בובת ריבורן אמיתית – מגע מציאותי שמפתח רגישות ואהבה אצל ילדים מבית בייבי מניה",
+      "handle": "19-inches-levi-reborn-baby-realistic-vinyl-body-alive-lol-bebe-newborn-finished-hair-painted-doll-children-girls-gift-dolls",
+      "product_group": "reborn_toys",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-silicone",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-calming",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 94.9,
+          "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+        }
+      ],
+      "quality_score": 94.9,
+      "final_status": "PASS",
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "catb_exempt_reason": "DOLL_NO_AGE_APPLICABLE",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-reborn-doll",
+          "customer_label_he": "בובות ריבורן"
+        },
+        {
+          "internal_tag": "fabric-silicone",
+          "customer_label_he": "סיליקון"
+        },
+        {
+          "internal_tag": "occ-calming",
+          "customer_label_he": "הרגעה"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        }
+      ],
+      "notes": [
+        "age not applicable (reborn/doll)"
+      ]
+    },
+    {
+      "product_id": "9690182418745",
+      "title": "בובת ריבורן אמיתת מבית בייבי מניה",
+      "handle": "bzdoll-realistic-60cm-24inch-soft-silicone-reborn-baby-doll-with-3d-painting-skin-and-vascular-vein-handmade-girl-birthday-gift",
+      "product_group": "reborn_toys",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-reborn-doll",
+          "category": "CAT-A",
+          "confidence": 0.99,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-silicone",
+          "category": "CAT-D",
+          "confidence": 0.95,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-calming",
+          "category": "CAT-E",
+          "confidence": 0.9,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.85,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-girl",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "handle",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: DOLL_NO_AGE_APPLICABLE"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 95.3,
+          "note": "CAT-B exempt (DOLL_NO_AGE_APPLICABLE): counted as present"
+        }
+      ],
+      "quality_score": 95.3,
+      "final_status": "PASS",
+      "age_status": "DOLL_NO_AGE_APPLICABLE",
+      "catb_exempt_reason": "DOLL_NO_AGE_APPLICABLE",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-reborn-doll",
+          "customer_label_he": "בובות ריבורן"
+        },
+        {
+          "internal_tag": "fabric-silicone",
+          "customer_label_he": "סיליקון"
+        },
+        {
+          "internal_tag": "occ-calming",
+          "customer_label_he": "הרגעה"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "gender-girl",
+          "customer_label_he": "בנות"
+        }
+      ],
+      "notes": [
+        "age not applicable (reborn/doll)"
+      ]
+    },
+    {
+      "product_id": "9838580662585",
+      "title": "מצוף שחייה לתינוקות עם גגון וחגורות ורצועה – דגם משה",
+      "handle": "baby-swimming-ring-with-canopy-inflatable-baby-float-swimming-pool-children-accessories-bath-round-summer-toy",
+      "product_group": "accessories",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-swimming-ring",
+          "category": "CAT-A",
+          "confidence": 0.95,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "handle",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-beach",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "type_default",
+          "rule": "type_inference"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: NON_CLOTHING_SHOES:type-swimming-ring"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 80.2,
+          "note": "CAT-B exempt (NON_CLOTHING_SHOES:type-swimming-ring): counted as present"
+        }
+      ],
+      "quality_score": 80.2,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "Phase5b:type-swimming-ring",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-swimming-ring",
+          "customer_label_he": "מצופי שחייה"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "occ-beach",
+          "customer_label_he": "חוף/בריכה"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND",
+        "CAT-B exempt (Phase5b): type-swimming-ring"
+      ]
+    },
+    {
+      "product_id": "9839252406585",
+      "title": "30 CM Cute Teddy Bear Hide and Seek Animated Stuffed Animal Talking Bear Shy Bear Best Birthday Gift for",
+      "handle": "30-cm-cute-teddy-bear-hide-and-seek-animated-stuffed-animal-talking-bear-shy-bear-best-birthday-gift-for",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-toy",
+          "category": "CAT-A",
+          "confidence": 0.8,
+          "source": "body",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-fleece",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "style-teddy",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 91.1,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 91.1,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-toy",
+          "customer_label_he": "צעצועים"
+        },
+        {
+          "internal_tag": "fabric-fleece",
+          "customer_label_he": "פליז"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "style-teddy",
+          "customer_label_he": "דובי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10190523203897",
+      "title": "Boys Khaki Letter Print Half Zip Hooded 2Pcs Summer Set, Short Sleeve Hoodie + Shorts, Kids Casual Outfit 3-12Y",
+      "handle": "boys-khaki-letter-print-half-zip-hooded-2pcs-summer-set-short-sleeve-hoodie-shorts-kids-casual-outfit-3-12y",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-knit",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.78,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.8,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 96.8,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-set",
+          "customer_label_he": "סטים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-knit",
+          "customer_label_he": "סריג"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10190523105593",
+      "title": "Boys' Summer Knitted Set, Contrast Color Short-Sleeved With Pocket and Shorts Clothes Sets, Children Comfort Soft 2-Piece Set",
+      "handle": "boys-summer-knitted-set-contrast-color-short-sleeved-with-pocket-and-shorts-clothes-sets-children-comfort-soft-2-piece-set",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-knit",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.78,
+          "source": "body",
+          "rule": "keyword_desc"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.1,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 96.1,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-set",
+          "customer_label_he": "סטים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-knit",
+          "customer_label_he": "סריג"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10190523138361",
+      "title": "Boys' summer white striped short-sleeved shorts with pockets, fashionable two-piece set, suitable for children over 3 years old",
+      "handle": "boys-summer-white-striped-short-sleeved-shorts-with-pockets-fashionable-two-piece-set-suitable-for-children-over-3-years-old",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "size-3y",
+          "category": "CAT-B",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "regex_narrow"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-knit",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-striped",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.5,
+          "note": ""
+        }
+      ],
+      "quality_score": 96.5,
+      "final_status": "PASS",
+      "age_status": "OK",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-set",
+          "customer_label_he": "סטים"
+        },
+        {
+          "internal_tag": "size-3y",
+          "customer_label_he": "מידה 3 שנים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-knit",
+          "customer_label_he": "סריג"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-striped",
+          "customer_label_he": "פסים"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "product_id": "10190523302201",
+      "title": "Children’s Summer New Arrival Boys’ Regular Striped Teddy Bear Short T-Shirt and Shorts Casual Sport Two-Piece Set",
+      "handle": "children-s-summer-new-arrival-boys-regular-striped-teddy-bear-short-t-shirt-and-shorts-casual-sport-two-piece-set",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-knit",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-striped",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.3,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 96.3,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-set",
+          "customer_label_he": "סטים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-knit",
+          "customer_label_he": "סריג"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-striped",
+          "customer_label_he": "פסים"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10190523236665",
+      "title": "Infant Baby Boys Short Sets Patchwork Sleeveless Vest Tops with Pocket + Shorts 2pcs Summer Outfits for Toddler 6-36M",
+      "handle": "infant-baby-boys-short-sets-patchwork-sleeveless-vest-tops-with-pocket-shorts-2pcs-summer-outfits-for-toddler-6-36m",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.78,
+          "source": "body",
+          "rule": "keyword_desc"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.1,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 96.1,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-set",
+          "customer_label_he": "סטים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10190522843449",
+      "title": "Kids Baby Boy Summer Clothes Sets Casual Letters Short Sleeve O Neck T-Shirt and Elastic Band Shorts Infants Boys Activewear",
+      "handle": "kids-baby-boy-summer-clothes-sets-casual-letters-short-sleeve-o-neck-t-shirt-and-elastic-band-shorts-infants-boys-activewear",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-set",
+          "category": "CAT-A",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-boy",
+          "category": "CAT-F",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "style-casual",
+          "category": "CAT-G",
+          "confidence": 0.8,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.2,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 96.2,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-set",
+          "customer_label_he": "סטים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-boy",
+          "customer_label_he": "בנים"
+        },
+        {
+          "internal_tag": "style-casual",
+          "customer_label_he": "קז'ואל"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10190522908985",
+      "title": "Summer Toddler Kids Stripe Bodysuit Boys Loose Turndown Collar Jumpsuit Girls Baby Thin Crawlwear Onesie Clothes One Piece",
+      "handle": "summer-toddler-kids-stripe-bodysuit-boys-loose-turndown-collar-jumpsuit-girls-baby-thin-crawlwear-onesie-clothes-one-piece",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-summer",
+          "category": "CAT-C",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "fabric-cotton",
+          "category": "CAT-D",
+          "confidence": 0.82,
+          "source": "body",
+          "rule": "keyword_desc"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "boys_girls_combo"
+        },
+        {
+          "tag": "style-striped",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 96.3,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 96.3,
+      "final_status": "PASS",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "season-summer",
+          "customer_label_he": "קיץ"
+        },
+        {
+          "internal_tag": "fabric-cotton",
+          "customer_label_he": "כותנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        },
+        {
+          "internal_tag": "style-striped",
+          "customer_label_he": "פסים"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10099941179705",
+      "title": "Tempio™ — מדחום חכם למקלחת בטוחה",
+      "handle": "led-display-household-water-shower-thermometer-5-85-flow-self-powered-water-thermometer-monitoring-baby-care-energy-smart-meter",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-unknown",
+          "category": "CAT-A",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 69.7 < 75 threshold",
+              "score": 69.7
+            }
+          ],
+          "score": 69.7,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 69.7,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "10129539039545",
+      "title": "Tempio™ — מדחום חכם למקלחת בטוחה (Copy)",
+      "handle": "tempio™-מדחום-חכם-למקלחת-בטוחה-copy",
+      "product_group": "yaml_gap",
+      "has_yaml": false,
+      "yaml_gap": true,
+      "current_tags": [],
+      "proposed_tags": [
+        {
+          "tag": "type-unknown",
+          "category": "CAT-A",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": true,
+          "issues": [],
+          "note": "CAT-B exempt: YAML_GAP+NO_SIZE_FOUND"
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 69.7 < 75 threshold",
+              "score": 69.7
+            }
+          ],
+          "score": 69.7,
+          "note": "CAT-B exempt (YAML_GAP+NO_SIZE_FOUND): counted as present"
+        }
+      ],
+      "quality_score": 69.7,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "YAML_GAP",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9096607072569",
+      "title": "אוברול סרבל ארוך",
+      "handle": "אוברול-סרבל-ארוך",
+      "product_group": "edge_cases",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-gift",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "gender-neutral",
+          "category": "CAT-F",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 72.4 < 75 threshold",
+              "score": 72.4
+            }
+          ],
+          "score": 72.4,
+          "note": ""
+        }
+      ],
+      "quality_score": 72.4,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "occ-gift",
+          "customer_label_he": "מתנה"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "gender-neutral",
+          "customer_label_he": "ניוטרלי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9657036374329",
+      "title": "אוברול פליז דובי לתינוק – Teddy Cozy Suit",
+      "handle": "overol-dubi-tinok",
+      "product_group": "edge_cases",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-fleece",
+          "category": "CAT-D",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "style-teddy",
+          "category": "CAT-G",
+          "confidence": 0.85,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": true,
+          "issues": [],
+          "score": 75.7,
+          "note": ""
+        }
+      ],
+      "quality_score": 75.7,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "fabric-fleece",
+          "customer_label_he": "פליז"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "style-teddy",
+          "customer_label_he": "דובי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9179158479161",
+      "title": "אוברול פשתן וכותנה וינטג׳ - קייגו",
+      "handle": "אוברול-וינטג-קייגו",
+      "product_group": "edge_cases",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-romper",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "existing_tag",
+          "rule": "tag_map"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "fabric-linen",
+          "category": "CAT-D",
+          "confidence": 0.9,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 67.9 < 75 threshold",
+              "score": 67.9
+            }
+          ],
+          "score": 67.9,
+          "note": ""
+        }
+      ],
+      "quality_score": 67.9,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-romper",
+          "customer_label_he": "אוברולים"
+        },
+        {
+          "internal_tag": "fabric-linen",
+          "customer_label_he": "פשתן"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9179152482617",
+      "title": "בגד גוף אלגנטי - מייקל",
+      "handle": "בגד-גוף-אלגנטי-מייקל",
+      "product_group": "edge_cases",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "Copy AI"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-bodysuit",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "style-elegant",
+          "category": "CAT-G",
+          "confidence": 0.82,
+          "source": "title",
+          "rule": "keyword"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 67.5 < 75 threshold",
+              "score": 67.5
+            }
+          ],
+          "score": 67.5,
+          "note": ""
+        }
+      ],
+      "quality_score": 67.5,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-bodysuit",
+          "customer_label_he": "בגד גוף"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        },
+        {
+          "internal_tag": "style-elegant",
+          "customer_label_he": "אלגנטי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    },
+    {
+      "product_id": "9179154612537",
+      "title": "בגד גוף כיווצים - גאיה",
+      "handle": "בגד-גוף-כיווצים-גאיה",
+      "product_group": "edge_cases",
+      "has_yaml": true,
+      "yaml_gap": false,
+      "current_tags": [
+        "Copy AI"
+      ],
+      "proposed_tags": [
+        {
+          "tag": "type-bodysuit",
+          "category": "CAT-A",
+          "confidence": 0.88,
+          "source": "title",
+          "rule": "keyword"
+        },
+        {
+          "tag": "season-unknown",
+          "category": "CAT-C",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        },
+        {
+          "tag": "occ-everyday",
+          "category": "CAT-E",
+          "confidence": 0.6,
+          "source": "category_default",
+          "rule": "type_default"
+        },
+        {
+          "tag": "gender-unknown",
+          "category": "CAT-F",
+          "confidence": 0.0,
+          "source": "category_default",
+          "rule": "fallback"
+        }
+      ],
+      "blocked_tags": [],
+      "missing_categories": [
+        "CAT-B"
+      ],
+      "gate_results": [
+        {
+          "gate": "SOURCE_EXISTS",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "FORMAT_VALID",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "ALLOWED_VALUE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "SOURCE_TRACEABLE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "NO_FORBIDDEN_INFERENCE",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "CATEGORY_COVERAGE",
+          "pass": false,
+          "issues": [
+            {
+              "category": "CAT-B",
+              "reason": "required category not covered"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "gate": "DUPLICATE_CONFLICT",
+          "pass": true,
+          "issues": []
+        },
+        {
+          "gate": "QUALITY_SCORE",
+          "pass": false,
+          "issues": [
+            {
+              "reason": "score 59.1 < 75 threshold",
+              "score": 59.1
+            }
+          ],
+          "score": 59.1,
+          "note": ""
+        }
+      ],
+      "quality_score": 59.1,
+      "final_status": "NEEDS_REVIEW",
+      "age_status": "NO_SIZE_FOUND",
+      "catb_exempt_reason": "",
+      "customer_labels_preview": [
+        {
+          "internal_tag": "type-bodysuit",
+          "customer_label_he": "בגד גוף"
+        },
+        {
+          "internal_tag": "occ-everyday",
+          "customer_label_he": "יומיומי"
+        }
+      ],
+      "notes": [
+        "NO_SIZE_FOUND"
+      ]
+    }
+  ]
+}

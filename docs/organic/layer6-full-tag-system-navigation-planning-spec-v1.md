@@ -79,7 +79,7 @@ LEVEL 3: Customer Labels (Hebrew UI)
 | קטגוריה | קוד | דוגמאות ערכים |
 |---------|-----|--------------|
 | Product Type | CAT-A | onesie, dress, pants, swimwear, hat, shoes, romper, set |
-| Age Group | CAT-B | 0-3m, 3-6m, 6-12m, 12-18m, 18-24m, 2-3y, 3-5y |
+| Size | CAT-B | newborn, 0-3m, 3-6m, 6-9m, 9-12m, 12-18m, 18-24m, 2y, 3y, 4y |
 | Season | CAT-C | summer, winter, spring-fall, all-season |
 | Fabric | CAT-D | cotton, linen, polyester, bamboo, mixed |
 | Occasion | CAT-E | everyday, beach, party, sleep, gift |
@@ -91,7 +91,7 @@ LEVEL 3: Customer Labels (Hebrew UI)
 | שדה | חובה / מומלץ | gates |
 |-----|------------|-------|
 | CAT-A (Product Type) | חובה | G1–G8 |
-| CAT-B (Age Group) | חובה | G1–G8 |
+| CAT-B (Size) | חובה | G1–G8 |
 | CAT-C (Season) | חובה | G1–G8 |
 | CAT-F (Gender) | חובה | G1–G8 |
 | CAT-D (Fabric) | מומלץ | G1–G5 |

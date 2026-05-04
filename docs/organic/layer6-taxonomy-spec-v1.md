@@ -33,7 +33,7 @@
 ```
 LEVEL 1 — Internal Tag (Shopify native tag, admin-only readable)
   Format: {category-prefix}-{value}
-  Example: type-romper | age-0-3m | season-summer | fabric-cotton
+  Example: type-romper | size-0-3m | season-summer | fabric-cotton
            occ-gift | gender-girl | style-elegant
 
 LEVEL 2 — Collection Tag (same native tag drives Smart Collection)
@@ -42,7 +42,7 @@ LEVEL 2 — Collection Tag (same native tag drives Smart Collection)
 
 LEVEL 3 — Customer Label (Hebrew, displayed in storefront navigation)
   Mapped from native tag in Liquid / navigation config
-  Example: type-romper → "אוברולים" | age-0-3m → "0-3 חודשים"
+  Example: type-romper → "אוברולים" | size-0-3m → "0-3 חודשים"
   Hebrew labels are NOT a separate Shopify field — they are a UI mapping layer
 ```
 
@@ -95,41 +95,38 @@ LEVEL 3 — Customer Label (Hebrew, displayed in storefront navigation)
 
 ---
 
-## 4. CAT-B — Age Group
+## 4. CAT-B — Size
 
-**מטרה:** לתאר לאיזה גיל המוצר מתאים — מהמקור בלבד.
+**מטרה:** לתאר באיזה מידה המוצר — מהמקור בלבד (variants, tags, title מפורשים).
 
-**Prefix:** `age-`
+**Prefix:** `size-`
 
 | internal_tag | customer_label_he | collection_slug | required | confidence_min |
 |-------------|-------------------|----------------|---------|---------------|
-| age-0-3m | 0-3 חודשים | age-0-3m | חובה | 0.85 |
-| age-3-6m | 3-6 חודשים | age-3-6m | חובה | 0.85 |
-| age-6-12m | 6-12 חודשים | age-6-12m | חובה | 0.85 |
-| age-12-18m | 12-18 חודשים | age-12-18m | חובה | 0.85 |
-| age-18-24m | 18-24 חודשים | age-18-24m | חובה | 0.85 |
-| age-2-3y | 2-3 שנים | age-2-3y | חובה | 0.85 |
-| age-3-5y | 3-5 שנים | age-3-5y | חובה | 0.85 |
-| age-0-6m | 0-6 חודשים (טווח מאוחד) | age-0-6m | חובה | 0.85 |
-| age-newborn | יילוד | age-newborn | חובה | 0.90 |
-| age-unknown | — | — | fallback | 0.00 |
-
-**הערה על age-0-6m:** כאשר מוצר מתאים ל-0-3 וגם 3-6 ניתן להשתמש בשניהם, או ב-age-0-6m אם מוצהר כך.
+| size-newborn | יילוד | size-newborn | חובה | 0.90 |
+| size-0-3m | 0-3 חודשים | size-0-3m | חובה | 0.85 |
+| size-3-6m | 3-6 חודשים | size-3-6m | חובה | 0.85 |
+| size-6-9m | 6-9 חודשים | size-6-9m | חובה | 0.85 |
+| size-9-12m | 9-12 חודשים | size-9-12m | חובה | 0.85 |
+| size-12-18m | 12-18 חודשים | size-12-18m | חובה | 0.85 |
+| size-18-24m | 18-24 חודשים | size-18-24m | חובה | 0.85 |
+| size-2y | מידה 2 שנים | size-2y | חובה | 0.85 |
+| size-3y | מידה 3 שנים | size-3y | חובה | 0.85 |
+| size-4y | מידה 4 שנים | size-4y | חובה | 0.85 |
+| size-unknown | — | — | fallback | 0.00 |
 
 **allowed_sources (CAT-B):**
-- Shopify `title` — "0-3", "3-6", "6-12", "12-18", "18-24", "2-3", "newborn", "יילוד", "חודשים"
-- Shopify `description` — טווחי גיל מפורשים
-- Shopify current `tags` — "0-3 חודש", "3-6 חודש", "6-12 חודש", "12-18 חודש", "18-24 חודש", "2-3 שנים", "newborn", "toddler"
-- YAML `age_range` field
-- Shopify variant `option` — אם יש size chart שמפנה לגיל
+- Shopify variant `option` values — "0-3M", "3-6M", "6-9M", "9-12M", "12-18M", "18-24M", "2Y", "3Y", "4Y", "NB", "Newborn"
+- Shopify current `tags` — "0-3 חודש", "3-6 חודש", "6-9 חודש", "9-12 חודש", "12-18 חודש", "18-24 חודש", "2-3 שנים", "newborn"
+- YAML `size` or `age_range` field — ממופה למידה
+- Shopify `title` — ציון מידה מפורש: "0-3", "3-6", "6-9", "9-12", "12-18", "18-24", "newborn", "יילוד"
 
 **forbidden_inference (CAT-B):**
-- ❌ לא להסיק גיל ממחיר (מוצר יקר ≠ יילוד)
-- ❌ לא להסיק גיל מתמונה בלבד (תינוק בתמונה ≠ גיל מוגדר)
-- ❌ לא להסיק גיל מ"mini" בלבד
-- ❌ "newborn" בכותרת כללית ≠ age-0-3m אוטומטית — חייב להיות מוצהר
-
-**שים לב:** `18-24M` (existing tag) ← ממיר ל-`age-18-24m`. `3-6M6-9M` (malformed, 1 product) ← **אין להמיר** — tag זה אינו source תקין.
+- ❌ לא להסיק מידה מ"toddler" / "infant" / "first-walker" בלבד
+- ❌ לא להסיק מידה מתמונה בלבד
+- ❌ לא להסיק מידה ממחיר
+- ❌ לא לקרוס טווח רחב (0-3Y) למידה אחת
+- ❌ `3-6M6-9M` (malformed, 1 product) ← **אין להמיר** — tag זה אינו source תקין
 
 ---
 
@@ -346,7 +343,7 @@ confidence ≥ 0.90 → HIGH confidence → source traced and clear
 | קטגוריה | מה מותר | מה אסור |
 |---------|---------|---------|
 | CAT-A (type) | ✅ מ-title + handle + existing tags | ❌ לא מ-image |
-| CAT-B (age) | ✅ רק אם מוצהר בכותרת/תג קיים | ❌ לא מ-variant sizes בלבד |
+| CAT-B (size) | ✅ רק מ-variants/tags/title מפורשים | ❌ לא מ-toddler/infant/first-walker |
 | CAT-C (season) | ✅ מ-title + existing tags + type context | ❌ לא מ-color |
 | CAT-D (fabric) | ❌ **אסור** אלא אם כתוב מפורשות בכותרת/תיאור | ❌ לא מ-image, לא מ-"looks soft" |
 | CAT-E (occasion) | ✅ מ-title + existing tags בלבד | ❌ לא מ-price |
@@ -453,15 +450,16 @@ Rules:
 | CAT-A | type-reborn-doll | בובת ריבורן | type-reborn-doll | חובה | 0.99 | title: "ריבורן", YAML: product_type=reborn |
 | CAT-A | type-toy | צעצוע | type-toy | חובה | 0.85 | title: "צעצוע", YAML: product_type=toy |
 | CAT-A | type-accessory | אביזר | type-accessory | חובה | 0.80 | YAML: product_type=accessory |
-| CAT-B | age-0-3m | 0-3 חודשים | age-0-3m | חובה | 0.85 | title/tag: "0-3", YAML age_range |
-| CAT-B | age-3-6m | 3-6 חודשים | age-3-6m | חובה | 0.85 | title/tag: "3-6", YAML age_range |
-| CAT-B | age-6-12m | 6-12 חודשים | age-6-12m | חובה | 0.85 | title/tag: "6-12", YAML age_range |
-| CAT-B | age-12-18m | 12-18 חודשים | age-12-18m | חובה | 0.85 | title/tag: "12-18", YAML age_range |
-| CAT-B | age-18-24m | 18-24 חודשים | age-18-24m | חובה | 0.85 | title/tag: "18-24", YAML age_range |
-| CAT-B | age-2-3y | 2-3 שנים | age-2-3y | חובה | 0.85 | title/tag: "2-3 שנים", YAML age_range |
-| CAT-B | age-3-5y | 3-5 שנים | age-3-5y | חובה | 0.85 | YAML age_range: 3-5y |
-| CAT-B | age-newborn | יילוד | age-newborn | חובה | 0.90 | title: "יילוד"/"newborn", tag: "newborn" |
-| CAT-B | age-0-6m | 0-6 חודשים | age-0-6m | חובה | 0.85 | YAML age_range: 0-6m |
+| CAT-B | size-newborn | יילוד | size-newborn | חובה | 0.90 | variant: "NB"/"Newborn", title: "newborn"/"יילוד" |
+| CAT-B | size-0-3m | 0-3 חודשים | size-0-3m | חובה | 0.85 | variant: "0-3M", title/tag: "0-3" |
+| CAT-B | size-3-6m | 3-6 חודשים | size-3-6m | חובה | 0.85 | variant: "3-6M", title/tag: "3-6" |
+| CAT-B | size-6-9m | 6-9 חודשים | size-6-9m | חובה | 0.85 | variant: "6-9M", title/tag: "6-9" |
+| CAT-B | size-9-12m | 9-12 חודשים | size-9-12m | חובה | 0.85 | variant: "9-12M", title/tag: "9-12" |
+| CAT-B | size-12-18m | 12-18 חודשים | size-12-18m | חובה | 0.85 | variant: "12-18M", title/tag: "12-18" |
+| CAT-B | size-18-24m | 18-24 חודשים | size-18-24m | חובה | 0.85 | variant: "18-24M", title/tag: "18-24" |
+| CAT-B | size-2y | מידה 2 שנים | size-2y | חובה | 0.85 | variant: "2Y"/"2T", title/tag: "2 שנים" |
+| CAT-B | size-3y | מידה 3 שנים | size-3y | חובה | 0.85 | variant: "3Y"/"3T", title/tag: "3 שנים" |
+| CAT-B | size-4y | מידה 4 שנים | size-4y | חובה | 0.85 | variant: "4Y"/"4T", title/tag: "4 שנים" |
 | CAT-C | season-summer | קיץ | season-summer | חובה | 0.85 | title: "קיץ"/"summer", tag: "summer-baby-wear" |
 | CAT-C | season-winter | חורף | season-winter | חובה | 0.85 | title: "חורף"/"winter", tag: "winter-baby-wear"/"חורף" |
 | CAT-C | season-spring-fall | אביב/סתיו | season-spring-fall | חובה | 0.80 | tag: "spring-baby-wear"/"autumn-baby-wear" |

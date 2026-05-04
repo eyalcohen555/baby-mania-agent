@@ -9,7 +9,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(__file__))
-from layer6_validate_tags import run_all_gates, PREFIX_TO_CAT, NON_AGE_TYPES
+from layer6_validate_tags import run_all_gates, PREFIX_TO_CAT, NON_SIZE_TYPES, NON_AGE_TYPES
 
 PHASE0_PRODUCTS  = "output/tags/phase0-raw-products.json"
 YAML_DIR         = "shared/product-context"
@@ -37,11 +37,12 @@ CUSTOMER_LABELS = {
     "type-swimming-ring": "מצופי שחייה",
     "type-bath-accessory": "אביזרי אמבטיה",
     "type-unknown": "—",
-    "age-0-3m": "0-3 חודשים", "age-3-6m": "3-6 חודשים",
-    "age-6-12m": "6-12 חודשים", "age-12-18m": "12-18 חודשים",
-    "age-18-24m": "18-24 חודשים", "age-2-3y": "2-3 שנים",
-    "age-3-5y": "3-5 שנים", "age-0-6m": "0-6 חודשים",
-    "age-newborn": "יילוד", "age-unknown": "—",
+    "size-newborn": "יילוד", "size-0-3m": "0-3 חודשים",
+    "size-3-6m": "3-6 חודשים", "size-6-9m": "6-9 חודשים",
+    "size-9-12m": "9-12 חודשים", "size-12-18m": "12-18 חודשים",
+    "size-18-24m": "18-24 חודשים", "size-2y": "מידה 2 שנים",
+    "size-3y": "מידה 3 שנים", "size-4y": "מידה 4 שנים",
+    "size-unknown": "—",
     "season-summer": "קיץ", "season-winter": "חורף",
     "season-spring-fall": "אביב/סתיו", "season-all": "כל עונה", "season-unknown": "—",
     "fabric-cotton": "כותנה", "fabric-linen": "פשתן",
@@ -308,80 +309,87 @@ def extract_cat_a(title, handle, tags_list, body, yaml_desc):
     return [_tag("type-unknown", "CAT-A", 0.00, "category_default", "fallback")]
 
 
-def extract_cat_b(pid, title, handle, tags_list, body, yaml_desc, is_reborn):
+def extract_cat_b(pid, title, handle, tags_list, body, yaml_desc, is_reborn, variants=None):
     if is_reborn:
         return [], "DOLL_NO_AGE_APPLICABLE", ""
 
     combined = (title + " " + handle).lower()
-    desc_text = (body + " " + yaml_desc).lower()
 
     for pat, desc in WIDE_RANGE_PATS:
         if re.search(pat, combined, re.IGNORECASE):
             return [], "RANGE_TOO_BROAD", desc
 
-    HEB_AGE_MAP = {
-        "0-3 חודש": "age-0-3m", "3-6 חודש": "age-3-6m",
-        "6-12 חודש": "age-6-12m", "12-18 חודש": "age-12-18m",
-        "18-24 חודש": "age-18-24m", "2-3 שנים": "age-2-3y",
-        "18-24m": "age-18-24m", "0-3 חודשים": "age-0-3m",
-        "3-6 חודשים": "age-3-6m", "6-12 חודשים": "age-6-12m",
-        "12-18 חודשים": "age-12-18m", "18-24 חודשים": "age-18-24m",
+    # Source 1: Shopify variant option values (highest priority)
+    VARIANT_SIZE_MAP = {
+        "nb": "size-newborn", "newborn": "size-newborn",
+        "0-3m": "size-0-3m", "0-3": "size-0-3m",
+        "3-6m": "size-3-6m", "3-6": "size-3-6m",
+        "6-9m": "size-6-9m", "6-9": "size-6-9m",
+        "9-12m": "size-9-12m", "9-12": "size-9-12m",
+        "12-18m": "size-12-18m", "12-18": "size-12-18m",
+        "18-24m": "size-18-24m", "18-24": "size-18-24m",
+        "2y": "size-2y", "2t": "size-2y",
+        "3y": "size-3y", "3t": "size-3y",
+        "4y": "size-4y", "4t": "size-4y",
+    }
+    if variants:
+        seen: set[str] = set()
+        results = []
+        for v in variants:
+            for opt in (v.get("option1", ""), v.get("option2", ""), v.get("option3", "")):
+                key = opt.strip().lower()
+                if key in VARIANT_SIZE_MAP:
+                    tag_val = VARIANT_SIZE_MAP[key]
+                    if tag_val not in seen:
+                        seen.add(tag_val)
+                        results.append(_tag(tag_val, "CAT-B", 0.95, "existing_tag", "variant_option"))
+        if results:
+            return results, "OK", ""
+
+    # Source 2: existing Hebrew/clean size tags
+    HEB_SIZE_MAP = {
+        "0-3 חודש": "size-0-3m", "3-6 חודש": "size-3-6m",
+        "6-9 חודש": "size-6-9m", "9-12 חודש": "size-9-12m",
+        "12-18 חודש": "size-12-18m", "18-24 חודש": "size-18-24m",
+        "0-3 חודשים": "size-0-3m", "3-6 חודשים": "size-3-6m",
+        "6-9 חודשים": "size-6-9m", "9-12 חודשים": "size-9-12m",
+        "12-18 חודשים": "size-12-18m", "18-24 חודשים": "size-18-24m",
+        "2-3 שנים": "size-2y", "18-24m": "size-18-24m",
+        "newborn": "size-newborn", "יילוד": "size-newborn",
     }
     results = []
     for et in tags_list:
-        if et in HEB_AGE_MAP:
-            results.append(_tag(HEB_AGE_MAP[et], "CAT-B", 0.90, "existing_tag_hebrew", "heb_tag", note=f"from tag: {et}"))
-
+        mapped = HEB_SIZE_MAP.get(et) or HEB_SIZE_MAP.get(et.lower())
+        if mapped:
+            results.append(_tag(mapped, "CAT-B", 0.90, "existing_tag_hebrew", "heb_tag", note=f"from tag: {et}"))
     if results:
-        seen = set()
+        seen_t: set[str] = set()
         deduped = []
         for r in results:
-            if r["tag"] not in seen:
-                seen.add(r["tag"])
+            if r["tag"] not in seen_t:
+                seen_t.add(r["tag"])
                 deduped.append(r)
         return deduped, "OK", ""
 
-    NARROW_PATS = [
-        (r"\bnewborn\b", "age-newborn", 0.85, "title"),
-        (r"\b(?:0|zero)[\s\-]3\s*(?:m|months?)\b", "age-0-3m", 0.88, "handle"),
-        (r"\b3[\s\-]6\s*(?:m|months?)\b", "age-3-6m", 0.88, "handle"),
-        (r"\b6[\s\-]12\s*(?:m|months?)\b", "age-6-12m", 0.88, "handle"),
-        (r"\b12[\s\-]18\s*(?:m|months?)\b", "age-12-18m", 0.88, "handle"),
-        (r"\b18[\s\-]24\s*(?:m|months?)\b", "age-18-24m", 0.88, "handle"),
-        (r"\b2[\s\-]3\s*y(?:ear)?s?\b", "age-2-3y", 0.88, "handle"),
-        (r"\b3[\s\-]5\s*y(?:ear)?s?\b", "age-3-5y", 0.88, "handle"),
-        (r"\b0[\s\-]6\s*(?:m|months?)\b", "age-0-6m", 0.88, "handle"),
+    # Source 3: explicit size in title or handle
+    NARROW_SIZE_PATS = [
+        (r"\bnewborn\b|\bיילוד\b", "size-newborn", 0.88),
+        (r"\b(?:0|zero)[\s\-]3\s*(?:m|months?)\b", "size-0-3m", 0.88),
+        (r"\b3[\s\-]6\s*(?:m|months?)\b", "size-3-6m", 0.88),
+        (r"\b6[\s\-]9\s*(?:m|months?)\b", "size-6-9m", 0.88),
+        (r"\b9[\s\-]12\s*(?:m|months?)\b", "size-9-12m", 0.88),
+        (r"\b12[\s\-]18\s*(?:m|months?)\b", "size-12-18m", 0.88),
+        (r"\b18[\s\-]24\s*(?:m|months?)\b", "size-18-24m", 0.88),
+        (r"\b2\s*[yY](?:ear)?s?\b|\b2T\b", "size-2y", 0.88),
+        (r"\b3\s*[yY](?:ear)?s?\b|\b3T\b", "size-3y", 0.88),
+        (r"\b4\s*[yY](?:ear)?s?\b|\b4T\b", "size-4y", 0.88),
     ]
-    for pat, tag_val, conf, _ in NARROW_PATS:
+    for pat, tag_val, conf in NARROW_SIZE_PATS:
         if re.search(pat, combined, re.IGNORECASE):
-            src = "title" if re.search(pat, title.lower()) else "handle"
+            src = "title" if re.search(pat, title, re.IGNORECASE) else "handle"
             return [_tag(tag_val, "CAT-B", conf, src, "regex_narrow")], "OK", ""
 
-    if re.search(r"\b1[\s\-]3\s*y(?:ear)?s?\b", combined, re.IGNORECASE):
-        return [_tag("age-2-3y", "CAT-B", 0.80, "handle", "1-3y_approx", note="1-3y approx to 2-3y")], "OK", ""
-
-    for pat, tag_val, conf, _ in NARROW_PATS:
-        if re.search(pat, desc_text, re.IGNORECASE):
-            return [_tag(tag_val, "CAT-B", 0.82, "yaml_desc", "regex_narrow_desc")], "OK", ""
-
-    # Bug1 fix: heuristics return confidence 0.75 < 0.85 minimum → NO_AGE_FOUND
-    # Bug2 fix: detect handle conflicts before applying heuristic
-    if re.search(r"\bfirst[\s\-]walker\b", combined, re.IGNORECASE):
-        conflict = any(et.lower() in ("newborn-clothing", "newborn") for et in tags_list) or \
-                   re.search(r"\bnewborn\b|\b0[\s\-]3m\b|\binfant\b", combined, re.IGNORECASE)
-        if conflict:
-            return [], "NO_AGE_FOUND", "first_walker_conflict"
-        return [], "NO_AGE_FOUND", "first_walker_heuristic_below_threshold"
-    if re.search(r"\btoddler\b", combined, re.IGNORECASE):
-        conflict = re.search(r"\bnewborn\b|\binfant\b|\b0[\s\-]3m\b", combined, re.IGNORECASE)
-        if conflict:
-            return [], "NO_AGE_FOUND", "toddler_infant_conflict"
-        return [], "NO_AGE_FOUND", "toddler_heuristic_below_threshold"
-
-    if re.search(r"\bnewborn\b", desc_text, re.IGNORECASE):
-        return [_tag("age-newborn", "CAT-B", 0.72, "body", "newborn_desc")], "OK", ""
-
-    return [], "NO_AGE_FOUND", ""
+    return [], "NO_SIZE_FOUND", ""
 
 
 def extract_cat_c(title, handle, tags_list, body, yaml_desc, type_tag):
@@ -683,11 +691,11 @@ def tag_product(pid, title, handle, current_tags_str, body_html, product_type_ra
     if age_status == "DOLL_NO_AGE_APPLICABLE":
         notes.append("age not applicable (reborn/doll)")
     elif age_status == "RANGE_TOO_BROAD":
-        blocked.append({"tag": "age-*", "category": "CAT-B",
-                        "reason": f"RANGE_TOO_BROAD:{range_note}", "rule": "age_hardening_v2"})
+        blocked.append({"tag": "size-*", "category": "CAT-B",
+                        "reason": f"RANGE_TOO_BROAD:{range_note}", "rule": "size_hardening_v1"})
         notes.append(f"RANGE_TOO_BROAD:{range_note}")
-    elif age_status == "NO_AGE_FOUND":
-        notes.append("NO_AGE_FOUND")
+    elif age_status in ("NO_SIZE_FOUND", "NO_AGE_FOUND"):
+        notes.append("NO_SIZE_FOUND")
     else:
         proposed.extend(age_tags)
 
@@ -728,7 +736,7 @@ def tag_product(pid, title, handle, current_tags_str, body_html, product_type_ra
     if age_status in ("RANGE_TOO_BROAD", "DOLL_NO_AGE_APPLICABLE"):
         required.discard("CAT-B")
         catb_exempt_reason = age_status
-    elif age_status == "NO_AGE_FOUND":
+    elif age_status in ("NO_SIZE_FOUND", "NO_AGE_FOUND"):
         if not has_yaml:
             required.discard("CAT-B")
             catb_exempt_reason = "YAML_GAP"
@@ -765,12 +773,14 @@ def tag_product(pid, title, handle, current_tags_str, body_html, product_type_ra
     gate_fails = [g["gate"] for g in gate_results if not g["pass"]]
     if not gate_fails:
         final_status = "PASS"
-    elif "BLOCKED" in notes or any("RANGE_TOO_BROAD" in n or "NO_AGE_FOUND" in n for n in notes):
+    elif "BLOCKED" in notes or any("RANGE_TOO_BROAD" in n or "NO_SIZE_FOUND" in n for n in notes):
         final_status = "NEEDS_REVIEW"
     elif len(gate_fails) <= 2 and all(g in ("CATEGORY_COVERAGE", "QUALITY_SCORE") for g in gate_fails):
         final_status = "NEEDS_REVIEW"
     else:
         final_status = "NEEDS_REVIEW" if len(gate_fails) < 4 else "BLOCKED"
+    # normalise note string so status logic can match either old or new status key
+    notes = [n.replace("NO_AGE_FOUND", "NO_SIZE_FOUND") for n in notes]
 
     if quality_score < 40:
         final_status = "BLOCKED"
@@ -799,8 +809,8 @@ def build_technical_report(products_tagged, sample_groups):
     gap_tags = defaultdict(int)
     stats = {
         "total_proposed_tags": 0, "total_blocked_tags": 0,
-        "range_too_broad": 0, "no_age_found": 0, "doll_no_age": 0,
-        "multi_age": 0, "yaml_gap_impact": 0,
+        "range_too_broad": 0, "no_size_found": 0, "doll_no_size": 0,
+        "multi_size": 0, "yaml_gap_impact": 0,
         "phase5b_exempt": 0, "sleep_soother_count": 0,
     }
     scores = []
@@ -811,13 +821,13 @@ def build_technical_report(products_tagged, sample_groups):
         stats["total_blocked_tags"] += len(p["blocked_tags"])
         if p.get("age_status") == "RANGE_TOO_BROAD":
             stats["range_too_broad"] += 1
-        if p.get("age_status") == "NO_AGE_FOUND":
-            stats["no_age_found"] += 1
+        if p.get("age_status") in ("NO_SIZE_FOUND", "NO_AGE_FOUND"):
+            stats["no_size_found"] += 1
         if p.get("age_status") == "DOLL_NO_AGE_APPLICABLE":
-            stats["doll_no_age"] += 1
-        age_tags = [t for t in p["proposed_tags"] if t["tag"].startswith("age-")]
-        if len(age_tags) > 1:
-            stats["multi_age"] += 1
+            stats["doll_no_size"] += 1
+        size_tags = [t for t in p["proposed_tags"] if t["tag"].startswith("size-")]
+        if len(size_tags) > 1:
+            stats["multi_size"] += 1
         if p["yaml_gap"]:
             stats["yaml_gap_impact"] += 1
         if "Phase5b" in p.get("catb_exempt_reason", ""):
@@ -923,13 +933,13 @@ def build_comparison_md(p4_path, p5d_report, products_tagged):
         if p.get("yaml_gap"):
             continue
         type_tag = next((t for t in tags if t.startswith("type-")), "")
-        age_tag = next((t for t in tags if t.startswith("age-")), "")
+        size_tag = next((t for t in tags if t.startswith("size-")), "")
         is_clothing_shoes = type_tag in {
             "type-romper", "type-bodysuit", "type-dress", "type-set",
             "type-pants", "type-top", "type-coat", "type-swimwear", "type-hat",
             "type-shoes", "type-sandals", "type-sneakers", "type-boots",
         }
-        if is_clothing_shoes and not age_tag:
+        if is_clothing_shoes and not size_tag:
             continue
         candidates.append(p)
 
@@ -1153,9 +1163,9 @@ def build_md_report(report, products_tagged):
         "", "---", "", "## 3. בעיות",
         "", "| בעיה | כמות |", "|---|---|",
         f"| RANGE_TOO_BROAD | {st['range_too_broad']} |",
-        f"| NO_AGE_FOUND | {st['no_age_found']} |",
-        f"| DOLL_NO_AGE_APPLICABLE | {st['doll_no_age']} |",
-        f"| Phase5b exempt (non-clothing type, NO_AGE_FOUND) | {st.get('phase5b_exempt',0)} |",
+        f"| NO_SIZE_FOUND | {st.get('no_size_found', st.get('no_age_found', 0))} |",
+        f"| DOLL_NO_AGE_APPLICABLE | {st.get('doll_no_size', st.get('doll_no_age', 0))} |",
+        f"| Phase5b exempt (non-clothing type, NO_SIZE_FOUND) | {st.get('phase5b_exempt',0)} |",
         f"| YAML_GAP | {st['yaml_gap_impact']} |",
     ]
 
@@ -1236,7 +1246,7 @@ def main():
     print(f"\n--- Phase 5d Results ---")
     print(f"  PASS: {s.get('PASS',0)}/{n} | NEEDS_REVIEW: {s.get('NEEDS_REVIEW',0)}/{n} | BLOCKED: {s.get('BLOCKED',0)}/{n}")
     print(f"  Avg quality: {report['avg_quality_score']}")
-    print(f"  RANGE_TOO_BROAD: {st['range_too_broad']} | NO_AGE_FOUND: {st['no_age_found']}")
+    print(f"  RANGE_TOO_BROAD: {st['range_too_broad']} | NO_SIZE_FOUND: {st.get('no_size_found', st.get('no_age_found', 0))}")
     print(f"  Phase5b exempt: {st.get('phase5b_exempt',0)} | sleep-soother: {st.get('sleep_soother_count',0)}")
     if report["taxonomy_gaps"]:
         print(f"  Taxonomy gaps: {report['taxonomy_gaps']}")
