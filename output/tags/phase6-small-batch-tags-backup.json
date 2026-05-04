@@ -1,0 +1,96 @@
+{
+  "backup_timestamp": "2026-05-04T13:47:27.037707+00:00",
+  "phase": "Phase 6 small batch pre-write backup",
+  "products": [
+    {
+      "candidate": "C3",
+      "product_id": "9688660312377",
+      "title": "אוברול ג׳ינס דגם אתי",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_new_tags": [
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "season-spring-fall",
+        "fabric-denim",
+        "gender-girl"
+      ],
+      "final_tags_after_write": [
+        "אוברול",
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "season-spring-fall",
+        "fabric-denim",
+        "gender-girl"
+      ],
+      "timestamp": "2026-05-04T13:47:27.037707+00:00"
+    },
+    {
+      "candidate": "C2",
+      "product_id": "9874906349881",
+      "title": "אוברול ג'ינס מתוק מבית בייבי מניה דגם זוהר",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_new_tags": [
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "season-summer",
+        "fabric-denim",
+        "gender-neutral",
+        "style-casual"
+      ],
+      "final_tags_after_write": [
+        "אוברול",
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "season-summer",
+        "fabric-denim",
+        "gender-neutral",
+        "style-casual"
+      ],
+      "timestamp": "2026-05-04T13:47:27.037707+00:00"
+    },
+    {
+      "candidate": "C4",
+      "product_id": "9895864205625",
+      "title": "אוברול ג’ינס יוניסקס לתינוקות דגם שלו",
+      "current_tags": [
+        "אוברול"
+      ],
+      "proposed_new_tags": [
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-9-12m",
+        "size-12-18m",
+        "fabric-denim",
+        "gender-neutral",
+        "style-casual"
+      ],
+      "final_tags_after_write": [
+        "אוברול",
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-9-12m",
+        "size-12-18m",
+        "fabric-denim",
+        "gender-neutral",
+        "style-casual"
+      ],
+      "timestamp": "2026-05-04T13:47:27.037707+00:00"
+    }
+  ]
+}

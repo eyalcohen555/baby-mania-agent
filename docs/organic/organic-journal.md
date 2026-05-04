@@ -19,6 +19,34 @@
 
 ---
 
+## DATE: 2026-05-04
+## TASK: Layer 6 Phase 6 — Small Live Batch 1 (C3, C2, C4)
+## SCOPE: Layer 6 — Shopify live tag write — 3 products
+## WHAT CHANGED:
+- Phase 6 batch 1 בוצע — T3 approval מאייל התקבל
+- 3 מוצרים קיבלו תגיות Layer 6 חיות: C3, C2, C4
+- גיבוי נוצר לפני הכתיבה: output/tags/phase6-small-batch-tags-backup.json
+- כל 3 מוצרים עברו verify מלא אחרי כתיבה — PASS
+- Shopify live: YES (3 products only)
+- אין age-* tags. אין rollback נדרש.
+## FILES TOUCHED:
+- output/tags/phase6-small-batch-tags-backup.json
+- output/tags/phase6-small-batch-live-verify.md
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- C3 (9688660312377): type-romper, size-3-6m/6-9m/9-12m/12-18m, season-spring-fall, fabric-denim, gender-girl
+- C2 (9874906349881): type-romper, size-3-6m/6-9m/9-12m, season-summer, fabric-denim, gender-neutral, style-casual
+- C4 (9895864205625): type-romper, size-0-3m/3-6m/9-12m/12-18m, fabric-denim, gender-neutral, style-casual
+## OPEN ISSUES:
+- EU shoe sizes (C6, C8) — אין מיפוי מאושר
+- batch שני (C5, C1) ממתין לאישור נוסף
+## NEXT STEP:
+- monitor Shopify analytics 48-72 שעות
+- batch שני רק אחרי אישור נוסף מאייל
+
+---
+
 ## DATE: 2026-05-03
 ## TASK: Layer 6 Phase 5d — Rerun after Phase 5b/5c logic updates
 ## SCOPE: Layer 6 — validation rerun, no Shopify writes
