@@ -1,0 +1,5 @@
+{
+  "_schema": "bridge-room-pack-registry-v1",
+  "_description": "Persistent index of all Execution Packs, open issues, and chain links",
+  "packs": {}
+}

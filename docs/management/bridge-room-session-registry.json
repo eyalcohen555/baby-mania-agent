@@ -1,0 +1,5 @@
+{
+  "_schema": "bridge-room-session-registry-v1",
+  "_description": "Maps TASK_ID to room_id; tracks active Bridge Room sessions",
+  "sessions": {}
+}

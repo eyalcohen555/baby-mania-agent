@@ -1,0 +1,55 @@
+pack_id: EXEC-DRY-RUN-001
+room_id: BRM-001
+prior_pack_id: null
+description: Controlled dry-run — core ISSUE_AUDIT→FIX→RETEST flow
+approval_tier: T2
+created: "2026-05-04"
+branch: bridge-room-dry-run-001
+
+targets:
+  - id: TGT-A
+    file: docs/management/bridge-room-prototype/dry-run-target.md
+    description: Mock documentation target with intentional defects for dry-run validation
+
+token_safe_stop:
+  enabled: true
+  warn_at: 0.70
+  hard_stop_at: 0.85
+
+stages:
+  - id: STAGE-01
+    type: ISSUE_AUDIT
+    goal: >
+      Audit dry-run-target.md for defects. Identify all issues, classify severity,
+      and report structured findings.
+    targets: [TGT-A]
+    files_allowed:
+      - docs/management/bridge-room-prototype/dry-run-target.md
+    context: >
+      Controlled dry-run. The target contains two intentional defects:
+      DEFECT-001 (incorrect shipping threshold value) and
+      DEFECT-002 (broken heading level). Identify both.
+
+  - id: STAGE-02
+    type: FIX
+    goal: >
+      Fix all ISSUE_AUDIT findings in dry-run-target.md.
+      Use atomic write pattern: write to temp file, then rename.
+    targets: [TGT-A]
+    files_allowed:
+      - docs/management/bridge-room-prototype/dry-run-target.md
+    context: >
+      Apply fixes for DEFECT-001 and DEFECT-002 found in STAGE-01.
+      Correct shipping threshold to ₪300 and fix heading level to ##.
+
+  - id: STAGE-03
+    type: RETEST
+    goal: >
+      Verify all fixes from STAGE-02 are correct and complete.
+      Confirm dry-run-target.md matches expected clean state.
+    targets: [TGT-A]
+    files_allowed:
+      - docs/management/bridge-room-prototype/dry-run-target.md
+    context: >
+      Confirm both DEFECT-001 and DEFECT-002 from STAGE-01 are resolved.
+      Report PASS only if all defects are corrected.
