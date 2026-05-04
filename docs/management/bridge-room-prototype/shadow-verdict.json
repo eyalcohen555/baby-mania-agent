@@ -1,0 +1,199 @@
+{
+  "shadow_id": "SHADOW-P4-001",
+  "mode": "READ_ONLY",
+  "timestamp": "2026-05-03T00:00:00Z",
+  "prototype": true,
+  "isolated": true,
+
+  "sources_read": [
+    "bridge/next-task.md",
+    "bridge/last-result.md",
+    "bridge/status.md",
+    "bridge/runtime-state.md",
+    "bridge/conductor-state.md",
+    "bridge/watchdog-report.md"
+  ],
+  "sources_unavailable": [
+    "bridge/task-log.md"
+  ],
+  "sources_unavailable_reason": "File exceeds read limit (38015 tokens). Skipped. Not a blocking issue for this shadow run.",
+
+  "task_id_observed": {
+    "next_task_md":        "conductor-layer4-geo-priority-001-STAGE-13-20260416-182032",
+    "last_result_md":      "20260416-182036",
+    "status_md":           "20260416-182036",
+    "runtime_state_md":    "20260330-111000",
+    "watchdog_report_md":  "20260330-111000",
+    "conductor_state_md":  "conductor-layer4-geo-priority-001-STAGE-13-20260416-182032",
+    "consistency":         "FAIL",
+    "distinct_ids_found":  3,
+    "note": "Three separate IDs across 6 files. runtime-state and watchdog show March 30 task; status and last-result show April 16 short-form ID; next-task and conductor show April 16 full-form ID."
+  },
+
+  "approval_tier_observed": {
+    "value": "T3",
+    "source": ["bridge/next-task.md", "bridge/status.md"],
+    "present": true
+  },
+
+  "runtime_status": "awaiting_approval",
+  "result_status":  "PASS",
+  "result_context": "PASS in last-result.md is a pre-live double-check checkpoint verdict, NOT T3 final approval. T3 approval from user still pending.",
+
+  "shadow_verdict": "HOLD",
+  "shadow_verdict_reason": "System is in a legitimate but stale holding state at T3 approval gate. Watchdog flags suspected_stuck=YES with state_age ~21 days. Task ID inconsistencies across files. No automated action warranted — requires human (Codex) review.",
+
+  "checks": [
+    {
+      "check_id": "CHK-001",
+      "check_name": "task_id_consistency",
+      "result": "FAIL",
+      "detail": "3 distinct task IDs observed across 6 files. runtime-state.md and watchdog-report.md reference old task 20260330-111000 (March 30). status.md and last-result.md reference 20260416-182036. next-task.md and conductor-state.md reference conductor-layer4-geo-priority-001-STAGE-13-20260416-182032.",
+      "risk": "MEDIUM"
+    },
+    {
+      "check_id": "CHK-002",
+      "check_name": "approval_tier_present",
+      "result": "PASS",
+      "detail": "T3 tier present in next-task.md and status.md. Consistently applied.",
+      "risk": "LOW"
+    },
+    {
+      "check_id": "CHK-003",
+      "check_name": "status_result_match",
+      "result": "PARTIAL",
+      "detail": "status=awaiting_approval + last-result=PASS is internally consistent: checkpoint passed, awaiting human T3 approval. However runtime-state.md shows stage=DONE with old task ID — inconsistent with active awaiting_approval state.",
+      "risk": "MEDIUM"
+    },
+    {
+      "check_id": "CHK-004",
+      "check_name": "false_pass_risk",
+      "result": "WARN",
+      "detail": "last-result.md reports STAGE_VERDICT: PASS and READY_FOR_LIVE: YES. This is a verification checkpoint, not a T3 approval grant. An automated system reading only last-result.md could incorrectly treat this as approval to push to Shopify live.",
+      "risk": "HIGH"
+    },
+    {
+      "check_id": "CHK-005",
+      "check_name": "stale_state",
+      "result": "FAIL",
+      "detail": "watchdog-report.md: state_age_seconds=1839377 (~21 days). System has been in awaiting_approval for ~21 days without state change. Reminder already sent.",
+      "risk": "MEDIUM"
+    },
+    {
+      "check_id": "CHK-006",
+      "check_name": "stuck_risk",
+      "result": "FAIL",
+      "detail": "watchdog-report.md explicitly flags suspected_stuck=YES and reminder_sent=YES. No evidence of state progress since April 20.",
+      "risk": "MEDIUM"
+    },
+    {
+      "check_id": "CHK-007",
+      "check_name": "watchdog_conflict",
+      "result": "FAIL",
+      "detail": "Watchdog monitors task_id=20260330-111000 (March 30 task). Active task in conductor is from April 16. Watchdog is observing the wrong task — its stuck assessment may be based on stale data.",
+      "risk": "MEDIUM"
+    },
+    {
+      "check_id": "CHK-008",
+      "check_name": "next_task_while_idle_or_done",
+      "result": "WARN",
+      "detail": "conductor-state.md reports status=COMPLETE and next_stage=DONE. next-task.md still contains an active STAGE-13 task. This file may be stale — it was not cleared after conductor reached COMPLETE.",
+      "risk": "LOW"
+    },
+    {
+      "check_id": "CHK-009",
+      "check_name": "missing_evidence_for_pass",
+      "result": "WARN",
+      "detail": "last-result.md is a plain-text report. It has no Evidence Schema v1 structure (no evidence[], no validation[], no files_read/files_written, no task_id/stage_id/command_id fields). The PASS claim is human-readable but not machine-verifiable against the schema enforced in prototypes.",
+      "risk": "LOW"
+    }
+  ],
+
+  "evidence": [
+    {
+      "evidence_id": "E-S001",
+      "evidence_type": "READBACK",
+      "source": "bridge/status.md",
+      "claim": "Bridge runtime is in awaiting_approval state at T3 tier",
+      "proof": "status: awaiting_approval | approval_tier: T3 | detail: T3 — waiting for Eyal",
+      "related_condition": "System should not resume until T3 approval received",
+      "result": "PASS"
+    },
+    {
+      "evidence_id": "E-S002",
+      "evidence_type": "READBACK",
+      "source": "bridge/conductor-state.md",
+      "claim": "Conductor plan layer4-geo-priority-001 is fully complete",
+      "proof": "status: COMPLETE | current_stage: DONE | 17 stages completed | failed_stages: [] | overall_verdict: Layer 4 GEO COMPLETE + Recovery PASS",
+      "related_condition": "No further stage execution expected until new plan",
+      "result": "PASS"
+    },
+    {
+      "evidence_id": "E-S003",
+      "evidence_type": "VALIDATION",
+      "source": "bridge/watchdog-report.md",
+      "claim": "Watchdog has flagged the bridge as potentially stuck",
+      "proof": "suspected_stuck: YES | state_age_seconds: 1839377 | reminder_sent: YES | watchdog_time: 2026-04-20",
+      "related_condition": "Stuck detection requires human review before any automated action",
+      "result": "FAIL"
+    },
+    {
+      "evidence_id": "E-S004",
+      "evidence_type": "VALIDATION",
+      "source": "bridge/runtime-state.md + bridge/watchdog-report.md",
+      "claim": "runtime-state and watchdog reference the same task ID as each other, but it is a stale March 30 ID",
+      "proof": "Both show task_id: 20260330-111000. Active conductor task is from 2026-04-16.",
+      "related_condition": "Watchdog monitoring stale task ID may produce unreliable stuck assessments",
+      "result": "FAIL"
+    },
+    {
+      "evidence_id": "E-S005",
+      "evidence_type": "SCOPE_CHECK",
+      "source": "shadow-verdict.json",
+      "claim": "Shadow mode did not write to any bridge/ file",
+      "proof": "files_written contains only docs/management/bridge-room-prototype/shadow-verdict.json and journal/shadow-log.jsonl",
+      "related_condition": "Shadow mode is read-only for bridge/",
+      "result": "PASS"
+    }
+  ],
+
+  "blocking_reasons": [
+    {
+      "id": "BLK-S001",
+      "reason": "T3 approval from user (Eyal) not yet received",
+      "source": "bridge/status.md",
+      "automated_resolution": false,
+      "required_action": "Human decision — T3 approval or explicit rejection"
+    },
+    {
+      "id": "BLK-S002",
+      "reason": "Watchdog monitoring stale task ID — stuck assessment may be unreliable",
+      "source": "bridge/watchdog-report.md",
+      "automated_resolution": false,
+      "required_action": "Codex review: update watchdog to track current task ID"
+    },
+    {
+      "id": "BLK-S003",
+      "reason": "False PASS risk: last-result.md READY_FOR_LIVE: YES may be misread as push approval",
+      "source": "bridge/last-result.md",
+      "automated_resolution": false,
+      "required_action": "Codex review: ensure any automated resume reads status.md for approval, not last-result.md"
+    }
+  ],
+
+  "recommendation": "NO ACTION from Shadow Mode. State is a legitimate T3 approval hold. Three issues require Codex/human attention before any resume: (1) confirm T3 approval with user, (2) update watchdog task_id to current task, (3) add safeguard so automated systems check status.md and not last-result.md to determine push eligibility. Shadow mode is complete. No bridge/ files were modified.",
+
+  "safety": {
+    "mode": "READ_ONLY",
+    "bridge_files_written": false,
+    "telegram_sent": false,
+    "runtime_triggered": false,
+    "git_operations": false,
+    "shopify_writes": false,
+    "outside_scope_writes": false,
+    "files_written": [
+      "docs/management/bridge-room-prototype/shadow-verdict.json",
+      "docs/management/bridge-room-prototype/journal/shadow-log.jsonl"
+    ]
+  }
+}

@@ -1,0 +1,268 @@
+pack_id: EXEC-PACK-P6-001
+pack_name: Execution Pack v1 — Prototype #6
+version: 1.0.0
+prototype: true
+created: 2026-05-03
+approval_tier: T1
+layer: 1
+isolated: true
+
+project: BabyMania Agent — Bridge Room Prototype Series
+
+goal: >
+  Prove Execution Pack v1 handles BLOCKED → USER_DECISION → RESUME flow,
+  enforces decision ID validation and single-use consumption, and
+  demonstrates TOKEN_SAFE_STOP with full resume state capture.
+
+success_definition:
+  - "STAGE-01 AUDIT returns BLOCKED — target_quality_bar missing, not PASS or FAIL."
+  - "User decision DEC-P6-001 provides target_quality_bar with matching pack_id, task_id, stage_id, command_id, escalation_id."
+  - "STAGE-03 RESUME validates all 5 IDs, confirms consumed=false, returns PASS."
+  - "Resume verdict VRD-P6-003 marks consumed_before=false and consumed_now=true."
+  - "STAGE-04 RETEST verifies target_quality_bar resolved and decision consumed exactly once."
+  - "pack-safe-stop-state.json captures TOKEN_SAFE_STOP with all 10 required fields."
+  - "pack-p6-final-report.json records PACK_PASS only after RESUME + RETEST complete."
+
+description: >
+  Prototype #6 — Execution Pack v1 BLOCKED decision flow + TOKEN_SAFE_STOP.
+  Flow: AUDIT → BLOCKED → USER_DECISION → RESUME → RETEST → PACK_PASS.
+  All writes confined to docs/management/bridge-room-prototype/.
+
+approval_policy:
+  default_tier: T1
+  pack_tier: T1
+  escalation_rules:
+    - "Any write outside docs/management/bridge-room-prototype/** → STOP."
+    - "Any runtime, Telegram, Shopify, bridge, or git action → STOP."
+    - "BLOCKED stage must wait for valid user decision before RESUME — no auto-resume."
+    - "Decision with consumed=true cannot be reused — STOP if reuse attempted."
+
+global_rules:
+  codex_role: controller_reviewer
+  claude_role: executor
+  no_stage_skip: true
+  no_pass_without_evidence: true
+  no_out_of_scope_writes: true
+  allowed_root: "docs/management/bridge-room-prototype/**"
+  forbidden_runtime_connections:
+    - bridge.py
+    - bridge/github-bridge.py
+    - Telegram
+    - Shopify
+    - git
+  required_id_fields:
+    - pack_id
+    - task_id
+    - stage_id
+    - command_id
+    - output_id
+    - verdict_id
+  decision_validation_rules:
+    - pack_id in decision must match pack_id of this pack
+    - task_id in decision must match task_id of BLOCKED stage
+    - stage_id in decision must match stage_id of BLOCKED stage
+    - command_id in decision must match command_id of BLOCKED stage
+    - escalation_id in decision must match escalation_id from BLOCKED output
+    - consumed must be false before RESUME
+    - consumed must be treated as true after RESUME (verdict records consumed_now=true)
+
+stop_conditions:
+  - scope violation
+  - missing approval_tier
+  - missing required evidence
+  - weak PASS without validation
+  - BLOCKED without valid decision path
+  - decision consumed=true reuse attempt
+  - runtime/Telegram/Shopify/git action attempted
+  - ID mismatch between decision and BLOCKED stage
+
+token_safe_stop:
+  enabled: true
+  artifact: docs/management/bridge-room-prototype/reports/pack-safe-stop-state.json
+  required_fields:
+    - pack_id
+    - current_stage
+    - completed_stages
+    - pending_stage
+    - files_read
+    - files_written
+    - last_verdict
+    - next_required_action
+    - resume_instruction
+    - risk_level
+
+reporting:
+  stage_report_required: true
+  final_pack_report_required: true
+  stage_outputs_location: "docs/management/bridge-room-prototype/inbox/"
+  verdicts_location: "docs/management/bridge-room-prototype/verdicts/"
+  final_report: "docs/management/bridge-room-prototype/reports/pack-p6-final-report.json"
+  safe_stop_report: "docs/management/bridge-room-prototype/reports/pack-safe-stop-state.json"
+  journal: "docs/management/bridge-room-prototype/journal/execution-pack-p6-log.jsonl"
+
+target:
+  file: docs/management/bridge-room-prototype/mock-pack-brief.md
+  description: Mock product brief with intentionally missing target_quality_bar field
+
+stages:
+  - id: STAGE-01
+    stage_id: STAGE-01
+    type: AUDIT
+    task_id: TASK-P6-001
+    command_id: CMD-P6-001
+    output_id: OUT-P6-001
+    verdict_id: VRD-P6-001
+    approval_tier: T1
+    goal: "Audit mock-pack-brief.md and detect missing target_quality_bar. Return BLOCKED."
+    action: >
+      Read mock-pack-brief.md. Check all required fields: target_quality_bar, target_market,
+      target_audience, target_language. Return BLOCKED if target_quality_bar missing.
+      Do not modify target file.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-pack-brief.md
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-p6-stage-01-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-pack-brief.md
+    evidence_required:
+      - FIELD_CHECK
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - All required fields present and valid
+    fail_conditions:
+      - Any non-critical field invalid
+    blocked_conditions:
+      - target_quality_bar missing from brief
+      - target_market missing from brief
+      - target_audience missing from brief
+      - target_language missing from brief
+    next_on_pass: DONE
+    next_on_fail: STAGE-02
+    next_on_blocked: USER_DECISION
+    read_only: true
+
+  - id: STAGE-03
+    stage_id: STAGE-03
+    type: RESUME
+    task_id: TASK-P6-003
+    command_id: CMD-P6-003
+    output_id: OUT-P6-003
+    verdict_id: VRD-P6-003
+    approval_tier: T1
+    goal: "Validate user decision DEC-P6-001 and confirm target_quality_bar resolved."
+    action: >
+      Read user-decision-pack-mock.json. Validate all 5 IDs (pack_id, task_id, stage_id,
+      command_id, escalation_id). Verify consumed=false. Confirm target_quality_bar resolved.
+      Return PASS if all checks pass. Do not modify brief or decision file.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-pack-brief.md
+        - docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json
+        - docs/management/bridge-room-prototype/verdicts/pack-p6-stage-01-blocked-verdict.json
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-pack-brief.md
+      - docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json
+    evidence_required:
+      - ID_VALIDATION
+      - DECISION_RESOLUTION
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - All 5 decision IDs match (pack_id, task_id, stage_id, command_id, escalation_id)
+      - consumed=false confirmed before RESUME
+      - target_quality_bar resolved from decision value
+    fail_conditions:
+      - Any ID mismatch renders decision invalid
+      - consumed=true (decision already used)
+    blocked_conditions:
+      - user-decision-pack-mock.json missing or unreadable
+      - decision field does not match expected missing field
+    next_on_pass: STAGE-04
+    next_on_fail: HOLD
+    next_on_blocked: USER_DECISION
+
+  - id: STAGE-04
+    stage_id: STAGE-04
+    type: RETEST
+    task_id: TASK-P6-004
+    command_id: CMD-P6-004
+    output_id: OUT-P6-004
+    verdict_id: VRD-P6-004
+    approval_tier: T1
+    goal: "Verify all required fields present (with target_quality_bar from decision) and DEC-P6-001 consumed exactly once."
+    action: >
+      Read mock-pack-brief.md and pack-p6-stage-03-resume-output.json.
+      Confirm all 4 required fields present (3 from brief + target_quality_bar from DEC-P6-001).
+      Verify DEC-P6-001 consumed=true and consumed_before=false (single use only).
+      Do not modify any source file.
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-pack-brief.md
+        - docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json
+        - docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json
+        - docs/management/bridge-room-prototype/verdicts/pack-p6-stage-03-resume-verdict.json
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-p6-stage-04-retest-output.json
+    files_forbidden:
+      - bridge/**
+      - scripts/**
+      - docs/management/bridge-room-prototype/mock-pack-brief.md
+      - docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json
+    evidence_required:
+      - FIELD_CHECK
+      - DECISION_CONSUMPTION_CHECK
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - 4/4 required fields confirmed (3 from brief + target_quality_bar from DEC-P6-001)
+      - DEC-P6-001 consumed_before=false (not reused)
+      - DEC-P6-001 consumed_now=true (marked used in STAGE-03)
+      - mock-pack-brief.md not in files_written
+    fail_conditions:
+      - target_quality_bar unresolved
+      - DEC-P6-001 consumed_before=true (reuse detected)
+    blocked_conditions:
+      - pack-p6-stage-03-resume-output.json missing
+    next_on_pass: PACK_COMPLETE
+    next_on_blocked: HOLD
+    read_only: true
+
+ownership:
+  claude_writes:
+    - inbox/pack-p6-stage-01-output.json
+    - inbox/pack-p6-stage-03-resume-output.json
+    - inbox/pack-p6-stage-04-retest-output.json
+  user_provides:
+    - inbox/user-decision-pack-mock.json
+  codex_writes:
+    - outbox/pack-p6-stage-01-command.json
+    - outbox/pack-p6-stage-03-resume-command.json
+    - verdicts/pack-p6-stage-01-blocked-verdict.json
+    - verdicts/pack-p6-stage-03-resume-verdict.json
+    - verdicts/pack-p6-stage-04-retest-verdict.json
+    - reports/pack-p6-final-report.json
+    - reports/pack-safe-stop-state.json
+    - journal/execution-pack-p6-log.jsonl
+
+allowed_status_values:
+  - PASS
+  - FAIL
+  - BLOCKED
+  - ERROR
+
+safety:
+  bridge_connection: false
+  runtime_connection: false
+  telegram: false
+  shopify_writes: false
+  git_operations: false
+  scope: docs/management/bridge-room-prototype/**
+  outside_scope_writes: false

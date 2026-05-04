@@ -1,0 +1,169 @@
+{
+  "output_id": "OUT-P6-003",
+  "task_id": "TASK-P6-003",
+  "stage_id": "STAGE-03",
+  "command_id": "CMD-P6-003",
+  "pack_id": "EXEC-PACK-P6-001",
+  "actor": "Claude",
+  "stage_type": "RESUME",
+  "status": "PASS",
+  "risk_level": "LOW",
+  "escalation_id": "ESC-P6-001",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:07Z",
+  "files_read": [
+    "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-01-blocked-verdict.json",
+    "docs/management/bridge-room-prototype/mock-pack-brief.md"
+  ],
+  "files_written": [
+    "docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json"
+  ],
+  "evidence": [
+    {
+      "id": "E-P6-006",
+      "evidence_type": "ID_VALIDATION",
+      "source": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+      "claim": "decision_id matches expected DEC-P6-001",
+      "proof": "decision_id: DEC-P6-001 — MATCH",
+      "related_condition": "decision_id must equal DEC-P6-001",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-007",
+      "evidence_type": "ID_VALIDATION",
+      "source": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+      "claim": "pack_id matches expected EXEC-PACK-P6-001",
+      "proof": "pack_id: EXEC-PACK-P6-001 — MATCH",
+      "related_condition": "pack_id must equal EXEC-PACK-P6-001",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-008",
+      "evidence_type": "ID_VALIDATION",
+      "source": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+      "claim": "task_id matches expected TASK-P6-001",
+      "proof": "task_id: TASK-P6-001 — MATCH",
+      "related_condition": "task_id must equal TASK-P6-001 (originating blocked stage)",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-009",
+      "evidence_type": "ID_VALIDATION",
+      "source": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+      "claim": "command_id matches expected CMD-P6-001",
+      "proof": "command_id: CMD-P6-001 — MATCH",
+      "related_condition": "command_id must equal CMD-P6-001 (originating command)",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-010",
+      "evidence_type": "ID_VALIDATION",
+      "source": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+      "claim": "escalation_id matches expected ESC-P6-001",
+      "proof": "escalation_id: ESC-P6-001 — MATCH",
+      "related_condition": "escalation_id must equal ESC-P6-001",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-011",
+      "evidence_type": "CONSUMED_CHECK",
+      "source": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+      "claim": "consumed=false (decision not yet used)",
+      "proof": "consumed: false — decision is available for first use",
+      "related_condition": "consumed must be false at time of RESUME execution",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-012",
+      "evidence_type": "DECISION_RESOLUTION",
+      "source": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+      "claim": "target_quality_bar resolved by user decision",
+      "proof": "decision.field: target_quality_bar, decision.value: premium — blocker BLK-P6-001 resolved",
+      "related_condition": "target_quality_bar must be provided by DEC-P6-001 to unblock STAGE-01",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-013",
+      "evidence_type": "SCOPE_CHECK",
+      "source": "files_written",
+      "claim": "RESUME did not modify mock-pack-brief.md or user-decision-pack-mock.json",
+      "proof": "files_written contains only inbox/pack-p6-stage-03-resume-output.json — target files absent",
+      "related_condition": "RESUME is read-only for decision file and brief",
+      "result": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "validation_name": "decision_id_validation",
+      "validation_type": "id_matching",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "decision_id: DEC-P6-001 ✓",
+        "pack_id: EXEC-PACK-P6-001 ✓",
+        "task_id: TASK-P6-001 ✓",
+        "command_id: CMD-P6-001 ✓",
+        "escalation_id: ESC-P6-001 ✓"
+      ],
+      "fail_conditions_checked": [
+        "any ID mismatch → FAIL"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "5/5 IDs validated. All match expected values from CMD-P6-003."
+    },
+    {
+      "validation_name": "decision_resolution_check",
+      "validation_type": "field_resolution",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "consumed=false at read time ✓",
+        "target_quality_bar field provided ✓",
+        "value is non-empty: premium ✓"
+      ],
+      "fail_conditions_checked": [
+        "consumed=true → FAIL (already used)",
+        "target_quality_bar missing or empty → FAIL"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "Decision valid and unused. target_quality_bar=premium resolves BLK-P6-001."
+    },
+    {
+      "validation_name": "resume_scope_check",
+      "validation_type": "scope",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "mock-pack-brief.md not in files_written ✓",
+        "user-decision-pack-mock.json not in files_written ✓",
+        "only inbox/pack-p6-stage-03-resume-output.json written ✓"
+      ],
+      "fail_conditions_checked": [
+        "decision file appears in files_written",
+        "brief appears in files_written"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "RESUME read-only constraint respected. No unauthorized writes."
+    }
+  ],
+  "decisions_used": [
+    {
+      "decision_id": "DEC-P6-001",
+      "pack_id": "EXEC-PACK-P6-001",
+      "field": "target_quality_bar",
+      "value": "premium",
+      "consumed": true,
+      "consumed_at_stage": "STAGE-03",
+      "consumed_at_command": "CMD-P6-003"
+    }
+  ],
+  "blockers": [],
+  "summary": "RESUME PASS. All 5 IDs validated. consumed=false confirmed. target_quality_bar=premium resolves BLK-P6-001. Decision DEC-P6-001 consumed. Scope clean. Proceeding to STAGE-04 RETEST."
+}

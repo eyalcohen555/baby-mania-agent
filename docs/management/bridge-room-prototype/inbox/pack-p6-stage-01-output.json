@@ -1,0 +1,122 @@
+{
+  "output_id": "OUT-P6-001",
+  "task_id": "TASK-P6-001",
+  "stage_id": "STAGE-01",
+  "command_id": "CMD-P6-001",
+  "pack_id": "EXEC-PACK-P6-001",
+  "actor": "Claude",
+  "stage_type": "AUDIT",
+  "status": "BLOCKED",
+  "risk_level": "MEDIUM",
+  "escalation_id": "ESC-P6-001",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:02Z",
+  "files_read": [
+    "docs/management/bridge-room-prototype/mock-pack-brief.md"
+  ],
+  "files_written": [
+    "docs/management/bridge-room-prototype/inbox/pack-p6-stage-01-output.json"
+  ],
+  "evidence": [
+    {
+      "id": "E-P6-001",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+      "claim": "target_quality_bar field is present",
+      "proof": "target_quality_bar field not found in mock-pack-brief.md",
+      "related_condition": "target_quality_bar is required — determines content quality tier",
+      "result": "FAIL"
+    },
+    {
+      "id": "E-P6-002",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+      "claim": "target_market field is present",
+      "proof": "target_market: IL",
+      "related_condition": "target_market is required",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-003",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+      "claim": "target_audience field is present",
+      "proof": "target_audience: new-parents",
+      "related_condition": "target_audience is required",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-004",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+      "claim": "target_language field is present",
+      "proof": "target_language: he",
+      "related_condition": "target_language is required",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-005",
+      "evidence_type": "SCOPE_CHECK",
+      "source": "files_written",
+      "claim": "AUDIT did not modify mock-pack-brief.md",
+      "proof": "files_written contains only inbox/pack-p6-stage-01-output.json — mock-pack-brief.md absent",
+      "related_condition": "AUDIT is read-only for target file",
+      "result": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "validation_name": "required_fields_check",
+      "validation_type": "field_presence",
+      "result": "BLOCKED",
+      "pass_conditions_checked": [
+        "target_market present (IL) ✓",
+        "target_audience present (new-parents) ✓",
+        "target_language present (he) ✓"
+      ],
+      "fail_conditions_checked": [
+        "target_quality_bar MISSING → BLOCKED — cannot proceed without user decision"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/mock-pack-brief.md"
+      ],
+      "risk_level": "MEDIUM",
+      "detail": "3/4 required fields present. target_quality_bar missing. BLOCKED until user provides DEC-P6-001."
+    },
+    {
+      "validation_name": "audit_scope_check",
+      "validation_type": "scope",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "mock-pack-brief.md not in files_written",
+        "only inbox/pack-p6-stage-01-output.json written"
+      ],
+      "fail_conditions_checked": [
+        "mock-pack-brief.md appears in files_written"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/inbox/pack-p6-stage-01-output.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "AUDIT is read-only for target. Scope constraint respected."
+    }
+  ],
+  "blockers": [
+    {
+      "blocker_id": "BLK-P6-001",
+      "reason": "target_quality_bar missing from mock-pack-brief.md",
+      "resolution_required": "User must provide decision DEC-P6-001 with field target_quality_bar",
+      "escalation_id": "ESC-P6-001",
+      "decision_fields_required": {
+        "decision_id": "DEC-P6-001",
+        "pack_id": "EXEC-PACK-P6-001",
+        "task_id": "TASK-P6-001",
+        "stage_id": "STAGE-01",
+        "command_id": "CMD-P6-001",
+        "escalation_id": "ESC-P6-001"
+      }
+    }
+  ],
+  "decisions_used": [],
+  "summary": "AUDIT BLOCKED. target_quality_bar missing from mock-pack-brief.md. 3/4 required fields present. User decision DEC-P6-001 required before STAGE-03 RESUME. Escalation ESC-P6-001 raised."
+}

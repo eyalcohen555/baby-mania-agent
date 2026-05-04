@@ -1,0 +1,35 @@
+{
+  "command_id": "CMD-P5-002",
+  "task_id": "TASK-P5-002",
+  "stage_id": "STAGE-02",
+  "pack_id": "EXEC-PACK-P5-001",
+  "issued_by": "Codex",
+  "actor": "Claude",
+  "stage_type": "FIX",
+  "approval_tier": "T1",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:00:04Z",
+  "target": "docs/management/bridge-room-prototype/mock-pack-target.md",
+  "fix_items": [
+    {
+      "issue_id": "ISS-P5-001",
+      "field": "status",
+      "action": "Replace 'status: COMPLETE' with 'status: PASS'"
+    },
+    {
+      "issue_id": "ISS-P5-002",
+      "field": "approval_tier",
+      "action": "Add 'approval_tier: T1' after status field"
+    },
+    {
+      "issue_id": "ISS-P5-003",
+      "field": "risk_level",
+      "action": "Add 'risk_level: LOW' after approval_tier field"
+    }
+  ],
+  "instruction": "Apply exactly 3 fixes to mock-pack-target.md as specified in fix_items. No other changes permitted. Return PASS if all 3 applied and verified. Evidence Schema v1 required.",
+  "files_allowed_write": [
+    "docs/management/bridge-room-prototype/mock-pack-target.md",
+    "docs/management/bridge-room-prototype/inbox/pack-stage-02-output.json"
+  ]
+}

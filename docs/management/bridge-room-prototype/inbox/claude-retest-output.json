@@ -1,0 +1,69 @@
+﻿{
+  "task_id": "TASK-P2-003",
+  "stage_id": "STAGE-03",
+  "command_id": "CMD-P2-003",
+  "output_id": "OUT-P2-003",
+  "status": "PASS",
+  "actor": "Claude",
+  "stage_type": "RETEST",
+  "files_read": [
+    "docs/management/bridge-room-prototype/mock-target.md",
+    "docs/management/bridge-room-prototype/codex-fix-verdict.json"
+  ],
+  "files_written": [
+    "docs/management/bridge-room-prototype/inbox/claude-retest-output.json"
+  ],
+  "evidence": [
+    {
+      "evidence_type": "READBACK",
+      "source": "docs/management/bridge-room-prototype/mock-target.md",
+      "claim": "The corrected readiness marker exists during RETEST.",
+      "proof": "STATUS: READY_FOR_RETEST",
+      "related_condition": "RETEST must prove the fix exists.",
+      "result": "PASS"
+    },
+    {
+      "evidence_type": "VALIDATION",
+      "source": "docs/management/bridge-room-prototype/mock-target.md",
+      "claim": "The original misspelled marker is absent during RETEST.",
+      "proof": "READY_FOR_RETESET not found in final readback.",
+      "related_condition": "RETEST must verify the failed condition no longer exists.",
+      "result": "PASS"
+    },
+    {
+      "evidence_type": "SCOPE",
+      "source": "files_written",
+      "claim": "RETEST did not modify mock-target.md.",
+      "proof": "files_written contains only docs/management/bridge-room-prototype/inbox/claude-retest-output.json",
+      "related_condition": "RETEST is read-only for mock-target.md.",
+      "result": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "validation_name": "retest_fix_exists",
+      "validation_type": "readback",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "mock-target.md contains STATUS: READY_FOR_RETEST",
+        "mock-target.md does not contain READY_FOR_RETESET",
+        "files_written contains only inbox/claude-retest-output.json",
+        "no side effects detected"
+      ],
+      "fail_conditions_checked": [
+        "mock-target.md modified during RETEST",
+        "missing readback proof",
+        "outside-scope file touched"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/mock-target.md",
+        "docs/management/bridge-room-prototype/inbox/claude-retest-output.json"
+      ],
+      "risk_level": "LOW"
+    }
+  ],
+  "blockers": [],
+  "decisions_used": [],
+  "risk_level": "LOW",
+  "summary": "RETEST confirmed the corrected marker exists, the misspelled marker is absent, and mock-target.md was not modified during RETEST."
+}

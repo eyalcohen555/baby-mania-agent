@@ -1,0 +1,54 @@
+﻿{
+  "command_type": "FIX",
+  "task_id": "TASK-P2-002",
+  "stage_id": "STAGE-02",
+  "command_id": "CMD-P2-002",
+  "approval_tier": "T1",
+  "issued_by": "Codex",
+  "executor": "Claude",
+  "scenario": "AUDIT_FIX_RETEST_001",
+  "depends_on": {
+    "previous_stage_id": "STAGE-01",
+    "required_verdict": "PASS",
+    "required_verdict_id": "VRD-P2-001"
+  },
+  "scope": {
+    "files_allowed_read": [
+      "docs/management/bridge-room-prototype/mock-target.md",
+      "docs/management/bridge-room-prototype/codex-audit-verdict.json"
+    ],
+    "files_allowed_write": [
+      "docs/management/bridge-room-prototype/mock-target.md",
+      "docs/management/bridge-room-prototype/inbox/claude-fix-output.json"
+    ],
+    "files_forbidden": [
+      "bridge/**",
+      "bridge.py",
+      "scripts/**",
+      "teams/**",
+      "BABYMANIA-MASTER-PROMPT.md",
+      "config.yaml"
+    ],
+    "files_forbidden_write": [
+      "docs/management/bridge-room-prototype/codex-*.json",
+      "docs/management/bridge-room-prototype/room-state.json",
+      "docs/management/bridge-room-prototype/journal/stage-log.jsonl"
+    ]
+  },
+  "instructions": [
+    "Fix only the mock marker in mock-target.md.",
+    "Change READY_FOR_RETESET to READY_FOR_RETEST.",
+    "Perform readback from mock-target.md after the edit.",
+    "Return Evidence Schema v1 output to inbox/claude-fix-output.json."
+  ],
+  "pass_conditions": [
+    "mock-target.md contains STATUS: READY_FOR_RETEST.",
+    "files_written contains mock-target.md and inbox/claude-fix-output.json only.",
+    "File change evidence includes before/after proof and readback."
+  ],
+  "fail_conditions": [
+    "Any Codex-owned file is written by Claude.",
+    "Any file outside the prototype folder is touched.",
+    "No readback proof is provided."
+  ]
+}

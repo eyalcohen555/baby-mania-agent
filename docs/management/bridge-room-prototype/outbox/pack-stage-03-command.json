@@ -1,0 +1,35 @@
+{
+  "command_id": "CMD-P5-003",
+  "task_id": "TASK-P5-003",
+  "stage_id": "STAGE-03",
+  "pack_id": "EXEC-PACK-P5-001",
+  "issued_by": "Codex",
+  "actor": "Claude",
+  "stage_type": "RETEST",
+  "approval_tier": "T1",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:00:07Z",
+  "target": "docs/management/bridge-room-prototype/mock-pack-target.md",
+  "verify_items": [
+    {
+      "issue_id": "ISS-P5-001",
+      "check": "status value must be in [PASS, FAIL, BLOCKED, ERROR]"
+    },
+    {
+      "issue_id": "ISS-P5-002",
+      "check": "approval_tier field must be present with value"
+    },
+    {
+      "issue_id": "ISS-P5-003",
+      "check": "risk_level field must be present with value"
+    }
+  ],
+  "instruction": "Read mock-pack-target.md and verify all 3 fixes from STAGE-02 are present. Return PASS if all 3 confirmed, FAIL if any absent. Do NOT write to mock-pack-target.md. Evidence Schema v1 required.",
+  "read_only": true,
+  "files_allowed_read": [
+    "docs/management/bridge-room-prototype/mock-pack-target.md"
+  ],
+  "files_allowed_write": [
+    "docs/management/bridge-room-prototype/inbox/pack-stage-03-output.json"
+  ]
+}

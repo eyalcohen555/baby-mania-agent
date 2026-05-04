@@ -1,0 +1,34 @@
+{
+  "verdict_id": "VRD-P6-003",
+  "task_id": "TASK-P6-003",
+  "stage_id": "STAGE-03",
+  "command_id": "CMD-P6-003",
+  "output_id": "OUT-P6-003",
+  "pack_id": "EXEC-PACK-P6-001",
+  "issued_by": "Codex",
+  "verdict": "RETEST",
+  "escalation_id": "ESC-P6-001",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:08Z",
+  "decision_validation": {
+    "decision_id": "DEC-P6-001",
+    "pack_id": "EXEC-PACK-P6-001",
+    "task_id": "TASK-P6-001",
+    "command_id": "CMD-P6-001",
+    "escalation_id": "ESC-P6-001",
+    "ids_matched": true,
+    "consumed_before": false,
+    "consumed_now": true,
+    "field_resolved": "target_quality_bar",
+    "value_applied": "premium"
+  },
+  "resume_checks": {
+    "id_validation": "PASS — 5/5 IDs matched",
+    "consumed_check": "PASS — consumed=false at read time",
+    "decision_resolution": "PASS — target_quality_bar=premium resolves BLK-P6-001",
+    "scope_check": "PASS — no unauthorized writes"
+  },
+  "next_stage": "STAGE-04",
+  "next_command": "CMD-P6-004",
+  "codex_note": "RESUME validated. DEC-P6-001 consumed (consumed_before=false, consumed_now=true). Blocker ESC-P6-001 cleared. Issuing STAGE-04 RETEST command CMD-P6-004."
+}

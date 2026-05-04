@@ -1,0 +1,29 @@
+﻿{
+  "verdict_id": "VRD-P2-001",
+  "task_id": "TASK-P2-001",
+  "stage_id": "STAGE-01",
+  "command_id": "CMD-P2-001",
+  "output_id": "OUT-P2-001",
+  "reviewer": "Codex",
+  "status_claimed_by_claude": "PASS",
+  "verdict": "PASS",
+  "next_action": "ISSUE_FIX_COMMAND",
+  "checks": {
+    "id_matching": "PASS",
+    "status_allowed": "PASS",
+    "scope": "PASS",
+    "ownership": "PASS",
+    "evidence": "PASS",
+    "validation": "PASS",
+    "blockers_empty": "PASS"
+  },
+  "stage_transition": {
+    "from": "STAGE-01",
+    "to": "STAGE-02",
+    "allowed": true,
+    "reason": "AUDIT detected the mock issue with evidence and made no forbidden writes."
+  },
+  "warnings": [],
+  "blockers": [],
+  "summary": "Codex accepts the AUDIT PASS and permits FIX."
+}

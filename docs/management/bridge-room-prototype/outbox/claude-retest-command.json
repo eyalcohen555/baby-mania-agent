@@ -1,0 +1,56 @@
+﻿{
+  "command_type": "RETEST",
+  "task_id": "TASK-P2-003",
+  "stage_id": "STAGE-03",
+  "command_id": "CMD-P2-003",
+  "approval_tier": "T0",
+  "issued_by": "Codex",
+  "executor": "Claude",
+  "scenario": "AUDIT_FIX_RETEST_001",
+  "depends_on": {
+    "previous_stage_id": "STAGE-02",
+    "required_verdict": "PASS",
+    "required_verdict_id": "VRD-P2-002"
+  },
+  "scope": {
+    "files_allowed_read": [
+      "docs/management/bridge-room-prototype/mock-target.md",
+      "docs/management/bridge-room-prototype/codex-fix-verdict.json"
+    ],
+    "files_allowed_write": [
+      "docs/management/bridge-room-prototype/inbox/claude-retest-output.json"
+    ],
+    "files_forbidden": [
+      "bridge/**",
+      "bridge.py",
+      "scripts/**",
+      "teams/**",
+      "BABYMANIA-MASTER-PROMPT.md",
+      "config.yaml"
+    ],
+    "files_forbidden_write": [
+      "docs/management/bridge-room-prototype/mock-target.md",
+      "docs/management/bridge-room-prototype/codex-*.json",
+      "docs/management/bridge-room-prototype/room-state.json",
+      "docs/management/bridge-room-prototype/journal/stage-log.jsonl"
+    ]
+  },
+  "instructions": [
+    "Read mock-target.md only for retest proof.",
+    "Confirm the corrected marker exists.",
+    "Confirm the misspelled marker no longer exists.",
+    "Do not modify mock-target.md during RETEST.",
+    "Return Evidence Schema v1 output to inbox/claude-retest-output.json."
+  ],
+  "pass_conditions": [
+    "mock-target.md contains STATUS: READY_FOR_RETEST.",
+    "mock-target.md does not contain READY_FOR_RETESET.",
+    "files_written contains only inbox/claude-retest-output.json.",
+    "No side effects are detected."
+  ],
+  "fail_conditions": [
+    "mock-target.md is modified during RETEST.",
+    "No readback proof is provided.",
+    "Any file outside the prototype folder is touched."
+  ]
+}

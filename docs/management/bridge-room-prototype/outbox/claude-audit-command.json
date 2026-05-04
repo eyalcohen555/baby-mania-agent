@@ -1,0 +1,50 @@
+{
+  "command_id": "CMD-P3-001",
+  "task_id": "TASK-P3-001",
+  "stage_id": "STAGE-01",
+  "command_type": "AUDIT",
+  "approval_tier": "T1",
+  "issued_by": "Codex",
+  "executor": "Claude",
+  "scenario": "BLOCKED_DECISION_FLOW",
+  "scope": {
+    "files_allowed_read": [
+      "docs/management/bridge-room-prototype/mock-brief.md"
+    ],
+    "files_allowed_write": [
+      "docs/management/bridge-room-prototype/inbox/claude-blocked-output.json"
+    ],
+    "files_forbidden": [
+      "bridge/**", "bridge.py", "scripts/**", "teams/**",
+      "BABYMANIA-MASTER-PROMPT.md", "config.yaml"
+    ],
+    "files_forbidden_write": [
+      "docs/management/bridge-room-prototype/mock-brief.md",
+      "docs/management/bridge-room-prototype/codex-*.json",
+      "docs/management/bridge-room-prototype/room-state.json",
+      "docs/management/bridge-room-prototype/journal/stage-log.jsonl"
+    ]
+  },
+  "required_fields": [
+    "target_product", "target_market", "target_language",
+    "target_audience", "target_quality_bar"
+  ],
+  "instructions": [
+    "Read mock-brief.md only.",
+    "Check that all required_fields are present.",
+    "If target_quality_bar is missing, return status BLOCKED with escalation_id: ESC-P3-001.",
+    "Do NOT modify mock-brief.md.",
+    "Write output to inbox/claude-blocked-output.json."
+  ],
+  "pass_conditions": [
+    "All required_fields present in mock-brief.md."
+  ],
+  "blocked_conditions": [
+    "target_quality_bar missing from mock-brief.md."
+  ],
+  "fail_conditions": [
+    "mock-brief.md is modified.",
+    "Any file outside docs/management/bridge-room-prototype/ is touched.",
+    "status is not PASS/FAIL/BLOCKED/ERROR."
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "output_id": "OUT-P3-001",
+  "task_id": "TASK-P3-001",
+  "stage_id": "STAGE-01",
+  "command_id": "CMD-P3-001",
+  "actor": "Claude",
+  "stage_type": "AUDIT",
+  "status": "BLOCKED",
+  "risk_level": "LOW",
+  "blocked_reason": "Required field 'target_quality_bar' is missing from mock-brief.md",
+  "escalation_id": "ESC-P3-001",
+  "escalation_required": true,
+  "files_read": [
+    "docs/management/bridge-room-prototype/mock-brief.md"
+  ],
+  "files_written": [
+    "docs/management/bridge-room-prototype/inbox/claude-blocked-output.json"
+  ],
+  "evidence": [
+    {
+      "id": "E-P3-001",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_product field is present in mock-brief.md",
+      "proof": "target_product: baby-shoes",
+      "related_condition": "All required fields must be present for AUDIT PASS",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-002",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_market field is present in mock-brief.md",
+      "proof": "target_market: IL",
+      "related_condition": "All required fields must be present for AUDIT PASS",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-003",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_language field is present in mock-brief.md",
+      "proof": "target_language: he",
+      "related_condition": "All required fields must be present for AUDIT PASS",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-004",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_audience field is present in mock-brief.md",
+      "proof": "target_audience: new-parents",
+      "related_condition": "All required fields must be present for AUDIT PASS",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-005",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_quality_bar field is present in mock-brief.md",
+      "proof": "Field not found in mock-brief.md",
+      "related_condition": "Missing required field triggers BLOCKED with escalation ESC-P3-001",
+      "result": "FAIL"
+    },
+    {
+      "id": "E-P3-006",
+      "evidence_type": "SCOPE_CHECK",
+      "source": "files_written",
+      "claim": "AUDIT did not modify mock-brief.md",
+      "proof": "files_written contains only inbox/claude-blocked-output.json",
+      "related_condition": "Claude must not modify mock-brief.md during AUDIT",
+      "result": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "validation_name": "required_fields_check",
+      "validation_type": "field_presence",
+      "result": "FAIL",
+      "pass_conditions_checked": [
+        "All 5 required fields present in mock-brief.md"
+      ],
+      "fail_conditions_checked": [
+        "target_quality_bar absent from mock-brief.md — triggers BLOCKED"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/mock-brief.md"
+      ],
+      "risk_level": "LOW",
+      "detail": "4/5 required fields present. Missing: target_quality_bar"
+    },
+    {
+      "validation_name": "no_scope_violation",
+      "validation_type": "scope",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "mock-brief.md not in files_written",
+        "files_written contains only inbox/claude-blocked-output.json"
+      ],
+      "fail_conditions_checked": [
+        "mock-brief.md appears in files_written",
+        "Any Codex-owned file appears in files_written"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/inbox/claude-blocked-output.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "mock-brief.md not modified during AUDIT"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "BLK-P3-001",
+      "field": "target_quality_bar",
+      "reason": "Field absent from mock-brief.md",
+      "resolution": "User must provide value via inbox/user-decision-mock.json",
+      "escalation_id": "ESC-P3-001"
+    }
+  ],
+  "decisions_used": [],
+  "summary": "AUDIT BLOCKED. target_quality_bar missing from mock-brief.md. Escalation ESC-P3-001 raised. Awaiting user decision before resume."
+}

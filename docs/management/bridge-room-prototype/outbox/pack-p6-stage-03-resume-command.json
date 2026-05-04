@@ -1,0 +1,25 @@
+{
+  "command_id": "CMD-P6-003",
+  "task_id": "TASK-P6-003",
+  "stage_id": "STAGE-03",
+  "pack_id": "EXEC-PACK-P6-001",
+  "issued_by": "Codex",
+  "actor": "Claude",
+  "stage_type": "RESUME",
+  "approval_tier": "T1",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:06Z",
+  "target": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+  "decision_file": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+  "instruction": "Read user-decision-pack-mock.json. Validate all 5 IDs: pack_id=EXEC-PACK-P6-001, task_id=TASK-P6-001, stage_id=STAGE-01, command_id=CMD-P6-001, escalation_id=ESC-P6-001. Verify consumed=false. Confirm target_quality_bar is resolved. Return PASS if all checks pass. Do NOT modify mock-pack-brief.md or user-decision-pack-mock.json. Evidence Schema v1 required.",
+  "expected_decision_id": "DEC-P6-001",
+  "expected_escalation_id": "ESC-P6-001",
+  "files_allowed_read": [
+    "docs/management/bridge-room-prototype/mock-pack-brief.md",
+    "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-01-blocked-verdict.json"
+  ],
+  "files_allowed_write": [
+    "docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json"
+  ]
+}

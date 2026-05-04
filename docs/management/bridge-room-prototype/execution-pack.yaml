@@ -1,0 +1,256 @@
+﻿pack_id: EXEC-PACK-P5-001
+pack_name: Execution Pack v1 - Prototype #5
+version: 1.0.0
+prototype: true
+created: 2026-05-03
+approval_tier: T1
+layer: 1
+isolated: true
+
+project: BabyMania
+goal: "Prove Execution Pack v1 can control an AUDIT -> FIX -> RETEST loop on a sandbox mock file only."
+success_definition:
+  - "STAGE-01 AUDIT detects the three planned issues without modifying mock-pack-target.md."
+  - "STAGE-02 FIX applies only the three planned corrections to mock-pack-target.md."
+  - "STAGE-03 RETEST verifies the corrections without modifying mock-pack-target.md."
+  - "Final pack report records PACK_PASS only after RETEST PASS."
+
+approval_policy:
+  default_tier: T1
+  pack_tier: T1
+  escalation_rules:
+    - "Any write outside docs/management/bridge-room-prototype/** -> STOP."
+    - "Any runtime, Telegram, Shopify, bridge, or git action -> STOP."
+    - "Any missing approval_tier in a stage -> STOP."
+    - "Any PLAN_DEVIATION -> BLOCKED for user/Codex review."
+
+global_rules:
+  authority:
+    - "BABYMANIA-MASTER-PROMPT.md remains top authority, read-only for this prototype."
+  codex_role: controller_reviewer
+  claude_role: executor
+  no_stage_skip: true
+  no_pass_without_evidence: true
+  no_out_of_scope_writes: true
+  allowed_root: "docs/management/bridge-room-prototype/**"
+  forbidden_runtime_connections:
+    - bridge.py
+    - bridge/github-bridge.py
+    - Telegram
+    - Shopify
+    - git
+  required_id_fields:
+    - pack_id
+    - task_id
+    - stage_id
+    - command_id
+    - output_id
+    - verdict_id
+
+stop_conditions:
+  - "scope violation"
+  - "missing approval_tier"
+  - "missing required evidence"
+  - "weak PASS without validation"
+  - "BLOCKED without valid decision path"
+  - "runtime/Telegram/Shopify/git action attempted"
+
+reporting:
+  stage_report_required: true
+  final_pack_report_required: true
+  stage_outputs_location: "docs/management/bridge-room-prototype/inbox/"
+  verdicts_location: "docs/management/bridge-room-prototype/verdicts/"
+  final_report: "docs/management/bridge-room-prototype/reports/pack-final-report.json"
+  journal: "docs/management/bridge-room-prototype/journal/execution-pack-log.jsonl"
+
+description: >
+  Prototype #5 - Execution Pack v1 sandbox proof.
+  Demonstrates AUDIT -> FIX -> RETEST loop with stage reports and final pack report.
+  No runtime connections. All writes confined to docs/management/bridge-room-prototype/.
+
+target:
+  file: docs/management/bridge-room-prototype/mock-pack-target.md
+  description: Mock product brief with intentional errors for AUDIT to detect and FIX to correct
+
+stages:
+  - id: STAGE-01
+    stage_id: STAGE-01
+    type: AUDIT
+    task_id: TASK-P5-001
+    command_id: CMD-P5-001
+    output_id: OUT-P5-001
+    verdict_id: VRD-P5-001
+    approval_tier: T1
+    goal: "Detect all planned field violations in mock-pack-target.md."
+    action: "Read mock-pack-target.md and check status, approval_tier, and risk_level without editing the target file."
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-pack-target.md
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-stage-01-output.json
+    files_forbidden:
+      - bridge/**
+      - bridge.py
+      - bridge/github-bridge.py
+      - scripts/**
+      - teams/**
+      - BABYMANIA-MASTER-PROMPT.md
+      - config.yaml
+      - docs/management/bridge-room-prototype/mock-pack-target.md
+    evidence_required:
+      - FIELD_CHECK
+      - SCOPE_CHECK
+      - VALIDATION
+    pass_conditions:
+      - "All checked fields are valid and present."
+      - "mock-pack-target.md is not modified."
+    fail_conditions:
+      - "status is not one of PASS, FAIL, BLOCKED, ERROR."
+      - "approval_tier is missing."
+      - "risk_level is missing."
+      - "evidence or validation is missing."
+    blocked_conditions:
+      - "mock-pack-target.md is missing or unreadable."
+      - "Required field rules are ambiguous."
+    next_on_fail: STAGE-02
+    next_on_pass: DONE
+    next_on_blocked: USER_DECISION
+    read_only: true
+    description: Read mock-pack-target.md, detect all field violations. FAIL expected.
+
+  - id: STAGE-02
+    stage_id: STAGE-02
+    type: FIX
+    task_id: TASK-P5-002
+    command_id: CMD-P5-002
+    output_id: OUT-P5-002
+    verdict_id: VRD-P5-002
+    approval_tier: T1
+    goal: "Apply the three planned corrections found by STAGE-01."
+    action: "Fix only status, approval_tier, and risk_level in mock-pack-target.md, then write Claude output."
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-pack-target.md
+        - docs/management/bridge-room-prototype/verdicts/pack-stage-01-verdict.json
+      write:
+        - docs/management/bridge-room-prototype/mock-pack-target.md
+        - docs/management/bridge-room-prototype/inbox/pack-stage-02-output.json
+    files_forbidden:
+      - bridge/**
+      - bridge.py
+      - bridge/github-bridge.py
+      - scripts/**
+      - teams/**
+      - BABYMANIA-MASTER-PROMPT.md
+      - config.yaml
+      - docs/management/bridge-room-prototype/verdicts/**
+      - docs/management/bridge-room-prototype/reports/**
+      - docs/management/bridge-room-prototype/journal/**
+    evidence_required:
+      - FIELD_FIX
+      - SCOPE_CHECK
+      - VALIDATION
+      - READBACK
+    pass_conditions:
+      - "status is corrected to PASS."
+      - "approval_tier: T1 is present."
+      - "risk_level: LOW is present."
+      - "files_written contains only mock-pack-target.md and inbox/pack-stage-02-output.json."
+    fail_conditions:
+      - "Any planned fix is missing."
+      - "Any unplanned target change is reported."
+      - "Any Codex-owned file is written by Claude."
+      - "Any file outside the prototype folder is touched."
+    blocked_conditions:
+      - "mock-pack-target.md is missing or cannot be written."
+      - "STAGE-01 verdict is missing or does not route to FIX."
+    next_on_pass: STAGE-03
+    next_on_fail: BLOCKED
+    next_on_blocked: USER_DECISION
+    allowed_writes:
+      - docs/management/bridge-room-prototype/mock-pack-target.md
+      - docs/management/bridge-room-prototype/inbox/pack-stage-02-output.json
+    description: Apply 3 fixes to mock-pack-target.md as specified by Codex command.
+
+  - id: STAGE-03
+    stage_id: STAGE-03
+    type: RETEST
+    task_id: TASK-P5-003
+    command_id: CMD-P5-003
+    output_id: OUT-P5-003
+    verdict_id: VRD-P5-003
+    approval_tier: T1
+    goal: "Verify all STAGE-02 fixes without modifying mock-pack-target.md."
+    action: "Read mock-pack-target.md and confirm the three corrected fields are present and valid."
+    files_allowed:
+      read:
+        - docs/management/bridge-room-prototype/mock-pack-target.md
+        - docs/management/bridge-room-prototype/verdicts/pack-stage-02-verdict.json
+      write:
+        - docs/management/bridge-room-prototype/inbox/pack-stage-03-output.json
+    files_forbidden:
+      - bridge/**
+      - bridge.py
+      - bridge/github-bridge.py
+      - scripts/**
+      - teams/**
+      - BABYMANIA-MASTER-PROMPT.md
+      - config.yaml
+      - docs/management/bridge-room-prototype/mock-pack-target.md
+      - docs/management/bridge-room-prototype/verdicts/**
+      - docs/management/bridge-room-prototype/reports/**
+      - docs/management/bridge-room-prototype/journal/**
+    evidence_required:
+      - FIELD_CHECK
+      - SCOPE_CHECK
+      - VALIDATION
+      - READBACK
+    pass_conditions:
+      - "status: PASS is present and valid."
+      - "approval_tier: T1 is present."
+      - "risk_level: LOW is present."
+      - "mock-pack-target.md is not modified during RETEST."
+    fail_conditions:
+      - "Any fix from STAGE-02 is absent or invalid."
+      - "mock-pack-target.md appears in files_written."
+      - "Evidence or validation is missing."
+    blocked_conditions:
+      - "mock-pack-target.md is missing or unreadable."
+      - "STAGE-02 verdict is missing or does not route to RETEST."
+    next_on_pass: PACK_COMPLETE
+    next_on_fail: BLOCKED
+    next_on_blocked: USER_DECISION
+    read_only: true
+    constraint: MUST NOT write to mock-pack-target.md
+    description: Verify all 3 fixes from STAGE-02 are present. Read-only. PASS expected.
+
+ownership:
+  claude_writes:
+    - inbox/pack-stage-01-output.json
+    - inbox/pack-stage-02-output.json
+    - inbox/pack-stage-03-output.json
+    - docs/management/bridge-room-prototype/mock-pack-target.md
+  codex_writes:
+    - outbox/pack-stage-01-command.json
+    - outbox/pack-stage-02-command.json
+    - outbox/pack-stage-03-command.json
+    - verdicts/pack-stage-01-verdict.json
+    - verdicts/pack-stage-02-verdict.json
+    - verdicts/pack-stage-03-verdict.json
+    - reports/pack-final-report.json
+    - journal/execution-pack-log.jsonl
+
+allowed_status_values:
+  - PASS
+  - FAIL
+  - BLOCKED
+  - ERROR
+
+safety:
+  bridge_connection: false
+  runtime_connection: false
+  telegram: false
+  shopify_writes: false
+  git_operations: false
+  scope: docs/management/bridge-room-prototype/**
+  outside_scope_writes: false

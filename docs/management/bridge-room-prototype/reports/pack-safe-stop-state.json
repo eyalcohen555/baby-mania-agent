@@ -1,0 +1,56 @@
+{
+  "artifact_type": "TOKEN_SAFE_STOP",
+  "pack_id": "EXEC-PACK-P6-001",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:05Z",
+  "snapshot_reason": "Context tokens approaching limit — capturing safe resume point before pack continues",
+  "current_stage": "STAGE-03",
+  "completed_stages": [
+    {
+      "stage": "STAGE-01",
+      "status": "BLOCKED",
+      "output_id": "OUT-P6-001",
+      "verdict_id": "VRD-P6-001"
+    }
+  ],
+  "pending_stage": {
+    "stage": "STAGE-03",
+    "stage_type": "RESUME",
+    "command_id": "CMD-P6-003",
+    "status": "NOT_STARTED",
+    "reason": "Token limit reached before RESUME execution"
+  },
+  "files_read": [
+    "docs/management/bridge-room-prototype/mock-pack-brief.md",
+    "docs/management/bridge-room-prototype/outbox/pack-p6-stage-01-command.json",
+    "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-01-blocked-verdict.json"
+  ],
+  "files_written": [
+    "docs/management/bridge-room-prototype/inbox/pack-p6-stage-01-output.json",
+    "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-01-blocked-verdict.json",
+    "docs/management/bridge-room-prototype/outbox/pack-p6-stage-01-command.json",
+    "docs/management/bridge-room-prototype/outbox/pack-p6-stage-03-resume-command.json",
+    "docs/management/bridge-room-prototype/execution-pack-p6.yaml",
+    "docs/management/bridge-room-prototype/mock-pack-brief.md",
+    "docs/management/bridge-room-prototype/reports/pack-safe-stop-state.json"
+  ],
+  "last_verdict": {
+    "verdict_id": "VRD-P6-001",
+    "verdict": "BLOCKED",
+    "stage": "STAGE-01",
+    "escalation_id": "ESC-P6-001"
+  },
+  "pending_decision": {
+    "decision_id": "DEC-P6-001",
+    "file": "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+    "consumed": false,
+    "field_required": "target_quality_bar"
+  },
+  "next_required_action": "Execute STAGE-03 RESUME using CMD-P6-003. Read user-decision-pack-mock.json. Validate 5 IDs. Confirm consumed=false. Output to inbox/pack-p6-stage-03-resume-output.json.",
+  "resume_instruction": "Load this file. Read outbox/pack-p6-stage-03-resume-command.json for full RESUME command. All prior context recoverable from files_written list above.",
+  "risk_level": "LOW",
+  "safe_to_stop": true,
+  "codex_note": "TOKEN_SAFE_STOP captured. Pack state is clean — STAGE-01 BLOCKED verdict issued, user decision present and unconsumed, STAGE-03 command ready. Resume requires only reading CMD-P6-003 and executing RESUME."
+}

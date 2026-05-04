@@ -1,0 +1,30 @@
+﻿{
+  "verdict_id": "VRD-P2-002",
+  "task_id": "TASK-P2-002",
+  "stage_id": "STAGE-02",
+  "command_id": "CMD-P2-002",
+  "output_id": "OUT-P2-002",
+  "reviewer": "Codex",
+  "status_claimed_by_claude": "PASS",
+  "verdict": "PASS",
+  "next_action": "ISSUE_RETEST_COMMAND",
+  "checks": {
+    "id_matching": "PASS",
+    "status_allowed": "PASS",
+    "scope": "PASS",
+    "ownership": "PASS",
+    "file_change_evidence": "PASS",
+    "readback": "PASS",
+    "validation": "PASS",
+    "blockers_empty": "PASS"
+  },
+  "stage_transition": {
+    "from": "STAGE-02",
+    "to": "STAGE-03",
+    "allowed": true,
+    "reason": "FIX wrote only mock-target.md plus the Claude output file and supplied readback proof."
+  },
+  "warnings": [],
+  "blockers": [],
+  "summary": "Codex accepts the FIX PASS and requires RETEST before final prototype PASS."
+}

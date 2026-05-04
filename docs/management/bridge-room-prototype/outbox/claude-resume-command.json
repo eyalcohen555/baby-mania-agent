@@ -1,0 +1,61 @@
+{
+  "command_id": "CMD-P3-002",
+  "task_id": "TASK-P3-002",
+  "stage_id": "STAGE-02",
+  "command_type": "RESUME",
+  "approval_tier": "T1",
+  "issued_by": "Codex",
+  "executor": "Claude",
+  "scenario": "BLOCKED_DECISION_FLOW",
+  "depends_on": {
+    "blocked_verdict_id": "VRD-P3-001",
+    "decision_id": "DEC-P3-001",
+    "decision_validated": true,
+    "decision_validation": {
+      "task_id_match":      "DEC-P3-001.task_id == TASK-P3-001  ✓",
+      "stage_id_match":     "DEC-P3-001.stage_id == STAGE-01    ✓",
+      "command_id_match":   "DEC-P3-001.command_id == CMD-P3-001 ✓",
+      "escalation_id_match":"DEC-P3-001.escalation_id == ESC-P3-001 ✓",
+      "not_stale":          true,
+      "consumed_before":    false
+    }
+  },
+  "resolved_inputs": {
+    "target_quality_bar": "premium",
+    "source": "DEC-P3-001"
+  },
+  "scope": {
+    "files_allowed_read": [
+      "docs/management/bridge-room-prototype/mock-brief.md",
+      "docs/management/bridge-room-prototype/inbox/user-decision-mock.json"
+    ],
+    "files_allowed_write": [
+      "docs/management/bridge-room-prototype/inbox/claude-resume-output.json"
+    ],
+    "files_forbidden": [
+      "bridge/**", "bridge.py", "scripts/**", "teams/**",
+      "BABYMANIA-MASTER-PROMPT.md", "config.yaml"
+    ],
+    "files_forbidden_write": [
+      "docs/management/bridge-room-prototype/mock-brief.md",
+      "docs/management/bridge-room-prototype/codex-*.json",
+      "docs/management/bridge-room-prototype/inbox/user-decision-mock.json",
+      "docs/management/bridge-room-prototype/room-state.json",
+      "docs/management/bridge-room-prototype/journal/stage-log.jsonl"
+    ]
+  },
+  "instructions": [
+    "Read mock-brief.md and inbox/user-decision-mock.json.",
+    "Treat DEC-P3-001.decision.value as the resolved target_quality_bar.",
+    "Confirm all 5 required fields are present (4 from brief + 1 from decision).",
+    "Do NOT modify mock-brief.md or user-decision-mock.json.",
+    "Write PASS output to inbox/claude-resume-output.json.",
+    "Mark decision_id DEC-P3-001 as consumed in your output."
+  ],
+  "pass_conditions": [
+    "All 5 required fields confirmed present.",
+    "mock-brief.md not modified.",
+    "user-decision-mock.json not modified.",
+    "files_written contains only inbox/claude-resume-output.json."
+  ]
+}

@@ -1,0 +1,112 @@
+prototype:
+  name: Bridge Room V1
+  version: "1.1.0"
+  date: "2026-04-29"
+  status: PROTOTYPE_ISOLATED
+  approval_tier: T1
+  layer: 1
+
+roles:
+  controller:
+    actor: Codex
+    permissions:
+      - issue_command
+      - read_output
+      - write_verdict
+      - approve_retest
+  executor:
+    actor: Claude
+    permissions:
+      - read_command
+      - execute_task
+      - write_output
+
+ownership:
+  claude_writes:
+    - "inbox/claude-output.json"
+    - "inbox/claude-retest-output.json"
+  codex_writes:
+    - "codex-verdict.json"
+    - "codex-retest-verdict.json"
+    - "room-state.json"
+    - "journal/stage-log.jsonl"
+  system_writes:
+    - "room-state.json"
+
+allowed_status_values: [PASS, FAIL, BLOCKED, ERROR]
+
+scenario:
+  id: AUDIT_RETEST_001
+  name: "AUDIT → RETEST"
+  trigger: manual
+
+  stages:
+    - id: STAGE-01
+      name: AUDIT
+      task_id: TASK-001
+      command_id: CMD-001
+      output_id: OUT-001
+      verdict_id: VRD-001
+      steps:
+        - step: 1
+          name: INIT
+          actor: system
+          action: "Room initialized, awaiting Codex command"
+        - step: 2
+          name: AUDIT_COMMAND_ISSUED
+          actor: Codex
+          action: "Write AUDIT command to outbox/claude-command.json"
+          writes: "outbox/claude-command.json"
+        - step: 3
+          name: AUDIT_EXECUTING
+          actor: Claude
+          action: "Read command, execute audit, write result to inbox/claude-output.json"
+          reads: "outbox/claude-command.json"
+          writes: "inbox/claude-output.json"
+        - step: 4
+          name: AUDIT_VERDICT
+          actor: Codex
+          action: "Review output, write verdict to codex-verdict.json"
+          reads: "inbox/claude-output.json"
+          writes: "codex-verdict.json"
+
+    - id: STAGE-02
+      name: RETEST
+      task_id: TASK-002
+      command_id: CMD-002
+      output_id: OUT-002
+      verdict_id: VRD-002
+      steps:
+        - step: 1
+          name: RETEST_COMMAND_ISSUED
+          actor: Codex
+          action: "Write RETEST command to outbox/claude-retest-command.json"
+          writes: "outbox/claude-retest-command.json"
+        - step: 2
+          name: RETEST_EXECUTING
+          actor: Claude
+          action: "Read retest command, fix items, write result to inbox/claude-retest-output.json"
+          reads: "outbox/claude-retest-command.json"
+          writes: "inbox/claude-retest-output.json"
+        - step: 3
+          name: RETEST_VERDICT
+          actor: Codex
+          action: "Review retest output, write final verdict to codex-retest-verdict.json"
+          reads: "inbox/claude-retest-output.json"
+          writes: "codex-retest-verdict.json"
+
+constraints:
+  forbidden_files:
+    - "bridge/**"
+    - "bridge.py"
+    - "scripts/**"
+    - "teams/**"
+    - "BABYMANIA-MASTER-PROMPT.md"
+    - "config.yaml"
+  forbidden_actions:
+    - git_commit
+    - git_push
+    - telegram_connect
+    - bridge_runtime_connect
+    - shopify_write
+  allowed_scope: "docs/management/bridge-room-prototype/**"

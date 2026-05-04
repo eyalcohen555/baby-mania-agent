@@ -1,0 +1,145 @@
+{
+  "output_id": "OUT-P3-002",
+  "task_id": "TASK-P3-002",
+  "stage_id": "STAGE-02",
+  "command_id": "CMD-P3-002",
+  "actor": "Claude",
+  "stage_type": "RESUME",
+  "status": "PASS",
+  "risk_level": "LOW",
+  "decision_consumed": "DEC-P3-001",
+  "files_read": [
+    "docs/management/bridge-room-prototype/mock-brief.md",
+    "docs/management/bridge-room-prototype/inbox/user-decision-mock.json"
+  ],
+  "files_written": [
+    "docs/management/bridge-room-prototype/inbox/claude-resume-output.json"
+  ],
+  "evidence": [
+    {
+      "id": "E-P3-101",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_product field is present in mock-brief.md",
+      "proof": "target_product: baby-shoes",
+      "related_condition": "All required fields must be confirmed present during RESUME",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-102",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_market field is present in mock-brief.md",
+      "proof": "target_market: IL",
+      "related_condition": "All required fields must be confirmed present during RESUME",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-103",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_language field is present in mock-brief.md",
+      "proof": "target_language: he",
+      "related_condition": "All required fields must be confirmed present during RESUME",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-104",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-brief.md",
+      "claim": "target_audience field is present in mock-brief.md",
+      "proof": "target_audience: new-parents",
+      "related_condition": "All required fields must be confirmed present during RESUME",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-105",
+      "evidence_type": "DECISION_RESOLUTION",
+      "source": "docs/management/bridge-room-prototype/inbox/user-decision-mock.json",
+      "claim": "DEC-P3-001 provides resolved value for target_quality_bar",
+      "proof": "DEC-P3-001.decision.value = premium",
+      "related_condition": "Missing field from AUDIT must be resolved via valid user decision before RESUME",
+      "decision_id": "DEC-P3-001",
+      "escalation_id": "ESC-P3-001",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P3-106",
+      "evidence_type": "SCOPE_CHECK",
+      "source": "files_written",
+      "claim": "RESUME did not modify mock-brief.md or user-decision-mock.json",
+      "proof": "files_written contains only inbox/claude-resume-output.json",
+      "related_condition": "Claude must not modify mock-brief.md or user-decision-mock.json during RESUME",
+      "result": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "validation_name": "all_required_fields_present",
+      "validation_type": "field_presence",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "5/5 required fields confirmed present",
+        "target_quality_bar resolved from DEC-P3-001 (premium)"
+      ],
+      "fail_conditions_checked": [
+        "Any required field absent after decision resolution"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/mock-brief.md",
+        "docs/management/bridge-room-prototype/inbox/user-decision-mock.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "5/5 required fields: 4 from mock-brief.md + target_quality_bar from DEC-P3-001"
+    },
+    {
+      "validation_name": "decision_id_match",
+      "validation_type": "id_validation",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "DEC-P3-001.task_id == TASK-P3-001",
+        "DEC-P3-001.stage_id == STAGE-01",
+        "DEC-P3-001.command_id == CMD-P3-001",
+        "DEC-P3-001.escalation_id == ESC-P3-001"
+      ],
+      "fail_conditions_checked": [
+        "Any ID mismatch between decision and blocked stage renders decision invalid"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/inbox/user-decision-mock.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "DEC-P3-001 matches TASK-P3-001 / STAGE-01 / CMD-P3-001 / ESC-P3-001"
+    },
+    {
+      "validation_name": "no_scope_violation",
+      "validation_type": "scope",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "mock-brief.md not in files_written",
+        "user-decision-mock.json not in files_written",
+        "files_written contains only inbox/claude-resume-output.json"
+      ],
+      "fail_conditions_checked": [
+        "mock-brief.md appears in files_written",
+        "user-decision-mock.json appears in files_written",
+        "Any Codex-owned file appears in files_written"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/inbox/claude-resume-output.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "mock-brief.md and user-decision-mock.json not modified during RESUME"
+    }
+  ],
+  "blockers": [],
+  "decisions_used": [
+    {
+      "decision_id": "DEC-P3-001",
+      "field": "target_quality_bar",
+      "value": "premium",
+      "consumed": true
+    }
+  ],
+  "summary": "RESUME PASS. All 5 required fields confirmed. target_quality_bar resolved from DEC-P3-001 (premium). Decision DEC-P3-001 consumed. No scope violations."
+}

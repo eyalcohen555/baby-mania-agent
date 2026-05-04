@@ -1,0 +1,148 @@
+{
+  "output_id": "OUT-P6-004",
+  "task_id": "TASK-P6-004",
+  "stage_id": "STAGE-04",
+  "command_id": "CMD-P6-004",
+  "pack_id": "EXEC-PACK-P6-001",
+  "actor": "Claude",
+  "stage_type": "RETEST",
+  "status": "PASS",
+  "risk_level": "LOW",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:09Z",
+  "files_read": [
+    "docs/management/bridge-room-prototype/mock-pack-brief.md",
+    "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+    "docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json",
+    "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-03-resume-verdict.json"
+  ],
+  "files_written": [
+    "docs/management/bridge-room-prototype/inbox/pack-p6-stage-04-retest-output.json"
+  ],
+  "evidence": [
+    {
+      "id": "E-P6-014",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+      "claim": "target_market field present",
+      "proof": "target_market: IL",
+      "related_condition": "target_market is required",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-015",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+      "claim": "target_audience field present",
+      "proof": "target_audience: new-parents",
+      "related_condition": "target_audience is required",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-016",
+      "evidence_type": "FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+      "claim": "target_language field present",
+      "proof": "target_language: he",
+      "related_condition": "target_language is required",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-017",
+      "evidence_type": "DECISION_FIELD_CHECK",
+      "source": "docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json",
+      "claim": "target_quality_bar resolved via DEC-P6-001",
+      "proof": "decisions_used[0].field=target_quality_bar, value=premium, consumed=true",
+      "related_condition": "target_quality_bar must be resolved by user decision before RETEST",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-018",
+      "evidence_type": "SINGLE_USE_CHECK",
+      "source": "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-03-resume-verdict.json",
+      "claim": "DEC-P6-001 was consumed exactly once",
+      "proof": "decision_validation.consumed_before=false, consumed_now=true — first and only consumption",
+      "related_condition": "decisions must be single-use only; re-use is a FAIL",
+      "result": "PASS"
+    },
+    {
+      "id": "E-P6-019",
+      "evidence_type": "SCOPE_CHECK",
+      "source": "files_written",
+      "claim": "RETEST did not modify brief or decision file",
+      "proof": "files_written contains only inbox/pack-p6-stage-04-retest-output.json",
+      "related_condition": "RETEST is read-only for all prior artifacts",
+      "result": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "validation_name": "all_fields_present_after_resolution",
+      "validation_type": "field_presence",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "target_market: IL ✓",
+        "target_audience: new-parents ✓",
+        "target_language: he ✓",
+        "target_quality_bar: premium (via DEC-P6-001) ✓"
+      ],
+      "fail_conditions_checked": [
+        "any required field still missing → FAIL"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/mock-pack-brief.md",
+        "docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "4/4 required fields present. All pass. BLOCKED condition fully resolved."
+    },
+    {
+      "validation_name": "decision_single_use_check",
+      "validation_type": "consumption_integrity",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "consumed_before=false ✓",
+        "consumed_now=true ✓",
+        "no second consumption event found ✓"
+      ],
+      "fail_conditions_checked": [
+        "consumed_before=true → decision was reused → FAIL",
+        "consumed_now=false → decision not registered as used → FAIL"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-03-resume-verdict.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "DEC-P6-001 consumed exactly once at STAGE-03. Single-use constraint satisfied."
+    },
+    {
+      "validation_name": "retest_scope_check",
+      "validation_type": "scope",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "mock-pack-brief.md not in files_written ✓",
+        "user-decision-pack-mock.json not in files_written ✓",
+        "resume output not in files_written ✓"
+      ],
+      "fail_conditions_checked": [
+        "any prior artifact appears in files_written"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/inbox/pack-p6-stage-04-retest-output.json"
+      ],
+      "risk_level": "LOW",
+      "detail": "RETEST read-only for all prior artifacts. Scope clean."
+    }
+  ],
+  "decisions_used": [
+    {
+      "decision_id": "DEC-P6-001",
+      "field": "target_quality_bar",
+      "value": "premium",
+      "consumed": true,
+      "verified_single_use": true
+    }
+  ],
+  "blockers": [],
+  "summary": "RETEST PASS. 4/4 required fields present. DEC-P6-001 consumed exactly once (consumed_before=false, consumed_now=true). Scope clean. All STAGE-01 blockers resolved. Pack eligible for PACK_PASS verdict."
+}

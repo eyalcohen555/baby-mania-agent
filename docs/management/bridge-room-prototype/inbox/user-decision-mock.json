@@ -1,0 +1,15 @@
+{
+  "decision_id": "DEC-P3-001",
+  "task_id": "TASK-P3-001",
+  "stage_id": "STAGE-01",
+  "command_id": "CMD-P3-001",
+  "escalation_id": "ESC-P3-001",
+  "issued_by": "user-mock",
+  "timestamp": "2026-05-03T00:03:00Z",
+  "decision": {
+    "field": "target_quality_bar",
+    "value": "premium",
+    "rationale": "BabyMania targets premium segment"
+  },
+  "consumed": false
+}

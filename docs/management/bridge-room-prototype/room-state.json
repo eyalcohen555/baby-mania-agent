@@ -1,0 +1,100 @@
+{
+  "room_id": "bridge-room-v1-prototype-3",
+  "prototype": true,
+  "isolated": true,
+  "scenario": "BLOCKED_DECISION_FLOW",
+  "current_stage": "STAGE-02",
+  "current_state": "PROTOTYPE_3_PASSED",
+  "timestamp": "2026-05-03T00:06:00Z",
+  "cycles_completed": 2,
+  "roles": {
+    "controller": "Codex",
+    "executor": "Claude"
+  },
+  "stage_history": [
+    {
+      "stage_id": "STAGE-01",
+      "type": "AUDIT",
+      "task_id": "TASK-P3-001",
+      "command_id": "CMD-P3-001",
+      "output_id": "OUT-P3-001",
+      "verdict_id": "VRD-P3-001",
+      "verdict": "BLOCKED",
+      "completed": true
+    },
+    {
+      "stage_id": "WAITING_FOR_USER_DECISION",
+      "type": "DECISION_GATE",
+      "escalation_id": "ESC-P3-001",
+      "decision_id": "DEC-P3-001",
+      "decision_consumed": true,
+      "completed": true
+    },
+    {
+      "stage_id": "STAGE-02",
+      "type": "RESUME",
+      "task_id": "TASK-P3-002",
+      "command_id": "CMD-P3-002",
+      "output_id": "OUT-P3-002",
+      "verdict_id": "VRD-P3-002",
+      "verdict": "PASS",
+      "completed": true
+    }
+  ],
+  "id_matching": {
+    "valid": true,
+    "STAGE-01": {
+      "task_id": "TASK-P3-001",
+      "command_id": "CMD-P3-001",
+      "output_id": "OUT-P3-001",
+      "verdict_id": "VRD-P3-001"
+    },
+    "STAGE-02": {
+      "task_id": "TASK-P3-002",
+      "command_id": "CMD-P3-002",
+      "output_id": "OUT-P3-002",
+      "verdict_id": "VRD-P3-002"
+    }
+  },
+  "decision_gate": {
+    "escalation_id":    "ESC-P3-001",
+    "decision_id":      "DEC-P3-001",
+    "validated":        true,
+    "id_match":         true,
+    "not_stale":        true,
+    "consumed_before":  false,
+    "consumed_now":     true
+  },
+  "ownership": {
+    "valid": true,
+    "claude_writes": [
+      "inbox/claude-blocked-output.json",
+      "inbox/claude-resume-output.json"
+    ],
+    "codex_writes": [
+      "outbox/claude-audit-command.json",
+      "outbox/claude-resume-command.json",
+      "codex-blocked-verdict.json",
+      "codex-resume-verdict.json",
+      "room-state.json",
+      "journal/stage-log.jsonl"
+    ]
+  },
+  "status_compliance": {
+    "valid": true,
+    "allowed_values": ["PASS", "FAIL", "BLOCKED", "ERROR"],
+    "violations_found": 0
+  },
+  "safety": {
+    "allowed_scope": "docs/management/bridge-room-prototype/**",
+    "connected_to_runtime": false,
+    "connected_to_telegram": false,
+    "connected_to_bridge_py": false,
+    "connected_to_shopify": false,
+    "git_operations_performed": false,
+    "outside_scope_files_touched": false
+  },
+  "final_verdict": "PASS",
+  "loop_verified": "AUDIT → BLOCKED → USER_DECISION → RESUME → PASS",
+  "ready_for_codex_review": true
+}

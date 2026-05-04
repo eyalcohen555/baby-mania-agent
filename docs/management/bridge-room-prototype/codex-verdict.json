@@ -1,0 +1,49 @@
+{
+  "verdict_id": "VRD-001",
+  "in_response_to": "OUT-001",
+  "issued_by": "Codex",
+  "type": "VERDICT",
+  "timestamp": "2026-04-29T00:03:00Z",
+  "prototype": true,
+  "verdict": "RETEST",
+  "reason": "Audit passed all critical checks. One WARN finding: missing 'retest_instructions' field. RETEST required to confirm fix.",
+  "findings_reviewed": 6,
+  "findings_passed": 5,
+  "findings_warned": 1,
+  "findings_failed": 0,
+  "retest_requirements": [
+    {
+      "id": "RT-001",
+      "field_to_add": "retest_instructions",
+      "target_file": "codex-verdict.json",
+      "description": "Add structured retest_instructions block to all future verdict files",
+      "priority": "LOW"
+    },
+    {
+      "id": "RT-002",
+      "action": "UPDATE_SCHEMA",
+      "target_file": "inbox/claude-output.json",
+      "fields_to_add": ["task_id", "stage_id", "command_id", "files_read", "files_written", "evidence", "validation", "blockers", "decisions_used", "risk_level"],
+      "description": "claude-output.json must comply with Evidence Schema v1",
+      "required_for_pass": true,
+      "priority": "HIGH"
+    }
+  ],
+  "retest_instructions": [
+    {
+      "id": "RI-001",
+      "step": 1,
+      "action": "Claude adds all missing Evidence Schema v1 fields to inbox/claude-output.json",
+      "expected_output": "outbox/claude-retest-command.json issued by Codex → inbox/claude-retest-output.json returned by Claude"
+    },
+    {
+      "id": "RI-002",
+      "step": 2,
+      "action": "Codex reviews retest output and issues final verdict",
+      "expected_output": "codex-retest-verdict.json with verdict PASS or FAIL"
+    }
+  ],
+  "next_cycle_approved": true,
+  "escalation_required": false,
+  "notes": "Loop V1 cycle 1 validated structurally. RETEST required for Evidence Schema v1 compliance. No runtime integration until T2 approval."
+}

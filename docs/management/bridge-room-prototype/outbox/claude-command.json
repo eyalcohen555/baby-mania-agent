@@ -1,0 +1,30 @@
+{
+  "command_id": "CMD-001",
+  "task_id": "TASK-001",
+  "stage_id": "STAGE-01",
+  "issued_by": "Codex",
+  "issued_to": "Claude",
+  "type": "AUDIT",
+  "timestamp": "2026-04-29T00:01:00Z",
+  "prototype": true,
+  "payload": {
+    "task": "AUDIT",
+    "target": "bridge-room-v1",
+    "scope": "prototype-loop-validation",
+    "instructions": [
+      "Verify that the AUDIT → RETEST loop structure is coherent",
+      "Check that all required files are present and correctly structured",
+      "Confirm that no forbidden files or systems are referenced",
+      "Report any structural gaps or missing fields",
+      "Do not connect to any external systems"
+    ],
+    "expected_output_file": "inbox/claude-output.json",
+    "timeout_seconds": 60
+  },
+  "constraints": {
+    "no_runtime_connection": true,
+    "no_git": true,
+    "no_telegram": true,
+    "write_scope": "docs/management/bridge-room-prototype/**"
+  }
+}

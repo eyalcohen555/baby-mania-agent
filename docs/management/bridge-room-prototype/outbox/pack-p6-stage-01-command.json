@@ -1,0 +1,20 @@
+{
+  "command_id": "CMD-P6-001",
+  "task_id": "TASK-P6-001",
+  "stage_id": "STAGE-01",
+  "pack_id": "EXEC-PACK-P6-001",
+  "issued_by": "Codex",
+  "actor": "Claude",
+  "stage_type": "AUDIT",
+  "approval_tier": "T1",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:01Z",
+  "target": "docs/management/bridge-room-prototype/mock-pack-brief.md",
+  "instruction": "Audit mock-pack-brief.md. Check for required fields: target_quality_bar, target_market, target_audience, target_language. Return BLOCKED if any required field missing. Return FAIL if fields present but invalid. Do NOT modify target file. Evidence Schema v1 required.",
+  "files_allowed_read": [
+    "docs/management/bridge-room-prototype/mock-pack-brief.md"
+  ],
+  "files_allowed_write": [
+    "docs/management/bridge-room-prototype/inbox/pack-p6-stage-01-output.json"
+  ]
+}

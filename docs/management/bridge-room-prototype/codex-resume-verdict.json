@@ -1,0 +1,36 @@
+{
+  "verdict_id": "VRD-P3-002",
+  "task_id": "TASK-P3-002",
+  "stage_id": "STAGE-02",
+  "command_id": "CMD-P3-002",
+  "output_id": "OUT-P3-002",
+  "issued_by": "Codex",
+  "type": "RESUME_VERDICT",
+  "timestamp": "2026-05-03T00:06:00Z",
+  "prototype": true,
+  "verdict": "PASS",
+  "decision_validation": {
+    "decision_id":         "DEC-P3-001",
+    "task_id_match":       true,
+    "stage_id_match":      true,
+    "command_id_match":    true,
+    "escalation_id_match": true,
+    "not_stale":           true,
+    "consumed_before":     false,
+    "consumed_now":        true
+  },
+  "checks": [
+    { "check": "BLOCKED_correctly_triggered",  "result": "PASS", "detail": "Claude returned BLOCKED on missing target_quality_bar — correct behavior" },
+    { "check": "room_state_held_WAITING",      "result": "PASS", "detail": "room-state stayed WAITING_FOR_USER_DECISION until valid decision" },
+    { "check": "decision_id_validation",       "result": "PASS", "detail": "DEC-P3-001 matches all 4 required IDs" },
+    { "check": "decision_not_stale",           "result": "PASS", "detail": "timestamp within session" },
+    { "check": "decision_not_consumed",        "result": "PASS", "detail": "consumed was false at validation time" },
+    { "check": "resume_scope_clean",           "result": "PASS", "detail": "mock-brief.md and user-decision-mock.json not modified during RESUME" },
+    { "check": "all_fields_resolved",          "result": "PASS", "detail": "5/5 required fields confirmed via brief + decision" },
+    { "check": "ownership_respected",          "result": "PASS", "detail": "Claude wrote only inbox/ files; Codex wrote verdicts, room-state, journal" }
+  ],
+  "loop_verified": "AUDIT → BLOCKED → USER_DECISION → RESUME → PASS",
+  "next_cycle_approved": false,
+  "runtime_integration_approved": false,
+  "notes": "Prototype #3 PASS. BLOCKED decision flow demonstrated end-to-end. T2 approval required for runtime integration."
+}

@@ -1,0 +1,27 @@
+{
+  "verdict_id": "VRD-P6-001",
+  "task_id": "TASK-P6-001",
+  "stage_id": "STAGE-01",
+  "command_id": "CMD-P6-001",
+  "output_id": "OUT-P6-001",
+  "pack_id": "EXEC-PACK-P6-001",
+  "issued_by": "Codex",
+  "verdict": "BLOCKED",
+  "escalation_id": "ESC-P6-001",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:03Z",
+  "blocked_reason": "target_quality_bar missing from mock-pack-brief.md",
+  "resolution_required": "User must provide inbox/user-decision-pack-mock.json with field target_quality_bar",
+  "decision_spec": {
+    "decision_id": "DEC-P6-001",
+    "pack_id": "EXEC-PACK-P6-001",
+    "task_id": "TASK-P6-001",
+    "stage_id": "STAGE-01",
+    "command_id": "CMD-P6-001",
+    "escalation_id": "ESC-P6-001",
+    "consumed": false,
+    "file": "inbox/user-decision-pack-mock.json"
+  },
+  "next_stage": "USER_DECISION",
+  "codex_note": "AUDIT confirmed target_quality_bar missing. System held at BLOCKED. Awaiting user decision DEC-P6-001 before issuing STAGE-03 RESUME command CMD-P6-003."
+}

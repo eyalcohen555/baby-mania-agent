@@ -1,0 +1,16 @@
+{
+  "decision_id": "DEC-P6-001",
+  "pack_id": "EXEC-PACK-P6-001",
+  "task_id": "TASK-P6-001",
+  "stage_id": "STAGE-01",
+  "command_id": "CMD-P6-001",
+  "escalation_id": "ESC-P6-001",
+  "issued_by": "user-mock",
+  "timestamp": "2026-05-03T10:01:05Z",
+  "prototype": true,
+  "decision": {
+    "field": "target_quality_bar",
+    "value": "premium"
+  },
+  "consumed": false
+}

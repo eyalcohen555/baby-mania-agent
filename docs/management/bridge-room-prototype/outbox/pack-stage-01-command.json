@@ -1,0 +1,20 @@
+{
+  "command_id": "CMD-P5-001",
+  "task_id": "TASK-P5-001",
+  "stage_id": "STAGE-01",
+  "pack_id": "EXEC-PACK-P5-001",
+  "issued_by": "Codex",
+  "actor": "Claude",
+  "stage_type": "AUDIT",
+  "approval_tier": "T1",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:00:01Z",
+  "target": "docs/management/bridge-room-prototype/mock-pack-target.md",
+  "instruction": "Audit mock-pack-target.md. Check: (1) status value in [PASS, FAIL, BLOCKED, ERROR], (2) approval_tier field present, (3) risk_level field present. Return FAIL if any check fails. Evidence Schema v1 required. Do NOT modify target file.",
+  "files_allowed_read": [
+    "docs/management/bridge-room-prototype/mock-pack-target.md"
+  ],
+  "files_allowed_write": [
+    "docs/management/bridge-room-prototype/inbox/pack-stage-01-output.json"
+  ]
+}

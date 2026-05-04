@@ -1,0 +1,40 @@
+{
+  "verdict_id": "VRD-P6-004",
+  "task_id": "TASK-P6-004",
+  "stage_id": "STAGE-04",
+  "command_id": "CMD-P6-004",
+  "output_id": "OUT-P6-004",
+  "pack_id": "EXEC-PACK-P6-001",
+  "issued_by": "Codex",
+  "verdict": "PACK_PASS",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:10Z",
+  "pack_summary": {
+    "pack_id": "EXEC-PACK-P6-001",
+    "stages_completed": ["STAGE-01", "STAGE-03", "STAGE-04"],
+    "stage_outcomes": {
+      "STAGE-01": "BLOCKED",
+      "STAGE-03": "PASS",
+      "STAGE-04": "PASS"
+    },
+    "decisions_consumed": ["DEC-P6-001"],
+    "escalations_raised": ["ESC-P6-001"],
+    "escalations_cleared": ["ESC-P6-001"],
+    "blockers_raised": ["BLK-P6-001"],
+    "blockers_resolved": ["BLK-P6-001"],
+    "single_use_integrity": "PASS"
+  },
+  "proven_behaviors": [
+    "AUDIT correctly identified missing required field and returned BLOCKED",
+    "Escalation ESC-P6-001 raised and tracked through full lifecycle",
+    "User decision DEC-P6-001 provided all 5 required ID fields",
+    "RESUME validated all 5 IDs before accepting decision",
+    "RESUME confirmed consumed=false before first use",
+    "consumed_before=false and consumed_now=true recorded in verdict",
+    "RETEST verified 4/4 fields present after resolution",
+    "RETEST confirmed single-use constraint: no second consumption possible",
+    "Scope constraints respected across all 3 stages",
+    "PACK_PASS requires BLOCKED → USER_DECISION → RESUME PASS → RETEST PASS chain"
+  ],
+  "codex_note": "PACK_PASS issued. P6 proves BLOCKED → USER_DECISION → RESUME → RETEST flow. Decision lifecycle complete. All constraints satisfied."
+}

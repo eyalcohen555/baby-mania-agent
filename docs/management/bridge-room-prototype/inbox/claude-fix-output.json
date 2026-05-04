@@ -1,0 +1,73 @@
+﻿{
+  "task_id": "TASK-P2-002",
+  "stage_id": "STAGE-02",
+  "command_id": "CMD-P2-002",
+  "output_id": "OUT-P2-002",
+  "status": "PASS",
+  "actor": "Claude",
+  "stage_type": "FIX",
+  "files_read": [
+    "docs/management/bridge-room-prototype/mock-target.md",
+    "docs/management/bridge-room-prototype/codex-audit-verdict.json"
+  ],
+  "files_written": [
+    "docs/management/bridge-room-prototype/mock-target.md",
+    "docs/management/bridge-room-prototype/inbox/claude-fix-output.json"
+  ],
+  "evidence": [
+    {
+      "evidence_type": "FILE_CHANGE",
+      "source": "docs/management/bridge-room-prototype/mock-target.md",
+      "claim": "The misspelled marker was corrected.",
+      "proof": {
+        "before": "STATUS: READY_FOR_RETESET",
+        "after": "STATUS: READY_FOR_RETEST",
+        "changed_file": "docs/management/bridge-room-prototype/mock-target.md"
+      },
+      "related_condition": "FIX must change only mock-target.md and correct the readiness marker.",
+      "result": "PASS"
+    },
+    {
+      "evidence_type": "READBACK",
+      "source": "docs/management/bridge-room-prototype/mock-target.md",
+      "claim": "The corrected marker exists after the fix.",
+      "proof": "Readback after STAGE-02: STATUS: READY_FOR_RETEST",
+      "related_condition": "FIX requires proof_from_file/readback.",
+      "result": "PASS"
+    },
+    {
+      "evidence_type": "SCOPE",
+      "source": "files_written",
+      "claim": "Claude wrote only the allowed FIX files.",
+      "proof": "files_written contains mock-target.md and inbox/claude-fix-output.json only.",
+      "related_condition": "No Codex-owned verdict/state/log files may be written by Claude.",
+      "result": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "validation_name": "fix_marker_corrected",
+      "validation_type": "readback",
+      "result": "PASS",
+      "pass_conditions_checked": [
+        "mock-target.md contains STATUS: READY_FOR_RETEST",
+        "files_written contains only allowed FIX files",
+        "readback proof exists"
+      ],
+      "fail_conditions_checked": [
+        "Codex-owned file written by Claude",
+        "outside-scope file touched",
+        "missing readback"
+      ],
+      "artifacts": [
+        "docs/management/bridge-room-prototype/mock-target.md",
+        "docs/management/bridge-room-prototype/inbox/claude-fix-output.json"
+      ],
+      "risk_level": "LOW"
+    }
+  ],
+  "blockers": [],
+  "decisions_used": [],
+  "risk_level": "LOW",
+  "summary": "FIX corrected the mock marker and provided readback evidence."
+}

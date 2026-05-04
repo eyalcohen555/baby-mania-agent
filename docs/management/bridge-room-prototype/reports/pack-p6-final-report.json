@@ -1,0 +1,102 @@
+{
+  "report_id": "RPT-P6-001",
+  "pack_id": "EXEC-PACK-P6-001",
+  "prototype": true,
+  "timestamp": "2026-05-03T10:01:11Z",
+  "final_verdict": "PACK_PASS",
+  "goal": "Prove AUDIT → BLOCKED → USER_DECISION → RESUME → RETEST → PACK_PASS with decision lifecycle and single-use enforcement",
+  "pack_flow": [
+    {
+      "stage": "STAGE-01",
+      "stage_type": "AUDIT",
+      "command_id": "CMD-P6-001",
+      "output_id": "OUT-P6-001",
+      "verdict_id": "VRD-P6-001",
+      "status": "BLOCKED",
+      "escalation_id": "ESC-P6-001",
+      "blocker_id": "BLK-P6-001",
+      "reason": "target_quality_bar missing from mock-pack-brief.md"
+    },
+    {
+      "stage": "USER_DECISION",
+      "stage_type": "DECISION",
+      "decision_id": "DEC-P6-001",
+      "provided_by": "user-mock",
+      "field": "target_quality_bar",
+      "value": "premium",
+      "consumed": true
+    },
+    {
+      "stage": "STAGE-03",
+      "stage_type": "RESUME",
+      "command_id": "CMD-P6-003",
+      "output_id": "OUT-P6-003",
+      "verdict_id": "VRD-P6-003",
+      "status": "PASS",
+      "ids_validated": 5,
+      "consumed_before": false,
+      "consumed_now": true
+    },
+    {
+      "stage": "STAGE-04",
+      "stage_type": "RETEST",
+      "command_id": "CMD-P6-004",
+      "output_id": "OUT-P6-004",
+      "verdict_id": "VRD-P6-004",
+      "status": "PASS",
+      "fields_verified": 4,
+      "single_use_verified": true
+    }
+  ],
+  "id_matching": {
+    "result": "PASS",
+    "pack_id_consistent": true,
+    "escalation_id_consistent": true,
+    "decision_id_consistent": true,
+    "all_5_ids_validated_at_resume": true
+  },
+  "decision_lifecycle": {
+    "decision_id": "DEC-P6-001",
+    "raised_at": "STAGE-01",
+    "provided_at": "USER_DECISION",
+    "consumed_at": "STAGE-03",
+    "verified_at": "STAGE-04",
+    "consumed_before": false,
+    "consumed_now": true,
+    "single_use_integrity": "PASS"
+  },
+  "safety": {
+    "files_written": [
+      "docs/management/bridge-room-prototype/inbox/pack-p6-stage-01-output.json",
+      "docs/management/bridge-room-prototype/inbox/user-decision-pack-mock.json",
+      "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-01-blocked-verdict.json",
+      "docs/management/bridge-room-prototype/inbox/pack-p6-stage-03-resume-output.json",
+      "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-03-resume-verdict.json",
+      "docs/management/bridge-room-prototype/inbox/pack-p6-stage-04-retest-output.json",
+      "docs/management/bridge-room-prototype/verdicts/pack-p6-stage-04-retest-verdict.json",
+      "docs/management/bridge-room-prototype/reports/pack-p6-final-report.json",
+      "docs/management/bridge-room-prototype/reports/pack-safe-stop-state.json",
+      "docs/management/bridge-room-prototype/journal/execution-pack-p6-log.jsonl",
+      "docs/management/bridge-room-prototype/outbox/pack-p6-stage-01-command.json",
+      "docs/management/bridge-room-prototype/outbox/pack-p6-stage-03-resume-command.json",
+      "docs/management/bridge-room-prototype/execution-pack-p6.yaml",
+      "docs/management/bridge-room-prototype/mock-pack-brief.md"
+    ],
+    "unauthorized_writes": [],
+    "scope_violations": []
+  },
+  "proven_behaviors": [
+    "AUDIT returns BLOCKED when required field missing — not FAIL",
+    "Escalation ID carried consistently through all artifacts",
+    "Blocker spec includes all 5 IDs required for user decision",
+    "RESUME validates all 5 IDs before accepting decision",
+    "consumed=false enforced at RESUME time",
+    "consumed_before and consumed_now recorded in verdict",
+    "RETEST verifies single-use by checking verdict's consumed_before field",
+    "PACK_PASS requires full BLOCKED → RESUME PASS → RETEST PASS chain",
+    "All scope constraints respected across all stages"
+  ],
+  "ready_for_codex_review": true,
+  "ready_for_runtime_integration": false,
+  "notes": "P6 sandbox proof complete. TOKEN_SAFE_STOP artifact in reports/pack-safe-stop-state.json demonstrates context-limit snapshot capability."
+}
