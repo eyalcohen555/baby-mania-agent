@@ -1,0 +1,105 @@
+{
+  "backup_time": "2026-05-05T16:32:15.916645",
+  "smart_collections": [
+    {
+      "id": 526691729721,
+      "handle": "gender-girl",
+      "title": "בנות",
+      "updated_at": "2026-05-05T11:32:27+03:00",
+      "body_html": "גלי ביגוד תינוקות לבנות: שמלות, סטים, סרבלים ובגדי גוף. איכות פרימיום לתינוקות 0-24 חודש.",
+      "published_at": "2026-05-05T11:32:27+03:00",
+      "sort_order": "best-selling",
+      "template_suffix": null,
+      "disjunctive": false,
+      "rules": [
+        {
+          "column": "tag",
+          "relation": "equals",
+          "condition": "gender-girl"
+        }
+      ],
+      "published_scope": "web",
+      "admin_graphql_api_id": "gid://shopify/Collection/526691729721"
+    },
+    {
+      "id": 526691762489,
+      "handle": "gender-boy",
+      "title": "בנים",
+      "updated_at": "2026-05-05T11:32:32+03:00",
+      "body_html": "גלי ביגוד תינוקות לבנים: סטים, סרבלים ובגדי גוף. עיצובים מגניבים לתינוקות 0-24 חודש.",
+      "published_at": "2026-05-05T11:32:31+03:00",
+      "sort_order": "best-selling",
+      "template_suffix": null,
+      "disjunctive": false,
+      "rules": [
+        {
+          "column": "tag",
+          "relation": "equals",
+          "condition": "gender-boy"
+        }
+      ],
+      "published_scope": "web",
+      "admin_graphql_api_id": "gid://shopify/Collection/526691762489"
+    },
+    {
+      "id": 526691860793,
+      "handle": "occ-gift",
+      "title": "מתנות לתינוק",
+      "updated_at": "2026-05-05T11:32:44+03:00",
+      "body_html": "מתנות מושלמות לתינוק: סטים, סרבלים ושמלות. אידיאלי למקלחת תינוק ולהולדת ילד.",
+      "published_at": "2026-05-05T11:32:43+03:00",
+      "sort_order": "best-selling",
+      "template_suffix": null,
+      "disjunctive": false,
+      "rules": [
+        {
+          "column": "tag",
+          "relation": "equals",
+          "condition": "occ-gift"
+        }
+      ],
+      "published_scope": "web",
+      "admin_graphql_api_id": "gid://shopify/Collection/526691860793"
+    },
+    {
+      "id": 526691795257,
+      "handle": "type-set",
+      "title": "סטים",
+      "updated_at": "2026-05-05T11:32:36+03:00",
+      "body_html": "סטים מושלמים לתינוקות: חליפות 2-3 חלקים באיכות פרימיום. מתאים לכל מגדר. מידות 0 עד 4 שנים.",
+      "published_at": "2026-05-05T11:32:35+03:00",
+      "sort_order": "best-selling",
+      "template_suffix": null,
+      "disjunctive": false,
+      "rules": [
+        {
+          "column": "tag",
+          "relation": "equals",
+          "condition": "type-set"
+        }
+      ],
+      "published_scope": "web",
+      "admin_graphql_api_id": "gid://shopify/Collection/526691795257"
+    },
+    {
+      "id": 526691828025,
+      "handle": "type-romper",
+      "title": "סרבלים ואוברולים",
+      "updated_at": "2026-05-05T11:32:40+03:00",
+      "body_html": "סרבלים ואוברולים לתינוקות: ג'ינס, פליז, כותנה. לבנות ולבנים. מידות Newborn עד 18-24 חודש.",
+      "published_at": "2026-05-05T11:32:40+03:00",
+      "sort_order": "best-selling",
+      "template_suffix": null,
+      "disjunctive": false,
+      "rules": [
+        {
+          "column": "tag",
+          "relation": "equals",
+          "condition": "type-romper"
+        }
+      ],
+      "published_scope": "web",
+      "admin_graphql_api_id": "gid://shopify/Collection/526691828025"
+    }
+  ]
+}

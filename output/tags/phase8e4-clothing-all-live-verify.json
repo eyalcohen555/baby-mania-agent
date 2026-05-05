@@ -1,0 +1,103 @@
+{
+  "phase": "8E-4",
+  "type": "clothing_all_live_verify",
+  "t3_approval": "Ayal approved: 'מאשר Phase 8E-4 — יצירת Smart Collection clothing-all בלייב'",
+  "token_suffix": "a811",
+  "collection_id": 526700020025,
+  "handle": "clothing-all",
+  "title": "כל בגדי התינוקות",
+  "published": true,
+  "sort_order": "best-selling",
+  "disjunctive": true,
+  "rules": [
+    {
+      "column": "tag",
+      "relation": "equals",
+      "condition": "type-set"
+    },
+    {
+      "column": "tag",
+      "relation": "equals",
+      "condition": "type-romper"
+    },
+    {
+      "column": "tag",
+      "relation": "equals",
+      "condition": "type-dress"
+    },
+    {
+      "column": "tag",
+      "relation": "equals",
+      "condition": "type-bodysuit"
+    }
+  ],
+  "product_count": 51,
+  "url_status": 200,
+  "rollback_needed": false,
+  "checks": {
+    "01_exists": {
+      "mark": "✅",
+      "detail": "collection exists"
+    },
+    "02_handle": {
+      "mark": "✅",
+      "detail": "handle=clothing-all"
+    },
+    "03_title": {
+      "mark": "✅",
+      "detail": "title=כל בגדי התינוקות"
+    },
+    "04_published": {
+      "mark": "✅",
+      "detail": "published=true"
+    },
+    "05_sort_order": {
+      "mark": "✅",
+      "detail": "sort=best-selling"
+    },
+    "06_disjunctive": {
+      "mark": "✅",
+      "detail": "disjunctive=true"
+    },
+    "07_rules": {
+      "mark": "✅",
+      "detail": "4 rules: ['type-bodysuit', 'type-dress', 'type-romper', 'type-set']"
+    },
+    "08_rule_count": {
+      "mark": "✅",
+      "detail": "4 rules"
+    },
+    "09_product_count": {
+      "mark": "✅",
+      "detail": "count=51"
+    },
+    "11_url_200": {
+      "mark": "✅",
+      "detail": "HTTP 200"
+    },
+    "12_seo_title": {
+      "mark": "✅",
+      "detail": "seo_title present"
+    },
+    "13_seo_description": {
+      "mark": "✅",
+      "detail": "seo_desc present"
+    },
+    "14_no_extra_colls": {
+      "mark": "✅",
+      "detail": "count=6 (expected=6)"
+    },
+    "15_nav_unchanged": {
+      "mark": "✅",
+      "detail": "main-menu id unchanged: gid://shopify/Menu/250909851961"
+    },
+    "16_product_tags_unchanged": {
+      "mark": "✅",
+      "detail": "no product tag writes in this phase"
+    }
+  },
+  "navigation_changed": false,
+  "product_tags_changed": false,
+  "shopify_writes": "1 smart_collection POST only",
+  "verdict": "PHASE8E4_CLOTHING_ALL_LIVE_PASS"
+}

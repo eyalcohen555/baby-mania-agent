@@ -20,6 +20,45 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8E-4 — clothing-all Smart Collection LIVE CREATE (T3 approved)
+## SCOPE: Layer 8 — Shopify Smart Collection create — 1 POST write
+## WHAT CHANGED:
+- Smart Collection clothing-all נוצרה ב-Shopify live
+  - id=526700020025, handle=clothing-all, title=כל בגדי התינוקות
+  - disjunctive=true (OR logic), sort_order=best-selling, published=true
+  - 4 rules: type-set / type-romper / type-dress / type-bodysuit
+  - SEO: title_tag + description_tag metafields הוגדרו
+- 16/16 verify checks PASS:
+  - exists, handle, title, published, sort_order, disjunctive, rules(4), rule_count(4)
+  - product_count=51 (in range 48–54), url HTTP 200
+  - seo_title present, seo_desc present
+  - no extra collections (6 total as expected)
+  - main-menu GID unchanged (gid://shopify/Menu/250909851961)
+  - product tags unchanged
+- backup שמור: output/tags/phase8e4-clothing-all-precreate-backup.json
+- verify MD: output/tags/phase8e4-clothing-all-live-verify.md
+- verify JSON: output/tags/phase8e4-clothing-all-live-verify.json
+- Smart Collections live: 6 (5 Phase 8C + 1 Phase 8E-4)
+## FILES TOUCHED:
+- scripts/phase8e4_clothing_all_live.py
+- output/tags/phase8e4-clothing-all-precreate-backup.json
+- output/tags/phase8e4-clothing-all-live-verify.md
+- output/tags/phase8e4-clothing-all-live-verify.json
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Shopify: 1 Smart Collection POST — clothing-all (id=526700020025)
+- Smart Collections live: 6 total
+- אין שינוי Navigation, אין שינוי products/tags
+## OPEN ISSUES:
+- Phase 8F עדיין ממתין לT3 approval מאייל לפני mutation
+## NEXT STEP:
+- T3 approval מאייל לPhase 8F
+- Phase 8F: menuUpdate mutation → הוסף `בגדי תינוקות` עם 6 sub-items (כולל clothing-all) → verify
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8E — Navigation Dry Run (read-only, no mutation)
 ## SCOPE: Layer 8 — Navigation dry run — NO Shopify writes, NO mutation
 ## WHAT CHANGED:
