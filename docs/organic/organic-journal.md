@@ -20,6 +20,43 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 7 Phase 7C — Live Batch 1 (T3 approved by Ayal)
+## SCOPE: Layer 7 — Live tag write — 20 products — Shopify PUT + verify
+## WHAT CHANGED:
+- 20 products tagged in Shopify live (PUT HTTP 200 + GET verify PASS per product)
+- 2 products excluded by shoe title keyword (סנדלי קיץ, סנדלים אופנתיים)
+- types written: dress:4, bodysuit:5, set:6, romper:5
+- gender written: girl:6, boy:5, neutral:2, none:7
+- occ tags written: occ-gift×5, occ-everyday×4, occ-seasonal×5
+- post-run verify: 20/20 PASS (GET re-check)
+- rollback: NOT triggered
+- Shopify live: YES (71 products total, up from 51)
+- no age-* tags, no type collision, no gender collision, no forbidden tags
+## FILES TOUCHED:
+- scripts/phase7c_live_batch1.py
+- scripts/phase7c_live_batch1_verify.py
+- output/tags/phase7c-live-batch1-backup.json
+- output/tags/phase7c-live-batch1-dry-run.md
+- output/tags/phase7c-live-batch1-dry-run.json
+- output/tags/phase7c-live-batch1-rollback-plan.md
+- output/tags/phase7c-live-batch1-verify.md
+- output/tags/phase7c-live-batch1-verify.json
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Shopify live tagged products: 71 (was 51)
+- Smart Collections (clothing-all, type-set, type-romper, gender-girl, gender-boy, occ-gift) will now include more products
+- SAFE candidates remaining: ~187
+## OPEN ISSUES:
+- EU Shoe Size mapping — חסום עד אישור אייל
+- REVIEW_ONLY 135 products — manual review required
+- Phase 7C Batch 2 (hat/coat) — requires new T3 approval
+## NEXT STEP:
+- T3 re-approval מאייל → Phase 7C Batch 2 (hat + coat candidates from remaining SAFE pool)
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8C — Create 5 Smart Collections LIVE (T3 approved by Ayal)
 ## SCOPE: Layer 8 — Shopify Smart Collections — LIVE WRITE — PHASE8C_PASS
 ## WHAT CHANGED:

@@ -1,0 +1,789 @@
+{
+  "phase": "7C",
+  "type": "live_batch1_dry_run",
+  "timestamp": "2026-05-05T18:55:10.590620+00:00",
+  "t3_approval": "Ayal approved Phase 7C Live Batch 1",
+  "shopify_writes": "NONE — dry run only",
+  "total_in_plan": 30,
+  "excluded_shoe": 2,
+  "selected": 20,
+  "dry_run_pass": 20,
+  "dry_run_fail": 0,
+  "products": [
+    {
+      "product_id": "9606694142265",
+      "title_from_shopify": "שמלת אירועים אלגנטית לתינוקת",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "new_tags_to_add": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags": [
+        "gender-girl",
+        "type-dress"
+      ],
+      "final_count": 2,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9606690111801",
+      "title_from_shopify": "שמלת בסגנון אמריקאי לבנות",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "new_tags_to_add": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags": [
+        "gender-girl",
+        "type-dress"
+      ],
+      "final_count": 2,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9892620927289",
+      "title_from_shopify": "שמלת וי פסים דגם יהלי",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "new_tags_to_add": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags": [
+        "gender-girl",
+        "type-dress"
+      ],
+      "final_count": 2,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9179134132537",
+      "title_from_shopify": "שמלת טוטו נסיכותית - אלין",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-dress"
+      ],
+      "new_tags_to_add": [
+        "type-dress"
+      ],
+      "final_tags": [
+        "type-dress"
+      ],
+      "final_count": 1,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9179152482617",
+      "title_from_shopify": "בגד גוף אלגנטי - מייקל",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-bodysuit"
+      ],
+      "new_tags_to_add": [
+        "type-bodysuit"
+      ],
+      "final_tags": [
+        "type-bodysuit"
+      ],
+      "final_count": 1,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9179168964921",
+      "title_from_shopify": "בגד גוף כיווצים אלגנטי - נטלי",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-bodysuit"
+      ],
+      "new_tags_to_add": [
+        "type-bodysuit"
+      ],
+      "final_tags": [
+        "type-bodysuit"
+      ],
+      "final_count": 1,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9096607301945",
+      "title_from_shopify": "בגד גוף פליז שרוולים ארוכים ופונפונים",
+      "status": "active",
+      "before_count": 6,
+      "before_tags": [
+        "baby-bodysuit",
+        "baby-gift",
+        "fleece-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": "gender-neutral",
+      "gender_conf": 0.88,
+      "gender_source": "existing_tag",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-bodysuit",
+        "gender-neutral",
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "new_tags_to_add": [
+        "type-bodysuit",
+        "gender-neutral",
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "final_tags": [
+        "baby-bodysuit",
+        "baby-gift",
+        "fleece-baby",
+        "gender-neutral",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-gift",
+        "occ-seasonal",
+        "type-bodysuit",
+        "winter-baby-wear"
+      ],
+      "final_count": 10,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9179172733241",
+      "title_from_shopify": "בגד גוף פסים אלגנטי - ריף",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-bodysuit"
+      ],
+      "new_tags_to_add": [
+        "type-bodysuit"
+      ],
+      "final_tags": [
+        "type-bodysuit"
+      ],
+      "final_count": 1,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9179138687289",
+      "title_from_shopify": "בגד גוף קיצי נוח ואוורירי, כולל כובע מתוק - ג'וני",
+      "status": "active",
+      "before_count": 5,
+      "before_tags": [
+        "12-18 חודש",
+        "18-24 חודש",
+        "3-6 חודש",
+        "6-12 חודש",
+        "אוברול"
+      ],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-bodysuit"
+      ],
+      "new_tags_to_add": [
+        "type-bodysuit"
+      ],
+      "final_tags": [
+        "12-18 חודש",
+        "18-24 חודש",
+        "3-6 חודש",
+        "6-12 חודש",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "final_count": 6,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "10190523334969",
+      "title_from_shopify": "0-18 Months old Newborn Baby boy Jumpsuit Cute Little Bear Short sleeved Jumpsuit Baby clothing Boy baby Summer Crawling Suit",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-boy",
+        "occ-seasonal"
+      ],
+      "new_tags_to_add": [
+        "type-set",
+        "gender-boy",
+        "occ-seasonal"
+      ],
+      "final_tags": [
+        "gender-boy",
+        "occ-seasonal",
+        "type-set"
+      ],
+      "final_count": 3,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "10190522876217",
+      "title_from_shopify": "Toddler Summer Outfits 2026 New Baby Boy Clothes Casual Letter Pocket Short Sleeve T-shirts and Shorts Two Piece Set Kids Suit",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-boy",
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "new_tags_to_add": [
+        "type-set",
+        "gender-boy",
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "final_tags": [
+        "gender-boy",
+        "occ-everyday",
+        "occ-seasonal",
+        "type-set"
+      ],
+      "final_count": 4,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9855017550137",
+      "title_from_shopify": "Veloura Baby™ חליפה פרחונית",
+      "status": "active",
+      "before_count": 7,
+      "before_tags": [
+        "baby-gift",
+        "baby-shower-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "floral-baby",
+        "newborn-clothing",
+        "soft-knit"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "new_tags_to_add": [
+        "type-set",
+        "gender-girl",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "final_tags": [
+        "baby-gift",
+        "baby-shower-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "soft-knit",
+        "type-set"
+      ],
+      "final_count": 11,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "10190523269433",
+      "title_from_shopify": "VISgogo Toddler Baby Boys Clothes Set Short Sleeve Letter Print T-shirt Elastic Waist Drawstring Shorts Summer Casual Outfit",
+      "status": "active",
+      "before_count": 0,
+      "before_tags": [],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-boy",
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "new_tags_to_add": [
+        "type-set",
+        "gender-boy",
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "final_tags": [
+        "gender-boy",
+        "occ-everyday",
+        "occ-seasonal",
+        "type-set"
+      ],
+      "final_count": 4,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9688934940985",
+      "title_from_shopify": "אוברול בייבי  לתינוק – Baby Bear Cozy Set",
+      "status": "active",
+      "before_count": 1,
+      "before_tags": [
+        "אוברול"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-set"
+      ],
+      "new_tags_to_add": [
+        "type-set"
+      ],
+      "final_tags": [
+        "type-set",
+        "אוברול"
+      ],
+      "final_count": 2,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "10005779808569",
+      "title_from_shopify": "אוברול בייבי מניה דגם חן",
+      "status": "active",
+      "before_count": 7,
+      "before_tags": [
+        "18-24M",
+        "3-6M6-9M",
+        "9-18M",
+        "אוברול",
+        "חורף",
+        "לבן",
+        "תינוקות 0-3Y"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "new_tags_to_add": [
+        "type-set",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags": [
+        "18-24M",
+        "3-6M6-9M",
+        "9-18M",
+        "gender-girl",
+        "occ-seasonal",
+        "type-set",
+        "אוברול",
+        "חורף",
+        "לבן",
+        "תינוקות 0-3Y"
+      ],
+      "final_count": 10,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9179155693881",
+      "title_from_shopify": "אוברול אלגנט דגם עומרי",
+      "status": "active",
+      "before_count": 1,
+      "before_tags": [
+        "אוברול"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-romper"
+      ],
+      "new_tags_to_add": [
+        "type-romper"
+      ],
+      "final_tags": [
+        "type-romper",
+        "אוברול"
+      ],
+      "final_count": 2,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9096606908729",
+      "title_from_shopify": "אוברול ארוך",
+      "status": "active",
+      "before_count": 8,
+      "before_tags": [
+        "baby-gift",
+        "baby-overall",
+        "cotton-baby",
+        "everyday-wear",
+        "long-sleeve-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "sleepwear-baby"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-neutral",
+      "gender_conf": 0.88,
+      "gender_source": "existing_tag",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "all_proposed_tags": [
+        "type-romper",
+        "gender-neutral",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "new_tags_to_add": [
+        "type-romper",
+        "gender-neutral",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "final_tags": [
+        "baby-gift",
+        "baby-overall",
+        "cotton-baby",
+        "everyday-wear",
+        "gender-neutral",
+        "long-sleeve-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "sleepwear-baby",
+        "type-romper"
+      ],
+      "final_count": 12,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9096599994681",
+      "title_from_shopify": "אוברול ארוך עם רוכסן",
+      "status": "active",
+      "before_count": 5,
+      "before_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-neutral",
+      "gender_conf": 0.88,
+      "gender_source": "existing_tag",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "all_proposed_tags": [
+        "type-romper",
+        "gender-neutral",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "new_tags_to_add": [
+        "type-romper",
+        "gender-neutral",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "final_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "gender-neutral",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "type-romper"
+      ],
+      "final_count": 9,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "9678573240633",
+      "title_from_shopify": "אוברול אריה מתוק דגם שמר",
+      "status": "active",
+      "before_count": 1,
+      "before_tags": [
+        "אוברול"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-romper",
+        "gender-boy"
+      ],
+      "new_tags_to_add": [
+        "type-romper",
+        "gender-boy"
+      ],
+      "final_tags": [
+        "gender-boy",
+        "type-romper",
+        "אוברול"
+      ],
+      "final_count": 3,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    },
+    {
+      "product_id": "10026520445241",
+      "title_from_shopify": "אוברול בייבי מניה דגם חן",
+      "status": "active",
+      "before_count": 1,
+      "before_tags": [
+        "אוברול"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-romper"
+      ],
+      "new_tags_to_add": [
+        "type-romper"
+      ],
+      "final_tags": [
+        "type-romper",
+        "אוברול"
+      ],
+      "final_count": 2,
+      "forbidden_check": "PASS",
+      "allowed_values_check": "PASS",
+      "type_collision_check": "PASS",
+      "age_check": "PASS",
+      "dry_run_verdict": "PASS"
+    }
+  ],
+  "verdict": "DRY_RUN_PASS"
+}
