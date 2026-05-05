@@ -889,7 +889,7 @@ BRIDGE_ROOM_STATE    = BRIDGE_ROOM_BASE / "room-state.json"
 SESSION_REGISTRY     = REPO / "docs" / "management" / "bridge-room-session-registry.json"
 PACK_REGISTRY        = REPO / "docs" / "management" / "bridge-room-pack-registry.json"
 
-VERDICT_POLL_TIMEOUT  = 300   # 5 min max for Codex to write verdict
+VERDICT_POLL_TIMEOUT  = 1800  # 30 min — dual-session review can exceed 5 min; was 300 (caused timeouts)
 VERDICT_POLL_INTERVAL = 10
 
 
@@ -968,15 +968,23 @@ def brm_wait_for_verdict(pack_id: str, stage_id: str) -> dict:
 
 
 def brm_extract_output(raw: str) -> dict:
-    """Extract JSON from BRIDGE_ROOM_OUTPUT_START...END block. Returns dict or None."""
+    """Extract JSON from BRIDGE_ROOM_OUTPUT_START...END block. Returns dict or None on failure."""
     START, END = "BRIDGE_ROOM_OUTPUT_START", "BRIDGE_ROOM_OUTPUT_END"
     if START not in raw or END not in raw:
         return None
     block = raw[raw.index(START) + len(START):raw.index(END)].strip()
+    # Strip markdown code fences Claude may emit around the JSON block
+    if block.startswith("```"):
+        lines = block.splitlines()
+        block = "\n".join(lines[1:] if lines[0].startswith("```") else lines)
+    if block.endswith("```"):
+        lines = block.splitlines()
+        block = "\n".join(lines[:-1])
+    block = block.strip()
     try:
         return json.loads(block)
     except json.JSONDecodeError:
-        return {"raw_block": block}
+        return None  # Caller treats None as STAGE_ERROR — raw_block no longer silently passes
 
 
 def brm_detect_tss(raw: str) -> dict:
@@ -1019,6 +1027,24 @@ def run_bridge_room(pack_file: str, dry_run: bool = False):
     for stage in stages:
         stage_id   = stage["id"]
         stage_type = stage.get("type", "UNKNOWN")
+
+        # Skip already-completed stages — preserves reviewed inbox artifacts on re-run
+        vfile = BRIDGE_ROOM_VERDICTS / f"{pack_id}-{stage_id}-verdict.json"
+        if vfile.exists():
+            try:
+                existing_verdict = json.loads(vfile.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                existing_verdict = {}
+            if existing_verdict.get("verdict") == "PASS":
+                log(f"  {stage_id} already PASS — skipping dispatch (reviewed artifacts preserved)")
+                brm_journal(pack_id, "EVT_STAGE_SKIPPED_ALREADY_COMPLETE",
+                            {"stage_id": stage_id, "stage_type": stage_type,
+                             "verdict_file": str(vfile)})
+                brm_update_state({"current_stage": stage_id, "stage_status": "PASS"})
+                if stage is stages[-1]:
+                    pack_result = "PACK_COMPLETE"
+                continue
+
         log(f"\nDispatching {stage_id} ({stage_type})")
         brm_update_state({"current_stage": stage_id, "stage_status": "RUNNING"})
         brm_journal(pack_id, "EVT_STAGE_START",

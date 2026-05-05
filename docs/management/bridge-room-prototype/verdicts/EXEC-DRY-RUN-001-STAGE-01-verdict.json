@@ -1,8 +1,8 @@
 {
-    "verdict_id":  "VERDICT-EXEC-DRY-RUN-001-STAGE-01",
+    "verdict_id":  "VRD-EXEC-DRY-RUN-001-STAGE-01",
     "pack_id":  "EXEC-DRY-RUN-001",
     "room_id":  "BRM-001",
-    "session_id":  "SES-DRY-RUN-001",
+    "session_id":  "SES-EXEC-DRY-RUN-001-20260505-0938",
     "stage_id":  "STAGE-01",
     "stage_type":  "ISSUE_AUDIT",
     "reviewed_output_id":  "OUT-EXEC-DRY-RUN-001-STAGE-01",
@@ -12,7 +12,8 @@
     "next_stage":  "STAGE-02",
     "written_by":  "Codex",
     "issued_by":  "Codex",
-    "timestamp":  "2026-05-05T00:00:00Z",
+    "timestamp":  "2026-05-05T09:39:30",
+    "timestamp_note":  "Original placeholder timestamp corrected. Best evidence: EVT_VERDICT_RECEIVED in journal at 2026-05-05T09:39:30 (local). Codex wrote verdict between session start 09:38:05 and conductor receipt 09:39:30.",
     "evidence_ids_confirmed":  [
                                    "E-DRY-001",
                                    "E-DRY-002",
