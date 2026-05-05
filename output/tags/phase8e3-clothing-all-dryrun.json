@@ -1,0 +1,550 @@
+{
+  "phase": "8E-3",
+  "type": "clothing_all_dryrun_readonly",
+  "token_suffix": "37a8",
+  "shopify_writes": "NONE",
+  "proposed_collection": {
+    "title": "כל בגדי התינוקות",
+    "handle": "clothing-all",
+    "sort_order": "best-selling",
+    "published": true,
+    "disjunctive": true,
+    "rules": [
+      {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "type-set"
+      },
+      {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "type-romper"
+      },
+      {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "type-dress"
+      },
+      {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "type-bodysuit"
+      }
+    ],
+    "seo_title": "בגדי תינוקות | Baby Mania",
+    "seo_description": "בגדי תינוקות איכותיים מבד אורגני — סטים, סרבלים, שמלות ובגדי גוף לתינוקות מ-0 עד 3 שנים. משלוח מהיר בישראל."
+  },
+  "clothing_all_exists": false,
+  "existing_collection": null,
+  "total_candidates": 51,
+  "type_breakdown": {
+    "type-set": 18,
+    "type-romper": 16,
+    "type-bodysuit": 8,
+    "type-dress": 9
+  },
+  "gender_breakdown": {
+    "gender-boy": 19,
+    "gender-girl": 20,
+    "no-gender": 8,
+    "gender-neutral": 4
+  },
+  "products": [
+    {
+      "product_id": "10190522941753",
+      "title": "2Pcs Baby Boys' Sports and Leisure Set lapel Color blocked S",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10029649002809",
+      "title": "Alure™ Baby",
+      "type": "type-romper",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10190523203897",
+      "title": "Boys Khaki Letter Print Half Zip Hooded 2Pcs Summer Set, Sho",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10190523105593",
+      "title": "Boys' Summer Knitted Set, Contrast Color Short-Sleeved With ",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10190523138361",
+      "title": "Boys' summer white striped short-sleeved shorts with pockets",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10190523302201",
+      "title": "Children’s Summer New Arrival Boys’ Regular Striped Teddy Be",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10190523236665",
+      "title": "Infant Baby Boys Short Sets Patchwork Sleeveless Vest Tops w",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10190522843449",
+      "title": "Kids Baby Boy Summer Clothes Sets Casual Letters Short Sleev",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10029649133881",
+      "title": "Lino™ – סט סריג רך לתינוקות בעיצוב אירופאי",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10029648970041",
+      "title": "LumiBear™ חליפת פרמיום לחורף",
+      "type": "type-romper",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10029649101113",
+      "title": "LUMI™  – אוברול נוחות יוקרתי לתינוקות",
+      "type": "type-romper",
+      "gender": [],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "10190522908985",
+      "title": "Summer Toddler Kids Stripe Bodysuit Boys Loose Turndown Coll",
+      "type": "type-bodysuit",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9657091293497",
+      "title": "WarmNest™– אוברול חורף מחבק לתינוקות",
+      "type": "type-romper",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9687596728633",
+      "title": "אוברול Leopard Cozy",
+      "type": "type-romper",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688932909369",
+      "title": "אוברול אריה חמוד דגם שמר",
+      "type": "type-romper",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9874906349881",
+      "title": "אוברול ג'ינס מתוק מבית בייבי מניה דגם זוהר",
+      "type": "type-romper",
+      "gender": [
+        "gender-neutral"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688660312377",
+      "title": "אוברול ג׳ינס דגם אתי",
+      "type": "type-romper",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9895864205625",
+      "title": "אוברול ג’ינס יוניסקס לתינוקות דגם שלו",
+      "type": "type-romper",
+      "gender": [
+        "gender-neutral"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9687579033913",
+      "title": "אוברול לבבות דגם הילה",
+      "type": "type-romper",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688885985593",
+      "title": "אוברול פיל מתוק דגם נאיה",
+      "type": "type-romper",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688934973753",
+      "title": "אוברול פיל פסים דגם ליאו",
+      "type": "type-romper",
+      "gender": [],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9179165753657",
+      "title": "בגד גוף כותנה טטרה - פריחת האביב",
+      "type": "type-bodysuit",
+      "gender": [],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9179154612537",
+      "title": "בגד גוף כיווצים - גאיה",
+      "type": "type-bodysuit",
+      "gender": [],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9179152154937",
+      "title": "בגד גוף מלמלות - קיטי",
+      "type": "type-bodysuit",
+      "gender": [],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9179167129913",
+      "title": "בגד גוף מלמלות וכיווצים פרחוני - שיילי",
+      "type": "type-bodysuit",
+      "gender": [],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9874906382649",
+      "title": "בגד גוף פו הדוב דגם לירון",
+      "type": "type-bodysuit",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9096607498553",
+      "title": "בגד גוף פליז",
+      "type": "type-bodysuit",
+      "gender": [
+        "gender-neutral"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9179166671161",
+      "title": "בגד גוף שמלה ג׳ינס מכותנה - הרפר",
+      "type": "type-bodysuit",
+      "gender": [],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688976326969",
+      "title": "חליפה דוב מופתע דגם ליאל",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688964989241",
+      "title": "חליפה דוב מקסימה דגם אריאל",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688674566457",
+      "title": "חליפה לבנים דגם אימרי",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688976294201",
+      "title": "חליפה מהממת רקמת דובי חמוד דגם אלי",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9687653122361",
+      "title": "חליפה מנומר עם פפיון דגם נמרה",
+      "type": "type-set",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9874906546489",
+      "title": "חליפת דובי  מלאה בסטייל דגם מאור",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688964956473",
+      "title": "חליפת דובים דגם אוריאל",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9858268496185",
+      "title": "חליפת חג פרחונית דגם סמדר",
+      "type": "type-romper",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9606694437177",
+      "title": "חליפת פולו קצרה סרוגה לתינוקות",
+      "type": "type-set",
+      "gender": [
+        "gender-neutral"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9678573273401",
+      "title": "חליפת פיל דגם אימרי",
+      "type": "type-romper",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688674533689",
+      "title": "חליפת קואלה דגם ליאל",
+      "type": "type-set",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688660377913",
+      "title": "חליפת קואלה דגם שני",
+      "type": "type-set",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9731768746297",
+      "title": "סט בגדי תינוקות גינס ושמלה דגם טליה",
+      "type": "type-dress",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9687653089593",
+      "title": "סט מכנס וחולצה פרפר פיל דגם נויה",
+      "type": "type-romper",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9678598734137",
+      "title": "סרבל גנטלמן בייבי 3 חלקים דגם אליה",
+      "type": "type-romper",
+      "gender": [
+        "gender-boy"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9606691324217",
+      "title": "שמלה אופנתית קלאסית לאירועים לתינוקת",
+      "type": "type-dress",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9895864369465",
+      "title": "שמלה חגיגית פרחונית דגם מורן",
+      "type": "type-dress",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9892557848889",
+      "title": "שמלה כחולה כהה אם דוגמא קלאסית דגם אוראל",
+      "type": "type-dress",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9179146256697",
+      "title": "שמלה נסיכותית מפתשן וכותנה, מלאה בסטייל - נועה",
+      "type": "type-dress",
+      "gender": [],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9606694175033",
+      "title": "שמלה קיצית עם מלמלה לבנות",
+      "type": "type-dress",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9688976261433",
+      "title": "שמלת פפיון חורפית דגם ארגמן",
+      "type": "type-dress",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9892196450617",
+      "title": "שמלת פרחים מהאגדות דגם איילה",
+      "type": "type-dress",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    },
+    {
+      "product_id": "9895864271161",
+      "title": "שמלת תינוקות פרחונית דגם עדן",
+      "type": "type-dress",
+      "gender": [
+        "gender-girl"
+      ],
+      "status": "active",
+      "flags": []
+    }
+  ],
+  "products_with_flags": 0,
+  "verdict": "READY_FOR_PHASE8E4_CLOTHING_ALL_T3_APPROVAL"
+}
