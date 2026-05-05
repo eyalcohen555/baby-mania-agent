@@ -1,9 +1,9 @@
 {
-  "room_id": "bridge-room-v1-prototype-3",
+  "room_id": "BRM-001",
   "prototype": true,
   "isolated": true,
   "scenario": "BLOCKED_DECISION_FLOW",
-  "current_stage": "STAGE-02",
+  "current_stage": null,
   "current_state": "PROTOTYPE_3_PASSED",
   "timestamp": "2026-05-03T00:06:00Z",
   "cycles_completed": 2,
@@ -57,13 +57,13 @@
     }
   },
   "decision_gate": {
-    "escalation_id":    "ESC-P3-001",
-    "decision_id":      "DEC-P3-001",
-    "validated":        true,
-    "id_match":         true,
-    "not_stale":        true,
-    "consumed_before":  false,
-    "consumed_now":     true
+    "escalation_id": "ESC-P3-001",
+    "decision_id": "DEC-P3-001",
+    "validated": true,
+    "id_match": true,
+    "not_stale": true,
+    "consumed_before": false,
+    "consumed_now": true
   },
   "ownership": {
     "valid": true,
@@ -82,7 +82,12 @@
   },
   "status_compliance": {
     "valid": true,
-    "allowed_values": ["PASS", "FAIL", "BLOCKED", "ERROR"],
+    "allowed_values": [
+      "PASS",
+      "FAIL",
+      "BLOCKED",
+      "ERROR"
+    ],
     "violations_found": 0
   },
   "safety": {
@@ -96,5 +101,10 @@
   },
   "final_verdict": "PASS",
   "loop_verified": "AUDIT → BLOCKED → USER_DECISION → RESUME → PASS",
-  "ready_for_codex_review": true
+  "ready_for_codex_review": true,
+  "pack_id": "EXEC-DRY-RUN-001",
+  "session_id": "SES-EXEC-DRY-RUN-001-20260505-0938",
+  "pack_status": "PACK_COMPLETE",
+  "stage_status": "PASS",
+  "last_updated": "2026-05-05T08:31:15Z"
 }

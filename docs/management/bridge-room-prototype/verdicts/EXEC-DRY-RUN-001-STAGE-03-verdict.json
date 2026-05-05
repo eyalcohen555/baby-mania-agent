@@ -1,0 +1,23 @@
+{
+    "verdict_id":  "VRD-EXEC-DRY-RUN-001-STAGE-03",
+    "pack_id":  "EXEC-DRY-RUN-001",
+    "room_id":  "BRM-001",
+    "session_id":  "SES-EXEC-DRY-RUN-001-20260505-0938",
+    "stage_id":  "STAGE-03",
+    "stage_type":  "RETEST",
+    "reviewed_output_id":  "OUT-EXEC-DRY-RUN-001-STAGE-03",
+    "verdict":  "PASS",
+    "pack_result":  "PACK_COMPLETE",
+    "evidence_complete":  true,
+    "scope_clean":  true,
+    "issued_by":  "Codex",
+    "timestamp":  "2026-05-05T07:29:18Z",
+    "evidence_ids_confirmed":  [
+                                   "E-RETEST-001",
+                                   "E-RETEST-002",
+                                   "E-RETEST-003",
+                                   "E-RETEST-004",
+                                   "E-RETEST-005"
+                               ],
+    "notes":  "STAGE-03 RETEST re-reviewed after output contract fix. ID matching complete. Both defects resolved, sha256 matches STAGE-02 post-fix, files_written empty, scope clean. PACK_COMPLETE."
+}

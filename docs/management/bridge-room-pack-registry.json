@@ -1,5 +1,38 @@
 {
   "_schema": "bridge-room-pack-registry-v1",
-  "_description": "Persistent index of all Execution Packs, open issues, and chain links",
-  "packs": {}
+  "packs": {
+    "EXEC-DRY-RUN-001": {
+      "pack_id": "EXEC-DRY-RUN-001",
+      "room_id": "BRM-001",
+      "session_id": "SES-EXEC-DRY-RUN-001-20260505-0938",
+      "pack_status": "PACK_COMPLETE",
+      "stages": [
+        {
+          "stage_id": "STAGE-01",
+          "type": "ISSUE_AUDIT",
+          "verdict": "PASS"
+        },
+        {
+          "stage_id": "STAGE-02",
+          "type": "FIX",
+          "verdict": "PASS"
+        },
+        {
+          "stage_id": "STAGE-03",
+          "type": "RETEST",
+          "verdict": "PASS"
+        }
+      ],
+      "target_file": "docs/management/bridge-room-prototype/dry-run-target.md",
+      "defects_audited": 2,
+      "defects_fixed": 2,
+      "defects_verified": 2,
+      "defects_remaining": 0,
+      "scope_clean": true,
+      "shopify_touched": false,
+      "telegram_touched": false,
+      "production_files_touched": false,
+      "completed_at": "2026-05-05T07:36:56Z"
+    }
+  }
 }

@@ -1,0 +1,29 @@
+{
+    "verdict_id":  "VERDICT-EXEC-DRY-RUN-001-STAGE-01",
+    "pack_id":  "EXEC-DRY-RUN-001",
+    "room_id":  "BRM-001",
+    "session_id":  "SES-DRY-RUN-001",
+    "stage_id":  "STAGE-01",
+    "stage_type":  "ISSUE_AUDIT",
+    "reviewed_output_id":  "OUT-EXEC-DRY-RUN-001-STAGE-01",
+    "verdict":  "PASS",
+    "evidence_complete":  true,
+    "scope_clean":  true,
+    "next_stage":  "STAGE-02",
+    "written_by":  "Codex",
+    "issued_by":  "Codex",
+    "timestamp":  "2026-05-05T00:00:00Z",
+    "evidence_ids_confirmed":  [
+                                   "E-DRY-001",
+                                   "E-DRY-002",
+                                   "E-DRY-003",
+                                   "E-DRY-004"
+                               ],
+    "notes":  [
+                  "STAGE-01 output is clean JSON and includes required ID fields: pack_id, room_id, session_id, stage_id, task_id, command_id, output_id.",
+                  "Evidence confirms both expected defects were detected: DEFECT-001 shipping threshold and DEFECT-002 heading hierarchy.",
+                  "Completeness check confirms expected=2, detected=2, false_positives=0, missed=0.",
+                  "Scope check is clean: no target modification, no Shopify, no Telegram, no production files, no bridge runtime, no git operations.",
+                  "Codex routes pack to STAGE-02."
+              ]
+}

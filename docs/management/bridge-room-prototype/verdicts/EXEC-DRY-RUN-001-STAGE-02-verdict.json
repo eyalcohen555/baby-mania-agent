@@ -1,0 +1,21 @@
+{
+    "verdict_id":  "VRD-EXEC-DRY-RUN-001-STAGE-02",
+    "pack_id":  "EXEC-DRY-RUN-001",
+    "room_id":  "BRM-001",
+    "session_id":  "SES-EXEC-DRY-RUN-001-20260505-0938",
+    "stage_id":  "STAGE-02",
+    "stage_type":  "FIX",
+    "reviewed_output_id":  "OUT-EXEC-DRY-RUN-001-STAGE-02",
+    "verdict":  "PASS",
+    "evidence_complete":  true,
+    "scope_clean":  true,
+    "next_stage":  "STAGE-03",
+    "issued_by":  "Codex",
+    "timestamp":  "2026-05-05T06:46:35Z",
+    "evidence_ids_confirmed":  [
+                                   "DEFECT-001",
+                                   "DEFECT-002",
+                                   "E-FIX-003"
+                               ],
+    "notes":  "STAGE-02 FIX verified. Both defects corrected, atomic write confirmed, scope clean. Continue to STAGE-03."
+}
