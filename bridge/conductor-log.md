@@ -372,3 +372,7 @@
 | 2026-05-06 00:24:41 | STARTED STAGE-3 [conductor-bridge-telegram-stabilization-001-STAGE-3-20260506-002441] |
 | 2026-05-06 00:31:23 | RESUMED: bridge-telegram-stabilization-001 |
 | 2026-05-06 00:31:23 | STARTED STAGE-3 [conductor-bridge-telegram-stabilization-001-STAGE-3-20260506-003123] |
+| 2026-05-06 00:32:33 |   STAGE-3 | UNKNOWN |
+| 2026-05-06 00:32:33 | STARTED STAGE-5 [conductor-bridge-telegram-stabilization-001-STAGE-5-20260506-003233] |
+| 2026-05-06 00:40:44 |   STAGE-5 | PASS |
+| 2026-05-06 00:40:44 | STARTED STAGE-6 [conductor-bridge-telegram-stabilization-001-STAGE-6-20260506-004044] |
