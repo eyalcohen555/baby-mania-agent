@@ -1,0 +1,232 @@
+{
+  "phase": "8F",
+  "type": "navigation_live_update",
+  "t3_approval": "Ayal: מאשר Phase 8F — עדכון main-menu עם בגדי תינוקות + מתנות לתינוק",
+  "token_suffix": "e96a",
+  "menu_gid": "gid://shopify/Menu/250909851961",
+  "before_item_count": 18,
+  "after_item_count": 17,
+  "items_removed_from_nav": [
+    "מארזי מתנה",
+    "בגדי בנות",
+    "בגדי בנים"
+  ],
+  "items_added": [
+    "בגדי תינוקות (parent+5)",
+    "מתנות לתינוק"
+  ],
+  "pre_url_checks": {
+    "/collections/type-set": 200,
+    "/collections/type-romper": 200,
+    "/collections/gender-girl": 200,
+    "/collections/gender-boy": 200,
+    "/collections/clothing-all": 200,
+    "/collections/occ-gift": 200
+  },
+  "post_url_checks": {
+    "/collections/type-set": 200,
+    "/collections/type-romper": 200,
+    "/collections/gender-girl": 200,
+    "/collections/gender-boy": 200,
+    "/collections/clothing-all": 200,
+    "/collections/occ-gift": 200
+  },
+  "checks": {
+    "01_gid_unchanged": {
+      "mark": "✅",
+      "detail": "id=gid://shopify/Menu/250909851961"
+    },
+    "02_clothing_parent_exists": {
+      "mark": "✅",
+      "detail": "'בגדי תינוקות' found"
+    },
+    "03_clothing_sub_count": {
+      "mark": "✅",
+      "detail": "5 sub-items"
+    },
+    "04_sub_order": {
+      "mark": "✅",
+      "detail": "correct order"
+    },
+    "05_sub_urls": {
+      "mark": "✅",
+      "detail": "all URLs correct"
+    },
+    "06_gifts_exists": {
+      "mark": "✅",
+      "detail": "'מתנות לתינוק' found"
+    },
+    "07_gifts_url": {
+      "mark": "✅",
+      "detail": "url=/collections/occ-gift"
+    },
+    "08_legacy_removed": {
+      "mark": "✅",
+      "detail": "3 legacy items removed"
+    },
+    "09_unrelated_preserved": {
+      "mark": "✅",
+      "detail": "unrelated items intact"
+    },
+    "10_urls_200": {
+      "mark": "✅",
+      "detail": "all 6 URLs → 200"
+    },
+    "11_no_mega_menu": {
+      "mark": "✅",
+      "detail": "no mega menu"
+    },
+    "12_collections_unchanged": {
+      "mark": "✅",
+      "detail": "smart collections count=6 (expected 6)"
+    },
+    "13_clothing_all_exists": {
+      "mark": "✅",
+      "detail": "clothing-all exists"
+    },
+    "14_clothing_all_count": {
+      "mark": "✅",
+      "detail": "count=51"
+    },
+    "15_no_tag_changes": {
+      "mark": "✅",
+      "detail": "no tag writes in this phase"
+    },
+    "16_item_count": {
+      "mark": "✅",
+      "detail": "top-level items: 17"
+    }
+  },
+  "rollback_needed": false,
+  "rollback_ok": null,
+  "collections_changed": false,
+  "products_changed": false,
+  "tags_changed": false,
+  "shopify_writes": "1 GraphQL menuUpdate only",
+  "final_menu_structure": [
+    {
+      "title": "דף הבית",
+      "url": "/",
+      "type": "FRONTPAGE",
+      "sub_items": []
+    },
+    {
+      "title": "בגדי תינוקות",
+      "url": "#",
+      "type": "HTTP",
+      "sub_items": [
+        {
+          "title": "סטים",
+          "url": "/collections/type-set"
+        },
+        {
+          "title": "סרבלים",
+          "url": "/collections/type-romper"
+        },
+        {
+          "title": "בגדי בנות",
+          "url": "/collections/gender-girl"
+        },
+        {
+          "title": "בגדי בנים",
+          "url": "/collections/gender-boy"
+        },
+        {
+          "title": "כל הבגדים",
+          "url": "/collections/clothing-all"
+        }
+      ]
+    },
+    {
+      "title": "מתנות לתינוק",
+      "url": "/collections/occ-gift",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "בגדי חורף",
+      "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%97%D7%95%D7%A8%D7%A3-1",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "קיץ 2026",
+      "url": "/collections/summer-2024",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "כל המוצרים",
+      "url": "/collections/all",
+      "type": "CATALOG",
+      "sub_items": []
+    },
+    {
+      "title": "בובת ריבורן",
+      "url": "/collections/reborn",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "מוצרי בטיחות",
+      "url": "/collections/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%91%D7%98%D7%99%D7%97%D7%95%D7%AA",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "משחקים לתינוק",
+      "url": "/collections/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "נעלי ילדים",
+      "url": "/collections/%D7%A0%D7%A2%D7%9C%D7%99%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "שמיכות עיטוף ושקי שינה",
+      "url": "/collections/%D7%A9%D7%9E%D7%99%D7%9B%D7%95%D7%AA-%D7%A2%D7%99%D7%98%D7%95%D7%A3-%D7%95%D7%A9%D7%A7%D7%99-%D7%A9%D7%99%D7%A0%D7%94",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "תיקי החתלה",
+      "url": "/collections/%D7%AA%D7%99%D7%A7%D7%99-%D7%94%D7%97%D7%AA%D7%9C%D7%94",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "לידה ואביזרים נלווים",
+      "url": "/collections/%D7%9C%D7%99%D7%93%D7%94-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%A0%D7%9C%D7%95%D7%95%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "בלוג",
+      "url": "/blogs/news",
+      "type": "BLOG",
+      "sub_items": []
+    },
+    {
+      "title": "עיצוב וטקסטיל לחדרי ילדים",
+      "url": "/collections/%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%95%D7%98%D7%A7%D7%A1%D7%98%D7%99%D7%9C-%D7%9C%D7%97%D7%93%D7%A8%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "המיוחדים שלנו",
+      "url": "/collections/%D7%94%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "יצירת קשר",
+      "url": "/pages/contact",
+      "type": "PAGE",
+      "sub_items": []
+    }
+  ],
+  "verdict": "PHASE8F_NAVIGATION_LIVE_PASS"
+}

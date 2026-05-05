@@ -20,6 +20,41 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8F — Main Menu Navigation Update LIVE (T3 approved)
+## SCOPE: Layer 8 — GraphQL menuUpdate on main-menu — 1 mutation write
+## WHAT CHANGED:
+- main-menu עודכן דרך GraphQL menuUpdate:
+  - לפני: 18 פריטים | אחרי: 17 פריטים
+  - נוסף 'בגדי תינוקות' כפריט ראשי עם 5 תתי פריטים:
+    1. סטים → /collections/type-set
+    2. סרבלים → /collections/type-romper
+    3. בגדי בנות → /collections/gender-girl
+    4. בגדי בנים → /collections/gender-boy
+    5. כל הבגדים → /collections/clothing-all
+  - נוסף 'מתנות לתינוק' → /collections/occ-gift כפריט ראשי נפרד
+  - הוסרו מניווט בלבד: 'בגדי בנות', 'בגדי בנים', 'מארזי מתנה' (collections לא נמחקו)
+- 16/16 verify checks PASS
+- backup שמור: output/tags/phase8f-main-menu-prewrite-backup.json
+## FILES TOUCHED:
+- scripts/phase8f_navigation_live.py
+- output/tags/phase8f-main-menu-prewrite-backup.json
+- output/tags/phase8f-navigation-live-verify.md
+- output/tags/phase8f-navigation-live-verify.json
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Shopify Navigation: 1 GraphQL menuUpdate on gid://shopify/Menu/250909851961
+- אין שינוי collections, אין שינוי products, אין שינוי tags, אין שינוי theme
+- אין Mega Menu
+## OPEN ISSUES:
+- Visual QA ידני — מומלץ לוודא תצוגה בדפדפן (desktop + mobile)
+## NEXT STEP:
+- Visual QA ידני על main-menu בדפדפן
+- שלב הבא לפי תוכנית: Phase 8G (אם מוגדר) — post-live monitor
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8E-4 — clothing-all Smart Collection LIVE CREATE (T3 approved)
 ## SCOPE: Layer 8 — Shopify Smart Collection create — 1 POST write
 ## WHAT CHANGED:

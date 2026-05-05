@@ -1,0 +1,154 @@
+{
+  "backup_time": "2026-05-05T20:21:18.787659",
+  "phase": "8F-prewrite",
+  "menu_id": "gid://shopify/Menu/250909851961",
+  "menu_handle": "main-menu",
+  "menu_title": "תפריט",
+  "item_count": 18,
+  "items": [
+    {
+      "id": "gid://shopify/MenuItem/591646556473",
+      "title": "דף הבית",
+      "url": "/",
+      "type": "FRONTPAGE",
+      "resourceId": null,
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/686324842809",
+      "title": "בגדי חורף",
+      "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%97%D7%95%D7%A8%D7%A3-1",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/486381617465",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/596140228921",
+      "title": "קיץ 2026",
+      "url": "/collections/summer-2024",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/473261211961",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/591731589433",
+      "title": "כל המוצרים",
+      "url": "/collections/all",
+      "type": "CATALOG",
+      "resourceId": null,
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/782488699193",
+      "title": "בובת ריבורן",
+      "url": "/collections/reborn/%D7%91%D7%95%D7%91%D7%AA-%D7%A8%D7%99%D7%91%D7%95%D7%A8%D7%9F",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/526156103993",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/611127820601",
+      "title": "בגדי בנות",
+      "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%91%D7%A0%D7%95%D7%AA",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/482519155001",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/611127853369",
+      "title": "בגדי בנים",
+      "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%91%D7%A0%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/482519187769",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/595033817401",
+      "title": "מוצרי בטיחות",
+      "url": "/collections/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%91%D7%98%D7%99%D7%97%D7%95%D7%AA",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/472982094137",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/595033850169",
+      "title": "משחקים לתינוק",
+      "url": "/collections/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/472981733689",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/591731523897",
+      "title": "נעלי ילדים",
+      "url": "/collections/%D7%A0%D7%A2%D7%9C%D7%99%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/471568613689",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/591731491129",
+      "title": "שמיכות עיטוף ושקי שינה",
+      "url": "/collections/%D7%A9%D7%9E%D7%99%D7%9B%D7%95%D7%AA-%D7%A2%D7%99%D7%98%D7%95%D7%A3-%D7%95%D7%A9%D7%A7%D7%99-%D7%A9%D7%99%D7%A0%D7%94",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/471568580921",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/591731458361",
+      "title": "תיקי החתלה",
+      "url": "/collections/%D7%AA%D7%99%D7%A7%D7%99-%D7%94%D7%97%D7%AA%D7%9C%D7%94",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/471568548153",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/609678491961",
+      "title": "לידה ואביזרים נלווים",
+      "url": "/collections/%D7%9C%D7%99%D7%93%D7%94-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%A0%D7%9C%D7%95%D7%95%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/481499283769",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/778017603897",
+      "title": "בלוג",
+      "url": "/blogs/news",
+      "type": "BLOG",
+      "resourceId": "gid://shopify/Blog/109164036409",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/609678524729",
+      "title": "עיצוב וטקסטיל לחדרי ילדים",
+      "url": "/collections/%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%95%D7%98%D7%A7%D7%A1%D7%98%D7%99%D7%9C-%D7%9C%D7%97%D7%93%D7%A8%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/481499414841",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/591731556665",
+      "title": "מארזי מתנה",
+      "url": "/collections/%D7%9E%D7%90%D7%A8%D7%96%D7%99-%D7%9E%D7%AA%D7%A0%D7%94",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/471568646457",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/604326134073",
+      "title": "המיוחדים שלנו",
+      "url": "/collections/%D7%94%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95",
+      "type": "COLLECTION",
+      "resourceId": "gid://shopify/Collection/477318185273",
+      "items": []
+    },
+    {
+      "id": "gid://shopify/MenuItem/591646622009",
+      "title": "יצירת קשר",
+      "url": "/pages/contact",
+      "type": "PAGE",
+      "resourceId": "gid://shopify/Page/135463764281",
+      "items": []
+    }
+  ]
+}
