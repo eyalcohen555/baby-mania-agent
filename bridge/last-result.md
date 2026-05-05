@@ -1,36 +1,16 @@
-task_id: 20260505-215813
+task_id: 20260506-001559
 ---
-CLEANUP_REQUIRED: NO
-REASON: כל התנאים לניקוי לא מתקיימים — מופע יחיד של bridge.py, status=running ללא error, bridge.lock מצביע על PID חי (39740), ו-telegram-response.md ריק.
+TELEGRAM_COVERAGE (per `docs/operations/telegram-channel-design.md`):
+
+- **TASK_STARTED:      COVERED** — Phase 1 IMPLEMENTED (lines 214–249). Monitor loop watches `status.md`; transition to `running` triggers `🔄 TASK STARTED` / `🔄 משימה התחילה`. Whitelist-enforced; dedup on (status, detail). `task-log.md` confirms `STARTED` events are logged.
+- **QUESTION:          COVERED** — Phase 2 IMPLEMENTED (lines 251–280). Hebrew message `❓ יש שאלה שמחכה לך` with buttons `[✏️ שלח תשובה] [⏭️ דלג]`. State machine `_waiting_for_reply=True` captures next user text into `bridge/telegram-response.md` with `RESPONSE_TYPE: text`.
+- **APPROVAL_NEEDED:   COVERED** — Phase 2 IMPLEMENTED (lines 257–261). Message `⚠️ נדרש אישור שלך` with buttons `[✅ אשר] [❌ דחה]` → writes `RESPONSE_TYPE: approve|reject` to `telegram-response.md`. Trigger: last-result asks explicit approval.
+- **BLOCKED_FAILED:    COVERED** — Phase 1 sends `❌ BLOCKED` on `status=failed` (line 222). Phase 2 escalates to `❌ המשימה נעצרה` with `[🔄 נסה שוב] [🛑 עצור]` buttons (line 260). `task-log.md` shows `BLOCKED_T3` rows confirming pipeline emits the event.
+- **TASK_DONE:         COVERED** — Phase 1 IMPLEMENTED (line 222) + Phase 3 Hebrew (lines 308–317). Sends `✅ משימה הסתיימה` + `📋 תוצאה:` truncated to 1500 chars, `/result` returns full last-result.md. `task-log.md` shows `DONE` rows for all completed tasks including current STAGE-4.
+- **CONDUCTOR_EVENTS:  MISSING** — Design document contains zero references to `conductor-notify.md` or any conductor-plan event surface. Bot's documented file watch is `status.md`, `next-task.md`, `last-result.md`, `telegram-response.md`, `task-log.md` only. Conductor stage transitions (PLAN_STARTED, STAGE_PASS, STAGE_FAIL, PLAN_COMPLETE) are not specified, not described in any Phase, and `conductor-notify.md` does not appear in `docs/operations/`.
+
+---
 
 STAGE_VERDICT: PASS
-
-EVIDENCE:
-```
-מתוך STAGE-1 (process audit):
-- bridge.py        PID 39740        instances: 1
-- telegram_bot.py  NOT RUNNING      instances: 0
-- watchdog.py      PID 31096        instances: 1
-- DUPLICATES_FOUND: NO
-
-מתוך STAGE-2 (bridge files audit):
-- BRIDGE_STATUS:           running (לא error)
-- BRIDGE_LOCK_PID:         39740
-- BRIDGE_LOCK_ALIVE:       YES
-- TELEGRAM_RESPONSE_EMPTY: YES
-- CONDUCTOR_STATE_STATUS:  RUNNING
-
-הערכת תנאי CLEANUP_REQUIRED=YES:
-1. duplicate bridge.py (>1)?            NO  — מופע יחיד
-2. status=error ואין bridge.py חי?       NO  — status=running, PID 39740 חי
-3. bridge.lock על PID מת?                NO  — PID 39740 ALIVE
-4. telegram-response לא ריק ו-bridge idle? NO — telegram-response ריק
-
-אף תנאי-טריגר לא נדלק → NO.
-```
-
-SYSTEM STATE:
-- Bridge יציב: instance יחיד של bridge.py (PID 39740), watchdog יחיד פעיל, ללא telegram_bot.py.
-- bridge.lock עקבי עם PID חי. status=running משקף את ה-STAGE-3 הנוכחי בלבד — אין error.
-- telegram-response.md ריק. conductor-state.md תואם (RUNNING ב-STAGE-3).
-- אין צורך בניקוי. STAGE-3 מסיים את עצמו עם PASS ללא שינוי קבצים. הוולידטור (STAGE-4) צריך לרוץ בנתיב NO-CLEANUP.
+EVIDENCE: Read-only audit of `docs/operations/telegram-channel-design.md` (lines 96–321) and `bridge/task-log.md` (sampled). 5/6 event types documented as IMPLEMENTED across Phase 1+2+3 with explicit message formats, dedup logic, and reply state machine. Conductor-plan events absent from design — gap is in the spec, not in the bot. No files were modified.
+SYSTEM STATE: Bridge in `running` state on this task (`status.md`). Telegram channel design covers task-lifecycle + reply events but lacks a conductor-plan event contract. Recommend Phase 4 (or new `docs/operations/telegram-conductor-events.md`) before adding conductor-notify wiring.
