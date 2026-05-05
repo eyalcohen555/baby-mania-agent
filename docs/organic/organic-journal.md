@@ -20,6 +20,37 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8D — Navigation Planning (read-only)
+## SCOPE: Layer 8 — Navigation planning — NO Shopify writes
+## WHAT CHANGED:
+- Phase 8D תכנון ניווט נוצר: output/tags/phase8d-navigation-planning.md
+- נקראו collections קיימות: 5 smart (Phase 8C) + 18 custom
+- ממצא קריטי: 3 custom collections ישנות חופפות לsmarts (בגדי-בנות, בגדי-בנים, מארזי-מתנה)
+- ממצא קריטי: Token חסר scope `write_navigation` — blocker לPhase 8E
+- header.liquid: תמיכה בdropdown + mega
+- המלצה: Option A — simple dropdown תחת "בגדי תינוקות", 5 sub-items
+- Mega Menu: לא מומלץ עכשיו (רק 5 collections)
+- type-dress/type-bodysuit: נשארות בחוץ
+## FILES TOUCHED:
+- output/tags/phase8d-navigation-planning.md
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Phase 8D COMPLETE — READY_FOR_PHASE8E_NAVIGATION_DRYRUN
+- Shopify: אין שינוי (0 writes)
+- Navigation: לא שונה
+## OPEN ISSUES:
+- ⚠️ BLOCKER Phase 8E: token חסר scope `write_navigation`
+  → אייל צריך להוסיף scope ב-Custom App → regenerate token → עדכן .env
+  → OR: עדכון ידני ב-Shopify Admin → Navigation
+- 3 custom collections ישנות חופפות — לנהל בPhase 8E (הסרה מניווט, לא מחיקה)
+## NEXT STEP:
+- פתרון blocker write_navigation scope — אישור אייל
+- Phase 8E: backup nav → dry run → T3 → write nav → verify → rollback אם צריך
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8C — Create 5 Smart Collections LIVE (T3 approved by Ayal)
 ## SCOPE: Layer 8 — Shopify Smart Collections — LIVE WRITE — PHASE8C_PASS
 ## WHAT CHANGED:
