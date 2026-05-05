@@ -20,6 +20,36 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8E — Navigation Endpoint Diagnosis + Scope Blocker Resolved
+## SCOPE: Layer 8 — Navigation scope investigation — NO Shopify writes
+## WHAT CHANGED:
+- Phase 8E scope blocker resolved — לא ע"י תיקון REST scope, אלא ע"י גילוי שGraphQL עובד
+- GraphQL Admin API `menus(first:5)` query: HTTP 200 ✅ — 5 menus נמצאו
+- Menus שנמצאו: main-menu, footer, link-list, link-list-1, customer-account-main-menu
+- REST `/menus.json` (2024-10 + 2026-01 + 2023-10): עדיין HTTP 403 (scope חסר)
+- GraphQL עובד — לא נדרש scope נוסף לקריאה (אבל mutations עדיין ידרשו `online_store_navigation`)
+- Token חדש הופק: suffix `0e9e` — Desktop .env עודכן
+- אין שינוי Navigation
+- אין Mega Menu
+## FILES TOUCHED:
+- output/tags/phase8e-navigation-endpoint-diagnosis.md
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- READY_FOR_PHASE8E_NAVIGATION_DRYRUN — Phase 8E dry run אפשרי
+- Shopify: אין שינוי (0 writes)
+- Navigation: לא שונה
+- GraphQL path confirmed: backup + dry run + write יעשו דרך GraphQL mutations
+## OPEN ISSUES:
+- Phase 8E Dry Run עדיין ממתין לT3 approval מאייל לפני write
+- GraphQL mutations (`menuCreate` / `menuUpdate`) יעלו error אם `write_online_store_navigation` חסר
+  → לבדוק בdry run לפני T3
+## NEXT STEP:
+- Phase 8E Dry Run: GET main-menu → הצג מבנה חדש מוצע → T3 approval → write (GraphQL) → verify → rollback אם צריך
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8D — Navigation Planning (read-only)
 ## SCOPE: Layer 8 — Navigation planning — NO Shopify writes
 ## WHAT CHANGED:
