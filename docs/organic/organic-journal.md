@@ -19,6 +19,89 @@
 
 ---
 
+## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 3 READ-ONLY Planning
+## SCOPE: Layer 7 — READ-ONLY planning — no Shopify writes
+## WHAT CHANGED:
+- scripts/phase7c_batch3_plan.py created — balanced round-robin selector, false-positive blockers
+- 20 candidates selected from remaining SAFE pool: dress:5, set:5, romper:5, bodysuit:5
+- 1 false-positive blocked: "בגד ים" (swimwear) matched type-set via "set" in handle → NOT_SET_TITLE_KW added
+- "suit"→type-set blocked when title contains "אוברול" (romper title, not set)
+- Short Hebrew keyword "סט" uses word-boundary matching to avoid substring false-positives
+- All 20 candidates passed batch-level safety checks
+- Shopify writes: NONE
+- verdict: READY_FOR_PHASE7C_BATCH3_T3_APPROVAL
+## FILES TOUCHED:
+- scripts/phase7c_batch3_plan.py (new)
+- output/tags/phase7c-batch3-plan.md (new)
+- output/tags/phase7c-batch3-plan.json (new)
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- No Shopify state change
+- Batch 3 plan ready for T3 review
+## OPEN ISSUES:
+- EU Shoe Size mapping — חסום עד אישור אייל
+- REVIEW_ONLY 135 products — manual review required
+## NEXT STEP:
+- T3 approval מאייל → Phase 7C Batch 3 live write (max 20 products)
+
+---
+
+## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Long Run Tagging Completion Plan
+## SCOPE: Layer 7 — READ-ONLY planning — no Shopify writes
+## WHAT CHANGED:
+- Long run tagging completion plan generated from existing JSON state files
+- Current state: 78 products live tagged, ~180 SAFE candidates remaining (207 total − 27 written)
+- REVIEW_ONLY: 135 products (excluded, manual review required)
+- Blocked: shoes/sandals/sneakers (EU-size mapping approval required)
+- Recommended strategy: max 20 per batch, T3 approval per batch
+- Shopify writes: NONE
+- verdict: READY_FOR_PHASE7C_LONG_RUN_REVIEW
+## FILES TOUCHED:
+- output/tags/phase7c-long-run-tagging-plan.md (new)
+- output/tags/phase7c-long-run-tagging-plan.json (new)
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- No Shopify state change
+## OPEN ISSUES:
+- EU Shoe Size mapping — חסום עד אישור אייל
+## NEXT STEP:
+- T3 approval מאייל → Phase 7C Batch 3 READ-ONLY plan → Batch 3 live
+
+---
+
+## DATE: 2026-05-05
+## TASK: Layer 7 Phase 7C — Live Batch 2 (hat + coat, T3 approved by Ayal)
+## SCOPE: Layer 7 — Live tag write — 7 products (hat:4, coat:3) — Shopify PUT + verify
+## WHAT CHANGED:
+- 7 products tagged in Shopify live (PUT HTTP 200 + GET verify PASS per product)
+- 4 false-positive products excluded: מגבת (towel), תיק (bag), משפך (funnel) matched "כובע" keyword but are not hats — false-positive blocker added to classifier
+- types written: hat:4, coat:3
+- post-run verify: 7/7 PASS (GET re-check)
+- rollback: NOT triggered
+- Shopify live: YES (78 products total, up from 71)
+- false-positive blocker (NOT_HAT_TITLE_KW) added to batch2 classifier script
+## FILES TOUCHED:
+- scripts/phase7c_live_batch2.py
+- scripts/phase7c_live_batch2_verify.py
+- output/tags/phase7c-live-batch2-backup.json
+- output/tags/phase7c-live-batch2-verify.md
+- output/tags/phase7c-live-batch2-verify.json
+## SYSTEM IMPACT:
+- Shopify live tagged products: 78 (was 71)
+- type-hat: 4 new products now tagged
+- type-coat: 3 new products now tagged
+## OPEN ISSUES:
+- EU Shoe Size mapping — חסום עד אישור אייל
+- REVIEW_ONLY 135 products — manual review required
+## NEXT STEP:
+- T3 re-approval מאייל → Phase 7C Batch 3 (remaining dress/set/romper/bodysuit from SAFE pool)
+
+---
+
 ## DATE: 2026-05-05
 ## TASK: Layer 7 Phase 7C — Live Batch 1 (T3 approved by Ayal)
 ## SCOPE: Layer 7 — Live tag write — 20 products — Shopify PUT + verify
