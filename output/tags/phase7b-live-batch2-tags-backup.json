@@ -1,0 +1,1428 @@
+{
+  "backup_timestamp": "2026-05-05T06:47:58.409457+00:00",
+  "phase": "Phase 7B live batch 2 pre-write backup",
+  "t3_approval": "Ayal — Phase 7B batch 2 — 11-15 SAFE products",
+  "products_count": 12,
+  "products": [
+    {
+      "product_id": 9688964956473,
+      "title_from_shopify": "חליפת דובים דגם אוריאל",
+      "status_before": "active",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-set",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-18-24m",
+        "occ-gift",
+        "occ-everyday",
+        "gender-boy",
+        "style-teddy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-0-3m",
+          "source": "variant:0-3M→size-0-3m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-teddy",
+          "source": "title",
+          "conf": 0.87,
+          "rule": "CAT-G"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.93,
+        "size-0-3m": 0.92,
+        "size-3-6m": 0.92,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "size-18-24m": 0.92,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-boy": 0.9,
+        "style-teddy": 0.87
+      },
+      "source_per_tag": {
+        "type-set": "title",
+        "size-0-3m": "variant:0-3M→size-0-3m",
+        "size-3-6m": "variant:3-6M→size-3-6m",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "size-18-24m": "variant:18-24M→size-18-24m",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-boy": "handle",
+        "style-teddy": "title"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "gender-boy",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-0-3m",
+        "size-12-18m",
+        "size-18-24m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "style-teddy",
+        "type-set"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 10029649133881,
+      "title_from_shopify": "Lino™ – סט סריג רך לתינוקות בעיצוב אירופאי",
+      "status_before": "active",
+      "current_tags": [
+        "baby-gift",
+        "baby-knit-set",
+        "baby-shower-gift",
+        "european-baby-style",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit"
+      ],
+      "current_tags_count": 8,
+      "proposed_new_tags": [
+        "type-set",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-18-24m",
+        "fabric-knit",
+        "occ-gift",
+        "occ-everyday",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "fabric-knit",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-D"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.93,
+        "size-3-6m": 0.92,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "size-18-24m": 0.92,
+        "fabric-knit": 0.88,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-boy": 0.9
+      },
+      "source_per_tag": {
+        "type-set": "title",
+        "size-3-6m": "variant:3-6M→size-3-6m",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "size-18-24m": "variant:18-24M→size-18-24m",
+        "fabric-knit": "title",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-boy": "handle"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-knit-set",
+        "baby-shower-gift",
+        "european-baby-style",
+        "everyday-baby-wear",
+        "fabric-knit",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-12-18m",
+        "size-18-24m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "soft-knit",
+        "type-set"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9687653122361,
+      "title_from_shopify": "חליפה מנומר עם פפיון דגם נמרה",
+      "status_before": "active",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "leopard-baby",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-set",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "occ-gift",
+        "occ-everyday",
+        "gender-girl",
+        "style-animal-print"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-0-3m",
+          "source": "variant:0-3M→size-0-3m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-animal-print",
+          "source": "title",
+          "conf": 0.85,
+          "rule": "CAT-G"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.93,
+        "size-0-3m": 0.92,
+        "size-3-6m": 0.92,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-girl": 0.9,
+        "style-animal-print": 0.85
+      },
+      "source_per_tag": {
+        "type-set": "title",
+        "size-0-3m": "variant:0-3M→size-0-3m",
+        "size-3-6m": "variant:3-6M→size-3-6m",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-girl": "handle",
+        "style-animal-print": "title"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-girl",
+        "leopard-baby",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-0-3m",
+        "size-12-18m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "style-animal-print",
+        "type-set"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9858268496185,
+      "title_from_shopify": "חליפת חג פרחונית דגם סמדר",
+      "status_before": "active",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "floral-baby",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-romper",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-18-24m",
+        "occ-gift",
+        "occ-everyday",
+        "gender-girl",
+        "style-floral"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-floral",
+          "source": "title",
+          "conf": 0.87,
+          "rule": "CAT-G"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.9,
+        "size-3-6m": 0.92,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "size-18-24m": 0.92,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-girl": 0.9,
+        "style-floral": 0.87
+      },
+      "source_per_tag": {
+        "type-romper": "handle",
+        "size-3-6m": "variant:3-6M→size-3-6m",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "size-18-24m": "variant:18-24M→size-18-24m",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-girl": "handle",
+        "style-floral": "title"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-12-18m",
+        "size-18-24m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "style-floral",
+        "type-romper"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9678573273401,
+      "title_from_shopify": "חליפת פיל דגם אימרי",
+      "status_before": "active",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "elephant-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "occ-gift",
+        "occ-everyday",
+        "gender-boy",
+        "style-animal-print"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-0-3m",
+          "source": "variant:0-3M→size-0-3m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-animal-print",
+          "source": "title",
+          "conf": 0.85,
+          "rule": "CAT-G"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.9,
+        "size-0-3m": 0.92,
+        "size-3-6m": 0.92,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-boy": 0.9,
+        "style-animal-print": 0.85
+      },
+      "source_per_tag": {
+        "type-romper": "handle",
+        "size-0-3m": "variant:0-3M→size-0-3m",
+        "size-3-6m": "variant:3-6M→size-3-6m",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-boy": "handle",
+        "style-animal-print": "title"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "elephant-print-baby",
+        "everyday-baby-wear",
+        "gender-boy",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-0-3m",
+        "size-12-18m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "style-animal-print",
+        "type-romper"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9688674533689,
+      "title_from_shopify": "חליפת קואלה דגם ליאל",
+      "status_before": "active",
+      "current_tags": [
+        "animal-print-baby",
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-set",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "occ-gift",
+        "occ-everyday",
+        "gender-boy",
+        "style-animal-print"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.93,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-0-3m",
+          "source": "variant:0-3M→size-0-3m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-animal-print",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-G"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.93,
+        "size-0-3m": 0.92,
+        "size-3-6m": 0.92,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-boy": 0.9,
+        "style-animal-print": 0.85
+      },
+      "source_per_tag": {
+        "type-set": "title",
+        "size-0-3m": "variant:0-3M→size-0-3m",
+        "size-3-6m": "variant:3-6M→size-3-6m",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-boy": "handle",
+        "style-animal-print": "existing_tag"
+      },
+      "final_tags_before_write": [
+        "animal-print-baby",
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-boy",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-0-3m",
+        "size-12-18m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "style-animal-print",
+        "type-set"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9687653089593,
+      "title_from_shopify": "סט מכנס וחולצה פרפר פיל דגם נויה",
+      "status_before": "active",
+      "current_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "elephant-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "occ-gift",
+        "occ-everyday",
+        "gender-girl",
+        "style-animal-print"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-0-3m",
+          "source": "variant:0-3M→size-0-3m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-animal-print",
+          "source": "title",
+          "conf": 0.85,
+          "rule": "CAT-G"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.9,
+        "size-0-3m": 0.92,
+        "size-3-6m": 0.92,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-girl": 0.9,
+        "style-animal-print": 0.85
+      },
+      "source_per_tag": {
+        "type-romper": "handle",
+        "size-0-3m": "variant:0-3M→size-0-3m",
+        "size-3-6m": "variant:3-6M→size-3-6m",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-girl": "handle",
+        "style-animal-print": "title"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "elephant-print-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-0-3m",
+        "size-12-18m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "style-animal-print",
+        "type-romper"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9678598734137,
+      "title_from_shopify": "סרבל גנטלמן בייבי 3 חלקים דגם אליה",
+      "status_before": "active",
+      "current_tags": [
+        "baby-gift",
+        "baby-romper",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-romper",
+        "size-0-3m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-18-24m",
+        "occ-gift",
+        "occ-everyday",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "existing_tag",
+          "conf": 0.92,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-0-3m",
+          "source": "variant:0-3M→size-0-3m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3-6m",
+          "source": "variant:3-6M→size-3-6m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.92,
+        "size-0-3m": 0.92,
+        "size-3-6m": 0.92,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "size-18-24m": 0.92,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-boy": 0.9
+      },
+      "source_per_tag": {
+        "type-romper": "existing_tag",
+        "size-0-3m": "variant:0-3M→size-0-3m",
+        "size-3-6m": "variant:3-6M→size-3-6m",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "size-18-24m": "variant:18-24M→size-18-24m",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-boy": "handle"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-romper",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-0-3m",
+        "size-12-18m",
+        "size-18-24m",
+        "size-3-6m",
+        "size-6-9m",
+        "size-9-12m",
+        "type-romper"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9688976261433,
+      "title_from_shopify": "שמלת פפיון חורפית דגם ארגמן",
+      "status_before": "active",
+      "current_tags": [
+        "baby-dress",
+        "baby-gift",
+        "everyday-baby-wear",
+        "fleece-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-dress",
+        "size-6-9m",
+        "size-9-12m",
+        "size-12-18m",
+        "size-18-24m",
+        "fabric-fleece",
+        "occ-gift",
+        "occ-everyday",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-6-9m",
+          "source": "variant:6-9M→size-6-9m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "fabric-fleece",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-D"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "existing_tag",
+          "conf": 0.85,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-dress": 0.95,
+        "size-6-9m": 0.92,
+        "size-9-12m": 0.92,
+        "size-12-18m": 0.92,
+        "size-18-24m": 0.92,
+        "fabric-fleece": 0.88,
+        "occ-gift": 0.88,
+        "occ-everyday": 0.85,
+        "gender-girl": 0.9
+      },
+      "source_per_tag": {
+        "type-dress": "title",
+        "size-6-9m": "variant:6-9M→size-6-9m",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "size-18-24m": "variant:18-24M→size-18-24m",
+        "fabric-fleece": "existing_tag",
+        "occ-gift": "existing_tag",
+        "occ-everyday": "existing_tag",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "everyday-baby-wear",
+        "fabric-fleece",
+        "fleece-baby",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "size-12-18m",
+        "size-18-24m",
+        "size-6-9m",
+        "size-9-12m",
+        "type-dress"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9892196450617,
+      "title_from_shopify": "שמלת פרחים מהאגדות דגם איילה",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress",
+        "size-9-12m",
+        "size-18-24m",
+        "size-3y",
+        "size-4y",
+        "gender-girl",
+        "style-floral"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-3y",
+          "source": "variant:3T→size-3y",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-4y",
+          "source": "variant:4T→size-4y",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-floral",
+          "source": "title",
+          "conf": 0.87,
+          "rule": "CAT-G"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-dress": 0.95,
+        "size-9-12m": 0.92,
+        "size-18-24m": 0.92,
+        "size-3y": 0.92,
+        "size-4y": 0.92,
+        "gender-girl": 0.9,
+        "style-floral": 0.87
+      },
+      "source_per_tag": {
+        "type-dress": "title",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-18-24m": "variant:18-24M→size-18-24m",
+        "size-3y": "variant:3T→size-3y",
+        "size-4y": "variant:4T→size-4y",
+        "gender-girl": "handle",
+        "style-floral": "title"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "size-18-24m",
+        "size-3y",
+        "size-4y",
+        "size-9-12m",
+        "style-floral",
+        "type-dress"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9895864271161,
+      "title_from_shopify": "שמלת תינוקות פרחונית דגם עדן",
+      "status_before": "active",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress",
+        "size-9-12m",
+        "size-18-24m",
+        "size-12-18m",
+        "gender-girl",
+        "style-floral"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "size-9-12m",
+          "source": "variant:9-12M→size-9-12m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-18-24m",
+          "source": "variant:18-24M→size-18-24m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "size-12-18m",
+          "source": "variant:12-18M→size-12-18m",
+          "conf": 0.92,
+          "rule": "CAT-B"
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9,
+          "rule": "CAT-F"
+        },
+        {
+          "tag": "style-floral",
+          "source": "title",
+          "conf": 0.87,
+          "rule": "CAT-G"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-dress": 0.95,
+        "size-9-12m": 0.92,
+        "size-18-24m": 0.92,
+        "size-12-18m": 0.92,
+        "gender-girl": 0.9,
+        "style-floral": 0.87
+      },
+      "source_per_tag": {
+        "type-dress": "title",
+        "size-9-12m": "variant:9-12M→size-9-12m",
+        "size-18-24m": "variant:18-24M→size-18-24m",
+        "size-12-18m": "variant:12-18M→size-12-18m",
+        "gender-girl": "handle",
+        "style-floral": "title"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "size-12-18m",
+        "size-18-24m",
+        "size-9-12m",
+        "style-floral",
+        "type-dress"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    },
+    {
+      "product_id": 9096607498553,
+      "title_from_shopify": "בגד גוף פליז",
+      "status_before": "active",
+      "current_tags": [
+        "baby-bodysuit",
+        "baby-gift",
+        "fleece-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "season-winter",
+        "fabric-fleece",
+        "occ-gift",
+        "gender-neutral"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "title",
+          "conf": 0.95,
+          "rule": "CAT-A"
+        },
+        {
+          "tag": "season-winter",
+          "source": "title",
+          "conf": 0.88,
+          "rule": "CAT-C"
+        },
+        {
+          "tag": "fabric-fleece",
+          "source": "title",
+          "conf": 0.92,
+          "rule": "CAT-D"
+        },
+        {
+          "tag": "occ-gift",
+          "source": "existing_tag",
+          "conf": 0.88,
+          "rule": "CAT-E"
+        },
+        {
+          "tag": "gender-neutral",
+          "source": "existing_tag",
+          "conf": 0.87,
+          "rule": "CAT-F"
+        }
+      ],
+      "confidence_per_tag": {
+        "type-bodysuit": 0.95,
+        "season-winter": 0.88,
+        "fabric-fleece": 0.92,
+        "occ-gift": 0.88,
+        "gender-neutral": 0.87
+      },
+      "source_per_tag": {
+        "type-bodysuit": "title",
+        "season-winter": "title",
+        "fabric-fleece": "title",
+        "occ-gift": "existing_tag",
+        "gender-neutral": "existing_tag"
+      },
+      "final_tags_before_write": [
+        "baby-bodysuit",
+        "baby-gift",
+        "fabric-fleece",
+        "fleece-baby",
+        "gender-neutral",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-gift",
+        "season-winter",
+        "type-bodysuit",
+        "winter-baby-wear"
+      ],
+      "timestamp": "2026-05-05T06:47:58.409457+00:00"
+    }
+  ]
+}

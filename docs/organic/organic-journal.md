@@ -19,6 +19,34 @@
 
 ---
 
+## DATE: 2026-05-05
+## TASK: Layer 7 Phase 7B — Live Batch 2 (12 מוצרים — PASS 12/12)
+## SCOPE: Layer 7 — live Shopify tag write — PHASE7B_LIVE_BATCH2_PASS
+## WHAT CHANGED:
+- 12 מוצרים קיבלו tags Layer 6/7 ב-Shopify live
+- כל 12 PUT HTTP 200 + GET verify PASS
+- merge בלבד (אין מחיקות): final = sorted(set(current) | set(proposed))
+- סוגים: 1 bodysuit + 3 dress + 4 romper + 4 set
+- גיבוי JSON נשמר: output/tags/phase7b-live-batch2-tags-backup.json
+- verify MD נשמר: output/tags/phase7b-live-batch2-verify.md
+- בחירה: מיני dry-run — 193 SAFE candidates → 12 נבחרו (max 4/type)
+## FILES TOUCHED:
+- output/tags/phase7b-live-batch2-tags-backup.json
+- output/tags/phase7b-live-batch2-verify.md
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Shopify live tagged products: 39 → 51
+- יעד Phase 8 הושג: 51 מוצרים מ-4+ סוגים (bodysuit/dress/romper/set)
+- rollback: לא הופעל (0 failures)
+## OPEN ISSUES:
+- EU shoes: עדיין חסום
+- Phase 8 collections: eligible for PLANNING — T3 approval נדרש לפני live
+## NEXT STEP:
+- Phase 8 planning: collections/navigation — T3 approval נדרש לפני live
+
+---
+
 ## DATE: 2026-05-04
 ## TASK: Layer 7 Phase 7B — Live Batch 1 (20 מוצרים — PASS 20/20)
 ## SCOPE: Layer 7 — live Shopify tag write — PHASE7B_LIVE_BATCH1_PASS
