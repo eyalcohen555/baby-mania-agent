@@ -20,6 +20,39 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8E — Navigation Dry Run (read-only, no mutation)
+## SCOPE: Layer 8 — Navigation dry run — NO Shopify writes, NO mutation
+## WHAT CHANGED:
+- main-menu נקרא דרך GraphQL: GID=gid://shopify/Menu/250909851961, 18 items, title="תפריט"
+- 3 overlaps ישנים מסומנים remove_from_navigation_candidate:
+  - 'בגדי בנות' → /collections/בגדי-בנות (resourceId=482519155001)
+  - 'בגדי בנים' → /collections/בגדי-בנים (resourceId=482519187769)
+  - 'מארזי מתנה' → /collections/מארזי-מתנה (resourceId=471568646457)
+- כל 5 URLs חדשים מחזירים HTTP 200
+- mutations נמצאו: menuCreate, menuUpdate, menuDelete
+- מבנה מוצע: `בגדי תינוקות` עם 5 sub-items (gender-girl/boy, type-set/romper, occ-gift)
+- snapshot שמור ב: output/tags/phase8e-navigation-dryrun.json
+- אין שינוי Navigation, אין Mega Menu, אין שינוי products/tags
+## FILES TOUCHED:
+- output/tags/phase8e-navigation-dryrun.md
+- output/tags/phase8e-navigation-dryrun.json
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Phase 8E COMPLETE — READY_FOR_PHASE8F_T3_APPROVAL
+- Shopify: אין שינוי (0 writes, 0 mutations)
+- Navigation: לא שונה
+## OPEN ISSUES:
+- Phase 8F עדיין ממתין לT3 approval מאייל לפני mutation
+- write_online_store_navigation scope עדיין נדרש לbiצוע mutation
+  → GraphQL menuUpdate ידרוש את הscope הזה
+## NEXT STEP:
+- T3 approval מאייל לPhase 8F
+- Phase 8F: menuUpdate mutation → הוסף `בגדי תינוקות` עם 5 sub-items + הסר overlaps מניווט → verify → rollback אם נדרש
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8E — Navigation Endpoint Diagnosis + Scope Blocker Resolved
 ## SCOPE: Layer 8 — Navigation scope investigation — NO Shopify writes
 ## WHAT CHANGED:

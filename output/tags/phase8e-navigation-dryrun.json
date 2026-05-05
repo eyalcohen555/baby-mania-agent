@@ -1,0 +1,269 @@
+{
+  "phase": "8E",
+  "type": "navigation_dryrun_readonly",
+  "token_suffix": "d666",
+  "shopify_writes": "NONE",
+  "current_main_menu": {
+    "id": "gid://shopify/Menu/250909851961",
+    "handle": "main-menu",
+    "title": "תפריט",
+    "item_count": 18,
+    "items": [
+      {
+        "title": "דף הבית",
+        "url": "/",
+        "type": "FRONTPAGE",
+        "resource_id": null,
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "בגדי חורף",
+        "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%97%D7%95%D7%A8%D7%A3-1",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/486381617465",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "קיץ 2026",
+        "url": "/collections/summer-2024",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/473261211961",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "כל המוצרים",
+        "url": "/collections/all",
+        "type": "CATALOG",
+        "resource_id": null,
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "בובת ריבורן",
+        "url": "/collections/reborn/%D7%91%D7%95%D7%91%D7%AA-%D7%A8%D7%99%D7%91%D7%95%D7%A8%D7%9F",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/526156103993",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "בגדי בנות",
+        "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%91%D7%A0%D7%95%D7%AA",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/482519155001",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "בגדי בנים",
+        "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%91%D7%A0%D7%99%D7%9D",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/482519187769",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "מוצרי בטיחות",
+        "url": "/collections/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%91%D7%98%D7%99%D7%97%D7%95%D7%AA",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/472982094137",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "משחקים לתינוק",
+        "url": "/collections/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/472981733689",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "נעלי ילדים",
+        "url": "/collections/%D7%A0%D7%A2%D7%9C%D7%99%D7%99%D7%9D",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/471568613689",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "שמיכות עיטוף ושקי שינה",
+        "url": "/collections/%D7%A9%D7%9E%D7%99%D7%9B%D7%95%D7%AA-%D7%A2%D7%99%D7%98%D7%95%D7%A3-%D7%95%D7%A9%D7%A7%D7%99-%D7%A9%D7%99%D7%A0%D7%94",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/471568580921",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "תיקי החתלה",
+        "url": "/collections/%D7%AA%D7%99%D7%A7%D7%99-%D7%94%D7%97%D7%AA%D7%9C%D7%94",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/471568548153",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "לידה ואביזרים נלווים",
+        "url": "/collections/%D7%9C%D7%99%D7%93%D7%94-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%A0%D7%9C%D7%95%D7%95%D7%99%D7%9D",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/481499283769",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "בלוג",
+        "url": "/blogs/news",
+        "type": "BLOG",
+        "resource_id": "gid://shopify/Blog/109164036409",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "עיצוב וטקסטיל לחדרי ילדים",
+        "url": "/collections/%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%95%D7%98%D7%A7%D7%A1%D7%98%D7%99%D7%9C-%D7%9C%D7%97%D7%93%D7%A8%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/481499414841",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "מארזי מתנה",
+        "url": "/collections/%D7%9E%D7%90%D7%A8%D7%96%D7%99-%D7%9E%D7%AA%D7%A0%D7%94",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/471568646457",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "המיוחדים שלנו",
+        "url": "/collections/%D7%94%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95",
+        "type": "COLLECTION",
+        "resource_id": "gid://shopify/Collection/477318185273",
+        "nested_count": 0,
+        "nested_items": []
+      },
+      {
+        "title": "יצירת קשר",
+        "url": "/pages/contact",
+        "type": "PAGE",
+        "resource_id": "gid://shopify/Page/135463764281",
+        "nested_count": 0,
+        "nested_items": []
+      }
+    ]
+  },
+  "overlap_candidates": [
+    {
+      "title": "בגדי בנות",
+      "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%91%D7%A0%D7%95%D7%AA",
+      "flag": "remove_from_navigation_candidate",
+      "reason": "title matches legacy collection, overlaps gender-girl"
+    },
+    {
+      "title": "בגדי בנים",
+      "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%91%D7%A0%D7%99%D7%9D",
+      "flag": "remove_from_navigation_candidate",
+      "reason": "title matches legacy collection, overlaps gender-boy"
+    },
+    {
+      "title": "מארזי מתנה",
+      "url": "/collections/%D7%9E%D7%90%D7%A8%D7%96%D7%99-%D7%9E%D7%AA%D7%A0%D7%94",
+      "flag": "remove_from_navigation_candidate",
+      "reason": "title matches legacy collection, overlaps occ-gift"
+    }
+  ],
+  "proposed_structure": {
+    "parent_item": {
+      "title": "בגדי תינוקות",
+      "url": "#"
+    },
+    "sub_items": [
+      {
+        "title": "בנות",
+        "url": "/collections/gender-girl"
+      },
+      {
+        "title": "בנים",
+        "url": "/collections/gender-boy"
+      },
+      {
+        "title": "סטים",
+        "url": "/collections/type-set"
+      },
+      {
+        "title": "סרבלים ואוברולים",
+        "url": "/collections/type-romper"
+      },
+      {
+        "title": "מתנות לתינוק",
+        "url": "/collections/occ-gift"
+      }
+    ]
+  },
+  "url_checks": {
+    "/collections/gender-girl": {
+      "status": 200,
+      "final_url": "https://www.babymania-il.com/collections/gender-girl",
+      "title": "בנות"
+    },
+    "/collections/gender-boy": {
+      "status": 200,
+      "final_url": "https://www.babymania-il.com/collections/gender-boy",
+      "title": "בנים"
+    },
+    "/collections/type-set": {
+      "status": 200,
+      "final_url": "https://www.babymania-il.com/collections/type-set",
+      "title": "סטים"
+    },
+    "/collections/type-romper": {
+      "status": 200,
+      "final_url": "https://www.babymania-il.com/collections/type-romper",
+      "title": "סרבלים ואוברולים"
+    },
+    "/collections/occ-gift": {
+      "status": 200,
+      "final_url": "https://www.babymania-il.com/collections/occ-gift",
+      "title": "מתנות לתינוק"
+    }
+  },
+  "all_urls_200": true,
+  "menu_mutations_found": [
+    {
+      "name": "menuCreate",
+      "description": "Creates a navigation [`Menu`](https://shopify.dev/docs/api/admin-graphql/latest/objects/Menu) for the online store. Menus organize links that help customers navigate to [collections](https://shopify.dev/docs/api/admin-graphql/latest/objects/Collection), [products](https://shopify.dev/docs/api/admin-graphql/latest/objects/Product), [pages](https://shopify.dev/docs/api/admin-graphql/latest/objects/Page), [blogs](https://shopify.dev/docs/api/admin-graphql/latest/objects/Blog), and custom URLs.\n\nEach menu requires a unique handle for identification and can contain multiple [`MenuItem`](https://shopify.dev/docs/api/admin-graphql/latest/objects/MenuItem) objects with nested sub-items up to three levels deep.",
+      "args": [
+        "title",
+        "handle",
+        "items"
+      ]
+    },
+    {
+      "name": "menuDelete",
+      "description": "Deletes a menu.",
+      "args": [
+        "id"
+      ]
+    },
+    {
+      "name": "menuUpdate",
+      "description": "Updates a [`Menu`](https://shopify.dev/docs/api/admin-graphql/latest/objects/Menu) for display on the storefront. Modifies the menu's title and navigation structure, including nested [`MenuItem`](https://shopify.dev/docs/api/admin-graphql/latest/objects/MenuItem) objects. You can update the handle for non-default menus.\n\nThe items argument accepts a list of menu items with their nested structure. Each item can include nested items to create multi-level navigation hierarchies. Default menus have restricted updates—you can't change their handles.",
+      "args": [
+        "id",
+        "title",
+        "handle",
+        "items"
+      ]
+    }
+  ],
+  "mutation_possible": true,
+  "rollback_plan": {
+    "method": "Re-apply current_main_menu snapshot via menuUpdate GraphQL mutation",
+    "backup_in": "current_main_menu field in this JSON",
+    "requires_scope": "write_online_store_navigation"
+  },
+  "verdict": "READY_FOR_PHASE8F_T3_APPROVAL"
+}
