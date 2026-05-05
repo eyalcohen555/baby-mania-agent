@@ -1,0 +1,629 @@
+{
+  "phase": "7C",
+  "type": "tagging_expansion_plan_readonly",
+  "shopify_writes": "NONE",
+  "token_suffix": "de6d",
+  "total_active_products": 393,
+  "already_tagged_count": 51,
+  "safe_candidates_count": 207,
+  "review_only_count": 135,
+  "rejected_count": 0,
+  "recommended_batch_size": 30,
+  "type_breakdown": {
+    "type-dress": 6,
+    "type-bodysuit": 5,
+    "type-set": 6,
+    "type-romper": 6,
+    "type-coat": 3,
+    "type-hat": 4
+  },
+  "gender_breakdown": {
+    "gender-girl": 12,
+    "no-gender": 10,
+    "gender-neutral": 3,
+    "gender-boy": 5
+  },
+  "safety_ok": true,
+  "safety_flags": [],
+  "blockers": [
+    "EU_SHOE_SIZE_BLOCKER — no approved mapping for EU sizes",
+    "REVIEW_ONLY pool requires manual review"
+  ],
+  "recommended_batch": [
+    {
+      "product_id": "9607363592505",
+      "title": "סנדלי קיץ וינטג'",
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-dress",
+        "gender-girl",
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "current_tags_count": 5,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9607363559737",
+      "title": "סנדלים אופנתיים לתינוקות צעד ראשון",
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "all_proposed_tags": [
+        "type-dress",
+        "gender-girl",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "current_tags_count": 5,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9606694142265",
+      "title": "שמלת אירועים אלגנטית לתינוקת",
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9606690111801",
+      "title": "שמלת בסגנון אמריקאי לבנות",
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9892620927289",
+      "title": "שמלת וי פסים דגם יהלי",
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9179134132537",
+      "title": "שמלת טוטו נסיכותית - אלין",
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-dress"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9179152482617",
+      "title": "בגד גוף אלגנטי - מייקל",
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-bodysuit"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9179168964921",
+      "title": "בגד גוף כיווצים אלגנטי - נטלי",
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-bodysuit"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9096607301945",
+      "title": "בגד גוף פליז שרוולים ארוכים ופונפונים",
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": "gender-neutral",
+      "gender_conf": 0.88,
+      "gender_source": "existing_tag",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-bodysuit",
+        "gender-neutral",
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "current_tags_count": 6,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9179172733241",
+      "title": "בגד גוף פסים אלגנטי - ריף",
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-bodysuit"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9179138687289",
+      "title": "בגד גוף קיצי נוח ואוורירי, כולל כובע מתוק - ג'וני",
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-bodysuit"
+      ],
+      "current_tags_count": 5,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "10190523334969",
+      "title": "0-18 Months old Newborn Baby boy Jumpsuit Cute Little Bear Short sleeved Jumpsuit Baby clothing Boy baby Summer Crawling Suit",
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-boy",
+        "occ-seasonal"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "10190522876217",
+      "title": "Toddler Summer Outfits 2026 New Baby Boy Clothes Casual Letter Pocket Short Sleeve T-shirts and Shorts Two Piece Set Kids Suit",
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-boy",
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "9855017550137",
+      "title": "Veloura Baby™ חליפה פרחונית",
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "current_tags_count": 7,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "10190523269433",
+      "title": "VISgogo Toddler Baby Boys Clothes Set Short Sleeve Letter Print T-shirt Elastic Waist Drawstring Shorts Summer Casual Outfit",
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-boy",
+        "occ-everyday",
+        "occ-seasonal"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "9688934940985",
+      "title": "אוברול בייבי  לתינוק – Baby Bear Cozy Set",
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-set"
+      ],
+      "current_tags_count": 1,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "10005779808569",
+      "title": "אוברול בייבי מניה דגם חן",
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "current_tags_count": 7,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "9179155693881",
+      "title": "אוברול אלגנט דגם עומרי",
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-romper"
+      ],
+      "current_tags_count": 1,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "9096606908729",
+      "title": "אוברול ארוך",
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-neutral",
+      "gender_conf": 0.88,
+      "gender_source": "existing_tag",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "all_proposed_tags": [
+        "type-romper",
+        "gender-neutral",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "current_tags_count": 8,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "9096599994681",
+      "title": "אוברול ארוך עם רוכסן",
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": "gender-neutral",
+      "gender_conf": 0.88,
+      "gender_source": "existing_tag",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "all_proposed_tags": [
+        "type-romper",
+        "gender-neutral",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "current_tags_count": 5,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "9678573240633",
+      "title": "אוברול אריה מתוק דגם שמר",
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-romper",
+        "gender-boy"
+      ],
+      "current_tags_count": 1,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "10026520445241",
+      "title": "אוברול בייבי מניה דגם חן",
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-romper"
+      ],
+      "current_tags_count": 1,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "9858268430649",
+      "title": "אוברול גינס מהמם דגם רוית",
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-romper",
+        "gender-girl"
+      ],
+      "current_tags_count": 1,
+      "risk_level": "LOW",
+      "confidence": 0.88
+    },
+    {
+      "product_id": "9731768713529",
+      "title": "מעיל אופנתי לבנות – דגם שיראל",
+      "proposed_type": "type-coat",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "all_proposed_tags": [
+        "type-coat",
+        "gender-girl",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "current_tags_count": 6,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9673730359609",
+      "title": "מעיל חורף צמר דגם שנאל",
+      "proposed_type": "type-coat",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-coat",
+        "gender-girl",
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "current_tags_count": 5,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9688976228665",
+      "title": "מעיל קורדרוי מחמם מאוד דגם אליה",
+      "proposed_type": "type-coat",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "all_proposed_tags": [
+        "type-coat",
+        "gender-boy",
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "current_tags_count": 6,
+      "risk_level": "LOW",
+      "confidence": 0.9
+    },
+    {
+      "product_id": "9179141308729",
+      "title": "כובע בייסבול דובוני לתינוקות מעוצב ומהמם עשוי מכותנה, מתאים לבנים ולבנות בגילאי 3-12 חודשים",
+      "proposed_type": "type-hat",
+      "type_conf": 0.92,
+      "type_source": "title",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-hat",
+        "gender-girl"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.92
+    },
+    {
+      "product_id": "9606864666937",
+      "title": "כובע בייסבול רך לתינוק",
+      "proposed_type": "type-hat",
+      "type_conf": 0.92,
+      "type_source": "title",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-hat",
+        "gender-girl"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.92
+    },
+    {
+      "product_id": "10024854847801",
+      "title": "כובע צמר מתנה",
+      "proposed_type": "type-hat",
+      "type_conf": 0.92,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [
+        "occ-gift"
+      ],
+      "all_proposed_tags": [
+        "type-hat",
+        "occ-gift"
+      ],
+      "current_tags_count": 1,
+      "risk_level": "LOW",
+      "confidence": 0.92
+    },
+    {
+      "product_id": "9179140915513",
+      "title": "כובע קייצי רך ונעים מכותנה מתאים לתנוקות בגילאי 0-12 חודשים",
+      "proposed_type": "type-hat",
+      "type_conf": 0.92,
+      "type_source": "title",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "proposed_occs": [],
+      "all_proposed_tags": [
+        "type-hat"
+      ],
+      "current_tags_count": 0,
+      "risk_level": "LOW",
+      "confidence": 0.92
+    }
+  ],
+  "verdict": "READY_FOR_PHASE7C_T3_APPROVAL"
+}

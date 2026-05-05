@@ -20,6 +20,35 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 7 Phase 7C — Tagging Expansion Planning (READ-ONLY)
+## SCOPE: Layer 7 — Product classification + batch planning — no Shopify writes
+## WHAT CHANGED:
+- 393 מוצרים פעילים נסרקו ב-Shopify
+- כבר מתויגים (type-*): 51 | SAFE candidates: 207 | REVIEW_ONLY: 135 | REJECT: 0
+- recommended batch: 30 מוצרים — dress:6, set:6, romper:6, bodysuit:5, hat:4, coat:3
+- gender breakdown: girl:12, no-gender:10, boy:5, neutral:3
+- כל safety checks PASS (no age-*, no type collision, no gender collision, no EU shoe size)
+- Shopify writes: NONE (GET-only)
+- verdict: READY_FOR_PHASE7C_T3_APPROVAL
+## FILES TOUCHED:
+- scripts/phase7c_tagging_expansion_plan.py
+- output/tags/phase7c-tagging-expansion-plan.md
+- output/tags/phase7c-tagging-expansion-plan.json
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Phase 7 pipeline ממשיך לאחר Phase 8 Navigation Pipeline COMPLETE
+- blocker פתוח: EU Shoe Size mapping (type-shoes/sandals/sneakers)
+- REVIEW_ONLY pool (135) ממתין לסקירה ידנית לפני הכללה
+## OPEN ISSUES:
+- EU Shoe Size mapping — חסום עד אישור אייל
+- REVIEW_ONLY 135 products — manual review required
+## NEXT STEP:
+- T3 approval מאייל → Phase 7C live batch (עד 20 מוצרים ראשונים)
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8G — Navigation Post-Live Monitor (READ-ONLY)
 ## SCOPE: Layer 8 — Post-live monitoring — no Shopify writes
 ## WHAT CHANGED:
