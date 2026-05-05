@@ -20,6 +20,38 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8C — Create 5 Smart Collections LIVE (T3 approved by Ayal)
+## SCOPE: Layer 8 — Shopify Smart Collections — LIVE WRITE — PHASE8C_PASS
+## WHAT CHANGED:
+- 5 Smart Collections נוצרו ב-Shopify live
+- gender-girl (id=526691729721): 20/20 מוצרים — PASS
+- gender-boy (id=526691762489): 19/19 מוצרים — PASS
+- type-set (id=526691795257): 18/18 מוצרים — PASS
+- type-romper (id=526691828025): 16/16 מוצרים — PASS
+- occ-gift (id=526691860793): 14/14 מוצרים — PASS
+- לא נוצרו: type-dress, type-bodysuit (כמפורש באישור T3)
+- 11 QA checks עברו לכל collection
+- גיבוי לפני יצירה: output/tags/phase8c-smart-collections-backup.json
+- verify MD: output/tags/phase8c-smart-collections-live-verify.md
+## FILES TOUCHED:
+- scripts/phase8c_create_collections.py
+- output/tags/phase8c-smart-collections-backup.json
+- output/tags/phase8c-smart-collections-live-verify.md
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Smart Collections live: 0 → 5
+- rollback: לא הופעל (0 failures)
+- product tags: ללא שינוי (collections only)
+## OPEN ISSUES:
+- Mega Menu / navigation wiring — Phase 8D (pending אישור)
+- type-dress + type-bodysuit: pending growth (7B+ batches) before safe to create
+## NEXT STEP:
+- Phase 8D: wire collections to navigation/Mega Menu (T3 required)
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8B — Collections Dry Run (7 collections, 0 blocked)
 ## SCOPE: Layer 8 — collections planning — NO Shopify writes
 ## WHAT CHANGED:

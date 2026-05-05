@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-05-05T11:32:26.880863",
+  "existing_smart_collections": [],
+  "planned_collections": [
+    {
+      "collection_key": "gender-girl",
+      "handle": "gender-girl",
+      "title": "בנות",
+      "body_html": "גלי ביגוד תינוקות לבנות: שמלות, סטים, סרבלים ובגדי גוף. איכות פרימיום לתינוקות 0-24 חודש.",
+      "meta_title": "ביגוד לבנות — BabyMania",
+      "meta_description": "גלי ביגוד תינוקות לבנות: שמלות, סטים, סרבלים ובגדי גוף. איכות פרימיום לתינוקות 0-24 חודש.",
+      "rule_condition": "gender-girl",
+      "expected_count": 20
+    },
+    {
+      "collection_key": "gender-boy",
+      "handle": "gender-boy",
+      "title": "בנים",
+      "body_html": "גלי ביגוד תינוקות לבנים: סטים, סרבלים ובגדי גוף. עיצובים מגניבים לתינוקות 0-24 חודש.",
+      "meta_title": "ביגוד לבנים — BabyMania",
+      "meta_description": "גלי ביגוד תינוקות לבנים: סטים, סרבלים ובגדי גוף. עיצובים מגניבים לתינוקות 0-24 חודש.",
+      "rule_condition": "gender-boy",
+      "expected_count": 19
+    },
+    {
+      "collection_key": "type-set",
+      "handle": "type-set",
+      "title": "סטים",
+      "body_html": "סטים מושלמים לתינוקות: חליפות 2-3 חלקים באיכות פרימיום. מתאים לכל מגדר. מידות 0 עד 4 שנים.",
+      "meta_title": "סטים לתינוקות — BabyMania",
+      "meta_description": "סטים מושלמים לתינוקות: חליפות 2-3 חלקים באיכות פרימיום. מתאים לכל מגדר. מידות 0 עד 4 שנים.",
+      "rule_condition": "type-set",
+      "expected_count": 18
+    },
+    {
+      "collection_key": "type-romper",
+      "handle": "type-romper",
+      "title": "סרבלים ואוברולים",
+      "body_html": "סרבלים ואוברולים לתינוקות: ג'ינס, פליז, כותנה. לבנות ולבנים. מידות Newborn עד 18-24 חודש.",
+      "meta_title": "סרבלים לתינוקות — BabyMania",
+      "meta_description": "סרבלים ואוברולים לתינוקות: ג'ינס, פליז, כותנה. לבנות ולבנים. מידות Newborn עד 18-24 חודש.",
+      "rule_condition": "type-romper",
+      "expected_count": 16
+    },
+    {
+      "collection_key": "occ-gift",
+      "handle": "occ-gift",
+      "title": "מתנות לתינוק",
+      "body_html": "מתנות מושלמות לתינוק: סטים, סרבלים ושמלות. אידיאלי למקלחת תינוק ולהולדת ילד.",
+      "meta_title": "מתנות לתינוק — BabyMania",
+      "meta_description": "מתנות מושלמות לתינוק: סטים, סרבלים ושמלות. אידיאלי למקלחת תינוק ולהולדת ילד.",
+      "rule_condition": "occ-gift",
+      "expected_count": 14
+    }
+  ]
+}
