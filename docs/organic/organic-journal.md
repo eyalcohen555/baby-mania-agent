@@ -19,6 +19,34 @@
 
 ---
 
+## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Long Run Tagging Completion Plan
+## SCOPE: Layer 7 — READ-ONLY planning — no Shopify writes
+## WHAT CHANGED:
+- Long run tagging completion plan generated from existing JSON state files
+- Current state: 78 products live tagged, ~180 SAFE candidates remaining (207 total − 27 written)
+- REVIEW_ONLY: 135 products (excluded, manual review required)
+- Blocked: shoes/sandals/sneakers (EU-size mapping approval required)
+- Recommended strategy: max 20 per batch, T3 approval per batch
+- Batch order: dress/set/romper/bodysuit → remaining clothing → REVIEW_ONLY after review → shoes after EU-size
+- Shopify writes: NONE
+- verdict: READY_FOR_PHASE7C_LONG_RUN_REVIEW
+## FILES TOUCHED:
+- output/tags/phase7c-long-run-tagging-plan.md (new)
+- output/tags/phase7c-long-run-tagging-plan.json (new)
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Plan document available for T3 approval review
+- No Shopify state change
+## OPEN ISSUES:
+- EU Shoe Size mapping — חסום עד אישור אייל
+- REVIEW_ONLY 135 products — manual review required
+## NEXT STEP:
+- T3 approval מאייל → Phase 7C Batch 3 READ-ONLY plan → Batch 3 live
+
+---
+
 ## DATE: 2026-05-05
 ## TASK: Layer 7 Phase 7C — Live Batch 2 — hat + coat (T3 approved by Ayal)
 ## SCOPE: Layer 7 — Live tag write — 7 products (hat:4, coat:3) — Shopify PUT + verify

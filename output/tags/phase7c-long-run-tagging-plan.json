@@ -1,0 +1,64 @@
+{
+  "phase": "7C",
+  "task": "long_run_tagging_completion_plan",
+  "mode": "READ_ONLY_PLANNING",
+  "timestamp": "2026-05-05T21:09:51.609788+00:00",
+  "scope": "organic_layer7_tags_only",
+  "shopify_writes": "NONE",
+  "current_state": {
+    "total_active_products": 393,
+    "live_tagged_products_now": 78,
+    "safe_candidates_at_plan": 207,
+    "estimated_remaining_safe_candidates": 180,
+    "review_only_count": 135,
+    "rejected_count": 0,
+    "blocked": [
+      "shoes/sandals/sneakers excluded",
+      "EU shoe size mapping blocked",
+      "REVIEW_ONLY excluded"
+    ]
+  },
+  "recommended_strategy": {
+    "batch_size": "max 20 per live batch",
+    "batch_order": [
+      "dress/set/romper/bodysuit with strongest source trace",
+      "remaining clean clothing types",
+      "manual-review candidates only after separate review",
+      "shoes/sandals/sneakers only after EU-size mapping approval"
+    ],
+    "approval_model": "separate T3 approval per live batch is safest"
+  },
+  "required_gates_per_batch": [
+    "backup before write",
+    "dry run",
+    "forbidden tag check",
+    "age-* check",
+    "RANGE_TOO_BROAD check",
+    "type collision check",
+    "gender collision check",
+    "false-positive keyword check",
+    "Shopify PUT only after T3",
+    "Shopify GET verify",
+    "post-verify independent check",
+    "rollback plan",
+    "report",
+    "explicit git add only"
+  ],
+  "stop_conditions": [
+    "any WARN",
+    "any FAIL",
+    "missing source trace",
+    "REVIEW_ONLY candidate",
+    "shoe/sandal/sneaker candidate",
+    "EU shoe size product",
+    "collection/navigation/theme change",
+    "Shopify write/verify mismatch"
+  ],
+  "next_actions": [
+    "Create Phase 7C Batch 3 READ-ONLY plan from remaining SAFE pool",
+    "Review Batch 3 candidates",
+    "Request T3 approval for Batch 3 live write",
+    "Run Batch 3 live only after T3"
+  ],
+  "verdict": "READY_FOR_PHASE7C_LONG_RUN_REVIEW"
+}
