@@ -20,6 +20,47 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8B — Collections Dry Run (7 collections, 0 blocked)
+## SCOPE: Layer 8 — collections planning — NO Shopify writes
+## WHAT CHANGED:
+- Phase 8B dry run מלא לכל 51 מוצרים
+- 7 collections נבדקו: gender-girl(20), gender-boy(19), type-set(18), type-romper(16), occ-gift(14), type-dress(9), type-bodysuit(8)
+- כל 7 collections עברו קריטריוני חסימה
+- 2 collections עם SEO caveat: type-dress(9), type-bodysuit(8)
+- output: phase8b-collections-dryrun.md + phase8b-collections-dryrun.json
+- אין כתיבה ל-Shopify
+## FILES TOUCHED:
+- output/tags/phase8b-collections-dryrun.md
+- output/tags/phase8b-collections-dryrun.json
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Phase 8B COMPLETE — READY_FOR_PHASE8C_T3_APPROVAL
+- Shopify: אין שינוי (0 writes)
+- Collections live: 0 (unchanged)
+## OPEN ISSUES:
+- T3 approval מאייל נדרש לפני Phase 8C
+- type-dress: 9 products — SEO thin, recommend growing to 12+ in Phase 7C
+- type-bodysuit: 8 products — HIGH SEO risk, consider growing or merging
+## NEXT STEP:
+- שלח Phase 8B report לאייל לאישור T3
+- Phase 8C: create 7 Smart Collections in Shopify (T3 required)
+
+---
+
+## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8A — Collections Navigation Plan
+## SCOPE: Layer 8 — collections planning — NO Shopify writes
+## WHAT CHANGED:
+- Phase 8A plan נוצר: output/tags/phase8a-collections-navigation-plan.md
+- ניתוח 51 מוצרים, 7 collections recommended, navigation structure proposed
+## FILES TOUCHED:
+- output/tags/phase8a-collections-navigation-plan.md
+## SYSTEM IMPACT: Phase 8A COMPLETE
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 7 Phase 7B — Live Batch 2 (12 מוצרים — PASS 12/12)
 ## SCOPE: Layer 7 — live Shopify tag write — PHASE7B_LIVE_BATCH2_PASS
 ## WHAT CHANGED:

@@ -1,0 +1,241 @@
+{
+  "phase": "8B",
+  "type": "collections_dryrun",
+  "generated": "2026-05-05",
+  "shopify_writes": false,
+  "total_tagged_products": 51,
+  "collections_examined": 7,
+  "collections_pass": 7,
+  "collections_blocked": 0,
+  "verdict": "READY_FOR_PHASE8C_T3_APPROVAL",
+
+  "system_state": {
+    "live_tagged_products": 51,
+    "collections_live": 0,
+    "mega_menu_live": 0,
+    "phase8a_verdict": "READY_FOR_PHASE8B_COLLECTIONS_DRYRUN",
+    "qa_contract": "ACTIVE",
+    "t3_approval_received": false
+  },
+
+  "collections": [
+    {
+      "collection_key": "gender-girl",
+      "title_he": "בנות",
+      "handle": "gender-girl",
+      "type": "smart",
+      "rule": { "column": "tag", "relation": "equals", "condition": "gender-girl" },
+      "disjunctive": false,
+      "sort_order": "best-selling",
+      "meta_title": "ביגוד לבנות — BabyMania",
+      "meta_description": "גלי ביגוד תינוקות לבנות: שמלות, סטים, סרבלים ובגדי גוף. איכות פרימיום לתינוקות 0-24 חודש.",
+      "products_count": 20,
+      "threshold_pass": true,
+      "seo_risk": "LOW",
+      "ux_risk": "LOW",
+      "internal_diversity": "HIGH",
+      "blocking_check": "PASS",
+      "verdict": "RECOMMENDED_FOR_CREATION",
+      "create_order": 1,
+      "product_ids": [
+        9688660312377, 9687579033913, 9731768746297, 9874906382649,
+        9688660377913, 9688885985593, 9606691324217, 9895864369465,
+        9892557848889, 9606694175033, 10190522908985, 9657091293497,
+        9687596728633, 10029649002809, 9687653122361, 9858268496185,
+        9687653089593, 9688976261433, 9892196450617, 9895864271161
+      ],
+      "type_breakdown": { "dress": 7, "romper": 6, "bodysuit": 3, "set": 4 },
+      "notes": null
+    },
+    {
+      "collection_key": "gender-boy",
+      "title_he": "בנים",
+      "handle": "gender-boy",
+      "type": "smart",
+      "rule": { "column": "tag", "relation": "equals", "condition": "gender-boy" },
+      "disjunctive": false,
+      "sort_order": "best-selling",
+      "meta_title": "ביגוד לבנים — BabyMania",
+      "meta_description": "גלי ביגוד תינוקות לבנים: סטים, סרבלים ובגדי גוף. עיצובים מגניבים לתינוקות 0-24 חודש.",
+      "products_count": 19,
+      "threshold_pass": true,
+      "seo_risk": "LOW",
+      "ux_risk": "LOW",
+      "internal_diversity": "MEDIUM",
+      "blocking_check": "PASS",
+      "verdict": "RECOMMENDED_FOR_CREATION",
+      "create_order": 2,
+      "product_ids": [
+        9688932909369, 9874906546489, 9688976326969, 9688964989241,
+        9688674566457, 9688976294201, 10190523302201, 10190523138361,
+        10190522941753, 10190523203897, 10190523105593, 10190523236665,
+        10190522843449, 10029648970041, 9688964956473, 10029649133881,
+        9678573273401, 9688674533689, 9678598734137
+      ],
+      "type_breakdown": { "set": 12, "romper": 6, "bodysuit": 1 },
+      "notes": "set-dominant (63%) — monitor post-launch CTR"
+    },
+    {
+      "collection_key": "type-set",
+      "title_he": "סטים",
+      "handle": "type-set",
+      "type": "smart",
+      "rule": { "column": "tag", "relation": "equals", "condition": "type-set" },
+      "disjunctive": false,
+      "sort_order": "best-selling",
+      "meta_title": "סטים לתינוקות — BabyMania",
+      "meta_description": "סטים מושלמים לתינוקות: חליפות 2-3 חלקים באיכות פרימיום. מתאים לכל מגדר. מידות 0 עד 4 שנים.",
+      "products_count": 18,
+      "threshold_pass": true,
+      "seo_risk": "LOW",
+      "ux_risk": "MEDIUM",
+      "internal_diversity": "MEDIUM",
+      "blocking_check": "PASS",
+      "verdict": "RECOMMENDED_FOR_CREATION",
+      "create_order": 3,
+      "product_ids": [
+        9874906546489, 9688660377913, 9688976326969, 9688964989241,
+        9688674566457, 9688976294201, 10190523302201, 9606694437177,
+        10190523138361, 10190522941753, 10190523203897, 10190523105593,
+        10190523236665, 10190522843449, 9688964956473, 10029649133881,
+        9687653122361, 9688674533689
+      ],
+      "gender_breakdown": { "boy": 12, "girl": 3, "neutral": 2, "none": 1 },
+      "notes": "boy-dominant (67%) — consider gender filter in Phase 9 navigation"
+    },
+    {
+      "collection_key": "type-romper",
+      "title_he": "סרבלים ואוברולים",
+      "handle": "type-romper",
+      "type": "smart",
+      "rule": { "column": "tag", "relation": "equals", "condition": "type-romper" },
+      "disjunctive": false,
+      "sort_order": "best-selling",
+      "meta_title": "סרבלים לתינוקות — BabyMania",
+      "meta_description": "סרבלים ואוברולים לתינוקות: ג'ינס, פליז, כותנה. לבנות ולבנים. מידות Newborn עד 18-24 חודש.",
+      "products_count": 16,
+      "threshold_pass": true,
+      "seo_risk": "LOW",
+      "ux_risk": "LOW",
+      "internal_diversity": "HIGH",
+      "blocking_check": "PASS",
+      "verdict": "RECOMMENDED_FOR_CREATION",
+      "create_order": 4,
+      "product_ids": [
+        9688660312377, 9874906349881, 9895864205625, 9687579033913,
+        9688932909369, 9688885985593, 9688934973753, 10029649101113,
+        9657091293497, 9687596728633, 10029649002809, 10029648970041,
+        9858268496185, 9678573273401, 9687653089593, 9678598734137
+      ],
+      "gender_breakdown": { "girl": 7, "boy": 5, "neutral": 2, "none": 2 },
+      "notes": null
+    },
+    {
+      "collection_key": "occ-gift",
+      "title_he": "מתנות לתינוק",
+      "handle": "occ-gift",
+      "type": "smart",
+      "rule": { "column": "tag", "relation": "equals", "condition": "occ-gift" },
+      "disjunctive": false,
+      "sort_order": "best-selling",
+      "meta_title": "מתנות לתינוק — BabyMania",
+      "meta_description": "מתנות מושלמות לתינוק: סטים, סרבלים ושמלות. אידיאלי למקלחת תינוק ולהולדת ילד.",
+      "products_count": 14,
+      "threshold_pass": true,
+      "seo_risk": "LOW",
+      "ux_risk": "LOW",
+      "internal_diversity": "HIGH",
+      "blocking_check": "PASS",
+      "verdict": "RECOMMENDED_FOR_CREATION",
+      "create_order": 5,
+      "product_ids": [
+        9606691324217, 9895864369465, 9892557848889, 10029648970041,
+        9688964956473, 10029649133881, 9687653122361, 9858268496185,
+        9678573273401, 9688674533689, 9687653089593, 9678598734137,
+        9688976261433, 9096607498553
+      ],
+      "type_breakdown": { "set": 6, "romper": 5, "dress": 2, "bodysuit": 1 },
+      "notes": "cross-type collection — expected and desirable for gift category"
+    },
+    {
+      "collection_key": "type-dress",
+      "title_he": "שמלות",
+      "handle": "type-dress",
+      "type": "smart",
+      "rule": { "column": "tag", "relation": "equals", "condition": "type-dress" },
+      "disjunctive": false,
+      "sort_order": "best-selling",
+      "meta_title": "שמלות לתינוקות — BabyMania",
+      "meta_description": "שמלות מקסימות לתינוקות ופעוטות. לאירועים, לחגים וליומיום. מידות 0 עד 4 שנים.",
+      "products_count": 9,
+      "threshold_pass": true,
+      "seo_risk": "MEDIUM",
+      "ux_risk": "LOW",
+      "internal_diversity": "MEDIUM",
+      "blocking_check": "PASS",
+      "verdict": "RECOMMENDED_FOR_CREATION",
+      "create_order": 6,
+      "product_ids": [
+        9731768746297, 9606691324217, 9895864369465, 9892557848889,
+        9179146256697, 9606694175033, 9688976261433, 9892196450617,
+        9895864271161
+      ],
+      "gender_breakdown": { "girl": 7, "none": 2 },
+      "notes": "9 products — borderline SEO thin. Grow to 12+ in Phase 7C for optimal SEO."
+    },
+    {
+      "collection_key": "type-bodysuit",
+      "title_he": "בגדי גוף",
+      "handle": "type-bodysuit",
+      "type": "smart",
+      "rule": { "column": "tag", "relation": "equals", "condition": "type-bodysuit" },
+      "disjunctive": false,
+      "sort_order": "best-selling",
+      "meta_title": "בגדי גוף לתינוקות — BabyMania",
+      "meta_description": "בגדי גוף איכותיים לתינוקות: כותנה, פליז וסריג. מידות Newborn עד 18-24 חודש.",
+      "products_count": 8,
+      "threshold_pass": true,
+      "seo_risk": "HIGH",
+      "ux_risk": "MEDIUM",
+      "internal_diversity": "MEDIUM",
+      "blocking_check": "PASS",
+      "verdict": "RECOMMENDED_FOR_CREATION",
+      "create_order": 7,
+      "product_ids": [
+        9179166671161, 9874906382649, 10190522908985, 9179165753657,
+        9179154612537, 9179152154937, 9179167129913, 9096607498553
+      ],
+      "gender_breakdown": { "girl": 3, "neutral": 1, "none": 4 },
+      "notes": "8 products = minimum threshold. HIGH SEO risk. Alternative: merge with type-dress (17 total) OR grow to 12+ in Phase 7C. Smart Collection will auto-grow as more bodysuits are tagged."
+    }
+  ],
+
+  "product_tag_matrix": {
+    "source": "verify reports: phase6, phase7a-batch1, phase7a-batch2, phase7b-batch1, phase7b-batch2",
+    "type_counts": { "type-set": 18, "type-romper": 16, "type-dress": 9, "type-bodysuit": 8 },
+    "gender_counts": { "gender-girl": 20, "gender-boy": 19, "gender-neutral": 4, "none": 8 },
+    "season_counts": { "season-summer": 11, "season-winter": 7, "season-spring-fall": 4, "none": 29 },
+    "occ_counts": { "occ-gift": 14, "occ-everyday": 12 },
+    "discrepancies_vs_phase8a": [
+      "gender-girl: phase8a=21, actual=20 (diff=-1, still above threshold)",
+      "occ-gift: phase8a=13, actual=14 (diff=+1, positive)"
+    ]
+  },
+
+  "phase8c_plan": {
+    "requires_t3_approval": true,
+    "create_order": ["gender-girl", "gender-boy", "type-set", "type-romper", "occ-gift", "type-dress", "type-bodysuit"],
+    "backup_before_create": true,
+    "verify_after_each": true,
+    "rollback_method": "DELETE smart_collection",
+    "rollback_affects_product_tags": false
+  },
+
+  "seo_ux_risks": [
+    { "risk": "type-bodysuit thin (8 products)", "severity": "HIGH", "collection": "type-bodysuit" },
+    { "risk": "type-dress borderline (9 products)", "severity": "MEDIUM", "collection": "type-dress" },
+    { "risk": "type-set boy-dominant (67%)", "severity": "MEDIUM", "collection": "type-set" },
+    { "risk": "8 products without gender tag", "severity": "LOW", "collection": "all" },
+    { "risk": "gender-neutral (4) without nav home", "severity": "LOW", "collection": "nav" }
+  ]
+}
