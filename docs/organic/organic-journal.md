@@ -20,6 +20,44 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 7 Phase 7C — Live Batch 2 — hat + coat (T3 approved by Ayal)
+## SCOPE: Layer 7 — Live tag write — 7 products (hat:4, coat:3) — Shopify PUT + verify
+## WHAT CHANGED:
+- 7 products tagged in Shopify live (PUT HTTP 200 + GET verify PASS per product)
+- 4 false-positive products excluded: מגבת (towel), תיק (bag), משפך (funnel) matched "כובע" keyword but are not hats — false-positive blocker added to classifier
+- types written: hat:4, coat:3
+- gender written: girl:5, boy:1, none:1
+- occ tags written: occ-gift×5, occ-everyday×1, occ-seasonal×2
+- post-run verify: 7/7 PASS (GET re-check)
+- rollback: NOT triggered
+- Shopify live: YES (78 products total, up from 71)
+- false-positive blocker (NOT_HAT_TITLE_KW) added to batch2 classifier script
+## FILES TOUCHED:
+- scripts/phase7c_live_batch2.py
+- scripts/phase7c_live_batch2_verify.py
+- output/tags/phase7c-live-batch2-backup.json
+- output/tags/phase7c-live-batch2-dry-run.md
+- output/tags/phase7c-live-batch2-dry-run.json
+- output/tags/phase7c-live-batch2-rollback-plan.md
+- output/tags/phase7c-live-batch2-verify.md
+- output/tags/phase7c-live-batch2-verify.json
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Shopify live tagged products: 78 (was 71)
+- type-hat: 4 new products now tagged
+- type-coat: 3 new products now tagged
+- false-positive blocker established for future hat/coat batches
+## OPEN ISSUES:
+- EU Shoe Size mapping — חסום עד אישור אייל
+- REVIEW_ONLY 135 products — manual review required
+- remaining SAFE pool ~180 products — needs T3 re-approval for Batch 3
+## NEXT STEP:
+- T3 re-approval מאייל → Phase 7C Batch 3 (remaining dress/set/romper/bodysuit from SAFE pool)
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 7 Phase 7C — Live Batch 1 (T3 approved by Ayal)
 ## SCOPE: Layer 7 — Live tag write — 20 products — Shopify PUT + verify
 ## WHAT CHANGED:

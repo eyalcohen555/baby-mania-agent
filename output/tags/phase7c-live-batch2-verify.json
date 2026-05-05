@@ -1,0 +1,611 @@
+{
+  "phase": "7C-batch2",
+  "type": "live_batch2_verify",
+  "timestamp": "2026-05-05T19:32:21.091650+00:00",
+  "t3_approval": "Ayal approved Phase 7C Live Batch 2 — hat + coat only",
+  "shopify_writes": "7 products PUT",
+  "types_filter": [
+    "type-hat",
+    "type-coat"
+  ],
+  "total_selected": 7,
+  "total_written": 7,
+  "pass_count": 7,
+  "fail_count": 0,
+  "rollback_triggered": false,
+  "failed_pid": null,
+  "products": [
+    {
+      "product_id": "9179141308729",
+      "title_from_shopify": "כובע בייסבול דובוני לתינוקות מעוצב ומהמם עשוי מכותנה, מתאים לבנים ולבנות בגילאי 3-12 חודשים",
+      "status_before": "active",
+      "status_after": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-hat",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-hat",
+          "source": "title",
+          "conf": 0.92
+        },
+        {
+          "tag": "gender-girl",
+          "source": "title",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-hat": 0.92,
+        "gender-girl": 0.92
+      },
+      "source_per_tag": {
+        "type-hat": "title",
+        "gender-girl": "title"
+      },
+      "allowed_values_check": "PASS",
+      "forbidden_tags_check": "PASS",
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-hat"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-hat"
+      ],
+      "after_tags_count": 2,
+      "missing_new_tags": [],
+      "removed_old_tags": [],
+      "unexpected_tags": [],
+      "title_changed": "NO",
+      "rollback_needed": "NO",
+      "age_tags_check": "PASS",
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606864666937",
+      "title_from_shopify": "כובע בייסבול רך לתינוק",
+      "status_before": "active",
+      "status_after": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-hat",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-hat",
+          "source": "title",
+          "conf": 0.92
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-hat": 0.92,
+        "gender-girl": 0.92
+      },
+      "source_per_tag": {
+        "type-hat": "title",
+        "gender-girl": "title"
+      },
+      "allowed_values_check": "PASS",
+      "forbidden_tags_check": "PASS",
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-hat"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-hat"
+      ],
+      "after_tags_count": 2,
+      "missing_new_tags": [],
+      "removed_old_tags": [],
+      "unexpected_tags": [],
+      "title_changed": "NO",
+      "rollback_needed": "NO",
+      "age_tags_check": "PASS",
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "10024854847801",
+      "title_from_shopify": "כובע צמר מתנה",
+      "status_before": "active",
+      "status_after": "active",
+      "before_tags": [
+        "gift"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-hat",
+        "occ-gift"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-hat",
+          "source": "title",
+          "conf": 0.92
+        },
+        {
+          "tag": "occ-gift",
+          "source": "title_or_existing_tag",
+          "conf": 0.85
+        }
+      ],
+      "confidence_per_tag": {
+        "type-hat": 0.92,
+        "occ-gift": 0.92
+      },
+      "source_per_tag": {
+        "type-hat": "title",
+        "occ-gift": "title"
+      },
+      "allowed_values_check": "PASS",
+      "forbidden_tags_check": "PASS",
+      "final_tags_before_write": [
+        "gift",
+        "occ-gift",
+        "type-hat"
+      ],
+      "after_tags": [
+        "gift",
+        "occ-gift",
+        "type-hat"
+      ],
+      "after_tags_count": 3,
+      "missing_new_tags": [],
+      "removed_old_tags": [],
+      "unexpected_tags": [],
+      "title_changed": "NO",
+      "rollback_needed": "NO",
+      "age_tags_check": "PASS",
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179140915513",
+      "title_from_shopify": "כובע קייצי רך ונעים מכותנה מתאים לתנוקות בגילאי 0-12 חודשים",
+      "status_before": "active",
+      "status_after": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-hat"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-hat",
+          "source": "title",
+          "conf": 0.92
+        }
+      ],
+      "confidence_per_tag": {
+        "type-hat": 0.92
+      },
+      "source_per_tag": {
+        "type-hat": "title"
+      },
+      "allowed_values_check": "PASS",
+      "forbidden_tags_check": "PASS",
+      "final_tags_before_write": [
+        "type-hat"
+      ],
+      "after_tags": [
+        "type-hat"
+      ],
+      "after_tags_count": 1,
+      "missing_new_tags": [],
+      "removed_old_tags": [],
+      "unexpected_tags": [],
+      "title_changed": "NO",
+      "rollback_needed": "NO",
+      "age_tags_check": "PASS",
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9731768713529",
+      "title_from_shopify": "מעיל אופנתי לבנות – דגם שיראל",
+      "status_before": "active",
+      "status_after": "active",
+      "before_tags": [
+        "baby-coat",
+        "baby-gift",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "before_tags_count": 6,
+      "proposed_new_tags": [
+        "type-coat",
+        "gender-girl",
+        "occ-gift",
+        "occ-everyday"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-coat",
+          "source": "title",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-girl",
+          "source": "title",
+          "conf": 0.9
+        },
+        {
+          "tag": "occ-gift",
+          "source": "title_or_existing_tag",
+          "conf": 0.85
+        },
+        {
+          "tag": "occ-everyday",
+          "source": "title_or_existing_tag",
+          "conf": 0.85
+        }
+      ],
+      "confidence_per_tag": {
+        "type-coat": 0.9,
+        "gender-girl": 0.9,
+        "occ-gift": 0.9,
+        "occ-everyday": 0.9
+      },
+      "source_per_tag": {
+        "type-coat": "title",
+        "gender-girl": "title",
+        "occ-gift": "title",
+        "occ-everyday": "title"
+      },
+      "allowed_values_check": "PASS",
+      "forbidden_tags_check": "PASS",
+      "final_tags_before_write": [
+        "baby-coat",
+        "baby-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "type-coat"
+      ],
+      "after_tags": [
+        "baby-coat",
+        "baby-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-everyday",
+        "occ-gift",
+        "type-coat"
+      ],
+      "after_tags_count": 10,
+      "missing_new_tags": [],
+      "removed_old_tags": [],
+      "unexpected_tags": [],
+      "title_changed": "NO",
+      "rollback_needed": "NO",
+      "age_tags_check": "PASS",
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9673730359609",
+      "title_from_shopify": "מעיל חורף צמר דגם שנאל",
+      "status_before": "active",
+      "status_after": "active",
+      "before_tags": [
+        "baby-coat",
+        "baby-gift",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "before_tags_count": 5,
+      "proposed_new_tags": [
+        "type-coat",
+        "gender-girl",
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-coat",
+          "source": "title",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        },
+        {
+          "tag": "occ-gift",
+          "source": "title_or_existing_tag",
+          "conf": 0.85
+        },
+        {
+          "tag": "occ-seasonal",
+          "source": "title_or_existing_tag",
+          "conf": 0.85
+        }
+      ],
+      "confidence_per_tag": {
+        "type-coat": 0.9,
+        "gender-girl": 0.9,
+        "occ-gift": 0.9,
+        "occ-seasonal": 0.9
+      },
+      "source_per_tag": {
+        "type-coat": "title",
+        "gender-girl": "title",
+        "occ-gift": "title",
+        "occ-seasonal": "title"
+      },
+      "allowed_values_check": "PASS",
+      "forbidden_tags_check": "PASS",
+      "final_tags_before_write": [
+        "baby-coat",
+        "baby-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-gift",
+        "occ-seasonal",
+        "type-coat",
+        "winter-baby-wear"
+      ],
+      "after_tags": [
+        "baby-coat",
+        "baby-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-gift",
+        "occ-seasonal",
+        "type-coat",
+        "winter-baby-wear"
+      ],
+      "after_tags_count": 9,
+      "missing_new_tags": [],
+      "removed_old_tags": [],
+      "unexpected_tags": [],
+      "title_changed": "NO",
+      "rollback_needed": "NO",
+      "age_tags_check": "PASS",
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9688976228665",
+      "title_from_shopify": "מעיל קורדרוי מחמם מאוד דגם אליה",
+      "status_before": "active",
+      "status_after": "active",
+      "before_tags": [
+        "baby-coat",
+        "baby-gift",
+        "corduroy-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "before_tags_count": 6,
+      "proposed_new_tags": [
+        "type-coat",
+        "gender-boy",
+        "occ-gift",
+        "occ-seasonal"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-coat",
+          "source": "title",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9
+        },
+        {
+          "tag": "occ-gift",
+          "source": "title_or_existing_tag",
+          "conf": 0.85
+        },
+        {
+          "tag": "occ-seasonal",
+          "source": "title_or_existing_tag",
+          "conf": 0.85
+        }
+      ],
+      "confidence_per_tag": {
+        "type-coat": 0.9,
+        "gender-boy": 0.9,
+        "occ-gift": 0.9,
+        "occ-seasonal": 0.9
+      },
+      "source_per_tag": {
+        "type-coat": "title",
+        "gender-boy": "title",
+        "occ-gift": "title",
+        "occ-seasonal": "title"
+      },
+      "allowed_values_check": "PASS",
+      "forbidden_tags_check": "PASS",
+      "final_tags_before_write": [
+        "baby-coat",
+        "baby-gift",
+        "corduroy-baby",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-gift",
+        "occ-seasonal",
+        "type-coat",
+        "winter-baby-wear"
+      ],
+      "after_tags": [
+        "baby-coat",
+        "baby-gift",
+        "corduroy-baby",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-gift",
+        "occ-seasonal",
+        "type-coat",
+        "winter-baby-wear"
+      ],
+      "after_tags_count": 10,
+      "missing_new_tags": [],
+      "removed_old_tags": [],
+      "unexpected_tags": [],
+      "title_changed": "NO",
+      "rollback_needed": "NO",
+      "age_tags_check": "PASS",
+      "final_verdict": "PASS"
+    }
+  ],
+  "verdict": "PHASE7C_LIVE_BATCH2_PASS",
+  "post_verify": {
+    "phase": "7C-batch2",
+    "type": "live_batch2_post_verify",
+    "timestamp": "2026-05-05T19:32:37.498382+00:00",
+    "shopify_writes": "NONE — GET only",
+    "checked": 7,
+    "pass_count": 7,
+    "fail_count": 0,
+    "products": [
+      {
+        "product_id": "9179141308729",
+        "title_from_shopify": "כובע בייסבול דובוני לתינוקות מעוצב ומהמם עשוי מכותנה, מתאים לבנים ולבנות בגילאי 3-12 חודשים",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-hat"
+        ],
+        "missing_proposed_tags": [],
+        "missing_before_tags": [],
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606864666937",
+        "title_from_shopify": "כובע בייסבול רך לתינוק",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-hat"
+        ],
+        "missing_proposed_tags": [],
+        "missing_before_tags": [],
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "10024854847801",
+        "title_from_shopify": "כובע צמר מתנה",
+        "status": "active",
+        "after_tags_count": 3,
+        "after_tags": [
+          "gift",
+          "occ-gift",
+          "type-hat"
+        ],
+        "missing_proposed_tags": [],
+        "missing_before_tags": [],
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179140915513",
+        "title_from_shopify": "כובע קייצי רך ונעים מכותנה מתאים לתנוקות בגילאי 0-12 חודשים",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-hat"
+        ],
+        "missing_proposed_tags": [],
+        "missing_before_tags": [],
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9731768713529",
+        "title_from_shopify": "מעיל אופנתי לבנות – דגם שיראל",
+        "status": "active",
+        "after_tags_count": 10,
+        "after_tags": [
+          "baby-coat",
+          "baby-gift",
+          "everyday-baby-wear",
+          "gender-girl",
+          "girls-clothing",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "occ-everyday",
+          "occ-gift",
+          "type-coat"
+        ],
+        "missing_proposed_tags": [],
+        "missing_before_tags": [],
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9673730359609",
+        "title_from_shopify": "מעיל חורף צמר דגם שנאל",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-coat",
+          "baby-gift",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "occ-gift",
+          "occ-seasonal",
+          "type-coat",
+          "winter-baby-wear"
+        ],
+        "missing_proposed_tags": [],
+        "missing_before_tags": [],
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9688976228665",
+        "title_from_shopify": "מעיל קורדרוי מחמם מאוד דגם אליה",
+        "status": "active",
+        "after_tags_count": 10,
+        "after_tags": [
+          "baby-coat",
+          "baby-gift",
+          "corduroy-baby",
+          "gender-boy",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "occ-gift",
+          "occ-seasonal",
+          "type-coat",
+          "winter-baby-wear"
+        ],
+        "missing_proposed_tags": [],
+        "missing_before_tags": [],
+        "age_tags": [],
+        "verdict": "PASS"
+      }
+    ],
+    "verdict": "POST_VERIFY_PASS"
+  }
+}
