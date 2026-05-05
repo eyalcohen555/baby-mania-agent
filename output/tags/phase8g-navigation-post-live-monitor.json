@@ -1,0 +1,211 @@
+{
+  "phase": "8G",
+  "type": "navigation_post_live_monitor_readonly",
+  "shopify_writes": "NONE",
+  "token_suffix": "036e",
+  "menu_gid": "gid://shopify/Menu/250909851961",
+  "menu_title": "תפריט",
+  "top_level_item_count": 17,
+  "url_checks": {
+    "/collections/type-set": 200,
+    "/collections/type-romper": 200,
+    "/collections/gender-girl": 200,
+    "/collections/gender-boy": 200,
+    "/collections/clothing-all": 200,
+    "/collections/occ-gift": 200
+  },
+  "smart_collections_count": 6,
+  "clothing_all_product_count": 51,
+  "checks": {
+    "01_gid_unchanged": {
+      "mark": "✅",
+      "detail": "id=gid://shopify/Menu/250909851961"
+    },
+    "02_item_count": {
+      "mark": "✅",
+      "detail": "17 top-level items"
+    },
+    "03_clothing_parent": {
+      "mark": "✅",
+      "detail": "'בגדי תינוקות' found"
+    },
+    "04_sub_count": {
+      "mark": "✅",
+      "detail": "5 sub-items"
+    },
+    "05_sub_titles_urls": {
+      "mark": "✅",
+      "detail": "5 subs: correct titles + URLs"
+    },
+    "06_gifts_exists": {
+      "mark": "✅",
+      "detail": "'מתנות לתינוק' found"
+    },
+    "07_gifts_url": {
+      "mark": "✅",
+      "detail": "url=/collections/occ-gift"
+    },
+    "08_legacy_removed": {
+      "mark": "✅",
+      "detail": "legacy items absent from top-level"
+    },
+    "09_urls_200": {
+      "mark": "✅",
+      "detail": "all 6 URLs → 200"
+    },
+    "10_smart_coll_count": {
+      "mark": "✅",
+      "detail": "count=6 (expected 6)"
+    },
+    "11_all_6_colls_exist": {
+      "mark": "✅",
+      "detail": "all 6 smart collections exist"
+    },
+    "12_clothing_all_count": {
+      "mark": "✅",
+      "detail": "clothing-all count=51"
+    },
+    "13_no_mega_menu": {
+      "mark": "✅",
+      "detail": "no mega menu"
+    },
+    "14_no_coll_change": {
+      "mark": "✅",
+      "detail": "no collections created or deleted in this phase"
+    },
+    "15_no_product_changes": {
+      "mark": "✅",
+      "detail": "no product/tag writes in Phase 8F or 8G"
+    }
+  },
+  "rollback_needed": false,
+  "open_backlog": [
+    "Phase 8H — Navigation Visual UX Polish (future, not blocking)"
+  ],
+  "verdict": "PHASE8G_POST_LIVE_MONITOR_PASS",
+  "menu_structure": [
+    {
+      "title": "דף הבית",
+      "url": "/",
+      "type": "FRONTPAGE",
+      "sub_items": []
+    },
+    {
+      "title": "בגדי תינוקות",
+      "url": "#",
+      "type": "HTTP",
+      "sub_items": [
+        {
+          "title": "סטים",
+          "url": "/collections/type-set"
+        },
+        {
+          "title": "סרבלים",
+          "url": "/collections/type-romper"
+        },
+        {
+          "title": "בגדי בנות",
+          "url": "/collections/gender-girl"
+        },
+        {
+          "title": "בגדי בנים",
+          "url": "/collections/gender-boy"
+        },
+        {
+          "title": "כל הבגדים",
+          "url": "/collections/clothing-all"
+        }
+      ]
+    },
+    {
+      "title": "מתנות לתינוק",
+      "url": "/collections/occ-gift",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "בגדי חורף",
+      "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%97%D7%95%D7%A8%D7%A3-1",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "קיץ 2026",
+      "url": "/collections/summer-2024",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "כל המוצרים",
+      "url": "/collections/all",
+      "type": "CATALOG",
+      "sub_items": []
+    },
+    {
+      "title": "בובת ריבורן",
+      "url": "/collections/reborn",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "מוצרי בטיחות",
+      "url": "/collections/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%91%D7%98%D7%99%D7%97%D7%95%D7%AA",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "משחקים לתינוק",
+      "url": "/collections/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "נעלי ילדים",
+      "url": "/collections/%D7%A0%D7%A2%D7%9C%D7%99%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "שמיכות עיטוף ושקי שינה",
+      "url": "/collections/%D7%A9%D7%9E%D7%99%D7%9B%D7%95%D7%AA-%D7%A2%D7%99%D7%98%D7%95%D7%A3-%D7%95%D7%A9%D7%A7%D7%99-%D7%A9%D7%99%D7%A0%D7%94",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "תיקי החתלה",
+      "url": "/collections/%D7%AA%D7%99%D7%A7%D7%99-%D7%94%D7%97%D7%AA%D7%9C%D7%94",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "לידה ואביזרים נלווים",
+      "url": "/collections/%D7%9C%D7%99%D7%93%D7%94-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%A0%D7%9C%D7%95%D7%95%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "בלוג",
+      "url": "/blogs/news",
+      "type": "BLOG",
+      "sub_items": []
+    },
+    {
+      "title": "עיצוב וטקסטיל לחדרי ילדים",
+      "url": "/collections/%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%95%D7%98%D7%A7%D7%A1%D7%98%D7%99%D7%9C-%D7%9C%D7%97%D7%93%D7%A8%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "המיוחדים שלנו",
+      "url": "/collections/%D7%94%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95",
+      "type": "COLLECTION",
+      "sub_items": []
+    },
+    {
+      "title": "יצירת קשר",
+      "url": "/pages/contact",
+      "type": "PAGE",
+      "sub_items": []
+    }
+  ]
+}

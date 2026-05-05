@@ -20,6 +20,36 @@
 ---
 
 ## DATE: 2026-05-05
+## TASK: Layer 8 Phase 8G — Navigation Post-Live Monitor (READ-ONLY)
+## SCOPE: Layer 8 — Post-live monitoring — no Shopify writes
+## WHAT CHANGED:
+- 15/15 checks PASS — navigation technical state confirmed stable
+- main-menu: 17 top-level items, GID unchanged (gid://shopify/Menu/250909851961)
+- 'בגדי תינוקות' קיים עם 5 תתי פריטים: סטים/סרבלים/בגדי בנות/בגדי בנים/כל הבגדים
+- 'מתנות לתינוק' קיים כפריט ראשי → /collections/occ-gift
+- 3 legacy items absent from top-level
+- כל 6 URLs → HTTP 200
+- כל 6 Smart Collections קיימות (count=6)
+- clothing-all: 51 מוצרים
+- אין Mega Menu, אין שינוי collections/products/tags/theme
+- Shopify writes: NONE (GET-only)
+## FILES TOUCHED:
+- scripts/phase8g_navigation_monitor.py
+- output/tags/phase8g-navigation-post-live-monitor.md
+- output/tags/phase8g-navigation-post-live-monitor.json
+- docs/organic/organic-journal.md
+- docs/organic/מצב-הפרויקט-האורגני.md
+## SYSTEM IMPACT:
+- Phase 8 Navigation Pipeline: COMPLETE
+- Backlog פתוח: Phase 8H — Navigation Visual UX Polish (עתידי, לא חוסם)
+## OPEN ISSUES:
+- Phase 8H — Visual UX Polish (עיצוב/סידור התפריט) — עתידי בלבד
+## NEXT STEP:
+- Phase 8H (עתידי) — Visual QA + UX Polish — לפי החלטת אייל
+
+---
+
+## DATE: 2026-05-05
 ## TASK: Layer 8 Phase 8F — Main Menu Navigation Update LIVE (T3 approved)
 ## SCOPE: Layer 8 — GraphQL menuUpdate on main-menu — 1 mutation write
 ## WHAT CHANGED:
