@@ -1,13 +1,14 @@
-task_id: 20260506-121201
+task_id: 20260506-121251
 ---
-TELEGRAM_COVERAGE:
-TASK_STARTED:      COVERED — Phase 1 (IMPLEMENTED 2026-03-25). Monitor watches status.md; transition to `running` emits 🔄 TASK STARTED. Phase 3 also adds Hebrew variant 🔄 משימה התחילה.
-QUESTION:          COVERED — Phase 1 emits ❓ QUESTION when last-result contains question. Phase 2 (IMPLEMENTED 2026-03-25) adds inline buttons [✏️ שלח תשובה] [⏭️ דלג] with `_waiting_for_reply` state machine writing to bridge/telegram-response.md (RESPONSE_TYPE: text).
-APPROVAL_NEEDED:   COVERED — Phase 2. ⚠️ APPROVAL NEEDED with inline buttons [✅ אשר] [❌ דחה], response written to bridge/telegram-response.md (RESPONSE_TYPE: approve|reject). Whitelist enforced.
-BLOCKED_FAILED:    COVERED — Phase 1 emits ❌ BLOCKED on status=failed. Phase 2 adds buttons [🔄 נסה שוב] [🛑 עצור] writing retry|stop to telegram-response.md.
-TASK_DONE:         COVERED — Phase 1 sends ✅ TASK DONE on status=done/pushed with result attached. Phase 3 truncates result snippet to 1500 chars (📋 תוצאה:) and refers user to /result for full content. dedup via (status,detail) + result_sent_this_cycle flag.
-CONDUCTOR_EVENTS:  MISSING — design doc only references three files: bridge/status.md, bridge/next-task.md, bridge/last-result.md. No mention of conductor-notify.md, conductor-state.md, or conductor-log.md being read by the bot. Conductor plan progression (stage start/end, plan complete) has no Telegram surface in the design.
+RESUME_GAP_CONFIRMED: YES
+GAP_DESCRIPTION: bridge.py מטפל ב-telegram-response.md רק כש-`_waiting_for_response = True` (כלומר טאסק פעיל המחכה לתשובה/אישור באותו רגע). כש-conductor ממתין לאישור בין שלבים (STAGE→STAGE) ואין task פעיל ב-bridge — תשובת Telegram אכן נכתבת ל-bridge/telegram-response.md, אך bridge.py לא מזהה אותה ולא מפנה אותה לconductor כדי לחדש את הריצה. אין consumer של telegram-response.md ב-conductor-state.md (אין שדה `waiting_for: telegram_approval`), והתשובה נשארת תלויה.
+CURRENT_WORKAROUND: ה-conductor רץ ב-T0 (auto-approve) ברוב השלבים, ולכן לא נדרש אישור Telegram בין שלבים. כשנדרש אישור — הוא מתבקש בתוך טאסק פעיל (in-task), שם `_waiting_for_response` כן עובד. למצב "המתנה בין שלבים" אין נתיב — ההמשך מבוצע ידנית ע"י הפעלה מחודשת של conductor.
+FIX_REQUIRED (תיאור בלבד, ללא קוד):
+1. הוספת מצב `waiting_for: stage_approval` ב-bridge/conductor-state.md כש-conductor עוצר בין שלבים.
+2. ב-bridge.py: poller שבודק את telegram-response.md גם כשאין task פעיל, אם `conductor-state.waiting_for == stage_approval`.
+3. routing: ערך approve/reject מ-telegram-response.md → trigger ל-conductor (`bridge/conductor-notify.md` או resume direct) → ניקוי telegram-response.md לאחר צריכה.
+4. dedup: שימוש ב-task_id/stage_id כמפתח כדי שלא תיצרך אותה תשובה פעמיים.
 
 STAGE_VERDICT: PASS
-EVIDENCE: Read-only audit completed. docs/operations/telegram-channel-design.md confirms Phase 1+2+3 IMPLEMENTED covering all five bridge-level events. Conductor-plan event surface is absent from the design — bot is bridge-aware, not conductor-aware. No files modified. FILES_FORBIDDEN respected (telegram_bot.py and bridge.py not opened).
-SYSTEM STATE: bridge running (status.md shows running, task_id 20260506-121201). Telegram bot covers 5/6 event categories; conductor-plan integration is the single coverage gap.
+EVIDENCE: קריאה בלבד של 3 הקבצים המותרים. conductor-state.md מאשר RUNNING, current_stage=STAGE-6, waiting_for ריק — תואם להגדרת ה-gap (אין מנגנון ל-`waiting_for: stage_approval`). last-result.md (STAGE-5 audit) מציין במפורש "CONDUCTOR_EVENTS: MISSING — bot is bridge-aware, not conductor-aware" — אישור עצמאי ל-gap מ-stage קודם. status.md מראה שה-bridge קלט את הטאסק (running). אף קובץ לא נגעה בו, FILES_FORBIDDEN נשמרו.
+SYSTEM STATE: conductor-state RUNNING, current_stage=STAGE-6, completed=[1,2,3,5]. ה-gap מתועד אך לא תוקן — תיקון עתידי ידרוש שינוי ב-bridge.py ובפרוטוקול conductor-state (מחוץ לתחום ה-stage הזה).
