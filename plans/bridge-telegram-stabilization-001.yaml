@@ -161,11 +161,12 @@ stages:
         - bridge.lock מצביע על PID חי (או לא קיים)
         - telegram-response.md ריק
 
-      החזר שורה אחת ברורה בלבד:
-      CLEANUP_REQUIRED: YES
-      או
-      CLEANUP_REQUIRED: NO
-      ואחריה נימוק קצר.
+      !!MANDATORY OUTPUT CONTRACT!!
+      השורה הראשונה בתשובתך חייבת להיות אחת מהשתיים הבאות בדיוק — ללא שינוי,
+      ללא רווחים נוספים, ללא markdown:
+        CLEANUP_REQUIRED: YES
+        CLEANUP_REQUIRED: NO
+      לאחר מכן ניתן להוסיף נימוק.
     files_allowed: []
     files_forbidden:
       - bridge.py
@@ -174,11 +175,15 @@ stages:
       - output/**
       - config.yaml
       - .env
+    # LOGIC CONTRACT: conductor.py:analyze_verdict() requires an output line ending
+    # in exactly ': YES' or ': NO' (case-insensitive after strip). If this line is
+    # absent, the verdict is UNKNOWN and the stage shows as failed.
+    required_logic_output: "CLEANUP_REQUIRED: YES | CLEANUP_REQUIRED: NO"
     expected_output: |
       CLEANUP_REQUIRED: YES / NO
       REASON: [נימוק קצר]
     exit_conditions:
-      - "שורה אחת ברורה: CLEANUP_REQUIRED: YES או CLEANUP_REQUIRED: NO"
+      - "שורה ראשונה בדיוק: CLEANUP_REQUIRED: YES או CLEANUP_REQUIRED: NO (ללא שינוי)"
       - "נימוק מצורף"
     fail_conditions:
       - "לא ניתן להחליט — מידע סותר מ-STAGE-1 ו-STAGE-2"

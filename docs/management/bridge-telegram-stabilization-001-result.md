@@ -83,26 +83,40 @@ no Telegram notification. The design doc (`docs/operations/telegram-channel-desi
 has no conductor-plan event contract.
 **Blocking for:** operator visibility during unattended runs.
 
-### Gap 3 — conductor task_id format mismatch (STAGE-3 UNKNOWN pattern)
-Conductor generates task IDs like `conductor-plan-STAGE-X-YYYYMMDD-HHmmSS`.
-Bridge generates its own task IDs in format `YYYYMMDD-HHMMSS`.
-Conductor's verdict check (`analyze_verdict`) cannot match its expected task_id
-to the bridge-generated task_id in last-result.md → returns UNKNOWN.
+### Gap 3 — LOGIC stage output contract failure (STAGE-3 UNKNOWN pattern)
 
-**Impact:** LOGIC stages (STAGE-3) always return UNKNOWN. The conductor routes to
-the `next_on_pass` fallback in YAML, so the plan still progresses — but STAGE-3
-never gets a proper PASS verdict and shows in `failed_stages`.
+**Corrected root cause** (previous description was wrong — task_id mismatch does
+not affect verdict routing; `analyze_verdict` never matches by task_id).
 
-**Fix required:** Either bridge should write the conductor task_id (passed in the
-task body) to last-result.md, or conductor should match on a content field rather
-than task_id.
+**Actual mechanism:** `conductor.py:analyze_verdict()` handles LOGIC-type stages
+by scanning output lines for an exact pattern: a line whose cleaned, uppercased
+form ends with `: YES` or `: NO`. If no such line is found, it returns UNKNOWN.
+
+STAGE-3 Claude output did not contain a line in this exact format. The stage goal
+and action description asked for `CLEANUP_REQUIRED: YES` or `CLEANUP_REQUIRED: NO`,
+but the output format contract was not enforced as a hard requirement in the YAML.
+
+**Note on task_id mismatch:** Conductor formats task IDs as
+`conductor-{plan_id}-{stage_id}-{YYYYMMDD-HHmmSS}`. Bridge generates its own IDs
+(`YYYYMMDD-HHMMSS`). This mismatch is real but affects tracking only — it does not
+cause UNKNOWN verdicts.
+
+**Impact:** LOGIC stages return UNKNOWN when Claude output lacks an exact
+`KEY: YES` or `KEY: NO` line. Conductor routes to the `next_on_pass` fallback,
+so the plan still progresses — but the stage shows in `failed_stages`.
+
+**Fix required:** Every LOGIC stage YAML must include a hard `required_logic_output`
+field specifying the exact decision key. The stage prompt must explicitly instruct
+Claude to output exactly one line: `<KEY>: YES` or `<KEY>: NO` with no variation.
+This is a plan-level contract fix — no runtime code changes needed.
 
 ---
 
 ## Why Organic Night Mode is Still NO
 
-1. **Gap 3 unresolved**: LOGIC stages always return UNKNOWN. Night mode plans that
-   rely on cleanup/routing decisions will misclassify and may take wrong paths.
+1. **Gap 3 unresolved**: LOGIC stages return UNKNOWN when output lacks exact
+   `KEY: YES / KEY: NO` line. Night mode plans that rely on cleanup/routing
+   decisions will misclassify and may take wrong paths.
 2. **bridge.py not committed to main**: Fixes are on `bridge-room-plan-mode-verify`
    only. Night mode runs on main.
 3. **Plan-level Telegram visibility missing** (Gap 2): operator cannot monitor
@@ -110,10 +124,10 @@ than task_id.
 
 ## Next Required Fix Before Unattended Automation
 
-**Priority 1:** Fix conductor task_id matching (Gap 3).
-This is a design-level fix — either bridge embeds the conductor task_id in its
-output, or conductor uses a different matching strategy. Until this is resolved,
-every LOGIC stage in every plan will return UNKNOWN and rely on fallback routing.
+**Priority 1:** Enforce LOGIC output contract in every plan (Gap 3).
+Add `required_logic_output` to every LOGIC stage in every plan YAML. Stage prompt
+must explicitly require Claude to output exactly `<KEY>: YES` or `<KEY>: NO` as a
+standalone line. No code changes needed — this is a plan authoring requirement.
 
 **Priority 2:** Merge branch to main and update bridge runtime on production path.
 
