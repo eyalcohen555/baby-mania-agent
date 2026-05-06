@@ -20,6 +20,25 @@
 ---
 
 ## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 4 READ-ONLY Planning
+## SCOPE: Layer 7 — READ-ONLY planning — no Shopify writes
+## WHAT CHANGED:
+- Batch 4 plan created: 20 SAFE candidates selected (dress:5, set:5, romper:5, bodysuit:5)
+- 47 already-written PIDs (batch1/2/3) explicitly excluded via hardcoded list
+- 135 SAFE new candidates in pool; round-robin selection used
+- All safety checks PASS: 0 flags, 0 age-* tags, 0 type collision, 0 overlap with batch1/2/3
+## FILES TOUCHED:
+- scripts/phase7c_batch4_plan.py (created)
+- output/tags/phase7c-batch4-plan.md (created)
+- output/tags/phase7c-batch4-plan.json (created)
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.7)
+## SYSTEM IMPACT: READ-ONLY — no Shopify writes
+## OPEN ISSUES: awaiting T3 approval from Ayal before batch4 live write
+## NEXT STEP: T3 approval → Phase 7C Batch 4 live write
+
+---
+
+## DATE: 2026-05-06
 ## TASK: Layer 7 Phase 7C — Live Batch 3 (T3 approved)
 ## SCOPE: Layer 7 — live Shopify tag writes
 ## WHAT CHANGED:

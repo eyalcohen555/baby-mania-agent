@@ -1,0 +1,721 @@
+{
+  "phase": "7C",
+  "batch": 4,
+  "task": "batch4_read_only_plan",
+  "mode": "READ_ONLY_PLANNING",
+  "timestamp": "2026-05-06T04:41:23.086606+00:00",
+  "shopify_writes": "NONE",
+  "total_active_products_fetched": 393,
+  "already_written_batch123": 47,
+  "selected_candidates": 20,
+  "type_breakdown": {
+    "type-dress": 5,
+    "type-set": 5,
+    "type-romper": 5,
+    "type-bodysuit": 5
+  },
+  "safety_pass": true,
+  "safety_flags": [],
+  "allowed_types": [
+    "type-dress",
+    "type-set",
+    "type-romper",
+    "type-bodysuit"
+  ],
+  "excluded": [
+    "already written in Batch 1/2/3 (explicit PID list)",
+    "already tagged (type-* exists in Shopify tags)",
+    "shoes/sandals/sneakers (title keyword blocker)",
+    "false-positive items (towel/bag/blanket/sponge/swimwear)",
+    "low confidence (<min_conf threshold)",
+    "non-preferred types (hat/coat/pants/top/swimwear)"
+  ],
+  "products": [
+    {
+      "product_id": "9179162444089",
+      "title": "שמלת כיווצים קיצית מכותנה - ענבל",
+      "handle": "שמלת-כיווצים-קיצית-ענבל",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_after_merge": [
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "type_keyword": "שמלת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=title, conf=0.90, kw='שמלת', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9179150516537",
+      "title": "שמלת מלמלות מתוקה מכותנה - לין",
+      "handle": "שמלת-מלמלות-מתוקה-מבד-איכותי-לין",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_after_merge": [
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "type_keyword": "שמלת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=title, conf=0.90, kw='שמלת', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9179142750521",
+      "title": "שמלת סטרפלס סטייל קז'ואל - ליאל",
+      "handle": "שמלת-סטרפלס-סטייל-קזואל-ליאל",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_after_merge": [
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "type_keyword": "שמלת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=title, conf=0.90, kw='שמלת', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9605887721785",
+      "title": "שמלת סרבל לתינוקת",
+      "handle": "summer-baby-girl-dress-with-bowknot-striped-jumpsuit-cotton-dress-for-newborn-floral-clothes-baby-crawling-clothes",
+      "current_tags": [
+        "baby-gift",
+        "baby-romper",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-romper",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "dress",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='dress', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9179136131385",
+      "title": "שמלת ערב נסיכותית - רצ'ל",
+      "handle": "שמלת-ערב-נסיכותית-רצל",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_after_merge": [
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "title",
+      "type_keyword": "שמלת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=title, conf=0.90, kw='שמלת', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9855017582905",
+      "title": "חליפה מעוצבת סטייל שובב דגם ליאם",
+      "handle": "2pcs-boys-summer-fashion-trendy-street-style-random-print-short-sleeve-shirt-and-elastic-waist-shorts-set-for-commuting-school-casual-vacation-sports-spring-summer-youngsters-outfit-boys-shirts-youngsterss-shorts",
+      "current_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "type_keyword": "set",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "boy",
+      "proposed_occs": [],
+      "source_trace": "type matched 'set' in handle (conf=0.88); gender matched 'boy' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=handle, conf=0.88, kw='set', gender-source=handle, kw='boy', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "10009173721401",
+      "title": "חליפה קטיפתית לתינוק – חמימות, נוחות וסטייל בשלושה חלקים",
+      "handle": "childrens-clothing-suit-boy-girl-baby-autumn-winter-new-plus-velvet-thickening-cartoon-bear-hooded-three-piece-baby-suit0-4-y-1",
+      "current_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "velvet-baby",
+        "winter-baby-wear"
+      ],
+      "current_tags_count": 7,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set",
+        "velvet-baby",
+        "winter-baby-wear"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפה",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפה' in title (conf=0.88); gender matched 'girl' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפה', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9179173191993",
+      "title": "חליפה קיצית פרחונית - היילי",
+      "handle": "חליפת-קיץ-פרחונית-לתינוקות-היילי-baby-mania",
+      "current_tags": [
+        "0-3 חודש",
+        "12-18 חודש",
+        "18-24 חודש",
+        "3-6 חודש",
+        "6-12 חודש"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "0-3 חודש",
+        "12-18 חודש",
+        "18-24 חודש",
+        "3-6 חודש",
+        "6-12 חודש",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפה",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפה' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפה', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9606691914041",
+      "title": "חליפה קלאסית ואופנתית לבנות",
+      "handle": "summer-new-baby-girls-clothes-set-short-tops-shorts-2pcs-kids-girl-clothing-suit-3-12-years-children-outfits-kinder-kleidung",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "type_keyword": "set",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "gender_keyword": "בנות",
+      "proposed_occs": [],
+      "source_trace": "type matched 'set' in handle (conf=0.88); gender matched 'בנות' in title (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=handle, conf=0.88, kw='set', gender-source=title, kw='בנות', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9688955912505",
+      "title": "חליפת 3 חלקים אריה מתוקה אם ווסט פרוותי דגם חן",
+      "handle": "infant-boys-3-piece-set-cute-cartoon-lion-embroidery-polyester-hoodie-vest-and-pants-long-sleeve-regular-fit-knit-fabric-for-autumn-winter-for-outdoor",
+      "current_tags": [
+        "12-18 חודש",
+        "18-24 חודש",
+        "2-3 שנים",
+        "6-12 חודש",
+        "סט"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_after_merge": [
+        "12-18 חודש",
+        "18-24 חודש",
+        "2-3 שנים",
+        "6-12 חודש",
+        "gender-boy",
+        "type-set",
+        "סט"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "type_keyword": "set",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "boy",
+      "proposed_occs": [],
+      "source_trace": "type matched 'set' in handle (conf=0.88); gender matched 'boy' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=handle, conf=0.88, kw='set', gender-source=handle, kw='boy', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9179137933625",
+      "title": "אוברול מתוק מכותנה מלאה ללא כתפיות - נויה",
+      "handle": "אוברול-מתוק-מכותנה-מלאה-ללא-כתפיות-נויה",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_after_merge": [
+        "type-romper"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "אוברול",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='אוברול', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9096607072569",
+      "title": "אוברול סרבל ארוך",
+      "handle": "אוברול-סרבל-ארוך",
+      "current_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-romper"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "אוברול",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='אוברול', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9688670110009",
+      "title": "אוברול פינגווין דגם נועם",
+      "handle": "cute-cartoon-penguin-cotton-baby-long-sleeve-footed-jumpsuit",
+      "current_tags": [
+        "אוברול"
+      ],
+      "current_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_after_merge": [
+        "type-romper",
+        "אוברול"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "אוברול",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='אוברול', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9657036374329",
+      "title": "אוברול פליז דובי לתינוק – Teddy Cozy Suit",
+      "handle": "overol-dubi-tinok",
+      "current_tags": [
+        "אוברול"
+      ],
+      "current_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_after_merge": [
+        "type-romper",
+        "אוברול"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "אוברול",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='אוברול', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9179158479161",
+      "title": "אוברול פשתן וכותנה וינטג׳ - קייגו",
+      "handle": "אוברול-וינטג-קייגו",
+      "current_tags": [
+        "אוברול"
+      ],
+      "current_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_after_merge": [
+        "type-romper",
+        "אוברול"
+      ],
+      "proposed_type": "type-romper",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "אוברול",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='אוברול', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9605887787321",
+      "title": "חליפה סרוגה לתינוק",
+      "handle": "pudcoco-newborn-infant-baby-girl-clothes-ruffle-long-sleeve-romper-solid-knit-ribbed-bodysuit-jumpsuit-coming-home-outfit-0-6m",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit",
+        "type-bodysuit"
+      ],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "bodysuit",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='bodysuit', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9606691750201",
+      "title": "יחידת בגד גוף עם סרט לשיער לתינוק",
+      "handle": "2pcs-newborn-bodysuit-headband-0-24months-cotton-baby-girl-jumpsuit-sets-solid-color-baby-girl-clothes-short-sleeve-summer-bebes",
+      "current_tags": [
+        "baby-bodysuit",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "baby-bodysuit",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-bodysuit"
+      ],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "bodysuit",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='bodysuit', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9687563305273",
+      "title": "סט 3 אוברולים ארנב דגם  שני",
+      "handle": "3pcs-babys-cartoon-bunny-print-zip-up-footed-bodysuit-casual-long-sleeve-romper-toddler-infant-girls-outdoor-onesie-for-spring-fall-as-gift",
+      "current_tags": [
+        "אוברול"
+      ],
+      "current_tags_count": 1,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "gender-girl",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "bodysuit",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='bodysuit', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9687563370809",
+      "title": "סט לב לבנות דגם נועה",
+      "handle": "2pcs-babys-polka-dots-heart-embroidery-ruffled-bodysuit-casual-pants-toddler-infant-girls-clothing-set",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "gender-girl",
+        "type-bodysuit"
+      ],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "bodysuit",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "gender_keyword": "בנות",
+      "proposed_occs": [],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'בנות' in title (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='bodysuit', gender-source=title, kw='בנות', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    },
+    {
+      "product_id": "9719189733689",
+      "title": "סט מכנס וחולצה דגם הלל",
+      "handle": "newborn-baby-boy-clothes-solid-color-button-long-sleeve-romper-bodysuit-pants-set-infant-soft-fall-winter-outfit",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-boy"
+      ],
+      "final_tags_after_merge": [
+        "gender-boy",
+        "type-bodysuit"
+      ],
+      "proposed_type": "type-bodysuit",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "bodysuit",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "boy",
+      "proposed_occs": [],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'boy' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='bodysuit', gender-source=handle, kw='boy', no false-positive flags, no shoe title, active product, not in batch1/2/3",
+      "safety_flags": []
+    }
+  ],
+  "verdict": "READY_FOR_PHASE7C_BATCH4_T3_APPROVAL"
+}
