@@ -78,6 +78,7 @@ RESULT_FILE    = BASE_DIR / "bridge" / "last-result.md"
 RESPONSE_FILE  = BASE_DIR / "bridge" / "telegram-response.md"
 TASK_FILE      = BASE_DIR / "bridge" / "next-task.md"
 TASK_LOG_FILE  = BASE_DIR / "bridge" / "task-log.md"
+CONDUCTOR_NOTIFY_FILE = BASE_DIR / "bridge" / "conductor-notify.md"
 
 POLL_INTERVAL = 3    # seconds between file checks
 MAX_MSG_LEN   = 4096 # Telegram message size limit
@@ -438,6 +439,44 @@ def detect_result_event(content):
     return None
 
 
+# ── Conductor plan event sender ───────────────────────────────────────────────
+
+def send_conductor_event(notify_content: str):
+    """Parse conductor-notify.md content and send Hebrew Telegram message."""
+    event    = ""
+    plan_id  = ""
+    stage_id = ""
+    detail   = ""
+    for line in notify_content.splitlines():
+        line = line.strip()
+        if line.startswith("EVENT:"):      event    = line[6:].strip()
+        elif line.startswith("plan_id:"):   plan_id  = line[8:].strip()
+        elif line.startswith("stage_id:"):  stage_id = line[9:].strip()
+        elif line.startswith("detail:"):    detail   = line[7:].strip()
+
+    stage_str = f" {stage_id}" if stage_id else ""
+    if event == "PLAN_STARTED":
+        text = f"📋 תוכנית התחילה\n{plan_id}"
+    elif event == "STAGE_STARTED":
+        text = f"\u25b6\ufe0f שלב{stage_str} מתחיל\n{plan_id}"
+    elif event == "STAGE_PASS":
+        text = f"\u2705 שלב{stage_str} — {detail}\n{plan_id}"
+    elif event == "STAGE_FAIL":
+        text = f"\u26a0\ufe0f שלב{stage_str} נכשל — {detail}\n{plan_id}"
+    elif event == "PLAN_BLOCKED":
+        text = f"\U0001f512 תוכנית נחסמה ב{stage_str}\n{plan_id}\n{detail}"
+    elif event == "PLAN_COMPLETE":
+        if detail == "PASS":
+            text = f"\U0001f3c1 תוכנית הסתיימה — PASS\n{plan_id}"
+        else:
+            text = f"\u274c תוכנית נעצרה — {detail}\n{plan_id}"
+    elif event == "CHAIN_APPROVAL_NEEDED":
+        text = f"\u26a0\ufe0f אישור נדרש לתוכנית הבאה\n{detail}"
+    else:
+        text = f"\U0001f4e1 Conductor: {event}\n{plan_id}{stage_str} {detail}"
+    send(text)
+
+
 # ── Phase 2 button senders ─────────────────────────────────────────────────────
 
 def _capture_pending_task_id():
@@ -589,6 +628,7 @@ def monitor_loop(stop_event):
     else:
         last_result_sent = init_result_content
 
+    last_notify_sent = ""
     print(f"[monitor] started | status={last_status!r} detail={last_detail!r}")
 
     while not stop_event.is_set():
@@ -652,6 +692,15 @@ def monitor_loop(stop_event):
                         # Result changed with no actionable event —
                         # update state silently to prevent re-detection loop
                         last_result_sent = current_result
+
+            # ── Conductor plan events ──────────────────────────────────────────
+            current_notify = read_file(CONDUCTOR_NOTIFY_FILE)
+            if current_notify and current_notify != last_notify_sent:
+                try:
+                    send_conductor_event(current_notify)
+                except Exception as ne:
+                    print(f"[monitor] conductor notify error: {ne}")
+                last_notify_sent = current_notify
 
         except Exception as e:
             print(f"[monitor] error: {e}")

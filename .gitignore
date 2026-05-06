@@ -37,5 +37,5 @@ logs/
 node_modules/
 
 # Bridge files
-bridge.py
+# bridge.py is tracked — contains TOKEN_SAFE_STOP detection for Bridge Room
 bridge/bridge.lock
