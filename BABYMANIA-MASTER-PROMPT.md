@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 4.9 | עודכן: 2026-04-29 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live
+### גרסה: 5.0 | עודכן: 2026-05-06 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live | Execution Plan Mode OPERATIONAL ✅
 
 ---
 
@@ -16,6 +16,7 @@
 - Conductor (`teams/team-lead/conductor.py`) = מנהל תוכניות רב-שלביות — קורא plan YAML, מריץ stages דרך bridge, מנתח verdict, מנתב לשלב הבא.
 - Team Lead (`teams/team-lead/team_lead.py`) = שכבת ניתוח per-task — מריץ worker, מנתח output, מחליט verdict (PASS/RETRY/BLOCKED/FAILED).
 - Watchdog (`teams/team-lead/watchdog.py`) = מוניטור — מזהה stuck, שולח Telegram reminder.
+- Codex = מבקר / בקר / safety verifier כאשר מופעל במפורש — לא מבצע ישיר אלא אם הוגדר כך.
 - אייל = בעל הפרויקט. מאשר החלטות קריטיות.
 
 ---
@@ -160,6 +161,18 @@ Claude output שמכיל שאלה/אישור
 | יש שאלה | ❓ `יש שאלה שמחכה לך` + snippet | שלח תשובה / דלג |
 | משימה נתקעה | ❌ `המשימה נעצרה` + פרטים | נסה שוב / עצור |
 
+**הודעות Telegram — אירועי Conductor (Execution Plan Mode):**
+| אירוע | הודעה עברית |
+|-------|------------|
+| PLAN_STARTED | 📋 `תוכנית התחילה — <plan_id>` |
+| STAGE_STARTED | ▶️ `שלב <id> מתחיל — <plan_id>` |
+| STAGE_PASS | ✅ `שלב <id> — PASS / LOGIC_YES / LOGIC_NO` |
+| STAGE_FAIL | ⚠️ `שלב <id> נכשל — <reason>` |
+| PLAN_BLOCKED | 🔒 `תוכנית נחסמה ב-<id>` |
+| PLAN_COMPLETE | 🏁 `תוכנית הסתיימה — PASS` / ❌ `תוכנית נעצרה — FAILED` |
+
+**ערוץ:** conductor כותב ל-`bridge/conductor-notify.md` → telegram_bot.py קורא ומפיר → אייל מקבל הודעה עברית.
+
 **כלל שפה:** כל הודעת Telegram בעברית בלבד. אין מושגים טכניים (Bridge, T2, Claude) בהודעות למשתמש.
 
 **מסלול משני — GitHub Actions:**
@@ -226,6 +239,7 @@ Get-WmiObject Win32_Process -Filter "name='python.exe'" |
 | `bridge/bridge.lock` | singleton lock (PID) |
 | `bridge/conductor-state.md` | מצב conductor: plan / stage / status / verdict |
 | `bridge/conductor-log.md` | לוג שלבי conductor (append-only table) |
+| `bridge/conductor-notify.md` | event bus: conductor כותב אירועי plan/stage — telegram_bot.py קורא ושולח לאייל |
 | `bridge/EXECUTION_RULES.md` | כללי ביצוע חובה |
 | `bridge/task-format.md` | פורמט רשמי |
 | `.github/workflows/claude-bridge.yml` | GitHub Actions executor |
@@ -265,23 +279,41 @@ watchdog.py [--daemon] [--warn 60] [--stuck 180]
   → sends Telegram reminder (one per cycle)
 ```
 
-### Conductor — מנהל תוכניות רב-שלביות
+### Conductor — מנהל תוכניות רב-שלביות (Execution Plan Mode)
+
+**Execution Plan Mode = מצב הפעלה רב-שלבי רשמי.**
+Single-task Bridge mode עדיין קיים (next-task.md ← last-result.md) — Conductor רץ מעליו.
 
 ```
-conductor.py plans/<plan>.yaml [--dry-run] [--resume]
+conductor.py plans/<plan>.yaml [--dry-run] [--resume] [--no-telegram]
   → קורא plan YAML
   → מריץ stages אחד-אחד דרך bridge
   → מנתח verdict לכל stage
   → מחליט next_on_pass / next_on_fail
   → כותב conductor-state.md + conductor-log.md
+  → כותב bridge/conductor-notify.md לכל אירוע plan/stage
 ```
 
 **שכבות (מלמעלה למטה):**
 ```
-conductor.py       ← orchestrator רב-שלבי (חדש)
+conductor.py       ← orchestrator רב-שלבי — Execution Plan Mode
 bridge.py          ← single-task executor (לא משתנה)
 team_lead.py       ← task-level verdict per task (לא משתנה)
 watchdog.py        ← stuck monitor per task (לא משתנה)
+```
+
+**Conductor → Telegram — event bus:**
+```
+conductor.py כותב bridge/conductor-notify.md לכל אירוע:
+  PLAN_STARTED / STAGE_STARTED / STAGE_PASS / STAGE_FAIL / PLAN_BLOCKED / PLAN_COMPLETE
+telegram_bot.py (monitor_loop) קורא conductor-notify.md ושולח הודעה עברית לאייל.
+```
+
+**מצב נוכחי (2026-05-06):**
+```
+Branch:     automation-conductor-telegram-clean
+Plan test:  bridge-telegram-stabilization-001 — DONE / PASS (7 stages, כולם עברו)
+Full automation: NO — ממתין לטסט מבוקר עם Telegram live + אישור merge
 ```
 
 **preflight — חובה לפני כל ריצה:**
@@ -344,6 +376,7 @@ DATA → LOGIC → OUTPUT
 
 | שכבה | סטטוס | פרטים |
 |------|--------|--------|
+| AUTOMATION — Execution Plan Mode | ✅ OPERATIONAL (2026-05-06) | branch: `automation-conductor-telegram-clean` · bridge.py + conductor.py + telegram_bot.py · bridge-telegram-stabilization-001: DONE/PASS · Full automation: NO (pending Telegram live test + merge approval) |
 | LAYER 1 — DATA | ✅ CLOSED | data stable, 294 YAMLs, reverse-index v1.2 |
 | LAYER 2 — PRODUCT↔BLOG | ✅ CLOSED (2026-04-13) | clothing + shoes, 66 מוצרים LIVE |
 | LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE + VERIFIED (2026-04-20 / verified 2026-04-23) | כל clothing נקי — title_tag + description_tag. 36 verify_failed מאושרים RUNTIME only — live check 36/36 PRESENT. |
