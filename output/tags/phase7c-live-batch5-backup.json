@@ -1,0 +1,509 @@
+{
+  "phase": "7C",
+  "batch": 5,
+  "timestamp": "2026-05-06T05:49:27.471176+00:00",
+  "shopify_writes": "NONE — backup GET only",
+  "normalize_hebrew_months": true,
+  "products": [
+    {
+      "product_id": "9892620894521",
+      "title_from_shopify": "שמלת פליסה דגם אוריה",
+      "status_before": "active",
+      "before_tags": [
+        "baby-dress",
+        "baby-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-dress"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-dress"
+      ],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9179151008057",
+      "title_from_shopify": "שמלת פפיון אחורי קלאסית - לוראן",
+      "status_before": "active",
+      "before_tags": [
+        "type-dress"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)"
+    },
+    {
+      "product_id": "9179149173049",
+      "title_from_shopify": "שמלת פפיון אלגנטית קלאסית - לין",
+      "status_before": "active",
+      "before_tags": [
+        "type-dress"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)"
+    },
+    {
+      "product_id": "9892196417849",
+      "title_from_shopify": "שמלת פפיון כחולה דגם אביבה",
+      "status_before": "active",
+      "before_tags": [
+        "baby-dress",
+        "baby-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "spring-baby-wear",
+        "type-dress"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "spring-baby-wear",
+        "type-dress"
+      ],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90); occ: occ-seasonal"
+    },
+    {
+      "product_id": "9606693978425",
+      "title_from_shopify": "שמלת קיץ חגיגית עם מלמלה",
+      "status_before": "active",
+      "before_tags": [
+        "gender-girl",
+        "occ-seasonal",
+        "type-dress"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "occ-seasonal",
+        "type-dress"
+      ],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90); occ: occ-seasonal"
+    },
+    {
+      "product_id": "9858268528953",
+      "title_from_shopify": "חליפת אביב יוקרתית דגם  דין",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-shower-gift",
+        "baby-suit",
+        "gender-boy",
+        "newborn-clothing",
+        "occ-seasonal",
+        "special-occasion-baby",
+        "spring-baby-wear",
+        "type-set"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-shower-gift",
+        "baby-suit",
+        "gender-boy",
+        "newborn-clothing",
+        "occ-seasonal",
+        "special-occasion-baby",
+        "spring-baby-wear",
+        "type-set"
+      ],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88); gender matched 'boy' in handle (conf=0.90); occ: occ-seasonal"
+    },
+    {
+      "product_id": "9179145568569",
+      "title_from_shopify": "חליפת אוברול קיצית נושמת ונעימה - גיא",
+      "status_before": "active",
+      "before_tags": [
+        "type-set"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)"
+    },
+    {
+      "product_id": "10011383103801",
+      "title_from_shopify": "חליפת אלופים מהממת דגם שון  מבית בייבי מניה",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "source_trace": "type matched 'set' in handle (conf=0.88); gender matched 'boy' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9179151335737",
+      "title_from_shopify": "חליפת גופייה פרחונית - מאיה",
+      "status_before": "active",
+      "before_tags": [
+        "type-set"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)"
+    },
+    {
+      "product_id": "9179152875833",
+      "title_from_shopify": "חליפת גופייה קיצית - מאור",
+      "status_before": "active",
+      "before_tags": [
+        "type-set"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)"
+    },
+    {
+      "product_id": "10009173033273",
+      "title_from_shopify": "אוברול קטיפתי לתינוק – חמימות, נוחות וסטייל לחורף",
+      "status_before": "active",
+      "before_tags": [
+        "gender-girl",
+        "occ-seasonal",
+        "type-romper",
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "occ-seasonal",
+        "type-romper",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'romper' in handle (conf=0.88); gender matched 'girl' in handle (conf=0.90); occ: occ-seasonal"
+    },
+    {
+      "product_id": "9895864435001",
+      "title_from_shopify": "אוברול קיץ לתינוקות בעיצוב דובי דגם שי",
+      "status_before": "active",
+      "before_tags": [
+        "gender-girl",
+        "occ-seasonal",
+        "type-romper",
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "occ-seasonal",
+        "type-romper",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88); gender matched 'girl' in handle (conf=0.90); occ: occ-seasonal"
+    },
+    {
+      "product_id": "9605503516985",
+      "title_from_shopify": "סרבל ארנב לתינוק",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-romper",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-romper"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-romper",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-romper"
+      ],
+      "source_trace": "type matched 'romper' in handle (conf=0.88); gender matched 'girl' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9874906415417",
+      "title_from_shopify": "רומפר קייצי מבית בייבי מניה דגם דין",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-romper",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-romper"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-romper",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-romper"
+      ],
+      "source_trace": "type matched 'romper' in handle (conf=0.88); gender matched 'girl' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9864947859769",
+      "title_from_shopify": "סט פרחוני קיצי דגם לירון",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-bodysuit"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-bodysuit"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9855017615673",
+      "title_from_shopify": "סט קיצי אלגנטי דגם מיה",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "elegant-baby",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-bodysuit"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "elegant-baby",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-bodysuit"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9605503451449",
+      "title_from_shopify": "סרבל ללא שרוולים לתינוק",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-romper",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-bodysuit"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-romper",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-bodysuit"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9687502422329",
+      "title_from_shopify": "סריג דובי דגם אריאל",
+      "status_before": "active",
+      "before_tags": [
+        "gender-boy",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'boy' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9687653056825",
+      "title_from_shopify": "שלוש חליפות בייבי  דגם אנה",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-bodysuit"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-bodysuit"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)"
+    },
+    {
+      "product_id": "9096606056761",
+      "title_from_shopify": "חליפת ג׳ינס וחמניות- גיילוס",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "denim-baby",
+        "denim-style-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "denim-baby",
+        "denim-style-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)"
+    }
+  ]
+}
