@@ -1,0 +1,18 @@
+{"ts": "2026-05-04T23:36:07", "event": "EVT_PACK_START", "pack_id": "EXEC-DRY-RUN-001", "room_id": "BRM-001", "session_id": "SES-EXEC-DRY-RUN-001-20260504-2336", "stage_count": 3}
+{"ts": "2026-05-04T23:36:07", "event": "EVT_STAGE_START", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-01", "stage_type": "ISSUE_AUDIT"}
+{"ts": "2026-05-04T23:36:47", "event": "EVT_OUTPUT_WRITTEN", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-01", "output_file": "C:\\Projects\\baby-mania-agent\\docs\\management\\bridge-room-prototype\\inbox\\EXEC-DRY-RUN-001-STAGE-01-output.json"}
+{"ts": "2026-05-04T23:41:47", "event": "EVT_VERDICT_TIMEOUT", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-01"}
+{"ts": "2026-05-04T23:41:47", "event": "EVT_PACK_END", "pack_id": "EXEC-DRY-RUN-001", "result": "TOKEN_SAFE_STOP"}
+{"ts": "2026-05-05T09:38:05", "event": "EVT_PACK_START", "pack_id": "EXEC-DRY-RUN-001", "room_id": "BRM-001", "session_id": "SES-EXEC-DRY-RUN-001-20260505-0938", "stage_count": 3}
+{"ts": "2026-05-05T09:38:05", "event": "EVT_STAGE_START", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-01", "stage_type": "ISSUE_AUDIT"}
+{"ts": "2026-05-05T09:39:30", "event": "EVT_OUTPUT_WRITTEN", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-01", "output_file": "C:\\Projects\\baby-mania-agent\\docs\\management\\bridge-room-prototype\\inbox\\EXEC-DRY-RUN-001-STAGE-01-output.json"}
+{"ts": "2026-05-05T09:39:30", "event": "EVT_VERDICT_RECEIVED", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-01", "verdict": "PASS"}
+{"ts": "2026-05-05T09:39:30", "event": "EVT_STAGE_START", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-02", "stage_type": "FIX"}
+{"ts": "2026-05-05T09:43:30", "event": "EVT_OUTPUT_WRITTEN", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-02", "output_file": "C:\\Projects\\baby-mania-agent\\docs\\management\\bridge-room-prototype\\inbox\\EXEC-DRY-RUN-001-STAGE-02-output.json"}
+{"ts": "2026-05-05T09:46:40", "event": "EVT_VERDICT_RECEIVED", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-02", "verdict": "PASS"}
+{"ts": "2026-05-05T09:46:40", "event": "EVT_STAGE_START", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-03", "stage_type": "RETEST"}
+{"ts": "2026-05-05T09:48:36", "event": "EVT_OUTPUT_WRITTEN", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-03", "output_file": "C:\\Projects\\baby-mania-agent\\docs\\management\\bridge-room-prototype\\inbox\\EXEC-DRY-RUN-001-STAGE-03-output.json"}
+{"ts": "2026-05-05T09:53:36", "event": "EVT_VERDICT_TIMEOUT", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-03"}
+{"ts": "2026-05-05T09:53:36", "event": "EVT_PACK_END", "pack_id": "EXEC-DRY-RUN-001", "result": "TOKEN_SAFE_STOP"}
+{"ts": "2026-05-05T07:36:24Z", "event": "EVT_VERDICT_RECEIVED", "pack_id": "EXEC-DRY-RUN-001", "stage_id": "STAGE-03", "verdict": "PASS", "note": "received after EVT_VERDICT_TIMEOUT — Codex wrote verdict file post-conductor-exit"}
+{"ts": "2026-05-05T07:36:24Z", "event": "EVT_PACK_END", "pack_id": "EXEC-DRY-RUN-001", "result": "PACK_COMPLETE", "note": "finalized after verdict timeout; all 3 stages PASS per Codex verdicts"}

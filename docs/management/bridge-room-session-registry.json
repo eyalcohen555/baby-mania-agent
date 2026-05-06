@@ -1,0 +1,15 @@
+{
+  "_schema": "bridge-room-session-registry-v1",
+  "sessions": {
+    "SES-EXEC-DRY-RUN-001-20260505-0938": {
+      "session_id": "SES-EXEC-DRY-RUN-001-20260505-0938",
+      "pack_id": "EXEC-DRY-RUN-001",
+      "room_id": "BRM-001",
+      "pack_status": "PACK_COMPLETE",
+      "stage_count": 3,
+      "started_at": "2026-05-05T09:38:05",
+      "completed_at": "2026-05-05T07:36:56Z",
+      "notes": "Dual-session mode: Claude dispatched stages, Codex wrote verdicts. STAGE-03 verdict arrived after conductor timeout; pack finalized after all verdicts confirmed PASS."
+    }
+  }
+}

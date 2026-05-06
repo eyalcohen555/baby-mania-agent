@@ -71,7 +71,56 @@ ERRORS: <none | תיאור>
 ## קובץ סטטוס: bridge/status.md
 
 מנוהל אוטומטית ע"י bridge.py ו-github-bridge.py.
-ערכים: `idle | running | done | error | pushed | awaiting_approval`
+ערכים: `idle | running | done | error | pushed | awaiting_approval | token_safe_stop`
+
+---
+
+## תוספת — Bridge Room Task Fields
+
+**כשהמשימה שייכת ל-Bridge Room (mode=bridge-room), יש להוסיף את השדות הבאים:**
+
+```
+TASK_ID: brm-<pack_id>-<stage_id>-<YYYYMMDD-HHmm>
+APPROVAL_TIER: T2
+ROOM_ID: <BRM-NNN>
+PACK_ID: <EXEC-PACK-descriptor-NNN>
+STAGE_ID: <STAGE-NN>
+SESSION_ID: <SES-pack_id-YYYYMMDD-HHmm>
+STAGE_TYPE: <ISSUE_AUDIT | FIX | RETEST | ROLLBACK | RESUME>
+GOAL: <מה לעשות>
+TARGETS: <TGT-A, TGT-B, ...>
+FILES_ALLOWED: <קבצים מותרים>
+OUTPUT_REQUIRED: Emit BRIDGE_ROOM_OUTPUT_START ... BRIDGE_ROOM_OUTPUT_END block with structured JSON
+CONTEXT: <הקשר נוסף — אופציונלי>
+```
+
+**Output format (stdout של Claude):**
+
+```
+BRIDGE_ROOM_OUTPUT_START
+{
+  "stage_id": "STAGE-01",
+  "stage_type": "ISSUE_AUDIT",
+  "findings": [...],
+  "verdict_recommendation": "PASS | FAIL | BLOCKED"
+}
+BRIDGE_ROOM_OUTPUT_END
+```
+
+**Token Safe Stop (כשClaude מזהה צריכת context גבוהה):**
+
+```
+TOKEN_SAFE_STOP_START
+{
+  "safe_to_stop": true,
+  "reason": "context_limit_approaching",
+  "stage_id": "STAGE-01",
+  ...
+}
+TOKEN_SAFE_STOP_END
+```
+
+bridge.py מזהה `TOKEN_SAFE_STOP_START` ב-output של Bridge Room tasks ומעדכן status ל-`token_safe_stop`.
 
 ---
 
