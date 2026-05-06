@@ -1,0 +1,758 @@
+{
+  "phase": "7C",
+  "batch": 6,
+  "task": "batch6_read_only_plan",
+  "mode": "READ_ONLY_PLANNING",
+  "timestamp": "2026-05-06T05:59:21.669834+00:00",
+  "shopify_writes": "NONE",
+  "total_active_products_fetched": 393,
+  "already_written_batch12345": 87,
+  "selected_candidates": 20,
+  "type_breakdown": {
+    "type-dress": 4,
+    "type-set": 16,
+    "type-romper": 0,
+    "type-bodysuit": 0
+  },
+  "month_normalization_needed_count": 0,
+  "safety_pass": true,
+  "safety_flags": [],
+  "allowed_types": [
+    "type-dress",
+    "type-set",
+    "type-romper",
+    "type-bodysuit"
+  ],
+  "excluded": [
+    "already written in Batch 1/2/3/4 (explicit PID list)",
+    "already tagged (type-* exists in Shopify tags)",
+    "shoes/sandals/sneakers (title keyword blocker)",
+    "false-positive items (towel/bag/blanket/sponge/swimwear)",
+    "low confidence (<min_conf threshold)",
+    "non-preferred types (hat/coat/pants/top/swimwear)"
+  ],
+  "products": [
+    {
+      "product_id": "9606694011193",
+      "title": "שמלת קיץ מיוחדת לבנות",
+      "handle": "girls-blue-sequin-summer-dress-kids-evening-party-mesh-princess-costume-toddler-girl-holiday-casual-clothes-for-3-4-5-6-7-8-year",
+      "current_tags": [
+        "baby-dress",
+        "baby-gift",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_after_merge": [
+        "baby-dress",
+        "baby-gift",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "summer-baby-wear",
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "dress",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "gender_keyword": "בנות",
+      "proposed_occs": [
+        "occ-seasonal"
+      ],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'בנות' in title (conf=0.90); occ: occ-seasonal",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='dress', gender-source=title, kw='בנות', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9895864402233",
+      "title": "שמלת קיץ פרחונית לתינוקות דגם אלין",
+      "handle": "dress-for-kids-3-36-months-butterfly-sleeve-cute-floral-summer-princess-formal-dresses-ootd-for-newborn-baby-girl",
+      "current_tags": [
+        "baby-dress",
+        "baby-gift",
+        "floral-baby",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_after_merge": [
+        "baby-dress",
+        "baby-gift",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-seasonal",
+        "summer-baby-wear",
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "dress",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [
+        "occ-seasonal"
+      ],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90); occ: occ-seasonal",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='dress', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9605887590713",
+      "title": "שמלת שמש לתינוקות וילדות",
+      "handle": "summer-toddler-girl-dress-solid-cotton-sleeveless-children-dress-kids-sundress-slip-dress-fashion-girls-clothing",
+      "current_tags": [
+        "baby-dress",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "kids-clothing",
+        "neutral-baby-outfit"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "baby-dress",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "dress",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='dress', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9892620960057",
+      "title": "שמלת תחרה כפלים דגם טליה",
+      "handle": "girls-casual-dresses-one-line-shoulder-strap-patchwork-lace-dress-kids-clothes-girls-8-to-12-years-princess-dress-for-girls",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "gender-girl",
+        "type-dress"
+      ],
+      "proposed_type": "type-dress",
+      "type_conf": 0.9,
+      "type_source": "handle",
+      "type_keyword": "dress",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.9,
+      "reason_selected": "type-source=handle, conf=0.90, kw='dress', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9096607400249",
+      "title": "חליפת דוב  סוודר כותנה  - דגם דנה",
+      "handle": "copy-of-חליפת-דוב-סוודר-כותנה-דגם-רותם",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9096606810425",
+      "title": "חליפת דוב  סוודר כותנה  - דגם רותם",
+      "handle": "copy-of-חליפת-דוב-סוודר-כותנה-דגם-דניאל",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9688965022009",
+      "title": "חליפת דובי דגם נתן",
+      "handle": "2pcs-baby-boys-casual-cute-warm-fleece-outfits-bear-pattern-round-neck-long-sleeve-sweatshirt-bear-print-pants-outdoor-set-for-autumn-and-winter",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "current_tags_count": 5,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "gender-boy",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "type_keyword": "set",
+      "proposed_gender": "gender-boy",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "boy",
+      "proposed_occs": [],
+      "source_trace": "type matched 'set' in handle (conf=0.88); gender matched 'boy' in handle (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=handle, conf=0.88, kw='set', gender-source=handle, kw='boy', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9096606974265",
+      "title": "חליפת וופל במגוון צבעים",
+      "handle": "חליפת-וופל-במגוון-צבעים",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "waffle-knit"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set",
+        "waffle-knit"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "10005779710265",
+      "title": "חליפת חורף לתינוקת עם כובע דגם שון",
+      "handle": "solid-color-newborn-baby-boy-clothes-long-sleeve-hooded-zipper-baby-clothes-girls-footies-winter-warm-infant-clothing-3-24months",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "cotton-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-suit",
+        "cotton-baby",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "type-set",
+        "winter-baby-wear"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "proposed_occs": [
+        "occ-seasonal"
+      ],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88); gender matched 'girl' in handle (conf=0.90); occ: occ-seasonal",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', gender-source=handle, kw='girl', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179167654201",
+      "title": "חליפת חצאית תחרה אלגנטית - קארין",
+      "handle": "חליפת-מכנצאית-תחרה-אלגנטית-קארין",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179170799929",
+      "title": "חליפת טטרה קיצית מכותנה - עידודו",
+      "handle": "חליפת-טטרה-קיצית-עידודו",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9606691356985",
+      "title": "חליפת טניס קיצית לבנות",
+      "handle": "pudcoco-toddler-girl-summer-outfit-solid-color-ribbed-sleeveless-tank-tops-and-pleated-skirts-with-belt-2pcs-clothes-set-6m-5t",
+      "current_tags": [
+        "baby-gift",
+        "baby-suit",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "current_tags_count": 6,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "baby-gift",
+        "baby-suit",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "handle",
+      "type_keyword": "set",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "gender_keyword": "בנות",
+      "proposed_occs": [],
+      "source_trace": "type matched 'set' in handle (conf=0.88); gender matched 'בנות' in title (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=handle, conf=0.88, kw='set', gender-source=title, kw='בנות', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179157725497",
+      "title": "חליפת כותנה אורגנית - בילי",
+      "handle": "חליפת-כותנה-אורגנית-בילי",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179133870393",
+      "title": "חליפת כותנה וופל בשילוב דובי - בנים, בנות",
+      "handle": "חליפת-כותנה-וופל-בשילוב-דובי-בנים-בנות",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "gender-girl",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "title",
+      "gender_keyword": "בנות",
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88); gender matched 'בנות' in title (conf=0.90)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', gender-source=title, kw='בנות', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179158839609",
+      "title": "חליפת כותנה ופשתן - בייבילו",
+      "handle": "חליפת-פשתן-בייבילו",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179164705081",
+      "title": "חליפת כותנה משובצת - נטע",
+      "handle": "חליפת-כותנה-משובצת-נטע",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179166376249",
+      "title": "חליפת כותנה סרוגה בייסיק - אדריאן",
+      "handle": "חליפת-כותנה-סרוגה-בייסיק-אדריאן",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179148190009",
+      "title": "חליפת כותנה קז'ואל - מאורי",
+      "handle": "חליפת-כותנה-קזואל-מאורי-1",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179168473401",
+      "title": "חליפת מלמלות טטרה- אלכסה",
+      "handle": "חליפת-מלמלות-טטרה-אלכסה",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    },
+    {
+      "product_id": "9179170144569",
+      "title": "חליפת מלמלות מכותנה ופשתן - מיילי",
+      "handle": "חליפת-פשתן-מלמלות-מיילי",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_after_merge": [
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "חליפת",
+      "proposed_gender": null,
+      "gender_conf": 0.0,
+      "gender_source": null,
+      "gender_keyword": null,
+      "proposed_occs": [],
+      "source_trace": "type matched 'חליפת' in title (conf=0.88)",
+      "risk_level": "LOW",
+      "confidence": 0.88,
+      "reason_selected": "type-source=title, conf=0.88, kw='חליפת', no false-positive flags, no shoe title, active product, not in batch1/2/3/4/5",
+      "safety_flags": [],
+      "month_normalization_needed": false,
+      "singular_month_tags": []
+    }
+  ],
+  "verdict": "READY_FOR_PHASE7C_BATCH6_T3_APPROVAL"
+}
