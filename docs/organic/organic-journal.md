@@ -5,6 +5,36 @@
 ---
 
 ## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 8 Plan (READ-ONLY)
+## SCOPE: Layer 7 — READ-ONLY planning, no Shopify writes
+## WHAT CHANGED:
+- Batch 8 plan created: 20 SAFE type-set candidates selected
+- already_written_batch1234567=126 (19 batch7 PIDs added to exclusion list)
+- t3_excluded=1: sweater 10011383202105 (requires explicit re-approval)
+- false_positive_blkd expanded to 9: added 'טטרה' blocker (muslin bib sets)
+- 0 products need Hebrew month normalization
+- SAFE candidates in pool: 47 (type-set only, other pools exhausted)
+- All 20 candidates: type-set only
+- All safety checks PASS: no age-*, no type collision, no gender collision, no forbidden tags
+- Verdict: READY_FOR_PHASE7C_BATCH8_T3_APPROVAL
+## FILES TOUCHED:
+- scripts/phase7c_batch8_plan.py (created)
+- output/tags/phase7c-batch8-plan.md (created)
+- output/tags/phase7c-batch8-plan.json (created)
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.15)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- No Shopify changes (GET only)
+- Shopify live tagged products: 177 (unchanged)
+## OPEN ISSUES:
+- Phase 7C Batch 8+: 47 SAFE candidates remaining (type-set only), T3 approval needed
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 135 products: blocked until manual review
+## NEXT STEP: Phase 7C Batch 8 live write (T3 approval needed from Ayal)
+
+---
+
+## DATE: 2026-05-06
 ## TASK: Layer 7 Phase 7C — Batch 7 Live Write
 ## SCOPE: Layer 7 — Shopify live tag write (19 products)
 ## WHAT CHANGED:
