@@ -31,19 +31,67 @@ def parse_approval_tier(task_text: str) -> str:
 
 def needs_response(output: str):
     """
-    Mirror of telegram_bot.py detect_result_event.
-    Returns 'APPROVAL_NEEDED' | 'QUESTION' | None
+    Determine if Claude output requires Telegram interaction before finishing.
+    Returns 'APPROVAL_NEEDED' | 'QUESTION' | None.
+    STAGE_VERDICT: PASS short-circuits to None immediately.
+    Keyword scan fires ONLY when no STAGE_VERDICT line is found.
     """
-    lower = output.lower()
-    approval_kws = [
-        "approval needed", "requires approval", "waiting for approval",
-        "נדרש אישור", "אישור אייל", "אישור נדרש",
-    ]
-    if any(kw in lower for kw in approval_kws):
+    has_verdict_line  = False
+    awaiting_approval = False
+    verdict_question  = False
+    response_needed   = False
+    response_type     = ""
+
+    for line in output.splitlines():
+        cl = line.strip().strip("*_`#").strip().upper()
+
+        if cl.startswith("STAGE_VERDICT:"):
+            has_verdict_line = True
+            val = cl.split(":", 1)[1].strip()
+            if val.startswith("PASS"):
+                return None
+            if val.startswith("AWAITING_APPROVAL"):
+                awaiting_approval = True
+            if val.startswith("QUESTION"):
+                verdict_question = True
+
+        elif cl.startswith("STATUS:"):
+            val = cl.split(":", 1)[1].strip()
+            if val.startswith("PASS"):
+                return None
+            if val.startswith("AWAITING_APPROVAL"):
+                awaiting_approval = True
+
+        elif cl.startswith("RESPONSE_NEEDED:") and "YES" in cl:
+            response_needed = True
+
+        elif cl.startswith("RESPONSE_TYPE:"):
+            response_type = cl.split(":", 1)[1].strip()
+
+    if awaiting_approval:
         return "APPROVAL_NEEDED"
-    question_kws = ["question for user", "שאלה לאייל:", "שאלה:"]
-    if any(kw in lower for kw in question_kws):
+    if verdict_question:
         return "QUESTION"
+
+    if response_needed:
+        if "APPROVAL" in response_type:
+            return "APPROVAL_NEEDED"
+        if "QUESTION" in response_type:
+            return "QUESTION"
+        return "APPROVAL_NEEDED"
+
+    if not has_verdict_line:
+        lower = output.lower()
+        approval_kws = [
+            "approval needed", "requires approval", "waiting for approval",
+            "נדרש אישור", "אישור אייל", "אישור נדרש",
+        ]
+        if any(kw in lower for kw in approval_kws):
+            return "APPROVAL_NEEDED"
+        question_kws = ["question for user", "שאלה לאייל:", "שאלה:"]
+        if any(kw in lower for kw in question_kws):
+            return "QUESTION"
+
     return None
 
 
@@ -308,11 +356,11 @@ try:
                             [CLAUDE, "--print", "--dangerously-skip-permissions", content],
                             cwd=r"C:\Projects\baby-mania-agent",
                             capture_output=True,
-                            text=True,
-                            encoding="utf-8",
                             timeout=CLAUDE_TIMEOUT
                         )
-                        output = (result.stdout or result.stderr or "").strip()
+                        # Binary mode: text=True+encoding crashes on Windows cp1255 with Hebrew.
+                        raw = result.stdout or result.stderr or b""
+                        output = raw.decode("utf-8", errors="replace").strip()
                     except subprocess.TimeoutExpired:
                         output = f"ERROR: Claude Code timed out after {CLAUDE_TIMEOUT}s"
                         print(f"[BRIDGE] TIMEOUT after {CLAUDE_TIMEOUT}s")

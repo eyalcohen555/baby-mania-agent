@@ -1,0 +1,413 @@
+# ============================================================
+# Bridge + Telegram Stabilization v1
+# plan_id: bridge-telegram-stabilization-001
+# Created: 2026-05-05
+# Purpose: Audit and stabilize Bridge + Telegram runtime state.
+#          Identifies process duplicates, stale state files,
+#          Telegram coverage gaps, and known resume limitation.
+# Tier: T1 — local state only, no Shopify, no code changes.
+# Usage:
+#   dry-run:  python teams/team-lead/conductor.py plans/bridge-telegram-stabilization-001.yaml --dry-run
+#   run:      python teams/team-lead/conductor.py plans/bridge-telegram-stabilization-001.yaml --no-telegram
+#   resume:   python teams/team-lead/conductor.py plans/bridge-telegram-stabilization-001.yaml --resume --no-telegram
+# ============================================================
+
+plan_id: bridge-telegram-stabilization-001
+plan_name: "Bridge + Telegram Stabilization v1"
+approval_tier: T1
+
+telegram_notify:
+  start: false
+  milestones: false
+  done: false
+  blocked: false
+  questions: false
+
+stages:
+
+  # ── STAGE-1: Runtime process audit ───────────────────────────────────────
+
+  - id: STAGE-1
+    name: RUNTIME PROCESS AUDIT
+    type: AUDIT
+    approval_tier: T0
+    goal: >
+      לבדוק אילו processes רצים: bridge.py, telegram_bot.py, watchdog.py.
+      לזהות duplicates. ללא שינוי כלשהו.
+    action: |
+      הרץ פקודה לקריאת רשימת Python processes פעילים (wmic או tasklist).
+      עבור כל process — ציין PID, cmdline, וכמה instances יש.
+      דווח בפירוט:
+        bridge.py       — כמה instances? PIDs?
+        telegram_bot.py — כמה instances? PIDs?
+        watchdog.py     — כמה instances? PIDs?
+      זהה: האם יש duplicates (יותר מ-instance אחד מכל סוג)?
+      אל תגע בשום קובץ. קרא בלבד.
+    files_allowed:
+      - bridge/status.md
+      - bridge/bridge.lock
+    files_forbidden:
+      - bridge.py
+      - scripts/telegram_bot.py
+      - teams/team-lead/watchdog.py
+      - teams/**
+      - output/**
+      - config.yaml
+      - .env
+    expected_output: |
+      PROCESS_AUDIT:
+      bridge.py: [PID(s) / NOT RUNNING] instances: N
+      telegram_bot.py: [PID(s) / NOT RUNNING] instances: N
+      watchdog.py: [PID(s) / NOT RUNNING] instances: N
+      DUPLICATES_FOUND: YES / NO
+    exit_conditions:
+      - "כל שלושת ה-processes נבדקו (גם אם לא רצים)"
+      - "מספר instances של כל process ידוע"
+      - "DUPLICATES_FOUND מדווח"
+    fail_conditions:
+      - "לא ניתן לקרוא process list מהמערכת"
+      - "שגיאת מערכת קריטית שמונעת את ה-audit"
+    next_on_pass: STAGE-2
+    next_on_fail: STOP
+
+  # ── STAGE-2: Bridge state file audit ─────────────────────────────────────
+
+  - id: STAGE-2
+    name: BRIDGE STATE FILE AUDIT
+    type: AUDIT
+    approval_tier: T0
+    goal: >
+      לבדוק מצב קבצי bridge: status.md, next-task.md, last-result.md,
+      telegram-response.md, bridge.lock. קריאה בלבד.
+    action: |
+      קרא את הקבצים הבאים ודווח על כל אחד:
+
+      1. bridge/status.md
+         — מה הסטטוס הנוכחי? (idle / running / failed / awaiting_approval)
+         — מה ה-task_id הנוכחי (אם קיים)?
+
+      2. bridge/next-task.md
+         — האם הקובץ ריק? אם לא — מה תוכנו (100 תווים ראשונים)?
+
+      3. bridge/last-result.md
+         — מה ה-task_id של התוצאה האחרונה?
+         — מה ה-STATUS? (PASS / FAIL / AWAITING_APPROVAL)
+
+      4. bridge/telegram-response.md
+         — האם ריק? אם לא — מה תוכנו?
+
+      5. bridge/bridge.lock
+         — האם קיים? מה ה-PID? האם ה-PID חי?
+
+      6. bridge/conductor-state.md (אם קיים)
+         — מה ה-plan_id? מה ה-status?
+
+      אל תגע בשום קובץ. קרא בלבד.
+    files_allowed:
+      - bridge/status.md
+      - bridge/next-task.md
+      - bridge/last-result.md
+      - bridge/telegram-response.md
+      - bridge/bridge.lock
+      - bridge/conductor-state.md
+      - bridge/conductor-log.md
+    files_forbidden:
+      - bridge.py
+      - scripts/telegram_bot.py
+      - teams/**
+      - output/**
+      - config.yaml
+      - .env
+    expected_output: |
+      BRIDGE_STATUS: [ערך מ-status.md]
+      BRIDGE_TASK_ID_ACTIVE: [task_id / NONE]
+      NEXT_TASK_EMPTY: YES / NO
+      LAST_RESULT_TASK_ID: [task_id / NONE]
+      LAST_RESULT_STATUS: [PASS / FAIL / AWAITING_APPROVAL / NONE]
+      TELEGRAM_RESPONSE_EMPTY: YES / NO
+      BRIDGE_LOCK_PID: [PID / NONE]
+      BRIDGE_LOCK_ALIVE: YES / NO / UNKNOWN
+      CONDUCTOR_STATE_STATUS: [RUNNING / BLOCKED / DONE / FAILED / NONE]
+    exit_conditions:
+      - "כל 6 הקבצים נבדקו (או זוהה שאינם קיימים)"
+      - "מצב כל קובץ מדווח בשדות מובנים"
+    fail_conditions:
+      - "שגיאת גישה שמונעת קריאת bridge/ לחלוטין"
+      - "לא ניתן לדווח על אף קובץ bridge"
+    next_on_pass: STAGE-3
+    next_on_fail: STOP
+
+  # ── STAGE-3: Cleanup decision (LOGIC) ────────────────────────────────────
+
+  - id: STAGE-3
+    name: CLEANUP REQUIRED DECISION
+    type: LOGIC
+    approval_tier: T1
+    goal: >
+      להחליט על בסיס STAGE-1 ו-STAGE-2 אם נדרש ניקוי.
+      מחזיר CLEANUP_REQUIRED: YES או NO בדיוק.
+    action: |
+      בחן את תוצאות STAGE-1 (processes) ו-STAGE-2 (קבצי bridge).
+
+      החלט CLEANUP_REQUIRED: YES אם מתקיים לפחות אחד מהבאים:
+        - נמצאו duplicate instances של bridge.py (יותר מ-1)
+        - bridge/status.md = error ואין process חי של bridge.py
+        - bridge/bridge.lock קיים אבל מצביע על PID מת
+        - bridge/telegram-response.md אינו ריק ו-bridge.py idle
+
+      החלט CLEANUP_REQUIRED: NO אם:
+        - instance אחד בלבד של bridge.py (או לא רץ בכלל ו-status=idle)
+        - bridge/status.md = idle או running (ללא error)
+        - bridge.lock מצביע על PID חי (או לא קיים)
+        - telegram-response.md ריק
+
+      החזר שורה אחת ברורה בלבד:
+      CLEANUP_REQUIRED: YES
+      או
+      CLEANUP_REQUIRED: NO
+      ואחריה נימוק קצר.
+    files_allowed: []
+    files_forbidden:
+      - bridge.py
+      - scripts/telegram_bot.py
+      - teams/**
+      - output/**
+      - config.yaml
+      - .env
+    expected_output: |
+      CLEANUP_REQUIRED: YES / NO
+      REASON: [נימוק קצר]
+    exit_conditions:
+      - "שורה אחת ברורה: CLEANUP_REQUIRED: YES או CLEANUP_REQUIRED: NO"
+      - "נימוק מצורף"
+    fail_conditions:
+      - "לא ניתן להחליט — מידע סותר מ-STAGE-1 ו-STAGE-2"
+      - "תוצאות STAGE-1 או STAGE-2 חסרות לחלוטין"
+    next_on_pass: STAGE-4
+    next_on_fail: STAGE-5
+
+  # ── STAGE-4: Safe cleanup (FIX) ──────────────────────────────────────────
+
+  - id: STAGE-4
+    name: SAFE BRIDGE STATE CLEANUP
+    type: FIX
+    approval_tier: T1
+    goal: >
+      לנקות stale bridge state files בלבד אם בטוח.
+      אסור לגעת בקוד. אסור להפסיק task פעיל.
+    action: |
+      בצע ניקוי רק אם כל התנאים הבאים מתקיימים:
+        1. bridge.py רץ (לא נסגר בטעות)
+        2. bridge/status.md = idle (אין task פעיל כעת)
+        3. הניקוי המבוקש ברור ובטוח (ראה להלן)
+
+      פעולות מותרות בלבד:
+        A. bridge/telegram-response.md — נקה (כתוב שורה ריקה) אם:
+             - מכיל תוכן ישן ו-bridge idle
+        B. bridge/bridge.lock — מחק אם:
+             - PID שבתוכו אינו חי
+             - bridge.py עדיין רץ עם PID אחר
+
+      פעולות אסורות בהחלט:
+        - לגעת ב-bridge.py, telegram_bot.py, watchdog.py
+        - לשנות bridge/status.md, next-task.md, last-result.md
+        - לגעת בקוד כלשהו
+        - לנקות אם task פעיל (status = running)
+
+      אם הניקוי אינו בטוח — החזר STAGE_VERDICT: FAIL עם הסיבה.
+      אם אין מה לנקות — החזר STAGE_VERDICT: PASS עם "NOTHING_TO_CLEAN".
+    files_allowed:
+      - bridge/telegram-response.md
+      - bridge/bridge.lock
+    files_forbidden:
+      - bridge.py
+      - bridge/status.md
+      - bridge/next-task.md
+      - bridge/last-result.md
+      - bridge/conductor-state.md
+      - scripts/telegram_bot.py
+      - teams/**
+      - output/**
+      - config.yaml
+      - .env
+    expected_output: |
+      CLEANUP_PERFORMED: YES / NO
+      FILES_CLEANED: [רשימה / NONE]
+      REASON: [מה נוקה ולמה / למה לא]
+      STAGE_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "STAGE_VERDICT: PASS"
+      - "CLEANUP_PERFORMED דווח (YES או NO)"
+    fail_conditions:
+      - "task פעיל — ניקוי לא בטוח"
+      - "שגיאה בכתיבה לקובץ bridge/"
+      - "bridge.py לא רץ ולא ברור שהניקוי בטוח"
+    next_on_pass: STAGE-5
+    next_on_fail: STOP
+
+  # ── STAGE-5: Telegram workflow coverage audit ─────────────────────────────
+
+  - id: STAGE-5
+    name: TELEGRAM WORKFLOW COVERAGE AUDIT
+    type: AUDIT
+    approval_tier: T0
+    goal: >
+      לבדוק אילו סוגי Telegram events מכוסים ע"י telegram_bot.py לפי עיצוב קיים.
+      קריאה בלבד.
+    action: |
+      קרא את docs/operations/telegram-channel-design.md.
+      קרא את bridge/task-log.md (אם קיים).
+
+      בדוק ודווח על כיסוי לכל סוג event:
+
+      1. TASK STARTED    — האם נשלחת הודעה כשbridge מתחיל task?
+      2. QUESTION        — האם bot שולח ומחכה לתשובת טקסט?
+      3. APPROVAL NEEDED — האם bot שולח כפתורי אשר/דחה?
+      4. BLOCKED / FAILED — האם bot שולח alert על כישלון?
+      5. TASK DONE       — האם bot שולח notification + קטע מהתוצאה?
+      6. CONDUCTOR PLAN EVENTS — האם conductor-notify.md מוקרא ע"י bot?
+
+      עבור כל סוג: COVERED / PARTIAL / MISSING + הסבר קצר.
+
+      אל תגע בשום קובץ.
+    files_allowed:
+      - docs/operations/telegram-channel-design.md
+      - bridge/task-log.md
+      - bridge/status.md
+    files_forbidden:
+      - bridge.py
+      - scripts/telegram_bot.py
+      - teams/**
+      - output/**
+      - config.yaml
+      - .env
+    expected_output: |
+      TELEGRAM_COVERAGE:
+      TASK_STARTED:      COVERED / PARTIAL / MISSING
+      QUESTION:          COVERED / PARTIAL / MISSING
+      APPROVAL_NEEDED:   COVERED / PARTIAL / MISSING
+      BLOCKED_FAILED:    COVERED / PARTIAL / MISSING
+      TASK_DONE:         COVERED / PARTIAL / MISSING
+      CONDUCTOR_EVENTS:  COVERED / PARTIAL / MISSING
+    exit_conditions:
+      - "כל 6 סוגי events נבדקו ודווחו"
+      - "docs/operations/telegram-channel-design.md נקרא"
+    fail_conditions:
+      - "docs/operations/telegram-channel-design.md לא נמצא"
+      - "לא ניתן לסכם כיסוי מהמסמך"
+    next_on_pass: STAGE-6
+    next_on_fail: STOP
+
+  # ── STAGE-6: Resume gap audit ─────────────────────────────────────────────
+
+  - id: STAGE-6
+    name: TELEGRAM RESUME GAP AUDIT
+    type: AUDIT
+    approval_tier: T0
+    goal: >
+      לתעד את ה-gap הידוע: telegram-response.md לא מפעיל resume אוטומטי
+      ב-conductor כשאין task פעיל ב-bridge.
+    action: |
+      קרא את bridge/conductor-state.md (אם קיים).
+      קרא את bridge/last-result.md.
+      קרא את bridge/status.md.
+
+      תעד את ה-gap הבא (ידוע מ-audit קוד קודם):
+
+      GAP: bridge.py מטפל ב-telegram-response.md רק כשיש task פעיל
+           (_waiting_for_response = True בלבד).
+           כשconductor ממתין לאישור בין שלבים — תשובת Telegram
+           נכתבת ל-telegram-response.md אך לא מופנית אוטומטית לconductor.
+
+      דווח:
+        1. האם gap מאושר — YES / NO (בהתבסס על מצב הקבצים הנוכחי)
+        2. workaround נוכחי (תיאור)
+        3. מה נדרש לתיקון עתידי (תיאור בלבד — אל תגע בקוד)
+
+      אל תגע בשום קובץ.
+    files_allowed:
+      - bridge/conductor-state.md
+      - bridge/last-result.md
+      - bridge/status.md
+    files_forbidden:
+      - bridge.py
+      - scripts/telegram_bot.py
+      - teams/**
+      - output/**
+      - config.yaml
+      - .env
+    expected_output: |
+      RESUME_GAP_CONFIRMED: YES / NO
+      GAP_DESCRIPTION: [תיאור ה-gap]
+      CURRENT_WORKAROUND: [מה עושים כיום]
+      FIX_REQUIRED: [תיאור מה נדרש — ללא שינוי קוד]
+    exit_conditions:
+      - "RESUME_GAP_CONFIRMED דווח"
+      - "CURRENT_WORKAROUND ו-FIX_REQUIRED תועדו"
+    fail_conditions:
+      - "לא ניתן לקרוא אף קובץ bridge — audit בלתי אפשרי"
+    next_on_pass: STAGE-7
+    next_on_fail: STAGE-7
+
+  # ── STAGE-7: Final readiness report (RETEST) ─────────────────────────────
+
+  - id: STAGE-7
+    name: FINAL READINESS REPORT
+    type: RETEST
+    approval_tier: T0
+    goal: >
+      לסכם תוצאות STAGE-1 עד STAGE-6 ולהחליט אם המערכת
+      מוכנה ל-full automation.
+    action: |
+      בדוק שוב: bridge/status.md, bridge/next-task.md.
+      סכם את כל מה שנאסף בשלבים STAGE-1 עד STAGE-6.
+
+      הפק דוח סיום מלא בפורמט:
+
+      SYSTEM STATE
+      — מצב bridge.py (process + status.md)
+      — מצב telegram_bot.py + watchdog.py
+      — מצב bridge state files
+
+      WHAT WORKS
+      — רשימה מפורטת של מה שעובד כעת
+
+      WHAT IS STILL MISSING
+      — רשימה מפורטת של gaps
+
+      READY FOR FULL AUTOMATION: YES / NO
+      — עם נימוק חד-משמעי
+
+      לסיום: החזר שורה אחת:
+      STAGE_VERDICT: PASS
+        אם המערכת יציבה ורצה (גם אם יש gaps ידועים ומתועדים)
+      STAGE_VERDICT: FAIL
+        אם יש בעיה פעילה שמונעת המשך עבודה
+    files_allowed:
+      - bridge/status.md
+      - bridge/next-task.md
+      - bridge/last-result.md
+      - bridge/conductor-state.md
+      - bridge/conductor-log.md
+    files_forbidden:
+      - bridge.py
+      - scripts/telegram_bot.py
+      - teams/**
+      - output/**
+      - config.yaml
+      - .env
+    expected_output: |
+      SYSTEM STATE: [מצב נוכחי]
+      WHAT WORKS: [רשימה]
+      WHAT IS STILL MISSING: [רשימה]
+      READY FOR FULL AUTOMATION: YES / NO
+      STAGE_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "STAGE_VERDICT: PASS"
+      - "READY FOR FULL AUTOMATION דווח עם נימוק"
+      - "WHAT WORKS ו-WHAT IS STILL MISSING מפורטים"
+    fail_conditions:
+      - "bridge/status.md מראה error פעיל שלא טופל"
+      - "bridge/next-task.md לא ריק (task תקוע)"
+    next_on_pass: DONE
+    next_on_fail: STOP
