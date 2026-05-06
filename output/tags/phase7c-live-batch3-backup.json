@@ -1,0 +1,738 @@
+{
+  "phase": "7C",
+  "batch": 3,
+  "type": "live_batch3_backup",
+  "timestamp": "2026-05-06T04:16:24.102330+00:00",
+  "shopify_writes": "NONE — backup only",
+  "products": [
+    {
+      "product_id": "9864947827001",
+      "title_from_shopify": "אוברול חגיגי דגם אנה",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "handle",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-dress": 0.9,
+        "gender-girl": 0.9
+      },
+      "source_per_tag": {
+        "type-dress": "handle",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-dress",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'dress' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9179136426297",
+      "title_from_shopify": "שמלת ורדים חגיגית אלגנטית מלאה בסטייל - קיילי",
+      "status_before": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-dress": 0.9
+      },
+      "source_per_tag": {
+        "type-dress": "title"
+      },
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9179151794489",
+      "title_from_shopify": "שמלת טול חגיגית - אוריאן",
+      "status_before": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-dress": 0.9
+      },
+      "source_per_tag": {
+        "type-dress": "title"
+      },
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9179137048889",
+      "title_from_shopify": "שמלת כותנה חגיגית - אלין",
+      "status_before": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-dress": 0.9
+      },
+      "source_per_tag": {
+        "type-dress": "title"
+      },
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9179147829561",
+      "title_from_shopify": "שמלת כותנה קיצית עם טקסטורה - יעל",
+      "status_before": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-dress",
+          "source": "title",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-dress": 0.9
+      },
+      "source_per_tag": {
+        "type-dress": "title"
+      },
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "source_trace": "type matched 'שמלת' in title (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9687596663097",
+      "title_from_shopify": "אוברול סריג מתוק לתינוקות דגם שוהם",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "handle",
+          "conf": 0.88
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.88,
+        "gender-girl": 0.88
+      },
+      "source_per_tag": {
+        "type-set": "handle",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'set' in handle (conf=0.88); gender matched 'girl' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9724813443385",
+      "title_from_shopify": "אוברול סריג פסים דגם רפאל",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "handle",
+          "conf": 0.88
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.88,
+        "gender-girl": 0.88
+      },
+      "source_per_tag": {
+        "type-set": "handle",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'outfit' in handle (conf=0.88); gender matched 'girl' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9179138457913",
+      "title_from_shopify": "אוברול קיצי מתוק סטייל קז'ואל - יואבי",
+      "status_before": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "handle",
+          "conf": 0.88
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.88
+      },
+      "source_per_tag": {
+        "type-set": "handle"
+      },
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "source_trace": "type matched 'סט' in handle (conf=0.88)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9673732292921",
+      "title_from_shopify": "חליפה 3 חלקים מבית בייבי מניה דגם אריאל",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "before_tags_count": 6,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.88
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.88,
+        "gender-girl": 0.88
+      },
+      "source_per_tag": {
+        "type-set": "title",
+        "gender-girl": "title"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "source_trace": "type matched 'חליפה' in title (conf=0.88); gender matched 'girl' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9179156742457",
+      "title_from_shopify": "חליפה מסוגננת פרחונית - מיקה",
+      "status_before": "active",
+      "before_tags": [],
+      "before_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-set",
+          "source": "title",
+          "conf": 0.88
+        }
+      ],
+      "confidence_per_tag": {
+        "type-set": 0.88
+      },
+      "source_per_tag": {
+        "type-set": "title"
+      },
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "source_trace": "type matched 'חליפה' in title (conf=0.88)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9858268430649",
+      "title_from_shopify": "אוברול גינס מהמם דגם רוית",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "handle",
+          "conf": 0.88
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.88,
+        "gender-girl": 0.88
+      },
+      "source_per_tag": {
+        "type-romper": "handle",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-romper",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'romper' in handle (conf=0.88); gender matched 'girl' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9179176141113",
+      "title_from_shopify": "אוברול דובונים מכותנה - ליאור",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "title",
+          "conf": 0.88
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.88
+      },
+      "source_per_tag": {
+        "type-romper": "title"
+      },
+      "final_tags_before_write": [
+        "type-romper",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9179161231673",
+      "title_from_shopify": "אוברול כותנה קיצי - נועה",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "title",
+          "conf": 0.88
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.88
+      },
+      "source_per_tag": {
+        "type-romper": "title"
+      },
+      "final_tags_before_write": [
+        "type-romper",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "10005779743033",
+      "title_from_shopify": "אוברול לתינוקות דגם סטייסי",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-romper",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "handle",
+          "conf": 0.88
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.88,
+        "gender-girl": 0.88
+      },
+      "source_per_tag": {
+        "type-romper": "handle",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-romper",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'romper' in handle (conf=0.88); gender matched 'girl' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9096607138105",
+      "title_from_shopify": "אוברול מכופתרת",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "before_tags_count": 5,
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-romper",
+          "source": "title",
+          "conf": 0.88
+        }
+      ],
+      "confidence_per_tag": {
+        "type-romper": 0.88
+      },
+      "source_per_tag": {
+        "type-romper": "title"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-romper"
+      ],
+      "source_trace": "type matched 'אוברול' in title (conf=0.88)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9688965087545",
+      "title_from_shopify": "אוברול דוב מתוק דגם אייל",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "handle",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-bodysuit": 0.9,
+        "gender-boy": 0.9
+      },
+      "source_per_tag": {
+        "type-bodysuit": "handle",
+        "gender-boy": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-boy",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'boy' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9719189635385",
+      "title_from_shopify": "אוברול דובי אם רגלית דגם אוריאל",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-boy"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "handle",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-boy",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-bodysuit": 0.9,
+        "gender-boy": 0.9
+      },
+      "source_per_tag": {
+        "type-bodysuit": "handle",
+        "gender-boy": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-boy",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'boy' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9717957525817",
+      "title_from_shopify": "אוברול דובי דגם דניאל",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "handle",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-bodysuit": 0.9,
+        "gender-girl": 0.9
+      },
+      "source_per_tag": {
+        "type-bodysuit": "handle",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "10005779841337",
+      "title_from_shopify": "אוברול חורפי לתינוקות דגם אנגל",
+      "status_before": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "before_tags_count": 1,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "handle",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-girl",
+          "source": "handle",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-bodysuit": 0.9,
+        "gender-girl": 0.9
+      },
+      "source_per_tag": {
+        "type-bodysuit": "handle",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'girl' in handle (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    },
+    {
+      "product_id": "9688885952825",
+      "title_from_shopify": "חליפה מכנס וחולצה לבנות דגם אנה",
+      "status_before": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-top",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "before_tags_count": 6,
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "proposed_new_tags_with_source": [
+        {
+          "tag": "type-bodysuit",
+          "source": "handle",
+          "conf": 0.9
+        },
+        {
+          "tag": "gender-girl",
+          "source": "title",
+          "conf": 0.9
+        }
+      ],
+      "confidence_per_tag": {
+        "type-bodysuit": 0.9,
+        "gender-girl": 0.9
+      },
+      "source_per_tag": {
+        "type-bodysuit": "handle",
+        "gender-girl": "handle"
+      },
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-top",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-bodysuit"
+      ],
+      "source_trace": "type matched 'bodysuit' in handle (conf=0.90); gender matched 'בנות' in title (conf=0.90)",
+      "backup_timestamp": "2026-05-06T04:16:24.102330+00:00"
+    }
+  ]
+}

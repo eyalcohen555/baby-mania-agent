@@ -20,6 +20,28 @@
 ---
 
 ## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Live Batch 3 (T3 approved)
+## SCOPE: Layer 7 — live Shopify tag writes
+## WHAT CHANGED:
+- 20 products tagged live: dress:5, set:5, romper:5, bodysuit:5
+- DRY_RUN_PASS (20/20) → PHASE7C_LIVE_BATCH3_PASS (20/20) → POST_VERIFY_PASS (20/20)
+- PUT HTTP 200 + GET verify PASS per product; אין rollback; אין age-* tags
+- Shopify live tagged total: 78 → 98 products
+## FILES TOUCHED:
+- scripts/phase7c_live_batch3.py (created)
+- scripts/phase7c_live_batch3_verify.py (created)
+- output/tags/phase7c-live-batch3-backup.json
+- output/tags/phase7c-live-batch3-dry-run.json / .md
+- output/tags/phase7c-live-batch3-rollback-plan.md
+- output/tags/phase7c-live-batch3-verify.json / .md (post_verify appended)
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.6)
+## SYSTEM IMPACT: 20 Shopify products now carry Layer 7 taxonomy tags
+## OPEN ISSUES: ~160 SAFE candidates remain; Phase 7C Batch 4 needs T3 approval
+## NEXT STEP: Phase 7C Batch 4 planning (T3 approval required)
+
+---
+
+## DATE: 2026-05-06
 ## TASK: Layer 7 Phase 7C — Batch 3 READ-ONLY Planning
 ## SCOPE: Layer 7 — READ-ONLY planning — no Shopify writes
 ## WHAT CHANGED:
