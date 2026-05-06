@@ -4,6 +4,41 @@
 
 ---
 
+## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 7 Live Write
+## SCOPE: Layer 7 — Shopify live tag write (19 products)
+## WHAT CHANGED:
+- Batch 7 live write executed: 19/19 PASS (PHASE7C_LIVE_BATCH7_PASS)
+- DRY_RUN_PASS → PHASE7C_LIVE_BATCH7_PASS → POST_VERIFY_PASS — all 19/19
+- 1 product excluded per T3: סוודר סרוג לתינוקות (10011383202105) — not a set outfit
+- types: set:19 only
+- Hebrew month normalization: 1 product (9179173617977) — 4 singular tags normalized
+  (0-3 חודש, 3-6 חודש, 6-12 חודש, 12-18 חודש → חודשים)
+- Shopify live total: 177 products
+- New flag added: --exclude-title in live scripts
+- Scripts: phase7c_live_batch7.py + phase7c_live_batch7_verify.py
+## FILES TOUCHED:
+- scripts/phase7c_live_batch7.py (created, added --exclude-title flag)
+- scripts/phase7c_live_batch7_verify.py (created)
+- output/tags/phase7c-live-batch7-backup.json
+- output/tags/phase7c-live-batch7-dry-run.json
+- output/tags/phase7c-live-batch7-dry-run.md
+- output/tags/phase7c-live-batch7-rollback-plan.md
+- output/tags/phase7c-live-batch7-verify.json
+- output/tags/phase7c-live-batch7-verify.md
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.14, includes batch7 plan + live)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- 19 Shopify products now have type/gender tags
+- Shopify live tagged products: 177 (was 158)
+## OPEN ISSUES:
+- Phase 7C Batch 8+: ~48 SAFE candidates remaining (type-set only), T3 approval needed
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 135 products: blocked until manual review
+## NEXT STEP: Phase 7C Batch 8 planning (T3 approval needed)
+
+---
+
 ## JOURNAL TEMPLATE
 
 ```
