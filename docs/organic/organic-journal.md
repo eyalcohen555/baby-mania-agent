@@ -20,6 +20,39 @@
 ---
 
 ## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 6 Live Write
+## SCOPE: Layer 7 — Shopify live tag write (20 products)
+## WHAT CHANGED:
+- Batch 6 live write executed: 20/20 PASS (PHASE7C_LIVE_BATCH6_PASS)
+- DRY_RUN_PASS → PHASE7C_LIVE_BATCH6_PASS → POST_VERIFY_PASS — all 20/20
+- types: dress:4, set:16
+- 0 Hebrew month normalizations needed
+- Shopify live total: 158 products
+- Scripts: phase7c_live_batch6.py + phase7c_live_batch6_verify.py
+- Output files: output/tags/phase7c-live-batch6-*.json/md
+## FILES TOUCHED:
+- scripts/phase7c_live_batch6.py (executed)
+- scripts/phase7c_live_batch6_verify.py (executed)
+- output/tags/phase7c-live-batch6-backup.json
+- output/tags/phase7c-live-batch6-dry-run.json
+- output/tags/phase7c-live-batch6-dry-run.md
+- output/tags/phase7c-live-batch6-rollback-plan.md
+- output/tags/phase7c-live-batch6-verify.json
+- output/tags/phase7c-live-batch6-verify.md
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.12)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- 20 Shopify products now have type/gender tags
+- Shopify live tagged products: 158 (was 138)
+## OPEN ISSUES:
+- Phase 7C Batch 7+: ~75 SAFE candidates remaining (mostly type-set), T3 approval needed
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 135 products: blocked until manual review
+## NEXT STEP: Phase 7C Batch 7 planning (T3 approval needed)
+
+---
+
+## DATE: 2026-05-06
 ## TASK: Layer 7 Phase 7C — Batch 6 READ-ONLY Planning
 ## SCOPE: Layer 7 — READ-ONLY planning — no Shopify writes
 ## WHAT CHANGED:

@@ -1,0 +1,1108 @@
+{
+  "phase": "7C",
+  "batch": 6,
+  "mode": "LIVE",
+  "timestamp": "2026-05-06T06:18:57.612109+00:00",
+  "shopify_token_suffix": "e96a",
+  "normalize_hebrew_months": true,
+  "total_written": 20,
+  "pass_count": 20,
+  "fail_count": 0,
+  "products": [
+    {
+      "product_id": "9606694011193",
+      "title_from_shopify": "שמלת קיץ מיוחדת לבנות",
+      "status_after": "active",
+      "before_tags": [
+        "baby-dress",
+        "baby-gift",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "summer-baby-wear",
+        "type-dress"
+      ],
+      "after_tags": [
+        "baby-dress",
+        "baby-gift",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "summer-baby-wear",
+        "type-dress"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9895864402233",
+      "title_from_shopify": "שמלת קיץ פרחונית לתינוקות דגם אלין",
+      "status_after": "active",
+      "before_tags": [
+        "baby-dress",
+        "baby-gift",
+        "floral-baby",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-seasonal",
+        "summer-baby-wear",
+        "type-dress"
+      ],
+      "after_tags": [
+        "baby-dress",
+        "baby-gift",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-seasonal",
+        "summer-baby-wear",
+        "type-dress"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9605887590713",
+      "title_from_shopify": "שמלת שמש לתינוקות וילדות",
+      "status_after": "active",
+      "before_tags": [
+        "baby-dress",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "kids-clothing",
+        "neutral-baby-outfit"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-dress",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "type-dress"
+      ],
+      "after_tags": [
+        "baby-dress",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "type-dress"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9892620960057",
+      "title_from_shopify": "שמלת תחרה כפלים דגם טליה",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-dress"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-dress"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9096607400249",
+      "title_from_shopify": "חליפת דוב  סוודר כותנה  - דגם דנה",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9096606810425",
+      "title_from_shopify": "חליפת דוב  סוודר כותנה  - דגם רותם",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9688965022009",
+      "title_from_shopify": "חליפת דובי דגם נתן",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "gender-boy",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-suit",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "gender-boy",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9096606974265",
+      "title_from_shopify": "חליפת וופל במגוון צבעים",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "waffle-knit"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set",
+        "waffle-knit"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set",
+        "waffle-knit"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "10005779710265",
+      "title_from_shopify": "חליפת חורף לתינוקת עם כובע דגם שון",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "cotton-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "cotton-baby",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "type-set",
+        "winter-baby-wear"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-suit",
+        "cotton-baby",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "type-set",
+        "winter-baby-wear"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179167654201",
+      "title_from_shopify": "חליפת חצאית תחרה אלגנטית - קארין",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179170799929",
+      "title_from_shopify": "חליפת טטרה קיצית מכותנה - עידודו",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606691356985",
+      "title_from_shopify": "חליפת טניס קיצית לבנות",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-suit",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179157725497",
+      "title_from_shopify": "חליפת כותנה אורגנית - בילי",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179133870393",
+      "title_from_shopify": "חליפת כותנה וופל בשילוב דובי - בנים, בנות",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179158839609",
+      "title_from_shopify": "חליפת כותנה ופשתן - בייבילו",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179164705081",
+      "title_from_shopify": "חליפת כותנה משובצת - נטע",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179166376249",
+      "title_from_shopify": "חליפת כותנה סרוגה בייסיק - אדריאן",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179148190009",
+      "title_from_shopify": "חליפת כותנה קז'ואל - מאורי",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179168473401",
+      "title_from_shopify": "חליפת מלמלות טטרה- אלכסה",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179170144569",
+      "title_from_shopify": "חליפת מלמלות מכותנה ופשתן - מיילי",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    }
+  ],
+  "verdict": "PHASE7C_LIVE_BATCH6_PASS",
+  "post_verify": {
+    "phase": "7C",
+    "type": "live_batch6_post_verify",
+    "timestamp": "2026-05-06T06:19:42.189158+00:00",
+    "shopify_writes": "NONE — GET only",
+    "normalize_hebrew_months": true,
+    "checked": 20,
+    "pass_count": 20,
+    "fail_count": 0,
+    "products": [
+      {
+        "product_id": "9606694011193",
+        "title_from_shopify": "שמלת קיץ מיוחדת לבנות",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-dress",
+          "baby-gift",
+          "gender-girl",
+          "girls-clothing",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "occ-seasonal",
+          "summer-baby-wear",
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9895864402233",
+        "title_from_shopify": "שמלת קיץ פרחונית לתינוקות דגם אלין",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-dress",
+          "baby-gift",
+          "floral-baby",
+          "gender-girl",
+          "newborn-clothing",
+          "occ-seasonal",
+          "summer-baby-wear",
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9605887590713",
+        "title_from_shopify": "שמלת שמש לתינוקות וילדות",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-dress",
+          "baby-gift",
+          "cotton-baby",
+          "everyday-baby-wear",
+          "gender-girl",
+          "kids-clothing",
+          "neutral-baby-outfit",
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9892620960057",
+        "title_from_shopify": "שמלת תחרה כפלים דגם טליה",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9096607400249",
+        "title_from_shopify": "חליפת דוב  סוודר כותנה  - דגם דנה",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "baby-gift",
+          "baby-suit",
+          "bear-print-baby",
+          "cotton-baby",
+          "everyday-baby-wear",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9096606810425",
+        "title_from_shopify": "חליפת דוב  סוודר כותנה  - דגם רותם",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "baby-gift",
+          "baby-suit",
+          "bear-print-baby",
+          "cotton-baby",
+          "everyday-baby-wear",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9688965022009",
+        "title_from_shopify": "חליפת דובי דגם נתן",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "baby-gift",
+          "baby-suit",
+          "bear-print-baby",
+          "everyday-baby-wear",
+          "gender-boy",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9096606974265",
+        "title_from_shopify": "חליפת וופל במגוון צבעים",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "baby-gift",
+          "baby-suit",
+          "everyday-baby-wear",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set",
+          "waffle-knit"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "10005779710265",
+        "title_from_shopify": "חליפת חורף לתינוקת עם כובע דגם שון",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-suit",
+          "cotton-baby",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "occ-seasonal",
+          "type-set",
+          "winter-baby-wear"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179167654201",
+        "title_from_shopify": "חליפת חצאית תחרה אלגנטית - קארין",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179170799929",
+        "title_from_shopify": "חליפת טטרה קיצית מכותנה - עידודו",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606691356985",
+        "title_from_shopify": "חליפת טניס קיצית לבנות",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-suit",
+          "gender-girl",
+          "girls-clothing",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "summer-baby-wear",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179157725497",
+        "title_from_shopify": "חליפת כותנה אורגנית - בילי",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179133870393",
+        "title_from_shopify": "חליפת כותנה וופל בשילוב דובי - בנים, בנות",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179158839609",
+        "title_from_shopify": "חליפת כותנה ופשתן - בייבילו",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179164705081",
+        "title_from_shopify": "חליפת כותנה משובצת - נטע",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179166376249",
+        "title_from_shopify": "חליפת כותנה סרוגה בייסיק - אדריאן",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179148190009",
+        "title_from_shopify": "חליפת כותנה קז'ואל - מאורי",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179168473401",
+        "title_from_shopify": "חליפת מלמלות טטרה- אלכסה",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179170144569",
+        "title_from_shopify": "חליפת מלמלות מכותנה ופשתן - מיילי",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      }
+    ],
+    "verdict": "POST_VERIFY_PASS"
+  }
+}
