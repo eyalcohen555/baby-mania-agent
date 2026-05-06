@@ -20,6 +20,31 @@
 ---
 
 ## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Live Batch 4 (T3 approved)
+## SCOPE: Layer 7 — live Shopify tag writes + Hebrew month normalization
+## WHAT CHANGED:
+- 20 products tagged live: dress:5, set:5, romper:5, bodysuit:5
+- DRY_RUN_PASS (20/20) → PHASE7C_LIVE_BATCH4_PASS (20/20) → POST_VERIFY_PASS (20/20)
+- Hebrew month normalization applied on 2 products:
+  9179173191993: 5 tags normalized (0-3/3-6/6-12/12-18/18-24 חודש → חודשים)
+  9688955912505: 3 tags normalized (6-12/12-18/18-24 חודש → חודשים)
+- PUT HTTP 200 + GET verify PASS per product; אין rollback; אין age-* tags
+- Shopify live tagged total: 98 → 118 products
+## FILES TOUCHED:
+- scripts/phase7c_live_batch4.py (created)
+- scripts/phase7c_live_batch4_verify.py (created)
+- output/tags/phase7c-live-batch4-backup.json
+- output/tags/phase7c-live-batch4-dry-run.json / .md
+- output/tags/phase7c-live-batch4-rollback-plan.md
+- output/tags/phase7c-live-batch4-verify.json / .md (post_verify appended)
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.8)
+## SYSTEM IMPACT: 20 Shopify products tagged; 8 Hebrew month tags normalized
+## OPEN ISSUES: ~95 SAFE candidates remain; Phase 7C Batch 5 needs T3 approval
+## NEXT STEP: Phase 7C Batch 5 planning (T3 approval required)
+
+---
+
+## DATE: 2026-05-06
 ## TASK: Layer 7 Phase 7C — Batch 4 READ-ONLY Planning
 ## SCOPE: Layer 7 — READ-ONLY planning — no Shopify writes
 ## WHAT CHANGED:

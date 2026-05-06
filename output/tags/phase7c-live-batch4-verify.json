@@ -1,0 +1,1158 @@
+{
+  "phase": "7C",
+  "batch": 4,
+  "mode": "LIVE",
+  "timestamp": "2026-05-06T04:55:07.989985+00:00",
+  "shopify_token_suffix": "e96a",
+  "normalize_hebrew_months": true,
+  "total_written": 20,
+  "pass_count": 20,
+  "fail_count": 0,
+  "products": [
+    {
+      "product_id": "9179162444089",
+      "title_from_shopify": "שמלת כיווצים קיצית מכותנה - ענבל",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "after_tags": [
+        "type-dress"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179150516537",
+      "title_from_shopify": "שמלת מלמלות מתוקה מכותנה - לין",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "after_tags": [
+        "type-dress"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179142750521",
+      "title_from_shopify": "שמלת סטרפלס סטייל קז'ואל - ליאל",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "after_tags": [
+        "type-dress"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9605887721785",
+      "title_from_shopify": "שמלת סרבל לתינוקת",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-romper",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-romper",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-dress"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-romper",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-dress"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179136131385",
+      "title_from_shopify": "שמלת ערב נסיכותית - רצ'ל",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-dress"
+      ],
+      "final_tags_before_write": [
+        "type-dress"
+      ],
+      "after_tags": [
+        "type-dress"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9855017582905",
+      "title_from_shopify": "חליפה מעוצבת סטייל שובב דגם ליאם",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "10009173721401",
+      "title_from_shopify": "חליפה קטיפתית לתינוק – חמימות, נוחות וסטייל בשלושה חלקים",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "velvet-baby",
+        "winter-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set",
+        "velvet-baby",
+        "winter-baby-wear"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set",
+        "velvet-baby",
+        "winter-baby-wear"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179173191993",
+      "title_from_shopify": "חליפה קיצית פרחונית - היילי",
+      "status_after": "active",
+      "before_tags": [
+        "0-3 חודש",
+        "12-18 חודש",
+        "18-24 חודש",
+        "3-6 חודש",
+        "6-12 חודש"
+      ],
+      "month_changes": [
+        {
+          "from": "0-3 חודש",
+          "to": "0-3 חודשים"
+        },
+        {
+          "from": "12-18 חודש",
+          "to": "12-18 חודשים"
+        },
+        {
+          "from": "18-24 חודש",
+          "to": "18-24 חודשים"
+        },
+        {
+          "from": "3-6 חודש",
+          "to": "3-6 חודשים"
+        },
+        {
+          "from": "6-12 חודש",
+          "to": "6-12 חודשים"
+        }
+      ],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "0-3 חודשים",
+        "12-18 חודשים",
+        "18-24 חודשים",
+        "3-6 חודשים",
+        "6-12 חודשים",
+        "type-set"
+      ],
+      "after_tags": [
+        "0-3 חודשים",
+        "12-18 חודשים",
+        "18-24 חודשים",
+        "3-6 חודשים",
+        "6-12 חודשים",
+        "type-set"
+      ],
+      "after_tags_count": 6,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606691914041",
+      "title_from_shopify": "חליפה קלאסית ואופנתית לבנות",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9688955912505",
+      "title_from_shopify": "חליפת 3 חלקים אריה מתוקה אם ווסט פרוותי דגם חן",
+      "status_after": "active",
+      "before_tags": [
+        "12-18 חודש",
+        "18-24 חודש",
+        "2-3 שנים",
+        "6-12 חודש",
+        "סט"
+      ],
+      "month_changes": [
+        {
+          "from": "12-18 חודש",
+          "to": "12-18 חודשים"
+        },
+        {
+          "from": "18-24 חודש",
+          "to": "18-24 חודשים"
+        },
+        {
+          "from": "6-12 חודש",
+          "to": "6-12 חודשים"
+        }
+      ],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "12-18 חודשים",
+        "18-24 חודשים",
+        "2-3 שנים",
+        "6-12 חודשים",
+        "gender-boy",
+        "type-set",
+        "סט"
+      ],
+      "after_tags": [
+        "12-18 חודשים",
+        "18-24 חודשים",
+        "2-3 שנים",
+        "6-12 חודשים",
+        "gender-boy",
+        "type-set",
+        "סט"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179137933625",
+      "title_from_shopify": "אוברול מתוק מכותנה מלאה ללא כתפיות - נויה",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_before_write": [
+        "type-romper"
+      ],
+      "after_tags": [
+        "type-romper"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9096607072569",
+      "title_from_shopify": "אוברול סרבל ארוך",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-romper"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-overall",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-romper"
+      ],
+      "after_tags_count": 6,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9688670110009",
+      "title_from_shopify": "אוברול פינגווין דגם נועם",
+      "status_after": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_before_write": [
+        "type-romper",
+        "אוברול"
+      ],
+      "after_tags": [
+        "type-romper",
+        "אוברול"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9657036374329",
+      "title_from_shopify": "אוברול פליז דובי לתינוק – Teddy Cozy Suit",
+      "status_after": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_before_write": [
+        "type-romper",
+        "אוברול"
+      ],
+      "after_tags": [
+        "type-romper",
+        "אוברול"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9179158479161",
+      "title_from_shopify": "אוברול פשתן וכותנה וינטג׳ - קייגו",
+      "status_after": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-romper"
+      ],
+      "final_tags_before_write": [
+        "type-romper",
+        "אוברול"
+      ],
+      "after_tags": [
+        "type-romper",
+        "אוברול"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9605887787321",
+      "title_from_shopify": "חליפה סרוגה לתינוק",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit",
+        "type-bodysuit"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-suit",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "soft-knit",
+        "type-bodysuit"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606691750201",
+      "title_from_shopify": "יחידת בגד גוף עם סרט לשיער לתינוק",
+      "status_after": "active",
+      "before_tags": [
+        "baby-bodysuit",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-bodysuit",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-bodysuit"
+      ],
+      "after_tags": [
+        "baby-bodysuit",
+        "baby-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-bodysuit"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9687563305273",
+      "title_from_shopify": "סט 3 אוברולים ארנב דגם  שני",
+      "status_after": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-bodysuit",
+        "אוברול"
+      ],
+      "after_tags_count": 3,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9687563370809",
+      "title_from_shopify": "סט לב לבנות דגם נועה",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-bodysuit"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-bodysuit"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9719189733689",
+      "title_from_shopify": "סט מכנס וחולצה דגם הלל",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-bodysuit",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "type-bodysuit"
+      ],
+      "after_tags": [
+        "gender-boy",
+        "type-bodysuit"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    }
+  ],
+  "verdict": "PHASE7C_LIVE_BATCH4_PASS",
+  "post_verify": {
+    "phase": "7C",
+    "type": "live_batch4_post_verify",
+    "timestamp": "2026-05-06T04:55:48.115994+00:00",
+    "shopify_writes": "NONE — GET only",
+    "normalize_hebrew_months": true,
+    "checked": 20,
+    "pass_count": 20,
+    "fail_count": 0,
+    "products": [
+      {
+        "product_id": "9179162444089",
+        "title_from_shopify": "שמלת כיווצים קיצית מכותנה - ענבל",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179150516537",
+        "title_from_shopify": "שמלת מלמלות מתוקה מכותנה - לין",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179142750521",
+        "title_from_shopify": "שמלת סטרפלס סטייל קז'ואל - ליאל",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9605887721785",
+        "title_from_shopify": "שמלת סרבל לתינוקת",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-romper",
+          "cotton-baby",
+          "everyday-baby-wear",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179136131385",
+        "title_from_shopify": "שמלת ערב נסיכותית - רצ'ל",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-dress"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9855017582905",
+        "title_from_shopify": "חליפה מעוצבת סטייל שובב דגם ליאם",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-boy",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "10009173721401",
+        "title_from_shopify": "חליפה קטיפתית לתינוק – חמימות, נוחות וסטייל בשלושה חלקים",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set",
+          "velvet-baby",
+          "winter-baby-wear"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179173191993",
+        "title_from_shopify": "חליפה קיצית פרחונית - היילי",
+        "status": "active",
+        "after_tags_count": 6,
+        "after_tags": [
+          "0-3 חודשים",
+          "12-18 חודשים",
+          "18-24 חודשים",
+          "3-6 חודשים",
+          "6-12 חודשים",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606691914041",
+        "title_from_shopify": "חליפה קלאסית ואופנתית לבנות",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-suit",
+          "everyday-baby-wear",
+          "gender-girl",
+          "girls-clothing",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9688955912505",
+        "title_from_shopify": "חליפת 3 חלקים אריה מתוקה אם ווסט פרוותי דגם חן",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "12-18 חודשים",
+          "18-24 חודשים",
+          "2-3 שנים",
+          "6-12 חודשים",
+          "gender-boy",
+          "type-set",
+          "סט"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179137933625",
+        "title_from_shopify": "אוברול מתוק מכותנה מלאה ללא כתפיות - נויה",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-romper"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9096607072569",
+        "title_from_shopify": "אוברול סרבל ארוך",
+        "status": "active",
+        "after_tags_count": 6,
+        "after_tags": [
+          "baby-gift",
+          "baby-overall",
+          "everyday-baby-wear",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-romper"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9688670110009",
+        "title_from_shopify": "אוברול פינגווין דגם נועם",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "type-romper",
+          "אוברול"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9657036374329",
+        "title_from_shopify": "אוברול פליז דובי לתינוק – Teddy Cozy Suit",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "type-romper",
+          "אוברול"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9179158479161",
+        "title_from_shopify": "אוברול פשתן וכותנה וינטג׳ - קייגו",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "type-romper",
+          "אוברול"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9605887787321",
+        "title_from_shopify": "חליפה סרוגה לתינוק",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-suit",
+          "everyday-baby-wear",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "soft-knit",
+          "type-bodysuit"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606691750201",
+        "title_from_shopify": "יחידת בגד גוף עם סרט לשיער לתינוק",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-bodysuit",
+          "baby-gift",
+          "cotton-baby",
+          "everyday-baby-wear",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-bodysuit"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9687563305273",
+        "title_from_shopify": "סט 3 אוברולים ארנב דגם  שני",
+        "status": "active",
+        "after_tags_count": 3,
+        "after_tags": [
+          "gender-girl",
+          "type-bodysuit",
+          "אוברול"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9687563370809",
+        "title_from_shopify": "סט לב לבנות דגם נועה",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-bodysuit"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9719189733689",
+        "title_from_shopify": "סט מכנס וחולצה דגם הלל",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-boy",
+          "type-bodysuit"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      }
+    ],
+    "verdict": "POST_VERIFY_PASS"
+  }
+}
