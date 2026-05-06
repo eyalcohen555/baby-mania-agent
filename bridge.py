@@ -11,7 +11,7 @@ STATUS_FILE = r"C:\Projects\baby-mania-agent\bridge\status.md"
 LOCK_FILE     = r"C:\Projects\baby-mania-agent\bridge\bridge.lock"
 RESPONSE_FILE = r"C:\Projects\baby-mania-agent\bridge\telegram-response.md"
 TASK_LOG_FILE = r"C:\Projects\baby-mania-agent\bridge\task-log.md"
-CLAUDE        = r"C:\Users\3024e\AppData\Roaming\npm\claude.cmd"
+CLAUDE        = r"C:\Users\3024e\AppData\Roaming\npm\node_modules\@anthropic-ai\claude-code\bin\claude.exe"
 CLAUDE_TIMEOUT = 600   # 10 minutes max for a single Claude run
 
 
