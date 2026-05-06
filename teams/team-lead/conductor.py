@@ -759,6 +759,7 @@ def run_plan(plan_file: str, dry_run: bool = False, resume: bool = False,
     write_conductor_state(state)
     mode_label = "RESUMED" if (resume and CONDUCTOR_STATE.exists()) else "STARTED"
     append_conductor_log(f"{mode_label}: {plan_id}")
+    notify_conductor("PLAN_STARTED", plan_id, detail=mode_label)
     log(f"Plan: {plan['plan_name']} ({len(plan['stages'])} stages)")
 
     if dry_run:
@@ -811,6 +812,7 @@ def run_plan(plan_file: str, dry_run: bool = False, resume: bool = False,
         state["current_task_id"] = task_id
         write_conductor_state(state)
         append_conductor_log(f"STARTED {stage['id']} [{task_id}]")
+        notify_conductor("STAGE_STARTED", plan_id, stage["id"], detail=stage.get("name", ""))
 
         # ── Wait for completion ───────────────────────────────────────────────
         log("  Waiting for bridge to complete...")
@@ -839,12 +841,14 @@ def run_plan(plan_file: str, dry_run: bool = False, resume: bool = False,
             state["completed_stages"].append(stage["id"])
             current_stage_id = stage["next_on_pass"]
             state["status"] = "RUNNING"
+            notify_conductor("STAGE_PASS", plan_id, stage["id"], detail=verdict)
 
         elif verdict == "LOGIC_NO":
             # Alternate path — NOT a failure
             state["completed_stages"].append(stage["id"])
             current_stage_id = stage["next_on_fail"]
             state["status"] = "RUNNING"
+            notify_conductor("STAGE_PASS", plan_id, stage["id"], detail="LOGIC_NO")
 
         elif verdict in ("FAIL", "UNKNOWN"):
             state["failed_stages"].append(stage["id"])
@@ -862,6 +866,7 @@ def run_plan(plan_file: str, dry_run: bool = False, resume: bool = False,
                 current_stage_id = next_id
 
             state["status"] = "RUNNING"
+            notify_conductor("STAGE_FAIL", plan_id, stage["id"], detail=verdict)
 
         elif verdict == "BLOCKED":
             log(f"  BLOCKED — {stage['id']} needs manual intervention")
@@ -874,6 +879,7 @@ def run_plan(plan_file: str, dry_run: bool = False, resume: bool = False,
             append_conductor_log(
                 f"BLOCKED {stage['id']}: approval or manual intervention needed"
             )
+            notify_conductor("PLAN_BLOCKED", plan_id, stage["id"], detail=f"Stage blocked: {stage['id']}")
             current_stage_id = "STOP"
 
         state["next_stage"] = current_stage_id
