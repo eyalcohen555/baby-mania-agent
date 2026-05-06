@@ -364,3 +364,5 @@
 | 2026-05-06 11:55:15 | PLAN DONE: bridge-telegram-stabilization-001 — PASS |
 | 2026-05-06 12:01:12 | STARTED: bridge-telegram-stabilization-001 |
 | 2026-05-06 12:01:12 | STARTED STAGE-1 [conductor-bridge-telegram-stabilization-001-STAGE-1-20260506-120112] |
+| 2026-05-06 12:01:37 |   STAGE-1 | UNKNOWN |
+| 2026-05-06 12:01:37 | PLAN STOPPED: bridge-telegram-stabilization-001 at STAGE-1 |

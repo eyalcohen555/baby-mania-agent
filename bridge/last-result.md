@@ -1,3 +1,5 @@
-task_id: 20260506-120116
+task_id: 20260506-120543
 ---
-^C
+SYSTEM STATE: Ready.
+
+What's the task?
