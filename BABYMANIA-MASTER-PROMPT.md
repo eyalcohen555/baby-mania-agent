@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 5.1 | עודכן: 2026-05-07 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live | Execution Plan Mode OPERATIONAL ✅ | Codex Review Gate DEFINED ✅
+### גרסה: 5.2 | עודכן: 2026-05-07 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live | Execution Plan Mode OPERATIONAL ✅ | Codex Review Gate DEFINED ✅
 
 ---
 
@@ -758,6 +758,33 @@ C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe teams/team-lea
 - **Env ראשי:** `C:\Projects\baby-mania-agent\.env`
 - **Metafields namespace:** baby_mania
 - **Sections path:** `C:\Users\3024e\Downloads\קלוד קוד\sections\`
+
+### Shopify API Auth — כלל הרשאה עדכני (2026-05-07)
+
+**שיטת ה-auth שעובדת בפועל: client_credentials OAuth flow.**
+`SHOPIFY_ACCESS_TOKEN` הסטטי מיושן — עשוי להופיע ב-`.env` מוקמנט (`#`) בלבד.
+
+**מפתחות env נדרשים:**
+```env
+SHOPIFY_SHOP_URL=...
+SHOPIFY_CLIENT_ID=...
+SHOPIFY_CLIENT_SECRET=...
+SHOPIFY_API_VERSION=2024-10
+```
+
+**מימוש reference:**
+- `scripts/phase7c_live_batch9.py` — `_fetch_oauth_token(shop, client_id, client_secret)`
+- `scripts/phase7c_live_batch9_verify.py`
+
+**חוקים:**
+1. כל סקריפט Shopify חדש חייב להשתמש ב-`_fetch_oauth_token(shop, client_id, client_secret)`.
+2. אסור להדפיס `CLIENT_SECRET` או token מלא.
+3. אסור להכניס `.env` ל-git.
+4. לפני כל משימת Shopify live בסשן חדש — להריץ smoke test OAuth masked:
+   ```
+   python -c "import dotenv; env=dotenv.dotenv_values(r'C:\Users\3024e\Desktop\shopify-token\.env'); from scripts.phase7c_live_batch9 import _fetch_oauth_token; shop=env['SHOPIFY_SHOP_URL'].replace('https://','').rstrip('/'); token=_fetch_oauth_token(shop, env['SHOPIFY_CLIENT_ID'], env['SHOPIFY_CLIENT_SECRET']); print('OAUTH_TOKEN_OK', token[-6:], len(token))"
+   ```
+5. אם OAuth נכשל — STOP. לא לעבור ל-`SHOPIFY_ACCESS_TOKEN` ישן ללא audit מפורש.
 
 ---
 
