@@ -1,3 +1,5 @@
-status: idle
-time: 2026-05-06 12:14:23
-detail: PID 22412
+status: done
+time: 2026-05-07 13:40:11
+task_id: 20260507-133945
+approval_tier: T1
+detail: result written

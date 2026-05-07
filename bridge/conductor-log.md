@@ -380,3 +380,5 @@
 | 2026-05-06 12:13:28 | STARTED STAGE-7 [conductor-bridge-telegram-stabilization-001-STAGE-7-20260506-121328] |
 | 2026-05-06 12:14:23 |   STAGE-7 | PASS |
 | 2026-05-06 12:14:23 | PLAN DONE: bridge-telegram-stabilization-001 — PASS |
+| 2026-05-07 13:39:45 | STARTED: codex-decision-loop-smoke-test |
+| 2026-05-07 13:39:45 | STARTED STAGE-1 [conductor-codex-decision-loop-smoke-test-STAGE-1-20260507-133945] |

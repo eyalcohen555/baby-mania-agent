@@ -1,5 +1,5 @@
-EVENT: PLAN_COMPLETE
-plan_id: bridge-telegram-stabilization-001
-stage_id: 
-detail: PASS
-time: 2026-05-06 12:14:23
+EVENT: STAGE_STARTED
+plan_id: codex-decision-loop-smoke-test
+stage_id: STAGE-1
+detail: CODEX REVIEW TRIGGER
+time: 2026-05-07 13:39:45

@@ -1,20 +1,14 @@
-plan_id: bridge-telegram-stabilization-001
-plan_file: plans/bridge-telegram-stabilization-001.yaml
-status: DONE
-current_stage: STAGE-7
-current_task_id: conductor-bridge-telegram-stabilization-001-STAGE-7-20260506-121328
-completed_stages:
-- STAGE-1
-- STAGE-2
-- STAGE-3
-- STAGE-5
-- STAGE-6
-- STAGE-7
+plan_id: codex-decision-loop-smoke-test
+plan_file: plans/codex-decision-loop-smoke-test.yaml
+status: RUNNING
+current_stage: STAGE-1
+current_task_id: conductor-codex-decision-loop-smoke-test-STAGE-1-20260507-133945
+completed_stages: []
 failed_stages: []
 skipped_stages: []
 blocked_reason: ''
 waiting_for: ''
-next_stage: DONE
-overall_verdict: PASS
-started_at: '2026-05-06 12:09:53'
-updated_at: '2026-05-06 12:14:23'
+next_stage: ''
+overall_verdict: IN_PROGRESS
+started_at: '2026-05-07 13:39:45'
+updated_at: '2026-05-07 13:39:45'

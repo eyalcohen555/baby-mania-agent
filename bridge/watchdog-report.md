@@ -1,9 +1,9 @@
-watchdog_time:     2026-05-06 12:14:21
+watchdog_time:     2026-05-07 13:39:55
 bridge_status:     running
 task_id:           20260330-111000
 stage:             DONE
 waiting_for:       —
-state_age_seconds: 3200607
+state_age_seconds: 3292141
 suspected_stuck:   YES
 reminder_sent:     YES
 task_preview:      RUN TASK
