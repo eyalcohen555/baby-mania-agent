@@ -1,0 +1,115 @@
+plan_id: codex-decision-loop-smoke-test
+plan_name: "Codex Decision Loop — Smoke Test"
+approval_tier: T1
+codex_on_fail: false
+
+telegram_notify:
+  start: false
+  milestones: false
+  done: true
+  blocked: true
+  questions: false
+
+# ── Scope ────────────────────────────────────────────────────────────────────
+# Purpose: verify that codex_reviewer.py is invoked after a stage, writes
+#          bridge/codex-decision.md, and returns a valid decision.
+# Touch:   docs/management/codex-automation-role.md (read-only)
+#          bridge/codex-decision.md (written by Codex reviewer, not by Claude)
+# Never:   Shopify, organic, product pipeline, output/**, shared/**
+# ─────────────────────────────────────────────────────────────────────────────
+
+stages:
+
+  - id: STAGE-1
+    name: CODEX REVIEW TRIGGER
+    type: AUDIT
+    goal: "קרא קובץ תיעוד בטוח ודווח על תוכנו — בדיקה שCodex מסוגל לסקור output פשוט ולהחזיר CONTINUE"
+    action: >
+      קרא את docs/management/codex-automation-role.md.
+      דווח בדיוק:
+        1. הגרסה והסטטוס מה-frontmatter (שורה 2 ו-3)
+        2. כמה שערי ביקורת (gates) מוגדרים בסעיף 5 (G-A עד G-F)
+        3. רשימת ה-decisions החוקיות מסעיף 8 (CODEX_DECISION)
+      אל תכתוב לשום קובץ.
+      אל תגע בשום קובץ אחר.
+    approval_tier: T1
+    codex_review: true
+    files_allowed:
+      - docs/management/codex-automation-role.md
+    files_forbidden:
+      - bridge.py
+      - teams/team-lead/conductor.py
+      - teams/team-lead/codex_reviewer.py
+      - scripts/**
+      - plans/**
+      - output/**
+      - shared/**
+      - docs/organic/**
+      - config.yaml
+      - .env
+    is_milestone: false
+    requires_approval: false
+    expected_output: >
+      גרסה וסטטוס מהקובץ + 6 gates זוהו + רשימת decisions +
+      STAGE_VERDICT: PASS
+    exit_conditions:
+      - "docs/management/codex-automation-role.md נקרא בהצלחה"
+      - "גרסה וסטטוס דווחו"
+      - "STAGE_VERDICT: PASS"
+    fail_conditions:
+      - "קובץ לא נמצא"
+      - "תוכן ריק"
+    next_on_pass: STAGE-2
+    next_on_fail: STOP
+
+  - id: STAGE-2
+    name: CODEX DECISION FILE VERIFY
+    type: AUDIT
+    goal: "אמת שcodex_reviewer.py כתב bridge/codex-decision.md לאחר STAGE-1"
+    action: >
+      קרא את bridge/codex-decision.md.
+      בדוק שהקובץ מכיל:
+        - שורה: EVENT: CODEX_REVIEW
+        - שורה: plan_id: codex-decision-loop-smoke-test
+        - שורה: stage_id: STAGE-1
+        - שורה: decision: עם ערך תקף (CONTINUE / RETRY / FIX / STOP / ASK_AYAL / NEXT_STAGE)
+      דווח על כל שורות הקובץ.
+      הדפס STAGE_VERDICT: PASS אם כל הפריטים קיימים.
+      הדפס STAGE_VERDICT: FAIL אם הקובץ חסר או שאחד הפריטים חסר.
+    approval_tier: T0
+    codex_review: false
+    files_allowed:
+      - bridge/codex-decision.md
+    files_forbidden:
+      - bridge.py
+      - bridge/next-task.md
+      - bridge/status.md
+      - bridge/conductor-state.md
+      - teams/**
+      - scripts/**
+      - plans/**
+      - output/**
+      - shared/**
+      - docs/organic/**
+      - config.yaml
+      - .env
+    is_milestone: true
+    requires_approval: false
+    expected_output: >
+      תוכן bridge/codex-decision.md + EVENT: CODEX_REVIEW +
+      plan_id נכון + stage_id: STAGE-1 + decision תקף +
+      STAGE_VERDICT: PASS
+    exit_conditions:
+      - "bridge/codex-decision.md קיים"
+      - "EVENT: CODEX_REVIEW קיים"
+      - "plan_id: codex-decision-loop-smoke-test קיים"
+      - "stage_id: STAGE-1 קיים"
+      - "decision עם ערך תקף קיים"
+      - "STAGE_VERDICT: PASS"
+    fail_conditions:
+      - "bridge/codex-decision.md לא קיים"
+      - "EVENT: CODEX_REVIEW חסר"
+      - "plan_id שגוי"
+      - "stage_id שגוי"
+    next_on_pass: DONE
+    next_on_fail: STOP
