@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 4.9 | עודכן: 2026-04-29 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live
+### גרסה: 5.0 | עודכן: 2026-05-07 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live
 
 ---
 
@@ -706,6 +706,17 @@ C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe teams/team-lea
 - **Env ראשי:** `C:\Projects\baby-mania-agent\.env`
 - **Metafields namespace:** baby_mania
 - **Sections path:** `C:\Users\3024e\Downloads\קלוד קוד\sections\`
+
+### Shopify API Auth — כלל הרשאה עדכני (2026-05-07)
+
+כל Shopify API live/read/write חדש חייב להשתמש ב-client_credentials OAuth flow.
+אסור להשתמש ב-`SHOPIFY_ACCESS_TOKEN` סטטי כדרך עבודה חדשה.
+אסור להדפיס token/secret/log מלא לקונסול או לקבצי output.
+אסור להכניס `.env` או secrets ל-git.
+בתחילת כל Shopify API session יש להריץ OAuth smoke test masked בלבד.
+אם OAuth נכשל — STOP, לא ממשיכים ל-live write.
+
+מקור ביצוע: `scripts/phase7c_live_batch9.py` | תיעוד: `output/tags/shopify-auth-flow-audit.md`
 
 ---
 
