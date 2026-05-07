@@ -15,6 +15,7 @@ Usage:
 
 import sys
 import os
+import re
 import time
 import json
 import yaml
@@ -22,6 +23,10 @@ import argparse
 import subprocess
 from datetime import datetime
 from pathlib import Path
+
+# codex_reviewer lives alongside this file
+sys.path.insert(0, str(Path(__file__).parent))
+import codex_reviewer
 
 # Force UTF-8 on Windows
 if sys.platform == "win32":
@@ -37,6 +42,7 @@ CONDUCTOR_STATE  = BRIDGE_DIR / "conductor-state.md"
 CONDUCTOR_LOG    = BRIDGE_DIR / "conductor-log.md"
 DECISION_RUNS         = BRIDGE_DIR / "decision-engine-runs.yaml"
 CONDUCTOR_NOTIFY_FILE = BRIDGE_DIR / "conductor-notify.md"
+CODEX_DECISION_FILE   = BRIDGE_DIR / "codex-decision.md"
 
 # ── Timeouts (seconds) ────────────────────────────────────────────────────────
 POLL_INTERVAL        = 5    # between status polls
@@ -376,7 +382,60 @@ def append_conductor_log(entry: str):
         f.write(f"| {now()} | {entry} |\n")
 
 
-# ── Decision Engine ──────────────────────────────────────────────────────────
+# ── Codex Decision Loop ───────────────────────────────────────────────────────
+
+def _needs_codex(plan: dict, stage: dict, verdict: str) -> bool:
+    """Return True if Codex review should run for this stage."""
+    if stage.get("codex_review", False):
+        return True
+    if plan.get("codex_on_fail", False) and verdict in ("FAIL", "UNKNOWN"):
+        return True
+    return False
+
+
+def _apply_codex_decision(
+    verdict: str, codex: dict, state: dict
+) -> tuple[str, str | None]:
+    """
+    Map a Codex decision to (conductor_verdict, jump_stage|None).
+
+    conductor_verdict — replaces the analyze_verdict() result.
+    jump_stage        — non-None only for NEXT_STAGE; conductor jumps there directly.
+    """
+    decision = codex["decision"]
+
+    if decision == "CONTINUE":
+        # Codex confirms: treat as PASS regardless of original verdict
+        return ("PASS", None)
+
+    if decision == "NEXT_STAGE":
+        target = codex_reviewer.parse_next_stage(codex.get("action", ""))
+        # If no valid stage ID found, fall back to normal routing
+        return ("PASS", target)
+
+    if decision == "RETRY":
+        # Force FAIL so next_on_fail runs (typically retries or STOPs)
+        return ("FAIL", None)
+
+    if decision == "FIX":
+        # Store fix instruction; conductor will run synthetic fix task in loop
+        state["_codex_fix"] = codex.get("action", "")
+        return ("CODEX_FIX", None)
+
+    if decision == "STOP":
+        # Force STOP regardless of stage next_on_fail configuration
+        state["_codex_force_stop"] = True
+        return ("FAIL", None)
+
+    if decision == "ASK_AYAL":
+        # Escalate to human — same path as T3 AWAITING_APPROVAL
+        return ("BLOCKED", None)
+
+    # Unknown decision from Codex — keep original verdict, log warning
+    return (verdict, None)
+
+
+# ── Decision Engine ───────────────────────────────────────────────────────────
 
 def _load_decision_engine(plan: dict) -> dict | None:
     """Load decision engine YAML referenced by plan.decision_engine. Returns None if absent."""
@@ -834,10 +893,94 @@ def run_plan(plan_file: str, dry_run: bool = False, resume: bool = False,
             verdict = analyze_verdict(output, stage)
             log(f"  Verdict: {verdict}")
 
+        # ── Codex Decision Loop (optional, per-stage) ─────────────────────────
+        codex_jump = None
+        if completion != "timeout" and _needs_codex(plan, stage, verdict):
+            log("  Invoking Codex review...")
+            codex = codex_reviewer.run(plan, stage, output)
+            codex_reviewer.write_decision(codex, plan_id, stage["id"])
+            notify_conductor("CODEX_REVIEW", plan_id, stage["id"],
+                             detail=f"{codex['decision']}|{codex.get('risk', '?')}")
+            log(f"  Codex: {codex['decision']} — {codex['reason']}")
+            append_conductor_log(
+                f"  CODEX {stage['id']}: {codex['decision']} ({codex.get('risk', '?')})"
+                f" — {codex['reason'][:60]}"
+            )
+            verdict, codex_jump = _apply_codex_decision(verdict, codex, state)
+            log(f"  Verdict after Codex: {verdict}"
+                + (f" → jump to {codex_jump}" if codex_jump else ""))
+
         append_conductor_log(f"  {stage['id']} | {verdict}")
 
         # ── Route based on verdict ────────────────────────────────────────────
-        if verdict in ("PASS", "LOGIC_YES"):
+        if codex_jump:
+            # Codex NEXT_STAGE: jump directly to a specific stage
+            state["completed_stages"].append(stage["id"])
+            current_stage_id = codex_jump
+            state["status"] = "RUNNING"
+            notify_conductor("STAGE_PASS", plan_id, stage["id"],
+                             detail=f"CODEX_JUMP→{codex_jump}")
+
+        elif verdict == "CODEX_FIX":
+            # Codex FIX: run a synthetic fix task through bridge, then continue
+            fix_action = state.pop("_codex_fix", "")
+            log(f"  Codex FIX: {fix_action[:80]}")
+            fix_stage = {
+                "id":              f"CODEX-FIX-{stage['id']}",
+                "name":            f"Codex Fix for {stage['id']}",
+                "type":            "FIX",
+                "goal":            fix_action,
+                "action":          fix_action,
+                "approval_tier":   stage.get("approval_tier", "T2"),
+                "files_allowed":   stage.get("files_allowed") or [],
+                "files_forbidden": stage.get("files_forbidden") or [],
+                "expected_output": "STAGE_VERDICT: PASS if fix applied successfully",
+                "exit_conditions": ["Fix applied successfully"],
+                "fail_conditions": ["Fix failed or not applicable"],
+                "next_on_pass":    "DONE",
+                "next_on_fail":    "STOP",
+            }
+            if wait_for_bridge_idle():
+                fix_task_id, fix_written_at = write_stage_task(fix_stage, plan)
+                append_conductor_log(f"  CODEX-FIX {stage['id']} [{fix_task_id}]")
+                fix_completion = wait_for_bridge_completion(fix_written_at)
+                fix_output = read_last_result()
+                fix_verdict = analyze_verdict(fix_output, fix_stage)
+                if fix_completion not in ("timeout", "error") and fix_verdict == "PASS":
+                    log("  Codex FIX applied — continuing to next stage")
+                    state["completed_stages"].append(stage["id"])
+                    current_stage_id = stage["next_on_pass"]
+                    state["status"] = "RUNNING"
+                    notify_conductor("STAGE_PASS", plan_id, stage["id"],
+                                     detail="CODEX_FIX_APPLIED")
+                else:
+                    log("  Codex FIX failed — escalating to BLOCKED")
+                    state["failed_stages"].append(stage["id"])
+                    state.update({
+                        "status":         "BLOCKED",
+                        "blocked_reason": f"Codex fix failed for {stage['id']}",
+                        "waiting_for":    "MANUAL_INTERVENTION",
+                    })
+                    write_conductor_state(state)
+                    append_conductor_log(f"BLOCKED {stage['id']}: Codex fix failed")
+                    notify_conductor("PLAN_BLOCKED", plan_id, stage["id"],
+                                     detail="CODEX_FIX_FAILED")
+                    current_stage_id = "STOP"
+            else:
+                log("  Bridge not idle for Codex fix — escalating to BLOCKED")
+                state["failed_stages"].append(stage["id"])
+                state.update({
+                    "status":         "BLOCKED",
+                    "blocked_reason": f"Bridge not idle for Codex fix on {stage['id']}",
+                    "waiting_for":    "BRIDGE_IDLE",
+                })
+                write_conductor_state(state)
+                append_conductor_log(f"BLOCKED {stage['id']}: bridge not idle for Codex fix")
+                notify_conductor("PLAN_BLOCKED", plan_id, stage["id"],
+                                 detail="CODEX_FIX_BRIDGE_BUSY")
+                current_stage_id = "STOP"
+
+        elif verdict in ("PASS", "LOGIC_YES"):
             state["completed_stages"].append(stage["id"])
             current_stage_id = stage["next_on_pass"]
             state["status"] = "RUNNING"
@@ -852,7 +995,11 @@ def run_plan(plan_file: str, dry_run: bool = False, resume: bool = False,
 
         elif verdict in ("FAIL", "UNKNOWN"):
             state["failed_stages"].append(stage["id"])
-            next_id = stage["next_on_fail"]
+            # Codex STOP override: ignore next_on_fail, always halt
+            next_id = (
+                "STOP" if state.pop("_codex_force_stop", False)
+                else stage["next_on_fail"]
+            )
 
             if next_id == "STOP":
                 log(f"  STOP — {stage['id']} failed, plan stopping")
@@ -879,7 +1026,8 @@ def run_plan(plan_file: str, dry_run: bool = False, resume: bool = False,
             append_conductor_log(
                 f"BLOCKED {stage['id']}: approval or manual intervention needed"
             )
-            notify_conductor("PLAN_BLOCKED", plan_id, stage["id"], detail=f"Stage blocked: {stage['id']}")
+            notify_conductor("PLAN_BLOCKED", plan_id, stage["id"],
+                             detail=f"Stage blocked: {stage['id']}")
             current_stage_id = "STOP"
 
         state["next_stage"] = current_stage_id
