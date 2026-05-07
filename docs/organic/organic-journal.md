@@ -4,6 +4,43 @@
 
 ---
 
+## DATE: 2026-05-07
+## TASK: Layer 7 Phase 7C — Batch 9 Live Write
+## SCOPE: Layer 7 — Shopify live tag write (20 products)
+## WHAT CHANGED:
+- Batch 9 live write executed: 20/20 PASS (PHASE7C_LIVE_BATCH9_PASS)
+- DRY_RUN_PASS → PHASE7C_LIVE_BATCH9_PASS → POST_VERIFY_PASS — all 20/20
+- 0 products excluded (no shoe titles; sweater 10011383202105 not in plan)
+- types: set:20 only
+- Hebrew month normalization: 1 product (9688955978041: 3 tags — 6-12/12-18/18-24 חודש→חודשים)
+- Shopify live total: 217 products
+- Auth fix: static SHOPIFY_ACCESS_TOKEN expired — switched to client_credentials OAuth flow
+- Scripts: phase7c_live_batch9.py + phase7c_live_batch9_verify.py (use _fetch_oauth_token())
+## FILES TOUCHED:
+- scripts/phase7c_live_batch9.py (created, OAuth client_credentials flow)
+- scripts/phase7c_live_batch9_verify.py (created)
+- scripts/phase7c_batch9_plan.py (created in prior session)
+- output/tags/phase7c-live-batch9-backup.json
+- output/tags/phase7c-live-batch9-dry-run.json
+- output/tags/phase7c-live-batch9-dry-run.md
+- output/tags/phase7c-live-batch9-rollback-plan.md
+- output/tags/phase7c-live-batch9-verify.json
+- output/tags/phase7c-live-batch9-verify.md
+- output/tags/shopify-auth-flow-audit.json
+- output/tags/shopify-auth-flow-audit.md
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.18, includes batch9 plan + live)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- 20 Shopify products now have type-set (and gender/occ where applicable) tags
+- Shopify live tagged products: 217 (was 197)
+## OPEN ISSUES:
+- Phase 7C Batch 10+: ~4 SAFE candidates remaining (type-set only), T3 approval needed
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 135 products: blocked until manual review
+## NEXT STEP: Phase 7C Batch 10 planning or REVIEW_ONLY pool review
+
+---
+
 ## DATE: 2026-05-06
 ## TASK: Layer 7 Phase 7C — Batch 9 Planning (READ-ONLY)
 ## SCOPE: Layer 7 — plan only, no Shopify writes
