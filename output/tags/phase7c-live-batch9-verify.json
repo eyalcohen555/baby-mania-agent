@@ -1,0 +1,1287 @@
+{
+  "phase": "7C",
+  "batch": 9,
+  "mode": "LIVE",
+  "timestamp": "2026-05-07T09:03:40.899651+00:00",
+  "shopify_token_suffix": "f893",
+  "normalize_hebrew_months": true,
+  "total_written": 20,
+  "pass_count": 20,
+  "fail_count": 0,
+  "products": [
+    {
+      "product_id": "10011383071033",
+      "title_from_shopify": "סט מכנס וחולצה מהממים דגם דניאל",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9724813476153",
+      "title_from_shopify": "סט מכנס וחולצה קואלה דגם ראם",
+      "status_after": "active",
+      "before_tags": [
+        "animal-print-baby",
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "animal-print-baby",
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "animal-print-baby",
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9855017648441",
+      "title_from_shopify": "סט מכנס וחולצה קיצי דגם גילי",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "cotton-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "cotton-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "cotton-baby",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9096636694841",
+      "title_from_shopify": "סט מלא לתינוקות - קופסת מתנה",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "occ-gift"
+      ],
+      "final_tags_before_write": [
+        "occ-gift",
+        "type-set"
+      ],
+      "after_tags": [
+        "occ-gift",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9688955978041",
+      "title_from_shopify": "סט מתוק מפליז אם ווסט תואם דגם ראם",
+      "status_after": "active",
+      "before_tags": [
+        "12-18 חודש",
+        "18-24 חודש",
+        "2-3 שנים",
+        "6-12 חודש",
+        "חורף",
+        "סט"
+      ],
+      "month_changes": [
+        {
+          "from": "12-18 חודש",
+          "to": "12-18 חודשים"
+        },
+        {
+          "from": "18-24 חודש",
+          "to": "18-24 חודשים"
+        },
+        {
+          "from": "6-12 חודש",
+          "to": "6-12 חודשים"
+        }
+      ],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "12-18 חודשים",
+        "18-24 חודשים",
+        "2-3 שנים",
+        "6-12 חודשים",
+        "type-set",
+        "חורף",
+        "סט"
+      ],
+      "after_tags": [
+        "12-18 חודשים",
+        "18-24 חודשים",
+        "2-3 שנים",
+        "6-12 חודשים",
+        "type-set",
+        "חורף",
+        "סט"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "10029649068345",
+      "title_from_shopify": "סט נוחות אליאב",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-boy",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9096607203641",
+      "title_from_shopify": "סט סוודר חורפי דניאל",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606693749049",
+      "title_from_shopify": "סט פיג'מה ארוכה דובונים לחורף",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "type-set",
+        "winter-baby-wear"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "occ-seasonal",
+        "type-set",
+        "winter-baby-wear"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606694306105",
+      "title_from_shopify": "סט פיג'מה ארוכה לילד",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "kids-clothing",
+        "neutral-baby-outfit"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606671008057",
+      "title_from_shopify": "סט פרחוני וג'ינס לתינוקת",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "everyday-baby-wear",
+        "floral-baby",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "everyday-baby-wear",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "everyday-baby-wear",
+        "floral-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606691586361",
+      "title_from_shopify": "סט פשתן קלאסי ואלגנטי לבנים ובנות",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9605887820089",
+      "title_from_shopify": "סט קיצי לתינוקות וילדות",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "summer-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9864947728697",
+      "title_from_shopify": "סט קיצי משגע לבנות דגם בת אל",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "10029649035577",
+      "title_from_shopify": "סט רומפר מעבר דגם אורן",
+      "status_after": "active",
+      "before_tags": [
+        "autumn-baby-wear",
+        "baby-gift",
+        "baby-romper",
+        "baby-shower-gift",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "autumn-baby-wear",
+        "baby-gift",
+        "baby-romper",
+        "baby-shower-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "autumn-baby-wear",
+        "baby-gift",
+        "baby-romper",
+        "baby-shower-gift",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606691389753",
+      "title_from_shopify": "סט שיא הסטייל לבנים",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-boy",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9873510957369",
+      "title_from_shopify": "סט של 3 אוברולים עונת מעבר דגם ישראל",
+      "status_after": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set",
+        "אוברול"
+      ],
+      "after_tags": [
+        "type-set",
+        "אוברול"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9687653024057",
+      "title_from_shopify": "סט שני חליפות חד קרן דגם אנה",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "unicorn-baby"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set",
+        "unicorn-baby"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set",
+        "unicorn-baby"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "10011383136569",
+      "title_from_shopify": "סטים 3 חליפות סגירה קלה דגם רוני",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "cotton-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9678573207865",
+      "title_from_shopify": "סרבל מעוצב אלגנטי דגם מאור",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-romper",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-romper",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "gender-boy",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-romper",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "gender-boy",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9605887492409",
+      "title_from_shopify": "סרבל עבודה אופנתי לתינוק",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-romper",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-romper",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-romper",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    }
+  ],
+  "verdict": "PHASE7C_LIVE_BATCH9_PASS",
+  "post_verify": {
+    "phase": "7C",
+    "type": "live_batch9_post_verify",
+    "timestamp": "2026-05-07T09:04:11.066906+00:00",
+    "shopify_writes": "NONE — GET only",
+    "normalize_hebrew_months": true,
+    "checked": 20,
+    "pass_count": 20,
+    "fail_count": 0,
+    "products": [
+      {
+        "product_id": "10011383071033",
+        "title_from_shopify": "סט מכנס וחולצה מהממים דגם דניאל",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-boy",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9724813476153",
+        "title_from_shopify": "סט מכנס וחולצה קואלה דגם ראם",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "animal-print-baby",
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-girl",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9855017648441",
+        "title_from_shopify": "סט מכנס וחולצה קיצי דגם גילי",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "cotton-baby",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "summer-baby-wear",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9096636694841",
+        "title_from_shopify": "סט מלא לתינוקות - קופסת מתנה",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "occ-gift",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9688955978041",
+        "title_from_shopify": "סט מתוק מפליז אם ווסט תואם דגם ראם",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "12-18 חודשים",
+          "18-24 חודשים",
+          "2-3 שנים",
+          "6-12 חודשים",
+          "type-set",
+          "חורף",
+          "סט"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "10029649068345",
+        "title_from_shopify": "סט נוחות אליאב",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-boy",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9096607203641",
+        "title_from_shopify": "סט סוודר חורפי דניאל",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606693749049",
+        "title_from_shopify": "סט פיג'מה ארוכה דובונים לחורף",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "occ-seasonal",
+          "type-set",
+          "winter-baby-wear"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606694306105",
+        "title_from_shopify": "סט פיג'מה ארוכה לילד",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-girl",
+          "kids-clothing",
+          "neutral-baby-outfit",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606671008057",
+        "title_from_shopify": "סט פרחוני וג'ינס לתינוקת",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "denim-baby",
+          "everyday-baby-wear",
+          "floral-baby",
+          "gender-girl",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606691586361",
+        "title_from_shopify": "סט פשתן קלאסי ואלגנטי לבנים ובנות",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9605887820089",
+        "title_from_shopify": "סט קיצי לתינוקות וילדות",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "gender-girl",
+          "kids-clothing",
+          "neutral-baby-outfit",
+          "summer-baby-wear",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9864947728697",
+        "title_from_shopify": "סט קיצי משגע לבנות דגם בת אל",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "gender-girl",
+          "girls-clothing",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "summer-baby-wear",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "10029649035577",
+        "title_from_shopify": "סט רומפר מעבר דגם אורן",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "autumn-baby-wear",
+          "baby-gift",
+          "baby-romper",
+          "baby-shower-gift",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606691389753",
+        "title_from_shopify": "סט שיא הסטייל לבנים",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-boy",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9873510957369",
+        "title_from_shopify": "סט של 3 אוברולים עונת מעבר דגם ישראל",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "type-set",
+          "אוברול"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9687653024057",
+        "title_from_shopify": "סט שני חליפות חד קרן דגם אנה",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "newborn-clothing",
+          "type-set",
+          "unicorn-baby"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "10011383136569",
+        "title_from_shopify": "סטים 3 חליפות סגירה קלה דגם רוני",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "cotton-baby",
+          "everyday-baby-wear",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9678573207865",
+        "title_from_shopify": "סרבל מעוצב אלגנטי דגם מאור",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "baby-gift",
+          "baby-romper",
+          "elegant-baby",
+          "everyday-baby-wear",
+          "gender-boy",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9605887492409",
+        "title_from_shopify": "סרבל עבודה אופנתי לתינוק",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "baby-gift",
+          "baby-romper",
+          "everyday-baby-wear",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      }
+    ],
+    "verdict": "POST_VERIFY_PASS"
+  }
+}

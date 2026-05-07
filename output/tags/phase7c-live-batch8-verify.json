@@ -1,0 +1,1203 @@
+{
+  "phase": "7C",
+  "batch": 8,
+  "mode": "LIVE",
+  "timestamp": "2026-05-06T14:09:03.731634+00:00",
+  "shopify_token_suffix": "e96a",
+  "normalize_hebrew_months": true,
+  "total_written": 20,
+  "pass_count": 20,
+  "fail_count": 0,
+  "products": [
+    {
+      "product_id": "9096622473529",
+      "title_from_shopify": "סט Solé™",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606691848505",
+      "title_from_shopify": "סט אבטיח לקיץ דגם אביבית",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "occ-seasonal",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "occ-seasonal",
+        "type-set"
+      ],
+      "after_tags_count": 3,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606694240569",
+      "title_from_shopify": "סט אוברול וחולצה דגם קובי",
+      "status_after": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "type-set",
+        "אוברול"
+      ],
+      "after_tags": [
+        "gender-boy",
+        "type-set",
+        "אוברול"
+      ],
+      "after_tags_count": 3,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606670909753",
+      "title_from_shopify": "סט אופנתי קצר לתינוק",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "gender-boy",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-boy",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606694076729",
+      "title_from_shopify": "סט אלגנטי דגם מעיין",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "elegant-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9096622604601",
+      "title_from_shopify": "סט בגדי תינוקות  בנות",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "10011383234873",
+      "title_from_shopify": "סט בגדים לתינוקות – חולצה ארוכה + אוברול גינס",
+      "status_after": "active",
+      "before_tags": [
+        "אוברול"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set",
+        "אוברול"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-set",
+        "אוברול"
+      ],
+      "after_tags_count": 3,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9873511055673",
+      "title_from_shopify": "סט בייסיק לתינוקות דגם  לירון",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606694371641",
+      "title_from_shopify": "סט בסגנון וינטג' אלגנטי לתינוקת",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606693945657",
+      "title_from_shopify": "סט ג'ינס אופנתי לבנות",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "denim-style-baby",
+        "everyday-baby-wear",
+        "girls-clothing",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "denim-style-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "denim-style-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "girls-clothing",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 10,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9724813410617",
+      "title_from_shopify": "סט גי'נס מושלם דגם נחמן",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "neutral-baby-outfit",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-boy"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-boy",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9673732260153",
+      "title_from_shopify": "סט דובי פליז מחמם דגם נאור",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "bear-print-baby",
+        "fleece-baby",
+        "newborn-clothing",
+        "winter-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "bear-print-baby",
+        "fleece-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set",
+        "winter-baby-wear"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "bear-print-baby",
+        "fleece-baby",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set",
+        "winter-baby-wear"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9864947958073",
+      "title_from_shopify": "סט חגיגי לקיץ דגם שירה",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "newborn-clothing",
+        "special-occasion-baby",
+        "summer-baby-wear"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl",
+        "occ-seasonal"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-seasonal",
+        "special-occasion-baby",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "gender-girl",
+        "newborn-clothing",
+        "occ-seasonal",
+        "special-occasion-baby",
+        "summer-baby-wear",
+        "type-set"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606670942521",
+      "title_from_shopify": "סט חגיגי לתינוקת",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "special-occasion-baby"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "special-occasion-baby",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "special-occasion-baby",
+        "type-set"
+      ],
+      "after_tags_count": 8,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9687579066681",
+      "title_from_shopify": "סט חד קרן דגם לינוי",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606691619129",
+      "title_from_shopify": "סט חולצה וחצאית ג'ינס חגיגי",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "denim-style-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "denim-style-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "denim-baby",
+        "denim-style-baby",
+        "everyday-baby-wear",
+        "gender-girl",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 9,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9687563403577",
+      "title_from_shopify": "סט חתול קלאסי דגם אדל",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9672569749817",
+      "title_from_shopify": "סט לב גדול דגם שני",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "type-set"
+      ],
+      "after_tags": [
+        "type-set"
+      ],
+      "after_tags_count": 1,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9606691422521",
+      "title_from_shopify": "סט לילדה וינטג' - מורן",
+      "status_after": "active",
+      "before_tags": [],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_before_write": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags": [
+        "gender-girl",
+        "type-set"
+      ],
+      "after_tags_count": 2,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    },
+    {
+      "product_id": "9688674500921",
+      "title_from_shopify": "סט מכנס וחולצה דובי דגם רפאל",
+      "status_after": "active",
+      "before_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing"
+      ],
+      "month_changes": [],
+      "proposed_new_tags": [
+        "type-set"
+      ],
+      "final_tags_before_write": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "bear-print-baby",
+        "everyday-baby-wear",
+        "newborn-clothing",
+        "type-set"
+      ],
+      "after_tags_count": 7,
+      "missing_proposed_tags": [],
+      "lingering_singular_month_tags": [],
+      "missing_normalized_month_tags": [],
+      "title_ok": true,
+      "status_ok": true,
+      "age_ok": true,
+      "rollback_needed": false,
+      "final_verdict": "PASS"
+    }
+  ],
+  "verdict": "PHASE7C_LIVE_BATCH8_PASS",
+  "post_verify": {
+    "phase": "7C",
+    "type": "live_batch8_post_verify",
+    "timestamp": "2026-05-06T14:09:47.622271+00:00",
+    "shopify_writes": "NONE — GET only",
+    "normalize_hebrew_months": true,
+    "checked": 20,
+    "pass_count": 20,
+    "fail_count": 0,
+    "products": [
+      {
+        "product_id": "9096622473529",
+        "title_from_shopify": "סט Solé™",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606691848505",
+        "title_from_shopify": "סט אבטיח לקיץ דגם אביבית",
+        "status": "active",
+        "after_tags_count": 3,
+        "after_tags": [
+          "gender-girl",
+          "occ-seasonal",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606694240569",
+        "title_from_shopify": "סט אוברול וחולצה דגם קובי",
+        "status": "active",
+        "after_tags_count": 3,
+        "after_tags": [
+          "gender-boy",
+          "type-set",
+          "אוברול"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606670909753",
+        "title_from_shopify": "סט אופנתי קצר לתינוק",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-boy",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606694076729",
+        "title_from_shopify": "סט אלגנטי דגם מעיין",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "elegant-baby",
+          "everyday-baby-wear",
+          "gender-girl",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9096622604601",
+        "title_from_shopify": "סט בגדי תינוקות  בנות",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-girl",
+          "girls-clothing",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "10011383234873",
+        "title_from_shopify": "סט בגדים לתינוקות – חולצה ארוכה + אוברול גינס",
+        "status": "active",
+        "after_tags_count": 3,
+        "after_tags": [
+          "gender-girl",
+          "type-set",
+          "אוברול"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9873511055673",
+        "title_from_shopify": "סט בייסיק לתינוקות דגם  לירון",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-girl",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606694371641",
+        "title_from_shopify": "סט בסגנון וינטג' אלגנטי לתינוקת",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606693945657",
+        "title_from_shopify": "סט ג'ינס אופנתי לבנות",
+        "status": "active",
+        "after_tags_count": 10,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "denim-baby",
+          "denim-style-baby",
+          "everyday-baby-wear",
+          "gender-girl",
+          "girls-clothing",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9724813410617",
+        "title_from_shopify": "סט גי'נס מושלם דגם נחמן",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-boy",
+          "neutral-baby-outfit",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9673732260153",
+        "title_from_shopify": "סט דובי פליז מחמם דגם נאור",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "bear-print-baby",
+          "fleece-baby",
+          "gender-girl",
+          "newborn-clothing",
+          "type-set",
+          "winter-baby-wear"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9864947958073",
+        "title_from_shopify": "סט חגיגי לקיץ דגם שירה",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "gender-girl",
+          "newborn-clothing",
+          "occ-seasonal",
+          "special-occasion-baby",
+          "summer-baby-wear",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606670942521",
+        "title_from_shopify": "סט חגיגי לתינוקת",
+        "status": "active",
+        "after_tags_count": 8,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-girl",
+          "newborn-clothing",
+          "special-occasion-baby",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9687579066681",
+        "title_from_shopify": "סט חד קרן דגם לינוי",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606691619129",
+        "title_from_shopify": "סט חולצה וחצאית ג'ינס חגיגי",
+        "status": "active",
+        "after_tags_count": 9,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "denim-baby",
+          "denim-style-baby",
+          "everyday-baby-wear",
+          "gender-girl",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9687563403577",
+        "title_from_shopify": "סט חתול קלאסי דגם אדל",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9672569749817",
+        "title_from_shopify": "סט לב גדול דגם שני",
+        "status": "active",
+        "after_tags_count": 1,
+        "after_tags": [
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9606691422521",
+        "title_from_shopify": "סט לילדה וינטג' - מורן",
+        "status": "active",
+        "after_tags_count": 2,
+        "after_tags": [
+          "gender-girl",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      },
+      {
+        "product_id": "9688674500921",
+        "title_from_shopify": "סט מכנס וחולצה דובי דגם רפאל",
+        "status": "active",
+        "after_tags_count": 7,
+        "after_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "bear-print-baby",
+          "everyday-baby-wear",
+          "newborn-clothing",
+          "type-set"
+        ],
+        "missing_proposed_tags": [],
+        "lingering_singular_month": [],
+        "missing_normalized_month": [],
+        "title_ok": true,
+        "status_ok": true,
+        "age_tags": [],
+        "verdict": "PASS"
+      }
+    ],
+    "verdict": "POST_VERIFY_PASS"
+  }
+}

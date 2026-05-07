@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-05-07T09:01:53.681428+00:00",
+  "mode": "READ_ONLY_SECURITY_SAFE",
+  "verdict": "ENV_SOURCE_FOUND_VALID_TOKEN",
+  "summary": {
+    "auth_flow": "client_credentials OAuth via /admin/oauth/access_token",
+    "flow_file": "shopify_client.py",
+    "config_file": "config/settings.py",
+    "credentials_source": [
+      "C:/Projects/baby-mania-agent/.env (project)",
+      "C:/Users/3024e/Desktop/shopify-token/.env (desktop, overrides project)"
+    ],
+    "required_keys": [
+      "SHOPIFY_CLIENT_ID",
+      "SHOPIFY_CLIENT_SECRET",
+      "SHOPIFY_SHOP_URL"
+    ],
+    "token_ttl_seconds": 86399,
+    "scopes": "inherited from app install (write_products, read_products, write_content, etc.)",
+    "admin_api": true,
+    "products_write": true,
+    "no_browser_required": true,
+    "grant_type": "client_credentials",
+    "endpoint": "POST https://{shop}/admin/oauth/access_token"
+  },
+  "env_files": {
+    "desktop_suffix": "e96a (static token INVALID, but CLIENT_ID/SECRET valid)",
+    "project_suffix": "7984 (static token INVALID, but CLIENT_ID/SECRET valid)",
+    "oauth_token_suffix": "4a42 (fresh, valid, 24h TTL)"
+  },
+  "batch9_scripts_updated": [
+    "scripts/phase7c_live_batch9.py — now uses _fetch_oauth_token()",
+    "scripts/phase7c_live_batch9_verify.py — now uses _fetch_oauth_token()"
+  ],
+  "connectivity_test": "HTTP 200 — GET product 10011383071033 PASS",
+  "safe_next_command": "python scripts/phase7c_live_batch9.py --mode=dry-run --plan=output/tags/phase7c-batch9-plan.json --max-products=20 --normalize-hebrew-months=true --exclude-product-id=10011383202105",
+  "notes": [
+    "Static SHOPIFY_ACCESS_TOKEN in both .env files is expired/revoked.",
+    "client_credentials flow using CLIENT_ID+SECRET works and returns a fresh 24h token.",
+    "No browser or OAuth redirect needed — pure server-to-server.",
+    "config/settings.py loads project .env then overrides with desktop .env.",
+    "Updated batch9 scripts to always fetch a fresh token at startup via client_credentials."
+  ]
+}
