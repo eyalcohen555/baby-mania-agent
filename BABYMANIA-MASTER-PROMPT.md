@@ -778,6 +778,7 @@ SHOPIFY_API_VERSION=2024-10
 **מימוש reference:**
 - `scripts/phase7c_live_batch9.py` — `_fetch_oauth_token(shop, client_id, client_secret)`
 - `scripts/phase7c_live_batch9_verify.py`
+- תיעוד: `output/tags/shopify-auth-flow-audit.md`
 
 **חוקים:**
 1. כל סקריפט Shopify חדש חייב להשתמש ב-`_fetch_oauth_token(shop, client_id, client_secret)`.

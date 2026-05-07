@@ -1,0 +1,72 @@
+{
+  "phase": "7C",
+  "batch": "10-revised",
+  "task": "batch10_revised_plan_post_business_audit",
+  "mode": "READ_ONLY_PLANNING",
+  "timestamp": "2026-05-07T13:45:00+00:00",
+  "shopify_writes": "NONE",
+  "source_audit": "output/tags/phase7c-batch10-business-audit.json",
+  "original_candidates": 12,
+  "rejected_false_positive": 9,
+  "moved_to_review_only": 2,
+  "approved_count": 1,
+  "safety_pass": true,
+  "safety_flags": [],
+  "products": [
+    {
+      "product_id": "9687563338041",
+      "title": "שלוש  סטים של עונת מעבר מבית בייבי מניה",
+      "handle": "girls-3pcs-spring-fall-outfit-set-comfy-long-sleeve-tops-with-geometric-pattern-machine-washable-perfect-for-outdoor",
+      "current_tags": [],
+      "current_tags_count": 0,
+      "proposed_new_tags": [
+        "type-set",
+        "gender-girl"
+      ],
+      "final_tags_after_merge": [
+        "gender-girl",
+        "type-set"
+      ],
+      "proposed_type": "type-set",
+      "type_conf": 0.88,
+      "type_source": "title",
+      "type_keyword": "סטים",
+      "proposed_gender": "gender-girl",
+      "gender_conf": 0.9,
+      "gender_source": "handle",
+      "gender_keyword": "girl",
+      "source_trace": "type matched 'סטים' in title (conf=0.88); gender matched 'girl' in handle (conf=0.90)",
+      "business_audit_decision": "APPROVE_FOR_BATCH10",
+      "business_audit_reason": "סטי בגדים לבנות עונת מעבר. title='שלוש סטים של עונת מעבר' + handle='girls-3pcs-spring-fall-outfit-set'. source trace כפול. ביגוד מובהק.",
+      "safety_checks": {
+        "no_type_tag_exists": "PASS",
+        "no_gender_tag_exists": "PASS",
+        "no_age_tag_exists": "PASS",
+        "no_forbidden_tag": "PASS",
+        "no_shoe_keyword": "PASS",
+        "no_eu_size_keyword": "PASS",
+        "not_in_written_batches_1_to_9": "PASS",
+        "source_trace_conf_gte_0_88": "PASS",
+        "not_false_positive": "PASS"
+      },
+      "risk_level": "LOW",
+      "confidence": 0.89
+    }
+  ],
+  "excluded_false_positives": [
+    "9873511022905",
+    "9606822265145",
+    "9605662245177",
+    "9605662343481",
+    "9605662212409",
+    "9096628732217",
+    "9894032539961",
+    "9605441945913",
+    "9839248769337"
+  ],
+  "excluded_review_only": [
+    "9096636825913",
+    "9605887689017"
+  ],
+  "verdict": "READY_FOR_PHASE7C_BATCH10_REVISED_T3_APPROVAL"
+}

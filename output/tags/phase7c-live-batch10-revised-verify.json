@@ -1,0 +1,37 @@
+{
+  "phase": "7C",
+  "batch": "10-revised",
+  "task": "batch10_revised_live_verify",
+  "timestamp": "2026-05-07T14:05:00+00:00",
+  "put_http_status": 200,
+  "get_http_status": 200,
+  "product_id": "9687563338041",
+  "handle": "girls-3pcs-spring-fall-outfit-set-comfy-long-sleeve-tops-with-geometric-pattern-machine-washable-perfect-for-outdoor",
+  "status": "active",
+  "tags_before": "",
+  "tags_after": "gender-girl, type-set",
+  "tags_after_list": [
+    "gender-girl",
+    "type-set"
+  ],
+  "expected_tags": [
+    "gender-girl",
+    "type-set"
+  ],
+  "variants_count": 5,
+  "qa_checks": {
+    "type_set_present": "PASS",
+    "gender_girl_present": "PASS",
+    "no_extra_tags_written": "PASS",
+    "single_type_tag": "PASS",
+    "single_gender_tag": "PASS",
+    "no_age_tags": "PASS",
+    "status_active": "PASS",
+    "handle_unchanged": "PASS",
+    "variants_intact": "PASS",
+    "tag_count_correct": "PASS",
+    "tags_match_expected": "PASS"
+  },
+  "all_checks_pass": true,
+  "verdict": "PHASE7C_LIVE_BATCH10_REVISED_PASS"
+}

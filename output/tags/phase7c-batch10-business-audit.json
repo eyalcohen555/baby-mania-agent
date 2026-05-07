@@ -1,0 +1,186 @@
+{
+  "phase": "7C",
+  "batch": 10,
+  "task": "batch10_business_audit",
+  "mode": "READ_ONLY_AUDIT",
+  "timestamp": "2026-05-07T13:30:00+00:00",
+  "shopify_writes": "NONE",
+  "source_plan": "output/tags/phase7c-batch10-plan.json",
+  "total_audited": 12,
+  "approved_count": 1,
+  "rejected_false_positive_count": 9,
+  "review_only_count": 2,
+  "false_positive_rate": "75%",
+  "products": [
+    {
+      "product_id": "9873511022905",
+      "title": "בגד ים לבבות דגם מאיה",
+      "handle": "patpat-valentines-day-hyper-tactile-cute-bow-baby-girl-swimsuit-set",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'set' in handle (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "בגד ים = swimwear. 'swimsuit-set' בhandle מתאר קומפוזיציה של בגד ים, לא סט בגדים. keyword 'swimsuit' לא היה ב-false-positive list."
+    },
+    {
+      "product_id": "9606822265145",
+      "title": "יחידת קומות לאחסון אבקת פורמולה",
+      "handle": "3pcs-4pcs-baby-formula-milk-storage-infant-toddler-portable-milk-powder-box-dispenser-food-container-kids-food-storage-snack-box",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'pcs' in handle (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "אחסון אבקת פורמולה — ציוד להכנת בקבוק. לא בגד ולא סט בגדים. 'pcs' טכני בלבד."
+    },
+    {
+      "product_id": "9605662245177",
+      "title": "מארז טטרה מיוחד לתינוקות",
+      "handle": "happyflute-new-print-5pcs-set-60-60cm-soft-muslin-swaddle-feeding-burp-cloth-newborn-pure-cotton-baby-face-hand-wash-wipe",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'set' in handle (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "מארז טטרה = סט בדי muslin/swaddle. טקסטיל, לא ביגוד. 'מארז' בלבד לא מספיק."
+    },
+    {
+      "product_id": "9605662343481",
+      "title": "מברשות לניקוי הבקבוקים",
+      "handle": "3-in-1-baby-bottle-brush-set-lone-handle-silicone-bottle-and-teat-cleaning-brush-with-stand-portable-straw-cleaner-brush",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'set' in handle (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "מברשות ניקוי בקבוקים — ציוד היגיינה. לא סט בגדים. 'brush' לא היה ב-false-positive list."
+    },
+    {
+      "product_id": "9605662212409",
+      "title": "סט טטרה הדפס לתינוק",
+      "handle": "elinfant-5pcs-gift-set-bamboo-cotton-muslin-bib-burp-cloth-100-cotton-60-60cm-2-layers-baby-scarf-handkerchief",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'סט' in title (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "סט טטרה = muslin/bib/burp-cloth. טקסטיל ולא ביגוד. 'סט' בtitle לא מספיק ללא בדיקת קטגוריה."
+    },
+    {
+      "product_id": "9096636825913",
+      "title": "סט לתינוק עד 3 חודשים - מארז מתנה מפנק",
+      "handle": "סט-לתינוק-עד-3-חודשים-מארז-מתנה-מפנק",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'סט' in title (conf=0.88)",
+      "business_fit": null,
+      "decision": "MOVE_TO_REVIEW_ONLY",
+      "reason": "Title מרמז על מארז מתנה לתינוק 0-3 חודשים. Handle עברי בלבד — לא ניתן לקבוע תוכן. ייתכן בגדים ייתכן אביזרים. נדרש בדיקה ידנית ב-Shopify admin."
+    },
+    {
+      "product_id": "9096628732217",
+      "title": "סט שמיכות עטיפה פרחוני",
+      "handle": "סט-שמיכות-עטיפה-פרחוני",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'סט' in title (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "סט שמיכות עטיפה = blankets/swaddles. Handle עברי. 'שמיכות' (plural) לא היה ב-false-positive list (היה רק 'שמיכה' יחיד)."
+    },
+    {
+      "product_id": "9894032539961",
+      "title": "ספינר לתינקות 3 חלקים",
+      "handle": "3pcs-set-baby-bath-toys-funny-bathing-sucker-spinner-suction-cup-cartoon-rattles-fidget-educational-toys-for-children-boys-gift",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'set' in handle (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "ספינר לאמבטיה = צעצועי אמבטיה. handle: bath-toys-spinner-suction-cup. לא סט בגדים. 'spinner','toy','bath' לא היו ב-false-positive list."
+    },
+    {
+      "product_id": "9605887689017",
+      "title": "סרבל קיצי לתינוקות",
+      "handle": "babys-clothes-summer-jumpsuit-outfit-solid-color-ruched-toddler-girl-casual-sleeveless-suspender-kids-rompers-headband-set",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'set' in handle (conf=0.88)",
+      "business_fit": null,
+      "decision": "MOVE_TO_REVIEW_ONLY",
+      "reason": "Handle: 'rompers-headband-set' — ייתכן סרבל + ריבון = סט ביגוד (APPROVE). ייתכן type-romper + accessory (REJECT מ-type-set). נדרש בדיקה ידנית: כמה חלקים? מה type הנכון?"
+    },
+    {
+      "product_id": "9605441945913",
+      "title": "רצועת בטן לאחר לידה",
+      "handle": "3in1-corset-postpartum-belly-band-pregnant-women-tummy-belly-pelvis-belt-wrap-waist-trainer-recovery-bandage-strap-body-shaper",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'set' in handle (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "רצועת בטן לאחר לידה = ציוד postpartum לאם. לא מוצר תינוק בכלל. 'postpartum','belly-band' לא היו ב-false-positive list."
+    },
+    {
+      "product_id": "9839248769337",
+      "title": "שירותים ניידים לילדים מבית בייבי מניה",
+      "handle": "10pcs-folding-toilet-portable-child-travel-potty-for-adults-portable-potty-baby-childrens-potty-urinal-stool-easy-to-clean",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'pcs' in handle (conf=0.88)",
+      "business_fit": false,
+      "decision": "REJECT_FALSE_POSITIVE",
+      "reason": "שירותים ניידים = portable potty / toilet. handle: folding-toilet-potty-urinal. לא סט בגדים. 'potty','toilet','urinal' לא היו ב-false-positive list."
+    },
+    {
+      "product_id": "9687563338041",
+      "title": "שלוש סטים של עונת מעבר מבית בייבי מניה",
+      "handle": "girls-3pcs-spring-fall-outfit-set-comfy-long-sleeve-tops-with-geometric-pattern-machine-washable-perfect-for-outdoor",
+      "proposed_tag": "type-set",
+      "source_trace": "type matched 'סטים' in title (conf=0.88); gender matched 'girl' in handle (conf=0.90)",
+      "business_fit": true,
+      "decision": "APPROVE_FOR_BATCH10",
+      "reason": "סטי בגדים לבנות עונת מעבר. title='שלוש סטים של עונת מעבר' + handle='girls-3pcs-spring-fall-outfit-set'. source trace כפול. ביגוד מובהק."
+    }
+  ],
+  "scan_failures_detected": [
+    {
+      "keyword_missed": "swimsuit",
+      "fix": "הוסף ל-false-positive list: swimsuit, swim-suit"
+    },
+    {
+      "keyword_missed": "brush/מברשות",
+      "fix": "הוסף ל-false-positive list: brush, brushes"
+    },
+    {
+      "keyword_missed": "spinner/toy/potty/toilet",
+      "fix": "הוסף ל-false-positive list: toy, spinner, potty, toilet, urinal"
+    },
+    {
+      "keyword_missed": "formula/powder/storage/container",
+      "fix": "הוסף ל-false-positive list: formula, powder, storage, container, dispenser"
+    },
+    {
+      "keyword_missed": "postpartum/belly-band",
+      "fix": "הוסף ל-false-positive list: postpartum, belly-band, corset, belly, pelvis"
+    },
+    {
+      "keyword_missed": "שמיכות (plural)",
+      "fix": "הוסף ל-false-positive list: שמיכות (plural form)"
+    },
+    {
+      "systemic_issue": "סט בtitle אינו מספיק",
+      "fix": "נדרש: 'סט' + מילת ביגוד מפורשת (חולצה/מכנס/שמלה/פיג'מה/גוף) — לא רק 'סט' לבדו"
+    }
+  ],
+  "approved_products": [
+    {
+      "product_id": "9687563338041",
+      "title": "שלוש סטים של עונת מעבר מבית בייבי מניה",
+      "proposed_new_tags": ["type-set", "gender-girl"]
+    }
+  ],
+  "review_only_products": [
+    {
+      "product_id": "9096636825913",
+      "title": "סט לתינוק עד 3 חודשים - מארז מתנה מפנק",
+      "review_question": "האם המוצר מכיל בגדי תינוק? בדוק תמונות + תיאור ב-Shopify admin"
+    },
+    {
+      "product_id": "9605887689017",
+      "title": "סרבל קיצי לתינוקות",
+      "review_question": "כמה פריטים כולל המוצר? האם type-set נכון או type-romper?"
+    }
+  ],
+  "verdict": "READY_FOR_REVISED_PHASE7C_BATCH10_PLAN"
+}
