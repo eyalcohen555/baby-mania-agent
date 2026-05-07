@@ -360,28 +360,3 @@
 | 2026-04-16 18:21:32 | TIMEOUT STAGE-13 |
 | 2026-04-16 18:21:32 |   STAGE-13 | UNKNOWN |
 | 2026-04-16 18:21:32 | PLAN STOPPED: layer4-geo-priority-001 at STAGE-13 |
-| 2026-05-06 11:55:14 | STARTED: bridge-telegram-stabilization-001 |
-| 2026-05-06 11:55:15 | PLAN DONE: bridge-telegram-stabilization-001 — PASS |
-| 2026-05-06 12:01:12 | STARTED: bridge-telegram-stabilization-001 |
-| 2026-05-06 12:01:12 | STARTED STAGE-1 [conductor-bridge-telegram-stabilization-001-STAGE-1-20260506-120112] |
-| 2026-05-06 12:01:37 |   STAGE-1 | UNKNOWN |
-| 2026-05-06 12:01:37 | PLAN STOPPED: bridge-telegram-stabilization-001 at STAGE-1 |
-| 2026-05-06 12:09:53 | STARTED: bridge-telegram-stabilization-001 |
-| 2026-05-06 12:09:53 | STARTED STAGE-1 [conductor-bridge-telegram-stabilization-001-STAGE-1-20260506-120953] |
-| 2026-05-06 12:10:33 |   STAGE-1 | PASS |
-| 2026-05-06 12:10:33 | STARTED STAGE-2 [conductor-bridge-telegram-stabilization-001-STAGE-2-20260506-121033] |
-| 2026-05-06 12:11:23 |   STAGE-2 | PASS |
-| 2026-05-06 12:11:23 | STARTED STAGE-3 [conductor-bridge-telegram-stabilization-001-STAGE-3-20260506-121123] |
-| 2026-05-06 12:11:58 |   STAGE-3 | LOGIC_NO |
-| 2026-05-06 12:11:58 | STARTED STAGE-5 [conductor-bridge-telegram-stabilization-001-STAGE-5-20260506-121158] |
-| 2026-05-06 12:12:48 |   STAGE-5 | PASS |
-| 2026-05-06 12:12:48 | STARTED STAGE-6 [conductor-bridge-telegram-stabilization-001-STAGE-6-20260506-121248] |
-| 2026-05-06 12:13:28 |   STAGE-6 | PASS |
-| 2026-05-06 12:13:28 | STARTED STAGE-7 [conductor-bridge-telegram-stabilization-001-STAGE-7-20260506-121328] |
-| 2026-05-06 12:14:23 |   STAGE-7 | PASS |
-| 2026-05-06 12:14:23 | PLAN DONE: bridge-telegram-stabilization-001 — PASS |
-| 2026-05-07 13:39:45 | STARTED: codex-decision-loop-smoke-test |
-| 2026-05-07 13:39:45 | STARTED STAGE-1 [conductor-codex-decision-loop-smoke-test-STAGE-1-20260507-133945] |
-| 2026-05-07 13:40:24 |   CODEX STAGE-1: CONTINUE (LOW) — All exit conditions met — file read successfully, version 1. |
-| 2026-05-07 13:40:24 |   STAGE-1 | PASS |
-| 2026-05-07 13:40:24 | STARTED STAGE-2 [conductor-codex-decision-loop-smoke-test-STAGE-2-20260507-134024] |

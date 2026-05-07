@@ -4,6 +4,135 @@
 
 ---
 
+## DATE: 2026-05-07
+## TASK: Layer 7 Phase 7C — Batch 9 Live Write
+## SCOPE: Layer 7 — Shopify live tag write (20 products)
+## WHAT CHANGED:
+- Batch 9 live write executed: 20/20 PASS (PHASE7C_LIVE_BATCH9_PASS)
+- DRY_RUN_PASS → PHASE7C_LIVE_BATCH9_PASS → POST_VERIFY_PASS — all 20/20
+- 0 products excluded (no shoe titles; sweater 10011383202105 not in plan)
+- types: set:20 only
+- Hebrew month normalization: 1 product (9688955978041: 3 tags — 6-12/12-18/18-24 חודש→חודשים)
+- Shopify live total: 217 products
+- Auth fix: static SHOPIFY_ACCESS_TOKEN expired — switched to client_credentials OAuth flow
+- Scripts: phase7c_live_batch9.py + phase7c_live_batch9_verify.py (use _fetch_oauth_token())
+## FILES TOUCHED:
+- scripts/phase7c_live_batch9.py (created, OAuth client_credentials flow)
+- scripts/phase7c_live_batch9_verify.py (created)
+- scripts/phase7c_batch9_plan.py (created in prior session)
+- output/tags/phase7c-live-batch9-backup.json
+- output/tags/phase7c-live-batch9-dry-run.json
+- output/tags/phase7c-live-batch9-dry-run.md
+- output/tags/phase7c-live-batch9-rollback-plan.md
+- output/tags/phase7c-live-batch9-verify.json
+- output/tags/phase7c-live-batch9-verify.md
+- output/tags/shopify-auth-flow-audit.json
+- output/tags/shopify-auth-flow-audit.md
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.18, includes batch9 plan + live)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- 20 Shopify products now have type-set (and gender/occ where applicable) tags
+- Shopify live tagged products: 217 (was 197)
+## OPEN ISSUES:
+- Phase 7C Batch 10+: ~4 SAFE candidates remaining (type-set only), T3 approval needed
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 135 products: blocked until manual review
+## NEXT STEP: Phase 7C Batch 10 planning or REVIEW_ONLY pool review
+
+---
+
+## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 9 Planning (READ-ONLY)
+## SCOPE: Layer 7 — plan only, no Shopify writes
+## WHAT CHANGED:
+- Batch 9 plan created: 20 candidates selected (READY_FOR_PHASE7C_BATCH9_T3_APPROVAL)
+- already_written_batch12345678=146 excluded; t3_excluded=1 (sweater 10011383202105)
+- types: set:20 only (all other pools exhausted)
+- false_positive_blkd=11 (added שמיכ/ספינר blockers + סניקרס to shoe keywords)
+- 1 product needs Hebrew month normalization (9688955978041: 3 singular tags)
+- All 20 safety checks PASS; Shopify writes: NONE
+- Shopify live total unchanged: 197 products
+## FILES TOUCHED:
+- scripts/phase7c_batch9_plan.py (created)
+- output/tags/phase7c-batch9-plan.md (created)
+- output/tags/phase7c-batch9-plan.json (created)
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.17)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- 0 Shopify writes — read-only planning pass
+- Next: T3 approval from Ayal → Batch 9 live write
+## OPEN ISSUES:
+- Phase 7C Batch 9 live: ~24 SAFE candidates remaining (type-set only), T3 approval needed
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 135 products: blocked until manual review
+## NEXT STEP: T3 approval → Phase 7C Live Batch 9
+
+---
+
+## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 8 Live Write
+## SCOPE: Layer 7 — Shopify live tag write (20 products)
+## WHAT CHANGED:
+- Batch 8 live write executed: 20/20 PASS (PHASE7C_LIVE_BATCH8_PASS)
+- DRY_RUN_PASS → PHASE7C_LIVE_BATCH8_PASS → POST_VERIFY_PASS — all 20/20
+- 0 products excluded (no shoe titles; sweater 10011383202105 not in plan)
+- types: set:20 only
+- 0 Hebrew month normalizations needed
+- Shopify live total: 197 products
+- New flag added: --exclude-product-id in live scripts
+- Scripts: phase7c_live_batch8.py + phase7c_live_batch8_verify.py
+## FILES TOUCHED:
+- scripts/phase7c_live_batch8.py (created, added --exclude-product-id flag)
+- scripts/phase7c_live_batch8_verify.py (created)
+- output/tags/phase7c-live-batch8-backup.json
+- output/tags/phase7c-live-batch8-dry-run.json
+- output/tags/phase7c-live-batch8-dry-run.md
+- output/tags/phase7c-live-batch8-rollback-plan.md
+- output/tags/phase7c-live-batch8-verify.json
+- output/tags/phase7c-live-batch8-verify.md
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.16, includes batch8 plan + live)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- 20 Shopify products now have type-set (and gender/occ where applicable) tags
+- Shopify live tagged products: 197 (was 177)
+## OPEN ISSUES:
+- Phase 7C Batch 9+: ~27 SAFE candidates remaining (type-set only), T3 approval needed
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 135 products: blocked until manual review
+## NEXT STEP: Phase 7C Batch 9 planning (T3 approval needed)
+
+---
+
+## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 8 Plan (READ-ONLY)
+## SCOPE: Layer 7 — READ-ONLY planning, no Shopify writes
+## WHAT CHANGED:
+- Batch 8 plan created: 20 SAFE type-set candidates selected
+- already_written_batch1234567=126 (19 batch7 PIDs added to exclusion list)
+- t3_excluded=1: sweater 10011383202105 (requires explicit re-approval)
+- false_positive_blkd expanded to 9: added 'טטרה' blocker (muslin bib sets)
+- 0 products need Hebrew month normalization
+- SAFE candidates in pool: 47 (type-set only, other pools exhausted)
+- All 20 candidates: type-set only
+- All safety checks PASS: no age-*, no type collision, no gender collision, no forbidden tags
+- Verdict: READY_FOR_PHASE7C_BATCH8_T3_APPROVAL
+## FILES TOUCHED:
+- scripts/phase7c_batch8_plan.py (created)
+- output/tags/phase7c-batch8-plan.md (created)
+- output/tags/phase7c-batch8-plan.json (created)
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.15)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- No Shopify changes (GET only)
+- Shopify live tagged products: 177 (unchanged)
+## OPEN ISSUES:
+- Phase 7C Batch 8+: 47 SAFE candidates remaining (type-set only), T3 approval needed
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 135 products: blocked until manual review
+## NEXT STEP: Phase 7C Batch 8 live write (T3 approval needed from Ayal)
+
+---
+
 ## DATE: 2026-05-06
 ## TASK: Layer 7 Phase 7C — Batch 7 Live Write
 ## SCOPE: Layer 7 — Shopify live tag write (19 products)
@@ -51,6 +180,33 @@
 ## OPEN ISSUES:
 ## NEXT STEP:
 ```
+
+---
+
+## DATE: 2026-05-06
+## TASK: Layer 7 Phase 7C — Batch 7 READ-ONLY Planning
+## SCOPE: Layer 7 — READ-ONLY planning — no Shopify writes
+## WHAT CHANGED:
+- Batch 7 plan created: 20 SAFE candidates selected (set:20 — all other types exhausted)
+- Expanded NOT_SET_TITLE_KW blockers: added כובע/יחידת/מארז/מברשות/מתלה/ניקוי
+- 8 false-positive products blocked (was 1 prev. batches)
+- 107 already-written PIDs (batch1/2/3/4/5/6) explicitly excluded
+- 68 SAFE new candidates in pool
+- 1 product needs Hebrew month normalization: 9179173617977 (4 singular tags)
+- All safety checks PASS: 0 flags, 0 age-* tags, 0 type collision, 0 overlap with prev batches
+## FILES TOUCHED:
+- scripts/phase7c_batch7_plan.py (created, expanded NOT_SET_TITLE_KW)
+- output/tags/phase7c-batch7-plan.json
+- output/tags/phase7c-batch7-plan.md
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.13)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- No Shopify writes — planning only
+## OPEN ISSUES:
+- Phase 7C Batch 7 T3 approval needed from Ayal before live write
+- ~48 SAFE candidates remaining after batch7 selection (all type-set)
+- 1 product (9179173617977) needs Hebrew month normalization in live stage
+## NEXT STEP: T3 approval from Ayal → Phase 7C Batch 7 live write
 
 ---
 
