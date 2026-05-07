@@ -382,3 +382,6 @@
 | 2026-05-06 12:14:23 | PLAN DONE: bridge-telegram-stabilization-001 — PASS |
 | 2026-05-07 13:39:45 | STARTED: codex-decision-loop-smoke-test |
 | 2026-05-07 13:39:45 | STARTED STAGE-1 [conductor-codex-decision-loop-smoke-test-STAGE-1-20260507-133945] |
+| 2026-05-07 13:40:24 |   CODEX STAGE-1: CONTINUE (LOW) — All exit conditions met — file read successfully, version 1. |
+| 2026-05-07 13:40:24 |   STAGE-1 | PASS |
+| 2026-05-07 13:40:24 | STARTED STAGE-2 [conductor-codex-decision-loop-smoke-test-STAGE-2-20260507-134024] |
