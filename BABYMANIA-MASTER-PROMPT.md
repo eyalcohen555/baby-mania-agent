@@ -1,6 +1,6 @@
 # BABYMANIA-MASTER-PROMPT
 ## System Prompt לסוכן GPT — מנהל פרויקט BabyMania
-### גרסה: 5.2 | עודכן: 2026-05-07 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live | Execution Plan Mode OPERATIONAL ✅ | Codex Review Gate DEFINED ✅
+### גרסה: 5.3 | עודכן: 2026-05-07 | LAYER 3 ✅ LAYER 4 ✅ COMPLETE + VERIFIED | LAYER 5 OPEN ✅ Gap Map Planning CLOSED ✅ | HUB-11 ALL LIVE ✅ | 68 מאמרים live | Execution Plan Mode OPERATIONAL ✅ | Codex Review Gate DEFINED ✅ | Codex Decision Loop SMOKE TEST PASS ✅
 
 ---
 
@@ -328,11 +328,13 @@ conductor.py כותב bridge/conductor-notify.md לכל אירוע:
 telegram_bot.py (monitor_loop) קורא conductor-notify.md ושולח הודעה עברית לאייל.
 ```
 
-**מצב נוכחי (2026-05-06):**
+**מצב נוכחי (2026-05-07):**
 ```
-Branch:     automation-conductor-telegram-clean
-Plan test:  bridge-telegram-stabilization-001 — DONE / PASS (7 stages, כולם עברו)
-Full automation: NO — ממתין לטסט מבוקר עם Telegram live + אישור merge
+Branch:          automation-conductor-telegram-clean (commit 9db1e3e)
+Plan test:       bridge-telegram-stabilization-001 — DONE / PASS (7 stages)
+Codex loop test: codex-decision-loop-smoke-test — DONE / PASS (2 stages)
+                 decision: CONTINUE · risk: LOW · bridge/codex-decision.md ✅
+Full automation: NO — ממתין לאישור merge + G-A Codex gate
 ```
 
 **preflight — חובה לפני כל ריצה:**
@@ -395,7 +397,7 @@ DATA → LOGIC → OUTPUT
 
 | שכבה | סטטוס | פרטים |
 |------|--------|--------|
-| AUTOMATION — Execution Plan Mode | ✅ OPERATIONAL (2026-05-06) | branch: `automation-conductor-telegram-clean` · bridge.py + conductor.py + telegram_bot.py · bridge-telegram-stabilization-001: DONE/PASS · Full automation: NO (pending Telegram live test + merge approval) |
+| AUTOMATION — Execution Plan Mode | ✅ OPERATIONAL (2026-05-07) | branch: `automation-conductor-telegram-clean` · bridge.py + conductor.py + codex_reviewer.py + telegram_bot.py · bridge-telegram-stabilization-001: DONE/PASS · Codex Decision Loop smoke test: DONE/PASS (commit 9db1e3e) · Full automation: NO (pending G-A Codex gate + merge approval) |
 | LAYER 1 — DATA | ✅ CLOSED | data stable, 294 YAMLs, reverse-index v1.2 |
 | LAYER 2 — PRODUCT↔BLOG | ✅ CLOSED (2026-04-13) | clothing + shoes, 66 מוצרים LIVE |
 | LAYER 3 — PRODUCT SEO/AEO | ✅ COMPLETE + VERIFIED (2026-04-20 / verified 2026-04-23) | כל clothing נקי — title_tag + description_tag. 36 verify_failed מאושרים RUNTIME only — live check 36/36 PRESENT. |
