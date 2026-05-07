@@ -5,6 +5,44 @@
 ---
 
 ## DATE: 2026-05-07
+## TASK: Layer 7 Phase 7C — Batch 10 Revised Live Write
+## SCOPE: Layer 7 — Shopify live tag write (1 product, post business audit)
+## WHAT CHANGED:
+- Batch 10 Revised live write executed: 1/1 PASS (PHASE7C_LIVE_BATCH10_REVISED_PASS)
+- Business audit of 12 batch10 candidates: 1 APPROVE / 9 REJECT_FALSE_POSITIVE / 2 REVIEW_ONLY
+- False positive rate 75% — scan keyword gaps documented (swimsuit, brush, potty, postpartum, formula, שמיכות)
+- PUT HTTP 200 + GET verify PASS. 11/11 QA checks PASS
+- PID 9687563338041 (שלוש סטים של עונת מעבר): type-set + gender-girl written
+- 0 products excluded. 0 Hebrew month normalizations. 0 rollback
+- Shopify live total: 218 products
+## FILES TOUCHED:
+- output/tags/phase7c-batch10-plan.json (READ-ONLY plan)
+- output/tags/phase7c-batch10-business-audit.json (audit)
+- output/tags/phase7c-batch10-business-audit.md
+- output/tags/phase7c-batch10-revised-plan.json
+- output/tags/phase7c-batch10-revised-plan.md
+- output/tags/phase7c-live-batch10-revised-backup.json
+- output/tags/phase7c-live-batch10-revised-dry-run.json
+- output/tags/phase7c-live-batch10-revised-dry-run.md
+- output/tags/phase7c-live-batch10-revised-rollback-plan.md
+- output/tags/phase7c-live-batch10-revised-verify.json
+- output/tags/phase7c-live-batch10-revised-verify.md
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.19)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- PID 9687563338041 now has type-set + gender-girl tags
+- Shopify live tagged products: 218 (was 217)
+- Phase 7C Batch 10 pool exhausted — all SAFE candidates processed
+## OPEN ISSUES:
+- 2 REVIEW_ONLY products (9096636825913, 9605887689017): require manual Shopify admin review
+- EU Shoe Size mapping: blocked until Ayal approves
+- REVIEW_ONLY 133 products: blocked until manual review
+- False positive keyword list needs update before next scan
+## NEXT STEP: REVIEW_ONLY pool manual review OR new scan with updated false-positive list
+
+---
+
+## DATE: 2026-05-07
 ## TASK: Layer 7 Phase 7C — Batch 9 Live Write
 ## SCOPE: Layer 7 — Shopify live tag write (20 products)
 ## WHAT CHANGED:

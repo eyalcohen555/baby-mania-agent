@@ -1,0 +1,35 @@
+{
+  "phase": "7C",
+  "batch": "10-revised",
+  "task": "batch10_revised_dry_run",
+  "timestamp": "2026-05-07T14:02:00+00:00",
+  "shopify_writes": "NONE",
+  "product_id": "9687563338041",
+  "title": "שלוש  סטים של עונת מעבר מבית בייבי מניה",
+  "handle": "girls-3pcs-spring-fall-outfit-set-comfy-long-sleeve-tops-with-geometric-pattern-machine-washable-perfect-for-outdoor",
+  "current_tags": [],
+  "proposed_new_tags": [
+    "type-set",
+    "gender-girl"
+  ],
+  "final_tags_after_merge": [
+    "gender-girl",
+    "type-set"
+  ],
+  "tags_string_for_put": "gender-girl, type-set",
+  "checks": {
+    "no_type_tag_exists": "PASS",
+    "no_gender_tag_exists": "PASS",
+    "no_age_tag_exists": "PASS",
+    "no_forbidden_tag": "PASS",
+    "no_shoe_keyword": "PASS",
+    "no_eu_size_keyword": "PASS",
+    "status_active": "PASS",
+    "proposed_tags_in_allowed_list": "PASS",
+    "no_duplicate_after_merge": "PASS",
+    "business_audit_approved": "PASS",
+    "not_in_batches_1_to_9": "PASS"
+  },
+  "all_checks_pass": true,
+  "verdict": "PASS_SAFE_TO_WRITE"
+}
