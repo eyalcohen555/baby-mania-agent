@@ -1,0 +1,235 @@
+{
+  "audit_name": "Layer 6 Closure Audit",
+  "timestamp": "2026-05-08T10:00:00+00:00",
+  "mode": "READ_ONLY_AUDIT",
+  "shopify_writes": "NONE",
+  "scope": "Phase 6 batch1+2 / Phase 7A / Phase 7B / Phase 7C all batches / Phase 8 Navigation Pipeline",
+
+  "closure_checks": {
+    "shopify_live_tagged_products": {
+      "expected": 218,
+      "source": "phase7c-live-batch10-revised-verify.md",
+      "result": "PASS"
+    },
+    "safe_candidates_remaining": {
+      "expected": 0,
+      "source": "מצב-הפרויקט-האורגני.md — Phase 7C Batch 10 Revised COMPLETE",
+      "result": "PASS"
+    },
+    "no_open_rollback": {
+      "check": "כל batch verify files — rollback_needed = NO לכל מוצר",
+      "result": "PASS"
+    },
+    "no_age_tags_in_live": {
+      "check": "כל batch verify files — no age-* tags detected",
+      "result": "PASS"
+    },
+    "qa_contract_active_and_followed": {
+      "check": "docs/organic/layer7-live-tagging-qa-contract.md v1.0 — כל batch מ-Phase 7B ואילך עבר 11-check contract",
+      "result": "PASS"
+    },
+    "phase8_navigation_pipeline_complete": {
+      "check": "Phase 8A+8B+8C+8D+8E+8E-3+8E-4+8F+8G — ALL COMPLETE",
+      "result": "PASS"
+    },
+    "smart_collections_exist": {
+      "count": 6,
+      "collections": [
+        {"title": "gender-girl",        "id": "526691729721"},
+        {"title": "gender-boy",         "id": "526691762489"},
+        {"title": "type-set",           "id": "526691795257"},
+        {"title": "type-romper",        "id": "526691828025"},
+        {"title": "occ-gift",           "id": "526691860793"},
+        {"title": "clothing-all",       "id": "526700020025"}
+      ],
+      "result": "PASS"
+    },
+    "main_menu_updated": {
+      "check": "Phase 8F — menuUpdate GraphQL, 17 items, בגדי תינוקות + 5 subs + מתנות לתינוק",
+      "result": "PASS"
+    },
+    "batch10_false_positives_documented": {
+      "check": "output/tags/phase7c-batch10-business-audit.json+md — 9 FP documented, 7 keyword gaps noted",
+      "result": "PASS"
+    },
+    "oauth_pattern_documented": {
+      "check": "BABYMANIA-MASTER-PROMPT.md v5.0 — Shopify API Auth כלל הרשאה עדכני",
+      "result": "PASS"
+    }
+  },
+  "all_closure_checks_pass": true,
+
+  "phase_summary": [
+    {
+      "phase": "Phase 6 batch 1+2",
+      "date": "2026-05-04",
+      "products_written": 5,
+      "running_total": 5,
+      "types": ["C1","C2","C3","C4","C5"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7A batch 1",
+      "date": "2026-05-04",
+      "products_written": 10,
+      "running_total": 15,
+      "types": ["dress:1","bodysuit:2","set:7"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7A batch 2",
+      "date": "2026-05-04",
+      "products_written": 4,
+      "running_total": 19,
+      "types": ["set:2","romper:2"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7B batch 1",
+      "date": "2026-05-04",
+      "products_written": 20,
+      "running_total": 39,
+      "types": ["dress:5","bodysuit:5","set:5","romper:5"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7B batch 2",
+      "date": "2026-05-05",
+      "products_written": 12,
+      "running_total": 51,
+      "types": ["bodysuit:1","dress:3","romper:4","set:4"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 1",
+      "date": "2026-05-05",
+      "products_written": 20,
+      "running_total": 71,
+      "types": ["dress:4","bodysuit:5","set:6","romper:5"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 2",
+      "date": "2026-05-05",
+      "products_written": 7,
+      "running_total": 78,
+      "types": ["hat:4","coat:3"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 3",
+      "date": "2026-05-06",
+      "products_written": 20,
+      "running_total": 98,
+      "types": ["dress:5","set:5","romper:5","bodysuit:5"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 4",
+      "date": "2026-05-06",
+      "products_written": 20,
+      "running_total": 118,
+      "types": ["dress:5","set:5","romper:5","bodysuit:5"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 5",
+      "date": "2026-05-06",
+      "products_written": 20,
+      "running_total": 138,
+      "types": ["dress:5","set:6","romper:4","bodysuit:5"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 6",
+      "date": "2026-05-06",
+      "products_written": 20,
+      "running_total": 158,
+      "types": ["dress:4","set:16"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 7",
+      "date": "2026-05-06",
+      "products_written": 19,
+      "running_total": 177,
+      "types": ["set:19"],
+      "note": "1 excluded: סוודר סרוג per T3 instruction",
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 8",
+      "date": "2026-05-06",
+      "products_written": 20,
+      "running_total": 197,
+      "types": ["set:20"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 9",
+      "date": "2026-05-07",
+      "products_written": 20,
+      "running_total": 217,
+      "types": ["set:20"],
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 7C batch 10 Revised",
+      "date": "2026-05-07",
+      "products_written": 1,
+      "running_total": 218,
+      "types": ["set:1"],
+      "note": "9/12 false positives rejected via business audit. 2 REVIEW_ONLY deferred.",
+      "verdict": "COMPLETE"
+    },
+    {
+      "phase": "Phase 8 Navigation Pipeline",
+      "date": "2026-05-05",
+      "sub_phases": ["8A","8B","8C","8D","8E","8E-3","8E-4","8F","8G"],
+      "smart_collections_created": 6,
+      "main_menu_items_after": 17,
+      "verdict": "COMPLETE"
+    }
+  ],
+
+  "backlog_items": [
+    {
+      "item": "REVIEW_ONLY pool",
+      "count": "~133 products",
+      "status": "BACKLOG — not a blocker",
+      "action": "manual Shopify admin review required before any tagging"
+    },
+    {
+      "item": "shoes / sandals / sneakers",
+      "count": "~65 products",
+      "status": "BACKLOG — not a blocker",
+      "action": "blocked until EU size mapping approved"
+    },
+    {
+      "item": "EU size mapping",
+      "status": "BACKLOG — not a blocker",
+      "action": "requires explicit Ayal approval + size taxonomy spec"
+    },
+    {
+      "item": "false positive keyword hardening",
+      "keywords_to_add": ["swimsuit","brush","מברשות","toy","spinner","potty","toilet","urinal","formula","powder","storage","container","postpartum","belly-band","corset","שמיכות"],
+      "status": "BACKLOG — not a blocker",
+      "action": "update scanner FALSE_POSITIVE_KW list before next scan"
+    },
+    {
+      "item": "Phase 8H Navigation Visual UX Polish",
+      "status": "BACKLOG — not a blocker",
+      "action": "future UX improvement, no functional gap"
+    },
+    {
+      "item": "2 REVIEW_ONLY from Batch 10",
+      "pids": ["9096636825913","9605887689017"],
+      "status": "BACKLOG — not a blocker",
+      "action": "manual check in Shopify admin"
+    }
+  ],
+
+  "layer6_closure_verdict": "LAYER6_COMPLETE_SAFE_SYSTEM_CLOSED",
+  "closure_date": "2026-05-08",
+  "closure_summary": "Layer 6 Full Tag System (type-*/gender-*/occ-*) + Navigation Foundation (6 Smart Collections + main-menu) COMPLETE. 218 products live-tagged. Phase 8 Navigation Pipeline COMPLETE. No open rollbacks. No age-* tags. QA Contract active throughout. Remaining work classified as backlog only."
+}

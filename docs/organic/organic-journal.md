@@ -4,6 +4,37 @@
 
 ---
 
+## DATE: 2026-05-08
+## TASK: Layer 6 Closure Audit
+## SCOPE: READ-ONLY — Full Tag System + Navigation Foundation closure audit
+## WHAT CHANGED:
+- Layer 6 Closure Audit performed. 10/10 closure checks PASS
+- Confirmed: 218 products live-tagged, SAFE pool exhausted, 6 Smart Collections exist
+- Confirmed: main-menu updated (Phase 8F, 17 items), no open rollbacks, no age-* tags
+- QA Contract (layer7-live-tagging-qa-contract.md v1.0) active throughout all Phase 7B+ batches
+- Batch 10 false positive lessons documented (7 keyword gap categories)
+- Backlog formally defined: REVIEW_ONLY / shoes / EU-size / FP-hardening / Phase 8H
+- verdict: LAYER6_COMPLETE_SAFE_SYSTEM_CLOSED
+## FILES CREATED:
+- docs/organic/layer6-closure-report.md
+- output/tags/layer6-closure-audit.json
+## DOCS UPDATED:
+- docs/organic/מצב-הפרויקט-האורגני.md (v5.20)
+- docs/organic/organic-journal.md
+## SYSTEM IMPACT:
+- Layer 6 officially closed. No Shopify changes.
+- Next work: REVIEW_ONLY pool manual review OR EU size mapping OR new HUB planning
+## OPEN ISSUES (backlog, not blockers):
+- REVIEW_ONLY ~133 products: manual Shopify admin review required
+- 2 Batch-10 REVIEW_ONLY PIDs: 9096636825913, 9605887689017
+- Shoes/sandals: blocked until EU size mapping
+- EU size mapping: blocked until Ayal approval
+- FP keyword hardening: update FALSE_POSITIVE_KW list in scanner
+- Phase 8H: Navigation Visual UX Polish (future)
+## NEXT STEP: Ayal to decide: REVIEW_ONLY pool review / EU size mapping / new HUB
+
+---
+
 ## DATE: 2026-05-07
 ## TASK: Layer 7 Phase 7C — Batch 10 Revised Live Write
 ## SCOPE: Layer 7 — Shopify live tag write (1 product, post business audit)
