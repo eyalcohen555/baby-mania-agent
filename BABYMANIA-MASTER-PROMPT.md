@@ -72,6 +72,26 @@ milestone / blocker נסגר → גם master snapshot
 
 ---
 
+## 🚦 חובת פתיחה לכל צ׳אט חדש
+
+כל צ'אט GPT חדש שעובד על BabyMania חייב לקרוא קודם:
+1. `BABYMANIA-MASTER-PROMPT.md` — snapshot מצב הפרויקט
+2. `docs/management/chat-to-automation-operating-protocol.md` — פרוטוקול: איך להפוך משימה ל-plan אוטומטי
+3. Journal רלוונטי לתחום הנוכחי:
+   - `docs/management/management-journal.md` — ניהול + automation
+   - `docs/product/shoes-journal.md` — נעליים
+   - `docs/product/clothing-journal.md` — ביגוד
+   - `docs/organic/organic-journal.md` — אורגני
+   - `docs/organic/מצב-הפרויקט-האורגני.md` — **חובה לכל משימה אורגנית**
+
+**כללים לאחר קריאה:**
+- אין לתת פקודה ל-Claude Code לפני הבנת המטרה העסקית + המצב הנוכחי.
+- אם למשימה יש 2+ שלבים תלויים — Conductor plan עדיף על copy-paste ידני.
+- אם משתמשים באוטומציה — יש לפעול לפי `chat-to-automation-operating-protocol.md`.
+- Full automation: NO — אלא אם אייל אישר במפורש.
+
+---
+
 ## 🏗️ מבנה המערכת
 
 ### מבנה תיקיות
