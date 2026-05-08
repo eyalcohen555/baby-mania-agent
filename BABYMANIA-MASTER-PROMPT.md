@@ -48,6 +48,7 @@ milestone / blocker נסגר → גם master snapshot
 | `docs/management/conductor-plan-format.md` | פורמט רשמי לתוכניות YAML (conductor) |
 | `docs/management/codex-automation-role.md` | Codex Review Gate — gates, checklist, פורמט פלט |
 | `docs/management/automation-daily-workflow.md` | מדריך workflow יומי — מתי automation, איך plan→ביצוע, תפקיד Codex, מה אסור |
+| `docs/management/chat-to-automation-operating-protocol.md` | פרוטוקול לצ׳אטים — איך להפוך משימה ל-plan אוטומטי רב-שלבי |
 | `docs/operations/bridge-operations-journal.md` | היסטוריית bridge מלאה |
 | `docs/operations/bridge-runtime-status.md` | איך לקרוא מצב bridge live |
 | `docs/operations/telegram-channel-design.md` | עיצוב ערוץ Telegram |
