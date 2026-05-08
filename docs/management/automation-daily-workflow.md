@@ -214,14 +214,14 @@ C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe bridge.py
 
 ```
 Full automation: NO
-PR #2 פתוח ומחכה לאישור אייל לmain merge.
+PR #2 מוזג; full automation עדיין NO ודורש אישור נפרד מאייל.
 Codex Decision Loop: OPERATIONAL (smoke test PASS, 2026-05-07)
-bridge-telegram-stabilization-001: DONE / PASS
+bridge-telegram-stabilization-001: DONE / PASS על main (2026-05-08 08:45:24)
 G-A Codex Gate: APPROVED / RISK LOW
+Controlled main real test: PASS (2026-05-08) — 7/7 stages
 
 הפעלת full automation מחייבת:
-1. merge PR #2 לmain (אישור אייל)
-2. החלטה ניהולית מפורשת מאייל על full automation
+1. החלטה ניהולית מפורשת מאייל על full automation
 ```
 
 ---
