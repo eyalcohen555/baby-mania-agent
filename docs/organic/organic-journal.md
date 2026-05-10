@@ -4,6 +4,20 @@
 
 ---
 
+## [2026-05-10] Phase E1c Post-Verify — PHASEE1C_STICKY_STANDARD_VERIFY_PASS
+Mode: READ-ONLY | T0
+Action: Verified sticky patch on 4 live products across clothing/shoes/accessories/reborn templates
+Results:
+  חליפת-תחרה-פרחונית-מורן (clothing)     → PASS ✅
+  כפכף-פרווה-אוסטרלי-עדידוש (shoes)      → PASS ✅
+  babyz-בובת-לוטרה-נושמת (accessories)   → PASS ✅
+  bzdoll-55cm reborn doll (reborn)        → PASS ✅
+  EasySleep/Tempio: NOT TESTED (T3 pending)
+All 8 checks per product: http_200, sticky_bar, form_buttons, initStickyObserver,
+  DOMContentLoaded, threshold_0.1, no_old_threshold_0, aria_hidden_true_init
+
+---
+
 ## [2026-05-10] Phase E1c Sticky Fix — PHASEE1C_STICKY_FIX_PARTIAL
 Mode: LIVE | T2 approved by Ayal
 Action: Applied JS-only DOM timing patch to sections/bm-sticky-bar.liquid
