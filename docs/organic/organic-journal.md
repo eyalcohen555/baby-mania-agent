@@ -4,6 +4,25 @@
 
 ---
 
+## [2026-05-10] Phase E Navigation + Homepage Fix Plan — READ-ONLY COMPLETE
+Mode: READ-ONLY | T0 | No Shopify writes | No theme writes
+Action: Full fix plan for navigation restructure + homepage quick wins, based on Phase D audit
+Files created:
+  - docs/organic/navigation-homepage-fix-plan.md
+  - output/tags/navigation-homepage-fix-plan.json
+Status: NAVIGATION_HOMEPAGE_FIX_PLAN_READY
+
+Key findings:
+- Navigation: 17 top-level items → proposed 6-item premium structure (T1)
+- Seasonal: Replace hardcoded קיץ 2026 with permanent מבצעים label (T1)
+- Hero: bm-video-hero has no heading/CTA schema — fix via Liquid edit (T2)
+- Homepage T1 wins: reduce products_to_show 25→8, add bm-trust-badges, rename dup heading, disable 2 empty sections
+- Sticky bar root cause: .product-form__buttons = null on EasySleep + Tempio (main-product disabled in templates)
+- Fix: Enable main-product section on product.easy-sleep.json + product.tempio.json (T3)
+- Execution order: E1 (T1 homepage) → E2 (T1 nav) → E3 (T2 hero) → E4 (T3 structural)
+
+---
+
 ## [2026-05-10] Phase D Homepage UX Technical Audit — READ-ONLY COMPLETE
 Mode: READ-ONLY | T0 | No Shopify writes | No theme writes | No product writes
 Action: Full structural audit of homepage — 8 tasks completed

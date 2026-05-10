@@ -1,0 +1,169 @@
+{
+  "date": "2026-05-10",
+  "mode": "READ-ONLY",
+  "tier": "T0",
+  "verdict": "NAVIGATION_HOMEPAGE_FIX_PLAN_READY",
+  "input_sources": [
+    "output/tags/phaseD-homepage-ux-technical-audit.json",
+    "output/tags/phaseD_index.json",
+    "theme_assets/sections/bm-sticky-bar.liquid",
+    "Shopify theme API — all product templates"
+  ],
+
+  "task1_navigation_map": {
+    "current_item_count": 17,
+    "known_issues": [
+      "בגדי תינוקות — parent OK with 5 correct sub-items — KEEP",
+      "קיץ 2026 — seasonal hardcoded — HOLD/RENAME",
+      "המיוחדים שלנו — vague label — RENAME or MERGE",
+      "שמיכות עיטוף ושקי שינה — too long, truncates mobile — RENAME to שינה",
+      "מתנות לתינוק — Phase A fix working ✅ — KEEP",
+      "יצירת קשר at position 17 — not discoverable on mobile — MOVE to footer"
+    ]
+  },
+
+  "task2_proposed_navigation": {
+    "top_level_count": 6,
+    "items": [
+      {
+        "label": "ביגוד",
+        "type": "parent",
+        "sub_items": [
+          {"label": "בנות", "url": "/collections/בגדי-בנות"},
+          {"label": "בנים", "url": "/collections/בגדי-בנים"},
+          {"label": "סטים", "url": "/collections/סטים"},
+          {"label": "סרבלים", "url": "/collections/סרבלים"},
+          {"label": "כל הבגדים", "url": "/collections/all-clothing"}
+        ]
+      },
+      {
+        "label": "נעליים",
+        "type": "parent",
+        "sub_items": [
+          {"label": "כל הנעליים", "url": "/collections/נעליים"}
+        ]
+      },
+      {
+        "label": "שינה ואביזרים",
+        "type": "parent",
+        "sub_items": [
+          {"label": "שמיכות עיטוף", "url": "/collections/שמיכות-עיטוף"},
+          {"label": "שקי שינה", "url": "/collections/שקי-שינה"},
+          {"label": "EasySleep", "url": "/products/™easysleep-מערכת-שינה-חכמה"}
+        ]
+      },
+      {
+        "label": "מתנות",
+        "type": "direct",
+        "url": "/collections/מארזי-מתנה"
+      },
+      {
+        "label": "מבצעים",
+        "type": "direct",
+        "url": "/collections/sale",
+        "note": "Replaces seasonal קיץ 2026 — permanent label"
+      },
+      {
+        "label": "אודות",
+        "type": "parent",
+        "sub_items": [
+          {"label": "על BabyMania", "url": "/pages/about"},
+          {"label": "יצירת קשר", "url": "/pages/contact"}
+        ]
+      }
+    ]
+  },
+
+  "task3_seasonal_age": {
+    "seasonal_recommendation": "Replace hardcoded קיץ 2026 with permanent מבצעים label",
+    "seasonal_tier": "T1",
+    "age_navigation": "HOLD — requires product tagging + smart collection setup",
+    "age_tier": "T3",
+    "age_phase": "Phase F — product taxonomy cleanup"
+  },
+
+  "task4_homepage_quick_wins": {
+    "hero_cta": {
+      "issue": "bm-video-hero schema has no heading/subtitle/CTA fields",
+      "option_a": {"action": "Edit bm-video-hero schema + Liquid to add overlay text/CTA", "tier": "T2", "recommended": true},
+      "option_b": {"action": "Enable disabled image_banner_xt8BGU (double-hero workaround)", "tier": "T1"},
+      "option_c": {"action": "Add bm-store-hero.liquid above current hero", "tier": "T1"}
+    },
+    "duplicate_heading": {
+      "issue": "הנמכרים ביותר appears at pos 6 (rich_text_xKGEmA) and pos 8 (rich_text_itPixN)",
+      "fix": "Rename rich_text_xKGEmA heading to מוצר השבוע or product-specific label",
+      "tier": "T1"
+    },
+    "trust_signals": {
+      "issue": "bm-trust-badges.liquid exists in theme but not on homepage",
+      "fix": "Add section via Shopify Customize, place after hero (position 2)",
+      "badges": ["משלוח מהיר", "תשלום מאובטח", "מדיניות החזרות", "שירות לקוחות"],
+      "also": "Enable show_rating: true on featured-collection sections",
+      "tier": "T1"
+    },
+    "performance": {
+      "issue": "products_to_show: 25 on both featured-collection sections = ~50 homepage images",
+      "fix": "Reduce to 8 on both sections",
+      "tier": "T1"
+    },
+    "empty_sections": [
+      {"id": "rich_text_bWQ9mf", "pos": 17, "issue": "Empty heading — no content", "fix": "Disable", "tier": "T1"},
+      {"id": "image_banner_WY4jhi", "pos": 15, "issue": "All blocks disabled, renders blank", "fix": "Disable", "tier": "T1"}
+    ]
+  },
+
+  "task5_tier_classification": [
+    {"item": "Homepage cleanup (5 items)", "tier": "T1"},
+    {"item": "Navigation restructure 17→6", "tier": "T1"},
+    {"item": "Add bm-trust-badges.liquid", "tier": "T1"},
+    {"item": "Enable show_rating on featured-collections", "tier": "T1"},
+    {"item": "Hero heading/CTA", "tier": "T2"},
+    {"item": "Sticky bar fix — enable main-product on EasySleep/Tempio", "tier": "T3"},
+    {"item": "Subscription text app config", "tier": "T3"},
+    {"item": "Age-based navigation", "tier": "T3", "status": "HOLD"}
+  ],
+
+  "task6_execution_phases": {
+    "E1_t1_homepage": ["Reduce products_to_show 25→8", "Disable image_banner_WY4jhi", "Disable rich_text_bWQ9mf", "Add bm-trust-badges section", "Enable show_rating", "Rename duplicate heading"],
+    "E2_t1_navigation": ["Restructure main menu 17→6", "Rename קיץ 2026 → מבצעים", "Move יצירת קשר to footer/About"],
+    "E3_t2_hero": ["Edit bm-video-hero.liquid schema: add heading/subtitle/cta_label/cta_url fields", "Add text overlay render in Liquid"],
+    "E4_t3_structural": ["Enable main-product on product.easy-sleep.json", "Enable main-product on product.tempio.json", "Identify + configure subscription text app"]
+  },
+
+  "task7_sticky_bar": {
+    "root_cause_file": "sections/bm-sticky-bar.liquid",
+    "root_cause_lines": "113-114",
+    "root_cause_code": "var target = document.querySelector('.product-form__buttons'); if (!target) return;",
+    "root_cause_summary": "If .product-form__buttons not in DOM, IntersectionObserver never created, sticky bar stays hidden",
+    "affected_templates": [
+      {
+        "template": "product.easy-sleep.json",
+        "issue": "main-product section has disabled: true — product form not rendered — .product-form__buttons = null",
+        "impact": "Sticky bar NEVER shows on EasySleep product page"
+      },
+      {
+        "template": "product.tempio.json",
+        "issue": "main-product section has disabled: true",
+        "impact": "Sticky bar NEVER shows on Tempio product page"
+      },
+      {
+        "template": "product.test.json",
+        "issue": "bm-sticky-bar section completely absent from template",
+        "impact": "No sticky bar at all"
+      }
+    ],
+    "templates_working": ["product.json", "product.clothing.json", "product.shoes.json", "product.accessories.json", "product.reborn.json", "product.test-template.json"],
+    "fix_a": {
+      "description": "Enable main-product section on product.easy-sleep.json and product.tempio.json",
+      "tier": "T3",
+      "recommended": true,
+      "risk": "Must verify EasySleep custom layout still works after enabling"
+    },
+    "fix_b": {
+      "description": "Add fallback selector: document.querySelector('.product-form__buttons, .product-form, form[action=\"/cart/add\"]')",
+      "tier": "T2",
+      "recommended": false,
+      "note": "Fallback if Fix A breaks EasySleep custom layout"
+    }
+  }
+}
