@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-05-10 12:47:42",
+  "phase": "A",
+  "mode": "live",
+  "results": {
+    "a1": {
+      "status": "PASS",
+      "pid": 9606694306105,
+      "live_title": "סט פיג'מה ארוכה לילדים",
+      "live_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-neutral",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "type-set"
+      ]
+    },
+    "a2": {
+      "status": "FAIL_VERIFY",
+      "gifts_url": "/collections/%D7%9E%D7%90%D7%A8%D7%96%D7%99-%D7%9E%D7%AA%D7%A0%D7%94",
+      "item_count": 17
+    },
+    "a3": {
+      "status": "PASS",
+      "new_title": "בגדים שמתאימים למתנה",
+      "handle": "occ-gift"
+    },
+    "a4": {
+      "status": "PASS",
+      "pid": "9096636825913",
+      "live_tags": [
+        "occ-gift"
+      ]
+    },
+    "a5": {
+      "pid": "9605887689017",
+      "title": "סרבל קיצי לתינוקות",
+      "status": "active",
+      "published_at": "2024-08-20T14:49:18+03:00",
+      "handle": "babys-clothes-summer-jumpsuit-outfit-solid-color-ruched-toddler-girl-casual-sleeveless-suspender-kids-rompers-headband-set",
+      "product_type": "",
+      "tags": [
+        "baby-gift",
+        "baby-romper",
+        "neutral-baby-outfit",
+        "newborn-clothing",
+        "summer-baby-wear"
+      ],
+      "images_count": 10,
+      "variants_count": 16,
+      "recommendation": {
+        "verdict": "ACTIVE",
+        "action": "Store public visibility OK — may be missing from visible collection. Check collection membership manually.",
+        "type_tags": [],
+        "gender_tags": [],
+        "tag_recommendations": [
+          "REVIEW_ONLY — no type-* tags. Manual classification needed.",
+          "REVIEW_ONLY — no gender-* tags. Manual classification needed.",
+          "REVIEW_ONLY — occ-gift tag absent. Needs manual review."
+        ],
+        "overall": "REVIEW_ONLY — no live write needed now"
+      },
+      "shopify_writes": "NONE"
+    }
+  },
+  "planned_changes": {
+    "a1": {
+      "pid": 9606694306105,
+      "changes": {
+        "pid": 9606694306105,
+        "current_title": "?? ???�?? ????? ??????",
+        "new_title": "סט פיג'מה ארוכה לילדים",
+        "title_changed": true,
+        "current_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-neutral",
+          "kids-clothing",
+          "neutral-baby-outfit",
+          "type-set"
+        ],
+        "new_tags": [
+          "baby-gift",
+          "baby-set",
+          "baby-shower-gift",
+          "everyday-baby-wear",
+          "gender-neutral",
+          "kids-clothing",
+          "neutral-baby-outfit",
+          "type-set"
+        ],
+        "tags_removed": [],
+        "tags_added": [],
+        "tags_changed": false
+      }
+    },
+    "a2": {
+      "gifts_item_found": true,
+      "old_resourceId": "gid://shopify/Collection/526691860793",
+      "new_gid": "gid://shopify/Collection/471568646457",
+      "fallback_url": null,
+      "target_url_http": 200,
+      "new_top_level_count": 17
+    },
+    "a3": {
+      "action": "update_collection_title",
+      "collection_id": 526691860793,
+      "current_title": "מתנות לתינוק",
+      "new_title": "בגדים שמתאימים למתנה",
+      "handle_unchanged": true,
+      "url_unchanged": true,
+      "rules_unchanged": true
+    },
+    "a4": {
+      "pid": "9096636825913",
+      "changes": {
+        "pid": 9096636825913,
+        "title": "סט לתינוק עד 3 חודשים - מארז מתנה מפנק",
+        "current_tags": [],
+        "new_tags": [
+          "occ-gift"
+        ],
+        "has_occ_gift": false,
+        "tags_to_remove": [],
+        "occ_gift_added": true,
+        "changes_needed": true
+      }
+    }
+  }
+}

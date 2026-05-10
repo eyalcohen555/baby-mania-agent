@@ -4,6 +4,28 @@
 
 ---
 
+## [2026-05-10] Phase A Live Issues Fix — PHASEA_LIVE_ISSUES_FIX_PASS
+Mode: LIVE | T3 approval: Ayal — 2026-05-10
+Action: 4 targeted fixes applied (A1 pajama, A2 navigation, A3 occ-gift title, A4 missing tag)
+Files created:
+  - docs/organic/phaseA-live-issues-fix-report.md
+  - output/tags/phaseA-live-fix-backup.json
+  - output/tags/phaseA-live-fix-dry-run.md/json
+  - output/tags/phaseA-live-fix-rollback-plan.md/json
+  - output/tags/phaseA-live-fix-verify.md/json
+  - output/tags/phaseA-product-9605887689017-readonly-report.md/json
+  - scripts/phaseA_live_fix.py
+Status: PHASEA_LIVE_ISSUES_FIX_PASS — all 4 writes PASS, A5 READ_ONLY_COMPLETE
+
+Changes:
+- A1: PID 9606694306105 — title fixed (encoding corruption → "סט פיג'מה ארוכה לילדים"), gender-girl→gender-neutral
+- A2: main-menu "מתנות לתינוק" → /collections/מארזי-מתנה (was /collections/occ-gift)
+- A3: occ-gift collection title: "מתנות לתינוק" → "בגדים שמתאימים למתנה" (handle unchanged)
+- A4: PID 9096636825913 — occ-gift tag added (was empty)
+- A5: PID 9605887689017 — read-only check, REVIEW_ONLY findings, no writes
+
+---
+
 ## [2026-05-10] Tag Taxonomy Expansion — READ-ONLY Planning
 Mode: PLANNING_ONLY | No Shopify writes
 Action: Full tag taxonomy expansion proposal created

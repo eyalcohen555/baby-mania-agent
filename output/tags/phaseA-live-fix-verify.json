@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-05-10 12:47:47",
+  "phase": "A",
+  "mode": "live",
+  "checks": {
+    "a1": {
+      "title_correct": true,
+      "gender_girl_absent": true,
+      "gender_neutral_present": true,
+      "no_age_tags": true
+    },
+    "a2": {
+      "gifts_found": true,
+      "gifts_url_is_matanat": true,
+      "gifts_url_live_encoded": "/collections/%D7%9E%D7%90%D7%A8%D7%96%D7%99-%D7%9E%D7%AA%D7%A0%D7%94",
+      "gifts_url_decoded": "/collections/מארזי-מתנה",
+      "verify_note": "URL returned percent-encoded by Shopify GQL; decoded equals target /collections/מארזי-מתנה — PASS",
+      "not_occ_gift_url": true,
+      "bagdei_sub_intact": true,
+      "item_count_17": true
+    },
+    "a3": {
+      "handle_unchanged": true,
+      "url_200": true,
+      "title_not_misleading": true
+    },
+    "a4": {
+      "occ_gift_present": true,
+      "type_set_absent": true,
+      "type_romper_absent": true,
+      "product_accessible": true
+    }
+  },
+  "all_pass": true
+}

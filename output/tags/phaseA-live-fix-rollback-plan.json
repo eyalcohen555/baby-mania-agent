@@ -1,0 +1,148 @@
+{
+  "timestamp": "2026-05-10 12:47:27",
+  "phase": "A",
+  "items": {
+    "a1": {
+      "pid": 9606694306105,
+      "restore_title": "?? ???�?? ????? ??????",
+      "restore_tags": [
+        "baby-gift",
+        "baby-set",
+        "baby-shower-gift",
+        "everyday-baby-wear",
+        "gender-neutral",
+        "kids-clothing",
+        "neutral-baby-outfit",
+        "type-set"
+      ],
+      "restore_cmd": "PUT /products/9606694306105.json with title + tags from backup"
+    },
+    "a2": {
+      "menu_id": "gid://shopify/Menu/250909851961",
+      "menu_title": "תפריט",
+      "restore_items": [
+        {
+          "title": "דף הבית",
+          "type": "FRONTPAGE"
+        },
+        {
+          "title": "בגדי תינוקות",
+          "type": "HTTP",
+          "url": "#",
+          "items": [
+            {
+              "title": "סטים",
+              "type": "COLLECTION",
+              "resourceId": "gid://shopify/Collection/526691795257"
+            },
+            {
+              "title": "סרבלים",
+              "type": "COLLECTION",
+              "resourceId": "gid://shopify/Collection/526691828025"
+            },
+            {
+              "title": "בגדי בנות",
+              "type": "COLLECTION",
+              "resourceId": "gid://shopify/Collection/526691729721"
+            },
+            {
+              "title": "בגדי בנים",
+              "type": "COLLECTION",
+              "resourceId": "gid://shopify/Collection/526691762489"
+            },
+            {
+              "title": "כל הבגדים",
+              "type": "COLLECTION",
+              "resourceId": "gid://shopify/Collection/526700020025"
+            }
+          ]
+        },
+        {
+          "title": "מתנות לתינוק",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/526691860793"
+        },
+        {
+          "title": "בגדי חורף",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/486381617465"
+        },
+        {
+          "title": "קיץ 2026",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/473261211961"
+        },
+        {
+          "title": "כל המוצרים",
+          "type": "CATALOG"
+        },
+        {
+          "title": "בובת ריבורן",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/526156103993"
+        },
+        {
+          "title": "מוצרי בטיחות",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/472982094137"
+        },
+        {
+          "title": "משחקים לתינוק",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/472981733689"
+        },
+        {
+          "title": "נעלי ילדים",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/471568613689"
+        },
+        {
+          "title": "שמיכות עיטוף ושקי שינה",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/471568580921"
+        },
+        {
+          "title": "תיקי החתלה",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/471568548153"
+        },
+        {
+          "title": "לידה ואביזרים נלווים",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/481499283769"
+        },
+        {
+          "title": "בלוג",
+          "type": "BLOG",
+          "resourceId": "gid://shopify/Blog/109164036409"
+        },
+        {
+          "title": "עיצוב וטקסטיל לחדרי ילדים",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/481499414841"
+        },
+        {
+          "title": "המיוחדים שלנו",
+          "type": "COLLECTION",
+          "resourceId": "gid://shopify/Collection/477318185273"
+        },
+        {
+          "title": "יצירת קשר",
+          "type": "PAGE",
+          "resourceId": "gid://shopify/Page/135463764281"
+        }
+      ],
+      "restore_cmd": "GraphQL menuUpdate with restore_items"
+    },
+    "a3": {
+      "collection_id": 526691860793,
+      "restore_title": "מתנות לתינוק",
+      "restore_cmd": "PUT /smart_collections/526691860793.json with restore_title"
+    },
+    "a4": {
+      "pid": "9096636825913",
+      "restore_tags": [],
+      "restore_cmd": "PUT /products/9096636825913.json with restore_tags"
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "timestamp": "2026-05-10 12:47:27",
+  "phase": "A",
+  "t3_approval": "Ayal — 2026-05-10",
+  "mode": "live",
+  "a1": {
+    "pid": 9606694306105,
+    "title": "?? ???�?? ????? ??????",
+    "tags": [
+      "baby-gift",
+      "baby-set",
+      "baby-shower-gift",
+      "everyday-baby-wear",
+      "gender-neutral",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "type-set"
+    ]
+  },
+  "a2": {
+    "menu_id": "gid://shopify/Menu/250909851961",
+    "item_count": 17,
+    "items": [
+      {
+        "id": "gid://shopify/MenuItem/783979053369",
+        "title": "דף הבית",
+        "url": "/",
+        "type": "FRONTPAGE",
+        "resourceId": null,
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979086137",
+        "title": "בגדי תינוקות",
+        "url": "#",
+        "type": "HTTP",
+        "resourceId": null,
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/783979118905",
+            "title": "סטים",
+            "url": "/collections/type-set",
+            "type": "COLLECTION",
+            "resourceId": "gid://shopify/Collection/526691795257"
+          },
+          {
+            "id": "gid://shopify/MenuItem/783979151673",
+            "title": "סרבלים",
+            "url": "/collections/type-romper",
+            "type": "COLLECTION",
+            "resourceId": "gid://shopify/Collection/526691828025"
+          },
+          {
+            "id": "gid://shopify/MenuItem/783979184441",
+            "title": "בגדי בנות",
+            "url": "/collections/gender-girl",
+            "type": "COLLECTION",
+            "resourceId": "gid://shopify/Collection/526691729721"
+          },
+          {
+            "id": "gid://shopify/MenuItem/783979217209",
+            "title": "בגדי בנים",
+            "url": "/collections/gender-boy",
+            "type": "COLLECTION",
+            "resourceId": "gid://shopify/Collection/526691762489"
+          },
+          {
+            "id": "gid://shopify/MenuItem/783979249977",
+            "title": "כל הבגדים",
+            "url": "/collections/clothing-all",
+            "type": "COLLECTION",
+            "resourceId": "gid://shopify/Collection/526700020025"
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979282745",
+        "title": "מתנות לתינוק",
+        "url": "/collections/occ-gift",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/526691860793",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979315513",
+        "title": "בגדי חורף",
+        "url": "/collections/%D7%91%D7%92%D7%93%D7%99-%D7%97%D7%95%D7%A8%D7%A3-1",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/486381617465",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979348281",
+        "title": "קיץ 2026",
+        "url": "/collections/summer-2024",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/473261211961",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979381049",
+        "title": "כל המוצרים",
+        "url": "/collections/all",
+        "type": "CATALOG",
+        "resourceId": null,
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979413817",
+        "title": "בובת ריבורן",
+        "url": "/collections/reborn",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/526156103993",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979446585",
+        "title": "מוצרי בטיחות",
+        "url": "/collections/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%91%D7%98%D7%99%D7%97%D7%95%D7%AA",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/472982094137",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979479353",
+        "title": "משחקים לתינוק",
+        "url": "/collections/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/472981733689",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979512121",
+        "title": "נעלי ילדים",
+        "url": "/collections/%D7%A0%D7%A2%D7%9C%D7%99%D7%99%D7%9D",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/471568613689",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979544889",
+        "title": "שמיכות עיטוף ושקי שינה",
+        "url": "/collections/%D7%A9%D7%9E%D7%99%D7%9B%D7%95%D7%AA-%D7%A2%D7%99%D7%98%D7%95%D7%A3-%D7%95%D7%A9%D7%A7%D7%99-%D7%A9%D7%99%D7%A0%D7%94",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/471568580921",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979577657",
+        "title": "תיקי החתלה",
+        "url": "/collections/%D7%AA%D7%99%D7%A7%D7%99-%D7%94%D7%97%D7%AA%D7%9C%D7%94",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/471568548153",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979610425",
+        "title": "לידה ואביזרים נלווים",
+        "url": "/collections/%D7%9C%D7%99%D7%93%D7%94-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%A0%D7%9C%D7%95%D7%95%D7%99%D7%9D",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/481499283769",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979643193",
+        "title": "בלוג",
+        "url": "/blogs/news",
+        "type": "BLOG",
+        "resourceId": "gid://shopify/Blog/109164036409",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979675961",
+        "title": "עיצוב וטקסטיל לחדרי ילדים",
+        "url": "/collections/%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%95%D7%98%D7%A7%D7%A1%D7%98%D7%99%D7%9C-%D7%9C%D7%97%D7%93%D7%A8%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/481499414841",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979708729",
+        "title": "המיוחדים שלנו",
+        "url": "/collections/%D7%94%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95",
+        "type": "COLLECTION",
+        "resourceId": "gid://shopify/Collection/477318185273",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/783979741497",
+        "title": "יצירת קשר",
+        "url": "/pages/contact",
+        "type": "PAGE",
+        "resourceId": "gid://shopify/Page/135463764281",
+        "items": []
+      }
+    ]
+  },
+  "a3": {
+    "id": 526691860793,
+    "title": "מתנות לתינוק",
+    "handle": "occ-gift"
+  },
+  "a4": {
+    "pid": "9096636825913",
+    "title": "סט לתינוק עד 3 חודשים - מארז מתנה מפנק",
+    "tags": []
+  }
+}

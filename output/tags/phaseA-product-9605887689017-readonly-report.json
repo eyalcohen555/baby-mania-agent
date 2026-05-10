@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-05-10 12:47:42",
+  "pid": "9605887689017",
+  "title": "סרבל קיצי לתינוקות",
+  "status": "active",
+  "published_at": "2024-08-20T14:49:18+03:00",
+  "handle": "babys-clothes-summer-jumpsuit-outfit-solid-color-ruched-toddler-girl-casual-sleeveless-suspender-kids-rompers-headband-set",
+  "product_type": "",
+  "tags": [
+    "baby-gift",
+    "baby-romper",
+    "neutral-baby-outfit",
+    "newborn-clothing",
+    "summer-baby-wear"
+  ],
+  "images_count": 10,
+  "variants_count": 16,
+  "recommendation": {
+    "verdict": "ACTIVE",
+    "action": "Store public visibility OK — may be missing from visible collection. Check collection membership manually.",
+    "type_tags": [],
+    "gender_tags": [],
+    "tag_recommendations": [
+      "REVIEW_ONLY — no type-* tags. Manual classification needed.",
+      "REVIEW_ONLY — no gender-* tags. Manual classification needed.",
+      "REVIEW_ONLY — occ-gift tag absent. Needs manual review."
+    ],
+    "overall": "REVIEW_ONLY — no live write needed now"
+  },
+  "shopify_writes": "NONE"
+}
