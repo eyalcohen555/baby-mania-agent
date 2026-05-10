@@ -4,6 +4,31 @@
 
 ---
 
+## [2026-05-10] Tag Taxonomy Expansion — READ-ONLY Planning
+Mode: PLANNING_ONLY | No Shopify writes
+Action: Full tag taxonomy expansion proposal created
+Files created:
+  - docs/organic/tag-taxonomy-expansion-proposal.md
+  - output/tags/tag-taxonomy-expansion-audit.json
+  - output/tags/shoes-taxonomy-proposal.md
+  - output/tags/shoes-image-review-spec.md
+  - output/tags/review-only-triage-plan.md
+  - output/tags/future-smart-collections-proposal.md
+Status: PROPOSAL_READY — awaiting approval before any live writes
+
+Key findings:
+- 218 products already live-tagged (clothing: type-* + gender-* + occ-*)
+- ~133 REVIEW_ONLY products pending manual triage
+- ~65 shoe products blocked (pending EU size mapping decision + taxonomy approval)
+- 6 Smart Collections live (gender-girl/boy, type-set/romper, occ-gift, clothing-all)
+- Shoe taxonomy proposed: 7 tags (sneakers/sandals/boots/first-step/elegant/soft-sole/review-only)
+- Image review agent spec defined (input/output schema + vision prompt)
+- REVIEW_ONLY triage plan: 5 categories + batch workflow (20/batch)
+- Future collections roadmap: 13 candidates, summer-2024 handle assessed
+- No Shopify writes performed
+
+---
+
 ## DATE: 2026-05-08
 ## TASK: Layer 6 Closure Audit
 ## SCOPE: READ-ONLY — Full Tag System + Navigation Foundation closure audit

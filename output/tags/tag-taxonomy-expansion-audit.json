@@ -1,0 +1,52 @@
+{
+  "audit_date": "2026-05-10",
+  "mode": "READ_ONLY",
+  "shopify_writes": false,
+  "totals": {
+    "total_active": "PENDING_LIVE_QUERY",
+    "already_tagged": 218,
+    "untagged": "PENDING_LIVE_QUERY",
+    "shoes_candidates": 65,
+    "review_only": 133,
+    "false_positive_blocked": "9+ documented in Batch 10 (swimsuit, brush, potty, formula, postpartum, blankets, spinner toys)",
+    "image_review_needed": 65,
+    "archived_draft": "PENDING_LIVE_QUERY"
+  },
+  "data_source": "docs/organic/layer6-closure-report.md + docs/organic/מצב-הפרויקט-האורגני.md (Phase 7C long-run plan, Layer 6 closure audit). No fresh live Shopify query performed — READ-ONLY planning session.",
+  "known_shoe_candidates": {
+    "total_blocked": 65,
+    "keyword_basis": ["נעל", "נעליים", "סנדל", "סנדלים", "סניקרס", "boot", "shoe", "sandal", "sneaker", "כפכף", "בלרינה", "מוקסין", "first-walkers", "soft-sole"],
+    "eu_size_block": true,
+    "eu_size_block_reason": "EU size mapping taxonomy not yet approved — blocked per Layer 6 closure note"
+  },
+  "review_only_pool": {
+    "total": 133,
+    "known_sub_candidates": {
+      "from_batch10": 2,
+      "batch10_pids": ["9096636825913", "9605887689017"]
+    },
+    "categories_expected": ["approve_for_tagging", "image_review_needed", "manual_review_needed", "reject_not_relevant", "future_category_candidate"]
+  },
+  "false_positive_keywords_documented": [
+    "swimsuit", "swim", "ביגוד ים",
+    "brush", "מברשות",
+    "potty", "toilet", "עציץ",
+    "formula", "powder", "storage", "container",
+    "postpartum", "belly-band", "corset",
+    "שמיכות",
+    "spinner", "toy", "toys",
+    "כובע without clothing context",
+    "יחידת", "מארז", "מתלה",
+    "ניקוי", "טטרה", "muslin bib"
+  ],
+  "smart_collections_live": 6,
+  "smart_collections_list": [
+    {"name": "gender-girl", "id": "526691729721"},
+    {"name": "gender-boy", "id": "526691762489"},
+    {"name": "type-set", "id": "526691795257"},
+    {"name": "type-romper", "id": "526691828025"},
+    {"name": "occ-gift", "id": "526691860793"},
+    {"name": "clothing-all", "id": "526700020025"}
+  ],
+  "notes": "This audit is based on Layer 6 closure data (2026-05-08). No fresh Shopify API call was made. The 218 already-tagged figure is confirmed from Phase 7C Batch 10 Revised (last live write). The 65 shoe-blocked figure is from Phase 7C Batch 9 plan (shoe_blocked=65). The 133 REVIEW_ONLY figure is from Layer 6 closure report. A live Shopify query is required before any T3 tag-write action to confirm current state."
+}
