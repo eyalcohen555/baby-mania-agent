@@ -1,0 +1,97 @@
+{
+  "date": "2026-05-10",
+  "mode": "READ-ONLY + PATCH PLAN",
+  "tier": "T2",
+  "verdict": "PHASEE1B_STICKY_ROOT_CAUSE_READY",
+  "shopify_writes": "NONE",
+  "theme_writes": "NONE",
+
+  "root_cause": {
+    "type": "DOM_TIMING_BUG",
+    "confidence": "HIGH",
+    "confirmed_by": "storefront HTML byte-offset analysis",
+    "description": "bm-sticky-bar.liquid script is an inline <script> (no defer) that runs before main-product section is parsed. At run time, .product-form__buttons does not exist in DOM → querySelector returns null → if (!target) return exits early → IntersectionObserver NEVER created → aria-hidden stays 'true' forever → sticky permanently hidden.",
+    "evidence": {
+      "sticky_script_position_chars": 80957,
+      "product_form_buttons_dom_position_chars": 137957,
+      "gap_chars": 57000,
+      "script_type": "plain <script> — no defer, no module, no async",
+      "has_domcontent_loaded_fallback": false,
+      "early_exit_code": "if (!target) return;"
+    }
+  },
+
+  "ruled_out": [
+    "z-index conflict — no higher-z element found blocking sticky",
+    "CSS conflict — live bm-store-main-overrides.liquid has no #bm-sticky-bar CSS (comment confirms removed)",
+    "duplicate id=bm-sticky-bar — only 1 instance in live HTML",
+    "iOS safe-area — minor cosmetic, not functional failure",
+    "viewport too short — would cause 'never shows on short pages', not 'never shows on any page'",
+    "IntersectionObserver browser support — IO is present in HTML, just never invoked"
+  ],
+
+  "affected_scope": "ALL products using templates where bm_sticky_bar section appears BEFORE main section in order array",
+  "affected_templates": [
+    "product.clothing.json (bm_sticky_bar pos 1, main pos 3)",
+    "product.shoes.json (likely same order — needs verification)",
+    "product.accessories.json (likely same order)",
+    "product.reborn.json (likely same order)",
+    "product.json (likely same order)",
+    "product.test-template.json (likely same order)"
+  ],
+  "special_templates": {
+    "easy-sleep": {
+      "cause": "main-product disabled — different root cause",
+      "fix": "T3 — enable main-product section"
+    },
+    "tempio": {
+      "cause": "main-product disabled — different root cause",
+      "fix": "T3 — enable main-product section"
+    },
+    "product.test.json": {
+      "cause": "bm-sticky-bar section absent",
+      "fix": "T1 — add section"
+    }
+  },
+
+  "proposed_patch": {
+    "file": "sections/bm-sticky-bar.liquid",
+    "change_type": "JavaScript only (4 lines changed)",
+    "option_a": {
+      "name": "DOMContentLoaded + readyState fix",
+      "recommended": true,
+      "description": "Wrap IntersectionObserver setup in initStickyObserver(). Call immediately if readyState != 'loading', else wait for DOMContentLoaded.",
+      "lines_changed": 4,
+      "breaks_desktop": false,
+      "breaks_existing_behavior": false,
+      "code": "function initStickyObserver() { var target = document.querySelector('.product-form__buttons') || document.querySelector('.product-form__submit:not(#bm-sticky-add-btn)'); if (!target) return; new IntersectionObserver(function(entries) { var vis = entries[0].isIntersecting; bar.setAttribute('aria-hidden', vis ? 'true' : 'false'); }, { threshold: 0.1 }).observe(target); } if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initStickyObserver); } else { initStickyObserver(); }"
+    },
+    "option_b": {
+      "name": "Always show after scroll (mobile only)",
+      "recommended": false,
+      "description": "window.scroll listener, show sticky when scrollY > 250. Mobile only (max-width 768px). Simpler but less precise.",
+      "lines_changed": 8,
+      "breaks_desktop": false,
+      "breaks_existing_behavior": true,
+      "note": "Shows sticky even when ATC button still visible — less accurate UX"
+    }
+  },
+
+  "css_analysis": {
+    "conflict_found": false,
+    "live_bm_store_main_overrides_has_sticky_css": false,
+    "sticky_css_source": "bm-sticky-bar.liquid only",
+    "sticky_z_index": 999,
+    "conflicting_elements": "none found",
+    "ios_safe_area": "not implemented — minor cosmetic gap on iPhone with home indicator"
+  },
+
+  "observer_analysis": {
+    "target_selector": ".product-form__buttons",
+    "threshold": 0,
+    "threshold_note": "threshold:0 only shows sticky when target COMPLETELY off viewport. threshold:0.1 recommended for better UX",
+    "rootmargin": "none",
+    "observer_never_created": true,
+    "reason": "early return before new IntersectionObserver() call"
+  }
+}

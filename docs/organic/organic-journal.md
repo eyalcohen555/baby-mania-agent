@@ -4,6 +4,35 @@
 
 ---
 
+## [2026-05-10] Phase E1b Sticky Behavioral Debug — PHASEE1B_STICKY_ROOT_CAUSE_READY
+Mode: READ-ONLY + PATCH PLAN | T2 plan only — no live writes
+Action: Deep storefront HTML analysis + byte-offset verification of DOM timing bug
+Files created:
+  - docs/organic/phaseE1b-sticky-behavioral-debug.md
+  - output/tags/phaseE1b-sticky-behavioral-debug.json
+  - output/tags/phaseE1b-sticky-proposed-patch.md
+Status: PHASEE1B_STICKY_ROOT_CAUSE_READY — awaiting T2 approval to apply
+
+ROOT CAUSE CONFIRMED:
+  bm-sticky-bar.liquid inline <script> (no defer) runs at char 80,957 in HTML.
+  main-product section renders at char 137,957 (57,000 chars later).
+  querySelector('.product-form__buttons') = null → if (!target) return → early exit.
+  IntersectionObserver NEVER created → sticky permanently hidden on all products.
+  NOT a CSS/z-index/iOS/viewport issue — pure DOM timing bug.
+
+RULED OUT: CSS conflict (live bm-store-main-overrides.liquid has no sticky CSS),
+  duplicate ID (only 1 id=bm-sticky-bar in live HTML), z-index, iOS safe-area,
+  short viewport.
+
+PROPOSED FIX (T2 — not applied):
+  Option A: Wrap observer in initStickyObserver(), add readyState check +
+  DOMContentLoaded listener. 8 lines changed, no HTML/CSS/schema changes.
+  threshold: 0.1 (was 0).
+
+EASYSLEEP/TEMPIO: Still need separate T3 fix (main-product disabled — different issue).
+
+---
+
 ## [2026-05-10] Phase E1 Homepage Quick Wins — PHASEE1_HOMEPAGE_QUICK_WINS_PASS
 Mode: LIVE | T1 approved | Theme: 183668179257 | Template: templates/index.json
 Action: 6 T1 changes applied to homepage template
