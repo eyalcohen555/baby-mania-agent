@@ -4,6 +4,36 @@
 
 ---
 
+## [2026-05-10] Phase E1 Homepage Quick Wins — PHASEE1_HOMEPAGE_QUICK_WINS_PASS
+Mode: LIVE | T1 approved | Theme: 183668179257 | Template: templates/index.json
+Action: 6 T1 changes applied to homepage template
+Files created:
+  - docs/organic/phaseE1-homepage-quick-wins-report.md
+  - output/tags/phaseE1-homepage-quick-wins-backup.json
+  - output/tags/phaseE1-homepage-quick-wins-dry-run.md/json
+  - output/tags/phaseE1-homepage-quick-wins-rollback-plan.md
+  - output/tags/phaseE1-homepage-quick-wins-verify.md/json
+  - output/tags/phaseE1-sticky-reality-audit.md/json
+  - scripts/phaseE1_homepage_quick_wins.py
+Status: PHASEE1_HOMEPAGE_QUICK_WINS_PASS — all 6 writes PASS
+
+Homepage changes (all verified PASS):
+  E1-1a: featured_collection products_to_show 25 → 8
+  E1-1b: featured_collection_FXYxk4 products_to_show 25 → 8
+  E1-2:  image_banner_WY4jhi disabled (blank section removed from render)
+  E1-3:  rich_text_bWQ9mf disabled (empty heading removed)
+  E1-4:  rich_text_xKGEmA heading "הנמכרים ביותר" → "מוצר השבוע"
+  E1-5:  bm-trust-badges section added after hero (4 badges: משלוח/תשלום/החזרות/שירות)
+  E1-6:  show_rating — NO CHANGE (no product reviews found)
+
+Sticky audit (READ-ONLY):
+  - product.clothing.json: HTML CORRECT — bm-sticky-bar ✅, .product-form__buttons ✅, IntersectionObserver ✅
+  - Clothing sticky broken on mobile = BEHAVIORAL root cause (NOT structural) — T2 DevTools investigation needed
+  - EasySleep + Tempio: BROKEN — main-product section disabled → .product-form__buttons not in DOM — T3 fix needed
+  - product.test.json: BROKEN — no bm-sticky-bar section
+
+---
+
 ## [2026-05-10] Phase E Navigation + Homepage Fix Plan — READ-ONLY COMPLETE
 Mode: READ-ONLY | T0 | No Shopify writes | No theme writes
 Action: Full fix plan for navigation restructure + homepage quick wins, based on Phase D audit

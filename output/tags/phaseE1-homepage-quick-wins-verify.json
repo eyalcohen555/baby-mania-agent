@@ -1,0 +1,59 @@
+{
+  "overall": "PASS",
+  "items": [
+    {
+      "id": "E1-1a",
+      "section": "featured_collection",
+      "expected": 8,
+      "actual": 8,
+      "verdict": "PASS"
+    },
+    {
+      "id": "E1-1b",
+      "section": "featured_collection_FXYxk4",
+      "expected": 8,
+      "actual": 8,
+      "verdict": "PASS"
+    },
+    {
+      "id": "E1-2",
+      "section": "image_banner_WY4jhi",
+      "expected_disabled": true,
+      "actual_disabled": true,
+      "verdict": "PASS"
+    },
+    {
+      "id": "E1-3",
+      "section": "rich_text_bWQ9mf",
+      "expected_disabled": true,
+      "actual_disabled": true,
+      "verdict": "PASS"
+    },
+    {
+      "id": "E1-4",
+      "section": "rich_text_xKGEmA",
+      "expected": "מוצר השבוע",
+      "actual": "מוצר השבוע",
+      "verdict": "PASS"
+    },
+    {
+      "id": "E1-5",
+      "section": "bm_trust_badges_E1_2026",
+      "in_sections": true,
+      "in_order": true,
+      "verdict": "PASS"
+    },
+    {
+      "id": "E1-6",
+      "section": "featured_collection",
+      "verdict": "SKIP_OK",
+      "note": "NO_CHANGE"
+    },
+    {
+      "id": "E1-6",
+      "section": "featured_collection_FXYxk4",
+      "verdict": "SKIP_OK",
+      "note": "NO_CHANGE"
+    }
+  ]
+}

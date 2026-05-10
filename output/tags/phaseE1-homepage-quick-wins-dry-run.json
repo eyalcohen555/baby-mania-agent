@@ -1,0 +1,81 @@
+{
+  "date": "2026-05-10",
+  "mode": "live",
+  "changes": [
+    {
+      "id": "E1-1a",
+      "section": "featured_collection",
+      "field": "settings.products_to_show",
+      "from": 25,
+      "to": 8,
+      "status": "APPLIED"
+    },
+    {
+      "id": "E1-1b",
+      "section": "featured_collection_FXYxk4",
+      "field": "settings.products_to_show",
+      "from": 25,
+      "to": 8,
+      "status": "APPLIED"
+    },
+    {
+      "id": "E1-2",
+      "section": "image_banner_WY4jhi",
+      "field": "disabled",
+      "from": false,
+      "to": true,
+      "status": "APPLIED"
+    },
+    {
+      "id": "E1-3",
+      "section": "rich_text_bWQ9mf",
+      "field": "disabled",
+      "from": false,
+      "to": true,
+      "status": "APPLIED"
+    },
+    {
+      "id": "E1-4",
+      "section": "rich_text_xKGEmA",
+      "block": "heading_fwngai",
+      "field": "blocks.heading_fwngai.settings.heading",
+      "from": "הנמכרים ביותר",
+      "to": "מוצר השבוע",
+      "status": "APPLIED"
+    },
+    {
+      "id": "E1-5",
+      "section": "bm_trust_badges_E1_2026",
+      "status": "APPLIED",
+      "badges": [
+        "משלוח מהיר לכל הארץ",
+        "תשלום מאובטח",
+        "החזרות עד 14 יום",
+        "שירות לקוחות אישי"
+      ],
+      "inserted_after": "bm_video_hero_CRzC6Q"
+    },
+    {
+      "id": "E1-6",
+      "section": "featured_collection",
+      "show_rating_current": false,
+      "status": "NO_CHANGE",
+      "reason": "Cannot verify product review count without app API — leaving disabled"
+    },
+    {
+      "id": "E1-6",
+      "section": "featured_collection_FXYxk4",
+      "show_rating_current": false,
+      "status": "NO_CHANGE",
+      "reason": "Cannot verify product review count without app API — leaving disabled"
+    }
+  ],
+  "trust_schema": "FOUND — block_type='badge' text_field='title'",
+  "review_check_summary": {
+    "status": "OK",
+    "product_sample_id": 10190523334969,
+    "metafields_count": 0,
+    "review_metafields": [],
+    "has_reviews": false
+  }
+}

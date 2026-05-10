@@ -1,0 +1,164 @@
+{
+  "date": "2026-05-10",
+  "mode": "READ-ONLY",
+  "sticky_scope": "all_products",
+  "root_cause_confidence": "HIGH",
+  "root_cause_by_group": {
+    "easysleep_tempio": {
+      "templates": ["product.easy-sleep.json", "product.tempio.json"],
+      "cause": "main-product section disabled → .product-form__buttons not rendered in DOM → IntersectionObserver target = null → sticky never activates",
+      "confidence": "HIGH",
+      "fix_tier": "T3"
+    },
+    "clothing_shoes_accessories_reborn_default": {
+      "templates": ["product.clothing.json", "product.shoes.json", "product.accessories.json", "product.reborn.json", "product.json", "product.test-template.json"],
+      "cause": "HTML structure CONFIRMED CORRECT: bm-sticky-bar ✅, .product-form__buttons ✅, IntersectionObserver ✅, aria-hidden='true' initial state ✅ — sticky broken on mobile for BEHAVIORAL reason, not structural",
+      "behavioral_hypotheses": [
+        "Mobile viewport: product page may be short enough that .product-form__buttons never fully leaves viewport → IntersectionObserver never fires 'false'",
+        "z-index conflict: another fixed element (Dawn header, cookie banner, cart drawer) covers sticky bar even when triggered",
+        "iOS Safari IntersectionObserver edge case: threshold:0 may behave differently on Safari mobile",
+        "Dawn native sticky component: Dawn may render its own sticky element that conflicts"
+      ],
+      "confidence": "MEDIUM — structural confirmed correct, behavioral root cause needs browser DevTools investigation",
+      "fix_tier": "T2"
+    },
+    "product_test": {
+      "templates": ["product.test.json"],
+      "cause": "bm-sticky-bar section completely absent from template",
+      "confidence": "HIGH",
+      "fix_tier": "T1"
+    }
+  },
+  "storefront_check_v1": {
+    "note": "INCONCLUSIVE — product returned 404 (archived/unpublished product returned by API)",
+    "product_handle": "0-18-months-old-newborn-baby-boy-jumpsuit-cute-little-bear-short-sleeved-jumpsuit-baby-clothing-boy-baby-summer-crawling-suit",
+    "http_status": 404
+  },
+  "storefront_check_v2": {
+    "note": "DEFINITIVE — live published clothing product (200 OK)",
+    "product_handle": "חליפת-תחרה-פרחונית-מורן",
+    "template_suffix": "clothing",
+    "url": "https://www.babymania-il.com/products/חליפת-תחרה-פרחונית-מורן",
+    "http_status": 200,
+    "has_sticky_bar_in_html": true,
+    "has_product_form__buttons": true,
+    "has_product_form": true,
+    "has_intersection_observer": true,
+    "sticky_starts_hidden": true,
+    "analysis": {
+      "sticky_section_rendered": true,
+      "form_buttons_in_dom": true,
+      "observer_attached": true,
+      "issue": "NONE structural — issue is behavioral. Need mobile DevTools to diagnose IntersectionObserver scroll behavior or z-index conflict."
+    }
+  },
+  "template_results": [
+    {
+      "template": "templates/product.json",
+      "has_sticky_bar": true,
+      "main_product_section": "main",
+      "main_product_enabled": true,
+      "form_buttons_expected_in_dom": true,
+      "sticky_verdict": "LIKELY_WORKING"
+    },
+    {
+      "template": "templates/product.clothing.json",
+      "has_sticky_bar": true,
+      "main_product_section": "main",
+      "main_product_enabled": true,
+      "form_buttons_expected_in_dom": true,
+      "sticky_verdict": "HTML_CORRECT_BEHAVIOR_UNKNOWN"
+    },
+    {
+      "template": "templates/product.shoes.json",
+      "has_sticky_bar": true,
+      "main_product_section": "main",
+      "main_product_enabled": true,
+      "form_buttons_expected_in_dom": true,
+      "sticky_verdict": "LIKELY_WORKING"
+    },
+    {
+      "template": "templates/product.accessories.json",
+      "has_sticky_bar": true,
+      "main_product_section": "main",
+      "main_product_enabled": true,
+      "form_buttons_expected_in_dom": true,
+      "sticky_verdict": "LIKELY_WORKING"
+    },
+    {
+      "template": "templates/product.reborn.json",
+      "has_sticky_bar": true,
+      "main_product_section": "main",
+      "main_product_enabled": true,
+      "form_buttons_expected_in_dom": true,
+      "sticky_verdict": "LIKELY_WORKING"
+    },
+    {
+      "template": "templates/product.easy-sleep.json",
+      "has_sticky_bar": true,
+      "main_product_section": "main",
+      "main_product_enabled": false,
+      "form_buttons_expected_in_dom": false,
+      "sticky_verdict": "BROKEN_MAIN_PRODUCT_DISABLED"
+    },
+    {
+      "template": "templates/product.tempio.json",
+      "has_sticky_bar": true,
+      "main_product_section": "main",
+      "main_product_enabled": false,
+      "form_buttons_expected_in_dom": false,
+      "sticky_verdict": "BROKEN_MAIN_PRODUCT_DISABLED"
+    },
+    {
+      "template": "templates/product.test-template.json",
+      "has_sticky_bar": true,
+      "main_product_section": "main",
+      "main_product_enabled": true,
+      "form_buttons_expected_in_dom": true,
+      "sticky_verdict": "LIKELY_WORKING"
+    },
+    {
+      "template": "templates/product.test.json",
+      "has_sticky_bar": false,
+      "main_product_section": "main",
+      "main_product_enabled": true,
+      "form_buttons_expected_in_dom": true,
+      "sticky_verdict": "BROKEN_NO_SECTION"
+    }
+  ],
+  "affected_templates": [
+    "product.easy-sleep.json (BROKEN — main-product disabled)",
+    "product.tempio.json (BROKEN — main-product disabled)",
+    "product.test.json (BROKEN — no sticky section)",
+    "product.clothing.json (HTML correct but behavior unknown — Ayal reports broken on mobile)"
+  ],
+  "working_templates": [
+    "product.json",
+    "product.shoes.json",
+    "product.accessories.json",
+    "product.reborn.json",
+    "product.test-template.json"
+  ],
+  "recommended_fix_options": [
+    {
+      "tier": "T1",
+      "fix": "Add bm-sticky-bar section to product.test.json",
+      "scope": "product.test.json only"
+    },
+    {
+      "tier": "T2",
+      "fix": "Investigate IntersectionObserver scroll behavior on mobile via DevTools; check z-index conflicts; possibly adjust threshold or add CSS override",
+      "scope": "All LIKELY_WORKING templates that Ayal reports as broken"
+    },
+    {
+      "tier": "T3",
+      "fix": "Enable main-product section on product.easy-sleep.json + product.tempio.json",
+      "scope": "EasySleep + Tempio pages"
+    }
+  ],
+  "review_check": {
+    "status": "OK",
+    "has_reviews": false,
+    "note": "No review metafields found — show_rating left disabled"
+  }
+}
