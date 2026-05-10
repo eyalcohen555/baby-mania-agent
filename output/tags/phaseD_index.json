@@ -1,0 +1,698 @@
+{
+  "sections": {
+    "bm_video_hero_CRzC6Q": {
+      "type": "bm-video-hero",
+      "name": "BM Video Hero",
+      "settings": {
+        "video_desktop": "shopify:\/\/files\/videos\/hiro for desktop.mp4",
+        "image_desktop": "shopify:\/\/shop_images\/ChatGPT_Image_Feb_8_2026_09_56_48_AM.png",
+        "video_desktop_2": "shopify:\/\/files\/videos\/grok-video-cf4a3465-b901-4cb4-b016-fffeb7bf95ac.mp4",
+        "image_desktop_2": "shopify:\/\/shop_images\/Scfb1312cfe4e4bc891e38269845535eay_da3154f2-3f70-47fb-8b85-a80f5065dd41.webp",
+        "video_mobile": "shopify:\/\/files\/videos\/hiro for baby mania.mp4",
+        "btn1_text": "בגדי בנות",
+        "btn1_link": "shopify:\/\/collections\/בגדי-בנות",
+        "btn2_text": "בגדי בנים",
+        "btn2_link": "shopify:\/\/collections\/בגדי-בנים"
+      }
+    },
+    "custom_liquid_BzKyFU": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div style=\"height:32px;\"><\/div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_xt8BGU": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_6EDwGf": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_zVDXi6": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_tcFaiF": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "בגדי בנות",
+            "button_link_1": "shopify:\/\/collections\/בגדי-בנות",
+            "button_style_secondary_1": false,
+            "button_label_2": "בגדי בנים",
+            "button_link_2": "shopify:\/\/collections\/בגדי-בנים",
+            "button_label_3": "",
+            "button_link_3": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6EDwGf",
+        "text_zVDXi6",
+        "buttons_tcFaiF"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ChatGPT_Image_Jan_28_2026_11_48_21_AM.png",
+        "image_2": "shopify:\/\/shop_images\/Gemini_Generated_Image_6jo08n6jo08n6jo0.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "image_behavior": "ambient",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-48bc38ec-eeff-485e-a39f-918fc221e602",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "collection_list_YdPRgD": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_cPaXXg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "בגדי-בנות"
+          }
+        },
+        "featured_collection_BpPNB8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "בגדי-בנים"
+          }
+        },
+        "featured_collection_RYtJQm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "נעליים"
+          }
+        },
+        "featured_collection_B4RPEg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "בגדי-חורף-1"
+          }
+        },
+        "featured_collection_VWezaw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "מארזי-מתנה"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_cPaXXg",
+        "featured_collection_BpPNB8",
+        "featured_collection_RYtJQm",
+        "featured_collection_B4RPEg",
+        "featured_collection_VWezaw"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_xPjepJ": {
+      "type": "featured-product",
+      "blocks": {
+        "text_hPNrUy": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_nPww63": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_DNWzDq": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_GybJ38": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_gj6dAN": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_qmndYp": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_erLXzg": {
+          "type": "share",
+          "settings": {
+            "share_label": "שיתוף"
+          }
+        }
+      },
+      "block_order": [
+        "text_hPNrUy",
+        "title_nPww63",
+        "price_DNWzDq",
+        "variant_picker_GybJ38",
+        "quantity_selector_gj6dAN",
+        "buy_buttons_qmndYp",
+        "share_erLXzg"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "™easysleep-מערכת-שינה-חכמה-לתינוקות-לשינה-רגועה-ורציפה-מבית-babymania",
+        "color_scheme": "",
+        "secondary_background": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "right",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_xKGEmA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_fwngai": {
+          "type": "heading",
+          "settings": {
+            "heading": "הנמכרים ביותר",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fwngai"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_product_9bffYN": {
+      "type": "featured-product",
+      "blocks": {
+        "text_ThPzmc": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_MQ6YJg": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_MkWCMi": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_PwbjJd": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_96dyiC": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_yfkGHA": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_WCEefM": {
+          "type": "share",
+          "settings": {
+            "share_label": "שיתוף"
+          }
+        }
+      },
+      "block_order": [
+        "text_ThPzmc",
+        "title_MQ6YJg",
+        "price_MkWCMi",
+        "variant_picker_PwbjJd",
+        "quantity_selector_96dyiC",
+        "buy_buttons_yfkGHA",
+        "share_WCEefM"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "starry-sky-projector-led-night-light-astronaut-lamp-star-light-rotation-ceiling-lamp-decoration-for-bedroom-decor-gift",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "right",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_itPixN": {
+      "type": "rich-text",
+      "blocks": {
+        "text_6Ndn8Q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>בובת לוטרה נושמת לתינוקות היא פריט מושלם המיועד לעזור בהרגעת והרדמת התינוק. הבובה מוצפת בטכנולוגיה מתקדמת שמספקת חוויה רכה ומרגיעה לקטנטנים. עכשיו ב 50% הנחה<\/p>"
+          }
+        },
+        "heading_9wNqiw": {
+          "type": "heading",
+          "settings": {
+            "heading": "הנמכרים ביותר",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "text_6Ndn8Q",
+        "heading_9wNqiw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_product_wKn6ej": {
+      "type": "featured-product",
+      "blocks": {
+        "text_7pe4VH": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_9MNRXM": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_HygVHQ": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_XjJCBe": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_N3KegC": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_Ufphwb": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_QKwLrg": {
+          "type": "share",
+          "settings": {
+            "share_label": "שיתוף"
+          }
+        }
+      },
+      "block_order": [
+        "text_7pe4VH",
+        "title_9MNRXM",
+        "price_HygVHQ",
+        "variant_picker_XjJCBe",
+        "quantity_selector_N3KegC",
+        "buy_buttons_Ufphwb",
+        "share_QKwLrg"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "3-24-months-newborn-baby-boy-winter-clothing-set-lattice-plush-long-sleeved-hooded-jumpsuit-fashion-cute-romper-warm-daily-wear",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "right",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_RhHHWN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_874Vhm": {
+          "type": "heading",
+          "settings": {
+            "heading": "ברוכים הבאים ל - baby mania",
+            "heading_size": "h1"
+          }
+        },
+        "text_izrJry": {
+          "type": "text",
+          "settings": {
+            "text": "<p>אנחנו בבייבי מאניה מאמינים שלתינוק שלך מגיע את הטוב ביותר.<\/p><p>הבגדים שלנו יגרמו לתינוקך להנות מגמישות ונוחות חסרת פשרות.<\/p><p>המוצרים שלנו עשויים מבדים איכותיים בדגש על כותנה, פשתן, טטרה ובמבוק המעניקים מגע רך,  ועדין ♥<\/p>"
+          }
+        },
+        "button_X8FrUg": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_874Vhm",
+        "text_izrJry",
+        "button_X8FrUg"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_dqnD4Q": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<h4 class=\"sub_head center\">בייבי מאניה<\/h4>\n<h2 class=\"sub_head center\">לתינוק שלך מגיע את הטוב ביותר<\/h2>\n<div class=\"video-section isolate page-width section-template--16796991848689__02765431-dbab-4e5a-925c-6cac2fee30aa-padding\">\n  <style>\nvideo {\nwidth: 100%;\nheight: auto;\ndisplay: block;\nmargin: 0 auto;\n}\n<\/style>\n<video muted=\"\" autoplay=\"\" playsinline=\"\" loop=\"\" poster=\"\/\/lollilifting.com\/cdn\/shop\/files\/preview_images\/11b947e75d8343c1952dfd1cab4bdc60.thumbnail.0000000000_1100x.jpg?v=1693323352\">\n<source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8aba9777fe9c4c6b9ae8643adb4c1750.mp4\">\n<source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8bda67156ced44e7a8a7f82d2abf0d18.mp4\" type=\"video\/mp4\">\n<\/video>\n  <\/div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "בגדי-חורף",
+        "products_to_show": 25,
+        "title": "בגדי תינוקות",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_FXYxk4": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "נעליים",
+        "products_to_show": 25,
+        "title": "קולקציות ילדים מדהימות בלחיצת כפתור",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "17615407419d9e24f1": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e745f35_hbeder": {
+          "type": "ai_gen_block_e745f35",
+          "settings": {
+            "max_width": 900,
+            "testimonial_1_text": "מוצרים באיכות גבוה, המשלוח היה מהיר והגיע לי עד הבית, שירות לקוחות אדיב, מקצועי ועונים במהירות, מרוצה מאוד, תודה!!",
+            "testimonial_1_name": "דני כ.",
+            "testimonial_1_title": "Happy Customer",
+            "testimonial_2_text": "השירות שקיבלתי היה אדיב ואכפתי עוד לפני הקנייה ואחריה. כל שאלה, כל בקשה נענו מיידית הרבה מעל המצופה.",
+            "testimonial_2_name": "עפרי ל.",
+            "testimonial_2_title": "Verified Buyer",
+            "testimonial_3_text": "מוצרים ייחודיים ויפים. שירות מצויין ומשלוח שהגיע בזמן. מרוצה מאד!",
+            "testimonial_3_name": "רועי ס.",
+            "testimonial_3_title": "Regular Customer",
+            "autoplay": true,
+            "autoplay_interval": 5,
+            "card_background": "#ececec",
+            "card_radius": 12,
+            "text_size": 18,
+            "text_color": "#1c1b1b",
+            "name_size": 16,
+            "name_color": "#1c1b1b",
+            "title_size": 14,
+            "title_color": "#666666",
+            "button_background": "#b3a294",
+            "button_hover_background": "#a08d7e",
+            "button_icon_color": "#ffffff",
+            "dot_color": "#d0d0d0",
+            "dot_active_color": "#b3a294",
+            "placeholder_color": "#f0f0f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e745f35_hbeder"
+      ],
+      "settings": {}
+    },
+    "image_banner_WY4jhi": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_m9pLtX": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_bqpPbt": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_QxwiH4": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_label_3": "",
+            "button_link_3": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_m9pLtX",
+        "text_bqpPbt",
+        "buttons_QxwiH4"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/White_Beige_Baby_Product_Online_Shopping_Discount_-_Insta_Post_3.png",
+        "image2": "shopify:\/\/shop_images\/White_Beige_Baby_Product_Online_Shopping_Discount_-_Insta_Post_3.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "rich_text_NMeQkb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gJ6Npd": {
+          "type": "heading",
+          "settings": {
+            "heading": "קצת עלינו",
+            "heading_size": "h1"
+          }
+        },
+        "text_KMtrQn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ברוכים הבאים לחנות המקוונת שלנו<br\/>הקמתי את החנות מתוך הצורך האישי שלי בבגדי ילדים איכותיים ויפים במחירים נגישים לכל כיס.<br\/>תוכלו למצוא אצלנו מבחר גדול של בגדים איכותיים, נוחים, מלאים בסטייל ושיק ממידה ניו בורן ועד גילאי בית ספר.<\/p><p><br\/>שמנו דגש מיוחד על בגדים נוחים מבדים איכותיים שמתאימים לעור העדין והרך של ילדינו. <\/p><p><br\/>אנחנו כאן לספק לכם חווית קנייה ושירות שתשאיר טעם של עוד ומתרגשים לצרף אתכם למעגל הלקוחות שלנו.<\/p>"
+          }
+        },
+        "button_wq6FrQ": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_gJ6Npd",
+        "text_KMtrQn",
+        "button_wq6FrQ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_bWQ9mf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6DPcMx": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6DPcMx"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "bm_video_hero_CRzC6Q",
+    "custom_liquid_BzKyFU",
+    "image_banner_xt8BGU",
+    "collection_list_YdPRgD",
+    "featured_product_xPjepJ",
+    "rich_text_xKGEmA",
+    "featured_product_9bffYN",
+    "rich_text_itPixN",
+    "featured_product_wKn6ej",
+    "rich_text_RhHHWN",
+    "custom_liquid_dqnD4Q",
+    "featured_collection",
+    "featured_collection_FXYxk4",
+    "17615407419d9e24f1",
+    "image_banner_WY4jhi",
+    "rich_text_NMeQkb",
+    "rich_text_bWQ9mf"
+  ]
+}

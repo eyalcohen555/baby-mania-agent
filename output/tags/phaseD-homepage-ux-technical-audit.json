@@ -1,0 +1,194 @@
+{
+  "date": "2026-05-10",
+  "mode": "READ-ONLY",
+  "tier": "T0",
+  "theme_id": 183668179257,
+  "theme_name": "Copy of Dawn new",
+  "template": "templates/index.json",
+  "shopify_writes": "NONE",
+  "verdict": "PHASED_HOMEPAGE_UX_TECHNICAL_AUDIT_READY",
+
+  "task1_homepage_structure": {
+    "total_sections": 17,
+    "section_order": [
+      {"pos": 1, "id": "bm_video_hero_CRzC6Q", "type": "bm-video-hero", "role": "Hero", "status": "active"},
+      {"pos": 2, "id": "custom_liquid_BzKyFU", "type": "custom-liquid", "role": "Spacer 32px", "status": "active"},
+      {"pos": 3, "id": "image_banner_xt8BGU", "type": "image-banner", "role": "Image banner with heading/CTA", "status": "DISABLED"},
+      {"pos": 4, "id": "collection_list_YdPRgD", "type": "collection-list", "role": "5-collection tiles", "status": "active", "collections": ["בגדי-בנות","בגדי-בנים","נעליים","בגדי-חורף-1","מארזי-מתנה"]},
+      {"pos": 5, "id": "featured_product_xPjepJ", "type": "featured-product", "role": "EasySleep feature", "status": "active"},
+      {"pos": 6, "id": "rich_text_xKGEmA", "type": "rich-text", "role": "Heading: הנמכרים ביותר", "status": "active"},
+      {"pos": 7, "id": "featured_product_9bffYN", "type": "featured-product", "role": "Projector lamp", "status": "active"},
+      {"pos": 8, "id": "rich_text_itPixN", "type": "rich-text", "role": "Heading: הנמכרים ביותר (DUPLICATE) + בובת לוטרה text", "status": "DUPLICATE_HEADING"},
+      {"pos": 9, "id": "featured_product_wKn6ej", "type": "featured-product", "role": "Baby winter romper", "status": "active"},
+      {"pos": 10, "id": "rich_text_RhHHWN", "type": "rich-text", "role": "ברוכים הבאים welcome text", "status": "active"},
+      {"pos": 11, "id": "custom_liquid_dqnD4Q", "type": "custom-liquid", "role": "Embedded CDN video (autoplay)", "status": "active"},
+      {"pos": 12, "id": "featured_collection", "type": "featured-collection", "role": "בגדי תינוקות — בגדי-חורף collection", "products_to_show": 25, "status": "active"},
+      {"pos": 13, "id": "featured_collection_FXYxk4", "type": "featured-collection", "role": "קולקציות ילדים — נעליים collection", "products_to_show": 25, "status": "active"},
+      {"pos": 14, "id": "17615407419d9e24f1", "type": "_blocks", "role": "Testimonials carousel (3 reviews)", "status": "active"},
+      {"pos": 15, "id": "image_banner_WY4jhi", "type": "image-banner", "role": "Image banner — all blocks disabled", "status": "active_but_blank"},
+      {"pos": 16, "id": "rich_text_NMeQkb", "type": "rich-text", "role": "קצת עלינו store story", "status": "active"},
+      {"pos": 17, "id": "rich_text_bWQ9mf", "type": "rich-text", "role": "Empty heading — no content", "status": "active_but_empty"}
+    ]
+  },
+
+  "task2_hero": {
+    "section_id": "bm_video_hero_CRzC6Q",
+    "section_file": "sections/bm-video-hero.liquid",
+    "layout_desktop": "SPLIT — 2 videos side-by-side (CSS grid 1fr 1fr), 72vh",
+    "layout_mobile": "SINGLE — 1 video, 100vh",
+    "videos_in_hero": {
+      "desktop_1": "hiro for desktop.mp4",
+      "desktop_2": "grok-video-cf4a3465-b901-4cb4-b016-fffeb7bf95ac.mp4",
+      "mobile": "hiro for baby mania.mp4"
+    },
+    "cta_buttons": [
+      {"text": "בגדי בנות", "link": "shopify://collections/בגדי-בנות"},
+      {"text": "בגדי בנים", "link": "shopify://collections/בגדי-בנים"}
+    ],
+    "heading_support": false,
+    "subtitle_support": false,
+    "main_cta_support": false,
+    "root_cause": [
+      "Schema has no heading/title/subtitle field — section built as pure media with nav buttons only",
+      "No carousel — two videos play simultaneously side-by-side on desktop",
+      "Two category buttons exist but no primary purchase CTA (קנה עכשיו/כל הקולקציות)",
+      "No text overlay possible via settings — requires Liquid schema edit to add"
+    ],
+    "recommended_fix": {
+      "option_a": "Add bm-store-hero.liquid (exists in theme) — settings only, T1",
+      "option_b": "Edit bm-video-hero schema to add heading/subtitle/main_btn — T2 Liquid edit",
+      "option_c": "Enable disabled image_banner_xt8BGU — settings only but creates double-hero",
+      "recommended": "Option B — minor schema + Liquid edit"
+    }
+  },
+
+  "task3_subscription_text": {
+    "selling_plan_groups_count": 0,
+    "easysleep_selling_plan_allocations": 0,
+    "text_in_price_liquid": false,
+    "text_in_buy_buttons_liquid": false,
+    "text_in_locale_he": false,
+    "text_in_locale_en": false,
+    "script_tags_accessible": false,
+    "apps_list_accessible": false,
+    "source": "THIRD_PARTY_APP_OR_SHOPIFY_PURCHASE_OPTIONS_RESIDUE",
+    "source_confidence": "HIGH — eliminated all theme-native sources",
+    "affected_sections": ["featured-product sections on homepage", "main-product on product pages"],
+    "risk": "HIGH — English text in Hebrew store misleads customers",
+    "recommended_fix": [
+      "Check Shopify Admin → Apps for subscription app",
+      "Check Shopify Admin → Settings → Purchase options",
+      "If app found: configure to hide text for non-subscription products or uninstall",
+      "If residue: disable Purchase options feature"
+    ]
+  },
+
+  "task4_duplicate_heading": {
+    "duplicate_heading": "הנמכרים ביותר",
+    "section_1_id": "rich_text_xKGEmA",
+    "section_1_pos": 6,
+    "section_1_content": "heading only (no text body)",
+    "section_1_introduces": "featured_product_9bffYN (projector lamp)",
+    "section_2_id": "rich_text_itPixN",
+    "section_2_pos": 8,
+    "section_2_content": "text about בובת לוטרה 50% discount + duplicate heading",
+    "section_2_introduces": "featured_product_wKn6ej (baby winter romper)",
+    "root_cause": "Copy-paste error — same heading applied to both rich-text intro sections",
+    "recommended_fix": "Rename rich_text_xKGEmA heading to 'מוצר השבוע' or product-specific name",
+    "fix_scope": "T1 — settings only via Shopify Customize",
+    "risk": "LOW — aesthetic only"
+  },
+
+  "task5_performance": {
+    "videos_count": 4,
+    "videos_detail": [
+      "Hero desktop cell 1 (autoplay, loop) — hiro for desktop.mp4",
+      "Hero desktop cell 2 (autoplay, loop) — grok-video.mp4",
+      "Hero mobile (autoplay, loop) — hiro for baby mania.mp4",
+      "custom_liquid CDN video (autoplay, loop) — Shopify CDN mp4"
+    ],
+    "videos_simultaneous_desktop": 3,
+    "gifs_count": "unknown — requires storefront check (collection tile images may be GIF)",
+    "product_cards_estimate": 53,
+    "images_estimate": 65,
+    "lazy_loading": "PARTIAL — hero images lazy, product card images lazy, hero videos NOT deferred",
+    "main_performance_risks": [
+      "3 simultaneous autoplay videos on desktop page load (HIGH)",
+      "50 product images from 2x featured-collection with products_to_show=25 (MEDIUM)",
+      "Custom CDN video plays without deferral (MEDIUM)",
+      "image_banner_WY4jhi loads image even with all blocks disabled (LOW)",
+      "rich_text_bWQ9mf renders with empty content (LOW)"
+    ],
+    "quick_wins": [
+      "Reduce products_to_show: 25 → 8–12 on both featured-collection sections (T1)",
+      "Remove/disable rich_text_bWQ9mf empty section (T1)",
+      "Add poster + play-on-scroll to CDN video (T2)",
+      "Disable image_banner_WY4jhi (T1)"
+    ]
+  },
+
+  "task6_trust_signals": {
+    "trust_sections_in_theme": [
+      {"section": "bm-trust-badges.liquid", "on_homepage": false, "note": "Configurable trust badge grid, RTL, ready to use"},
+      {"section": "bm-store-benefits.liquid", "on_homepage": false, "note": "6-card product benefits — more product-focused than trust"},
+      {"section": "17615407419d9e24f1 (_blocks testimonials)", "on_homepage": true, "note": "3 customer reviews, carousel — IS a trust signal (social proof)"}
+    ],
+    "trust_signals_missing": [
+      "משלוח מהיר / זמן אספקה",
+      "תשלום מאובטח (only in footer)",
+      "מדיניות החזרות",
+      "שירות לקוחות / אחריות",
+      "Product star ratings (show_rating: false in featured-collection sections)",
+      "Payment method icons (footer only)"
+    ],
+    "can_enable_with_settings": true,
+    "needs_new_section": false,
+    "recommended_placement": "After Hero (pos 1) or after collection-list (pos 4)",
+    "fix_scope": "T1 — add bm-trust-badges.liquid via Shopify Customize, configure content"
+  },
+
+  "task7_easysleep": {
+    "product_id": 10085913231673,
+    "title": "™EasySleep פתרון שינה יעיל  שמחליף כמה מוצרים",
+    "handle": "™easysleep-מערכת-שינה-חכמה-לתינוקות-לשינה-רגועה-ורציפה-מבית-babymania",
+    "status": "active",
+    "product_type": "",
+    "tags": "",
+    "options": [
+      {"name": "דגם", "values": ["450 מ\"ל", "300 מ\"ל"]},
+      {"name": "צבע", "values": ["White", "Brown"]}
+    ],
+    "variants": [
+      {"id": 51657462841657, "title": "450 מ\"ל / White", "price": "319.00"},
+      {"id": 51657462874425, "title": "450 מ\"ל / Brown", "price": "329.00"},
+      {"id": 51657462776121, "title": "300 מ\"ל / White", "price": "279.00"},
+      {"id": 51657462808889, "title": "300 מ\"ל / Brown", "price": "289.00"}
+    ],
+    "selling_plan_groups": [],
+    "issue_found": "NONE_CRITICAL — 450מ\"ל / 300מ\"ל are real capacity variants (diffuser model sizes), not display bugs",
+    "minor_issues": [
+      "Color options in English (White/Brown) in a Hebrew store — inconsistent UX",
+      "product_type is empty — product may not appear in category collections",
+      "tags are empty — product won't appear in tag-based smart collections",
+      "Handle contains ™ character — unusual"
+    ],
+    "recommended_action": "Non-blocking. Optional: translate color labels to Hebrew, add product_type and tags"
+  },
+
+  "task8_navigation": {
+    "main_menu_item_count": 17,
+    "bagdei_tinokot_status": "CORRECT — parent HTTP item with 5 COLLECTION sub-items",
+    "bagdei_sub_items": ["סטים", "סרבלים", "בגדי בנות", "בגדי בנים", "כל הבגדים"],
+    "gifts_link_status": "PASS — מתנות לתינוק → /collections/מארזי-מתנה (Phase A fix working)",
+    "gifts_resource_id": "gid://shopify/Collection/471568646457",
+    "ux_risk_notes": [
+      "17 top-level items is excessive (industry standard: 5–8)",
+      "קיץ 2026 is seasonal — should not be permanent nav",
+      "המיוחדים שלנו is vague — unclear category to customers",
+      "שמיכות עיטוף ושקי שינה is too long — truncates on mobile",
+      "No grouping of non-clothing items into sub-menus",
+      "יצירת קשר at position 17 — not discoverable on mobile"
+    ],
+    "note": "Documented as future UX debt. Not to be fixed now (Phase D read-only)."
+  }
+}

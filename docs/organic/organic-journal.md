@@ -4,6 +4,28 @@
 
 ---
 
+## [2026-05-10] Phase D Homepage UX Technical Audit — READ-ONLY COMPLETE
+Mode: READ-ONLY | T0 | No Shopify writes | No theme writes | No product writes
+Action: Full structural audit of homepage — 8 tasks completed
+Files created:
+  - docs/organic/phaseD-homepage-ux-technical-audit.md
+  - output/tags/phaseD-homepage-ux-technical-audit.json
+  - output/tags/phaseD_index.json (raw homepage template for reference)
+Status: PHASED_HOMEPAGE_UX_TECHNICAL_AUDIT_READY
+
+Key findings:
+- Template: templates/index.json | Theme: Copy of Dawn new (183668179257) | 17 sections
+- Hero: bm-video-hero — 2 videos split side-by-side (NOT carousel), NO heading support in schema, 2 nav CTAs only
+- Duplicate heading: "הנמכרים ביותר" appears in rich_text_xKGEmA + rich_text_itPixN (positions 6 and 8)
+- Subscription text: NOT from theme Liquid/locale files, NOT from selling plans (0 groups), source = third-party app (script_tags/apps inaccessible via current API scope)
+- Performance: 4 videos (3 simultaneous on desktop), ~53 product cards, ~65 images, lazy loading only partial
+- Trust signals: bm-trust-badges.liquid EXISTS in theme but NOT on homepage — needs placement only (T1)
+- EasySleep: PID 10085913231673, options דגם (450/300מ"ל) + צבע (White/Brown) = valid real variants, no subscriptions
+- Navigation (post Phase A): 17 top-level items, gifts link = /collections/מארזי-מתנה ✅, structure documented as UX debt
+- Testimonials section IS on homepage (position 14) — but delivery/payment/returns signals missing
+
+---
+
 ## [2026-05-10] Phase A Live Issues Fix — PHASEA_LIVE_ISSUES_FIX_PASS
 Mode: LIVE | T3 approval: Ayal — 2026-05-10
 Action: 4 targeted fixes applied (A1 pajama, A2 navigation, A3 occ-gift title, A4 missing tag)
