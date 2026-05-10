@@ -1,0 +1,35 @@
+{
+  "date": "2026-05-10",
+  "overall": "FAIL",
+  "items": [
+    {
+      "handle": "חליפת-תחרה-פרחונית-מורן",
+      "template": "clothing",
+      "http_status": 200,
+      "has_sticky_bar": true,
+      "has_form_buttons": true,
+      "has_init_sticky_observer": true,
+      "has_domcontent_listener": true,
+      "has_readystate_check": true,
+      "has_threshold_0.1": true,
+      "old_threshold_0_gone": true,
+      "sticky_starts_hidden": true,
+      "verdict": "PASS"
+    },
+    {
+      "handle": "newborn-baby-winter-jacket-warm-hooded-infant-romper-thicken",
+      "template": "clothing",
+      "http_status": 404,
+      "has_sticky_bar": false,
+      "has_form_buttons": false,
+      "has_init_sticky_observer": false,
+      "has_domcontent_listener": true,
+      "has_readystate_check": false,
+      "has_threshold_0.1": true,
+      "old_threshold_0_gone": true,
+      "sticky_starts_hidden": false,
+      "verdict": "FAIL"
+    }
+  ],
+  "easysleep_tempio_note": "Not verified here — main-product disabled, T3 fix required separately"
+}

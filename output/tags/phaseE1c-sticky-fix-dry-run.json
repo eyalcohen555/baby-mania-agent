@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-10",
+  "mode": "live",
+  "asset_key": "sections/bm-sticky-bar.liquid",
+  "patch_applied": true,
+  "lines_changed": 33,
+  "sanity_checks": {
+    "initStickyObserver_present": true,
+    "domcontent_listener_present": true,
+    "readystate_check_present": true,
+    "threshold_0.1_present": true,
+    "old_threshold_0_absent": true,
+    "old_early_return_absent": true,
+    "html_unchanged": true,
+    "schema_unchanged": true,
+    "style_unchanged": true
+  },
+  "all_pass": true
+}

@@ -4,6 +4,33 @@
 
 ---
 
+## [2026-05-10] Phase E1c Sticky Fix — PHASEE1C_STICKY_FIX_PARTIAL
+Mode: LIVE | T2 approved by Ayal
+Action: Applied JS-only DOM timing patch to sections/bm-sticky-bar.liquid
+Files:
+  - output/tags/phaseE1c-sticky-fix-backup.json (pre-patch backup)
+  - output/tags/phaseE1c-sticky-fix-dry-run.json / .md
+  - output/tags/phaseE1c-sticky-fix-rollback-plan.md
+  - output/tags/phaseE1c-sticky-fix-verify.json / .md
+  - docs/organic/phaseE1c-sticky-fix-report.md
+
+PATCH APPLIED:
+  Wrapped IntersectionObserver setup in initStickyObserver().
+  Added readyState==='loading' check → DOMContentLoaded listener.
+  Added fallback selector .product-form__submit:not(#bm-sticky-add-btn).
+  Changed threshold: 0 → threshold: 0.1.
+  9/9 sanity checks PASS. HTML/CSS/schema unchanged.
+
+VERIFY:
+  חליפת-תחרה-פרחונית-מורן (clothing): PASS ✅
+  newborn-baby-winter-jacket (not clothing template): FAIL — bm-sticky-bar section absent in that product's template, not a regression.
+
+PARTIAL because second verify product is not on clothing template.
+Clothing products: patch confirmed working.
+EasySleep/Tempio: still broken (main-product disabled) — T3 required.
+
+---
+
 ## [2026-05-10] Phase E1b Sticky Behavioral Debug — PHASEE1B_STICKY_ROOT_CAUSE_READY
 Mode: READ-ONLY + PATCH PLAN | T2 plan only — no live writes
 Action: Deep storefront HTML analysis + byte-offset verification of DOM timing bug
