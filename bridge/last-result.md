@@ -1,18 +1,19 @@
-task_id: 20260511-190611
+task_id: 20260511-190807
 ---
-PROMPTS_CREATED: 15
-OUTPUT_FILE: output/organic/article-image-prompts.md
-ALT_TEXT_HEBREW_INCLUDED: YES
-STAGE_VERDICT: PASS
+QA report written to `output/organic/article-qa-report.md`.
 
-EVIDENCE:
-- 5 article drafts scanned in `output/organic/article-drafts/` (all HUB-12 articles).
-- 3 image prompts created per article (hero / inline / closing) = **15 total prompts**.
-- Each entry contains: `article_slug`, `image_position`, `prompt_text` (English), `alt_text` (Hebrew), `style_notes`.
-- Style baseline enforced across all 15: Scandinavian minimal · white/off-white · no toys · no over-the-top decoration · no readable text · no logos · no forced smiles.
-- File written: `C:\Projects\baby-mania-agent\output\organic\article-image-prompts.md`.
+---
 
-SYSTEM STATE:
-- STAGE-12 complete. HUB-12 articles now have full visual production specs.
-- Ready for downstream: designer/operator runs prompts through image models (Midjourney/DALL-E/Gemini), then manual QA, then upload to Shopify Files with the listed Hebrew alt text.
-- No forbidden files touched (`bridge/next-task.md` and `.env` untouched).
+**STAGE_VERDICT: FAIL**
+
+**EVIDENCE:**
+- 5 articles QA'd against 8 conditions each.
+- All 5 pass structural checks (H1+keyword_main, internal link to live collection, FAQ+FAQPage JSON-LD schema, alt text on every image placeholder).
+- 1 FAIL: Pillar `bgdey-simha-letinok-madrikh-male` is 1,260 words vs planned 1,800–2,200 (30% under floor). Must be expanded — Pillar depth is structural for HUB-12 authority.
+- 4 WARN: C1 (987/1,200–1,500, 18% short), C2 (1,051/1,200–1,500, 12% short + `חיתוך כניסה` phrasing), C3 (937/1,000–1,300, 6% short), C4 (1,058 PASS on word count but 3 textual fixes: `החוקי כללי`, `ים ערבית`, `יוצאים מקצב שינה`).
+- 0 PASS.
+
+**ARTICLES_QA:** 5 | **PASS_COUNT:** 0 | **WARN_COUNT:** 4 | **FAIL_COUNT:** 1
+**QA_REPORT:** `output/organic/article-qa-report.md`
+
+**SYSTEM STATE:** HUB-12 article drafts (5 files) exist and are structurally complete (links, schema, alt, H1). Content depth is below plan across the board. Publishing gated on (a) Pillar expansion to ≥1,800 words, (b) cluster expansions to floor, (c) minor textual fixes on C2 and C4, plus the prior HUB-11 GSC submission gate noted in the production plan.
