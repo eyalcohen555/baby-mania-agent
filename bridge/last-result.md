@@ -1,22 +1,20 @@
-task_id: 20260511-184551
+task_id: 20260511-184840
 ---
-STAGE_VERDICT: PASS
+Plan written. No theme files touched, no `templates/index.json` modified, no push.
 
-EVIDENCE:
-- `templates/index.json` did not exist locally; fetched live from Shopify theme 183668179257 (saved at `output/homepage/_index.json`, 22,963 bytes). Live API confirms it loaded.
-- `sections/bm-video-hero.liquid` and `sections/bm-trust-badges.liquid` fetched and saved under `output/homepage/`.
-- Findings written to `output/homepage/homepage-audit.md`.
-- Key findings:
-  - **SECTIONS_COUNT:** 18 (15 active, 3 disabled — `image_banner_xt8BGU`, `image_banner_WY4jhi`, `rich_text_bWQ9mf`)
-  - **TRUST_BADGES_ABOVE_FOLD:** NO — hero is 72vh desktop / 100vh mobile, pushing badges below fold (especially mobile)
-  - **TRUST_BADGES_VISUAL_OK:** NO — all 4 badge blocks override `title` only; `icon` and `description` fall back to schema defaults, so every badge renders the same `🛡️` and a literal `"-"` placeholder
-  - **HERO_CTA_CLEAR:** NO — hero has no text overlay (no headline / subheadline), only two transparent ghost CTAs (`בגדי בנות` / `בגדי בנים`) with 35%-opacity white border on motion video
-  - **ISSUES_FOUND:** 8 (3 HIGH, 1 MEDIUM, 4 LOW)
-- No file changes made to theme, products, or `.env`. EasySleep / Tempio not touched.
+---
 
-SYSTEM STATE:
-- `output/homepage/homepage-audit.md` — audit report (created)
-- `output/homepage/_index.json` — local copy of live homepage template (created, read-only artifact)
-- `output/homepage/_sections__bm-video-hero.liquid` — local copy of hero section (created)
-- `output/homepage/_sections__bm-trust-badges.liquid` — local copy of trust badges section (created)
-- No Shopify writes performed. Theme unchanged. Ready for STAGE-7.
+**STAGE_VERDICT:** PASS
+
+**EVIDENCE:**
+- `output/homepage/homepage-fixes-plan.md` created (single new file, only allowed output target).
+- TRUST_BADGES_FIX section: includes layout/style/position decision (content-only fix, section CSS unchanged), full proposed JSON block for `bm_trust_badges_E1_2026` with 4 distinct icons (🚚🔒↩️💬) and real Hebrew descriptions replacing the leaked `"-"` defaults, plus optional Liquid hardening. `TIER_REQUIRED: T2`, `AYAL_APPROVAL: YES`.
+- HERO_FIX section: new Hebrew copy (eyebrow + headline + subheadline), CTA text + primary/secondary visual spec, full proposed Liquid markup + schema additions + CSS rewrite for `sections/bm-video-hero.liquid`, plus mobile hero height reduction `100vh → 78vh` to address MEDIUM finding #5. `TIER_REQUIRED: T2`, `AYAL_APPROVAL: YES`.
+- MOBILE_CHECK section: per-requirement audit table (tap target ≥ 44px → 48px met; body text ≥ 16px → flagged one `clamp(15px,…)` to lift to `clamp(16px,…)` before T2; trust strip above-the-fold verified on iPhone 14 / SE / Galaxy S22), plus a 6-step post-deploy mobile QA checklist.
+- No writes to `bridge/next-task.md`, `templates/index.json`, `sections/*.liquid`, or `.env`. No push performed.
+
+**SYSTEM STATE:**
+- STAGE-7 plan artifact present at `output/homepage/homepage-fixes-plan.md` and ready for Ayal review.
+- Source audit (`output/homepage/homepage-audit.md`) read-only consulted; unchanged.
+- Live theme `183668179257` and `templates/index.json` on shop `a2756c-c0.myshopify.com` untouched.
+- T2/Ayal approval required before any code in this plan can be executed against the live theme. LOW findings #6/#7/#8 from the audit remain deferred to a later stage.
