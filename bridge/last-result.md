@@ -1,22 +1,36 @@
-task_id: 20260511-133523
+task_id: 20260511-133613
 ---
-TAXONOMY_FILES_READ: 3
-TAGS_FOUND: [shoes-sneakers, shoes-sandals, shoes-boots, shoes-first-step, shoes-elegant, shoes-soft-sole, shoes-review-only]
-SIZE_BASED_TAGS: NO
-REVIEW_ONLY_TRIGGERS: PRESENT
-STAGE_VERDICT: PASS
+Evaluating the 3 conditions:
 
-EVIDENCE:
-- 3 taxonomy files read end-to-end (proposal, image-review-spec, audit JSON)
-- 6 user-facing tags + 1 internal (`shoes-review-only`) — all type/style-based
-- Explicit "NEVER TAG BY SIZE" + "NEVER TAG BY AGE" policy in proposal §3
-- REVIEW_ONLY triggers fully defined in image-review-spec §3–§4 (HIGH/MEDIUM/LOW confidence ladder, LOW → permanent shoes-review-only)
-- Multi-tag rule (max 3 shoes-* per product) + decision tree present
-- All 6 keyword-block categories (סניקרס/סנדל/boot/first-walkers/בלרינה/soft-sole) have mapping
-- Summary written: `output/tags/shoes-taxonomy-read-summary.md`
+**Condition 1: ≥5 type-based shoe tags (not size/age/EU)**
+Found 6 user-facing type/style tags: `shoes-sneakers`, `shoes-sandals`, `shoes-boots`, `shoes-first-step`, `shoes-elegant`, `shoes-soft-sole`. Explicit policy forbids size/age/EU tags. ✓ PASS
 
-SYSTEM STATE:
-- Taxonomy structurally PASS for 65 blocked shoe products
-- Open dependencies (non-blocking for STAGE-1): vision agent NOT BUILT, EU size mapping decision PENDING, T3 approval from אייל PENDING
-- No Shopify writes performed (T0 read-only honored)
-- FILES_FORBIDDEN untouched
+**Condition 2: Clear REVIEW_ONLY triggers**
+`shoes-review-only` defined with LOW-confidence triggers (no image, non-shoe in image, ambiguous title, title/image contradiction, packaging-only). Decision tree terminates with image review fallback. ✓ PASS
+
+**Condition 3: Coverage of sandals, sneakers, boots, first-step, elegant**
+- sandals → `shoes-sandals` ✓
+- sneakers → `shoes-sneakers` ✓
+- boots → `shoes-boots` ✓
+- first-step → `shoes-first-step` ✓
+- elegant → `shoes-elegant` ✓
+✓ PASS
+
+All 3 conditions PASS.
+
+---
+
+**TAXONOMY_SUFFICIENT: YES**
+
+**STAGE_VERDICT: PASS**
+
+**EVIDENCE:**
+- Condition 1 (≥5 type tags): 6 type/style tags present (sneakers, sandals, boots, first-step, elegant, soft-sole); size/age/EU tags explicitly forbidden per taxonomy §3.
+- Condition 2 (REVIEW_ONLY triggers): `shoes-review-only` defined with 5 explicit LOW-confidence triggers in image-review-spec §4 and HIGH/MEDIUM/LOW confidence model in §3.
+- Condition 3 (coverage): all 5 required categories mapped — sandals, sneakers, boots, first-step, elegant all present.
+
+**SYSTEM STATE:**
+- Taxonomy validated as sufficient for classifying 65 blocked shoe products.
+- No taxonomy extensions required before vision agent build.
+- Outstanding (non-blocking for this stage): EU size mapping decision PENDING, vision agent NOT BUILT, T3-level taxonomy approval by אייל PENDING.
+- Ready to proceed to next stage (vision agent build / classification execution).
