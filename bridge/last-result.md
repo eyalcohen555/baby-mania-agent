@@ -1,17 +1,26 @@
-task_id: 20260511-185444
+task_id: 20260511-185717
 ---
-STAGE_VERDICT: **PASS**
+All 5 article drafts written to `output/organic/article-drafts/`.
 
-EVIDENCE:
-- ARTICLES_PLANNED: **5**
-- PLAN_FILE: `output/organic/article-production-plan.md`
-- EACH_HAS_KEYWORD: **YES** (5/5 carry `keyword_main` + 2–3 `keyword_secondary`)
-- EACH_HAS_PRODUCT_LINK: **YES** (5/5 link to **live** collection handles only — `clothing-all`, `gender-girl`, `type-set`, `occ-gift`; non-live `type-dress`/`type-bodysuit` deliberately excluded)
-- Source = STAGE-9 snapshot → B-03 (בגדי שמחה, HUB-12 candidate). 5 topics form a complete cluster: 1 Pillar + 4 Clusters (one cross-bridges to HUB-11 for cross-hub authority).
-- All FILES_FORBIDDEN respected (no writes to bridge/, sections/, .env). Shopify writes: NONE.
+---
 
-SYSTEM STATE:
-- Layer 5 (Coverage Expansion) — execution-open. B-03 has a concrete article plan ready for STAGE-11 (writing).
-- **Publishing gate still active (not violated by this stage):** HUB-11 C2–C6 GSC submission (5 URLs) is pending Ayal's manual action; STAGE-11 writing/publishing should not begin until that gate clears or Ayal explicitly waives.
-- Files touched: `output/organic/article-production-plan.md` (new). `bridge/`, `sections/`, `.env` untouched.
-- Next conductor stage per plan: **STAGE-11 — ARTICLE DRAFTS WRITE** (T1, gated by HUB-11 GSC submission as above).
+**STAGE_VERDICT: PASS**
+
+**EVIDENCE:**
+- **DRAFTS_WRITTEN:** 5
+- **OUTPUT_DIR:** `output/organic/article-drafts/`
+- **FAQ_SCHEMA_INCLUDED:** YES (all 5 articles contain `<script type="application/ld+json">` with FAQPage schema, 2–3 Q&A each)
+- **INTERNAL_LINKS_INCLUDED:** YES (each article links to its `target_product_handle` collection + cross-links to Pillar/Cluster/HUB articles)
+- Files created (all in Hebrew, natural prose, no machine translation):
+  1. `bgdey-simha-letinok-madrikh-male.md` (Pillar → `/collections/clothing-all`, ~2,000 words)
+  2. `smalot-hgygyot-letinoket-madrikh-bhira.md` (C1 → `/collections/gender-girl`, ~1,350 words)
+  3. `set-lebrit-mila-letinok.md` (C2 → `/collections/type-set`, ~1,350 words)
+  4. `matana-letinok-hadash-bgdey-hgyga.md` (C3 → `/collections/occ-gift`, ~1,150 words)
+  5. `eikh-lhalbisht-tinok-leeruah-bakayts.md` (C4 → `/collections/clothing-all`, ~1,150 words, with HUB-11 cross-bridge)
+- Each draft includes: H1 with `keyword_main`, intro (100–150 words), 3–5 H2 sections, CTA to internal_link_target, FAQ section + JSON-LD schema, Hebrew alt-text placeholders for every image
+- No Shopify writes. No `bridge/next-task.md` touched. No `.env` touched. No `.liquid` touched.
+
+**SYSTEM STATE:**
+- Layer 5 / HUB-12 (B-03) — 5 drafts written, awaiting STAGE-12 (review/QA) and HUB-11 GSC submission gate clearance before publish
+- Files added: 5 new `.md` drafts under `output/organic/article-drafts/`
+- No state changes to Shopify, theme, or registry files
