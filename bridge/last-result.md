@@ -1,36 +1,22 @@
-task_id: 20260511-133613
+task_id: 20260511-133635
 ---
-Evaluating the 3 conditions:
+STAGE_VERDICT: **FAIL**
 
-**Condition 1: ≥5 type-based shoe tags (not size/age/EU)**
-Found 6 user-facing type/style tags: `shoes-sneakers`, `shoes-sandals`, `shoes-boots`, `shoes-first-step`, `shoes-elegant`, `shoes-soft-sole`. Explicit policy forbids size/age/EU tags. ✓ PASS
+EVIDENCE:
+- `product_type=Shoes` → `count_product_type_Shoes = 0` (no products in the store use this product_type)
+- `tag=נעליים` → returned 600 products, but this is the full catalog, not a real filter result
+- Sanity control: `tag=__no_such_tag_control__` → `count = 600` (same as `count_all`)
+- Sanity control: `tag=baby-shoes` (a tag that demonstrably exists on real products) → `count = 600` as well
+- Conclusion: Shopify's `tag=` query-string filter is **silently ignored** by this API context (likely a scope/permission limitation of the client_credentials app on this store). The prescribed two-filter strategy cannot produce a shoes-only list.
+- Local-side scan of the merged response by shoe-related tag keywords (`baby-shoes`, `baby-sneakers`, `baby-sandals`, `baby-boots`, `נעליים`, etc.) found 47 actual shoe products embedded in the 600 returned items.
+- Output written to `output/tags/shoes-products-raw.json` with full diagnostics, verdict, warning, and the merged product summaries (so the next stage has data to work with without being misled).
+- SHOPIFY_WRITES: NONE — verified read-only throughout (only `GET /products.json` and `GET /products/count.json`).
 
-**Condition 2: Clear REVIEW_ONLY triggers**
-`shoes-review-only` defined with LOW-confidence triggers (no image, non-shoe in image, ambiguous title, title/image contradiction, packaging-only). Decision tree terminates with image review fallback. ✓ PASS
+FILES TOUCHED:
+- `scripts/fetch_shoes_products.py` (new)
+- `output/tags/shoes-products-raw.json` (new)
 
-**Condition 3: Coverage of sandals, sneakers, boots, first-step, elegant**
-- sandals → `shoes-sandals` ✓
-- sneakers → `shoes-sneakers` ✓
-- boots → `shoes-boots` ✓
-- first-step → `shoes-first-step` ✓
-- elegant → `shoes-elegant` ✓
-✓ PASS
+SYSTEM STATE:
+- The current shoes inventory cannot be discovered through `product_type=Shoes` or `tag=נעליים` in this Shopify API context. Real shoe products are tagged with English keys (`baby-shoes`, `baby-sneakers`, `baby-sandals`, `baby-boots`) and need a different discovery strategy — e.g., fetch full catalog and filter locally on those tags, or query `/products/count.json` with `product_type` variations, or curate a known shoes collection. STAGE-5 must redefine the discovery filter before any tagging work proceeds.
 
-All 3 conditions PASS.
-
----
-
-**TAXONOMY_SUFFICIENT: YES**
-
-**STAGE_VERDICT: PASS**
-
-**EVIDENCE:**
-- Condition 1 (≥5 type tags): 6 type/style tags present (sneakers, sandals, boots, first-step, elegant, soft-sole); size/age/EU tags explicitly forbidden per taxonomy §3.
-- Condition 2 (REVIEW_ONLY triggers): `shoes-review-only` defined with 5 explicit LOW-confidence triggers in image-review-spec §4 and HIGH/MEDIUM/LOW confidence model in §3.
-- Condition 3 (coverage): all 5 required categories mapped — sandals, sneakers, boots, first-step, elegant all present.
-
-**SYSTEM STATE:**
-- Taxonomy validated as sufficient for classifying 65 blocked shoe products.
-- No taxonomy extensions required before vision agent build.
-- Outstanding (non-blocking for this stage): EU size mapping decision PENDING, vision agent NOT BUILT, T3-level taxonomy approval by אייל PENDING.
-- Ready to proceed to next stage (vision agent build / classification execution).
+EXACT NEXT STEP: redefine STAGE-4 discovery filter (or add STAGE-4b) to: (a) page all products once and filter locally on the known shoe tags, or (b) build a Shopify collection of shoes and pull `/collections/{id}/products.json` instead of `tag=`.
