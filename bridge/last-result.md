@@ -1,18 +1,19 @@
-task_id: 20260511-184016
+task_id: 20260511-184153
 ---
 STAGE_VERDICT: PASS
 
 EVIDENCE:
-- SHOES_PRODUCTS_FOUND: 47
-- OUTPUT_FILE: output/tags/shoes-products-raw.json
-- FILTER_STRATEGY: local (no API tag/product_type filter used)
-- CATALOG_SOURCE: reused_cached_catalog (no new Shopify API call needed — full 600-product catalog already cached in existing file's products[])
-- SHOE_TAG_KEYS applied: baby-shoes, baby-sneakers, baby-sandals, baby-boots, נעליים, shoes, נעל, sandal, sneaker, boot
-- Each matched product includes a `matched_shoe_tags` field listing the tag(s) that triggered the match (e.g., "סניקרס- אנג׳לינו" matched on baby-sneakers + sneaker)
-- SHOPIFY_WRITES: NONE
+- PRODUCTS_CLASSIFIED: 47 (כל המוצרים מ-`shoes-products-raw.json` סווגו לפי `shoes-taxonomy-proposal.md` — STAGE-3 דולג, אין spec-v2)
+- REVIEW_ONLY_COUNT: 3 → 9607363756345 (title vs handle contradiction), 9888961462585 (boot/high-top sneaker hybrid), 9940845756729 (water shoes לא ב-taxonomy)
+- OUTPUT_FILE: `output/tags/shoes-tagging-ready-for-review.md` נוצר עם פורמט: product_id | title | current_tags | proposed_tag | confidence | reason | review_only
+- SHOPIFY_WRITES: NONE — אין שום קריאת API
+- T3_REQUIRED_FOR_LIVE: YES — קובץ זה תוצר תכנוני בלבד
+- Compliance: לא תוויגו לפי size/age/brand. max-3 shoes tags נשמר (5 מוצרים על הגבול).
 
 SYSTEM STATE:
-- `output/tags/shoes-products-raw.json` rewritten as a clean shoes-only list (47 products) with `stage_verdict: PASS` and `filter_strategy: local`. Previous FAIL state (API-filter strategy) replaced.
-- New helper: `scripts/filter_shoes_local.py` (local filter; falls back to fresh catalog fetch only if cached catalog has <100 products).
-- No changes to bridge/, sections/, templates/, or .env.
-- STAGE-4 ready; next stage in plan `babymania-execution-tracks-001` can consume the 47-product shoe list.
+- 47 מוצרי נעליים סווגו: 37 HIGH, 10 MEDIUM, 0 LOW
+- 44 מוכנים ל-T3 לאחר אישור אייל
+- 3 ממתינים לבדיקה אנושית / image_review_agent
+- 1 מוצר draft (9940751417657)
+- Tag distribution: shoes-sneakers ×20, shoes-sandals ×13, shoes-boots ×7, shoes-first-step ×12, shoes-soft-sole ×13, shoes-elegant ×6
+- Live tagging חסום עד אישור T3 (כצפוי לפי plan)
