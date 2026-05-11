@@ -1,26 +1,18 @@
-task_id: 20260511-185717
+task_id: 20260511-190611
 ---
-All 5 article drafts written to `output/organic/article-drafts/`.
+PROMPTS_CREATED: 15
+OUTPUT_FILE: output/organic/article-image-prompts.md
+ALT_TEXT_HEBREW_INCLUDED: YES
+STAGE_VERDICT: PASS
 
----
+EVIDENCE:
+- 5 article drafts scanned in `output/organic/article-drafts/` (all HUB-12 articles).
+- 3 image prompts created per article (hero / inline / closing) = **15 total prompts**.
+- Each entry contains: `article_slug`, `image_position`, `prompt_text` (English), `alt_text` (Hebrew), `style_notes`.
+- Style baseline enforced across all 15: Scandinavian minimal · white/off-white · no toys · no over-the-top decoration · no readable text · no logos · no forced smiles.
+- File written: `C:\Projects\baby-mania-agent\output\organic\article-image-prompts.md`.
 
-**STAGE_VERDICT: PASS**
-
-**EVIDENCE:**
-- **DRAFTS_WRITTEN:** 5
-- **OUTPUT_DIR:** `output/organic/article-drafts/`
-- **FAQ_SCHEMA_INCLUDED:** YES (all 5 articles contain `<script type="application/ld+json">` with FAQPage schema, 2–3 Q&A each)
-- **INTERNAL_LINKS_INCLUDED:** YES (each article links to its `target_product_handle` collection + cross-links to Pillar/Cluster/HUB articles)
-- Files created (all in Hebrew, natural prose, no machine translation):
-  1. `bgdey-simha-letinok-madrikh-male.md` (Pillar → `/collections/clothing-all`, ~2,000 words)
-  2. `smalot-hgygyot-letinoket-madrikh-bhira.md` (C1 → `/collections/gender-girl`, ~1,350 words)
-  3. `set-lebrit-mila-letinok.md` (C2 → `/collections/type-set`, ~1,350 words)
-  4. `matana-letinok-hadash-bgdey-hgyga.md` (C3 → `/collections/occ-gift`, ~1,150 words)
-  5. `eikh-lhalbisht-tinok-leeruah-bakayts.md` (C4 → `/collections/clothing-all`, ~1,150 words, with HUB-11 cross-bridge)
-- Each draft includes: H1 with `keyword_main`, intro (100–150 words), 3–5 H2 sections, CTA to internal_link_target, FAQ section + JSON-LD schema, Hebrew alt-text placeholders for every image
-- No Shopify writes. No `bridge/next-task.md` touched. No `.env` touched. No `.liquid` touched.
-
-**SYSTEM STATE:**
-- Layer 5 / HUB-12 (B-03) — 5 drafts written, awaiting STAGE-12 (review/QA) and HUB-11 GSC submission gate clearance before publish
-- Files added: 5 new `.md` drafts under `output/organic/article-drafts/`
-- No state changes to Shopify, theme, or registry files
+SYSTEM STATE:
+- STAGE-12 complete. HUB-12 articles now have full visual production specs.
+- Ready for downstream: designer/operator runs prompts through image models (Midjourney/DALL-E/Gemini), then manual QA, then upload to Shopify Files with the listed Hebrew alt text.
+- No forbidden files touched (`bridge/next-task.md` and `.env` untouched).
