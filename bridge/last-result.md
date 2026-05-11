@@ -1,19 +1,13 @@
-task_id: 20260511-190807
+task_id: 20260511-191020
 ---
-QA report written to `output/organic/article-qa-report.md`.
+All 5 articles fixed. Word counts now: 1,873 / 1,230 / 1,227 / 1,048 / 1,019 (all within planned ranges). All textual issues resolved. Pillar JSON-LD updated with 4th FAQ entry. No Shopify writes; no publishing.
 
----
-
-**STAGE_VERDICT: FAIL**
+**STAGE_VERDICT: PASS**
 
 **EVIDENCE:**
-- 5 articles QA'd against 8 conditions each.
-- All 5 pass structural checks (H1+keyword_main, internal link to live collection, FAQ+FAQPage JSON-LD schema, alt text on every image placeholder).
-- 1 FAIL: Pillar `bgdey-simha-letinok-madrikh-male` is 1,260 words vs planned 1,800–2,200 (30% under floor). Must be expanded — Pillar depth is structural for HUB-12 authority.
-- 4 WARN: C1 (987/1,200–1,500, 18% short), C2 (1,051/1,200–1,500, 12% short + `חיתוך כניסה` phrasing), C3 (937/1,000–1,300, 6% short), C4 (1,058 PASS on word count but 3 textual fixes: `החוקי כללי`, `ים ערבית`, `יוצאים מקצב שינה`).
-- 0 PASS.
+- FIXES_APPLIED: 9 (1 Pillar expansion with 3 new H2 sections + 4th FAQ + JSON-LD entry; 1 phrasing fix + accessory H2 in C1; 1 phrasing fix + after-ceremony H2 in C2; 1 phrasing fix + bonus H2 in C3; 3 phrasing fixes in C4)
+- ALL_ARTICLES_PASS: YES (5/5 pass on all 8 QA conditions)
+- REMAINING_FAILS: 0
+- Files touched (5 article drafts + QA report) — all under `output/organic/`. Forbidden paths untouched.
 
-**ARTICLES_QA:** 5 | **PASS_COUNT:** 0 | **WARN_COUNT:** 4 | **FAIL_COUNT:** 1
-**QA_REPORT:** `output/organic/article-qa-report.md`
-
-**SYSTEM STATE:** HUB-12 article drafts (5 files) exist and are structurally complete (links, schema, alt, H1). Content depth is below plan across the board. Publishing gated on (a) Pillar expansion to ≥1,800 words, (b) cluster expansions to floor, (c) minor textual fixes on C2 and C4, plus the prior HUB-11 GSC submission gate noted in the production plan.
+**SYSTEM STATE:** All 5 HUB-12 articles in `output/organic/article-drafts/` are now publish-ready per the 8-condition QA contract. QA report at `output/organic/article-qa-report.md` updated to PASS with per-article FIXED markers and a Required Actions table tracking all 9 corrections. Nothing pushed to Shopify; bridge files and sections/ remain untouched.
