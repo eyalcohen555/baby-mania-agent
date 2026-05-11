@@ -1,19 +1,22 @@
-task_id: 20260511-184153
+task_id: 20260511-184551
 ---
 STAGE_VERDICT: PASS
 
 EVIDENCE:
-- PRODUCTS_CLASSIFIED: 47 (כל המוצרים מ-`shoes-products-raw.json` סווגו לפי `shoes-taxonomy-proposal.md` — STAGE-3 דולג, אין spec-v2)
-- REVIEW_ONLY_COUNT: 3 → 9607363756345 (title vs handle contradiction), 9888961462585 (boot/high-top sneaker hybrid), 9940845756729 (water shoes לא ב-taxonomy)
-- OUTPUT_FILE: `output/tags/shoes-tagging-ready-for-review.md` נוצר עם פורמט: product_id | title | current_tags | proposed_tag | confidence | reason | review_only
-- SHOPIFY_WRITES: NONE — אין שום קריאת API
-- T3_REQUIRED_FOR_LIVE: YES — קובץ זה תוצר תכנוני בלבד
-- Compliance: לא תוויגו לפי size/age/brand. max-3 shoes tags נשמר (5 מוצרים על הגבול).
+- `templates/index.json` did not exist locally; fetched live from Shopify theme 183668179257 (saved at `output/homepage/_index.json`, 22,963 bytes). Live API confirms it loaded.
+- `sections/bm-video-hero.liquid` and `sections/bm-trust-badges.liquid` fetched and saved under `output/homepage/`.
+- Findings written to `output/homepage/homepage-audit.md`.
+- Key findings:
+  - **SECTIONS_COUNT:** 18 (15 active, 3 disabled — `image_banner_xt8BGU`, `image_banner_WY4jhi`, `rich_text_bWQ9mf`)
+  - **TRUST_BADGES_ABOVE_FOLD:** NO — hero is 72vh desktop / 100vh mobile, pushing badges below fold (especially mobile)
+  - **TRUST_BADGES_VISUAL_OK:** NO — all 4 badge blocks override `title` only; `icon` and `description` fall back to schema defaults, so every badge renders the same `🛡️` and a literal `"-"` placeholder
+  - **HERO_CTA_CLEAR:** NO — hero has no text overlay (no headline / subheadline), only two transparent ghost CTAs (`בגדי בנות` / `בגדי בנים`) with 35%-opacity white border on motion video
+  - **ISSUES_FOUND:** 8 (3 HIGH, 1 MEDIUM, 4 LOW)
+- No file changes made to theme, products, or `.env`. EasySleep / Tempio not touched.
 
 SYSTEM STATE:
-- 47 מוצרי נעליים סווגו: 37 HIGH, 10 MEDIUM, 0 LOW
-- 44 מוכנים ל-T3 לאחר אישור אייל
-- 3 ממתינים לבדיקה אנושית / image_review_agent
-- 1 מוצר draft (9940751417657)
-- Tag distribution: shoes-sneakers ×20, shoes-sandals ×13, shoes-boots ×7, shoes-first-step ×12, shoes-soft-sole ×13, shoes-elegant ×6
-- Live tagging חסום עד אישור T3 (כצפוי לפי plan)
+- `output/homepage/homepage-audit.md` — audit report (created)
+- `output/homepage/_index.json` — local copy of live homepage template (created, read-only artifact)
+- `output/homepage/_sections__bm-video-hero.liquid` — local copy of hero section (created)
+- `output/homepage/_sections__bm-trust-badges.liquid` — local copy of trust badges section (created)
+- No Shopify writes performed. Theme unchanged. Ready for STAGE-7.
