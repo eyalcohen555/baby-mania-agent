@@ -1,22 +1,18 @@
-task_id: 20260511-133635
+task_id: 20260511-184016
 ---
-STAGE_VERDICT: **FAIL**
+STAGE_VERDICT: PASS
 
 EVIDENCE:
-- `product_type=Shoes` → `count_product_type_Shoes = 0` (no products in the store use this product_type)
-- `tag=נעליים` → returned 600 products, but this is the full catalog, not a real filter result
-- Sanity control: `tag=__no_such_tag_control__` → `count = 600` (same as `count_all`)
-- Sanity control: `tag=baby-shoes` (a tag that demonstrably exists on real products) → `count = 600` as well
-- Conclusion: Shopify's `tag=` query-string filter is **silently ignored** by this API context (likely a scope/permission limitation of the client_credentials app on this store). The prescribed two-filter strategy cannot produce a shoes-only list.
-- Local-side scan of the merged response by shoe-related tag keywords (`baby-shoes`, `baby-sneakers`, `baby-sandals`, `baby-boots`, `נעליים`, etc.) found 47 actual shoe products embedded in the 600 returned items.
-- Output written to `output/tags/shoes-products-raw.json` with full diagnostics, verdict, warning, and the merged product summaries (so the next stage has data to work with without being misled).
-- SHOPIFY_WRITES: NONE — verified read-only throughout (only `GET /products.json` and `GET /products/count.json`).
-
-FILES TOUCHED:
-- `scripts/fetch_shoes_products.py` (new)
-- `output/tags/shoes-products-raw.json` (new)
+- SHOES_PRODUCTS_FOUND: 47
+- OUTPUT_FILE: output/tags/shoes-products-raw.json
+- FILTER_STRATEGY: local (no API tag/product_type filter used)
+- CATALOG_SOURCE: reused_cached_catalog (no new Shopify API call needed — full 600-product catalog already cached in existing file's products[])
+- SHOE_TAG_KEYS applied: baby-shoes, baby-sneakers, baby-sandals, baby-boots, נעליים, shoes, נעל, sandal, sneaker, boot
+- Each matched product includes a `matched_shoe_tags` field listing the tag(s) that triggered the match (e.g., "סניקרס- אנג׳לינו" matched on baby-sneakers + sneaker)
+- SHOPIFY_WRITES: NONE
 
 SYSTEM STATE:
-- The current shoes inventory cannot be discovered through `product_type=Shoes` or `tag=נעליים` in this Shopify API context. Real shoe products are tagged with English keys (`baby-shoes`, `baby-sneakers`, `baby-sandals`, `baby-boots`) and need a different discovery strategy — e.g., fetch full catalog and filter locally on those tags, or query `/products/count.json` with `product_type` variations, or curate a known shoes collection. STAGE-5 must redefine the discovery filter before any tagging work proceeds.
-
-EXACT NEXT STEP: redefine STAGE-4 discovery filter (or add STAGE-4b) to: (a) page all products once and filter locally on the known shoe tags, or (b) build a Shopify collection of shoes and pull `/collections/{id}/products.json` instead of `tag=`.
+- `output/tags/shoes-products-raw.json` rewritten as a clean shoes-only list (47 products) with `stage_verdict: PASS` and `filter_strategy: local`. Previous FAIL state (API-filter strategy) replaced.
+- New helper: `scripts/filter_shoes_local.py` (local filter; falls back to fresh catalog fetch only if cached catalog has <100 products).
+- No changes to bridge/, sections/, templates/, or .env.
+- STAGE-4 ready; next stage in plan `babymania-execution-tracks-001` can consume the 47-product shoe list.

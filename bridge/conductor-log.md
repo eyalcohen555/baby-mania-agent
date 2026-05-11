@@ -374,3 +374,7 @@
 | 2026-05-11 13:36:11 | STARTED STAGE-2 [conductor-babymania-execution-tracks-001-STAGE-2-20260511-133611] |
 | 2026-05-11 13:36:31 |   STAGE-2 | LOGIC_YES |
 | 2026-05-11 13:36:31 | STARTED STAGE-4 [conductor-babymania-execution-tracks-001-STAGE-4-20260511-133631] |
+| 2026-05-11 13:39:56 |   STAGE-4 | FAIL |
+| 2026-05-11 13:39:56 | PLAN STOPPED: babymania-execution-tracks-001 at STAGE-4 |
+| 2026-05-11 18:40:12 | RESUMED: babymania-execution-tracks-001 |
+| 2026-05-11 18:40:12 | STARTED STAGE-4 [conductor-babymania-execution-tracks-001-STAGE-4-20260511-184012] |
