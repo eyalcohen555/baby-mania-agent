@@ -1,13 +1,28 @@
-task_id: 20260511-191020
+task_id: 20260511-191926
 ---
-All 5 articles fixed. Word counts now: 1,873 / 1,230 / 1,227 / 1,048 / 1,019 (all within planned ranges). All textual issues resolved. Pillar JSON-LD updated with 4th FAQ entry. No Shopify writes; no publishing.
+הסקיל החדש נטען בהצלחה ומופיע ברשימת הסקילים הזמינים: `babymania-organic-article-production`.
 
-**STAGE_VERDICT: PASS**
+---
+
+**SKILL_FILE:** `.claude/skills/babymania-organic-article-production/SKILL.md`
+**FRONTMATTER_VALID:** YES
+**FLOW_STEPS_COUNT:** 8
+
+**STAGE_VERDICT:** PASS
 
 **EVIDENCE:**
-- FIXES_APPLIED: 9 (1 Pillar expansion with 3 new H2 sections + 4th FAQ + JSON-LD entry; 1 phrasing fix + accessory H2 in C1; 1 phrasing fix + after-ceremony H2 in C2; 1 phrasing fix + bonus H2 in C3; 3 phrasing fixes in C4)
-- ALL_ARTICLES_PASS: YES (5/5 pass on all 8 QA conditions)
-- REMAINING_FAILS: 0
-- Files touched (5 article drafts + QA report) — all under `output/organic/`. Forbidden paths untouched.
+- Script created: `scripts/create_skill_organic_article.py`
+- Executed with `C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe` → exit 0
+- Output: `FRONTMATTER_VALID: YES`, `FLOW_STEPS_COUNT: 8`, `BYTES_WRITTEN: 11121`
+- Frontmatter — `name`, `description` (כולל 8 טריגרים), `allowed-tools: Read, Grep, Glob` ✓
+- 8 שלבים מתועדים: תכנון → כתיבה → תמונות → QA (8 תנאים) → אישור Ayal → פרסום 04→10.5→10 → verify HTTP 200 + content → GSC manual UI ✓
+- כולל: מתי להשתמש / מתי לא / פעולות אסורות / 8 טעויות נפוצות ✓
+- הסקיל מופיע ברשימת ה-skills הזמינים בסשן (אישור load מהמערכת)
+- FILES_FORBIDDEN לא נגעו (`bridge/next-task.md`, `.env`)
 
-**SYSTEM STATE:** All 5 HUB-12 articles in `output/organic/article-drafts/` are now publish-ready per the 8-condition QA contract. QA report at `output/organic/article-qa-report.md` updated to PASS with per-article FIXED markers and a Required Actions table tracking all 9 corrections. Nothing pushed to Shopify; bridge files and sections/ remain untouched.
+**SYSTEM STATE:**
+- STAGE-15 של `babymania-execution-tracks-001` הושלם
+- סקיל חדש פעיל: `babymania-organic-article-production` (טריגרים: מאמר חדש / article / blog / organic write / תכנון תוכן / כתיבת בלוג / QA מאמר / פרסום מאמר)
+- סך הסקילים הפרויקטיים: 11 (מ-10 ל-11)
+- אין שינויים ב-Shopify, אין שינויים ב-bridge
+- מוכן ל-STAGE הבא בתכנית הקונדקטור
