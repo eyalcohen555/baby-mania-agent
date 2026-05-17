@@ -1,25 +1,17 @@
-task_id: 20260517-113851
+task_id: 20260517-201610
 ---
-All 4 articles already exist at the correct paths with complete content matching the task spec — frontmatter (correct slug/keyword/hub/parent/cross_link), H1, multi-section body, FAQ JSON-LD schema, and internal links to the right pillar articles + product bridges. No further writing required for stage A3.
-
-STAGE_VERDICT: PASS
+STAGE_VERDICT: FAIL
 
 EVIDENCE:
-- `output/organic/hub2-extension/HUB2_C6.md` (232 lines) — slug `bgdei-tinokot-lefi-onot-ma-liknot`, keyword `בגדי תינוקות לפי עונות`, links → HUB-2 Pillar (`kama-bgadim-tinok-chadash-tzarich`) + HUB-11 Pillar + products `baby-bear-cozy-set`, `toddler-baby-boys-clothes` ✓
-- `output/organic/hub4-extension/HUB4_C5.md` (234 lines) — slug `pricha-bor-tinok-ma-gorim-ech-lehagib`, keyword `פריחה בעור תינוק`, links → HUB-4 Pillar (`eikh-letapel-bor-ragish-shel-tinok`) + HUB-7 Pillar + `cotton-baby-clothing` ✓
-- `output/organic/hub7-extension/HUB7_C6.md` (250 lines) — slug `sakanot-babayit-letinok-asara-dugmaot`, keyword `סכנות בבית לתינוק`, links → HUB-7 Pillar (`sviva-betuha-letinok`) + HUB-1 cross-link + `cotton-baby-clothing` ✓
-- `output/organic/hub8-extension/HUB8_C6.md` (232 lines) — slug `shgarat-erev-letinok-shlabim-leshina`, keyword `שגרת ערב לתינוק`, links → HUB-8 parent (`seder-yom-letinok`) + HUB-1 cross-link + `babysleep-pro` ✓
-- All 4 contain valid FAQPage JSON-LD with mainEntity arrays
-- SHOPIFY_WRITES: NONE
-- FILES_FORBIDDEN untouched (no edits to `.env` or `bridge/`)
-
-ARTICLES_WRITTEN: 4
-HUB2_C6: SAVED
-HUB4_C5: SAVED
-HUB7_C6: SAVED
-HUB8_C6: SAVED
+- 64 checks executed (8 articles × 8 criteria). Report saved at `output/organic/batch-001-ext-qa-report.md`.
+- ARTICLES_QA_PASS: 5/8 — HUB1_C5, HUB3_C5, HUB3_C6, HUB7_C6, HUB8_C6
+- ARTICLES_QA_FAIL: 3/8 — HUB1_C6, HUB2_C6, HUB4_C5
+- FAILED_CHECKS: all three fail on the same criterion #4 (only 1 image placeholder; contract requires ≥2). All other 7 checks (no inline styles / no hero / no video / internal links / product bridge / valid Hebrew / FAQ 5-7) pass on 100% of articles.
+- Systemic note: zero actual Shopify CDN URLs in any article — expected at this stage (CDN URLs inserted at publish, not at local-markdown stage). Check #4 was evaluated as "≥2 image placeholders / image-slots reserved".
 
 SYSTEM STATE:
-- 4 cluster articles in place across 4 hub-extension folders, structurally complete (frontmatter + H1 with keyword + multi-H2 body + FAQ schema + internal links + product bridges).
-- Stage A3 deliverables satisfied; no Shopify mutations performed.
-- Next per Conductor: hand back to plan `organic-articles-43-batch-001` for whatever A4/QA stage follows (Ayal sign-off + pipeline 04→10.5→10 publish per article-production SKILL).
+- Stage A4-QA result: **FAIL** (5/8 pass)
+- Per plan `next_on_fail: A1` — return to article-writing stage to add a second image placeholder to HUB1_C6, HUB2_C6, HUB4_C5, then re-run A4-QA. Fix is mechanical (one `![alt](placeholder)` block per file).
+- 5 passing articles are unchanged and remain valid.
+- Conductor cannot advance to B1 (HUB-16 production) until A4-QA = PASS (milestone gate).
+- No Shopify writes. No bridge mutations. Only file written: `output/organic/batch-001-ext-qa-report.md`.
