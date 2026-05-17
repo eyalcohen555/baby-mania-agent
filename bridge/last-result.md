@@ -1,32 +1,32 @@
-task_id: 20260517-202315
+task_id: 20260517-202443
 ---
-All 4 articles already exist at the required paths with complete content matching the spec (titles, slugs, keywords, intents, internal links, product bridges all align). No writes needed.
+## STAGE_VERDICT: FAIL
 
-**Verification summary:**
+```
+ARTICLES_QA_PASS: 4/8
+ARTICLES_QA_FAIL: 4
+FAILED_CHECKS:
+  - HUB1_C6 → C4 (only 1 image slot)
+  - HUB2_C6 → C4 (only 1 image slot)
+  - HUB3_C5 → C4 (only 1 image slot)
+  - HUB4_C5 → C4 (only 1 image slot)
+QA_VERDICT: FAIL
+```
 
-| Article | Path | Lines | Spec match |
-|---|---|---|---|
-| HUB2_C6 | `output/organic/hub2-extension/HUB2_C6.md` | 232 | slug ✓ title ✓ keyword ✓ intent informational_commercial ✓ HUB-11 cross_link ✓ baby-bear-cozy-set ✓ |
-| HUB4_C5 | `output/organic/hub4-extension/HUB4_C5.md` | 234 | slug ✓ title ✓ keyword ✓ intent informational ✓ HUB-7 cross_link ✓ cotton-baby-clothing ✓ |
-| HUB7_C6 | `output/organic/hub7-extension/HUB7_C6.md` | 250 | slug ✓ title ✓ keyword ✓ intent informational ✓ cross_link ✓ |
-| HUB8_C6 | `output/organic/hub8-extension/HUB8_C6.md` | 232 | slug ✓ title ✓ keyword ✓ intent informational_commercial ✓ HUB-1 cross_link ✓ BabySleep Pro ✓ |
+## EVIDENCE
+- **60/64 checks PASS** — only C4 (≥2 images) failing in 4 articles
+- **C1–C3, C5–C8 all PASS across all 8 articles** (no inline styles, no hero, no video, internal links ≥2, product bridge present, Hebrew clean, FAQ 5-7)
+- 4 PASS articles: HUB1_C5, HUB3_C6, HUB7_C6, HUB8_C6 (each has 2 image slots)
+- 4 FAIL articles: HUB1_C6, HUB2_C6, HUB3_C5, HUB4_C5 (each has only 1 hero image slot)
+- Report saved: `output/organic/batch-001-ext-qa-report.md`
 
----
+## SYSTEM STATE
+- A4-QA = **FAIL** → per plan `next_on_fail: A1` (loop back for fixes)
+- Fix is narrow: insert 1 additional `![alt](alt-placeholder-X)` image slot per failing article
+- All other 60/64 checks pass — no copy/structure rewrite needed
+- Milestone M1 (PART-1 COMPLETE) **blocked** until A4-QA PASS
+- B1 (HUB-16 production) **blocked** until M1
+- No Shopify writes performed; no `.env` or `bridge/` files touched
 
-**STAGE_VERDICT: PASS**
-
-**EVIDENCE:**
-- ARTICLES_WRITTEN: 4 (all pre-existing, matching spec — likely produced by prior conductor stage)
-- HUB2_C6: SAVED (232 lines, frontmatter aligns with spec — keyword `בגדי תינוקות לפי עונות`, internal_links HUB-2 parent + HUB-11 cross, product bridge `/products/baby-bear-cozy-set`)
-- HUB4_C5: SAVED (234 lines, keyword `פריחה בעור תינוק`, intent informational, parent HUB-4 + cross HUB-7, bridge `/collections/cotton-baby-clothing`)
-- HUB7_C6: SAVED (250 lines, keyword `סכנות בבית לתינוק`, parent HUB-7, cross HUB-1, bridge cotton-baby-clothing)
-- HUB8_C6: SAVED (232 lines, keyword `שגרת ערב לתינוק`, intent informational_commercial, parent HUB-8 + cross HUB-1, bridge `/products/babysleep-pro`)
-- SHOPIFY_WRITES: NONE
-- FILES_FORBIDDEN: untouched (.env, bridge/ not modified)
-- hub-registry.json: unchanged (registry updates belong to a later publish stage, not A3 writing)
-
-**SYSTEM STATE:**
-- 4 extension articles ready at `output/organic/hub{2,4,7,8}-extension/` — all in markdown + YAML frontmatter format, ~1480-1620 word counts, with hero alt placeholders for image generation
-- Companion file `output/organic/batch-001-ext-qa-report.md` exists (prior QA artifact)
-- Ready for next conductor stage (likely QA verification → HTML rendering → Shopify publish via separate T2/T3 task)
-- A3_VERDICT: PASS
+## NEXT STEP
+Loop back to A1/A2/A3 (writing stages) with narrow instruction: add 2nd `alt-placeholder` image slot to each of the 4 named articles, then re-run A4-QA.
