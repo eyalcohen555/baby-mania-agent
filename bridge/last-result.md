@@ -1,34 +1,18 @@
-task_id: 20260517-203751
+task_id: 20260517-203921
 ---
-שני המאמרים נכתבו במלואם וקיימים בנתיבים הנדרשים. ה-hub-registry.json כבר משקף את הסטטוס.
+Both articles already exist at the requested paths, fully written per spec. The registry now reflects HUB-1's extension.
 
----
+**STAGE_VERDICT: PASS**
 
-STAGE_VERDICT: PASS
+**EVIDENCE:**
+- `output/organic/hub1-extension/HUB1_C5.md` — 244 lines, frontmatter complete (slug `menorat-layla-letinok-ech-livhor`, keyword "מנורת לילה לתינוק", hub HUB-1, parent Pillar, cross_link HUB-7), all 6 key_sections present (research on light/melatonin, אדום vs לבן vs כחול + comparison table, משולבת vs רגילה, עוצמה/מיקום/זמן, המלצות לפי 3 קבוצות גיל, FAQ ×6), internal links to HUB-1-Pillar + HUB-7 + HUB-1-C6 + BabySleep Pro, FAQPage Schema markup with 6 Q&A.
+- `output/organic/hub1-extension/HUB1_C6.md` — 239 lines, frontmatter complete (slug `reash-lavan-letinok-im-ze-batu'ah` adapted to `reash-lavan-letinok-im-ze-batuah` for URL safety, keyword "רעש לבן לתינוק", hub HUB-1, cross_link HUB-8), all 6 key_sections present (מה זה + הסבר ביולוגי, AAP guidance + 50dB/2m/timer, dB table + measurement, 3 device types, gradual weaning protocol, חיבור לשגרה), 5 FAQ, internal links to Pillar + HUB-1-C5 + HUB-8-Pillar + BabySleep Pro, FAQPage Schema markup with 5 Q&A.
+- `teams/organic/hub-registry.json` — HUB-1 updated: articles_count 5→7, added C5+C6 to articles list, added `extension_articles` block with draft status + file locations.
 
-EVIDENCE:
-- `output/organic/hub3-extension/HUB3_C5.md` — מאמר 1 מלא (~1100 מילים)
-  - H1 כולל keyword_main "טמפרטורת מים לאמבטיה לתינוק"
-  - כל הסקשנים הנדרשים: טבלת טמפ' לפי גיל, שיטת המרפק, מד טמפרטורה, סימני מים חמים/קרים, צ'ק-ליסט לפני רחצה
-  - 5 שאלות FAQ + FAQPage JSON-LD תקין
-  - Internal links: HUB-3-Pillar (eikh-lirhoz-tinok), HUB-7-C3 (hitkhamemut-yeter-tinok), /collections/bath
-  - 2 תמונות עם alt בעברית
-- `output/organic/hub3-extension/HUB3_C6.md` — מאמר 2 מלא (~1150 מילים)
-  - H1 כולל keyword_main "כמה פעמים לרחוץ תינוק"
-  - כל הסקשנים: לפי גיל (יילוד / 1-3 / 3-6 / 6-12 / פעוט), מה קורה אם רוחצים יותר מדי, ניקוי נקודתי, הכנת אמבטיה צעד-צעד
-  - 5 שאלות FAQ + FAQPage JSON-LD תקין
-  - Internal links: HUB-3-Pillar, HUB-3-C5 (link-back ל-temperatura-mayim), HUB-4-Pillar (or-ragish-tinok), /collections/bath
-  - 2 תמונות עם alt בעברית
-- `teams/organic/hub-registry.json` (lines 51-58) — HUB-3 extension רשום עם `status: drafted_pending_publish`, drafted_at 2026-05-17, שני הקבצים עם slug+keyword+path
+**SYSTEM STATE:**
+- ARTICLES_WRITTEN: 2 (HUB1_C5.md, HUB1_C6.md — both fully drafted, ready for Shopify publish)
+- SHOPIFY_WRITES: NONE (drafts only, as expected at this stage)
+- Registry reflects HUB-1 extension with `status: draft` for both — Shopify publish is a separate downstream stage
+- A2 conductor goal met: 2 articles closing HUB-1 demand gap (292 impressions)
 
-ARTICLES_WRITTEN: 2
-HUB3_C5: output/organic/hub3-extension/HUB3_C5.md
-HUB3_C6: output/organic/hub3-extension/HUB3_C6.md
-SHOPIFY_WRITES: NONE
-A1_VERDICT: PASS
-
-SYSTEM STATE:
-- HUB-3 extension: 2/2 מאמרים drafted, ממתינים ל-Ayal sign-off (שלב 5) ופרסום Pipeline 04→10.5→10 (שלב 6)
-- אין כתיבה ל-Shopify Blog API בשלב הזה — A1 הוא drafting בלבד
-- FILES_FORBIDDEN לא נגעו (.env / bridge/ / scripts/ ללא שינוי)
-- הצעד הבא: A2 (אם מוגדר ב-plan) או ה-Ayal sign-off + פרסום
+Slug deviation note: spec slug `reash-lavan-letinok-im-ze-batu'ah` contained an apostrophe unsafe for URLs; written as `reash-lavan-letinok-im-ze-batuah`. Internal cross-link in HUB1_C5 already matches this clean form.
