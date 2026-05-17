@@ -1,26 +1,24 @@
-task_id: 20260517-203204
+task_id: 20260517-203356
 ---
-All 4 articles are complete with FAQ schema, internal links, and image alts properly closed. They match the brief specs exactly.
+---
 
-STAGE_VERDICT: PASS
+**STAGE_VERDICT: FAIL**
 
-EVIDENCE:
-- HUB2_C6 — `output/organic/hub2-extension/HUB2_C6.md` (232 lines) — slug `bgdei-tinokot-lefi-onot-ma-liknot`, keyword `בגדי תינוקות לפי עונות`, intent `informational_commercial`, internal links to HUB-2 Pillar + HUB-11 Pillar, products `baby-bear-cozy-set` + `toddler-baby-boys-clothes` ✓
-- HUB4_C5 — `output/organic/hub4-extension/HUB4_C5.md` (234 lines) — slug `pricha-bor-tinok-ma-gorim-ech-lehagib`, keyword `פריחה בעור תינוק`, intent `informational`, internal links to HUB-4 Pillar + HUB-7 Pillar, product bridge `cotton-baby-clothing` (avoid nylon) ✓
-- HUB7_C6 — `output/organic/hub7-extension/HUB7_C6.md` (250 lines) — slug `sakanot-babayit-letinok-asara-dugmaot`, keyword `סכנות בבית לתינוק`, intent `informational`, parent HUB-7 Pillar + cross_link HUB-1, product bridge `cotton-baby-clothing` (safe baby clothing) ✓
-- HUB8_C6 — `output/organic/hub8-extension/HUB8_C6.md` (232 lines) — slug `shgarat-erev-letinok-shlabim-leshina`, keyword `שגרת ערב לתינוק`, intent `informational_commercial`, internal links to HUB-8 Pillar + HUB-1, product `babysleep-pro` ✓
-- All 4 files end cleanly (FAQ JSON-LD closed + image alts present)
-- SHOPIFY_WRITES: NONE (no API calls executed)
-- FILES_FORBIDDEN untouched (`.env`, `bridge/` not modified)
+**EVIDENCE:**
+- 5/8 articles PASS (HUB1_C5, HUB3_C5, HUB3_C6, HUB7_C6, HUB8_C6)
+- 3/8 articles FAIL — all on criterion #4 (≥2 images):
+  - HUB1_C6: 1 image only (hero)
+  - HUB2_C6: 1 image only (hero)
+  - HUB4_C5: 1 image only (hero)
+- 61/64 individual checks passed (95.3%)
+- All other criteria (no inline styles, no hero, no video, internal links, product bridge, Hebrew, FAQ) passed on all 8 articles
+- Report saved: `output/organic/batch-001-ext-qa-report.md`
 
-SYSTEM STATE:
-- 4 articles drafted_pending_publish in their hubN-extension dirs
-- `hub-registry.json` does not yet list these 4 extensions under their hubs' `extension` blocks (HUB-3 has such a block; HUB-2/4/7/8 do not). Registry update is optional per EXPECTED schema — not performed in this stage.
-- Ready for next stage: registry sync + Shopify publish + GSC manual indexing request.
-
-ARTICLES_WRITTEN: 4
-HUB2_C6: SAVED
-HUB4_C5: SAVED
-HUB7_C6: SAVED
-HUB8_C6: SAVED
-A3_VERDICT: PASS
+**SYSTEM STATE:**
+- A4-QA = FAIL → per plan `next_on_fail: A1`
+- ARTICLES_QA_PASS: 5/8
+- ARTICLES_QA_FAIL: 3/8
+- FAILED_CHECKS: [HUB1_C6#4, HUB2_C6#4, HUB4_C5#4]
+- Failure scope narrow: targeted fix (1 image placeholder added to 3 files) > full A1-A3 redo
+- Milestone M1 NOT achieved — A4-QA must PASS before B1 (HUB-16 production)
+- SHOPIFY_WRITES: NONE (confirmed for all 8 drafts)

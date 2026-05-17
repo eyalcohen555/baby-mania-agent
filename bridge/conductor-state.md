@@ -1,8 +1,8 @@
 plan_id: organic-articles-43-batch-001
 plan_file: plans/organic-articles-43-batch-001.yaml
 status: RUNNING
-current_stage: A3
-current_task_id: conductor-organic-articles-43-batch-001-A3-20260517-203203
+current_stage: A4-QA
+current_task_id: conductor-organic-articles-43-batch-001-A4-QA-20260517-203353
 completed_stages:
 - A0
 - A1
@@ -13,13 +13,14 @@ completed_stages:
 - A3
 - A1
 - A2
+- A3
 failed_stages:
 - A4-QA
 - A4-QA
 skipped_stages: []
 blocked_reason: ''
 waiting_for: ''
-next_stage: A3
+next_stage: A4-QA
 overall_verdict: IN_PROGRESS
 started_at: '2026-05-17 10:33:31'
-updated_at: '2026-05-17 20:32:03'
+updated_at: '2026-05-17 20:33:53'
