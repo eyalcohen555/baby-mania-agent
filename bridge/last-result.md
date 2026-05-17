@@ -1,24 +1,34 @@
-task_id: 20260517-203356
+task_id: 20260517-203751
 ---
+שני המאמרים נכתבו במלואם וקיימים בנתיבים הנדרשים. ה-hub-registry.json כבר משקף את הסטטוס.
+
 ---
 
-**STAGE_VERDICT: FAIL**
+STAGE_VERDICT: PASS
 
-**EVIDENCE:**
-- 5/8 articles PASS (HUB1_C5, HUB3_C5, HUB3_C6, HUB7_C6, HUB8_C6)
-- 3/8 articles FAIL — all on criterion #4 (≥2 images):
-  - HUB1_C6: 1 image only (hero)
-  - HUB2_C6: 1 image only (hero)
-  - HUB4_C5: 1 image only (hero)
-- 61/64 individual checks passed (95.3%)
-- All other criteria (no inline styles, no hero, no video, internal links, product bridge, Hebrew, FAQ) passed on all 8 articles
-- Report saved: `output/organic/batch-001-ext-qa-report.md`
+EVIDENCE:
+- `output/organic/hub3-extension/HUB3_C5.md` — מאמר 1 מלא (~1100 מילים)
+  - H1 כולל keyword_main "טמפרטורת מים לאמבטיה לתינוק"
+  - כל הסקשנים הנדרשים: טבלת טמפ' לפי גיל, שיטת המרפק, מד טמפרטורה, סימני מים חמים/קרים, צ'ק-ליסט לפני רחצה
+  - 5 שאלות FAQ + FAQPage JSON-LD תקין
+  - Internal links: HUB-3-Pillar (eikh-lirhoz-tinok), HUB-7-C3 (hitkhamemut-yeter-tinok), /collections/bath
+  - 2 תמונות עם alt בעברית
+- `output/organic/hub3-extension/HUB3_C6.md` — מאמר 2 מלא (~1150 מילים)
+  - H1 כולל keyword_main "כמה פעמים לרחוץ תינוק"
+  - כל הסקשנים: לפי גיל (יילוד / 1-3 / 3-6 / 6-12 / פעוט), מה קורה אם רוחצים יותר מדי, ניקוי נקודתי, הכנת אמבטיה צעד-צעד
+  - 5 שאלות FAQ + FAQPage JSON-LD תקין
+  - Internal links: HUB-3-Pillar, HUB-3-C5 (link-back ל-temperatura-mayim), HUB-4-Pillar (or-ragish-tinok), /collections/bath
+  - 2 תמונות עם alt בעברית
+- `teams/organic/hub-registry.json` (lines 51-58) — HUB-3 extension רשום עם `status: drafted_pending_publish`, drafted_at 2026-05-17, שני הקבצים עם slug+keyword+path
 
-**SYSTEM STATE:**
-- A4-QA = FAIL → per plan `next_on_fail: A1`
-- ARTICLES_QA_PASS: 5/8
-- ARTICLES_QA_FAIL: 3/8
-- FAILED_CHECKS: [HUB1_C6#4, HUB2_C6#4, HUB4_C5#4]
-- Failure scope narrow: targeted fix (1 image placeholder added to 3 files) > full A1-A3 redo
-- Milestone M1 NOT achieved — A4-QA must PASS before B1 (HUB-16 production)
-- SHOPIFY_WRITES: NONE (confirmed for all 8 drafts)
+ARTICLES_WRITTEN: 2
+HUB3_C5: output/organic/hub3-extension/HUB3_C5.md
+HUB3_C6: output/organic/hub3-extension/HUB3_C6.md
+SHOPIFY_WRITES: NONE
+A1_VERDICT: PASS
+
+SYSTEM STATE:
+- HUB-3 extension: 2/2 מאמרים drafted, ממתינים ל-Ayal sign-off (שלב 5) ופרסום Pipeline 04→10.5→10 (שלב 6)
+- אין כתיבה ל-Shopify Blog API בשלב הזה — A1 הוא drafting בלבד
+- FILES_FORBIDDEN לא נגעו (.env / bridge/ / scripts/ ללא שינוי)
+- הצעד הבא: A2 (אם מוגדר ב-plan) או ה-Ayal sign-off + פרסום
