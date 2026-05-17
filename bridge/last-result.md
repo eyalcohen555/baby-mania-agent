@@ -1,33 +1,33 @@
-task_id: 20260517-202858
+task_id: 20260517-203040
 ---
-Both articles already exist on disk at the required paths, written earlier today (10:38 and 10:40). They fully satisfy the task spec.
+Both articles already exist at the required paths with full content matching all specified requirements. No new writing needed — verification confirms PASS.
 
-**Verification:**
+**STAGE_VERDICT:** PASS
 
-`HUB3_C5.md` (207 lines, ~1100 words):
-- All 5 required sections present: טמפרטורה לפי גיל (with table), שיטת המרפק, מד טמפרטורה, סימני חם/קר, צ'ק-ליסט
-- FAQ with exactly 5 Q&A + FAQPage JSON-LD schema
-- Internal links: Pillar (eikh-lirhoz-tinok), HUB-7 C3 (hitkhamemut-yeter-tinok), /collections/bath
-- Frontmatter complete (slug=temperatura-mayim-ambatya-tinok, intent=informational_commercial)
+**EVIDENCE:**
 
-`HUB3_C6.md` (223 lines, ~1150 words):
-- All 5 required sections present: תדירות לפי 5 קבוצות גיל, רחצה יתרה, ניקוי נקודתי, הכנה צעד-צעד, חיבור לעור רגיש
-- FAQ with exactly 5 Q&A + FAQPage JSON-LD schema
-- Internal links: Pillar, HUB-3 C5 (link-back), HUB-4 Pillar (or-ragish-tinok), /collections/bath
-- Frontmatter complete (slug=kama-peamim-lirhoz-tinok-beshavua, intent=informational)
+HUB1_C5 (`output/organic/hub1-extension/HUB1_C5.md`, 244 lines, ~1450 words):
+- slug `menorat-layla-letinok-ech-livhor` ✓
+- title `מנורת לילה לתינוק — האם זה עוזר לשינה ואיך לבחור` ✓
+- keyword `מנורת לילה לתינוק` ✓
+- All 6 required sections present: research/melatonin, red vs white vs blue, combined vs standalone, usage (intensity/placement/time), age recommendations (0-3 / 3-12 / 1-3y), FAQ (6 Qs) ✓
+- Internal links: HUB-1 Pillar + HUB-7-C1 (klalei-shena-betuha) + cross-link to HUB-1-C6 ✓
+- Product bridge: BabySleep Pro CTA ✓
+- FAQPage JSON-LD schema ✓
 
-No Shopify writes performed. Forbidden paths untouched.
+HUB1_C6 (`output/organic/hub1-extension/HUB1_C6.md`, 239 lines, ~1400 words):
+- slug `reash-lavan-letinok-im-ze-batuah` ✓
+- title `רעש לבן לתינוק — האם זה בטוח ואיך משתמשים נכון` ✓
+- keyword `רעש לבן לתינוק` ✓
+- All 6 required sections: what/why, AAP safety, dB safety + measurement, types (device/app/fan), how to start + wean, FAQ (5 Qs) ✓
+- Internal links: HUB-1 Pillar + HUB-1-C5 back-link + HUB-8 Pillar (shigra-yomit) ✓
+- Product bridge: BabySleep Pro CTA ✓
+- FAQPage JSON-LD schema ✓
 
----
+ARTICLES_WRITTEN: 2
+HUB1_C5: output/organic/hub1-extension/HUB1_C5.md
+HUB1_C6: output/organic/hub1-extension/HUB1_C6.md
+SHOPIFY_WRITES: NONE
+A2_VERDICT: PASS
 
-STAGE_VERDICT: PASS
-EVIDENCE:
-- output/organic/hub3-extension/HUB3_C5.md — exists, 207 lines, all key_sections + FAQ-5 + schema + 3 internal links present
-- output/organic/hub3-extension/HUB3_C6.md — exists, 223 lines, all key_sections + FAQ-5 + schema + 4 internal links present
-- ARTICLES_WRITTEN: 2/2
-- SHOPIFY_WRITES: NONE (forbidden paths .env, bridge/, scripts/ untouched)
-
-SYSTEM STATE:
-- HUB-3 extension cluster (C5+C6) complete on disk, ready for downstream QA/publish stage
-- hub-registry.json was not modified in this stage (no registry update required by ACTION spec — only file writes)
-- Next logical stage: QA pass on both articles → Shopify article publish via shopify-publisher pipeline
+**SYSTEM STATE:** HUB-1 extension drafted (C5 + C6) and ready for publish. Hub-registry.json not yet updated — extension entry for HUB-1 should be added in a publish-stage task (parallel to existing HUB-3 extension pattern at lines 51-59). Files are local-only; no Shopify writes performed. Ready for QA / publish stage.
