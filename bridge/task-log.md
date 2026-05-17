@@ -716,3 +716,5 @@
 | 2026-05-17 10:28:17 | FAILED_EMPTY [20260517-102447] | TASK: NIGHT RUN — Organic catch-up plan and draft production |
 | 2026-05-17 10:33:31 | STARTED [20260517-103331] [TIER:T0] | TASK_ID: conductor-organic-articles-43-batch-001-A0-20260517-103331 |
 | 2026-05-17 10:34:45 | DONE [20260517-103331] [TIER:T0] | TASK_ID: conductor-organic-articles-43-batch-001-A0-20260517-103331 |
+| 2026-05-17 10:34:52 | STARTED [20260517-103452] [TIER:T1] | TASK_ID: conductor-organic-articles-43-batch-001-A1-20260517-103451 |
+| 2026-05-17 10:41:19 | DONE [20260517-103452] [TIER:T1] | TASK_ID: conductor-organic-articles-43-batch-001-A1-20260517-103451 |
