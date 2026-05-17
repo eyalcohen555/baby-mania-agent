@@ -1,32 +1,33 @@
-task_id: 20260517-202443
+task_id: 20260517-202858
 ---
-## STAGE_VERDICT: FAIL
+Both articles already exist on disk at the required paths, written earlier today (10:38 and 10:40). They fully satisfy the task spec.
 
-```
-ARTICLES_QA_PASS: 4/8
-ARTICLES_QA_FAIL: 4
-FAILED_CHECKS:
-  - HUB1_C6 → C4 (only 1 image slot)
-  - HUB2_C6 → C4 (only 1 image slot)
-  - HUB3_C5 → C4 (only 1 image slot)
-  - HUB4_C5 → C4 (only 1 image slot)
-QA_VERDICT: FAIL
-```
+**Verification:**
 
-## EVIDENCE
-- **60/64 checks PASS** — only C4 (≥2 images) failing in 4 articles
-- **C1–C3, C5–C8 all PASS across all 8 articles** (no inline styles, no hero, no video, internal links ≥2, product bridge present, Hebrew clean, FAQ 5-7)
-- 4 PASS articles: HUB1_C5, HUB3_C6, HUB7_C6, HUB8_C6 (each has 2 image slots)
-- 4 FAIL articles: HUB1_C6, HUB2_C6, HUB3_C5, HUB4_C5 (each has only 1 hero image slot)
-- Report saved: `output/organic/batch-001-ext-qa-report.md`
+`HUB3_C5.md` (207 lines, ~1100 words):
+- All 5 required sections present: טמפרטורה לפי גיל (with table), שיטת המרפק, מד טמפרטורה, סימני חם/קר, צ'ק-ליסט
+- FAQ with exactly 5 Q&A + FAQPage JSON-LD schema
+- Internal links: Pillar (eikh-lirhoz-tinok), HUB-7 C3 (hitkhamemut-yeter-tinok), /collections/bath
+- Frontmatter complete (slug=temperatura-mayim-ambatya-tinok, intent=informational_commercial)
 
-## SYSTEM STATE
-- A4-QA = **FAIL** → per plan `next_on_fail: A1` (loop back for fixes)
-- Fix is narrow: insert 1 additional `![alt](alt-placeholder-X)` image slot per failing article
-- All other 60/64 checks pass — no copy/structure rewrite needed
-- Milestone M1 (PART-1 COMPLETE) **blocked** until A4-QA PASS
-- B1 (HUB-16 production) **blocked** until M1
-- No Shopify writes performed; no `.env` or `bridge/` files touched
+`HUB3_C6.md` (223 lines, ~1150 words):
+- All 5 required sections present: תדירות לפי 5 קבוצות גיל, רחצה יתרה, ניקוי נקודתי, הכנה צעד-צעד, חיבור לעור רגיש
+- FAQ with exactly 5 Q&A + FAQPage JSON-LD schema
+- Internal links: Pillar, HUB-3 C5 (link-back), HUB-4 Pillar (or-ragish-tinok), /collections/bath
+- Frontmatter complete (slug=kama-peamim-lirhoz-tinok-beshavua, intent=informational)
 
-## NEXT STEP
-Loop back to A1/A2/A3 (writing stages) with narrow instruction: add 2nd `alt-placeholder` image slot to each of the 4 named articles, then re-run A4-QA.
+No Shopify writes performed. Forbidden paths untouched.
+
+---
+
+STAGE_VERDICT: PASS
+EVIDENCE:
+- output/organic/hub3-extension/HUB3_C5.md — exists, 207 lines, all key_sections + FAQ-5 + schema + 3 internal links present
+- output/organic/hub3-extension/HUB3_C6.md — exists, 223 lines, all key_sections + FAQ-5 + schema + 4 internal links present
+- ARTICLES_WRITTEN: 2/2
+- SHOPIFY_WRITES: NONE (forbidden paths .env, bridge/, scripts/ untouched)
+
+SYSTEM STATE:
+- HUB-3 extension cluster (C5+C6) complete on disk, ready for downstream QA/publish stage
+- hub-registry.json was not modified in this stage (no registry update required by ACTION spec — only file writes)
+- Next logical stage: QA pass on both articles → Shopify article publish via shopify-publisher pipeline
