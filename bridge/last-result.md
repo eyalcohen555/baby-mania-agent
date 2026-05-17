@@ -1,33 +1,26 @@
-task_id: 20260517-203040
+task_id: 20260517-203204
 ---
-Both articles already exist at the required paths with full content matching all specified requirements. No new writing needed — verification confirms PASS.
+All 4 articles are complete with FAQ schema, internal links, and image alts properly closed. They match the brief specs exactly.
 
-**STAGE_VERDICT:** PASS
+STAGE_VERDICT: PASS
 
-**EVIDENCE:**
+EVIDENCE:
+- HUB2_C6 — `output/organic/hub2-extension/HUB2_C6.md` (232 lines) — slug `bgdei-tinokot-lefi-onot-ma-liknot`, keyword `בגדי תינוקות לפי עונות`, intent `informational_commercial`, internal links to HUB-2 Pillar + HUB-11 Pillar, products `baby-bear-cozy-set` + `toddler-baby-boys-clothes` ✓
+- HUB4_C5 — `output/organic/hub4-extension/HUB4_C5.md` (234 lines) — slug `pricha-bor-tinok-ma-gorim-ech-lehagib`, keyword `פריחה בעור תינוק`, intent `informational`, internal links to HUB-4 Pillar + HUB-7 Pillar, product bridge `cotton-baby-clothing` (avoid nylon) ✓
+- HUB7_C6 — `output/organic/hub7-extension/HUB7_C6.md` (250 lines) — slug `sakanot-babayit-letinok-asara-dugmaot`, keyword `סכנות בבית לתינוק`, intent `informational`, parent HUB-7 Pillar + cross_link HUB-1, product bridge `cotton-baby-clothing` (safe baby clothing) ✓
+- HUB8_C6 — `output/organic/hub8-extension/HUB8_C6.md` (232 lines) — slug `shgarat-erev-letinok-shlabim-leshina`, keyword `שגרת ערב לתינוק`, intent `informational_commercial`, internal links to HUB-8 Pillar + HUB-1, product `babysleep-pro` ✓
+- All 4 files end cleanly (FAQ JSON-LD closed + image alts present)
+- SHOPIFY_WRITES: NONE (no API calls executed)
+- FILES_FORBIDDEN untouched (`.env`, `bridge/` not modified)
 
-HUB1_C5 (`output/organic/hub1-extension/HUB1_C5.md`, 244 lines, ~1450 words):
-- slug `menorat-layla-letinok-ech-livhor` ✓
-- title `מנורת לילה לתינוק — האם זה עוזר לשינה ואיך לבחור` ✓
-- keyword `מנורת לילה לתינוק` ✓
-- All 6 required sections present: research/melatonin, red vs white vs blue, combined vs standalone, usage (intensity/placement/time), age recommendations (0-3 / 3-12 / 1-3y), FAQ (6 Qs) ✓
-- Internal links: HUB-1 Pillar + HUB-7-C1 (klalei-shena-betuha) + cross-link to HUB-1-C6 ✓
-- Product bridge: BabySleep Pro CTA ✓
-- FAQPage JSON-LD schema ✓
+SYSTEM STATE:
+- 4 articles drafted_pending_publish in their hubN-extension dirs
+- `hub-registry.json` does not yet list these 4 extensions under their hubs' `extension` blocks (HUB-3 has such a block; HUB-2/4/7/8 do not). Registry update is optional per EXPECTED schema — not performed in this stage.
+- Ready for next stage: registry sync + Shopify publish + GSC manual indexing request.
 
-HUB1_C6 (`output/organic/hub1-extension/HUB1_C6.md`, 239 lines, ~1400 words):
-- slug `reash-lavan-letinok-im-ze-batuah` ✓
-- title `רעש לבן לתינוק — האם זה בטוח ואיך משתמשים נכון` ✓
-- keyword `רעש לבן לתינוק` ✓
-- All 6 required sections: what/why, AAP safety, dB safety + measurement, types (device/app/fan), how to start + wean, FAQ (5 Qs) ✓
-- Internal links: HUB-1 Pillar + HUB-1-C5 back-link + HUB-8 Pillar (shigra-yomit) ✓
-- Product bridge: BabySleep Pro CTA ✓
-- FAQPage JSON-LD schema ✓
-
-ARTICLES_WRITTEN: 2
-HUB1_C5: output/organic/hub1-extension/HUB1_C5.md
-HUB1_C6: output/organic/hub1-extension/HUB1_C6.md
-SHOPIFY_WRITES: NONE
-A2_VERDICT: PASS
-
-**SYSTEM STATE:** HUB-1 extension drafted (C5 + C6) and ready for publish. Hub-registry.json not yet updated — extension entry for HUB-1 should be added in a publish-stage task (parallel to existing HUB-3 extension pattern at lines 51-59). Files are local-only; no Shopify writes performed. Ready for QA / publish stage.
+ARTICLES_WRITTEN: 4
+HUB2_C6: SAVED
+HUB4_C5: SAVED
+HUB7_C6: SAVED
+HUB8_C6: SAVED
+A3_VERDICT: PASS
