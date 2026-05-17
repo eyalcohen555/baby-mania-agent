@@ -1,28 +1,14 @@
-plan_id: babymania-execution-tracks-001
-plan_file: plans/babymania-execution-tracks-001.yaml
+plan_id: organic-articles-43-batch-001
+plan_file: plans/organic-articles-43-batch-001.yaml
 status: RUNNING
-current_stage: STAGE-15
-current_task_id: conductor-babymania-execution-tracks-001-STAGE-15-20260511-191923
-completed_stages:
-- STAGE-1
-- STAGE-2
-- STAGE-4
-- STAGE-5
-- STAGE-6
-- STAGE-7
-- STAGE-8
-- STAGE-9
-- STAGE-10
-- STAGE-11
-- STAGE-12
-- STAGE-14
-failed_stages:
-- STAGE-4
-- STAGE-13
+current_stage: A0
+current_task_id: conductor-organic-articles-43-batch-001-A0-20260517-103331
+completed_stages: []
+failed_stages: []
 skipped_stages: []
 blocked_reason: ''
 waiting_for: ''
-next_stage: STAGE-15
-overall_verdict: FAILED
-started_at: '2026-05-11 13:35:21'
-updated_at: '2026-05-11 19:19:23'
+next_stage: ''
+overall_verdict: IN_PROGRESS
+started_at: '2026-05-17 10:33:31'
+updated_at: '2026-05-17 10:33:31'

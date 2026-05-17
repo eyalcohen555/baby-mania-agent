@@ -712,3 +712,7 @@
 | 2026-05-11 19:19:19 | DONE [20260511-191020] [TIER:T1] | TASK_ID: conductor-babymania-execution-tracks-001-STAGE-14-20260511-191018 |
 | 2026-05-11 19:19:26 | STARTED [20260511-191926] [TIER:T1] | TASK_ID: conductor-babymania-execution-tracks-001-STAGE-15-20260511-191923 |
 | 2026-05-11 19:21:43 | DONE [20260511-191926] [TIER:T1] | TASK_ID: conductor-babymania-execution-tracks-001-STAGE-15-20260511-191923 |
+| 2026-05-17 10:24:47 | STARTED [20260517-102447] [TIER:T2] | TASK: NIGHT RUN — Organic catch-up plan and draft production |
+| 2026-05-17 10:28:17 | FAILED_EMPTY [20260517-102447] | TASK: NIGHT RUN — Organic catch-up plan and draft production |
+| 2026-05-17 10:33:31 | STARTED [20260517-103331] [TIER:T0] | TASK_ID: conductor-organic-articles-43-batch-001-A0-20260517-103331 |
+| 2026-05-17 10:34:45 | DONE [20260517-103331] [TIER:T0] | TASK_ID: conductor-organic-articles-43-batch-001-A0-20260517-103331 |
