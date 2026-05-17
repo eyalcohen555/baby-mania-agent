@@ -1,24 +1,26 @@
-task_id: 20260517-103452
+task_id: 20260517-104126
 ---
 STAGE_VERDICT: PASS
 
 EVIDENCE:
-- HUB3_C5 written → `output/organic/hub3-extension/HUB3_C5.md` (207 lines, ~1100 words)
-  - keyword: טמפרטורת מים לאמבטיה לתינוק | slug: temperatura-mayim-ambatya-tinok
-  - כל key_sections מולאו: טבלת טמפרטורה לפי גיל, שיטת המרפק, סימני מים חמים/קרים, צ'ק-ליסט לפני רחצה, FAQ ×5
-  - internal links → HUB-3 Pillar (eikh-lirhoz-tinok), HUB-7 C3 (hitkhamemut-yeter-tinok), collection /bath
-  - product bridge: מד טמפרטורה + אמבטיית תינוק (commercial intent מולא)
-  - FAQ Schema JSON-LD נוסף
-- HUB3_C6 written → `output/organic/hub3-extension/HUB3_C6.md` (223 lines, ~1150 words)
-  - keyword: כמה פעמים לרחוץ תינוק | slug: kama-peamim-lirhoz-tinok-beshavua
-  - כל key_sections מולאו: תדירות לפי גיל (יילוד / 0–3 / 3–6 / 6–12 / פעוט 1+), נזקי רחצה עודפת, ניקוי נקודתי, הכנת אמבטיה צעד-צעד, FAQ ×5
-  - internal links → HUB-3 Pillar, HUB-3 C5 (link back), HUB-4 Pillar (or-ragish-tinok), collection /bath
-  - FAQ Schema JSON-LD נוסף
-- FILES_FORBIDDEN: לא נגעתי ב-`.env`, `bridge/`, `scripts/`
-- SHOPIFY_WRITES: NONE
+- `output/organic/hub1-extension/HUB1_C5.md` — 244 lines, ~2,124 words (estimate 1,450 — exceeded), 17.8KB
+- `output/organic/hub1-extension/HUB1_C6.md` — 239 lines, ~1,989 words (estimate 1,400 — exceeded), 17.1KB
+- Both articles follow established HUB template (frontmatter + sections + FAQ + FAQPage JSON-LD schema + internal links footer)
+- HUB1_C5 covers all 6 required sections: research on light/sleep, red vs white vs blue, combined vs standalone, usage (intensity/placement/timing), age recommendations (0-3 / 3-12 / 1-3), 6 FAQ
+- HUB1_C6 covers all 6 required sections: definition, AAP guidelines, decibel limits, device types (dedicated/app/fan), weaning protocol, 5 FAQ
+- Internal links wired: C5↔C6, HUB-1-Pillar, HUB-7, HUB-8, BabySleep Pro product page
+- SHOPIFY_WRITES: NONE (files written only to local `output/` — no API calls)
+- hub-registry.json: NOT modified (task spec listed it in FILES_ALLOWED but no fields require update at A2; registry update should occur at publish stage, not draft stage)
 
 SYSTEM STATE:
-- HUB-3 (אמבטיה) הורחב ב-2 מאמרים נוספים — C5 (טמפרטורה, intent commercial) + C6 (תדירות, intent informational)
-- שני המאמרים מקושרים זה לזה (cross-link) ולמסלול הצרכן: Pillar HUB-3 → C5/C6 → HUB-4 / HUB-7 + collection /bath
-- `teams/organic/hub-registry.json` לא עודכן — לא ביקשת שינוי בו, ושמרתי על FILES_ALLOWED מינימלי. אם רצוי, רץ שלב נפרד שיעדכן את ה-registry עם status="written" + paths.
-- מוכן לשלב QA/audit הבא או לפרסום Shopify Blogs.
+- HUB-1 extension drafts complete: 2/2 articles ready for review
+- Location: `output/organic/hub1-extension/HUB1_C5.md`, `output/organic/hub1-extension/HUB1_C6.md`
+- Status: drafted, not published
+- Next eligible stage: QA review → publish to Shopify blog (id 109164036409) → register published article IDs in hub-registry.json
+- No Shopify writes, no .env touch, no bridge/ touch
+
+ARTICLES_WRITTEN: 2
+HUB1_C5: output/organic/hub1-extension/HUB1_C5.md
+HUB1_C6: output/organic/hub1-extension/HUB1_C6.md
+SHOPIFY_WRITES: NONE
+A2_VERDICT: PASS
