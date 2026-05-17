@@ -417,3 +417,5 @@
 | 2026-05-17 11:38:50 | STARTED A3 [conductor-organic-articles-43-batch-001-A3-20260517-113850] |
 | 2026-05-17 20:16:07 | RESUMED: organic-articles-43-batch-001 |
 | 2026-05-17 20:16:07 | STARTED A4-QA [conductor-organic-articles-43-batch-001-A4-QA-20260517-201607] |
+| 2026-05-17 20:19:48 |   A4-QA | FAIL |
+| 2026-05-17 20:19:53 | STARTED A1 [conductor-organic-articles-43-batch-001-A1-20260517-201953] |
