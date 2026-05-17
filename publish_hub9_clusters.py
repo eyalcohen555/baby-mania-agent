@@ -10,12 +10,19 @@ import requests
 from datetime import datetime
 
 # ─── Config ──────────────────────────────────────────────────────────────────
-SHOP_URL    = "a2756c-c0.myshopify.com"
-ACCESS_TOKEN = "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"
-API_VERSION  = "2024-10"
+from dotenv import load_dotenv
+load_dotenv()
+
+SHOP_URL     = os.getenv("SHOPIFY_SHOP_URL", "a2756c-c0.myshopify.com")
+ACCESS_TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN")
+API_VERSION  = os.getenv("SHOPIFY_API_VERSION", "2024-10")
 BLOG_ID      = 109164036409
-BASE          = f"https://{SHOP_URL}/admin/api/{API_VERSION}"
-HEADERS       = {
+
+if not ACCESS_TOKEN:
+    raise RuntimeError("SHOPIFY_ACCESS_TOKEN is not set. Add it to your .env file.")
+
+BASE    = f"https://{SHOP_URL}/admin/api/{API_VERSION}"
+HEADERS = {
     "X-Shopify-Access-Token": ACCESS_TOKEN,
     "Content-Type": "application/json",
 }

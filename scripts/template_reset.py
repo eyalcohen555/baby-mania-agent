@@ -27,12 +27,19 @@ import sys
 import time
 import os
 import requests
+from dotenv import load_dotenv
 
-TOKEN = "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"
-SHOP  = "a2756c-c0.myshopify.com"
-API_VER = "2024-10"
+load_dotenv()
+
+TOKEN    = os.getenv("SHOPIFY_ACCESS_TOKEN")
+SHOP     = os.getenv("SHOPIFY_SHOP_URL", "a2756c-c0.myshopify.com")
+API_VER  = os.getenv("SHOPIFY_API_VERSION", "2024-10")
+THEME_ID = os.getenv("SHOPIFY_THEME_ID", "183668179257")
+
+if not TOKEN:
+    raise RuntimeError("SHOPIFY_ACCESS_TOKEN is not set. Add it to your .env file.")
+
 BASE = f"https://{SHOP}/admin/api/{API_VER}"
-THEME_ID = "183668179257"
 
 HEADERS = {
     "X-Shopify-Access-Token": TOKEN,

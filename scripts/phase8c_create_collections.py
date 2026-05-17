@@ -11,9 +11,16 @@ import sys
 import requests
 from datetime import datetime
 
-SHOP = "a2756c-c0.myshopify.com"
-TOKEN = "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"
-API_VERSION = "2024-10"
+from dotenv import load_dotenv
+load_dotenv()
+
+SHOP        = os.getenv("SHOPIFY_SHOP_URL", "a2756c-c0.myshopify.com")
+TOKEN       = os.getenv("SHOPIFY_ACCESS_TOKEN")
+API_VERSION = os.getenv("SHOPIFY_API_VERSION", "2024-10")
+
+if not TOKEN:
+    raise RuntimeError("SHOPIFY_ACCESS_TOKEN is not set. Add it to your .env file.")
+
 BASE_URL = f"https://{SHOP}/admin/api/{API_VERSION}"
 HEADERS = {
     "X-Shopify-Access-Token": TOKEN,

@@ -3,12 +3,20 @@ audit_hub9_live.py
 Live audit of published HUB-9 articles — fetches real Shopify pages.
 """
 import re
+import os
 import requests
 from html.parser import HTMLParser
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN")
+SHOP  = os.getenv("SHOPIFY_SHOP_URL", "a2756c-c0.myshopify.com")
+
+if not TOKEN:
+    raise RuntimeError("SHOPIFY_ACCESS_TOKEN is not set. Add it to your .env file.")
 
 BLOG_BASE = "https://babymania-il.com/blogs/news"
-SHOP = "a2756c-c0.myshopify.com"
-TOKEN = "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"
 API_BASE = f"https://{SHOP}/admin/api/2024-10"
 API_HDR = {"X-Shopify-Access-Token": TOKEN}
 BLOG_ID = 109164036409

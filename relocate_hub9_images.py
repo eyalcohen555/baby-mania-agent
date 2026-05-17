@@ -6,9 +6,16 @@ to immediately before <div class="cluster-nav"> in all 6 HUB-9 cluster articles.
 import re
 import os
 import requests
+from dotenv import load_dotenv
 
-TOKEN = "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"
-SHOP = "a2756c-c0.myshopify.com"
+load_dotenv()
+
+TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN")
+SHOP  = os.getenv("SHOPIFY_SHOP_URL", "a2756c-c0.myshopify.com")
+
+if not TOKEN:
+    raise RuntimeError("SHOPIFY_ACCESS_TOKEN is not set. Add it to your .env file.")
+
 BASE = f"https://{SHOP}/admin/api/2024-10"
 BLOG_ID = 109164036409
 HEADERS_API = {"X-Shopify-Access-Token": TOKEN, "Content-Type": "application/json"}
