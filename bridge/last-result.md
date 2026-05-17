@@ -1,38 +1,21 @@
-task_id: 20260517-213748
+task_id: 20260517-214533
 ---
-All 7 articles present.
-
-```
-TASK_ID: conductor-organic-articles-43-batch-001-B2-20260517-213747
-STAGE: B2 — HUB-12 PRODUCE — נעלי אורות לילדים
-
 STAGE_VERDICT: PASS
 
 EVIDENCE:
-- ARTICLES_WRITTEN: 7/7 ✅
-- OUTPUT_FOLDER: output/organic/hub12-led-shoes/
-  ├── HUB12_Pillar.md  (קיים מקודם — נעלי אורות לילדים, slug: naalei-orot-leyeladim-madrih-male)
-  ├── HUB12_C1.md      (קיים מקודם — נעלי אורות לגן)
-  ├── HUB12_C2.md      (קיים מקודם — נעלי אורות לפעוטות בטיחות)
-  ├── HUB12_C3.md      (קיים מקודם — נעלי אורות לבנות)
-  ├── HUB12_C4.md      (קיים מקודם — נעלי אורות לבנים)
-  ├── HUB12_C5.md      ← נכתב עכשיו: סוללה כמה זמן (~1400 מילים)
-  └── HUB12_C6.md      ← נכתב עכשיו: vs נעלי ספורט (~1400 מילים)
-- SHOPIFY_WRITES: NONE ✅
-- FILES_FORBIDDEN שלא נגעתי בהם: .env, bridge/ ✅
-
-QA הבסיסי לשני המאמרים החדשים:
-- אין inline styles ✅
-- אין hero/video embed ✅
-- 2 תמונות placeholder עם alt עברי בכל מאמר ✅
-- 2+ internal links בכל מאמר (Pillar + cluster cross-link) ✅
-- product handle = children-luminous-sneakers-kids-sport-shoes-with-lights... (קישור מוצר 1+) ✅
-- עברית תקינה ✅
-- FAQ: C5 = 7 שאלות, C6 = 7 שאלות ✅
+- 7/7 articles passed all 8 qa_contract criteria (56/56 checks).
+- `style=` occurrences in folder: **0** (grep verified).
+- `<iframe|<video|youtube|hero` occurrences: **0** (grep verified).
+- Markdown image references per article: ≥ 2 (14 total; placeholders deferred to PUBLISH-GATE per HUB-16 precedent).
+- Internal `/blogs/news/` links: 46 total, min 2/article (C5 at minimum).
+- Product `/products/` links: 31 total, min 1/article.
+- FAQ counts: all within 5–7 (Pillar/C2/C3/C4/C5/C6 = 7; C1 = 6).
+- Hebrew: native and clean across all 7 files.
+- Minor cosmetic note: C5 + C6 omit FAQPage JSON-LD + footer "Internal links" block — not a qa_contract item, flagged as pre-publish optional fix.
+- Report saved: `output/organic/hub12-led-shoes/hub12-qa-report.md`
 
 SYSTEM STATE:
-- B2 הושלם — HUB-12 בעל 7 מאמרים מוכנים תחת output/organic/hub12-led-shoes/
-- לפי plan: next_on_pass = B2-QA (QA מלא של 7×8 checks)
-- לא נכתב ולא עודכן teams/organic/hub-registry.json בשלב הזה (החל ב-stage C1 כפי שהוגדר ב-plan)
-- אין שינויים ב-Shopify, אין פרסום
-```
+- B2-QA milestone PASSED → M3 (HUB-12 COMPLETE — נעלי אורות, 22 cumulative articles).
+- Next stage per plan: **B3 (HUB-13 PRODUCE — נעלי מים + בגדי ים)**.
+- Total articles produced & QA-passed to date in batch-001: 22/43 (PART-1 8 + HUB-16 7 + HUB-12 7).
+- SHOPIFY_WRITES: NONE (local production only — publish remains gated by PUBLISH-GATE).
