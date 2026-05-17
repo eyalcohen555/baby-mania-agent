@@ -1,17 +1,23 @@
-task_id: 20260517-201956
+task_id: 20260517-202158
 ---
-**STAGE_VERDICT: PASS**
+Both articles already exist and are complete from prior work (HUB1_C5: 244 lines/17.9KB, HUB1_C6: 239 lines/17.1KB). Each has full frontmatter, all required sections, FAQ schema, and internal links to Pillar + cross-hub + product. No new writing needed.
 
-**EVIDENCE:**
-- `output/organic/hub3-extension/HUB3_C5.md` — 207 שורות, ~1,100 מילים. כולל frontmatter תקין, hero alt, טבלת טמפרטורות לפי גיל, שיטת המרפק, סימני מים חמים/קרים, צ'ק-ליסט טרום-רחצה, FAQ 5 שאלות + FAQPage JSON-LD, internal links ל-HUB-3 Pillar ול-HUB-7-C3, CTA לקולקציית bath
-- `output/organic/hub3-extension/HUB3_C6.md` — 223 שורות, ~1,150 מילים. כולל frontmatter תקין, hero alt, פירוט תדירות לפי גיל (יילוד/0-3/3-6/6-12/פעוט), סימני רחיצת-יתר, אזורי ניקוי נקודתי, הכנת אמבטיה צעד-צעד, FAQ 5 שאלות + FAQPage JSON-LD, internal links ל-HUB-3 Pillar, HUB-3-C5, HUB-4-Pillar
-- `teams/organic/hub-registry.json` — עודכן: status → `published_extended`, articles_count 5→7, נוסף בלוק `extension` עם מטה-דאטה ונתיבי הקבצים
+STAGE_VERDICT: PASS
 
-**SYSTEM STATE:**
-- ARTICLES_WRITTEN: 2
-- HUB3_C5: output/organic/hub3-extension/HUB3_C5.md ✓
-- HUB3_C6: output/organic/hub3-extension/HUB3_C6.md ✓
-- SHOPIFY_WRITES: NONE ✓
-- HUB-3 כעת מכיל 7 מאמרים (5 פורסמו + 2 ממתינים לפרסום)
-- FILES_FORBIDDEN לא נגעו (.env, bridge/, scripts/)
-- מוכן ל-stage הבא בתכנית (פרסום ל-Shopify של HUB3_C5 + HUB3_C6)
+EVIDENCE:
+- `output/organic/hub1-extension/HUB1_C5.md` exists — 244 lines, 17,886 bytes
+  - All 6 required sections present (אור בחדר/מחקר, אדום vs לבן vs כחול, מנורה+רעש לבן, שימוש נכון, המלצות לפי גיל, FAQ)
+  - Internal links: Pillar (HUB-1), HUB-7 (שינה בטוחה), HUB-1 C6, BabySleep Pro
+  - FAQ JSON-LD schema included
+- `output/organic/hub1-extension/HUB1_C6.md` exists — 239 lines, 17,121 bytes
+  - All 6 required sections present (מה זה/למה אוהבים, בטיחות AAP, דציבל, סוגים, גמילה, FAQ)
+  - Internal links: Pillar (HUB-1), HUB-1 C5, HUB-8 (שגרה), BabySleep Pro
+  - FAQ JSON-LD schema included
+- SHOPIFY_WRITES: NONE
+- FILES_FORBIDDEN untouched (.env, bridge/)
+
+SYSTEM STATE:
+- HUB-1 extension complete: 2/2 articles written (C5 + C6)
+- Articles ready for QA → publish pipeline
+- HUB-1 cluster total: Pillar + C5 + C6 covering sleep + night light + white noise (292 impressions target)
+- hub-registry.json: not modified this stage (no schema field added by task; registry update can be done by orchestrator if needed)
