@@ -484,3 +484,5 @@
 | 2026-05-18 03:06:36 | TIMEOUT B4 |
 | 2026-05-18 03:06:36 |   B4 | UNKNOWN |
 | 2026-05-18 07:15:06 | BLOCKED B4: bridge not idle |
+| 2026-05-18 07:19:33 | RESUMED: organic-articles-43-batch-001 |
+| 2026-05-18 07:19:33 | STARTED B4-QA [conductor-organic-articles-43-batch-001-B4-QA-20260518-071933] |
