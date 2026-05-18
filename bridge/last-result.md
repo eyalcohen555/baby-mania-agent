@@ -1,26 +1,23 @@
-task_id: 20260518-075837
+task_id: 20260518-080215
 ---
-STAGE_VERDICT: PASS
+All targets met. Registry now contains 16 HUBs (was 13), total articles_count sums to exactly 111, backup of pre-change state preserved.
 
-EVIDENCE:
-- 7/7 articles pass 8/8 qa_contract criteria (56/56 checks).
-- Check 1 (no inline styles): 0 matches across all files.
-- Check 2 (no hero): 0 matches.
-- Check 3 (no video embeds): 0 matches.
-- Check 4 (≥2 Shopify CDN images): min 4, max 13 per article.
-- Check 5 (≥2 internal links): min 4 per article.
-- Check 6 (product bridge): 2 product links per article.
-- Check 7 (Hebrew quality): clean, professional, parental tone.
-- Check 8 (FAQ 5–7): 6 articles in range; **C5 has 8 questions** — soft warning, accepted (FAQ structured + high quality).
-- Report saved: `output/organic/hub15-breast-pump/hub15-qa-report.md`.
-- **NON-BLOCKING REC**: 5 slugs contain Cyrillic `т` instead of Latin `t` (inherited from plan YAML B5 spec). Must be fixed before C2 master packet & PUBLISH-GATE.
+---
 
-ARTICLES_QA_PASS: 7/7
-QA_VERDICT: PASS
+**STAGE_VERDICT: PASS**
 
-SYSTEM STATE:
-- HUB-15 production complete; 7 articles QA-PASS.
-- Milestone M6 (ALL 43 ARTICLES QA PASS — READY TO PUBLISH) **reached** per plan.
-- Next per plan: stage C1 (HUB REGISTRY UPDATE).
-- Pending pre-publish action: fix Cyrillic `т` in 5 HUB-15 slugs.
-- No Shopify writes performed. No files outside `output/organic/hub15-breast-pump/` touched.
+**EVIDENCE:**
+- `teams/organic/hub-registry.json` — JSON valid, 16 hubs, sum(articles_count) = 111
+- `teams/organic/hub-registry-backup-20260517.json` — 47,659 bytes, contains pre-change 13-hub snapshot (last_updated: 2026-04-28)
+- HUBS_UPDATED: HUB-1 (PENDING ids on extensions), HUB-2 (6→7), HUB-3 (PENDING ids on extension.files), HUB-4 (5→6), HUB-7 (6→7 + C6 entry added to articles[]), HUB-8 (6→7 + C6 entry added to articles[])
+- HUBS_ADDED: HUB-12 (LED shoes), HUB-15 (Breast Pump), HUB-16 (Crocs) — each with 7 article entries, article_id="PENDING", status="draft", internal_links_planned, product_bridge, conductor_plan metadata
+- Header: `last_updated` → 2026-05-18, `next_hub` → "PUBLISH-GATE"
+- HUB-13 and HUB-14 already existed in registry (drafted in earlier stages B3/B4) — left intact, count contributes 14 articles to total
+- FILES_ALLOWED honored: only `hub-registry.json` and `hub-registry-backup-20260517.json` were touched
+
+**SYSTEM STATE:**
+- 16 HUBs in registry (HUB-1..HUB-16, no HUB-12 gap)
+- 111 articles tracked total
+- Extensions for HUB-1/2/3/4/7/8 carry article_id="PENDING" awaiting publish
+- HUB-12/15/16 fully drafted on disk under `output/organic/hub{12,15,16}-*/`
+- Registry ready for next stage C2 (master-publish-packet-43.md) then PUBLISH-GATE
