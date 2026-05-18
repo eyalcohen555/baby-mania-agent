@@ -1,0 +1,1109 @@
+plan_id: organic-articles-43-batch-001
+plan_name: "Organic — 43 Articles Batch Production (HUB Extensions + HUB-12..16)"
+approval_tier: T1
+created: 2026-05-17
+author: organic-team
+shopify_writes: NONE
+commits: OPTIONAL
+
+description: >
+  ייצור 43 מאמרים מקומית בלבד — ללא Shopify writes, ללא publish.
+  שני חלקים:
+    PART-1: 8 מאמרים להשלמת HUBs קיימים (HUB-1 C5-C6, HUB-2 C6, HUB-3 C5-C6, HUB-4 C5, HUB-7 C6, HUB-8 C6).
+    PART-2: 35 מאמרים ב-5 HUBs חדשים (HUB-12 נעלי אורות, HUB-13 נעלי מים, HUB-14 מנשא בד, HUB-15 משאבות חלב, HUB-16 קרוקס).
+  publish יתבצע אוטומטית ע"י PUBLISH-GATE בימי ראשון + רביעי כשה-API פתוח.
+
+blocked_until:
+  - production_complete: ALL_QA_PASS
+  - publish_gate_trigger: "ראשון/רביעי 09:00 + GET /shop.json = 200"
+
+telegram_notify:
+  start: true
+  milestones: true
+  done: true
+  blocked: true
+  questions: false
+
+qa_contract:
+  checks_per_article: 8
+  criteria:
+    1: "אין inline styles (style=)"
+    2: "אין hero ב-body_html"
+    3: "אין video embed"
+    4: "מינימום 2 תמונות CDN Shopify"
+    5: "מינימום 2 internal links"
+    6: "קיים product bridge (לפחות קישור מוצר 1)"
+    7: "עברית תקינה — אין ערבוב שפות חסר הגיון"
+    8: "FAQ קיים — 5-7 שאלות"
+
+article_production_standard:
+  seo_title_max: 60
+  meta_description_range: "150-160 תווים"
+  body_word_count: "1200-2000 מילה"
+  slug_format: "kebab-case, עברית מתועתקת + אנגלית מקובל"
+  internal_links_min: 2
+  product_links_min: 1
+  faq_questions: "5-7"
+  images_min: 2
+  blog_id: 109164036409
+  blog_url: "https://babymania-il.com/blogs/news"
+
+publish_order_rule: "Pillar → C1 → C2 → C3 → C4 → C5 → C6"
+
+# ─── PART 1: HUB EXTENSIONS ─────────────────────────────────────────────────
+
+stages:
+
+  - id: A0
+    name: "SYSTEM AUDIT"
+    part: 1
+    type: AUDIT
+    approval_tier: T0
+    goal: "אימות מצב קיים — hub-registry, content map, תיקיות output קיימות"
+    action: >
+      קרא: teams/organic/hub-registry.json
+      קרא: output/site-map/internal_content_map.json (100 שורות)
+      בדוק קיום תיקיות:
+        output/organic/hub12-led-shoes/
+        output/organic/hub13-water-shoes/
+        output/organic/hub14-baby-carrier/
+        output/organic/hub15-breast-pump/
+        output/organic/hub16-crocs/
+      רשום: LAST_HUB=HUB-11, TOTAL_LIVE=68, GAPS_IDENTIFIED=8, NEW_HUBS=5
+      שמור: output/organic/batch-001-audit.md
+    files_allowed:
+      - teams/organic/hub-registry.json
+      - output/site-map/internal_content_map.json
+      - output/organic/
+    files_forbidden:
+      - .env
+      - bridge/
+      - scripts/
+    expected_output: |
+      LAST_HUB: HUB-11
+      TOTAL_LIVE: 68
+      GAPS: HUB-1(C5,C6), HUB-2(C6), HUB-3(C5,C6), HUB-4(C5), HUB-7(C6), HUB-8(C6)
+      NEW_HUBS: HUB-12, HUB-13, HUB-14, HUB-15, HUB-16
+      A0_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "hub-registry נקרא בהצלחה"
+      - "TOTAL_LIVE=68 מאושר"
+      - "batch-001-audit.md נשמר"
+    fail_conditions:
+      - "לא ניתן לקרוא hub-registry"
+    next_on_pass: A1
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: A1
+    name: "EXTEND HUB-3 — GSC PRIORITY (C5+C6)"
+    part: 1
+    workstream: extensions
+    type: FIX
+    approval_tier: T1
+    goal: "כתיבת 2 מאמרים להשלמת HUB-3 אמבטיה — 994 impressions, CTR <1%"
+    action: >
+      כתוב 2 מאמרים מלאים לפי article_production_standard:
+
+      מאמר 1 — HUB-3-C5:
+        seo_title: "טמפרטורת מים לאמבטיה לתינוק — כמה מעלות ואיך למדוד"
+        keyword: "טמפרטורת מים לאמבטיה לתינוק"
+        slug: "temperatura-mayim-ambatya-tinok"
+        intent: informational + commercial (מד טמפרטורה)
+        internal_links:
+          - HUB-3-Pillar (איך לרחוץ תינוק)
+          - HUB-7-C3 (מניעת התחממות יתר)
+        product_bridge: מד טמפרטורה לאמבטיה, אמבטיית תינוק
+        key_sections:
+          - כמה מעלות אמבטיה לתינוק לפי גיל (טבלה)
+          - איך למדוד בלי מד טמפרטורה (שיטת המרפק)
+          - סימני מים חמים מדי / קרים מדי
+          - מה לבדוק לפני כל רחצה
+          - FAQ 5 שאלות
+        שמור: output/organic/hub3-extension/HUB3_C5.md
+
+      מאמר 2 — HUB-3-C6:
+        seo_title: "כמה פעמים לרחוץ תינוק בשבוע — מה ממליצים מומחים"
+        keyword: "כמה פעמים לרחוץ תינוק"
+        slug: "kama-peamim-lirhoz-tinok-beshavua"
+        intent: informational
+        internal_links:
+          - HUB-3-Pillar (איך לרחוץ תינוק)
+          - HUB-3-C5 (טמפרטורת מים — link back)
+          - HUB-4-Pillar (עור רגיש)
+        product_bridge: אמבטיית תינוק, מושב אמבטיה
+        key_sections:
+          - לפי גיל: יילוד / 0-3 חודשים / 3-6 חודשים / 6+ חודשים
+          - מה קורה אם מרחצים יותר מדי
+          - ניקוי נקודות ספציפיות בין רחצות
+          - הכנת אמבטיה צעד-צעד
+          - FAQ 5 שאלות
+        שמור: output/organic/hub3-extension/HUB3_C6.md
+    files_allowed:
+      - output/organic/hub3-extension/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+      - scripts/
+    expected_output: |
+      ARTICLES_WRITTEN: 2
+      HUB3_C5: output/organic/hub3-extension/HUB3_C5.md
+      HUB3_C6: output/organic/hub3-extension/HUB3_C6.md
+      SHOPIFY_WRITES: NONE
+      A1_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "2 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "מאמר עם inline styles"
+      - "פחות מ-2 תמונות"
+      - "publish לShopify"
+    next_on_pass: A2
+    next_on_fail: A1
+    is_milestone: false
+
+  - id: A2
+    name: "EXTEND HUB-1 — GSC PRIORITY (C5+C6)"
+    part: 1
+    workstream: extensions
+    type: FIX
+    approval_tier: T1
+    goal: "כתיבת 2 מאמרים להשלמת HUB-1 שינה — מנורת לילה + רעש לבן (292 impressions)"
+    action: >
+      כתוב 2 מאמרים מלאים לפי article_production_standard:
+
+      מאמר 1 — HUB-1-C5:
+        seo_title: "מנורת לילה לתינוק — האם זה עוזר לשינה ואיך לבחור"
+        keyword: "מנורת לילה לתינוק"
+        slug: "menorat-layla-letinok-ech-livhor"
+        intent: informational + commercial
+        internal_links:
+          - HUB-1-Pillar (שינה לתינוק)
+          - HUB-7-C1 (כללי שינה בטוחה)
+        product_bridge: מנורת לילה, BabySleep Pro white noise + night light
+        key_sections:
+          - האם אור בחדר מפריע לשינת תינוק (המחקר אומר)
+          - אור אדום vs. לבן vs. כחול — מה עדיף לתינוק
+          - מנורת לילה עם רעש לבן vs. רגילה
+          - איך להשתמש נכון (עוצמה, מיקום, זמן)
+          - המלצות לפי גיל: 0-3 חודשים / 3-12 חודשים / 1-3 שנים
+          - FAQ 6 שאלות
+        שמור: output/organic/hub1-extension/HUB1_C5.md
+
+      מאמר 2 — HUB-1-C6:
+        seo_title: "רעש לבן לתינוק — האם זה בטוח ואיך משתמשים נכון"
+        keyword: "רעש לבן לתינוק"
+        slug: "reash-lavan-letinok-im-ze-batu'ah"
+        intent: informational
+        internal_links:
+          - HUB-1-Pillar (שינה לתינוק)
+          - HUB-1-C5 (מנורת לילה — link back)
+          - HUB-8-Pillar (שגרה יומית)
+        product_bridge: BabySleep Pro white noise + night light
+        key_sections:
+          - מה זה רעש לבן ולמה תינוקות אוהבים אותו
+          - האם רעש לבן בטוח — מה אומרת AAP
+          - כמה דציבל בטוח ומה לבדוק
+          - סוגי רעש לבן: מכשיר ייעודי / אפליקציה / מאוורר
+          - איך להתחיל ואיך לגמול בהדרגה
+          - FAQ 5 שאלות
+        שמור: output/organic/hub1-extension/HUB1_C6.md
+    files_allowed:
+      - output/organic/hub1-extension/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_WRITTEN: 2
+      HUB1_C5: output/organic/hub1-extension/HUB1_C5.md
+      HUB1_C6: output/organic/hub1-extension/HUB1_C6.md
+      SHOPIFY_WRITES: NONE
+      A2_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "2 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "מאמר עם inline styles"
+      - "publish לShopify"
+    next_on_pass: A3
+    next_on_fail: A2
+    is_milestone: false
+
+  - id: A3
+    name: "EXTEND BATCH-2 (HUB-2 C6, HUB-4 C5, HUB-7 C6, HUB-8 C6)"
+    part: 1
+    workstream: extensions
+    type: FIX
+    approval_tier: T1
+    goal: "כתיבת 4 מאמרים להשלמת HUBs 2, 4, 7, 8"
+    action: >
+      כתוב 4 מאמרים מלאים לפי article_production_standard:
+
+      מאמר 1 — HUB-2-C6:
+        seo_title: "בגדי תינוקות לפי עונות — מה לקנות ומתי"
+        keyword: "בגדי תינוקות לפי עונות"
+        slug: "bgdei-tinokot-lefi-onot-ma-liknot"
+        intent: informational + commercial
+        internal_links:
+          - HUB-2-Pillar (כמה בגדים תינוק חדש צריך)
+          - HUB-11-Pillar (בגדי קיץ לתינוק)
+        product_bridge: baby-bear-cozy-set, toddler-baby-boys-clothes
+        שמור: output/organic/hub2-extension/HUB2_C6.md
+
+      מאמר 2 — HUB-4-C5:
+        seo_title: "פריחה בעור התינוק — מה גורם לה ואיך להגיב"
+        keyword: "פריחה בעור תינוק"
+        slug: "pricha-bor-tinok-ma-gorim-ech-lehagib"
+        intent: informational
+        internal_links:
+          - HUB-4-Pillar (עור רגיש לתינוק)
+          - HUB-7-Pillar (בטיחות תינוק)
+        product_bridge: בגדי כותנה לתינוק, חליפות ניילון (מה להימנע)
+        שמור: output/organic/hub4-extension/HUB4_C5.md
+
+      מאמר 3 — HUB-7-C6:
+        seo_title: "10 סכנות בבית לתינוק שהורים לא מודעים אליהן"
+        keyword: "סכנות בבית לתינוק"
+        slug: "sakanot-babayit-letinok-asara-dugmaot"
+        intent: informational
+        internal_links:
+          - HUB-7-Pillar (סביבה בטוחה לתינוק)
+          - HUB-7-C1 (כללי שינה בטוחה)
+          - HUB-7-C3 (מניעת התחממות יתר)
+        product_bridge: ביגוד בטוח לתינוק (כותנה, ללא כבלים)
+        שמור: output/organic/hub7-extension/HUB7_C6.md
+
+      מאמר 4 — HUB-8-C6:
+        seo_title: "שגרת ערב לתינוק — שלבים שמובילים לשינה רגועה"
+        keyword: "שגרת ערב לתינוק"
+        slug: "shgarat-erev-letinok-shlabim-leshina"
+        intent: informational + commercial
+        internal_links:
+          - HUB-8-Pillar (סדר יום לתינוק)
+          - HUB-1-Pillar (שינה לתינוק)
+          - HUB-1-C5 (מנורת לילה)
+        product_bridge: BabySleep Pro, בגדי שינה לתינוק
+        שמור: output/organic/hub8-extension/HUB8_C6.md
+    files_allowed:
+      - output/organic/hub2-extension/
+      - output/organic/hub4-extension/
+      - output/organic/hub7-extension/
+      - output/organic/hub8-extension/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_WRITTEN: 4
+      HUB2_C6: SAVED
+      HUB4_C5: SAVED
+      HUB7_C6: SAVED
+      HUB8_C6: SAVED
+      SHOPIFY_WRITES: NONE
+      A3_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "4 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "מאמר עם inline styles"
+      - "publish לShopify"
+    next_on_pass: A4-QA
+    next_on_fail: A3
+    is_milestone: false
+
+  - id: A4-QA
+    name: "QA — כל 8 מאמרי Extension"
+    part: 1
+    type: AUDIT
+    approval_tier: T0
+    goal: "QA מלא על 8 מאמרי ה-extension לפי qa_contract (8 checks × 8 מאמרים = 64 checks)"
+    action: >
+      בדוק כל אחד מ-8 המאמרים לפי 8 criteria של qa_contract:
+        output/organic/hub1-extension/HUB1_C5.md
+        output/organic/hub1-extension/HUB1_C6.md
+        output/organic/hub2-extension/HUB2_C6.md
+        output/organic/hub3-extension/HUB3_C5.md
+        output/organic/hub3-extension/HUB3_C6.md
+        output/organic/hub4-extension/HUB4_C5.md
+        output/organic/hub7-extension/HUB7_C6.md
+        output/organic/hub8-extension/HUB8_C6.md
+      שמור: output/organic/batch-001-ext-qa-report.md
+    files_allowed:
+      - output/organic/hub1-extension/
+      - output/organic/hub2-extension/
+      - output/organic/hub3-extension/
+      - output/organic/hub4-extension/
+      - output/organic/hub7-extension/
+      - output/organic/hub8-extension/
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_QA_PASS: N/8
+      ARTICLES_QA_FAIL: N
+      FAILED_CHECKS: [list]
+      QA_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "8/8 PASS"
+    fail_conditions:
+      - "כל check נכשל ב-1+ מאמרים"
+    next_on_pass: B1
+    next_on_fail: A4-QA
+    is_milestone: true
+
+# ─── PART 2: NEW HUBS ────────────────────────────────────────────────────────
+
+  - id: B1
+    name: "HUB-16 PRODUCE — קרוקס וסנדלים לילדים"
+    part: 2
+    workstream: articles
+    type: FIX
+    approval_tier: T1
+    goal: "ייצור 7 מאמרים HUB-16 — קרוקס (GSC pos 4.4 קיים)"
+    gsc_signal: "קרוקס לילדים — pos 4.4"
+    action: >
+      כתוב 7 מאמרים מלאים לפי article_production_standard.
+      שמור לתיקייה: output/organic/hub16-crocs/
+
+      Pillar — HUB-16-P:
+        seo_title: "קרוקס לילדים — המדריך המלא: מידה, דגמים ומה נוח באמת"
+        keyword: "קרוקס לילדים"
+        slug: "crocs-leyeladim-madrih-male-mida-dagamim"
+        intent: commercial + informational
+        internal_links:
+          - HUB-6-Pillar (בחירת נעלי תינוק)
+          - HUB-11-C1 (הלבשה בקיץ)
+        product_bridge: נעלי קיץ לילדים, קרוקס/סנדלים בחנות
+
+      C1 — קרוקס לתינוק:
+        keyword: "קרוקס לתינוק"
+        slug: "crocs-letinok-me'eize-gil-ma-livdok"
+        intent: informational + commercial
+        internal_links: HUB-16-P, HUB-6-C1 (נעל צעד ראשון)
+
+      C2 — סנדלים לפעוט:
+        keyword: "סנדלים לפעוט"
+        slug: "sandalim-lapaut-mita-livhor"
+        intent: commercial
+        internal_links: HUB-16-P, HUB-6-C3 (מידה נכונה)
+
+      C3 — קרוקס לים ולבריכה:
+        keyword: "נעלי ים לילדים"
+        slug: "crocs-layam-valabreykha-mah-livdok"
+        intent: informational + commercial
+        internal_links: HUB-16-P, HUB-11-C6 (בריכה עם תינוק)
+
+      C4 — נעלי ג'לי לילדים:
+        keyword: "נעלי ג'לי לילדים"
+        slug: "naalei-jelly-leyeladim-ma-ze-yitronot"
+        intent: informational
+        internal_links: HUB-16-P, HUB-16-C1
+
+      C5 — איך לנקות קרוקס:
+        keyword: "איך לנקות קרוקס ילדים"
+        slug: "ech-lenakot-crocs-yeladim-tip"
+        intent: informational
+        internal_links: HUB-16-P, HUB-16-C1
+
+      C6 — קרוקס vs. סנדלים קלאסיים:
+        keyword: "קרוקס vs סנדלים לילדים"
+        slug: "crocs-vs-sandalim-klasiim-ma-matim"
+        intent: informational + commercial
+        internal_links: HUB-16-P, HUB-16-C2
+    files_allowed:
+      - output/organic/hub16-crocs/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_WRITTEN: 7
+      OUTPUT_FOLDER: output/organic/hub16-crocs/
+      SHOPIFY_WRITES: NONE
+      B1_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "מאמר עם inline styles"
+      - "publish לShopify"
+    next_on_pass: B1-QA
+    next_on_fail: B1
+    is_milestone: false
+
+  - id: B1-QA
+    name: "QA — HUB-16 קרוקס (7 מאמרים × 8 checks)"
+    part: 2
+    type: AUDIT
+    approval_tier: T0
+    goal: "QA מלא על 7 מאמרי HUB-16"
+    action: >
+      בדוק כל 7 מאמרים ב-output/organic/hub16-crocs/ לפי qa_contract.
+      שמור: output/organic/hub16-crocs/hub16-qa-report.md
+    files_allowed:
+      - output/organic/hub16-crocs/
+    files_forbidden:
+      - .env
+    expected_output: |
+      ARTICLES_QA_PASS: N/7
+      QA_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7/7 PASS"
+    fail_conditions:
+      - "כל check נכשל"
+    next_on_pass: B2
+    next_on_fail: B1
+    is_milestone: true
+
+  - id: B2
+    name: "HUB-12 PRODUCE — נעלי אורות לילדים"
+    part: 2
+    workstream: articles
+    type: FIX
+    approval_tier: T1
+    goal: "ייצור 7 מאמרים HUB-12 — נעלי אורות (ביקוש מאומת, מוצרים בחנות)"
+    action: >
+      כתוב 7 מאמרים מלאים לפי article_production_standard.
+      שמור לתיקייה: output/organic/hub12-led-shoes/
+
+      Pillar — HUB-12-P:
+        seo_title: "נעלי אורות לילדים — המדריך המלא: בחירה, עמידות וסוללה"
+        keyword: "נעלי אורות לילדים"
+        slug: "naalei-orot-leyeladim-madrih-male"
+        intent: commercial + informational
+        internal_links:
+          - HUB-6-Pillar (בחירת נעלי תינוק)
+          - HUB-6-C2 (סוליה גמישה)
+        product_bridge: נעלי אורות LED בחנות (חפש: "light", "LED", "אורות" בproducts)
+
+      C1 — נעלי אורות לגן:
+        keyword: "נעלי אורות לגן ילדים"
+        slug: "naalei-orot-legan-ma-mutar-ma-amid"
+        intent: informational + commercial
+        internal_links: HUB-12-P, HUB-6-C4 (נעלי גן)
+
+      C2 — נעלי אורות לפעוטות — בטיחות:
+        keyword: "נעלי אורות לפעוטות"
+        slug: "naalei-orot-lepautot-betihut-solela"
+        intent: informational
+        internal_links: HUB-12-P, HUB-7-C4 (ביגוד בטוח)
+
+      C3 — נעלי אורות לבנות:
+        keyword: "נעלי אורות לבנות"
+        slug: "naalei-orot-livanot-dagamim-yafim"
+        intent: commercial
+        internal_links: HUB-12-P, HUB-12-C1
+
+      C4 — נעלי אורות לבנים:
+        keyword: "נעלי אורות לבנים"
+        slug: "naalei-orot-livanim-ma-yeladim-ohavim"
+        intent: commercial
+        internal_links: HUB-12-P, HUB-12-C1
+
+      C5 — כמה זמן מחזיקה הסוללה:
+        keyword: "נעלי אורות סוללה כמה זמן"
+        slug: "naalei-orot-solela-kama-zman-mehzika"
+        intent: informational
+        internal_links: HUB-12-P, HUB-12-C2
+
+      C6 — נעלי אורות vs. נעלי ספורט:
+        keyword: "נעלי אורות לעומת נעלי ספורט ילדים"
+        slug: "naalei-orot-vs-naalei-sport-matay-livhor"
+        intent: informational + commercial
+        internal_links: HUB-12-P, HUB-6-Pillar
+    files_allowed:
+      - output/organic/hub12-led-shoes/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_WRITTEN: 7
+      OUTPUT_FOLDER: output/organic/hub12-led-shoes/
+      SHOPIFY_WRITES: NONE
+      B2_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "מאמר עם inline styles"
+      - "publish לShopify"
+    next_on_pass: B2-QA
+    next_on_fail: B2
+    is_milestone: false
+
+  - id: B2-QA
+    name: "QA — HUB-12 נעלי אורות (7 מאמרים × 8 checks)"
+    part: 2
+    type: AUDIT
+    approval_tier: T0
+    goal: "QA מלא על 7 מאמרי HUB-12"
+    action: >
+      בדוק כל 7 מאמרים ב-output/organic/hub12-led-shoes/ לפי qa_contract.
+      שמור: output/organic/hub12-led-shoes/hub12-qa-report.md
+    files_allowed:
+      - output/organic/hub12-led-shoes/
+    files_forbidden:
+      - .env
+    expected_output: |
+      ARTICLES_QA_PASS: N/7
+      QA_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7/7 PASS"
+    fail_conditions:
+      - "כל check נכשל"
+    next_on_pass: B3
+    next_on_fail: B2
+    is_milestone: true
+
+  - id: B3
+    name: "HUB-13 PRODUCE — נעלי מים + בגדי ים לקיץ"
+    part: 2
+    workstream: articles
+    type: FIX
+    approval_tier: T1
+    goal: "ייצור 7 מאמרים HUB-13 — נעלי מים ובגדי ים (עונת שיא קיץ)"
+    action: >
+      כתוב 7 מאמרים מלאים לפי article_production_standard.
+      שמור לתיקייה: output/organic/hub13-water-shoes/
+
+      Pillar — HUB-13-P:
+        seo_title: "נעלי מים לילדים — המדריך המלא: בריכה, ים וחוף"
+        keyword: "נעלי מים לילדים"
+        slug: "naalei-mayim-leyeladim-madrih-male-brekha-yam"
+        intent: commercial + informational
+        internal_links:
+          - HUB-6-Pillar (בחירת נעלי תינוק)
+          - HUB-11-C6 (בריכה עם תינוק)
+          - HUB-16-C3 (קרוקס לים)
+        product_bridge: נעלי מים, נעלי חוף בחנות
+
+      C1 — נעלי מים לתינוק:
+        keyword: "נעלי מים לתינוק"
+        slug: "naalei-mayim-letinok-me'eize-gil"
+        intent: informational + commercial
+        internal_links: HUB-13-P, HUB-6-C1 (צעד ראשון)
+
+      C2 — כפכפים לפעוטות לים:
+        keyword: "כפכפים לפעוטות"
+        slug: "kafkafim-lapautot-layam-velabreykha"
+        intent: commercial
+        internal_links: HUB-13-P, HUB-16-P
+
+      C3 — נעלי ים אנטי החלקה לילדים:
+        keyword: "נעלי ים אנטי החלקה לילדים"
+        slug: "naalei-yam-anti-hahlaka-leyeladim"
+        intent: informational + commercial
+        internal_links: HUB-13-P, HUB-6-C3 (מידה נכונה)
+
+      C4 — בגד ים לבנות — UPF50 ובחירה נכונה:
+        keyword: "בגד ים לבנות תינוקות"
+        slug: "bgad-yam-livanot-tinokot-upf50-bchira"
+        intent: commercial + educational
+        internal_links: HUB-13-P, HUB-11-C2 (בגד ים לתינוקת)
+        note: "HUB-11-C2 כבר קיים — link back, אל תכפיל תוכן"
+
+      C5 — בגד ים לבנים — בגדי ים vs. בגד ים:
+        keyword: "בגד ים לבנים תינוקות"
+        slug: "bgad-yam-livanim-tinokot-mah-amid-yoter"
+        intent: commercial
+        internal_links: HUB-13-P, HUB-11-Pillar
+
+      C6 — ציוד חוף לתינוק — הרשימה המלאה:
+        keyword: "ציוד חוף לתינוק"
+        slug: "tsiyud-hof-letinok-reshima-mele'a"
+        intent: informational + commercial
+        internal_links: HUB-13-P, HUB-11-C6, HUB-5-Pillar (מתנות)
+    files_allowed:
+      - output/organic/hub13-water-shoes/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_WRITTEN: 7
+      OUTPUT_FOLDER: output/organic/hub13-water-shoes/
+      SHOPIFY_WRITES: NONE
+      B3_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "מאמר עם inline styles"
+      - "כפילות תוכן עם HUB-11-C2"
+      - "publish לShopify"
+    next_on_pass: B3-QA
+    next_on_fail: B3
+    is_milestone: false
+
+  - id: B3-QA
+    name: "QA — HUB-13 נעלי מים (7 מאמרים × 8 checks)"
+    part: 2
+    type: AUDIT
+    approval_tier: T0
+    goal: "QA מלא על 7 מאמרי HUB-13"
+    action: >
+      בדוק כל 7 מאמרים ב-output/organic/hub13-water-shoes/ לפי qa_contract.
+      בדיקה נוספת: אין כפילות תוכן עם HUB-11-C2 (בגד ים לתינוקת).
+      שמור: output/organic/hub13-water-shoes/hub13-qa-report.md
+    files_allowed:
+      - output/organic/hub13-water-shoes/
+    files_forbidden:
+      - .env
+    expected_output: |
+      ARTICLES_QA_PASS: N/7
+      CONTENT_OVERLAP: NONE / WARNING
+      QA_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7/7 PASS"
+      - "CONTENT_OVERLAP=NONE"
+    fail_conditions:
+      - "כפילות תוכן עם HUB-11"
+    next_on_pass: B4
+    next_on_fail: B3
+    is_milestone: true
+
+  - id: B4
+    name: "HUB-14 PRODUCE — מנשא בד לאמא"
+    part: 2
+    workstream: articles
+    type: FIX
+    approval_tier: T1
+    goal: "ייצור 7 מאמרים HUB-14 — מנשא בד (יש מוצרים בחנות)"
+    action: >
+      כתוב 7 מאמרים מלאים לפי article_production_standard.
+      שמור לתיקייה: output/organic/hub14-baby-carrier/
+      לפני כתיבה: חפש בחנות מוצרי מנשא (search: "מנשא", "carrier", "wrap") לבניית product bridge מדויק.
+
+      Pillar — HUB-14-P:
+        seo_title: "מנשא לתינוק — המדריך המלא: בטיחות, שיטות ואיך קושרים"
+        keyword: "מנשא לתינוק"
+        slug: "manasa-letinok-madrih-male-betihut-shitatot"
+        intent: informational + commercial
+        internal_links:
+          - HUB-7-Pillar (בטיחות תינוק)
+          - HUB-8-Pillar (שגרה יומית)
+        product_bridge: מוצרי מנשא מהחנות
+
+      C1 — מנשא בד vs. מנשא מובנה:
+        keyword: "מנשא בד לתינוק"
+        slug: "manasa-bad-vs-manasa-muvne-mah-hahedel"
+        intent: informational + commercial
+        internal_links: HUB-14-P
+
+      C2 — איך קושרים מנשא בד — שלב אחר שלב:
+        keyword: "איך קושרים מנשא בד"
+        slug: "ech-koshrim-manasa-bad-shalav-ahar-shalav"
+        intent: how-to
+        internal_links: HUB-14-P, HUB-14-C1
+
+      C3 — בטיחות במנשא — כללי TICKS:
+        keyword: "בטיחות מנשא תינוק"
+        slug: "betihut-bamanasa-klalei-ticks"
+        intent: informational
+        internal_links: HUB-14-P, HUB-7-Pillar
+
+      C4 — יתרונות מנשא לתינוק — קשר רגשי ושינה:
+        keyword: "יתרונות מנשא לתינוק"
+        slug: "yitronot-manasa-letinok-kesher-shina"
+        intent: informational
+        internal_links: HUB-14-P, HUB-1-Pillar (שינה), HUB-10-Pillar (יתרונות ריבורן — cross-authority)
+
+      C5 — מנשא לנסיעה — טיסה, ים וקניות:
+        keyword: "מנשא לנסיעה עם תינוק"
+        slug: "manasa-lenesia-im-tinok-tisa-yam"
+        intent: informational + commercial
+        internal_links: HUB-14-P, HUB-14-C1
+
+      C6 — מנשא לאבא — כן זה עובד:
+        keyword: "מנשא לאבא"
+        slug: "manasa-leaba-ken-ze-oved-ech-matihlim"
+        intent: informational + commercial
+        internal_links: HUB-14-P, HUB-14-C2
+    files_allowed:
+      - output/organic/hub14-baby-carrier/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_WRITTEN: 7
+      OUTPUT_FOLDER: output/organic/hub14-baby-carrier/
+      PRODUCT_BRIDGE_FOUND: YES / NO (חפש מוצרים לפני)
+      SHOPIFY_WRITES: NONE
+      B4_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "product_bridge ריק לחלוטין"
+      - "publish לShopify"
+    next_on_pass: B4-QA
+    next_on_fail: B4
+    is_milestone: false
+
+  - id: B4-QA
+    name: "QA — HUB-14 מנשא בד (7 מאמרים × 8 checks)"
+    part: 2
+    type: AUDIT
+    approval_tier: T0
+    goal: "QA מלא על 7 מאמרי HUB-14"
+    action: >
+      בדוק כל 7 מאמרים ב-output/organic/hub14-baby-carrier/ לפי qa_contract.
+      שמור: output/organic/hub14-baby-carrier/hub14-qa-report.md
+    files_allowed:
+      - output/organic/hub14-baby-carrier/
+    files_forbidden:
+      - .env
+    expected_output: |
+      ARTICLES_QA_PASS: N/7
+      QA_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7/7 PASS"
+    fail_conditions:
+      - "כל check נכשל"
+    next_on_pass: B5
+    next_on_fail: B4-QA
+    is_milestone: true
+
+  - id: B5
+    name: "HUB-15 PRODUCE — משאבות חלב"
+    part: 2
+    workstream: articles
+    type: FIX
+    approval_tier: T1
+    goal: "ייצור 7 מאמרים HUB-15 — משאבות חלב (יש מוצרים בחנות)"
+    action: >
+      כתוב 7 מאמרים מלאים לפי article_production_standard.
+      שמור לתיקייה: output/organic/hub15-breast-pump/
+      לפני כתיבה: חפש בחנות מוצרי משאבות חלב (search: "משאבת חלב", "breast pump") לבניית product bridge.
+
+      Pillar — HUB-15-P:
+        seo_title: "משאבת חלב — המדריך המלא: איך לבחור, איך משתמשים ומה לבדוק"
+        keyword: "משאבת חלב"
+        slug: "masheveт-halav-madrih-male-ech-livhor"
+        intent: informational + commercial
+        internal_links:
+          - HUB-8-Pillar (שגרה יומית — שגרת האכלה)
+          - HUB-2-Pillar (ביגוד יילוד)
+        product_bridge: מוצרי משאבות חלב מהחנות
+
+      C1 — משאבת חלב ידנית vs. חשמלית:
+        keyword: "משאבת חלב ידנית או חשמלית"
+        slug: "masheveт-halav-yadanit-vs-hashmalit"
+        intent: informational + commercial
+        internal_links: HUB-15-P
+
+      C2 — איך משתמשים במשאבת חלב — שלב אחר שלב:
+        keyword: "איך משתמשים במשאבת חלב"
+        slug: "ech-mishtamshin-bemasheveт-halav-shalav"
+        intent: how-to
+        internal_links: HUB-15-P, HUB-15-C1
+
+      C3 — כמה חלב לשאוב — כמויות ולוח זמנים:
+        keyword: "כמה חלב לשאוב משאבת חלב"
+        slug: "kama-halav-lishuv-kmeot-ve'luah-zmanim"
+        intent: informational
+        internal_links: HUB-15-P, HUB-8-C2 (סדר האכלה ושינה)
+
+      C4 — איך לנקות משאבת חלב בבטחה:
+        keyword: "איך לנקות משאבת חלב"
+        slug: "ech-lenakot-masheveт-halav-betihut"
+        intent: how-to
+        internal_links: HUB-15-P, HUB-15-C2
+
+      C5 — אחסון חלב אם — כללים ושגיאות נפוצות:
+        keyword: "אחסון חלב אם"
+        slug: "ahsun-halav-em-klalim-uvshiut"
+        intent: informational
+        internal_links: HUB-15-P, HUB-15-C3
+
+      C6 — משאבת חלב בעבודה — איך מסתדרים:
+        keyword: "משאבת חלב בעבודה"
+        slug: "masheveт-halav-baavoda-ech-mistadrim"
+        intent: informational
+        internal_links: HUB-15-P, HUB-15-C1
+    files_allowed:
+      - output/organic/hub15-breast-pump/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_WRITTEN: 7
+      OUTPUT_FOLDER: output/organic/hub15-breast-pump/
+      PRODUCT_BRIDGE_FOUND: YES / NO
+      SHOPIFY_WRITES: NONE
+      B5_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "product_bridge ריק לחלוטין"
+      - "publish לShopify"
+    next_on_pass: B5-QA
+    next_on_fail: B5
+    is_milestone: false
+
+  - id: B5-QA
+    name: "QA — HUB-15 משאבות חלב (7 מאמרים × 8 checks)"
+    part: 2
+    type: AUDIT
+    approval_tier: T0
+    goal: "QA מלא על 7 מאמרי HUB-15"
+    action: >
+      בדוק כל 7 מאמרים ב-output/organic/hub15-breast-pump/ לפי qa_contract.
+      שמור: output/organic/hub15-breast-pump/hub15-qa-report.md
+    files_allowed:
+      - output/organic/hub15-breast-pump/
+    files_forbidden:
+      - .env
+    expected_output: |
+      ARTICLES_QA_PASS: N/7
+      QA_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7/7 PASS"
+    fail_conditions:
+      - "כל check נכשל"
+    next_on_pass: C1
+    next_on_fail: B5
+    is_milestone: true
+
+# ─── PART 3: REGISTRY UPDATE + PUBLISH PREP ──────────────────────────────────
+
+  - id: C1
+    name: "HUB REGISTRY UPDATE — הוסף HUB-12..16 + עדכן HUBs קיימים"
+    part: 3
+    type: FIX
+    approval_tier: T0
+    goal: "עדכון hub-registry.json עם כל 5 HUBs החדשים + השלמות ל-HUBs קיימים"
+    action: >
+      עדכן: teams/organic/hub-registry.json
+      לכל HUB קיים שהורחב (HUB-1,2,3,4,7,8):
+        עדכן articles_count
+        הוסף article_id חדשים (PENDING — לפני publish)
+        עדכן articles[] list
+      הוסף רשומות חדשות:
+        HUB-12: נעלי אורות לילדים (articles_count: 7, status: draft)
+        HUB-13: נעלי מים + בגדי ים (articles_count: 7, status: draft)
+        HUB-14: מנשא בד לאמא (articles_count: 7, status: draft)
+        HUB-15: משאבות חלב (articles_count: 7, status: draft)
+        HUB-16: קרוקס וסנדלים לילדים (articles_count: 7, status: draft)
+      עדכן: "last_updated", "next_hub": "PUBLISH-GATE"
+      שמור גיבוי: teams/organic/hub-registry-backup-20260517.json
+    files_allowed:
+      - teams/organic/hub-registry.json
+      - teams/organic/hub-registry-backup-20260517.json
+    files_forbidden:
+      - .env
+      - bridge/
+      - output/site-map/internal_content_map.json
+    expected_output: |
+      HUBS_UPDATED: HUB-1,2,3,4,7,8
+      HUBS_ADDED: HUB-12,13,14,15,16
+      TOTAL_HUBS_AFTER: 16
+      TOTAL_ARTICLES_AFTER: 111
+      BACKUP_SAVED: YES
+      C1_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "16 HUBs ב-registry"
+      - "backup נשמר"
+    fail_conditions:
+      - "registry פגום"
+      - "backup חסר"
+    next_on_pass: C2
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: C2
+    name: "MASTER PUBLISH PACKET — 43 מאמרים"
+    part: 3
+    type: AUDIT
+    approval_tier: T0
+    goal: "הכנת packet publish מאוחד לכל 43 המאמרים — מוכן לפקודת PUBLISH-GATE"
+    action: >
+      צור: output/organic/master-publish-packet-43.md
+      כלול עבור כל HUB:
+
+      PART-1 EXTENSIONS:
+        HUB-1:  C5 (מנורת לילה), C6 (רעש לבן)
+        HUB-2:  C6 (בגדים לעונות)
+        HUB-3:  C5 (טמפרטורת מים), C6 (כמה פעמים לרחוץ)
+        HUB-4:  C5 (פריחה בעור)
+        HUB-7:  C6 (סכנות בבית)
+        HUB-8:  C6 (שגרת ערב)
+
+      PART-2 NEW HUBS (סדר publish: Pillar → C1 → C2 → C3 → C4 → C5 → C6):
+        HUB-16: קרוקס וסנדלים (7 מאמרים)
+        HUB-12: נעלי אורות (7 מאמרים)
+        HUB-13: נעלי מים + בגדי ים (7 מאמרים)
+        HUB-14: מנשא בד (7 מאמרים)
+        HUB-15: משאבות חלב (7 מאמרים)
+
+      לכל מאמר ברשימה:
+        - slug
+        - output_file_path
+        - blog_id: 109164036409
+        - status: READY_TO_PUBLISH
+        - internal_link_map (from → to slugs)
+        - product_handles[] (למוצרים שיקושרו)
+        - gsc_manual_request: YES (לאחר publish)
+
+      סך הכל: 43 מאמרים
+      publish_batches: שתי 10 דק' ביקורת בין HUBs
+      fallback: Shopify Admin ידני אם API נכשל
+
+      שמור: output/organic/master-publish-packet-43.md
+    files_allowed:
+      - output/organic/
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      PACKET_SAVED: output/organic/master-publish-packet-43.md
+      ARTICLES_IN_PACKET: 43
+      ALL_SLUGS_PRESENT: YES
+      C2_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "43 מאמרים ב-packet"
+      - "כל slugs תקינים"
+    fail_conditions:
+      - "פחות מ-43 מאמרים"
+      - "slug חסר"
+    next_on_pass: PUBLISH-GATE
+    next_on_fail: C2
+    is_milestone: true
+
+# ─── PUBLISH GATE ─────────────────────────────────────────────────────────────
+
+  - id: PUBLISH-GATE
+    name: "PUBLISH GATE — חסום על API + ראשון/רביעי 09:00"
+    part: 3
+    type: LOGIC
+    approval_tier: T2
+    goal: "שמירת gate — publish חסום עד 3 תנאים + trigger אוטומטי"
+    action: >
+      BLOCKED עד:
+        1. GET /shop.json מחזיר 200 (API פתוח)
+        2. master-publish-packet-43.md קיים + 43 מאמרים
+        3. אייל אישר: "APPROVED PUBLISH BATCH — אורגני"
+      trigger אוטומטי: ראשון + רביעי 09:00 (CronJob פעיל)
+      בכל trigger: בדוק תנאים → אם עברו → publish ראשון HUB מהpacket
+      publish לפי batch_size: 7 מאמרים (HUB שלם) בכל הרצה
+      לאחר כל HUB: שלח Telegram — "HUB-XX PUBLISHED: N articles LIVE"
+      GSC manual request: לאחר כל HUB — הנחה לאייל ל-URL checklist
+    files_allowed:
+      - output/organic/master-publish-packet-43.md
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env (קרא עם load_dotenv בלבד)
+    expected_output: |
+      GATE_STATUS: BLOCKED / OPEN
+      API_STATUS: 200 / 403
+      PACKET_EXISTS: YES / NO
+      ARTICLES_IN_PACKET: 43 / N
+      AYAL_APPROVED: YES / NO
+      NEXT_BATCH: HUB-16 (קרוקס)
+    exit_conditions:
+      - "כל 3 תנאים מתקיימים"
+      - "batch publish הצליח"
+    fail_conditions:
+      - "publish ללא gate פתוח"
+      - "API != 200"
+    next_on_pass: PUBLISH-DONE
+    next_on_fail: HOLD
+    is_milestone: true
+
+  - id: PUBLISH-DONE
+    name: "POST-PUBLISH VERIFY + GSC CHECKLIST"
+    type: AUDIT
+    approval_tier: T0
+    goal: "אימות publish + הכנת GSC checklist לאייל"
+    action: >
+      לאחר כל HUB שפורסם:
+        בדוק HTTP 200 לכל URL (7 checks)
+        עדכן hub-registry.json: status=published, article_ids, published_at
+        עדכן internal_content_map.json: status=published
+        שלח Telegram:
+          "✓ HUB-XX LIVE: [שם HUB]
+           URLs: [רשימה]
+           GSC checklist:
+           1. פתח GSC → URL Inspection
+           2. בקש אינדוקס לכל URL
+           הבא: [HUB הבא] — ראשון/רביעי הקרוב"
+    files_allowed:
+      - teams/organic/hub-registry.json
+      - output/site-map/internal_content_map.json
+      - output/organic/
+    files_forbidden:
+      - .env
+    expected_output: |
+      HTTP_VERIFIED: 7/7
+      REGISTRY_UPDATED: YES
+      TELEGRAM_SENT: YES
+    exit_conditions:
+      - "HTTP_VERIFIED=7/7"
+      - "REGISTRY_UPDATED=YES"
+    fail_conditions:
+      - "HTTP_VERIFIED < 7/7"
+      - "REGISTRY_UPDATED=NO"
+    next_on_pass: DONE
+    next_on_fail: MANUAL_INTERVENTION
+    is_milestone: false
+
+# ─── MILESTONES SUMMARY ───────────────────────────────────────────────────────
+
+milestones:
+  - id: M1
+    name: "PART-1 COMPLETE — 8 Extension Articles QA PASS"
+    trigger: A4-QA PASS
+    articles_total: 8
+  - id: M2
+    name: "HUB-16 COMPLETE — קרוקס"
+    trigger: B1-QA PASS
+    articles_total: 15
+  - id: M3
+    name: "HUB-12 COMPLETE — נעלי אורות"
+    trigger: B2-QA PASS
+    articles_total: 22
+  - id: M4
+    name: "HUB-13 COMPLETE — נעלי מים"
+    trigger: B3-QA PASS
+    articles_total: 29
+  - id: M5
+    name: "HUB-14 COMPLETE — מנשא בד"
+    trigger: B4-QA PASS
+    articles_total: 36
+  - id: M6
+    name: "ALL 43 ARTICLES QA PASS — READY TO PUBLISH"
+    trigger: B5-QA PASS
+    articles_total: 43
+  - id: M7
+    name: "MASTER PACKET READY"
+    trigger: C2 PASS
+    articles_total: 43
+
+# ─── ARTICLE TOTALS ──────────────────────────────────────────────────────────
+
+article_totals:
+  extensions:
+    HUB-1: 2  # C5 מנורת לילה, C6 רעש לבן
+    HUB-2: 1  # C6 בגדים לעונות
+    HUB-3: 2  # C5 טמפרטורת מים, C6 כמה פעמים
+    HUB-4: 1  # C5 פריחה בעור
+    HUB-7: 1  # C6 סכנות בבית
+    HUB-8: 1  # C6 שגרת ערב
+    subtotal: 8
+  new_hubs:
+    HUB-12: 7  # נעלי אורות
+    HUB-13: 7  # נעלי מים + בגדי ים
+    HUB-14: 7  # מנשא בד
+    HUB-15: 7  # משאבות חלב
+    HUB-16: 7  # קרוקס וסנדלים
+    subtotal: 35
+  grand_total: 43
+  current_live: 68
+  total_after_publish: 111

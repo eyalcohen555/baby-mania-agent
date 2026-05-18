@@ -500,3 +500,5 @@
 | 2026-05-18 08:02:14 | STARTED C1 [conductor-organic-articles-43-batch-001-C1-20260518-080214] |
 | 2026-05-18 08:08:04 |   C1 | PASS |
 | 2026-05-18 08:08:09 | STARTED C2 [conductor-organic-articles-43-batch-001-C2-20260518-080809] |
+| 2026-05-18 08:11:59 |   C2 | PASS |
+| 2026-05-18 08:12:04 | STARTED PUBLISH-GATE [conductor-organic-articles-43-batch-001-PUBLISH-GATE-20260518-081204] |
