@@ -1,8 +1,8 @@
 plan_id: organic-articles-43-batch-001
 plan_file: plans/organic-articles-43-batch-001.yaml
-status: RUNNING
-current_stage: B4-QA
-current_task_id: conductor-organic-articles-43-batch-001-B4-QA-20260517-230353
+status: BLOCKED
+current_stage: B4
+current_task_id: conductor-organic-articles-43-batch-001-B4-20260517-230714
 completed_stages:
 - A0
 - A1
@@ -26,10 +26,12 @@ failed_stages:
 - B4
 - B4
 - B4
+- B4-QA
+- B4
 skipped_stages: []
-blocked_reason: ''
-waiting_for: ''
-next_stage: B4-QA
+blocked_reason: Bridge not idle after timeout
+waiting_for: BRIDGE_IDLE
+next_stage: B4
 overall_verdict: IN_PROGRESS
 started_at: '2026-05-17 10:33:31'
-updated_at: '2026-05-17 23:03:53'
+updated_at: '2026-05-18 07:15:06'
