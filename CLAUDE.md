@@ -1,5 +1,6 @@
 # תמיד קרא את הקובץ הזה בתחילת כל סשן:
 read BABYMANIA-MASTER-PROMPT.md
+read claude-tools-guide.md
 
 # Baby Mania — הוראות פתיחה
 

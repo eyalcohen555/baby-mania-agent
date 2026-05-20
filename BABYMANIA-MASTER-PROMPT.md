@@ -72,11 +72,30 @@ milestone / blocker נסגר → גם master snapshot
 
 ---
 
+## 🛠️ כלי MCP זמינים — חובה לנצל לכל משימה רלוונטית
+
+קרא תמיד: `claude-tools-guide.md` — מדריך מלא לכל הכלים + שימוש יומיומי לאיקומרס.
+
+| כלי | מתי להשתמש |
+|-----|------------|
+| **Playwright** | בדיקת דפים חיים, screenshots, בדיקת מתחרים, צ'קאאוט |
+| **Fetch** | קריאת תוכן עמוד מתחרה, שליפת מחירים, FAQ |
+| **Brave Search** | מחקר שוק, טרנדים, ביקורות, SEO keywords |
+| **Stitch / Imagen** | יצירת תמונות lifestyle לדפי מוצר, אינסטגרם |
+| **Canva** | פוסטים, באנרים, קטלוגים, stories |
+| **Shopify MCP** | מוצרים, הזמנות, מלאי, קופונים, אנליטיקס |
+| **Sequential Thinking** | אסטרטגיה, ניתוח המרה, קבלת החלטות מורכבות |
+
+**כלל:** כל משימה שקשורה לעיצוב / תמונות / חיפוש / ניתוח / ניהול חנות — השתמש בכלי המתאים. אל תכתוב ידנית מה שכלי יכול לעשות טוב יותר.
+
+---
+
 ## 🚦 חובת פתיחה לכל צ׳אט חדש
 
 כל צ'אט GPT חדש שעובד על BabyMania חייב לקרוא קודם:
 1. `BABYMANIA-MASTER-PROMPT.md` — snapshot מצב הפרויקט
-2. `docs/management/chat-to-automation-operating-protocol.md` — פרוטוקול: איך להפוך משימה ל-plan אוטומטי
+2. `claude-tools-guide.md` — כלי MCP זמינים ואיך להשתמש בהם
+3. `docs/management/chat-to-automation-operating-protocol.md` — פרוטוקול: איך להפוך משימה ל-plan אוטומטי
 3. Journal רלוונטי לתחום הנוכחי:
    - `docs/management/management-journal.md` — ניהול + automation
    - `docs/product/shoes-journal.md` — נעליים
