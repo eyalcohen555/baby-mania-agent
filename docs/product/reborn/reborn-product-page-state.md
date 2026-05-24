@@ -249,7 +249,7 @@
 ```
 PHASE:        PLANNING — Blueprint Draft open
 BLOCKER:      (1) Blueprint awaiting Eyal approval  (2) Product truth partial — awaiting supplier
-CURRENT TASK: Landing page local preview assets — S3 + S4 + S5 connected. Next: S7 category cards.
+CURRENT TASK: Local preview COMPLETE — כל 9 סקשנים עם נכסים. פתוח: S7 שמות עבריים + לינקים, S9 CTA destination.
 CARD_RATIO:   מכאן והלאה — כרטיסים (S4/S7 ועתידיים) יהיו 1:1 ברירת מחדל: 900×900 WebP (קל: 768×768).
               לא מייצרים desktop/mobile נפרד לכרטיסים. נכסים שכבר אושרו (Hero/S3/S5) — ללא שינוי.
 CODE STATUS:  אין קוד Shopify — local preview HTML בלבד
@@ -267,13 +267,16 @@ S5 IMAGE:     Desktop + Mobile approved (2026-04-27) — ילדה מחבקת ב�
 S5 IMAGE:     ✓ CONNECTED TO PREVIEW — reborn-s5-lifestyle.webp (800×1000 WebP, local only)
               Source: ChatGPT Image Apr 27, 2026, 06_01_58 PM.png
               Section: play-section in reborn-landing-preview.html
-S5 VIDEO:     ⛔ POSTPONED — Veo quota 0/0 (Google AI Studio)
-              Attempted: models/veo-3.0-fast-generate-001 — 429 RESOURCE_EXHAUSTED
-              Billing card fixed — Veo still shows 0/0. Gemini/Imagen quotas: OK.
-              Root cause: Veo quota not enabled — not code / image / prompt
-              Decision: S5 proceeds as image-only. Landing page not blocked.
-              Script ready: _reborn_s5_video_test.py (root, uncommitted)
-              Follow-up: investigate how to restore/open Veo quota in Google AI Studio
+S5 VIDEO:     ⛔ POSTPONED — Veo quota 0/0 (Google AI Studio) — לא חוסם. S5 ממשיך עם תמונה בלבד.
+S5b VIDEO:    ✅ CONNECTED (2026-05-18) — reborn-emotional-girl.mp4 (8.3 MB, autoplay muted loop)
+              ילדה משחקת בבובה — הוחלפה תמונת S5b. נתיב: assets/reborn/landing/videos/
+S6 VIDEOS:    ✅ 5 UGC CONNECTED (2026-05-18):
+              shira  — שירה דוד, ירושלים
+              hadas  — הדס אברהם, חיפה
+              miri   — מרים לוי, ירושלים
+              naama  — נעמה חמו, גבעתיים
+              carmit — כרמית עמדי, נהריה
+VIDEOS FOLDER: assets/reborn/landing/videos/ — 7 MP4 (5 UGC + emotional + organic-long)
 ```
 
 ---
@@ -319,10 +322,15 @@ S5 VIDEO:     ⛔ POSTPONED — Veo quota 0/0 (Google AI Studio)
 
 **S5 — 2026-04-27:**
 S5 Desktop + Mobile images אושרו ויזואלית.
-S5 Video נדחה — Veo quota 0/0 גם לאחר תיקון כרטיס אשראי. הסקריפט תקין ומוכן ב-`_reborn_s5_video_test.py`.
-החלטה: S5 ממשיך עם תמונה בלבד. דף הנחיתה לא עוצר.
+S5 Video נדחה — Veo quota 0/0. S5 ממשיך עם תמונה בלבד.
 
-**המשימה הבאה:** (1) לחקור כיצד לפתוח Veo quota ב-Google AI Studio — משימת follow-up פתוחה. (2) להמשיך לנכסי landing הבאים (S3 Lifestyle gift image). (3) לבחור כתובת מייל להצגה בדף. (4) לבדוק URL בעברית מול Shopify/Dawn ולהחזיר המלצה. (5) אישור אייל על Content Plan → PHASE 6.
+**Videos Checkpoint — 2026-05-18:**
+- 7 MP4 הועתקו ל-`assets/reborn/landing/videos/` עם שמות סמנטיים
+- S5b: תמונה הוחלפה ב-reborn-emotional-girl.mp4 (autoplay muted loop, 9/16)
+- S6: 5 כרטיסי UGC אמיתיים — שמות + ערים (שירה/הדס/מרים/נעמה/כרמית)
+- Local preview COMPLETE — כל 9 סקשנים עם נכסים. Shopify לא נגע.
+
+**המשימה הבאה:** (1) S7 — שמות עבריים ל-6 הבובות + לינקים לדפי מוצר. (2) S9 — החלטת CTA destination. (3) אישור אייל על Content Plan → PHASE 6.
 
 ---
 

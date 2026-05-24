@@ -1,0 +1,124 @@
+{
+  "per_product": [
+    {
+      "shopify_pid": 9689589383481,
+      "handle": "19-inches-levi-reborn-baby-realistic-vinyl-body-alive-lol-bebe-newborn-finished-hair-painted-doll-children-girls-gift-dolls",
+      "shopify_image_hashes": [
+        "1712ed0ca15141759b7a7cf4779c9aa5",
+        "22ee37aef9a04eb09ae709259f2c0781",
+        "329bea2c76fc4936832471b155813584",
+        "4140216aaec64dd199d2d2b9af278766"
+      ],
+      "query": "19 inches levi reborn baby vinyl 49cm finished hair painted",
+      "candidates": [],
+      "matched_ali_item": "1005005317212200",
+      "matched_via_hash": "user-confirmed prior",
+      "identity_confirmed": true,
+      "known_override": {
+        "ali_item_id": "1005005317212200",
+        "size_ali": "46cm",
+        "identity_confirmed": true,
+        "source": "user-confirmed via image hash (prior)"
+      },
+      "errors": []
+    },
+    {
+      "shopify_pid": 9690182385977,
+      "handle": "bzdoll-55-cm-22-inch-reborn-dolls-realistic-full-silicone-baby-bebe-newborn-girl-doll-princess-toddler-toy-gift",
+      "shopify_image_hashes": [
+        "0fdba5b416c941e6b4c6e10356489eae",
+        "15487067023948ca8ff9f2cc97f82e2e",
+        "18cfa14d197349029835a0a38a386c9d",
+        "3763c0092b274bc9a5d5fe980e8b396c",
+        "4fe45b7a21d54ecc87314bf2a7a63a8e",
+        "5d7fe30c4a824c1ab91b6da87d1cc324",
+        "5d9ad760b7ac47a3acaca5eb6d2fc807",
+        "62991e20a0d14a98b0208c2ae2fbbf8d",
+        "67d2407edcc3473e9cc9626a4a9593d8",
+        "6d7567bd9ccb4a1cb07aa8668a52f419",
+        "96033069a9114dd68ffada061f90b2e7",
+        "99d5019759394925b7c81461031b864d",
+        "bd60cee50ccf4cffa1ec2c888a157139",
+        "c88dd292be054cd6bdf9a07b7ba81a37",
+        "d17bffc7c8a1482d910bd408fc6de67e",
+        "d597ef50e29d4518a119afd41ed6e385"
+      ],
+      "query": "BZDoll 55cm 22 inch reborn full silicone princess toddler",
+      "candidates": [],
+      "matched_ali_item": null,
+      "matched_via_hash": null,
+      "identity_confirmed": false,
+      "known_override": null,
+      "errors": []
+    },
+    {
+      "shopify_pid": 9690182418745,
+      "handle": "bzdoll-realistic-60cm-24inch-soft-silicone-reborn-baby-doll-with-3d-painting-skin-and-vascular-vein-handmade-girl-birthday-gift",
+      "shopify_image_hashes": [
+        "0918956f3e3c4557bb132333f6cf74ea",
+        "47a0caa2c3b1447bbbf1f8969e22586a",
+        "75084bc610cf44778a507ddb1dc68a47",
+        "c65457105edf484ab6d358f635cf3d31",
+        "c6fbd0d9efe74ba29c3dea58141e6deb"
+      ],
+      "query": "BZDoll 60cm 24 inch soft silicone reborn 3d painting vascular vein handmade",
+      "candidates": [],
+      "matched_ali_item": null,
+      "matched_via_hash": null,
+      "identity_confirmed": false,
+      "known_override": null,
+      "errors": []
+    },
+    {
+      "shopify_pid": 9690182451513,
+      "handle": "50cm-realistic-finished-bebe-reborn-silicone-vinyl-cloth-body-doll-loulou-handmade-toy-for-girls-christmas-gift",
+      "shopify_image_hashes": [
+        "2b9c3c96886f478f82588ec7dffbc1df",
+        "6efec891418c4d6d9e119e34bf9e2c96",
+        "a5fcd87605d64d6d926c9d76962f14cd",
+        "d63426e85d8543f9954ad3b727c758e5"
+      ],
+      "query": "50cm loulou reborn silicone vinyl cloth body handmade",
+      "candidates": [],
+      "matched_ali_item": null,
+      "matched_via_hash": null,
+      "identity_confirmed": false,
+      "known_override": null,
+      "errors": []
+    },
+    {
+      "shopify_pid": 9690247627065,
+      "handle": "npk-19inch-already-painted-finished-reborn-baby-doll-levi-awake-newborn-baby-size-3d-skin-visible-veins-collectible-art-doll",
+      "shopify_image_hashes": [
+        "82026b7c9c3e4423be9717dc12bdb1b2",
+        "8a21a68aaf01450da506e9ba6565733b",
+        "a65cabe3ba2c499a990eb2c49cd5c090",
+        "f461af07570a436aa35fcea274ce8ad2"
+      ],
+      "query": "NPK 19inch Levi reborn baby awake 3d skin visible veins",
+      "candidates": [],
+      "matched_ali_item": null,
+      "matched_via_hash": null,
+      "identity_confirmed": false,
+      "known_override": null,
+      "errors": []
+    },
+    {
+      "shopify_pid": 9690247659833,
+      "handle": "50cm-full-vinyl-body-girl-waterproof-reborn-doll-maddie-hand-detailed-painted-with-visible-veins-lifelike-3d-skin-tone-toy-gift",
+      "shopify_image_hashes": [
+        "16d4d6ccda7243769ff76580026ade4e",
+        "3973592a822341cd9e78a47d4f4ba10c",
+        "aba738e477da4bf38bfa7dff166406d7",
+        "e3d2f616feb044f48c673ae4285e63b7"
+      ],
+      "query": "50cm full vinyl maddie reborn waterproof visible veins 3d skin",
+      "candidates": [],
+      "matched_ali_item": null,
+      "matched_via_hash": null,
+      "identity_confirmed": false,
+      "known_override": null,
+      "errors": []
+    }
+  ]
+}

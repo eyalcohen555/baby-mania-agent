@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "bm-reborn-product-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

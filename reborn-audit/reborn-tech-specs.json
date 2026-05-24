@@ -1,0 +1,909 @@
+{
+  "products": [
+    {
+      "shopify_pid": "9690182385977",
+      "shopify_title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "shopify_handle": "bzdoll-55-cm-22-inch-reborn-dolls-realistic-full-silicone-baby-bebe-newborn-girl-doll-princess-toddler-toy-gift",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [],
+      "shopify_variant_count": 13,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005007060038271.html",
+      "aliexpress_item_id": "1005007060038271",
+      "aliexpress_title": "בובות חיות מחדש ריאליסטיות מסיליקון מלא בייבי בבה ויניל 50CM בובת ילדה חדשה נסיכה צעצוע תינוק מתנה - AliExpress 26",
+      "source_status": "needs_manual_review",
+      "status_reason": "Multi-doll page. Ali listing says 50cm/20inch but Shopify product is 55cm/22inch. 0 shared image hashes. Eyal must specify the exact variant in the listing.",
+      "evidence": {
+        "shared_image_hashes": [],
+        "shared_image_hashes_count": 0,
+        "screenshots": [
+          "9690182385977-1005007060038271-top.png",
+          "9690182385977-1005007060038271-mid.png",
+          "9690182385977-1005007060038271-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "הוא חשמלי": "לא",
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "מגדר": "יוניסקס",
+          "ממדים": "50cm/20inch",
+          "BJD / תכונה SD": "בובה",
+          "מצב": "פריטים במלאי"
+        },
+        "from_round1": false,
+        "secondary": null
+      },
+      "specs": {
+        "size": "50cm/20inch",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "יוניסקס",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [
+        {
+          "field": "size",
+          "shopify": "55cm (handle) / no size in SKU",
+          "ali": "50cm/20inch",
+          "note": "MISMATCH or wrong listing"
+        }
+      ],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "full silicone",
+          "hebrew": "סיליקון מלא",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": true
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": true
+        }
+      ],
+      "safe_for_product_page": false,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S15487067023948ca8ff9f2cc97f82e2ej.webp?v=1730196949"
+    },
+    {
+      "shopify_pid": "10190523040057",
+      "shopify_title": "בובת ריבורן 50 ס״מ — ויניל סיליקון, שיער שתול, ציור Genesis",
+      "shopify_handle": "50cm-whole-silicone-vinyl-reborn-doll-20-inch-girl-painted-newborn-baby-doll-with-rooted-hair-for-kids-christmas-gift",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [
+        "50cm"
+      ],
+      "shopify_variant_count": 3,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005008896313230.html",
+      "aliexpress_item_id": "1005008896313230",
+      "aliexpress_title": "בובת תינוק חדשה מצויירת לילדה בגודל 20 אינץ' עם שיער שורש למתנת חג המולד לילדה - AliExpress 26",
+      "source_status": "verified",
+      "status_reason": "7 shared image hashes. Size 50cm matches Shopify (50 ס\"מ).",
+      "evidence": {
+        "shared_image_hashes": [
+          "128b4d548c354631a826903960e6eb10",
+          "12ad0e674cc246bf8d4dc671ed2e9dc4",
+          "20f1310fdbdf4fa29e1a27a492d29c35",
+          "511943a633d04d818cb00aaaa377706c",
+          "76cb3eaa98ce4ea1bdc86c1afda05a3e",
+          "aec9c3dea48d49be883af883de03ccfb",
+          "b04467f7647f464b82297f3fb69d1a68"
+        ],
+        "shared_image_hashes_count": 7,
+        "screenshots": [
+          "10190523040057-1005008896313230-top.png",
+          "10190523040057-1005008896313230-mid.png",
+          "10190523040057-1005008896313230-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "הוא חשמלי": "לא",
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "מגדר": "Girls",
+          "ממדים": "50cm",
+          "BJD / תכונה SD": "בובה",
+          "סוללה": "no"
+        },
+        "from_round1": false,
+        "secondary": null
+      },
+      "specs": {
+        "size": "50cm",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "Girls",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "full silicone",
+          "hebrew": "סיליקון מלא",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "waterproof",
+          "hebrew": "עמיד למים",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        }
+      ],
+      "safe_for_product_page": true,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sb04467f7647f464b82297f3fb69d1a68w.webp?v=1777222776"
+    },
+    {
+      "shopify_pid": "10190523072825",
+      "shopify_title": "בובת ריבורן מאדי 50 ס״מ — סיליקון רך, ציור יד, ורידים נראים",
+      "shopify_handle": "npk-50cm-full-body-maddie-reborn-baby-girl-doll-soft-silicone-lifelike-touch-genesis-painted-with-visible-veins",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [
+        "50cm"
+      ],
+      "shopify_variant_count": 1,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005008275277733.html",
+      "aliexpress_item_id": "1005008275277733",
+      "aliexpress_title": "בובת תינוקת ריבורן מדגם מדלי בגודל 50 ס\\\"מ - סיליקון רך למגע, צבועה בטכניקת ג'נסיס עם ורידים נראים לעין - AliExpress 26",
+      "source_status": "verified",
+      "status_reason": "5 shared image hashes. Size 20inch (~50cm) matches Shopify Maddie 50 ס\"מ.",
+      "evidence": {
+        "shared_image_hashes": [
+          "a009b955916f4b158f9e37bff668080c",
+          "abaaf3c08c584e06ba436962d4777e8f",
+          "cd059903205c47768c768bca7e20d614",
+          "de905877c0c94243bf68dbff8fa05c0f",
+          "fc58fd30d72d488fb9ade8ffd1f2a18d"
+        ],
+        "shared_image_hashes_count": 5,
+        "screenshots": [
+          "10190523072825-1005008275277733-top.png",
+          "10190523072825-1005008275277733-mid.png",
+          "10190523072825-1005008275277733-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "הוא חשמלי": "לא",
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "Warning": "keep away from fire",
+          "מגדר": "Girls",
+          "ממדים": "20inch",
+          "BJD / תכונה SD": "בובה"
+        },
+        "from_round1": false,
+        "secondary": null
+      },
+      "specs": {
+        "size": "20inch",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "Girls",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "full silicone",
+          "hebrew": "סיליקון מלא",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        }
+      ],
+      "safe_for_product_page": true,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sa009b955916f4b158f9e37bff668080cF.webp?v=1777222777"
+    },
+    {
+      "shopify_pid": "10190523007289",
+      "shopify_title": "בובת ריבורן פסקל 33 ס״מ — סיליקון מלא, פה פתוח, ציור יד",
+      "shopify_handle": "open-mouth-33cm-pascale-full-body-silicone-reborn-girl-doll-with-painted-skin-washable-soft-touch-reborn-girl-silicone-doll",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [],
+      "shopify_variant_count": 1,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005008672285275.html",
+      "aliexpress_item_id": "1005008672285275",
+      "aliexpress_title": "בובת ריבורן סיליקון בגודל 33 ס\\\"מ, פסקל, עם פה פתוח, עור צבוע, רכה למגע, ניתנת לשטיפה. - AliExpress 26",
+      "source_status": "verified",
+      "status_reason": "6 shared image hashes. Size 13Inch (~33cm) matches Shopify Pascale 33 ס\"מ.",
+      "evidence": {
+        "shared_image_hashes": [
+          "10d206127fb7463b80070f420756c820",
+          "2207864ba544461a8abcc49d4cc0cf9e",
+          "2d33785722f543eda3dd61beedd27de2",
+          "5af9add5bf574d3e8fb30a86315e88df",
+          "e7c4d7c01e4d471386587f4b31f31625",
+          "f87071aea1cb4f5aa1c3db46cf28cf0f"
+        ],
+        "shared_image_hashes_count": 6,
+        "screenshots": [
+          "10190523007289-1005008672285275-top.png",
+          "10190523007289-1005008672285275-mid.png",
+          "10190523007289-1005008672285275-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "מגדר": "Girls",
+          "ממדים": "13Inch",
+          "BJD / תכונה SD": "בובה",
+          "מצב": "פריטים במלאי",
+          "תכונות": "SOFT"
+        },
+        "from_round1": false,
+        "secondary": null
+      },
+      "specs": {
+        "size": "13Inch",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "Girls",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "full silicone",
+          "hebrew": "סיליקון מלא",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        }
+      ],
+      "safe_for_product_page": true,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S2d33785722f543eda3dd61beedd27de22.webp?v=1777222776"
+    },
+    {
+      "shopify_pid": "10190522777913",
+      "shopify_title": "בובת ריבורן מדו 46 ס״מ — ציור Genesis רב-שכבתי, עור 3D",
+      "shopify_handle": "npk-46cm-meadow-reborn-baby-doll-soft-touch-3d-skin-hand-painted-multiple-layers-genesis-paint-high-quality-art-doll",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [
+        "45cm"
+      ],
+      "shopify_variant_count": 1,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005007170009461.html",
+      "aliexpress_item_id": "1005007170009461",
+      "aliexpress_title": "בובת תינוק חדשה בגיל הרך עם עיניים כחולות פתוחות, שיער רך שורש ביד, גוון עור 3D, ורידים נראים, מתנה צעצוע - AliExpress 26",
+      "source_status": "needs_manual_review",
+      "status_reason": "URL shared with PID 10190522810681. 0 shared image hashes on this Ali page (it's the Felicia listing, NOT Meadow). Eyal must provide a separate URL for Meadow.",
+      "evidence": {
+        "shared_image_hashes": [
+          "0c1d04bdf0624b9b9b07e19184cc6e02",
+          "27428cd84a294c35a01c70db38340fe8",
+          "5017b6025e904212b23883dc398dfcbb",
+          "97a873e43f8f48e48d4c94f3a3930773"
+        ],
+        "shared_image_hashes_count": 4,
+        "screenshots": [
+          "10190522810681-1005007170009461-top.png",
+          "10190522810681-1005007170009461-mid.png",
+          "10190522810681-1005007170009461-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "מגדר": "יוניסקס",
+          "ממדים": "18-19 inches",
+          "BJD / תכונה SD": "בובה",
+          "מצב": "פריטים במלאי",
+          "Mfg סדרת מספר": "מוצר כוכב"
+        },
+        "from_round1": false,
+        "secondary": null
+      },
+      "specs": {
+        "size": "18-19 inches",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "יוניסקס",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [
+        {
+          "field": "model",
+          "shopify": "Meadow 46cm",
+          "ali": "Felicia 18-19in",
+          "note": "Wrong listing — Meadow not represented"
+        }
+      ],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "full silicone",
+          "hebrew": "סיליקון מלא",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        }
+      ],
+      "safe_for_product_page": false,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S31b4d8be21f14c43a30b346d099f3a589.webp?v=1777222774"
+    },
+    {
+      "shopify_pid": "10190522810681",
+      "shopify_title": "בובת ריבורן פליסיה 46 ס״מ — עיניים כחולות, שיער שתול, עור 3D",
+      "shopify_handle": "46cm-finished-reborn-baby-doll-felicia-newborn-open-blue-eyes-doll-soft-hand-rooted-hair-3d-skin-tone-visible-veins-gift-toy",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [],
+      "shopify_variant_count": 1,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005007170009461.html",
+      "aliexpress_item_id": "1005007170009461",
+      "aliexpress_title": "בובת תינוק חדשה בגיל הרך עם עיניים כחולות פתוחות, שיער רך שורש ביד, גוון עור 3D, ורידים נראים, מתנה צעצוע - AliExpress 26",
+      "source_status": "verified",
+      "status_reason": "4 shared image hashes. Ali title is Felicia, size 18-19 inches (~46cm) matches Shopify Felicia 46 ס\"מ.",
+      "evidence": {
+        "shared_image_hashes": [
+          "0c1d04bdf0624b9b9b07e19184cc6e02",
+          "27428cd84a294c35a01c70db38340fe8",
+          "5017b6025e904212b23883dc398dfcbb",
+          "97a873e43f8f48e48d4c94f3a3930773"
+        ],
+        "shared_image_hashes_count": 4,
+        "screenshots": [
+          "10190522810681-1005007170009461-top.png",
+          "10190522810681-1005007170009461-mid.png",
+          "10190522810681-1005007170009461-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "מגדר": "יוניסקס",
+          "ממדים": "18-19 inches",
+          "BJD / תכונה SD": "בובה",
+          "מצב": "פריטים במלאי",
+          "Mfg סדרת מספר": "מוצר כוכב"
+        },
+        "from_round1": false,
+        "secondary": null
+      },
+      "specs": {
+        "size": "18-19 inches",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "יוניסקס",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "full silicone",
+          "hebrew": "סיליקון מלא",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        }
+      ],
+      "safe_for_product_page": true,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S0c1d04bdf0624b9b9b07e19184cc6e02F.webp?v=1777222774"
+    },
+    {
+      "shopify_pid": "9690247627065",
+      "shopify_title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "shopify_handle": "npk-19inch-already-painted-finished-reborn-baby-doll-levi-awake-newborn-baby-size-3d-skin-visible-veins-collectible-art-doll",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [
+        "49cm"
+      ],
+      "shopify_variant_count": 2,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005009088718947.html",
+      "aliexpress_item_id": "1005009088718947",
+      "aliexpress_title": "בובת תינוק חדשה בגודל 19 אינץ' עם ציורים מוגמרים של לווי אוואק, גודל תינוק חדש, עור תלת-מימדי עם ורידים נראים, בובת אמנות אספנות - AliExpress 26",
+      "source_status": "likely",
+      "status_reason": "0 shared image hashes (Shopify likely re-cropped images), but Ali title contains 'לווי' (Levi) and ממדים=19inch matches Shopify SKU 49cm.",
+      "evidence": {
+        "shared_image_hashes": [],
+        "shared_image_hashes_count": 0,
+        "screenshots": [
+          "9690247627065-1005009088718947-top.png",
+          "9690247627065-1005009088718947-mid.png",
+          "9690247627065-1005009088718947-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "מגדר": "יוניסקס",
+          "ממדים": "19inch",
+          "BJD / תכונה SD": "בובה",
+          "מצב": "פריטים במלאי",
+          "Mfg סדרת מספר": "Fantasy"
+        },
+        "from_round1": false,
+        "secondary": null
+      },
+      "specs": {
+        "size": "19inch",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "יוניסקס",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "full silicone",
+          "hebrew": "סיליקון מלא",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        }
+      ],
+      "safe_for_product_page": false,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S82026b7c9c3e4423be9717dc12bdb1b2f.webp?v=1730201455"
+    },
+    {
+      "shopify_pid": "9690182451513",
+      "shopify_title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "shopify_handle": "50cm-realistic-finished-bebe-reborn-silicone-vinyl-cloth-body-doll-loulou-handmade-toy-for-girls-christmas-gift",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [],
+      "shopify_variant_count": 1,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005005188539088.html",
+      "aliexpress_item_id": "1005005188539088",
+      "aliexpress_title": "MRB 50CM ריאליסטי גמור בבה ריבורן סיליקון בד ויניל גוף בובה LouLou צעצוע ידני עבור ילדות מתנת חג המולד - AliExpress 26",
+      "source_status": "verified",
+      "status_reason": "Primary: 4 shared image hashes (MRB store). Secondary listing 1005007525021217 also matches with 2 shared hashes — same doll, two sellers.",
+      "evidence": {
+        "shared_image_hashes": [
+          "2b9c3c96886f478f82588ec7dffbc1df",
+          "6efec891418c4d6d9e119e34bf9e2c96",
+          "a5fcd87605d64d6d926c9d76962f14cd",
+          "d63426e85d8543f9954ad3b727c758e5"
+        ],
+        "shared_image_hashes_count": 4,
+        "screenshots": [
+          "9690182451513-1005005188539088-top.png",
+          "9690182451513-1005005188539088-mid.png",
+          "9690182451513-1005005188539088-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "מגדר": "לשני המינים",
+          "ממדים": "19-20 Inches (44-50cm)",
+          "BJD / תכונה SD": "בובה",
+          "מצב": "פריטים במלאי",
+          "Mfg סדרת מספר": "סגנון חיים"
+        },
+        "from_round1": false,
+        "secondary": {
+          "url": "https://he.aliexpress.com/item/1005007525021217.html",
+          "item_id": "1005007525021217",
+          "ali_title": "50CM LouLou Reborn ריאליסטי גימור Bebe Reborn סיליקון בד ויניל גוף בובה ידנית צעצוע לילדות מתנת חג המולד - AliExpress 26",
+          "shared_hashes": [
+            "6efec891418c4d6d9e119e34bf9e2c96",
+            "d63426e85d8543f9954ad3b727c758e5"
+          ],
+          "screenshots": [
+            "9690182451513-1005007525021217-top.png",
+            "9690182451513-1005007525021217-mid.png",
+            "9690182451513-1005007525021217-spec.png"
+          ],
+          "spec_pairs": {
+            "הוא חשמלי": "לא",
+            "כימיקל מודאג": "אֶבְיוֹן",
+            "BJD / תכונה SD": "בובה",
+            "Mfg סדרת מספר": "סגנון חיים",
+            "מצב": "פריטים במלאי",
+            "ממדים": "19-20 Inches"
+          }
+        }
+      },
+      "specs": {
+        "size": "19-20 Inches (44-50cm)",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "לשני המינים",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": true
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "waterproof",
+          "hebrew": "עמיד למים",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        }
+      ],
+      "safe_for_product_page": true,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sd63426e85d8543f9954ad3b727c758e5A.webp?v=1730196953"
+    },
+    {
+      "shopify_pid": "9690182418745",
+      "shopify_title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "shopify_handle": "bzdoll-realistic-60cm-24inch-soft-silicone-reborn-baby-doll-with-3d-painting-skin-and-vascular-vein-handmade-girl-birthday-gift",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [
+        "60cm"
+      ],
+      "shopify_variant_count": 1,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005006863845547.html",
+      "aliexpress_item_id": "1005006863845547",
+      "aliexpress_title": "UNKNOWN",
+      "source_status": "verified",
+      "status_reason": "Image-search URL doesn't resolve to a single item. Carrying forward previous match 1005006863845547 (5 shared image hashes from round 1). Need fresh manual link to refresh specs.",
+      "evidence": {
+        "shared_image_hashes": [],
+        "shared_image_hashes_count": 0,
+        "screenshots": [],
+        "ali_spec_pairs_raw": {},
+        "from_round1": true,
+        "secondary": null
+      },
+      "specs": {
+        "size": "UNKNOWN",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "UNKNOWN",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [],
+      "unknown_fields": [
+        "size",
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "gender",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": false,
+          "present_in_shopify_handle": true
+        }
+      ],
+      "safe_for_product_page": true,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Gemini_Generated_Image_gxqargxqargxqarg.png?v=1776976004"
+    },
+    {
+      "shopify_pid": "9689589383481",
+      "shopify_title": "בובת ריבורן אמיתית – מגע מציאותי שמפתח רגישות ואהבה אצל ילדים מבית בייבי מניה",
+      "shopify_handle": "19-inches-levi-reborn-baby-realistic-vinyl-body-alive-lol-bebe-newborn-finished-hair-painted-doll-children-girls-gift-dolls",
+      "shopify_status": "active",
+      "shopify_sku_sizes": [
+        "49cm"
+      ],
+      "shopify_variant_count": 2,
+      "aliexpress_url": "https://he.aliexpress.com/item/1005005317212200.html",
+      "aliexpress_item_id": "1005005317212200",
+      "aliexpress_title": "בובת תינוק Reborn Levi מעורבת סיליקון ויניל או בובת בד גמורה 3D מצויירת עור ורידים אמנות אוסף בובה מתנה לבנות - AliExpress 26",
+      "source_status": "likely",
+      "status_reason": "0 shared image hashes in this round (round 1 had 1 shared). Ali title 'Reborn Levi' matches. Ali ממדים=17-18 inches (~43-46cm). Shopify SKU=49cm. SIZE MISMATCH.",
+      "evidence": {
+        "shared_image_hashes": [],
+        "shared_image_hashes_count": 0,
+        "screenshots": [
+          "9689589383481-1005005317212200-top.png",
+          "9689589383481-1005005317212200-mid.png",
+          "9689589383481-1005005317212200-spec.png"
+        ],
+        "ali_spec_pairs_raw": {
+          "כימיקל מודאג": "אֶבְיוֹן",
+          "מגדר": "יוניסקס",
+          "ממדים": "17-18 inches",
+          "BJD / תכונה SD": "בובה",
+          "מצב": "פריטים במלאי",
+          "Mfg סדרת מספר": "מוצר כוכב"
+        },
+        "from_round1": false,
+        "secondary": null
+      },
+      "specs": {
+        "size": "17-18 inches",
+        "weight": "UNKNOWN",
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender": "יוניסקס",
+        "clothes_included": "UNKNOWN",
+        "accessories": [],
+        "washable": "UNKNOWN",
+        "bath_safe": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "certificates": "UNKNOWN"
+      },
+      "mismatches": [
+        {
+          "field": "size",
+          "shopify": "49cm (SKU)",
+          "ali": "17-18 inches (43-46cm)",
+          "note": "Shopify SKU=49cm but Ali source page = 17-18 inches (43-46cm). MISMATCH — Eyal must decide actual shipped size."
+        }
+      ],
+      "unknown_fields": [
+        "weight",
+        "body_material",
+        "body_type",
+        "hair_type",
+        "eye_type",
+        "clothes_included",
+        "accessories",
+        "washable",
+        "bath_safe",
+        "age_recommendation",
+        "certificates"
+      ],
+      "safety_flags_present": [
+        {
+          "term": "handmade",
+          "hebrew": "עבודת יד",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "full silicone",
+          "hebrew": "סיליקון מלא",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        },
+        {
+          "term": "ce",
+          "hebrew": "CE",
+          "present_in_aliexpress": true,
+          "present_in_shopify_handle": false
+        }
+      ],
+      "safe_for_product_page": false,
+      "shopify_main_image": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S329bea2c76fc4936832471b155813584r.webp?v=1765229503"
+    }
+  ]
+}

@@ -280,8 +280,12 @@
 - [x] Hero images מחוברות ל-`output/pages/reborn-landing/reborn-landing-preview.html` via `<picture>` / `<source>` — local preview only. Shopify לא נגע.
 - [x] S5 Lifestyle Image (AI) — אושרה ויזואלית (2026-04-27) — ילדה מחבקת בובת ריבורן עם אוזני ארנב, אינטריאור קרם.
 - [x] S5 Lifestyle Image — מחוברת לפריוויו: `assets/reborn/landing/reborn-s5-lifestyle.webp` (800×1000 WebP, local only, 2026-04-27).
-- [ ] S5 Lifestyle Video — ⛔ POSTPONED — Veo quota 0/0 גם לאחר תיקון כרטיס אשראי. S5 ממשיך כתמונה בלבד. לא חוסם המשך. סקריפט מוכן ב-`_reborn_s5_video_test.py` (לא committed).
-- [ ] **FOLLOW-UP: לחקור כיצד לפתוח Veo quota ב-Google AI Studio** — Gemini/Imagen תקינים, Veo בלבד חסום. ייתכן שדורש Vertex AI / plan שונה / הפעלה ידנית בקונסול.
+- [ ] S5 Lifestyle Video — ⛔ POSTPONED — Veo quota 0/0. S5 ממשיך עם תמונה בלבד. לא חוסם.
+- [x] S5b VIDEO — reborn-emotional-girl.mp4 (8.3 MB) — הוחלפה תמונת S5b, autoplay muted loop, 9/16 (2026-05-18).
+- [x] S6 — 5 UGC videos connected (2026-05-18): shira/ירושלים · hadas/חיפה · miri/ירושלים · naama/גבעתיים · carmit/נהריה
+- [x] 7 MP4 הועתקו ל-`assets/reborn/landing/videos/` עם שמות סמנטיים (2026-05-18)
+- [ ] S7 — שמות עבריים ל-6 הבובות + לינקים לדפי מוצר (פתוח)
+- [ ] S9 — CTA destination (פתוח)
 - [x] **כלל card ratio נקבע (2026-04-27):** תמונות עתידיות לכרטיסים (S4/S7 ועוד) = 1:1, ברירת מחדל 900×900 WebP. לא חל על Hero/S3/S5 שכבר אושרו.
 - [x] S4 Fabric Body Image — `assets/reborn/landing/reborn-s4-fabric-body.webp` — 900×900 WebP — מחובר לפריוויו (2026-04-27).
 - [x] S4 Silicone Body Image — `assets/reborn/landing/reborn-s4-silicone-body.webp` — 900×900 WebP — מחובר לפריוויו (2026-04-27).
@@ -292,6 +296,41 @@
 - [ ] לזהות את סקשן יצירת הקשר הקיים בביגוד ולהתאים לריבורן.
 - [ ] להכין spec לסקשן Reborn Video Review Cards לפני כתיבת קוד.
 - [ ] לקבל אישור אייל על spec לפני בניית הסקשן.
+
+---
+
+## SHOPIFY OPTIMIZATION — משימות המשך (נוספו 2026-05-18)
+
+### משימה 1 — שמות SEO + שמות עבריים לבובות
+
+**מטרה:** כל בובת ריבורן תקבל שם מוצר SEO-ידידותי + שם עברי חמים לילדים (כמו "לוי").
+
+- [ ] לרכז את 6 שמות המוצרים הנוכחיים בשופיפיי
+- [ ] לבחור שם עברי ישראלי לכל בובה (ילד/ילדה לפי הסוג)
+- [ ] לנסח product title חדש לכל בובה בפורמט SEO:
+      לדוגמה: `לוי — בובת ריבורן סיליקון 48 ס"מ | BabyMania`
+- [ ] לוודא שהשם מכיל: סוג גוף (סיליקון/בד) + גודל + מילת מפתח "ריבורן"
+- [ ] לעדכן handle (URL slug) בהתאם לשם החדש
+- [ ] **T3 — לא לבצע ללא אישור אייל**
+
+---
+
+### משימה 2 — תגיות + מטא פילדס לכל מוצר ריבורן
+
+**מטרה:** כל 6 בובות ריבורן יקבלו תגיות SEO ושדות מטא מלאים.
+
+**תגיות (Shopify tags) — לכל בובה:**
+- [ ] תגיות קטגוריה: `ריבורן`, `בובת-ריבורן`, `מתנה-לילדה`, `בובה-ריאליסטית`
+- [ ] תגיות לפי סוג: `גוף-בד` / `גוף-סיליקון` / `סיליקון-מלא` לפי הבובה
+- [ ] תגיות גיל: `גיל-3-עד-10`, `מתנה-לגיל-5`, `מתנה-לגיל-8` (לפי מיצוב הבובה)
+- [ ] תגיות מחיר/קהל: `פרימיום`, `מתנה-מיוחדת`
+
+**מטא פילדס (Shopify metafields) — לכל בובה:**
+- [ ] `global.title_tag` — כותרת SEO (עד 60 תווים)
+- [ ] `global.description_tag` — תיאור SEO (עד 160 תווים)
+- [ ] `baby_mania.geo_who_for` — למי הבובה מתאימה
+- [ ] `baby_mania.geo_use_case` — מתי קונים אותה (מתנה / אספנות / משחק יומיומי)
+- [ ] **T3 — לא לבצע ללא אישור אייל**
 
 ---
 

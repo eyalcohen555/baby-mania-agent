@@ -1,0 +1,682 @@
+{
+  "products": [
+    {
+      "id": 9689589383481,
+      "title": "בובת ריבורן אמיתית – מגע מציאותי שמפתח רגישות ואהבה אצל ילדים מבית בייבי מניה",
+      "handle": "19-inches-levi-reborn-baby-realistic-vinyl-body-alive-lol-bebe-newborn-finished-hair-painted-doll-children-girls-gift-dolls",
+      "vendor": "BABY MANIA",
+      "product_type": "",
+      "tags": "",
+      "status": "active",
+      "variants": [
+        {
+          "id": 50088038007097,
+          "sku": "14:29#Cloth body;977:4#49cm",
+          "title": "עשוי בד",
+          "option1": "עשוי בד",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 135
+        },
+        {
+          "id": 50088038039865,
+          "sku": "14:193#Silicone body;977:4#49cm",
+          "title": "סילקון",
+          "option1": "סילקון",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 708
+        }
+      ],
+      "options": [
+        {
+          "id": 12172247859513,
+          "product_id": 9689589383481,
+          "name": "חומר",
+          "position": 1,
+          "values": [
+            "עשוי בד",
+            "סילקון"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "id": 48924790030649,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S329bea2c76fc4936832471b155813584r.webp?v=1765229503",
+          "alt": "50088038007097|50088038039865",
+          "position": 1,
+          "width": 800,
+          "height": 800
+        },
+        {
+          "id": 48924790063417,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S4140216aaec64dd199d2d2b9af278766q.webp?v=1765229503",
+          "alt": null,
+          "position": 2,
+          "width": 800,
+          "height": 800
+        },
+        {
+          "id": 48924790128953,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S22ee37aef9a04eb09ae709259f2c07819.webp?v=1765229503",
+          "alt": null,
+          "position": 3,
+          "width": 1278,
+          "height": 1704
+        },
+        {
+          "id": 48924790096185,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S1712ed0ca15141759b7a7cf4779c9aa5o.webp?v=1765229503",
+          "alt": null,
+          "position": 4,
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "image_main": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S329bea2c76fc4936832471b155813584r.webp?v=1765229503"
+    },
+    {
+      "id": 9690182385977,
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "bzdoll-55-cm-22-inch-reborn-dolls-realistic-full-silicone-baby-bebe-newborn-girl-doll-princess-toddler-toy-gift",
+      "vendor": "BABY MANIA",
+      "product_type": "",
+      "tags": "",
+      "status": "active",
+      "variants": [
+        {
+          "id": 50090644898105,
+          "sku": "14:350852",
+          "title": "כתום",
+          "option1": "כתום",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 43
+        },
+        {
+          "id": 50090644963641,
+          "sku": "14:350850",
+          "title": "זהב",
+          "option1": "זהב",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 14
+        },
+        {
+          "id": 50090644996409,
+          "sku": "14:365458",
+          "title": "חום",
+          "option1": "חום",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 46
+        },
+        {
+          "id": 50090645029177,
+          "sku": "14:496",
+          "title": "סגול",
+          "option1": "סגול",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 50
+        },
+        {
+          "id": 50090645061945,
+          "sku": "14:350853",
+          "title": "כסף",
+          "option1": "כסף",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 0
+        },
+        {
+          "id": 50090645094713,
+          "sku": "14:193",
+          "title": "שחור",
+          "option1": "שחור",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 11
+        },
+        {
+          "id": 50090645127481,
+          "sku": "14:1052",
+          "title": "ןרוד",
+          "option1": "ןרוד",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 38
+        },
+        {
+          "id": 50090645160249,
+          "sku": "14:10",
+          "title": "אדום",
+          "option1": "אדום",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 21
+        },
+        {
+          "id": 50090645193017,
+          "sku": "14:29",
+          "title": "לבן",
+          "option1": "לבן",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 189
+        },
+        {
+          "id": 50090645225785,
+          "sku": "14:173",
+          "title": "כחול",
+          "option1": "כחול",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 11
+        },
+        {
+          "id": 50090645258553,
+          "sku": "14:175",
+          "title": "ירוק",
+          "option1": "ירוק",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 0
+        },
+        {
+          "id": 50090645291321,
+          "sku": "14:366",
+          "title": "צהוב",
+          "option1": "צהוב",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 0
+        },
+        {
+          "id": 50090645324089,
+          "sku": "14:691",
+          "title": "אפור",
+          "option1": "אפור",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 3
+        }
+      ],
+      "options": [
+        {
+          "id": 12173008961849,
+          "product_id": 9690182385977,
+          "name": "צבע",
+          "position": 1,
+          "values": [
+            "כתום",
+            "זהב",
+            "חום",
+            "סגול",
+            "כסף",
+            "שחור",
+            "ןרוד",
+            "אדום",
+            "לבן",
+            "כחול",
+            "ירוק",
+            "צהוב",
+            "אפור"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "id": 48933043765561,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S15487067023948ca8ff9f2cc97f82e2ej.webp?v=1730196949",
+          "alt": "50090645193017",
+          "position": 1,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933043863865,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S5d7fe30c4a824c1ab91b6da87d1cc324W.webp?v=1730196949",
+          "alt": null,
+          "position": 2,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933043732793,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S99d5019759394925b7c81461031b864dI.webp?v=1730196949",
+          "alt": null,
+          "position": 3,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933043831097,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S67d2407edcc3473e9cc9626a4a9593d82.webp?v=1730196949",
+          "alt": null,
+          "position": 4,
+          "width": 1280,
+          "height": 1707
+        },
+        {
+          "id": 48933043667257,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S96033069a9114dd68ffada061f90b2e7p.webp?v=1730196949",
+          "alt": "50090644898105",
+          "position": 5,
+          "width": 1556,
+          "height": 1556
+        },
+        {
+          "id": 48933043962169,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S4fe45b7a21d54ecc87314bf2a7a63a8eZ.webp?v=1730196949",
+          "alt": "50090644963641",
+          "position": 6,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933043896633,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S0fdba5b416c941e6b4c6e10356489eaeD.webp?v=1730196949",
+          "alt": "50090644996409",
+          "position": 7,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933043470649,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S62991e20a0d14a98b0208c2ae2fbbf8d2.webp?v=1730196948",
+          "alt": "50090645029177",
+          "position": 8,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 48933043798329,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sd597ef50e29d4518a119afd41ed6e385o.webp?v=1730196949",
+          "alt": "50090645061945",
+          "position": 9,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933043929401,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sc88dd292be054cd6bdf9a07b7ba81a37V.webp?v=1730196949",
+          "alt": "50090645094713",
+          "position": 10,
+          "width": 3024,
+          "height": 4032
+        },
+        {
+          "id": 48933044289849,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sd17bffc7c8a1482d910bd408fc6de67e6.webp?v=1730196951",
+          "alt": "50090645127481",
+          "position": 11,
+          "width": 3024,
+          "height": 4032
+        },
+        {
+          "id": 48933044126009,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S5d9ad760b7ac47a3acaca5eb6d2fc807E.webp?v=1730196951",
+          "alt": "50090645160249",
+          "position": 12,
+          "width": 936,
+          "height": 936
+        },
+        {
+          "id": 48933044355385,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sbd60cee50ccf4cffa1ec2c888a157139u.webp?v=1730196951",
+          "alt": "50090645225785",
+          "position": 13,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933044060473,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S6d7567bd9ccb4a1cb07aa8668a52f419i.webp?v=1730196951",
+          "alt": "50090645258553",
+          "position": 14,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933044322617,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S3763c0092b274bc9a5d5fe980e8b396cM.webp?v=1730196951",
+          "alt": "50090645291321",
+          "position": 15,
+          "width": 936,
+          "height": 1248
+        },
+        {
+          "id": 48933044027705,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S18cfa14d197349029835a0a38a386c9dG.webp?v=1730196951",
+          "alt": "50090645324089",
+          "position": 16,
+          "width": 936,
+          "height": 1248
+        }
+      ],
+      "image_main": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S15487067023948ca8ff9f2cc97f82e2ej.webp?v=1730196949"
+    },
+    {
+      "id": 9690182418745,
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "bzdoll-realistic-60cm-24inch-soft-silicone-reborn-baby-doll-with-3d-painting-skin-and-vascular-vein-handmade-girl-birthday-gift",
+      "vendor": "BABY MANIA",
+      "product_type": "",
+      "tags": "",
+      "status": "active",
+      "variants": [
+        {
+          "id": 50090645356857,
+          "sku": "977:200007481#60cm",
+          "title": "60 cm",
+          "option1": "60 cm",
+          "option2": null,
+          "option3": null,
+          "price": "499.00",
+          "inventory_quantity": 655
+        }
+      ],
+      "options": [
+        {
+          "id": 12173008994617,
+          "product_id": 9690182418745,
+          "name": "גודל",
+          "position": 1,
+          "values": [
+            "60 cm"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "id": 53454057210169,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Gemini_Generated_Image_gxqargxqargxqarg.png?v=1776976004",
+          "alt": null,
+          "position": 1,
+          "width": 965,
+          "height": 965
+        },
+        {
+          "id": 48933043306809,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S75084bc610cf44778a507ddb1dc68a47r.webp?v=1730196947",
+          "alt": "50090645356857",
+          "position": 2,
+          "width": 992,
+          "height": 992
+        },
+        {
+          "id": 48933042946361,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sc65457105edf484ab6d358f635cf3d31V.webp?v=1730196946",
+          "alt": null,
+          "position": 3,
+          "width": 1200,
+          "height": 1481
+        },
+        {
+          "id": 48933043011897,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sc6fbd0d9efe74ba29c3dea58141e6deb4.webp?v=1730196946",
+          "alt": null,
+          "position": 4,
+          "width": 1200,
+          "height": 1456
+        },
+        {
+          "id": 48933043241273,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S0918956f3e3c4557bb132333f6cf74eaO.webp?v=1730196947",
+          "alt": null,
+          "position": 5,
+          "width": 1200,
+          "height": 1503
+        },
+        {
+          "id": 48933043077433,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S47a0caa2c3b1447bbbf1f8969e22586a3.webp?v=1730196946",
+          "alt": null,
+          "position": 6,
+          "width": 1200,
+          "height": 992
+        }
+      ],
+      "image_main": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Gemini_Generated_Image_gxqargxqargxqarg.png?v=1776976004"
+    },
+    {
+      "id": 9690182451513,
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "50cm-realistic-finished-bebe-reborn-silicone-vinyl-cloth-body-doll-loulou-handmade-toy-for-girls-christmas-gift",
+      "vendor": "BABY MANIA",
+      "product_type": "",
+      "tags": "",
+      "status": "active",
+      "variants": [
+        {
+          "id": 50090645389625,
+          "sku": "14:1052#With Cloth Body",
+          "title": "With Cloth Body",
+          "option1": "With Cloth Body",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 2172
+        }
+      ],
+      "options": [
+        {
+          "id": 12173009027385,
+          "product_id": 9690182451513,
+          "name": "Color",
+          "position": 1,
+          "values": [
+            "With Cloth Body"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "id": 48933044519225,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sd63426e85d8543f9954ad3b727c758e5A.webp?v=1730196953",
+          "alt": null,
+          "position": 1,
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "id": 48933044486457,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sa5fcd87605d64d6d926c9d76962f14cdL.webp?v=1730196953",
+          "alt": "50090645389625",
+          "position": 2,
+          "width": 1001,
+          "height": 1001
+        },
+        {
+          "id": 48933044420921,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S6efec891418c4d6d9e119e34bf9e2c96n.webp?v=1730196953",
+          "alt": null,
+          "position": 3,
+          "width": 1001,
+          "height": 1001
+        },
+        {
+          "id": 48933044453689,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S2b9c3c96886f478f82588ec7dffbc1dfX.webp?v=1730196953",
+          "alt": null,
+          "position": 4,
+          "width": 640,
+          "height": 800
+        }
+      ],
+      "image_main": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sd63426e85d8543f9954ad3b727c758e5A.webp?v=1730196953"
+    },
+    {
+      "id": 9690247627065,
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "npk-19inch-already-painted-finished-reborn-baby-doll-levi-awake-newborn-baby-size-3d-skin-visible-veins-collectible-art-doll",
+      "vendor": "BABY MANIA",
+      "product_type": "",
+      "tags": "",
+      "status": "active",
+      "variants": [
+        {
+          "id": 50090783473977,
+          "sku": "14:193#brown eyes;977:4#49cm",
+          "title": "brown eyes / 49cm",
+          "option1": "brown eyes",
+          "option2": "49cm",
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 0
+        },
+        {
+          "id": 50090783506745,
+          "sku": "14:29#blue eyes;977:4#49cm",
+          "title": "blue eyes / 49cm",
+          "option1": "blue eyes",
+          "option2": "49cm",
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 127
+        }
+      ],
+      "options": [
+        {
+          "id": 12173083935033,
+          "product_id": 9690247627065,
+          "name": "Color",
+          "position": 1,
+          "values": [
+            "brown eyes",
+            "blue eyes"
+          ]
+        },
+        {
+          "id": 12173083967801,
+          "product_id": 9690247627065,
+          "name": "Size",
+          "position": 2,
+          "values": [
+            "49cm"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "id": 48933467029817,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S82026b7c9c3e4423be9717dc12bdb1b2f.webp?v=1730201455",
+          "alt": "50090783473977|50090783506745",
+          "position": 1,
+          "width": 794,
+          "height": 1059
+        },
+        {
+          "id": 48933467062585,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sa65cabe3ba2c499a990eb2c49cd5c090p.webp?v=1730201455",
+          "alt": null,
+          "position": 2,
+          "width": 794,
+          "height": 1059
+        },
+        {
+          "id": 48933466997049,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Sf461af07570a436aa35fcea274ce8ad2t.webp?v=1730201455",
+          "alt": null,
+          "position": 3,
+          "width": 794,
+          "height": 1059
+        },
+        {
+          "id": 48933467095353,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S8a21a68aaf01450da506e9ba6565733bl.webp?v=1730201456",
+          "alt": null,
+          "position": 4,
+          "width": 794,
+          "height": 1059
+        }
+      ],
+      "image_main": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S82026b7c9c3e4423be9717dc12bdb1b2f.webp?v=1730201455"
+    },
+    {
+      "id": 9690247659833,
+      "title": "בובת ריבורן אמיתית מבית בייבי מניה",
+      "handle": "50cm-full-vinyl-body-girl-waterproof-reborn-doll-maddie-hand-detailed-painted-with-visible-veins-lifelike-3d-skin-tone-toy-gift",
+      "vendor": "BABY MANIA",
+      "product_type": "",
+      "tags": "",
+      "status": "active",
+      "variants": [
+        {
+          "id": 50090783539513,
+          "sku": "977:200003528#With Blue Eyes",
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "price": "299.00",
+          "inventory_quantity": 233
+        }
+      ],
+      "options": [
+        {
+          "id": 12815978692921,
+          "product_id": 9690247659833,
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "id": 48933466571065,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Saba738e477da4bf38bfa7dff166406d7Y.webp?v=1730201453",
+          "alt": "50090783539513",
+          "position": 1,
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "id": 48933466636601,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S3973592a822341cd9e78a47d4f4ba10cZ.webp?v=1730201453",
+          "alt": null,
+          "position": 2,
+          "width": 1001,
+          "height": 1001
+        },
+        {
+          "id": 48933466603833,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/S16d4d6ccda7243769ff76580026ade4eA.webp?v=1730201453",
+          "alt": null,
+          "position": 3,
+          "width": 1001,
+          "height": 1001
+        },
+        {
+          "id": 48933466669369,
+          "src": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Se3d2f616feb044f48c673ae4285e63b7A.webp?v=1730201453",
+          "alt": null,
+          "position": 4,
+          "width": 1001,
+          "height": 1001
+        }
+      ],
+      "image_main": "https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Saba738e477da4bf38bfa7dff166406d7Y.webp?v=1730201453"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,283 @@
+{
+  "per_product": [
+    {
+      "shopify_pid": 9689589383481,
+      "shopify_handle": "19-inches-levi-reborn-baby-realistic-vinyl-body-alive-lol-bebe-newborn-finished-hair-painted-doll-children-girls-gift-dolls",
+      "shopify_hashes_count": 4,
+      "matched_item": "1005005317212200",
+      "identity_confirmed": false,
+      "shared_hashes": [],
+      "ali_specs": {
+        "raw_spec_pairs_count": 0,
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "size": "UNKNOWN",
+        "weight": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender_option": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "clothes_included": "UNKNOWN",
+        "washable": "UNKNOWN",
+        "brand": "UNKNOWN",
+        "model_number": "UNKNOWN",
+        "ali_title": "UNKNOWN"
+      },
+      "ali_spec_pairs": {},
+      "safety_flags": [
+        "CE"
+      ],
+      "errors": [],
+      "tested_candidates": [
+        {
+          "id": "1005005317212200",
+          "ok": true,
+          "ali_hashes": 65,
+          "shared": 0
+        }
+      ],
+      "note": "tentative — no image-hash match; treat as unverified"
+    },
+    {
+      "shopify_pid": 9690182385977,
+      "shopify_handle": "bzdoll-55-cm-22-inch-reborn-dolls-realistic-full-silicone-baby-bebe-newborn-girl-doll-princess-toddler-toy-gift",
+      "shopify_hashes_count": 16,
+      "matched_item": "1005008494074992",
+      "identity_confirmed": false,
+      "shared_hashes": [],
+      "ali_specs": {
+        "raw_spec_pairs_count": 0,
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "size": "UNKNOWN",
+        "weight": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender_option": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "clothes_included": "UNKNOWN",
+        "washable": "UNKNOWN",
+        "brand": "UNKNOWN",
+        "model_number": "UNKNOWN",
+        "ali_title": "UNKNOWN"
+      },
+      "ali_spec_pairs": {},
+      "safety_flags": [
+        "CE"
+      ],
+      "errors": [],
+      "tested_candidates": [
+        {
+          "id": "1005008494074992",
+          "ok": true,
+          "ali_hashes": 9,
+          "shared": 0
+        },
+        {
+          "id": "1005004836875552",
+          "ok": true,
+          "ali_hashes": 9,
+          "shared": 0
+        },
+        {
+          "id": "1005006916205033",
+          "ok": true,
+          "ali_hashes": 4,
+          "shared": 0
+        },
+        {
+          "id": "32962797746",
+          "ok": true,
+          "ali_hashes": 10,
+          "shared": 0
+        }
+      ],
+      "note": "tentative — no image-hash match; treat as unverified"
+    },
+    {
+      "shopify_pid": 9690182418745,
+      "shopify_handle": "bzdoll-realistic-60cm-24inch-soft-silicone-reborn-baby-doll-with-3d-painting-skin-and-vascular-vein-handmade-girl-birthday-gift",
+      "shopify_hashes_count": 5,
+      "matched_item": "1005006863845547",
+      "identity_confirmed": true,
+      "shared_hashes": [
+        "0918956f3e3c4557bb132333f6cf74ea",
+        "47a0caa2c3b1447bbbf1f8969e22586a",
+        "75084bc610cf44778a507ddb1dc68a47",
+        "c65457105edf484ab6d358f635cf3d31",
+        "c6fbd0d9efe74ba29c3dea58141e6deb"
+      ],
+      "ali_specs": {
+        "raw_spec_pairs_count": 0,
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "size": "UNKNOWN",
+        "weight": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender_option": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "clothes_included": "UNKNOWN",
+        "washable": "UNKNOWN",
+        "brand": "UNKNOWN",
+        "model_number": "UNKNOWN",
+        "ali_title": "UNKNOWN"
+      },
+      "ali_spec_pairs": {},
+      "safety_flags": [
+        "CE"
+      ],
+      "errors": [],
+      "tested_candidates": [
+        {
+          "id": "1005006863845547",
+          "ok": true,
+          "ali_hashes": 9,
+          "shared": 5
+        }
+      ]
+    },
+    {
+      "shopify_pid": 9690182451513,
+      "shopify_handle": "50cm-realistic-finished-bebe-reborn-silicone-vinyl-cloth-body-doll-loulou-handmade-toy-for-girls-christmas-gift",
+      "shopify_hashes_count": 4,
+      "matched_item": "1005005188539088",
+      "identity_confirmed": true,
+      "shared_hashes": [
+        "2b9c3c96886f478f82588ec7dffbc1df",
+        "6efec891418c4d6d9e119e34bf9e2c96",
+        "a5fcd87605d64d6d926c9d76962f14cd",
+        "d63426e85d8543f9954ad3b727c758e5"
+      ],
+      "ali_specs": {
+        "raw_spec_pairs_count": 0,
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "size": "UNKNOWN",
+        "weight": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender_option": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "clothes_included": "UNKNOWN",
+        "washable": "UNKNOWN",
+        "brand": "UNKNOWN",
+        "model_number": "UNKNOWN",
+        "ali_title": "UNKNOWN"
+      },
+      "ali_spec_pairs": {},
+      "safety_flags": [
+        "CE"
+      ],
+      "errors": [],
+      "tested_candidates": [
+        {
+          "id": "1005005188539088",
+          "ok": true,
+          "ali_hashes": 10,
+          "shared": 4
+        }
+      ]
+    },
+    {
+      "shopify_pid": 9690247627065,
+      "shopify_handle": "npk-19inch-already-painted-finished-reborn-baby-doll-levi-awake-newborn-baby-size-3d-skin-visible-veins-collectible-art-doll",
+      "shopify_hashes_count": 4,
+      "matched_item": "1005004447487327",
+      "identity_confirmed": false,
+      "shared_hashes": [],
+      "ali_specs": {
+        "raw_spec_pairs_count": 0,
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "size": "UNKNOWN",
+        "weight": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender_option": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "clothes_included": "UNKNOWN",
+        "washable": "UNKNOWN",
+        "brand": "UNKNOWN",
+        "model_number": "UNKNOWN",
+        "ali_title": "UNKNOWN"
+      },
+      "ali_spec_pairs": {},
+      "safety_flags": [
+        "CE"
+      ],
+      "errors": [],
+      "tested_candidates": [
+        {
+          "id": "1005004447487327",
+          "ok": true,
+          "ali_hashes": 4,
+          "shared": 0
+        },
+        {
+          "id": "1005007123488523",
+          "ok": true,
+          "ali_hashes": 4,
+          "shared": 0
+        }
+      ],
+      "note": "tentative — no image-hash match; treat as unverified"
+    },
+    {
+      "shopify_pid": 9690247659833,
+      "shopify_handle": "50cm-full-vinyl-body-girl-waterproof-reborn-doll-maddie-hand-detailed-painted-with-visible-veins-lifelike-3d-skin-tone-toy-gift",
+      "shopify_hashes_count": 4,
+      "matched_item": "1005007059750853",
+      "identity_confirmed": false,
+      "shared_hashes": [],
+      "ali_specs": {
+        "raw_spec_pairs_count": 0,
+        "body_material": "UNKNOWN",
+        "body_type": "UNKNOWN",
+        "size": "UNKNOWN",
+        "weight": "UNKNOWN",
+        "hair_type": "UNKNOWN",
+        "eye_type": "UNKNOWN",
+        "gender_option": "UNKNOWN",
+        "age_recommendation": "UNKNOWN",
+        "clothes_included": "UNKNOWN",
+        "washable": "UNKNOWN",
+        "brand": "UNKNOWN",
+        "model_number": "UNKNOWN",
+        "ali_title": "UNKNOWN"
+      },
+      "ali_spec_pairs": {},
+      "safety_flags": [
+        "CE"
+      ],
+      "errors": [],
+      "tested_candidates": [
+        {
+          "id": "1005007059750853",
+          "ok": true,
+          "ali_hashes": 10,
+          "shared": 0
+        },
+        {
+          "id": "1005007479852919",
+          "ok": true,
+          "ali_hashes": 10,
+          "shared": 0
+        },
+        {
+          "id": "1005001779108331",
+          "ok": true,
+          "ali_hashes": 4,
+          "shared": 0
+        },
+        {
+          "id": "1005003160035434",
+          "ok": true,
+          "ali_hashes": 4,
+          "shared": 0
+        }
+      ],
+      "note": "tentative — no image-hash match; treat as unverified"
+    }
+  ]
+}

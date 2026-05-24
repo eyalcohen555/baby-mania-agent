@@ -1,0 +1,1608 @@
+{% comment %}
+bm-reborn-product-page.liquid
+Terminal 6 — BabyMania | ריבורן | test only
+DO NOT PUSH TO LIVE — testing template for levi (PID 9689589383481)
+{% endcomment %}
+
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-highest": "#e5e2e1","on-secondary-container": "#666460","on-error": "#ffffff",
+        "secondary-fixed-dim": "#c9c6c1","outline-variant": "#d2c4b7","on-primary-container": "#462e0c",
+        "inverse-on-surface": "#f3f0ef","on-primary-fixed": "#2a1800","on-tertiary-fixed": "#271900",
+        "primary-fixed": "#ffddb6","surface-container": "#f0eded","on-primary": "#ffffff","on-secondary": "#ffffff",
+        "on-tertiary-container": "#452f00","background": "#fcf9f8","surface-variant": "#e5e2e1",
+        "primary-fixed-dim": "#e7c092","error": "#ba1a1a","surface-tint": "#765933","on-background": "#1c1b1b",
+        "on-primary-fixed-variant": "#5c421e","secondary-fixed": "#e6e2dd","tertiary": "#7c5800",
+        "primary-container": "#b8956a","on-error-container": "#93000a","tertiary-fixed": "#ffdea7",
+        "secondary": "#605e5b","surface-dim": "#dcd9d9","on-secondary-fixed-variant": "#484743",
+        "primary": "#765933","on-tertiary": "#ffffff","surface-bright": "#fcf9f8",
+        "on-surface-variant": "#4e453b","inverse-primary": "#e7c092","surface": "#fcf9f8",
+        "error-container": "#ffdad6","on-secondary-fixed": "#1c1c19","surface-container-lowest": "#ffffff",
+        "on-surface": "#1c1b1b","tertiary-container": "#c1943b","inverse-surface": "#313030",
+        "outline": "#80756a","surface-container-high": "#eae7e7","tertiary-fixed-dim": "#f1bf61",
+        "secondary-container": "#e6e2dd","surface-container-low": "#f6f3f2","on-tertiary-fixed-variant": "#5e4200"
+      },
+      borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", "2xl": "1rem", "3xl": "1.5rem", full: "9999px" },
+      spacing: { "section-gap": "6rem", "container-max": "1140px", "stack-md": "1.5rem", "gutter": "2rem", "stack-sm": "0.75rem", "stack-lg": "3rem" },
+      fontFamily: { sans: ["Heebo", "sans-serif"] },
+      fontSize: {
+        "headline-xl-mobile": ["36px", { lineHeight: "1.2", fontWeight: "900" }],
+        "body-md": ["16px", { lineHeight: "1.7", fontWeight: "400" }],
+        "headline-xl": ["56px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "900" }],
+        "headline-lg-mobile": ["28px", { lineHeight: "1.3", fontWeight: "700" }],
+        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+        "label-sm": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "500" }],
+        "headline-lg": ["40px", { lineHeight: "1.2", fontWeight: "700" }],
+        "body-lg": ["20px", { lineHeight: "1.7", fontWeight: "400" }]
+      }
+    }
+  }
+};
+</script>
+
+{% stylesheet %}
+/* ── existing ── */
+body { font-family: 'Heebo', sans-serif; }
+.shadow-soft { box-shadow: 0 10px 40px -10px rgba(184,149,106,0.15); }
+.shadow-hover { box-shadow: 0 20px 40px -10px rgba(184,149,106,0.25); }
+.gradient-overlay { background: linear-gradient(180deg,rgba(252,249,248,0) 0%,rgba(252,249,248,0.9) 100%); }
+.bg-pattern { background-image: radial-gradient(#b8956a 1px,transparent 1px); background-size: 24px 24px; opacity: 0.1; }
+.section-label { font-size: 10px; font-weight: 700; color: rgba(184,149,106,0.5); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 20px; display: flex; align-items: center; gap: 6px; }
+.section-label::before { content:''; display:inline-block; width:16px; height:1px; background:rgba(184,149,106,0.4); }
+
+/* ── custom vars ── */
+:root {
+  --cta:#B8956A; --cta-hover:#9A7B55; --heading:#1A1A1A; --text:#555555;
+  --bg:#FFFFFF; --bg-alt:#FAF6F1;
+  --save-bg:#E8F5E9; --save-text:#2E7D32;
+  --urgency-bg:#FFF8E1; --urgency-text:#E65100;
+  --stars:#D4A54A; --max:1140px; --pad:32px;
+}
+@media(max-width:768px){ :root{ --pad:20px; } }
+
+/* ── shared utilities ── */
+.sc { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+@keyframes shine { 0%{transform:translateX(-150%)} 100%{transform:translateX(250%)} }
+.btn-cta {
+  display:inline-block; background:var(--cta); color:#fff; font-family:'Heebo',sans-serif;
+  font-weight:700; font-size:18px; padding:16px 36px; border-radius:50px; border:none;
+  cursor:pointer; text-decoration:none; transition:background .2s,transform .2s;
+  position:relative; overflow:hidden;
+}
+.btn-cta::after {
+  content:''; position:absolute; top:0; left:-60%; width:40%; height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent);
+  animation:shine 2.4s infinite;
+}
+.btn-cta:hover { background:var(--cta-hover); transform:translateY(-2px); }
+.btn-outline {
+  display:inline-block; background:transparent; color:var(--cta); font-family:'Heebo',sans-serif;
+  font-weight:700; font-size:18px; padding:14px 36px; border-radius:50px;
+  border:2px solid var(--cta); cursor:pointer; text-decoration:none; transition:background .2s,color .2s;
+}
+.btn-outline:hover { background:var(--cta); color:#fff; }
+.sec-lbl {
+  font-size:10px; font-weight:700; color:rgba(184,149,106,0.5); text-transform:uppercase;
+  letter-spacing:0.8px; margin-bottom:20px; display:flex; align-items:center; gap:6px;
+}
+.sec-lbl::before { content:''; display:inline-block; width:16px; height:1px; background:rgba(184,149,106,0.4); }
+.sec-lbl.center { justify-content:center; }
+
+/* ── S1 HERO ── */
+.hero-sec { background:var(--bg); padding:80px 0; }
+.hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+@media(max-width:768px){ .hero-grid{grid-template-columns:1fr;gap:32px;} .hero-img-col{order:-1;} }
+.hero-tag { display:inline-block; background:var(--bg-alt); color:var(--cta); font-size:13px; font-weight:700; padding:6px 16px; border-radius:20px; margin-bottom:14px; }
+.hero-prod-name { font-size:14px; color:var(--cta); font-weight:500; margin-bottom:10px; }
+.hero-h1 { font-size:clamp(26px,3.5vw,42px); font-weight:900; color:var(--heading); line-height:1.25; margin-bottom:18px; }
+.hero-sub { font-size:16px; color:var(--text); line-height:1.75; margin-bottom:22px; }
+.hero-stars { display:flex; align-items:center; gap:8px; flex-direction:row-reverse; justify-content:flex-start; margin-bottom:22px; }
+.stars-ico { color:var(--stars); font-size:20px; letter-spacing:2px; }
+.hero-rating { font-weight:700; font-size:16px; color:var(--heading); }
+.hero-review-count { font-size:14px; color:var(--text); text-decoration:underline; cursor:pointer; }
+.hero-price-row { display:flex; align-items:center; gap:12px; flex-direction:row-reverse; justify-content:flex-start; margin-bottom:6px; }
+.price-now { font-size:34px; font-weight:900; color:var(--heading); }
+.price-old { font-size:20px; color:#aaa; text-decoration:line-through; }
+.price-save { background:var(--save-bg); color:var(--save-text); font-size:13px; font-weight:700; padding:4px 12px; border-radius:20px; }
+.hero-daily { font-size:14px; color:var(--text); margin-bottom:26px; text-align:right; }
+.hero-btns { display:flex; gap:16px; flex-direction:row-reverse; flex-wrap:wrap; margin-bottom:28px; }
+/* ── S1 TRUST BAR ── */
+.hero-trust { display:flex; gap:10px; flex-wrap:wrap; opacity:0; transform:translateY(14px); transition:opacity .55s ease,transform .55s ease; }
+.hero-trust.bm-trust--visible { opacity:1; transform:translateY(0); }
+.hero-trust-item { display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px; flex:1; min-width:0; background:rgba(255,255,255,0.72); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); border:1px solid rgba(139,94,60,0.1); border-radius:14px; padding:12px 8px; box-sizing:border-box; transition:transform .25s ease,box-shadow .25s ease; }
+.hero-trust-item:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(139,94,60,0.1); }
+.hero-trust-icon { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.hero-trust-icon svg { width:19px; height:19px; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.hero-trust-icon--green { background:radial-gradient(circle at 38% 35%,#fff 0%,#E8F5E9 55%,#c8e6c9 100%); box-shadow:0 3px 10px rgba(76,175,80,0.18),inset 0 1px 3px rgba(255,255,255,0.85); }
+.hero-trust-icon--green svg { stroke:#43A047; }
+.hero-trust-icon--blue { background:radial-gradient(circle at 38% 35%,#fff 0%,#E3F2FD 55%,#bbdefb 100%); box-shadow:0 3px 10px rgba(33,150,243,0.18),inset 0 1px 3px rgba(255,255,255,0.85); }
+.hero-trust-icon--blue svg { stroke:#1E88E5; }
+.hero-trust-icon--amber { background:radial-gradient(circle at 38% 35%,#fff 0%,#FFF3E0 55%,#ffe0b2 100%); box-shadow:0 3px 10px rgba(255,152,0,0.18),inset 0 1px 3px rgba(255,255,255,0.85); }
+.hero-trust-icon--amber svg { stroke:#FB8C00; }
+.hero-trust-label { font-size:13px; font-weight:700; color:#1A1A1A; line-height:1.3; }
+.hero-trust-sub { font-size:11px; font-weight:400; color:#9E8272; line-height:1.4; }
+@media(max-width:520px) {
+  .hero-trust { gap:6px; flex-wrap:nowrap; }
+  .hero-trust-item { padding:9px 6px; gap:5px; }
+  .hero-trust-icon { width:38px; height:38px; }
+  .hero-trust-icon svg { width:16px; height:16px; }
+  .hero-trust-label { font-size:11.5px; }
+  .hero-trust-sub { display:none; }
+}
+.hero-img-ph { width:100%; aspect-ratio:4/5; background:#F5EFE8; border:2px dashed rgba(184,149,106,0.3); border-radius:32px; display:flex; align-items:center; justify-content:center; color:rgba(184,149,106,0.6); font-size:14px; text-align:center; padding:20px; line-height:1.6; }
+.hero-img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:32px; display:block; }
+
+/* ── S2 BUNDLE ── */
+.bundle-sec { position:relative; background:url('./assets/s2-bg.png') center/cover no-repeat; padding:80px 0; }
+.bundle-sec::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.6); pointer-events:none; z-index:0; }
+.bundle-sec > .sc { position:relative; z-index:1; }
+.bundle-sec h2 { font-size:clamp(22px,3vw,34px); font-weight:900; color:var(--heading); text-align:right; margin-bottom:12px; }
+.bundle-sub { font-size:16px; color:var(--text); text-align:right; margin-bottom:36px; line-height:1.7; }
+.bundle-opts { display:flex; flex-direction:column; gap:14px; max-width:580px; margin:0 auto 28px; }
+.bundle-card { background:#fff; border:2px solid #E5DCCE; border-radius:16px; padding:18px 22px; cursor:pointer; transition:border-color .2s,background .2s; display:flex; align-items:center; gap:14px; flex-direction:row-reverse; }
+.bundle-card.selected { border-color:var(--cta); background:#FDF9F4; }
+.bundle-card input[type=radio] { accent-color:var(--cta); width:20px; height:20px; flex-shrink:0; }
+.bc-info { flex:1; text-align:right; }
+.bc-title { font-size:16px; font-weight:700; color:var(--heading); margin-bottom:3px; }
+.bc-price { font-size:20px; font-weight:900; color:var(--cta); }
+.bc-old { font-size:14px; color:#aaa; text-decoration:line-through; margin-right:6px; }
+.bc-pct { font-size:13px; font-weight:700; color:var(--save-text); margin-right:6px; }
+.bc-perks { font-size:13px; color:var(--text); margin-top:4px; }
+.bc-tag { font-size:11px; font-weight:700; padding:4px 10px; border-radius:12px; white-space:nowrap; flex-shrink:0; }
+.bc-tag.hot { background:#FFF3E0; color:#E65100; }
+.bc-tag.best { background:var(--save-bg); color:var(--save-text); }
+.bundle-cta-wrap { text-align:center; }
+
+/* ── S3 TRUST IMAGE ── */
+.s3-img-sec { line-height:0; }
+.s3-img-sec .s3-desktop { display:block; width:100%; }
+.s3-img-sec .s3-mobile  { display:none;  width:100%; }
+@media(max-width:768px){
+  .s3-img-sec .s3-desktop { display:none; }
+  .s3-img-sec .s3-mobile  { display:block; }
+}
+
+/* ── S6 BENEFITS (Stitch) ── */
+.bm-reborn-benefits-section {
+  font-family:'Heebo',sans-serif;
+  background-color:#fcf9f2;
+  background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url('./assets/s6-bg-mobile.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color:#4a3c31; padding:4rem 1.5rem 6rem;
+  position:relative; overflow:hidden; box-sizing:border-box;
+}
+.bm-reborn-benefits-section *,.bm-reborn-benefits-section *::before,.bm-reborn-benefits-section *::after { box-sizing:inherit; }
+.bm-reborn-benefits-bg-element { position:absolute; border-radius:50%; z-index:0; filter:blur(40px); }
+.bm-reborn-benefits-bg-element-1 { background:radial-gradient(circle,rgba(184,149,106,0.15) 0%,transparent 70%); width:800px; height:800px; top:-200px; right:-200px; }
+.bm-reborn-benefits-bg-element-2 { background:radial-gradient(circle,rgba(229,211,179,0.2) 0%,transparent 70%); width:1000px; height:1000px; bottom:-300px; left:-300px; }
+.bm-reborn-benefits-bg-element-3 { position:absolute; top:0; left:0; right:0; bottom:0; opacity:0.03; background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23b8956a' fill-opacity='1' fill-rule='evenodd'/%3E%3C%2Fsvg%3E"); z-index:0; pointer-events:none; }
+.bm-reborn-benefits-hero-image-wrapper { display:none; }
+.bm-reborn-benefits-container { position:relative; z-index:1; max-width:1400px; margin:0 auto; }
+.bm-reborn-benefits-header { text-align:center; margin-bottom:4rem; position:relative; }
+.bm-reborn-benefits-subtitle { display:inline-flex; align-items:center; justify-content:center; gap:1rem; color:#b8956a; font-size:1.1rem; font-weight:500; margin-bottom:1.5rem; }
+.bm-reborn-benefits-subtitle::before,.bm-reborn-benefits-subtitle::after { content:''; display:block; width:60px; height:1px; background-color:#d2b48c; }
+.bm-reborn-benefits-title { font-size:3rem; font-weight:900; color:#3b2c24; margin:0; line-height:1.1; letter-spacing:-0.02em; }
+.bm-reborn-benefits-title-icon { display:block; margin:1rem auto 0; width:24px; height:24px; fill:#b8956a; }
+.bm-reborn-benefits-grid { display:grid; grid-template-columns:1fr; gap:2rem; max-width:1200px; margin:0 auto; }
+.bm-reborn-benefits-card { background:rgba(255,252,248,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:2px solid rgba(255,255,255,0.8); border-radius:32px; padding:2.5rem; display:flex; flex-direction:column; align-items:center; text-align:center; box-shadow:0 20px 50px rgba(184,149,106,0.08),inset 0 0 0 1px rgba(184,149,106,0.1); transition:transform .4s cubic-bezier(.165,.84,.44,1),box-shadow .4s cubic-bezier(.165,.84,.44,1); position:relative; overflow:hidden; }
+.bm-reborn-benefits-card::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg,rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%); border-radius:32px; pointer-events:none; }
+.bm-reborn-benefits-card:hover { transform:translateY(-8px); box-shadow:0 30px 60px rgba(184,149,106,0.12),inset 0 0 0 1px rgba(184,149,106,0.2); }
+.bm-reborn-benefits-card-icon-wrapper { width:110px; height:110px; border-radius:50%; background:linear-gradient(135deg,#ffffff 0%,#f9f3e9 100%); display:flex; align-items:center; justify-content:center; margin-bottom:2rem; box-shadow:0 15px 30px rgba(184,149,106,0.15),inset 0 4px 8px #fff,inset 0 -4px 8px rgba(184,149,106,0.05); border:4px solid #fff; position:relative; z-index:1; }
+.bm-reborn-benefits-card-icon { width:50px; height:50px; stroke:#b8956a; fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.bm-reborn-benefits-card-content { position:relative; z-index:1; }
+.bm-reborn-benefits-card-title { font-size:1.5rem; font-weight:800; color:#3b2c24; margin:0 0 1rem; display:flex; align-items:center; justify-content:center; gap:.75rem; }
+.bm-reborn-benefits-card-title svg { width:16px; height:16px; fill:#cda97e; }
+.bm-reborn-benefits-card-text { font-size:1.1rem; line-height:1.7; color:#5c4e43; margin:0; max-width:320px; }
+.bm-reborn-benefits-intro {
+  font-family:'Heebo',sans-serif;
+  font-size:18px; font-weight:600; color:#2A1800; line-height:1.85;
+  max-width:700px; margin:2rem auto 0; text-align:center;
+  background:rgba(255,252,248,0.88);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(184,149,106,0.18);
+  border-radius:20px;
+  padding:22px 36px;
+  box-shadow:0 8px 32px rgba(184,149,106,0.09), inset 0 1px 0 rgba(255,255,255,0.65);
+}
+.bm-reborn-benefits-card-text+.bm-reborn-benefits-card-text { margin-top:10px; }
+[data-section="8"] .bm-reborn-benefits-card-text { max-width:none; text-align:right; direction:rtl; color:#2A2118; }
+.bm-reborn-benefit__outcome { font-weight:700; color:#7B5A34; margin-top:12px; line-height:1.75; }
+/* Hero image */
+.bm-reborn-benefits-hero-img { width:100%; height:100%; object-fit:cover; border-radius:43% 57% 65% 35% / 46% 62% 38% 54%; -webkit-mask-image:radial-gradient(circle at 40% 40%,black 55%,transparent 100%); mask-image:radial-gradient(circle at 40% 40%,black 55%,transparent 100%); }
+@keyframes bm-reborn-blob-anim { 0%{border-radius:43% 57% 65% 35% / 46% 62% 38% 54%} 50%{border-radius:53% 47% 45% 55% / 56% 42% 58% 44%} 100%{border-radius:43% 57% 65% 35% / 46% 62% 38% 54%} }
+[data-section="10"].bm-reborn-benefits-section {
+  background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url('./assets/s2-bg.png');
+}
+@media(min-width:768px){
+  .bm-reborn-benefits-section { padding:6rem 3rem 8rem; background-image:linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)),url('./assets/s6-bg-desktop.png'); background-size:cover; background-position:center center; }
+  [data-section="10"].bm-reborn-benefits-section { background-image:linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)),url('./assets/s2-bg.png'); }
+  .bm-reborn-benefits-header { margin-bottom:6rem; }
+  .bm-reborn-benefits-title { font-size:4.5rem; }
+  .bm-reborn-benefits-grid { grid-template-columns:1fr 260px 1fr; gap:2rem; }
+  .bm-reborn-benefits-card:nth-child(1) { grid-column:1; grid-row:1; }
+  .bm-reborn-benefits-card:nth-child(2) { grid-column:3; grid-row:1; }
+  .bm-reborn-benefits-card:nth-child(3) { grid-column:1; grid-row:2; }
+  .bm-reborn-benefits-card:nth-child(4) { grid-column:3; grid-row:2; }
+  .bm-reborn-benefits-card:nth-child(5) { grid-column:1; grid-row:3; }
+  .bm-reborn-benefits-card:nth-child(6) { grid-column:3; grid-row:3; }
+  .bm-reborn-benefits-card { flex-direction:row; text-align:right; padding:2rem; gap:1.5rem; }
+  .bm-reborn-benefits-card-icon-wrapper { margin-bottom:0; flex-shrink:0; width:90px; height:90px; }
+  .bm-reborn-benefits-card-icon { width:45px; height:45px; }
+  .bm-reborn-benefits-card-title { justify-content:flex-start; font-size:1.3rem; }
+  .bm-reborn-benefits-card-text { max-width:none; font-size:1rem; }
+  .bm-reborn-benefits-hero-image-wrapper { display:block; position:absolute; top:-20px; left:10px; width:320px; height:320px; z-index:0; opacity:0.85; pointer-events:none; }
+}
+@media(min-width:1024px){
+  .bm-reborn-benefits-hero-image-wrapper { width:420px; height:420px; left:3%; }
+}
+/* ── S8 mobile card layout ── */
+@media(max-width:749px){
+  [data-section="8"].bm-reborn-benefits-section { padding:2.5rem 1.25rem 4rem; background-image:linear-gradient(to bottom, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.32) 25%, rgba(255,255,255,0.32) 75%, rgba(255,255,255,0.62) 100%),url('./assets/s8-bg-mobile.png'); background-size:100% auto; background-position:top center; background-repeat:repeat-y; }
+  [data-section="8"] .bm-reborn-benefits-title { font-size:clamp(30px,8vw,36px); color:#1F1B16; }
+  [data-section="8"] .bm-reborn-benefits-grid { grid-template-columns:1fr; gap:24px; }
+  [data-section="8"] .bm-reborn-benefits-card { width:100%; padding:26px 28px; background:rgba(255,249,240,0.94); border:1px solid rgba(184,149,106,0.26); border-radius:28px; box-shadow:0 10px 28px rgba(80,55,30,0.09); flex-direction:column; align-items:stretch; text-align:right; direction:rtl; gap:0; backdrop-filter:none; -webkit-backdrop-filter:none; }
+  [data-section="8"] .bm-reborn-benefits-card-icon-wrapper { display:none; }
+  [data-section="8"] .bm-reborn-benefits-card-content { width:100%; direction:rtl; }
+  [data-section="8"] .bm-reborn-benefits-card-title { font-size:21px; font-weight:800; color:#1F1B16; display:block; text-align:right; margin:0 0 12px; line-height:1.3; }
+  [data-section="8"] .bm-reborn-benefits-card-text { font-size:16px; line-height:1.85; }
+}
+/* ── S8 desktop card layout ── */
+@media(min-width:768px){
+  [data-section="8"] .bm-reborn-benefits-title { font-size:clamp(42px,4vw,52px); color:#1F1B16; }
+  [data-section="8"] .bm-reborn-benefits-grid { grid-template-columns:repeat(2,minmax(380px,520px)); gap:32px 40px; justify-content:center; align-items:stretch; }
+  [data-section="8"] .bm-reborn-benefits-card:nth-child(n) { grid-column:auto; grid-row:auto; }
+  [data-section="8"] .bm-reborn-benefits-card { background:rgba(255,249,240,0.94); border:1px solid rgba(184,149,106,0.26); border-radius:28px; box-shadow:0 18px 45px rgba(80,55,30,0.10); padding:36px 42px; flex-direction:column; align-items:stretch; text-align:right; direction:rtl; gap:0; backdrop-filter:none; -webkit-backdrop-filter:none; }
+  [data-section="8"] .bm-reborn-benefits-card-content { width:100%; direction:rtl; }
+  [data-section="8"] .bm-reborn-benefits-card-title { font-size:23px; font-weight:800; color:#1F1B16; display:block; text-align:right; margin:0 0 14px; }
+  [data-section="8"] .bm-reborn-benefits-card-text { font-size:17px; line-height:1.85; }
+  [data-section="8"] .bm-reborn-benefits-card-icon-wrapper { display:none; }
+}
+
+/* ── S9 BEFORE/AFTER IMAGE ── */
+.bm-reborn-s9{display:block;line-height:0;}
+.bm-reborn-s9__img{width:100%;height:auto;display:block;}
+
+/* ── S7.5 VIDEO TRANSITION ── */
+.bm-reborn-video-transition{background:#F6EFE6;padding:80px 0;direction:rtl;}
+.bm-reborn-video-transition__inner{max-width:1040px;margin:0 auto;padding:0 36px;text-align:center;}
+.bm-reborn-video-transition__eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px;}
+.bm-reborn-video-transition__eyebrow-line{height:1px;width:40px;background:rgba(184,149,106,0.4);}
+.bm-reborn-video-transition__eyebrow-text{font-family:'Heebo',sans-serif;font-size:11px;font-weight:700;color:rgba(184,149,106,0.75);letter-spacing:0.13em;text-transform:uppercase;}
+.bm-reborn-video-transition__headline{font-family:'Heebo',sans-serif;font-size:clamp(26px,3vw,44px);font-weight:900;color:#1F1B16;line-height:1.2;margin:0 0 16px;letter-spacing:-0.01em;}
+.bm-reborn-video-transition__sub{font-family:'Heebo',sans-serif;font-size:17px;color:rgba(31,27,22,0.7);line-height:1.7;margin:0 auto 40px;max-width:640px;}
+.bm-reborn-video-transition__wrap{position:relative;max-width:860px;margin:0 auto;border-radius:32px;overflow:hidden;box-shadow:0 24px 64px rgba(80,55,30,0.13);border:1.5px solid rgba(184,149,106,0.28);background:#f5ede2;aspect-ratio:1/1;}
+.bm-reborn-video-transition__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.bm-reborn-video-transition__caption{font-family:'Heebo',sans-serif;font-size:14px;color:rgba(184,149,106,0.85);margin:22px 0 0;line-height:1.6;letter-spacing:0.01em;}
+@media(max-width:768px){
+  .bm-reborn-video-transition{padding:52px 0;}
+  .bm-reborn-video-transition__inner{padding:0 20px;}
+  .bm-reborn-video-transition__headline{font-size:clamp(22px,6vw,30px);}
+  .bm-reborn-video-transition__sub{font-size:15px;margin-bottom:28px;}
+  .bm-reborn-video-transition__wrap{border-radius:24px;}
+}
+
+/* ── S3 MOBILE TRUST ── */
+.s3-mobile-section { display: none; }
+.s3-desktop-section { display: block; }
+@media (max-width: 767px) {
+  .s3-desktop-section { display: none; }
+  .s3-mobile-section { display: flex; }
+}
+.s3-mobile-bg {
+  position: relative;
+  background-image: url('./assets/s3-bg-mobile.png');
+  background-size: cover;
+  background-position: center;
+}
+.s3-mobile-bg::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.55); pointer-events:none; z-index:0; }
+.s3-divider {
+  position: relative; width: 100%; height: 1px;
+  background-color: #EAE3D6; margin: 1.5rem 0;
+}
+.s3-divider::after {
+  content: '❖'; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); color: #C59A4E;
+  background-color: #FFF9F2; padding: 0 10px; font-size: 0.75rem;
+}
+/* ── S7 RESEARCH ── */
+.bm-reborn-research{background-color:#F7F2EA;background-image:linear-gradient(rgba(247,242,234,0.68),rgba(247,242,234,0.68)),url('./assets/s7-bg.png');background-size:cover;background-position:center center;background-repeat:no-repeat;padding:88px 0;position:relative;direction:rtl;}
+.bm-reborn-research__inner{max-width:1040px;margin:0 auto;padding:0 36px;}
+.bm-reborn-research__eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px;}
+.bm-reborn-research__eyebrow-line{height:1px;width:40px;background:rgba(184,149,106,0.4);}
+.bm-reborn-research__eyebrow-text{font-family:'Heebo',sans-serif;font-size:11px;font-weight:700;color:rgba(184,149,106,0.75);letter-spacing:0.13em;text-transform:uppercase;}
+.bm-reborn-research__headline{font-family:'Heebo',sans-serif;font-size:clamp(28px,3.2vw,48px);font-weight:900;color:#1F1B16;line-height:1.18;text-align:center;margin:0 0 20px;letter-spacing:-0.01em;}
+.bm-reborn-research__intro{font-family:'Heebo',sans-serif;font-size:16px;color:#5c4e40;text-align:center;margin:0 auto 52px;max-width:600px;line-height:1.8;}
+.bm-reborn-research__panel{background:#FFF9F0;border:1.5px solid rgba(184,149,106,0.28);border-radius:32px;padding:40px 52px;box-shadow:0 8px 48px rgba(184,149,106,0.09);margin-bottom:24px;}
+.bm-reborn-research__panel-header{display:flex;align-items:center;gap:12px;margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid rgba(184,149,106,0.18);justify-content:center;}
+.bm-reborn-research__panel-icon{opacity:0.5;}
+.bm-reborn-research__panel-title{font-family:'Heebo',sans-serif;font-size:12px;font-weight:700;color:rgba(184,149,106,0.85);letter-spacing:0.1em;text-transform:uppercase;}
+.bm-reborn-research__source-block{display:flex;flex-direction:row;gap:28px;padding:32px 0;align-items:flex-start;}
+.bm-reborn-research__source-block+.bm-reborn-research__source-block{border-top:1px solid rgba(184,149,106,0.15);}
+.bm-reborn-research__source-num{font-family:'Heebo',sans-serif;font-size:26px;font-weight:200;color:rgba(184,149,106,0.35);line-height:1;flex-shrink:0;width:36px;text-align:center;padding-top:4px;}
+.bm-reborn-research__source-content{flex:1;display:flex;flex-direction:column;gap:10px;text-align:right;}
+.bm-reborn-research__source-header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;justify-content:flex-start;}
+.bm-reborn-research__source-finding strong{font-weight:700;color:#8B6A44;}
+.bm-reborn-research__source-name{font-family:'Heebo',sans-serif;font-size:17px;font-weight:800;color:#1F1B16;}
+.bm-reborn-research__source-year{font-family:'Heebo',sans-serif;font-size:12px;font-weight:600;color:rgba(184,149,106,0.85);background:rgba(184,149,106,0.1);border:1px solid rgba(184,149,106,0.22);border-radius:20px;padding:2px 10px;white-space:nowrap;}
+.bm-reborn-research__source-finding{font-family:'Heebo',sans-serif;font-size:15px;font-weight:400;color:#3b2c24;line-height:1.85;margin:0;}
+
+.bm-reborn-research__source-pub{font-family:'Heebo',sans-serif;font-size:11px;color:rgba(184,149,106,0.65);margin:0;line-height:1.6;text-align:right;}
+.bm-reborn-research__disclaimer{font-family:'Heebo',sans-serif;font-size:11px;color:rgba(90,75,62,0.55);text-align:center;max-width:640px;margin:0 auto;line-height:1.7;}
+@media(max-width:768px){
+  .bm-reborn-research{padding:56px 0;}
+  .bm-reborn-research__inner{padding:0 20px;}
+  .bm-reborn-research__panel{padding:28px 20px;border-radius:24px;}
+  .bm-reborn-research__source-block{gap:16px;padding:24px 0;}
+  .bm-reborn-research__source-num{font-size:20px;width:28px;}
+  .bm-reborn-research__source-name{font-size:15px;}
+  .bm-reborn-research__headline{font-size:clamp(24px,6.5vw,32px);}
+}
+
+/* ── S8 BEFORE/AFTER ── */
+.ba-sec { background:var(--bg-alt); padding:80px 0; }
+.ba-sec h2 { font-size:clamp(20px,2.8vw,30px); font-weight:900; color:var(--heading); text-align:center; margin-bottom:36px; }
+.ba-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:28px; }
+@media(max-width:768px){ .ba-grid{grid-template-columns:1fr;} }
+.ba-before { aspect-ratio:4/3; background:#E8EEF4; border-radius:16px; display:flex; align-items:center; justify-content:center; color:#999; font-size:16px; font-weight:700; border:2px dashed #B0C4D8; }
+.ba-after { aspect-ratio:4/3; background:#EDF7EE; border-radius:16px; display:flex; align-items:center; justify-content:center; color:var(--save-text); font-size:16px; font-weight:700; border:2px dashed #90C095; }
+.ba-caption { text-align:center; font-size:15px; color:var(--text); max-width:580px; margin:0 auto; line-height:1.7; }
+
+/* ── S11+12 PREMIUM SOCIAL PROOF CTA ── */
+.premium-section { background-color:#1a1614; padding:4rem 2rem; width:100%; text-align:center; display:flex; flex-direction:column; align-items:center; gap:2rem; }
+.premium-section .trust-badge { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid #b8956a; padding:0.5rem 1.25rem; border-radius:9999px; color:#a39a95; font-size:0.9rem; font-weight:500; }
+.premium-section .trust-badge svg { width:1.25rem; height:1.25rem; fill:#b8956a; }
+.premium-section .headline { font-size:clamp(2rem,4vw,2.5rem); font-weight:700; line-height:1.2; color:#fcf9f8; font-family:'Heebo',sans-serif; }
+.premium-section .headline .highlight { color:#b8956a; }
+.premium-section .divider-container { display:flex; align-items:center; width:100%; max-width:400px; margin:0 auto; gap:1rem; }
+.premium-section .divider-line { flex-grow:1; height:1px; background-color:rgba(184,149,106,0.3); }
+.premium-section .divider-icon svg { width:1rem; height:1rem; fill:#b8956a; }
+.premium-section .description { font-size:1.25rem; line-height:1.6; max-width:600px; margin:0 auto; color:#fcf9f8; font-weight:500; font-family:'Heebo',sans-serif; }
+.premium-section .rating-section { display:flex; align-items:center; justify-content:center; gap:1.5rem; margin-top:0.5rem; flex-wrap:wrap; }
+.premium-section .stars-container { display:flex; align-items:center; gap:0.5rem; }
+.premium-section .stars { display:flex; gap:0.25rem; }
+.premium-section .stars svg { width:1.25rem; height:1.25rem; fill:#b8956a; }
+.premium-section .rating-text { font-size:1.1rem; color:#a39a95; }
+.premium-section .rating-separator { width:1px; height:20px; background-color:rgba(184,149,106,0.3); }
+.premium-section .reviews-count { display:flex; align-items:center; gap:0.5rem; font-size:1.1rem; color:#a39a95; }
+.premium-section .reviews-count svg { width:1.25rem; height:1.25rem; stroke:#b8956a; fill:none; stroke-width:1.5; }
+.premium-section .ps-cta { display:inline-flex; align-items:center; justify-content:center; gap:0.75rem; background:linear-gradient(135deg,#b8956a,#dbb88d); color:#fff; font-size:1.25rem; font-weight:700; padding:1rem 3rem; border-radius:9999px; border:1px solid rgba(255,255,255,0.2); box-shadow:0 0 20px rgba(184,149,106,0.4); transition:all 0.3s ease; cursor:pointer; font-family:'Heebo',sans-serif; }
+.premium-section .ps-cta:hover { transform:translateY(-2px); box-shadow:0 0 30px rgba(184,149,106,0.6); background:linear-gradient(135deg,#dbb88d,#b8956a); }
+.premium-section .ps-cta svg { width:1.5rem; height:1.5rem; stroke:currentColor; fill:none; stroke-width:2; }
+.premium-section .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; width:100%; max-width:860px; padding-top:2rem; border-top:1px solid rgba(184,149,106,0.3); }
+.premium-section .feature-item { display:flex; align-items:flex-start; gap:1rem; text-align:right; }
+.premium-section .feature-icon { flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.premium-section .feature-icon svg { width:2.5rem; height:2.5rem; stroke:#b8956a; fill:none; stroke-width:1.5; }
+.premium-section .feature-content { display:flex; flex-direction:column; gap:0.25rem; }
+.premium-section .feature-title { font-size:1.1rem; font-weight:600; color:#fcf9f8; }
+.premium-section .feature-desc { font-size:0.9rem; color:#a39a95; }
+@media(max-width:768px){
+  .premium-section .headline { font-size:2rem; }
+  .premium-section .features-grid { grid-template-columns:repeat(3,1fr); gap:0.75rem; }
+  .premium-section .feature-item { align-items:center; text-align:center; flex-direction:column; }
+  .premium-section .feature-icon svg { width:1.75rem; height:1.75rem; }
+  .premium-section .feature-title { font-size:0.85rem; }
+  .premium-section .feature-desc { font-size:0.75rem; }
+  .premium-section .ps-cta { width:100%; padding:1rem 2rem; }
+  .premium-section .rating-section { flex-direction:column; gap:0.75rem; }
+  .premium-section .rating-separator { display:none; }
+}
+
+/* ── S13 STATS ── */
+.stats-sec { background:var(--bg); padding:60px 0; }
+.stats-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; }
+.stat-blk { text-align:center; min-width:130px; }
+.stat-num { font-size:36px; font-weight:900; color:var(--cta); display:block; }
+.stat-num.gold { color:var(--stars); }
+.stat-lbl { font-size:14px; color:var(--text); margin-top:4px; }
+
+/* ── S13+14 WHO FOR ── */
+.whofor-section { background:var(--bg); padding:64px 0 80px; }
+.whofor-cards-outer { position:relative; }
+.whofor-cards-container { overflow-x:auto; padding:16px 4px; margin:0 -4px; scrollbar-width:none; -ms-overflow-style:none; }
+.whofor-cards-container::-webkit-scrollbar { display:none; }
+#whofor-cards { display:flex; gap:24px; scroll-snap-type:x mandatory; }
+#whofor-cards article { flex:none; width:210px; scroll-snap-align:center; background:#fff; border-radius:14px; border:1px solid #e0e0e0; box-shadow:0 1px 4px rgba(0,0,0,0.08); overflow:hidden; display:flex; flex-direction:column; transition:box-shadow .3s; }
+#whofor-cards article:hover { box-shadow:0 6px 20px rgba(0,0,0,0.12); }
+.whofor-card-img { position:relative; padding:6px; height:170px; }
+.whofor-card-img img { width:100%; height:100%; object-fit:cover; border-radius:10px; }
+.whofor-age-badge { position:absolute; bottom:12px; left:12px; background:var(--cta); color:#fff; font-weight:700; font-size:12px; padding:4px 10px; border-radius:9999px; }
+.whofor-card-body { padding:14px 16px; text-align:center; flex-grow:1; display:flex; flex-direction:column; justify-content:center; }
+.whofor-card-title { font-size:15px; font-weight:700; margin-bottom:5px; color:var(--heading); font-family:'Heebo',sans-serif; }
+.whofor-card-desc { font-size:12px; color:var(--text); line-height:1.6; }
+.whofor-nav-btn { display:none; position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; background:#fff; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.12); align-items:center; justify-content:center; border:1px solid #e0e0e0; cursor:pointer; z-index:10; color:var(--text); transition:all .2s; }
+.whofor-nav-btn:hover { color:var(--cta); background:var(--bg-alt); }
+.whofor-nav-prev { right:-20px; }
+.whofor-nav-next { left:-20px; }
+.whofor-dots { display:flex; justify-content:center; gap:10px; margin-top:28px; }
+.whofor-dot { width:10px; height:10px; border-radius:50%; background:#dcd9d9; cursor:pointer; transition:background .2s; }
+.whofor-dot.active { background:#d99e98; width:12px; height:12px; }
+@media(min-width:768px){ .whofor-nav-btn{display:flex;} }
+@media(max-width:767px){
+  .whofor-cards-container { overflow:visible; padding:0; margin:0; }
+  #whofor-cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; scroll-snap-type:unset; }
+  #whofor-cards article { width:auto; }
+  #whofor-cards article:nth-child(5) { display:none; }
+  .whofor-card-img { height:auto; aspect-ratio:1/1; }
+  .whofor-card-body { padding:14px; }
+  .whofor-card-title { font-size:15px; }
+  .whofor-dots { display:none; }
+}
+
+
+/* ── S15 PRICE COMPARE ── */
+.pricecmp-sec { background:var(--bg); padding:80px 0; }
+.pricecmp-sec h2 { font-size:clamp(22px,3vw,34px); font-weight:900; color:var(--heading); text-align:center; margin-bottom:12px; }
+.pricecmp-intro { font-size:16px; color:var(--text); text-align:center; margin-bottom:36px; }
+.cmp-rows { display:flex; flex-direction:column; gap:12px; max-width:580px; margin:0 auto 36px; }
+.cmp-row { background:var(--bg-alt); border-radius:8px; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; flex-direction:row-reverse; }
+.cmp-label { font-size:15px; color:var(--text); text-align:right; }
+.cmp-price { font-size:18px; font-weight:700; color:#E65100; }
+.price-hl { border:2px solid var(--cta); border-radius:16px; padding:32px 24px; text-align:center; background:var(--bg-alt); max-width:460px; margin:0 auto 24px; }
+.price-hl-product { font-size:20px; font-weight:700; color:var(--heading); margin-bottom:10px; }
+.price-hl-price { font-size:28px; font-weight:900; color:var(--cta); margin-bottom:8px; }
+.price-hl-once { font-size:15px; color:var(--text); margin-bottom:4px; }
+.price-hl-daily { font-size:14px; color:var(--text); margin-bottom:4px; }
+.price-hl-years { font-size:15px; font-weight:600; color:var(--text); }
+.pricecmp-close { text-align:center; font-size:17px; font-weight:700; color:var(--heading); }
+
+/* ── S17 FINAL CTA ── */
+.finalcta-sec { background:#1A1A1A; padding:100px 0; text-align:center; }
+.finalcta-sec h2 { font-size:clamp(24px,3.5vw,38px); font-weight:900; color:#fff; margin-bottom:14px; line-height:1.35; }
+.finalcta-txt { font-size:17px; color:rgba(255,255,255,0.8); margin-bottom:28px; }
+.finalcta-price-row { display:flex; align-items:center; gap:12px; justify-content:center; margin-bottom:22px; }
+.finalcta-price-now { font-size:40px; font-weight:900; color:#fff; }
+.finalcta-price-old { font-size:22px; color:rgba(255,255,255,0.4); text-decoration:line-through; }
+.finalcta-price-save { background:rgba(46,125,50,0.85); color:#fff; font-size:13px; font-weight:700; padding:5px 14px; border-radius:20px; }
+.finalcta-countdown { display:flex; gap:8px; justify-content:center; align-items:flex-end; margin-bottom:30px; }
+.bm-cd-unit { display:flex; flex-direction:column; align-items:center; gap:4px; }
+.bm-cd-lbl { font-size:11px; color:rgba(255,255,255,0.55); text-align:center; }
+.bm-cd-num { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:8px; padding:8px 14px; min-width:50px; text-align:center; }
+.bm-cd-num span { font-size:22px; font-weight:900; color:#fff; display:block; font-variant-numeric:tabular-nums; }
+.bm-cd-sep { font-size:22px; font-weight:700; color:rgba(255,255,255,0.45); line-height:1; padding-bottom:16px; }
+@keyframes bm-glow-pulse { 0%,100%{box-shadow:0 4px 16px rgba(184,149,106,0.2);} 50%{box-shadow:0 0 28px 10px rgba(184,149,106,0.5);} }
+.btn-cta--glow { animation:bm-glow-pulse 2.2s ease-in-out infinite; }
+.finalcta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
+.btn-outline-white { display:inline-block; background:transparent; color:#fff; font-family:'Heebo',sans-serif; font-weight:700; font-size:18px; padding:14px 36px; border-radius:50px; border:2px solid #fff; cursor:pointer; text-decoration:none; transition:background .2s; }
+.btn-outline-white:hover { background:rgba(255,255,255,0.12); }
+.finalcta-badges { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
+.finalcta-badge-svg { display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.8); }
+.finalcta-badge-svg svg { width:17px; height:17px; fill:none; stroke:rgba(255,255,255,0.7); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+.finalcta-close { font-size:15px; color:rgba(255,255,255,0.5); font-style:italic; }
+{% endstylesheet %}
+
+<!-- ════════════════════════════════════════
+     S1 — HERO (Liquid)
+════════════════════════════════════════ -->
+{%- assign bm_variant  = product.selected_or_first_available_variant -%}
+{%- assign bm_model    = product.metafields.reborn_doll.model_label.value | default: product.title -%}
+{%- assign bm_size     = product.metafields.reborn_specs.size_cm.value -%}
+{%- assign bm_subtitle = product.metafields.reborn_copy.hero_subtitle.value | default: product.description -%}
+{%- assign bm_price    = bm_variant.price -%}
+{%- assign bm_compare  = bm_variant.compare_at_price -%}
+{%- if bm_compare > bm_price -%}
+  {%- assign bm_save_pct = bm_compare | minus: bm_price | times: 100 | divided_by: bm_compare | round -%}
+{%- endif -%}
+<section class="hero-sec" data-section="1">
+  <div class="sc">
+    <div class="hero-grid">
+      <!-- TEXT -->
+      <div>
+        <div class="sec-lbl">S1 — HERO</div>
+        <div class="hero-tag">אהובה על לקוחות Baby Mania</div>
+        <div class="hero-prod-name">{{ bm_model }}{% if bm_size %} {{ bm_size }}{% endif %}</div>
+        <h1 class="hero-h1">הרגע שבו היא מחזיקה אותה בפעם הראשונה —<br/>ומתחילה לטפל כמו אמא קטנה</h1>
+        <p class="hero-sub">{{ bm_subtitle }}</p>
+        <div class="hero-stars">
+          <span class="stars-ico">★★★★★</span>
+          <span class="hero-rating">4.9</span>
+          <a class="hero-review-count" href="#section-reviews"><!-- TODO: real review count -->ביקורות לקוחות</a>
+        </div>
+        <div class="hero-price-row">
+          <span class="price-now">{{ bm_price | money_without_trailing_zeros }}</span>
+          {%- if bm_compare > bm_price -%}
+          <span class="price-old">{{ bm_compare | money_without_trailing_zeros }}</span>
+          <span class="price-save">חוסכים {{ bm_save_pct }}%</span>
+          {%- endif -%}
+        </div>
+        <div class="hero-daily">פחות מ-₪1 ליום</div>
+        {%- form 'product', product, id: 'bm-product-form-s1' -%}
+          {%- unless product.has_only_default_variant -%}
+          <div class="bm-variant-selector" style="margin-bottom:16px;">
+            {%- for option in product.options_with_values -%}
+            <div style="margin-bottom:10px;">
+              <label style="font-size:14px;font-weight:700;color:var(--heading);display:block;margin-bottom:6px;text-align:right;">{{ option.name }}</label>
+              <select name="options[{{ option.name }}]" id="option-{{ option.position }}-s1"
+                      style="width:100%;padding:10px 14px;border:1px solid rgba(184,149,106,0.3);border-radius:8px;font-family:'Heebo',sans-serif;font-size:15px;background:#fff;color:var(--heading);">
+                {%- for value in option.values -%}
+                <option value="{{ value }}"{% if option.selected_value == value %} selected{% endif %}>{{ value }}</option>
+                {%- endfor -%}
+              </select>
+            </div>
+            {%- endfor -%}
+          </div>
+          {%- else -%}
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+          {%- endunless -%}
+          <div class="hero-btns">
+            <button type="submit" name="add" class="btn-cta">הוסיפי לעגלה</button>
+            <!-- TODO Stage 8: "קני עכשיו" requires JS buy-now redirect to checkout -->
+            <button type="button" class="btn-outline">קני עכשיו</button>
+          </div>
+        {%- endform -%}
+        <div class="hero-trust" id="bm-hero-trust" role="list" aria-label="יתרונות הזמנה">
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-icon hero-trust-icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 4v4h-7V8z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <span class="hero-trust-label">משלוח חינם</span>
+            <span class="hero-trust-sub">לכל הארץ</span>
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-icon hero-trust-icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.36 2.64L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+            </div>
+            <span class="hero-trust-label">החזרה עד 14 יום</span>
+            <span class="hero-trust-sub">ממועד קבלת המוצר</span>
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-icon hero-trust-icon--amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L3 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-9-4z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <span class="hero-trust-label">תשלום מאובטח</span>
+            <span class="hero-trust-sub">הצפנה מלאה SSL</span>
+          </div>
+        </div>
+      </div>
+      <!-- IMAGE -->
+      <div class="hero-img-col">
+        {%- if product.images.size > 0 -%}
+        <img src="{{ product.images[0] | image_url: width: 800 }}"
+             srcset="{{ product.images[0] | image_url: width: 400 }} 400w, {{ product.images[0] | image_url: width: 800 }} 800w, {{ product.images[0] | image_url: width: 1200 }} 1200w"
+             sizes="(max-width:768px) 100vw, 50vw"
+             alt="{{ bm_model }}{% if bm_size %} {{ bm_size }}{% endif %}"
+             class="hero-img" loading="eager" width="800" height="1000"/>
+        {%- else -%}
+        <div class="hero-img-ph">תמונת {{ bm_model }} תוזן מגלריית המוצר בחנות</div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S2 — BUNDLE
+════════════════════════════════════════ -->
+<section class="bundle-sec" data-section="2">
+  <div class="sc">
+    <div class="sec-lbl">S2 — BUNDLE</div>
+    <h2>אם יש יותר מילדה אחת במשפחה — את כבר יודעת איך זה נגמר</h2>
+    <p class="bundle-sub">כשילדה אחת מקבלת בובת ריבורן, הילדה השנייה לא רק מסתכלת.</p>
+    <div class="bundle-opts">
+      <!-- option 1 -->
+      <label class="bundle-card">
+        <input name="bundle" type="radio" value="1"/>
+        <div class="bc-info">
+          <div class="bc-title">יחידה אחת</div>
+          <div><span class="bc-price">₪299</span></div>
+          <div class="bc-perks">🎁 כולל מגבת מתנה</div>
+        </div>
+      </label>
+      <!-- option 2 -->
+      <label class="bundle-card selected">
+        <input checked name="bundle" type="radio" value="2"/>
+        <div class="bc-info">
+          <div class="bc-title">2 בובות</div>
+          <div>
+            <span class="bc-price">₪549</span>
+            <span class="bc-old">₪598</span>
+            <span class="bc-pct">8% הנחה</span>
+          </div>
+          <div class="bc-perks">🚚 משלוח חינם | 🎁 מגבת מתנה לכל בובה</div>
+        </div>
+        <span class="bc-tag hot">🔥 הכי פופולרי</span>
+      </label>
+      <!-- option 3 -->
+      <label class="bundle-card">
+        <input name="bundle" type="radio" value="3"/>
+        <div class="bc-info">
+          <div class="bc-title">3 בובות</div>
+          <div>
+            <span class="bc-price">₪779</span>
+            <span class="bc-old">₪897</span>
+            <span class="bc-pct">13% הנחה</span>
+          </div>
+          <div class="bc-perks">🚚 משלוח חינם | 🎁 מגבת + שמיכה מתנה</div>
+        </div>
+        <span class="bc-tag best">💰 הכי משתלם</span>
+      </label>
+    </div>
+    <div class="bundle-cta-wrap">
+      <button class="btn-cta">הוסיפי לעגלה 🛒</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S3 — TRUST
+════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════
+     S3 — TRUST
+════════════════════════════════════════ -->
+<!-- BEGIN: TrustFeaturesSection -->
+<!-- MOBILE S3 -->
+<section class="s3-mobile-section w-full items-center justify-center py-4 px-4 s3-mobile-bg" data-section="3">
+<main class="w-full max-w-sm mx-auto relative z-10">
+<div class="bg-[#FFF9F2] rounded-[2rem] p-[3px] border border-[#F0E6D6]" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10)">
+<div class="border border-[#EAE3D6] rounded-[1.75rem] py-4 px-5 flex flex-col gap-0" style="background:rgba(255,255,255,0.60);backdrop-filter:blur(8px)">
+
+<article class="flex items-center gap-4 py-3">
+<div class="w-10 h-10 flex-shrink-0 flex items-center justify-center text-[#C59A4E]">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/></svg>
+</div>
+<div class="flex-1 text-right">
+<h3 class="text-[1rem] font-medium text-[#4A3B2A] leading-tight">תשלום מאובטח</h3>
+<p class="text-[0.82rem] text-[#4A3B2A]/60 mt-0.5">הצפנה מתקדמת SSL</p>
+</div>
+</article>
+<div class="s3-divider" style="margin:0"></div>
+
+<article class="flex items-center gap-4 py-3">
+<div class="w-10 h-10 flex-shrink-0 flex items-center justify-center text-[#C59A4E]">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24"><rect height="11" rx="1" width="14" x="2" y="6"/><path d="M16 17h4a1 1 0 0 0 1-1v-4l-3-4h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+</div>
+<div class="flex-1 text-right">
+<h3 class="text-[1rem] font-medium text-[#4A3B2A] leading-tight">משלוח חינם</h3>
+<p class="text-[0.82rem] text-[#4A3B2A]/60 mt-0.5">לכל הארץ, ללא מינימום הזמנה</p>
+</div>
+</article>
+<div class="s3-divider" style="margin:0"></div>
+
+<article class="flex items-center gap-4 py-3">
+<div class="w-10 h-10 flex-shrink-0 flex items-center justify-center text-[#C59A4E]">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+</div>
+<div class="flex-1 text-right">
+<h3 class="text-[1rem] font-medium text-[#4A3B2A] leading-tight">החזרה והחלפה קלה</h3>
+<p class="text-[0.82rem] text-[#4A3B2A]/60 mt-0.5">תוך 14 יום, ללא שאלות</p>
+</div>
+</article>
+<div class="s3-divider" style="margin:0"></div>
+
+<article class="flex items-center gap-4 py-3">
+<div class="w-10 h-10 flex-shrink-0 flex items-center justify-center text-[#C59A4E]">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+</div>
+<div class="flex-1 text-right">
+<h3 class="text-[1rem] font-medium text-[#4A3B2A] leading-tight">שירות לקוחות זמין</h3>
+<p class="text-[0.82rem] text-[#4A3B2A]/60 mt-0.5">אנחנו כאן בשבילך 6 ימים בשבוע</p>
+</div>
+</article>
+
+</div>
+</div>
+</main>
+</section>
+<!-- DESKTOP S3 -->
+<section class="s3-desktop-section relative w-full overflow-hidden py-12" data-section="3"><div class="absolute inset-0 z-0 overflow-hidden">
+  <img src="./assets/s3-bg-desktop.png" alt="" class="w-full h-full object-cover opacity-45">
+  <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/20"></div>
+</div>
+<div class="relative z-10 container mx-auto px-4 lg:px-8">
+<div class="rounded-3xl p-8 md:p-12 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4 relative overflow-hidden" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(8px); box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);">
+<!-- Feature 1: Secure Payment -->
+<div class="flex flex-col items-center text-center w-full lg:w-1/5 px-2 relative after:hidden lg:after:block after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-2/3 after:w-[1px] after:bg-gray-200 last:after:hidden">
+<div class="w-20 h-20 rounded-full border border-[#b8956a] flex items-center justify-center mb-4" style="color:#b8956a;stroke:#b8956a">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="32"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="#b8956a"/><path d="M12 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" fill="#fff"/></svg>
+</div>
+<h3 class="text-[#3d332a] font-bold text-lg mb-1">תשלום מאובטח</h3>
+<p class="text-gray-600 text-sm">הצפנה מתקדמת SSL</p>
+</div>
+<!-- Feature 2: Free Shipping -->
+<div class="flex flex-col items-center text-center w-full lg:w-1/5 px-2 relative after:hidden lg:after:block after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-2/3 after:w-[1px] after:bg-gray-200 last:after:hidden">
+<div class="w-20 h-20 rounded-full border border-[#b8956a] flex items-center justify-center mb-4" style="color:#b8956a">
+<svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="36"><rect height="13" width="15" x="1" y="3"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="M7 10h6"/><path d="M10 7v6"/></svg>
+</div>
+<h3 class="text-[#3d332a] font-bold text-lg mb-1">משלוח חינם</h3>
+<p class="text-gray-600 text-sm">לכל הארץ, ללא מינימום הזמנה</p>
+</div>
+<!-- Feature 4: Easy Returns -->
+<div class="flex flex-col items-center text-center w-full lg:w-1/5 px-2 relative after:hidden lg:after:block after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-2/3 after:w-[1px] after:bg-gray-200 last:after:hidden">
+<div class="w-20 h-20 rounded-full border border-[#b8956a] flex items-center justify-center mb-4" style="color:#b8956a">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="32"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M9.5 14.5L12 12l2.5 2.5"/><path d="M12 12v6"/></svg>
+</div>
+<h3 class="text-[#3d332a] font-bold text-lg mb-1">החזרה והחלפה קלה</h3>
+<p class="text-gray-600 text-sm">תוך 14 יום, ללא שאלות</p>
+</div>
+<!-- Feature 5: Customer Service -->
+<div class="flex flex-col items-center text-center w-full lg:w-1/5 px-2 relative last:after:hidden">
+<div class="w-20 h-20 rounded-full border border-[#b8956a] flex items-center justify-center mb-4" style="color:#b8956a">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="32"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+</div>
+<h3 class="text-[#3d332a] font-bold text-lg mb-1">שירות לקוחות זמין</h3>
+<p class="text-gray-600 text-sm">אנחנו כאן בשבילך 7 ימים בשבוע</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TrustFeaturesSection -->
+
+<!-- ════════════════════════════════════════
+     S4 — בעיה: מסכים (existing — unchanged)
+════════════════════════════════════════ -->
+<section class="relative bg-surface py-section-gap overflow-hidden" data-section="4" id="section-problem-hook">
+  <div class="absolute inset-0 bg-pattern"></div>
+  <div class="max-w-container-max mx-auto px-gutter relative z-10">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7 text-right order-2 md:order-1">
+        <div class="section-label">S4 — בעיה: מסכים</div>
+        <span class="inline-block py-1 px-3 rounded-full bg-primary-container/10 text-primary-container font-bold text-sm mb-6 border border-primary-container/20">התמודדות עם מסכים</span>
+        <h2 class="text-headline-xl-mobile md:text-headline-xl text-on-surface mb-stack-lg leading-tight">
+          את לא מחפשת עוד צעצוע.<br/>
+          <span class="text-primary-container relative inline-block">
+            את מחפשת את הרגע
+            <span class="absolute bottom-1 left-0 w-full h-3 bg-primary-container/20 -z-10"></span>
+          </span> שבו היא שוכחת מהמסך.
+        </h2>
+        <p class="text-body-lg text-on-surface-variant leading-relaxed mb-stack-lg max-w-2xl ml-auto">
+          בעידן שבו מסכים שואבים את תשומת הלב, קשה למצוא משחק שמציע חיבור אמיתי ועמוק. משחק של טיפול ואכפתיות מפתח אמפתיה, אחריות ורוגע פנימי ששום אפליקציה לא יכולה לספק.
+        </p>
+      </div>
+      <div class="md:col-span-5 order-1 md:order-2">
+        <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-soft">
+          <video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+            <source src="./assets/videos/s4-video.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S5 — הגברת בעיה
+════════════════════════════════════════ -->
+<style>
+.bm-reborn-problem{background:#F7F2EA;padding:72px 0;position:relative;overflow:hidden;}
+.bm-reborn-problem__inner{max-width:1180px;margin:0 auto;padding:0 36px;}
+.bm-reborn-problem__eyebrow{font-family:'Heebo',sans-serif;font-size:11px;font-weight:700;color:rgba(184,149,106,0.7);letter-spacing:0.12em;text-transform:uppercase;text-align:right;margin-bottom:20px;display:flex;align-items:center;gap:10px;justify-content:flex-end;}
+.bm-reborn-problem__eyebrow::before{content:'';display:inline-block;width:20px;height:1px;background:rgba(184,149,106,0.45);}
+.bm-reborn-problem__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.bm-reborn-problem__text{display:flex;flex-direction:column;gap:22px;text-align:center;}
+.bm-reborn-problem__headline{font-family:'Heebo',sans-serif;font-size:clamp(36px,4.5vw,56px);font-weight:900;color:#1F1B16;line-height:1.1;letter-spacing:-0.02em;margin:0;text-align:center;}
+.bm-reborn-problem__headline-gold{color:#B8956A;}
+/* chips bar */
+.bm-reborn-problem__chips{background:#FFF9F0;border:1.5px solid rgba(184,149,106,0.25);border-radius:16px;padding:18px 12px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px rgba(184,149,106,0.06);}
+.bm-reborn-problem__chip{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;padding:0 12px;font-family:'Heebo',sans-serif;font-size:12px;font-weight:700;color:#3b2c24;text-align:center;position:relative;}
+.bm-reborn-problem__chip+.bm-reborn-problem__chip::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);height:40px;width:1px;background:rgba(184,149,106,0.25);}
+.bm-reborn-problem__chip svg{color:#B8956A;}
+/* body */
+.bm-reborn-problem__body{font-family:'Heebo',sans-serif;font-size:15px;font-weight:600;color:#3b2c24;line-height:1.85;margin:0;text-align:center;}
+/* callout */
+.bm-reborn-problem__callout{background:#FFF9F0;border:1.5px solid rgba(184,149,106,0.25);border-radius:18px;padding:16px 20px;display:flex;align-items:center;gap:14px;flex-direction:row-reverse;box-shadow:0 2px 12px rgba(184,149,106,0.07);}
+.bm-reborn-problem__callout-icon{width:44px;height:44px;background:#fff;border-radius:50%;border:1.5px solid rgba(184,149,106,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bm-reborn-problem__callout-text{font-family:'Heebo',sans-serif;font-size:clamp(15px,1.35vw,19px);font-weight:700;color:#1F1B16;margin:0;line-height:1.5;text-align:right;}
+.bm-reborn-problem__image-wrap{border-radius:28px;overflow:hidden;box-shadow:0 20px 56px rgba(31,27,22,0.1);}
+.bm-reborn-problem__image{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+@media(max-width:768px){
+  .bm-reborn-problem{padding:52px 0;}
+  .bm-reborn-problem__inner{padding:0 20px;}
+  .bm-reborn-problem__grid{grid-template-columns:1fr;gap:28px;}
+  .bm-reborn-problem__image-wrap{order:2 !important;}
+  .bm-reborn-problem__text{order:1 !important;}
+  .bm-reborn-problem__headline{font-size:clamp(24px,6.5vw,32px);}
+  .bm-reborn-problem__callout-text{font-size:clamp(16px,4.5vw,20px);}
+}
+</style>
+<section data-section="5" id="section-problem-agitation" class="bm-reborn-problem" dir="rtl">
+  <div class="bm-reborn-problem__inner">
+    <div class="bm-reborn-problem__grid">
+
+      <!-- תמונה — ימין (ב-RTL: ראשון = ימין) -->
+      <div class="bm-reborn-problem__image-wrap" style="order:1;">
+        <img src="./assets/s5-girl.png" alt="ילדה יושבת מוקפת צעצועים" class="bm-reborn-problem__image"/>
+      </div>
+
+      <!-- טקסט — שמאל -->
+      <div class="bm-reborn-problem__text" style="order:2;">
+        <div class="bm-reborn-problem__eyebrow">S5 — הגברת</div>
+
+        <h2 class="bm-reborn-problem__headline">
+          הורים קונים עוד ועוד צעצועים<br>
+          אבל רובם<br>
+          <span class="bm-reborn-problem__headline-gold">לא יוצרים משחק עמוק</span><br>
+          קשר רגשי או זמן<br>
+          איכות אמיתי.
+        </h2>
+
+        <div class="bm-reborn-problem__chips">
+          <div class="bm-reborn-problem__chip">
+            <div style="width:38px;height:38px;border-radius:50%;background:rgba(176,34,34,0.07);border:1.5px solid rgba(176,34,34,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="#B02222" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="3" x2="3" y2="12"/><line x1="3" y1="3" x2="12" y2="12"/></svg>
+            </div>
+            בלי קשר רגשי
+          </div>
+          <div class="bm-reborn-problem__chip">
+            <div style="width:38px;height:38px;border-radius:50%;background:rgba(176,34,34,0.07);border:1.5px solid rgba(176,34,34,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="#B02222" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="3" x2="3" y2="12"/><line x1="3" y1="3" x2="12" y2="12"/></svg>
+            </div>
+            בלי זמן עמוק
+          </div>
+          <div class="bm-reborn-problem__chip">
+            <div style="width:38px;height:38px;border-radius:50%;background:rgba(176,34,34,0.07);border:1.5px solid rgba(176,34,34,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="#B02222" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="3" x2="3" y2="12"/><line x1="3" y1="3" x2="12" y2="12"/></svg>
+            </div>
+            בלי זמן איכות
+          </div>
+        </div>
+
+        <p class="bm-reborn-problem__body">
+          עוד צעצוע שנפתח בהתלהבות ונשכח אחרי כמה ימים —<br>
+          זה לא שאת שוכחת לבחור בצורה נכונה.
+        </p>
+
+        <div class="bm-reborn-problem__callout">
+          <div class="bm-reborn-problem__callout-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8956A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <p class="bm-reborn-problem__callout-text">
+            בובת ריבורן זה לא עוד צעצוע <span style="color:#B8956A;">זו דרך לפתח רגש,</span> שפה וביטחון
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S7 — מחקרים
+════════════════════════════════════════ -->
+<section class="bm-reborn-research" data-section="7" id="section-research" dir="rtl">
+  <div class="bm-reborn-research__inner">
+
+    <div class="bm-reborn-research__eyebrow">
+      <div class="bm-reborn-research__eyebrow-line"></div>
+      <span class="bm-reborn-research__eyebrow-text">S7 — מחקרים</span>
+      <div class="bm-reborn-research__eyebrow-line"></div>
+    </div>
+
+    <h2 class="bm-reborn-research__headline">
+      זה נראה כמו משחק.<br>
+      אבל מחקרים מראים שקורה כאן הרבה יותר.
+    </h2>
+
+    <p class="bm-reborn-research__intro">
+      משחק בבובות ודמיון נחקר בהקשרים של אמפתיה, שפה רגשית, משחק תפקידים והתפתחות חברתית.
+    </p>
+
+    <div class="bm-reborn-research__panel">
+
+      <div class="bm-reborn-research__panel-header">
+        <svg class="bm-reborn-research__panel-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B8956A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span class="bm-reborn-research__panel-title">מה אומרים המחקרים על זה?</span>
+      </div>
+
+      <div class="bm-reborn-research__source-block">
+        <div class="bm-reborn-research__source-num">01</div>
+        <div class="bm-reborn-research__source-content">
+          <div class="bm-reborn-research__source-header">
+            <span class="bm-reborn-research__source-name">אוניברסיטת קארדיף</span>
+            <span class="bm-reborn-research__source-year">2020</span>
+          </div>
+          <p class="bm-reborn-research__source-finding">
+            מחקר מוחי שבדק ילדים בגילאי 4 עד 8 מצא שמשחק בבובות מפעיל אזורים במוח הקשורים ל<strong>אמפתיה ולעיבוד חברתי</strong>, גם כשהילדה משחקת לבד.
+          </p>
+          <p class="bm-reborn-research__source-finding">
+            באותו מחקר נמצא שכאשר ילדים שיחקו לבד עם טאבלט, <strong>אזור האמפתיה כמעט לא הופעל</strong>.
+          </p>
+          <p class="bm-reborn-research__source-pub">Hashmi et al., Frontiers in Human Neuroscience, 2020</p>
+        </div>
+      </div>
+
+      <div class="bm-reborn-research__source-block">
+        <div class="bm-reborn-research__source-num">02</div>
+        <div class="bm-reborn-research__source-content">
+          <div class="bm-reborn-research__source-header">
+            <span class="bm-reborn-research__source-name">האקדמיה האמריקאית לרפואת ילדים</span>
+            <span class="bm-reborn-research__source-year">2018</span>
+          </div>
+          <p class="bm-reborn-research__source-finding">
+            ה-AAP מתארת משחק תפקידים, כולל האכלה, הרגעה ושיחה עם בובה, כחלק חשוב ב<strong>התפתחות קוגניטיבית, רגשית וחברתית</strong>.
+          </p>
+          <p class="bm-reborn-research__source-finding">
+            המאמר מציין שמשחק חופשי יכול לחזק קשר הורה וילד ולתמוך ב<strong>כישורי ויסות רגשי</strong>.
+          </p>
+          <p class="bm-reborn-research__source-pub">American Academy of Pediatrics, Pediatrics Journal, 2018</p>
+        </div>
+      </div>
+
+      <div class="bm-reborn-research__source-block">
+        <div class="bm-reborn-research__source-num">03</div>
+        <div class="bm-reborn-research__source-content">
+          <div class="bm-reborn-research__source-header">
+            <span class="bm-reborn-research__source-name">יוניצ״ף + LEGO Foundation</span>
+            <span class="bm-reborn-research__source-year">2018</span>
+          </div>
+          <p class="bm-reborn-research__source-finding">
+            דוח בינלאומי על למידה דרך משחק מציין שמשחק דמיוני וטיפולי, כמו להלביש, להאכיל ולהרדים, תורם ל<strong>אמפתיה, יצירתיות ומיומנויות חברתיות</strong>.
+          </p>
+          <p class="bm-reborn-research__source-finding">
+            הדוח מדגיש שמשחק חופשי ומשמעותי מסייע לילדים לפתח <strong>כישורי חשיבה, פתרון בעיות ושיתוף פעולה</strong>.
+          </p>
+          <p class="bm-reborn-research__source-pub">UNICEF & LEGO Foundation, Learning Through Play Report, 2018</p>
+        </div>
+      </div>
+
+      <div class="bm-reborn-research__source-block">
+        <div class="bm-reborn-research__source-num">04</div>
+        <div class="bm-reborn-research__source-content">
+          <div class="bm-reborn-research__source-header">
+            <span class="bm-reborn-research__source-name">אוניברסיטת קיאו, יפן</span>
+            <span class="bm-reborn-research__source-year">2019</span>
+          </div>
+          <p class="bm-reborn-research__source-finding">
+            מחקר מאוניברסיטת קיאו בדק משחק בבובות אצל ילדים צעירים, ומצא שילדים שנחשפו יותר למשחק כזה <strong>פיתחו מהר יותר יכולת להבין רגשות וצרכים של אחרים</strong>.
+          </p>
+          <p class="bm-reborn-research__source-finding">
+            המחקר מציין שגם כשהורה משתתף במשחק ואומר משפטים כמו &#8220;הבובה עייפה&#8221; או &#8220;אולי היא צריכה חיבוק&#8221;, <strong>הילדה מתרגלת להסתכל על העולם דרך רגשות של מישהו אחר</strong>.
+          </p>
+          <p class="bm-reborn-research__source-pub">Keio University, CogSci 2019</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="bm-reborn-research__disclaimer">
+      המקורות מוצגים כדי להסביר את הערך ההתפתחותי של משחק דמיון — לא כהבטחה רפואית או טיפולית.
+    </p>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S7.5 — וידאו מעבר
+════════════════════════════════════════ -->
+<section class="bm-reborn-video-transition" data-section="7.5" dir="rtl">
+  <div class="bm-reborn-video-transition__inner">
+    <div class="bm-reborn-video-transition__eyebrow">
+      <div class="bm-reborn-video-transition__eyebrow-line"></div>
+      <span class="bm-reborn-video-transition__eyebrow-text">S7.5 &#8212; רגע אמיתי</span>
+      <div class="bm-reborn-video-transition__eyebrow-line"></div>
+    </div>
+    <h2 class="bm-reborn-video-transition__headline">ככה זה נראה כשהמשחק מקבל משמעות.</h2>
+    <p class="bm-reborn-video-transition__sub">היא לא רק מחזיקה בובה &#8212; היא מטפלת, מדמיינת, מדברת ובונה קשר.</p>
+    <div class="bm-reborn-video-transition__wrap">
+      <video class="bm-reborn-video-transition__video" autoplay muted loop playsinline preload="none">
+        <source src="./assets/s7-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="bm-reborn-video-transition__caption">ומכאן בדיוק מגיעים היתרונות האמיתיים.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S6 — יתרונות
+════════════════════════════════════════ -->
+<!-- BEGIN: RebornBenefitsSection -->
+<section aria-labelledby="bm-reborn-benefits-main-title" class="bm-reborn-benefits-section" data-section="8" dir="rtl">
+<div class="bm-reborn-benefits-bg-element bm-reborn-benefits-bg-element-1"></div>
+<div class="bm-reborn-benefits-bg-element bm-reborn-benefits-bg-element-2"></div>
+<div class="bm-reborn-benefits-bg-element-3"></div>
+<div class="bm-reborn-benefits-container">
+<header class="bm-reborn-benefits-header">
+<div class="bm-reborn-benefits-subtitle">
+<svg fill="currentColor" height="14" viewBox="0 0 24 24" width="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+S8 &#8212; מה זה בונה בילדה
+<svg fill="currentColor" height="14" viewBox="0 0 24 24" width="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+</div>
+<h2 class="bm-reborn-benefits-title" id="bm-reborn-benefits-main-title">מה המשחק הזה באמת בונה אצל הילדה?</h2>
+<svg class="bm-reborn-benefits-title-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+<p class="bm-reborn-benefits-intro">אחרי שמבינים מה המחקרים מצאו, קל לראות למה בובת ריבורן היא לא עוד צעצוע &#8212; אלא משחק שמתרגל רגש, קשר, אחריות וביטחון.</p>
+</header>
+<div class="bm-reborn-benefits-grid">
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">אינטליגנציה רגשית</h3>
+<p class="bm-reborn-benefits-card-text">כשילדה מטפלת בבובה, היא מתרגלת זיהוי רגשות &#8212; שלה ושל האחרים. היא שואלת &#8220;מה הבובה מרגישה?&#8221; ובלי לשים לב, מפתחת שפה רגשית שתשמש אותה לכל החיים.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">מחקרים מראים שמשחק טיפולי בבובות מפעיל אזורי אמפתיה במוח &#8212; אותם אזורים שאחראים על קשרים בריאים, הבנה חברתית ויכולת לפתור קונפליקטים בבגרות.</p>
+</div>
+</article>
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">ביטחון עצמי</h3>
+<p class="bm-reborn-benefits-card-text">כשילדה מחזיקה בובה ומנהיגה סיטואציה, היא מגלה שהיא מסוגלת &#8212; לטפל, להחליט, לפתור. תחושת המסוגלות הזו בונה בסיס אמין לביטחון עצמי שלא תלוי באישור של אחרים.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">הבובה לא שופטת. היא מקבלת. סביבה בטוחה כזו מאפשרת לילדה להתנסות, לטעות, לנסות שוב &#8212; ולגלות את הכוח שקיים בה מהרגע הראשון.</p>
+</div>
+</article>
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">יכולת חברתית</h3>
+<p class="bm-reborn-benefits-card-text">משחק תפקידים עם בובה הוא חיקוי של קשרים אנושיים. הילדה מתרגלת דיאלוג, מנהיגות, טיפול ותשומת לב &#8212; הבסיס לכל מערכת יחסים בריאה בחייה.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">מחקרי AAP מצאו שמשחק דמיוני מפתח שפה חברתית &#8212; היכולת לקרוא רגשות, לתקשר בבהירות, להגיב בהתאמה. ילדה שמשחקת עם בובה מתרגלת בדיוק את זה.</p>
+</div>
+</article>
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">תחושת אחריות</h3>
+<p class="bm-reborn-benefits-card-text">להאכיל, לגנן, לישן יחד &#8212; כל מחווה טיפולית קטנה שהילדה עושה לבובה מלמדת אותה מה זה לדאוג לאחר. תחושת האחריות הזו אינה מלאכותית &#8212; היא מורגשת, אמיתית ומשמעותית.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">הילדה שמגינה על הבובה שלה לומדת לשים גבולות, להיות נוכחת, לא לוותר כשמישהו זקוק לה. שיעורים שאף ספר לא יכול ללמד אותה טוב כמו המשחק עצמו.</p>
+</div>
+</article>
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">ויסות רגשי</h3>
+<p class="bm-reborn-benefits-card-text">בובה רכה בלילה, חיבוק שקט בזמן חרדה &#8212; הריבורן הופכת לעוגן רגשי. ילדה שלמדה לנחם את עצמה דרך הבובה רוכשת כלי ויסות שישמש אותה גם כשתגדל.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">מחקרי UNICEF הראו קשר בין משחק חופשי לירידה ברמות קורטיזול. הבובה לא רק מרגיעה ברגע &#8212; היא מלמדת את הגוף לחזור לשיווי משקל.</p>
+</div>
+</article>
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">יוזמה ומשחק עצמאי</h3>
+<p class="bm-reborn-benefits-card-text">ילדה עם בובה לא זקוקה לבדר &#8212; היא יוצרת, מדמיינת, בונה עולם שלם מהראש שלה. זה השריר של היצירתיות, שאין לו תחליף בשום אפליקציה או מסך.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">משחק בלתי מובנה הוא שבו הכי הרבה קורה: תכנון, גמישות מחשבתית, פתרון בעיות עצמאי. הריבורן מזמינה אותה להיות הבמאית של הסיפור שלה.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: RebornBenefitsSection -->
+
+<!-- ════════════════════════════════════════
+     S8 — לפני / אחרי
+════════════════════════════════════════ -->
+<section class="bm-reborn-s9" data-section="9">
+  <picture>
+    <source media="(max-width:767px)" srcset="./assets/s9-mobile.png">
+    <img class="bm-reborn-s9__img" src="./assets/s9-desktop.png" alt="לפני ואחרי — ריבורן">
+  </picture>
+</section>
+
+<!-- ════════════════════════════════════════
+     S10 — הפתרון (existing — unchanged)
+════════════════════════════════════════ -->
+<section aria-labelledby="bm-reborn-benefits-s10-title" class="bm-reborn-benefits-section" data-section="10" dir="rtl">
+<div class="bm-reborn-benefits-bg-element bm-reborn-benefits-bg-element-1"></div>
+<div class="bm-reborn-benefits-bg-element bm-reborn-benefits-bg-element-2"></div>
+<div class="bm-reborn-benefits-bg-element-3"></div>
+<div class="bm-reborn-benefits-container">
+<header class="bm-reborn-benefits-header">
+<div class="bm-reborn-benefits-subtitle">S10 — התוצאה בבית</div>
+<h2 class="bm-reborn-benefits-title" id="bm-reborn-benefits-s10-title">אז מה היא מקבלת מזה באמת?</h2>
+<p class="bm-reborn-benefits-intro">לא עוד צעצוע שמעסיק לרגע — אלא משחק שיכול להכניס הביתה יותר שקט, יותר דמיון ויותר זמן איכות.</p>
+</header>
+<div class="bm-reborn-benefits-grid">
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">פחות &#8220;אמא משעמם לי&#8221;</h3>
+<p class="bm-reborn-benefits-card-text">במקום לחפש כל כמה דקות גירוי חדש, היא נכנסת למשחק שיש בו דמות, תפקיד וסיפור משלה.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">זה יכול לתת לה עניין שחוזר שוב ושוב — ולך פחות רגעים של &#8220;מה אני עושה עכשיו?&#8221;</p>
+</div>
+</article>
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">יותר שקט בלי מסך</h3>
+<p class="bm-reborn-benefits-card-text">המסך יכול להעסיק אותה, אבל לא תמיד מפעיל אותה באמת.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">בובת ריבורן נותנת לה משחק חי: לדבר, לטפל, לדמיין ולהוביל את הסיפור בעצמה — ואת מקבלת שקט בלי תחושת אשמה.</p>
+</div>
+</article>
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">יותר הבנה בין האחים</h3>
+<p class="bm-reborn-benefits-card-text">כשהיא מתרגלת לדאוג, להרגיע ולשים לב למה &#8220;מישהו אחר&#8221; צריך — קל לה יותר להבין גם את האחים הקטנים שלה.</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">וזה יכול להפוך רגעים של קנאה, בכי או מריבה קטנה לפחות התפרצויות, יותר הבנה ויותר שקט בבית.</p>
+</div>
+</article>
+<article class="bm-reborn-benefits-card">
+<div class="bm-reborn-benefits-card-content">
+<h3 class="bm-reborn-benefits-card-title">יותר זמן איכות</h3>
+<p class="bm-reborn-benefits-card-text">המשחק עם הבובה פותח שיחות קטנות: &#8220;מה היא מרגישה?&#8221;, &#8220;מה נעשה כדי להרגיע אותה?&#8221;, &#8220;איך נקרא לה?&#8221;</p>
+<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">זה נותן לך דרך פשוטה להיכנס לעולם של הילדה — דרך משחק, דמיון וקשר, בלי עוד מסך באמצע.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S11+12 — PREMIUM SOCIAL PROOF CTA
+════════════════════════════════════════ -->
+<section class="premium-section" data-section="11" id="section-reviews">
+  <div class="sec-lbl center" style="justify-content:center;color:rgba(184,149,106,0.4);">S11+12 — Social Proof</div>
+
+  <!-- Trust Badge -->
+  <div class="trust-badge">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+    אמון של אלפי אמהות
+  </div>
+
+  <!-- Headline -->
+  <h2 class="headline">אמהות כבר בחרו ב{{ product.metafields.reborn_doll.hebrew_name.value | default: product.title }}</h2><!-- TODO: replace with real review count once collected -->
+
+  <!-- Heart Divider -->
+  <div aria-hidden="true" class="divider-container">
+    <div class="divider-line"></div>
+    <div class="divider-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- Description -->
+  <p class="description">
+    אם גם את מחפשת מתנה שלא נשכחת אחרי יומיים —<br/>
+    זו יכולה להיות הבובה שתיכנס לה ללב.
+  </p>
+
+  <!-- Rating -->
+  <div class="rating-section">
+    <div class="stars-container">
+      <div aria-label="דירוג 5 כוכבים" class="stars">
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <span class="rating-text"><!-- TODO: real rating -->דירוג לקוחות</span>
+    </div>
+    <div aria-hidden="true" class="rating-separator"></div>
+    <div class="reviews-count">
+      <svg stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        <path d="M8 12h.01M12 12h.01M16 12h.01"/>
+      </svg>
+      <span>מאות ביקורות מאמהות</span>
+    </div>
+  </div>
+
+  <!-- CTA Button -->
+  <button class="ps-cta">
+    הזמיני לה מתנה שלא נשכחת
+    <svg stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+      <line x1="3" x2="21" y1="6" y2="6"/>
+      <path d="M16 10a4 4 0 0 1-8 0"/>
+    </svg>
+  </button>
+
+  <!-- Features Grid -->
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <div class="feature-content">
+        <span class="feature-title">אחריות מלאה</span>
+        <span class="feature-desc">שקט נפשי להורים</span>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <rect height="11" rx="2" ry="2" width="18" x="3" y="11"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+      </div>
+      <div class="feature-content">
+        <span class="feature-title">רכישה מאובטחת</span>
+        <span class="feature-desc">תשלום 100% מאובטח</span>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <rect height="13" width="15" x="1" y="3"/>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+      </div>
+      <div class="feature-content">
+        <span class="feature-title">משלוח מהיר</span>
+        <span class="feature-desc">עד הבית תוך 3-7 ימי עסקים</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S13+14 — נתונים + למי מתאים
+════════════════════════════════════════ -->
+<section class="whofor-section" data-section="13" id="section-whofor">
+  <div class="sc">
+    <div class="sec-lbl center">S13+14 — למי מתאים</div>
+
+    <!-- נתוני מפתח (מS13) -->
+    <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:48px;">
+      <div class="stat-blk">
+        <span class="stat-num">{{ product.metafields.reborn_specs.size_cm.value | default: '46 ס״מ' }}</span>
+        <div class="stat-lbl">גודל ריאליסטי</div>
+      </div>
+      <div class="stat-blk">
+        <span class="stat-num">3+</span>
+        <div class="stat-lbl">מתאימה מגיל</div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:48px;">
+      <p style="color:var(--cta);font-size:14px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px;">
+        <span style="width:32px;height:1px;background:rgba(184,149,106,0.5);display:inline-block;"></span>
+        למי זה מתאים?
+        <span style="width:32px;height:1px;background:rgba(184,149,106,0.5);display:inline-block;"></span>
+      </p>
+      <h2 style="font-size:clamp(1.75rem,4vw,3rem);font-weight:700;margin-bottom:16px;color:var(--heading);line-height:1.2;font-family:'Heebo',sans-serif;">מתאימה לכל ילד ולכל רגע של התפתחות</h2>
+      <p style="color:var(--text);font-size:18px;max-width:680px;margin:0 auto;line-height:1.6;">בובת ריבורן שמלווה אהבה, דמיון ורכות בכל גיל</p>
+    </div>
+
+    <!-- Cards: carousel (desktop) / 2×2 grid (mobile) -->
+    <div class="whofor-cards-outer">
+      <div class="whofor-cards-container">
+        <div id="whofor-cards">
+
+          <article>
+            <div class="whofor-card-img">
+              <img alt="פעוטה משחקת עם בובה" src="assets/s14-card-1-toddler.jpg"/>
+              <span class="whofor-age-badge">2–4</span>
+            </div>
+            <div class="whofor-card-body">
+              <h3 class="whofor-card-title">פעוטות</h3>
+              <p class="whofor-card-desc">לומדת לאהוב דרך חיבוק</p>
+            </div>
+          </article>
+
+          <article>
+            <div class="whofor-card-img">
+              <img alt="ילדה צעירה מחבקת בובה" src="assets/s14-card-2-young.jpg"/>
+              <span class="whofor-age-badge">5–7</span>
+            </div>
+            <div class="whofor-card-body">
+              <h3 class="whofor-card-title">ילדות צעירות</h3>
+              <p class="whofor-card-desc">מטפלת, מדמיינת, גדלה</p>
+            </div>
+          </article>
+
+          <article>
+            <div class="whofor-card-img">
+              <img alt="ילדה גדולה עם בובה" src="assets/s14-card-3-older.jpg"/>
+              <span class="whofor-age-badge">8–12</span>
+            </div>
+            <div class="whofor-card-body">
+              <h3 class="whofor-card-title">ילדות גדולות</h3>
+              <p class="whofor-card-desc">חברה שתמיד שם בשבילה</p>
+            </div>
+          </article>
+
+          <article>
+            <div class="whofor-card-img">
+              <img alt="מתבגרת עם בובה" src="assets/s14-card-4-teen.jpg"/>
+              <span class="whofor-age-badge">13+</span>
+            </div>
+            <div class="whofor-card-body">
+              <h3 class="whofor-card-title">מתבגרות</h3>
+              <p class="whofor-card-desc">רוגע בתוך עולם רועש</p>
+            </div>
+          </article>
+
+          <!-- כרטיס 5 — מוסתר במובייל -->
+          <article>
+            <div class="whofor-card-img">
+              <img alt="מבוגרת עם בובה" src="assets/s14-card-5-adult.jpg"/>
+              <span class="whofor-age-badge">לכל גיל</span>
+            </div>
+            <div class="whofor-card-body">
+              <h3 class="whofor-card-title">מבוגרים</h3>
+              <p class="whofor-card-desc">נוסטלגיה ורגעים של נחת</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <button aria-label="הקודם" class="whofor-nav-btn whofor-nav-prev" onclick="document.querySelector('.whofor-cards-container').scrollBy({left:304,behavior:'smooth'})">
+        <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      </button>
+      <button aria-label="הבא" class="whofor-nav-btn whofor-nav-next" onclick="document.querySelector('.whofor-cards-container').scrollBy({left:-304,behavior:'smooth'})">
+        <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      </button>
+    </div>
+
+    <div class="whofor-dots">
+      <span class="whofor-dot active"></span>
+      <span class="whofor-dot"></span>
+      <span class="whofor-dot"></span>
+      <span class="whofor-dot"></span>
+      <span class="whofor-dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S15 — השוואת מחיר (existing — unchanged)
+════════════════════════════════════════ -->
+<section class="relative py-section-gap overflow-hidden" data-section="15" id="section-pricing">
+  <div class="absolute inset-0 bg-surface-container border-y-8 border-surface z-0 flex items-center justify-center">
+    <div class="absolute inset-0 border-[4px] border-dashed border-primary-container/20 m-4 pointer-events-none"></div>
+    <span class="text-primary-container/40 font-medium text-xl absolute">תמונת רקע לייפסטייל (שקיפות 30%)</span>
+  </div>
+  <div class="absolute inset-0 bg-surface/90 z-0"></div>
+  <div class="max-w-3xl mx-auto px-gutter text-center relative z-10">
+    <div class="section-label" style="justify-content:center;">S15 — השוואת מחיר</div>
+    <h2 class="text-headline-lg-mobile md:text-[48px] font-black text-on-surface mb-12 leading-tight">
+      האם לשלם <span class="text-primary-container">299 ₪</span> לבובת ריבורן זה יקר?
+    </h2>
+    <div class="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 text-right shadow-soft border border-primary-container/20 relative">
+      <div class="absolute -top-6 right-12 bg-primary-container text-white px-6 py-2 rounded-full font-bold shadow-md text-sm">בואו נדבר מתמטיקה.</div>
+      <ul class="space-y-6 mb-10 text-lg text-on-surface-variant mt-4">
+        <li class="flex justify-between items-center flex-row-reverse border-b border-surface-dim/30 pb-4">
+          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> חוג דרמה — 250 ₪/חודש</span>
+          <span class="text-on-surface font-bold text-xl">כ-3,000 ₪/שנה</span>
+        </li>
+        <li class="flex justify-between items-center flex-row-reverse border-b border-surface-dim/30 pb-4">
+          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> טיפול רגשי — 300 ₪/פגישה</span>
+          <span class="text-on-surface font-bold text-xl">כ-3,600 ₪/שנה</span>
+        </li>
+        <li class="flex justify-between items-center flex-row-reverse pb-2">
+          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> ספרי טיפול וויסות — 130 ₪/ספר</span>
+          <span class="text-on-surface font-bold text-xl">כ-1,560 ₪/שנה</span>
+        </li>
+      </ul>
+      <div class="bg-gradient-to-br from-primary-container to-primary text-on-primary rounded-[2rem] p-8 text-center shadow-lg relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+        <p class="font-bold text-sm mb-3 opacity-90 uppercase tracking-widest relative z-10">בובת ריבורן. תשלום חד פעמי.</p>
+        <div class="text-6xl font-black mb-3 relative z-10">299 ₪</div>
+        <p class="text-base font-medium opacity-90 relative z-10">פחות מ-₪1 ליום. נשארת איתה שנים.</p>
+      </div>
+      <p class="text-center text-on-surface-variant mt-6 text-base">זה לא יקר. זאת ההשקעה הכי משתלמת שעשית.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S16 — FAQ שאלות נפוצות
+════════════════════════════════════════ -->
+<section data-section="16" id="section-faq" style="background:#FAF7F2;padding:72px 20px;">
+<style>
+.faq-wrap { max-width:600px; margin:0 auto; }
+.faq-header { text-align:center; margin-bottom:36px; }
+.faq-label { display:flex; align-items:center; justify-content:center; gap:10px; color:#b8956a; font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:14px; }
+.faq-label span { display:inline-block; width:32px; height:1px; background:#b8956a; opacity:0.4; }
+.faq-heart { font-size:18px; color:#b8956a; margin-bottom:12px; }
+.faq-title { font-size:clamp(1.7rem,4vw,2.4rem); font-weight:900; color:#2a1800; margin-bottom:8px; font-family:'Heebo',sans-serif; line-height:1.2; }
+.faq-sub { font-size:15px; color:#8a7a6a; font-family:'Heebo',sans-serif; }
+.faq-item { background:#fff; border-radius:18px; margin-bottom:10px; border:1px solid #EDE5D8; overflow:hidden; box-shadow:0 2px 12px rgba(184,149,106,0.06); transition:box-shadow 0.2s; }
+.faq-item[open] { box-shadow:0 4px 20px rgba(184,149,106,0.13); border-color:#d4b896; }
+.faq-item summary { display:flex; align-items:center; gap:14px; padding:18px 18px; cursor:pointer; list-style:none; user-select:none; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-ico { width:42px; height:42px; flex-shrink:0; background:#FFF6EE; border:1px solid #e8d5bb; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#b8956a; transition:background 0.2s; }
+.faq-item[open] .faq-ico { background:#f5e8d4; }
+.faq-ico svg { width:20px; height:20px; }
+.faq-q { flex:1; font-size:15px; font-weight:700; color:#2a1800; font-family:'Heebo',sans-serif; text-align:right; line-height:1.4; }
+.faq-plus { width:30px; height:30px; flex-shrink:0; border:1.5px solid #d4b896; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#b8956a; font-size:20px; font-weight:300; line-height:1; transition:transform 0.25s, background 0.2s; background:transparent; }
+.faq-item[open] .faq-plus { transform:rotate(45deg); background:#b8956a; color:#fff; border-color:#b8956a; }
+.faq-answer { padding:4px 18px 20px 18px; font-size:14px; color:#7a6a5a; line-height:1.85; font-family:'Heebo',sans-serif; text-align:right; }
+.faq-answer-inner { border-top:1px solid #f0e8dc; padding-top:16px; }
+/* closing block */
+.faq-closing { margin-top:28px; background:#fff; border-radius:20px; border:1px solid #EDE5D8; padding:28px 24px; text-align:center; box-shadow:0 2px 12px rgba(184,149,106,0.06); }
+.faq-closing-icon { font-size:28px; margin-bottom:10px; }
+.faq-closing-title { font-size:17px; font-weight:700; color:#2a1800; font-family:'Heebo',sans-serif; margin-bottom:6px; }
+.faq-closing-sub { font-size:13px; color:#8a7a6a; font-family:'Heebo',sans-serif; margin-bottom:18px; line-height:1.6; }
+.faq-wa-btn { display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; font-family:'Heebo',sans-serif; font-weight:700; font-size:15px; padding:13px 28px; border-radius:50px; text-decoration:none; transition:background 0.2s, transform 0.2s; box-shadow:0 4px 14px rgba(37,211,102,0.3); }
+.faq-wa-btn:hover { background:#1db954; transform:translateY(-1px); }
+.faq-wa-btn svg { width:20px; height:20px; fill:#fff; }
+</style>
+
+  <div class="faq-wrap">
+
+    <div class="faq-header">
+      <div class="faq-label"><span></span>FAQ<span></span></div>
+      <div class="faq-heart">♥</div>
+      <h2 class="faq-title">שאלות נפוצות</h2>
+      <p class="faq-sub">כל מה שחשוב לדעת לפני הרכישה</p>
+    </div>
+
+    <details class="faq-item" open>
+      <summary>
+        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0zM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+        <span class="faq-q">מאיזה גיל מתאים המוצר?</span>
+        <span class="faq-plus">+</span>
+      </summary>
+      <div class="faq-answer"><div class="faq-answer-inner">בובת לוי מתאימה מגיל 3 ומעלה. היא מורכבת מחומרים בטוחים ועמידים, ללא חלקים קטנים. לילדות מגיל 3–12 היא מספקת חוויית משחק עשירה ומפתחת.</div></div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
+        <span class="faq-q">איך בוחרים את הבובה הנכונה?</span>
+        <span class="faq-plus">+</span>
+      </summary>
+      <div class="faq-answer"><div class="faq-answer-inner">בובת לוי היא הבחירה המושלמת לילדה שאוהבת לטפל ולדמיין. הגודל הריאליסטי (48 ס"מ) והמגע הרך שלה יוצרים חוויה אמיתית. היא מגיעה עם בקבוק ומוצץ — הכל כלול.</div></div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
+        <span class="faq-q">האם המוצר בטוח לשימוש יומיומי?</span>
+        <span class="faq-plus">+</span>
+      </summary>
+      <div class="faq-answer"><div class="faq-answer-inner">כן. הבובה עוברת בדיקות בטיחות קפדניות ועומדת בתקנים האירופאים. החומרים רכים, ללא BPA, ומתאימים למשחק יומיומי ממושך.</div></div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg></div>
+        <span class="faq-q">איך מכבסים ושומרים על המוצר?</span>
+        <span class="faq-plus">+</span>
+      </summary>
+      <div class="faq-answer"><div class="faq-answer-inner">ניתן לנגב את הבובה במטלית לחה. לניקוי עמוק מומלץ לנגב בעדינות בסבון עדין ומים פושרים. אין להכניס למכונת כביסה. אחסן במקום יבש, מחוץ לאור שמש ישיר.</div></div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9.75h4.875a2.625 2.625 0 0 1 0 5.25H12M8.25 9.75 10.5 7.5M8.25 9.75 10.5 12m9-7.243V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185z"/></svg></div>
+        <span class="faq-q">מהי מדיניות ההחזרה?</span>
+        <span class="faq-plus">+</span>
+      </summary>
+      <div class="faq-answer"><div class="faq-answer-inner">אנו מציעים החזרה תוך 14 יום מיום הקבלה, ללא שאלות. המוצר צריך להיות באריזתו המקורית ובמצב תקין. החזר כספי מלא יינתן תוך 5–7 ימי עסקים.</div></div>
+    </details>
+
+    <!-- Closing block -->
+    <div class="faq-closing">
+      <div class="faq-closing-icon">💬</div>
+      <div class="faq-closing-title">עדיין יש לך שאלה?</div>
+      <div class="faq-closing-sub">אנחנו כאן בשבילך — נשמח לעזור בכל שאלה<br/>לפני או אחרי הרכישה.</div>
+      <a class="faq-wa-btn" href="https://wa.me/972500000000" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        שלחי הודעה בוואטסאפ
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S17 — CTA סופי (Liquid)
+════════════════════════════════════════ -->
+{%- assign bm17_variant = product.selected_or_first_available_variant -%}
+{%- if bm17_variant.compare_at_price > bm17_variant.price -%}
+  {%- assign bm17_save = bm17_variant.compare_at_price | minus: bm17_variant.price | times: 100 | divided_by: bm17_variant.compare_at_price | round -%}
+{%- endif -%}
+<section class="finalcta-sec" data-section="17">
+  <div class="sc">
+    <div class="sec-lbl center" style="color:rgba(184,149,106,0.4);">S17 — CTA סופי</div>
+    <h2>תני לה מתנה שהיא לא רק תפתח — היא תטפל בה</h2>
+    <p class="finalcta-txt">רכה. ריאליסטית. מוכנה לחיבוק הראשון.</p>
+    <div class="finalcta-price-row">
+      <span class="finalcta-price-now">{{ bm17_variant.price | money_without_trailing_zeros }}</span>
+      {%- if bm17_variant.compare_at_price > bm17_variant.price -%}
+      <span class="finalcta-price-old">{{ bm17_variant.compare_at_price | money_without_trailing_zeros }}</span>
+      <span class="finalcta-price-save">חוסכים {{ bm17_save }}%</span>
+      {%- endif -%}
+    </div>
+    <div class="finalcta-countdown" id="bm-countdown" aria-label="מבצע מוגבל בזמן">
+      <div class="bm-cd-unit">
+        <div class="bm-cd-num"><span id="bm-cd-h">00</span></div>
+        <div class="bm-cd-lbl">שעות</div>
+      </div>
+      <div class="bm-cd-sep">:</div>
+      <div class="bm-cd-unit">
+        <div class="bm-cd-num"><span id="bm-cd-m">10</span></div>
+        <div class="bm-cd-lbl">דקות</div>
+      </div>
+      <div class="bm-cd-sep">:</div>
+      <div class="bm-cd-unit">
+        <div class="bm-cd-num"><span id="bm-cd-s">00</span></div>
+        <div class="bm-cd-lbl">שניות</div>
+      </div>
+    </div>
+    {%- form 'product', product, id: 'bm-product-form-s17' -%}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"/>
+      <div class="finalcta-btns">
+        <button type="submit" name="add" class="btn-cta btn-cta--glow">כן, אני רוצה את {{ product.metafields.reborn_doll.model_label.value | default: product.title }}</button>
+        <!-- TODO Stage 8: secondary CTA — buy-now JS redirect -->
+        <button type="button" class="btn-outline-white">הוסיפי לעגלה</button>
+      </div>
+    {%- endform -%}
+    <div class="finalcta-badges">
+      <span class="finalcta-badge-svg">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        משלוח חינם
+      </span>
+      <span class="finalcta-badge-svg">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L3 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-9-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        תשלום מאובטח
+      </span>
+      <span class="finalcta-badge-svg">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.36 2.64L3 8"/><path d="M3 3v5h5"/></svg>
+        14 יום להחזרה
+      </span>
+    </div>
+    <div class="finalcta-close">כי המשחק של היום הוא הזיכרון של מחר.</div>
+  </div>
+</section>
+
+{% javascript %}
+(function () {
+  /* ── S1 Trust Bar — IntersectionObserver fade-in ── */
+  var trust = document.getElementById('bm-hero-trust');
+  if (trust) {
+    if (!('IntersectionObserver' in window)) {
+      trust.classList.add('bm-trust--visible');
+    } else {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('bm-trust--visible');
+            this.unobserve(e.target);
+          }
+        }.bind(this));
+      }, { threshold: 0.1 }).observe(trust);
+    }
+  }
+
+  /* ── S17 Countdown — localStorage-based 10-minute session timer ── */
+  var KEY = 'bm_reborn_cd_deadline';
+  var DURATION = 10 * 60 * 1000;
+  var now = Date.now();
+  var deadline = parseInt(localStorage.getItem(KEY) || '0', 10);
+  if (!deadline || deadline <= now) {
+    deadline = now + DURATION;
+    try { localStorage.setItem(KEY, deadline); } catch (e) {}
+  }
+
+  var elH = document.getElementById('bm-cd-h');
+  var elM = document.getElementById('bm-cd-m');
+  var elS = document.getElementById('bm-cd-s');
+  if (!elH || !elM || !elS) return;
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    var remaining = Math.max(0, deadline - Date.now());
+    elH.textContent = pad(Math.floor(remaining / 3600000));
+    elM.textContent = pad(Math.floor((remaining % 3600000) / 60000));
+    elS.textContent = pad(Math.floor((remaining % 60000) / 1000));
+    if (remaining <= 0) {
+      deadline = Date.now() + DURATION;
+      try { localStorage.setItem(KEY, deadline); } catch (e) {}
+    }
+  }
+
+  tick();
+  setInterval(tick, 1000);
+}());
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Reborn Product Page",
+  "tag": "div",
+  "class": "bm-reborn-page",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Reborn Product Page"
+    }
+  ]
+}
+{% endschema %}

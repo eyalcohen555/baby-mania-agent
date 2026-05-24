@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "shopify_pid": "9690182385977",
+      "aliexpress_item_id": "1005007060038271",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "10190523040057",
+      "aliexpress_item_id": "1005008896313230",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "10190523072825",
+      "aliexpress_item_id": "1005008275277733",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "10190523007289",
+      "aliexpress_item_id": "1005008672285275",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "10190522777913",
+      "aliexpress_item_id": "1005007170009461",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "10190522810681",
+      "aliexpress_item_id": "1005007170009461",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "9690247627065",
+      "aliexpress_item_id": "1005009088718947",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "9690182451513",
+      "aliexpress_item_id": "1005005188539088",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "9690182418745",
+      "aliexpress_item_id": "1005006863845547",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    },
+    {
+      "shopify_pid": "9689589383481",
+      "aliexpress_item_id": "1005005317212200",
+      "reviews_accessible": false,
+      "reviews_note": "REVIEWS NOT ACCESSIBLE — AliExpress reviews endpoint blocked by baxia (anti-bot). Manual access required.",
+      "reviews": []
+    }
+  ]
+}
