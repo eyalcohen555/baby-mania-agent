@@ -1,0 +1,4032 @@
+[
+  {
+    "key": "assets/animations.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/animations.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 3657,
+    "checksum": "f4257a19eb1d120e5b0d710e85d8a5b2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/base.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/base.css?v=1773652511",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-03-16T11:15:11+02:00",
+    "content_type": "text/css",
+    "size": 118782,
+    "checksum": "c4ea0bb17563298cbebd86770d215fad",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/bm-baby-crawling.png",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/bm-baby-crawling.png?v=1774205552",
+    "created_at": "2026-03-22T20:52:32+02:00",
+    "updated_at": "2026-03-22T20:52:32+02:00",
+    "content_type": "image/png",
+    "size": 1439312,
+    "checksum": "28ac5ebfd618e58e0b530e726d940caf",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/bm-blog-premium.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/bm-blog-premium.css?v=1775935873",
+    "created_at": "2026-03-10T15:29:51+02:00",
+    "updated_at": "2026-04-11T22:31:13+03:00",
+    "content_type": "text/css",
+    "size": 20394,
+    "checksum": "9ecaaba3a410203f0d79685e53e5870f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/bm-store.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/bm-store.css?v=1772981804",
+    "created_at": "2026-03-08T16:56:44+02:00",
+    "updated_at": "2026-03-08T16:56:44+02:00",
+    "content_type": "text/css",
+    "size": 10993,
+    "checksum": "deac45f51f4f50e021f6971232016f46",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/cart-drawer.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/cart-drawer.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 4222,
+    "checksum": "a46e1ef87a33a80a2dcac8619b8f1ada",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/cart-notification.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/cart-notification.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 2284,
+    "checksum": "1454084009ebf6ee7da45c3ec95efae2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/cart.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/cart.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 10779,
+    "checksum": "7191fd7ac295263916659640b5d5cec5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/collage.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/collage.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 5234,
+    "checksum": "afd1fd9cfbb62b47c9f116c5e94a9f1b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/collapsible-content.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/collapsible-content.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 2947,
+    "checksum": "a8e0387d221740aa876b18f85cbb6501",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-accordion.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-accordion.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1145,
+    "checksum": "1e08a2ec8737904507c61e2251023b58",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-article-card.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-article-card.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 2370,
+    "checksum": "334deeed4fd4aecf09e9a4044a2e74be",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-card.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-card.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 14067,
+    "checksum": "cca7c626e96a2f2873ae5961bed99a59",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-cart-drawer.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-cart-drawer.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 7569,
+    "checksum": "dad9f54ee06b0614dad375efb75b9d09",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-cart-items.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-cart-items.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 6065,
+    "checksum": "00cbc681f9bbf5d7b44e393029388a34",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-cart-notification.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-cart-notification.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 2969,
+    "checksum": "190e364e9aaa3d4c22038b0fc6d89beb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-cart.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-cart.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 3339,
+    "checksum": "caf57dbc9a8970445e70f82926a62344",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-collection-hero.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-collection-hero.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 2189,
+    "checksum": "3a5cfc82ef16c23375d71ea1f80a1a42",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-complementary-products.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-complementary-products.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 4302,
+    "checksum": "b0940f72eb09e43a405a975eb7d4d9ab",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-deferred-media.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-deferred-media.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 2559,
+    "checksum": "9e8521edf831e6cd21c31e16e50b533f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-discounts.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-discounts.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 562,
+    "checksum": "bd1602d8de6c40b35e19f8ec44e2ee22",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-facets.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-facets.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 25694,
+    "checksum": "b7f31c8f6982d75f644b525d0bc63a40",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-image-with-text.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-image-with-text.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 11542,
+    "checksum": "ea266a81060c889760762c0287661ce5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-list-menu.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-list-menu.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 516,
+    "checksum": "501d64354e044821e95ef3e3903af7fd",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-list-payment.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-list-payment.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 362,
+    "checksum": "11e7704326c3fee6834e3f6d91e44699",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-list-social.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-list-social.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 504,
+    "checksum": "648fdd25e7248f2900b7afbcd8cce889",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-localization-form.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-localization-form.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 9758,
+    "checksum": "4d5f49194cd5946c9f8feb669b4191c9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-mega-menu.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-mega-menu.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1681,
+    "checksum": "fbeb427ad46ee1823fa049f954db0fbc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-menu-drawer.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-menu-drawer.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 5411,
+    "checksum": "e336f8db1aadfb74812fce4a6cea554b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-modal-video.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-modal-video.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1808,
+    "checksum": "3827e2f6213a381f20e52343d3b79390",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-model-viewer-ui.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-model-viewer-ui.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1500,
+    "checksum": "b595b3af1c5f26695a793b934f40b013",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-newsletter.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-newsletter.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1408,
+    "checksum": "f869f9874dd754df068f6795ea05de91",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-pagination.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-pagination.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1385,
+    "checksum": "7f04489e05b3f80b7359b26c85401f28",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-pickup-availability.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-pickup-availability.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 3511,
+    "checksum": "13bb19727ad2b1fcdd04bef204dc8a3a",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-predictive-search.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-predictive-search.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 5827,
+    "checksum": "7290e4f8eb0a98788fd7622a7e500a54",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-price.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-price.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1810,
+    "checksum": "58852ee17aa90b8fd98b19bbce18388b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-product-model.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-product-model.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 838,
+    "checksum": "4ddf195183232ddc412202d7f0b6716d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-product-variant-picker.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-product-variant-picker.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 4619,
+    "checksum": "44c64177ffc39cff0f9446b48a4b1ce8",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-progress-bar.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-progress-bar.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 590,
+    "checksum": "40e5efd379242363cb00bc256541e17a",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-rating.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-rating.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1196,
+    "checksum": "41a12f9e827b4ac10997465dd25529d6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-search.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-search.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1489,
+    "checksum": "7a1e5b36c6c903e6c1ede036f4571836",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-show-more.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-show-more.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 162,
+    "checksum": "e8a97e8f3911498fcd77fb7b843c3feb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-slider.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-slider.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 9406,
+    "checksum": "2bee1826a71e67d35663606f4d643383",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-slideshow.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-slideshow.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 4222,
+    "checksum": "8e86dc1cfac2fe5be8d45e146a06cf42",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-swatch-input.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-swatch-input.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 3084,
+    "checksum": "b98bea54e04850ee30a9a9268555de79",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-swatch.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-swatch.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 778,
+    "checksum": "02d7954ee3ec024b27f351f3ff9f63d5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-totals.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-totals.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 501,
+    "checksum": "25b5e8da83da7751a0f9e985dfce4ef9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/component-volume-pricing.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/component-volume-pricing.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1208,
+    "checksum": "01a7141ad3a23be6bb120568a43e8502",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/constants.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/constants.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 258,
+    "checksum": "1f9fbfb00e90d309115198100029eb74",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/customer.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/customer.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 13202,
+    "checksum": "bee85fcd4c434ed169ec8387752c8cd3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/customer.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/customer.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 2978,
+    "checksum": "98fbac22e38fecdc715443845e497815",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/details-disclosure.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/details-disclosure.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 1615,
+    "checksum": "8fec4ad4fe5c5b767d4627a91fe42ccd",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/details-modal.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/details-modal.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 1683,
+    "checksum": "098465ba842e1b1d4458d294031fde4b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/email-signup-banner-background-mobile.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/email-signup-banner-background-mobile.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 2926,
+    "checksum": "a4f9d1956e089e1fb38e72f22450c04b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/email-signup-banner-background.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/email-signup-banner-background.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 4298,
+    "checksum": "5daac32aa50aaa79891998204bd3554c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/facets.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/facets.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 13928,
+    "checksum": "0746048d750a4c6a3da3424b554128c1",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/gift-guard.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/gift-guard.js?v=1769512804",
+    "created_at": "2026-01-27T12:20:09+02:00",
+    "updated_at": "2026-01-27T13:20:04+02:00",
+    "content_type": "application/javascript",
+    "size": 3829,
+    "checksum": "1c9037db58d9294187a4bd4a1a1787a5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/global.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/global.js?v=1777295677",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-04-27T16:14:37+03:00",
+    "content_type": "application/javascript",
+    "size": 44267,
+    "checksum": "c93eae9cd2dc4b52fe14000517d057b0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-3d-model.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-3d-model.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 532,
+    "checksum": "7282dd50922ffd62569f170d409e64f3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-account.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-account.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 477,
+    "checksum": "2f9b308e02d87208ad8ceaddaaa67a98",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-apple.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-apple.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1785,
+    "checksum": "dedd9879af96ee334728ed7d17bbec7d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-arrow.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-arrow.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 322,
+    "checksum": "9d3f120bb1698f5118f1bd2bdaaa87c9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-banana.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-banana.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1789,
+    "checksum": "8fc21c25e7b87d493e754ee9787cb9b3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-bottle.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-bottle.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 4510,
+    "checksum": "da204484fa2b8796dbc4b4f041e6dd3c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-box.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-box.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 478,
+    "checksum": "11290b27b5a2fc76328fde421c7f211c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-caret.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-caret.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 237,
+    "checksum": "6e1428be79f9c32416d2aa3808b18a00",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-carrot.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-carrot.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1736,
+    "checksum": "648ad9720ddd915f2665b778cb3a7742",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-cart-empty.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-cart-empty.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 388,
+    "checksum": "651b31bd627d5255fe8dc1908c31ac0b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-cart.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-cart.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 485,
+    "checksum": "d5c35b08c353201320fa10c4da791065",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-chat-bubble.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-chat-bubble.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 767,
+    "checksum": "1b09bc1594b77573650ba23d63a9903d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-check-mark.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-check-mark.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 388,
+    "checksum": "175a86baa1f3f58c5d4e1948490290d2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-checkmark.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-checkmark.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 317,
+    "checksum": "886d012aaaefc916ba1fd5f38735c225",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-clipboard.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-clipboard.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 746,
+    "checksum": "4f125047462f209877f648ec15b5fa78",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-close-small.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-close-small.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 235,
+    "checksum": "1a5b2c80d83fb9a0d1b4658ad860ba97",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-close.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-close.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 334,
+    "checksum": "0b5d3e7a52a86f50f45ad09546a06c30",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-copy.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-copy.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 387,
+    "checksum": "2821beafbb1e74c067e982edee8ac17c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-dairy-free.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-dairy-free.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 863,
+    "checksum": "26700441e75ec9f1b431bc68ecdcd3bc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-dairy.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-dairy.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 548,
+    "checksum": "8521fe4e2c6df4a012560f06c6502afc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-discount.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-discount.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 260,
+    "checksum": "da7904df6aa39422d233ee3e0d150bd3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-dryer.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-dryer.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 449,
+    "checksum": "decf35d3e44d75f9611f31ba81f8baa9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-error.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-error.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 593,
+    "checksum": "82d65365434af55390200102b1880c89",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-eye.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-eye.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 759,
+    "checksum": "a744d951b559ad54bcf79a3cf0c8fbbb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-facebook.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-facebook.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 365,
+    "checksum": "49086437196683c19dd750fac683e92c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-filter.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-filter.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 497,
+    "checksum": "8eb350515531a4334d3878609fe6289e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-fire.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-fire.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1366,
+    "checksum": "a478e0e1950469b03bfa30343f02ae01",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-gluten-free.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-gluten-free.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1931,
+    "checksum": "47e745a218ebbed6271e8a8144516a0c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-hamburger.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-hamburger.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 303,
+    "checksum": "b7ad06cd6faa9c99c3a6925e858869f3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-heart.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-heart.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 461,
+    "checksum": "5426fc8b14f3e71da6c191b0cb6a891f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-info.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-info.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 627,
+    "checksum": "386fb44dd473d8b9c2026d5dd113b253",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-instagram.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-instagram.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1646,
+    "checksum": "a081fd8854765f92c4bac0466f098f3e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-inventory-status.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-inventory-status.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 169,
+    "checksum": "ab5f41e5b4caf54916109c7960c83e3c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-iron.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-iron.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 912,
+    "checksum": "8d2c0833b990928082473b969db17869",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-leaf.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-leaf.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1178,
+    "checksum": "e6c669388efe6773be06cb7075266f3e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-leather.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-leather.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 3209,
+    "checksum": "aeefca7b60a1d87505875c6a758e114b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-lightning-bolt.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-lightning-bolt.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 414,
+    "checksum": "83dfc3f03ab0e49c700e0ae06b5f36b2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-lipstick.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-lipstick.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 657,
+    "checksum": "981930bf8bcc2f9483553c56ff47cf37",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-lock.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-lock.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 554,
+    "checksum": "2ce216f684f67bc026ffb22c26e3e57e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-map-pin.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-map-pin.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 570,
+    "checksum": "b0079ed616aa5421f92ea4071beffa94",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-minus.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-minus.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 228,
+    "checksum": "c7ca9b4bbb66463817e27551742dc4c0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-nut-free.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-nut-free.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1349,
+    "checksum": "b7bf485ea305866bdb99a4e49f002316",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-padlock.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-padlock.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 534,
+    "checksum": "394bc35f3333903f6cb247191a195dc4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-pants.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-pants.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 947,
+    "checksum": "db3bbb361c5c0f152fdd3e5fe0ae2c33",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-pause.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-pause.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 331,
+    "checksum": "536865dcaefe874981c1d7c640c8915b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-paw-print.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-paw-print.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 2215,
+    "checksum": "9297a6c506cc06a81ee3a26de065b63b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-pepper.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-pepper.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1903,
+    "checksum": "ccef53e98b432fcd90daae5d3653b3ee",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-perfume.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-perfume.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 7871,
+    "checksum": "a786a398ef3974a463b005259d0b7cd6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-pinterest.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-pinterest.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1206,
+    "checksum": "403010859b2a37804d1f666b81e96cd5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-plane.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-plane.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1877,
+    "checksum": "fbe34fd1afb6459ae1faa7118e8c978e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-plant.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-plant.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1218,
+    "checksum": "d1ba6a1edb4f4e5956c13a491f00cc6f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-play.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-play.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 260,
+    "checksum": "3f859ed84d1edd6f0575f53547714324",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-plus.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-plus.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 296,
+    "checksum": "3584b5ecd34549fd7d902fc3c61b99ec",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-price-tag.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-price-tag.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 711,
+    "checksum": "691646617a9e7661b13d4fa438dfbc82",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-question-mark.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-question-mark.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 881,
+    "checksum": "bf28b2d36a204b353abc3a86ed64d467",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-recycle.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-recycle.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 2260,
+    "checksum": "4962dfcceca4af6b29e4bb9337f58b6c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-remove.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-remove.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 571,
+    "checksum": "7daab8a96a79eb7468d664470639f409",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-reset.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-reset.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 247,
+    "checksum": "dfec50b3842e36797df375ebfc65a86e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-return.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-return.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 583,
+    "checksum": "be01984d037cfacc622557a5bb4837e4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-ruler.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-ruler.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 753,
+    "checksum": "981391c5c253aac54c30f05926d9161e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-search.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-search.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 266,
+    "checksum": "51b119957412db63413c522a369e793d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-serving-dish.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-serving-dish.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 658,
+    "checksum": "8c4e4121c00982fa7c8d9b4bbd63a0eb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-share.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-share.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 592,
+    "checksum": "5cead8156b42094c4ce79d626f876356",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-shirt.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-shirt.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1228,
+    "checksum": "b2aadec09bd58270ed2bca82aa962b09",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-shoe.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-shoe.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 900,
+    "checksum": "27d725b8dbde810e6b773c843e8de190",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-shopify.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-shopify.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 2656,
+    "checksum": "3e711088a4e6f1b15399320df2b33b62",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-silhouette.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-silhouette.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 547,
+    "checksum": "ff1c11ceb35f5410cf05aad0fc5228fb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-snapchat.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-snapchat.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 2931,
+    "checksum": "5b54a79d6b91fb35e07759c996411d86",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-snowflake.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-snowflake.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1484,
+    "checksum": "754d4908ac7acbd09383ff449999d46c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-star.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-star.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 713,
+    "checksum": "25ea0dc98e30f6b7a4638730ea28c01e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-stopwatch.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-stopwatch.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 724,
+    "checksum": "7a1af799bc719951ac457a3eb4ea67a2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-success.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-success.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 247,
+    "checksum": "e8d14d28e84d455b65b250782ef336e9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-tick.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-tick.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 310,
+    "checksum": "7ea37ae7528c42c38ea12b18cb566d94",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-tiktok.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-tiktok.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 241,
+    "checksum": "de619afa8e3665f8e9d55d0b26a6a5e7",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-truck.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-truck.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 900,
+    "checksum": "38bc1df387c8432784d3948d14c42b02",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-tumblr.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-tumblr.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 290,
+    "checksum": "e3cb2ec2536d3443432f68c88abf6d26",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-twitter.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-twitter.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 293,
+    "checksum": "78d33a77bb23da71e44807cffd5cbb0c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-unavailable.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-unavailable.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 371,
+    "checksum": "c17808b617e16ad53e79ff9dfe83bd95",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-vimeo.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-vimeo.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 597,
+    "checksum": "4c5f6e77c96d22a4ee919f650b3ef63e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-washing.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-washing.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 1341,
+    "checksum": "871ce71897cb91a511b287d07cd4d133",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-youtube.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-youtube.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 399,
+    "checksum": "75ba70ddabc67ecbcb0292b1978e708b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/icon-zoom.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/icon-zoom.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 692,
+    "checksum": "1867343115fb87cbd22d6209423ca694",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/loading-spinner.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/loading-spinner.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 157,
+    "checksum": "b0b56a8deb0667171d2c7e3dfb71263b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/localization-form.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/localization-form.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 7863,
+    "checksum": "61b20eddcabc904f2bf54a4b327ad4a6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/magnify.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/magnify.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 2132,
+    "checksum": "63a0b729648db05c21789f0753a8f51d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/main-search.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/main-search.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 1242,
+    "checksum": "cc3339a1f8960777d246f899cd5bb2eb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/mask-arch.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/mask-arch.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 323,
+    "checksum": "646639dda8ef8467152a878508c02a42",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/mask-blobs.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/mask-blobs.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 12089,
+    "checksum": "c0fad24da7bde42d5da7a40c29909259",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/media-gallery.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/media-gallery.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 4910,
+    "checksum": "e5709a400b4be7fd0527079fc698e52e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/newsletter-section.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/newsletter-section.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 878,
+    "checksum": "47dbbaecafbfdd7ae455b257937ca093",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/password-modal.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/password-modal.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 250,
+    "checksum": "aa4c4c0a0ba04707104b6998dbd9d4d0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/pickup-availability.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/pickup-availability.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 4198,
+    "checksum": "2e0182c4cf49ce7272a9e0af83ec6981",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/predictive-search.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/predictive-search.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 8718,
+    "checksum": "f2984a0cd0df29f171127044a37ca832",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/price-per-item.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/price-per-item.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 4416,
+    "checksum": "9354efcd9fd11f4467b05f4568002d07",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/product-form.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/product-form.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 5504,
+    "checksum": "1a2edcf2df0c4cafb171b5ac6c9eef54",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/product-info.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/product-info.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 16778,
+    "checksum": "b12f7fb96332ef7f8381bba328dc27e0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/product-modal.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/product-modal.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 1306,
+    "checksum": "afade2c873219795095fb5a6c713e81e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/product-model.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/product-model.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 1356,
+    "checksum": "5a65086050b89c99d1f6169400430870",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/pubsub.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/pubsub.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 598,
+    "checksum": "8248464217500d0e0d68f4571f0d4dc3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/quantity-popover.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/quantity-popover.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 3380,
+    "checksum": "b0153be865959149c378e36c7e82462e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/quantity-popover.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/quantity-popover.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 3549,
+    "checksum": "bf458d23a960ae21c7a1e56439d19a05",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/quick-add-bulk.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/quick-add-bulk.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 6588,
+    "checksum": "9c9d1888e9b2e1d003b955433ecf26b0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/quick-add.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/quick-add.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 8687,
+    "checksum": "ab527af7c009ac67a1592f37cfb78ef6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/quick-add.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/quick-add.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 4799,
+    "checksum": "8859c8a77b195656835e9024337744fc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/quick-order-list.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/quick-order-list.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 12054,
+    "checksum": "ee0b1a159e238bc1a1014fceab12fe73",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/quick-order-list.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/quick-order-list.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 17545,
+    "checksum": "8dd24348807ec36185f2a3709b0c99cf",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/recipient-form.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/recipient-form.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 6504,
+    "checksum": "f07e60312bcddee4557452e314b411d9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/search-form.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/search-form.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 1350,
+    "checksum": "6cee10ce22bf873d19c678ce122a11e8",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-blog-post.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-blog-post.css?v=1777191046",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-04-26T11:10:46+03:00",
+    "content_type": "text/css",
+    "size": 3234,
+    "checksum": "c44db8ee4dd2b21e64de778fa763ed7b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-collection-list.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-collection-list.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1116,
+    "checksum": "630a1f65410b809be329d9139d8d3395",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-contact-form.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-contact-form.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 566,
+    "checksum": "e1cd7aef6162525673e4057784e5c06d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-email-signup-banner.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-email-signup-banner.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 2598,
+    "checksum": "46b5990ddaeae3493a14b659e02ab8fa",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-featured-blog.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-featured-blog.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1080,
+    "checksum": "7426ad06ffc8073ac696c8585596bd9d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-featured-product.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-featured-product.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1491,
+    "checksum": "7ea89169d6dbee85ff5c4461ca05d54b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-footer.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-footer.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 9474,
+    "checksum": "16092eb2dd299320647d3183f154d3cc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-image-banner.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-image-banner.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 10249,
+    "checksum": "a8e4a3e0bc9af8636946d3ef10bb39dc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-main-blog.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-main-blog.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 2158,
+    "checksum": "f93b527680e56d3055873daec6eca2ae",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-main-page.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-main-page.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 305,
+    "checksum": "2be651a1d8f3e55ee6ea36a863dd33c9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-main-product.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-main-product.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 32327,
+    "checksum": "80ede8067e563d5153bd3c54c8bdcafe",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-multicolumn.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-multicolumn.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 4705,
+    "checksum": "765ceb0112680c65b2ad2c5068626f5c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-password.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-password.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 5596,
+    "checksum": "4746287030bec0e481435d06a0d7df1b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-related-products.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-related-products.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 92,
+    "checksum": "8d84aba745feeaf9e24f7b6dd0909df3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/section-rich-text.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/section-rich-text.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1380,
+    "checksum": "8de44a0760fa5883822c19580ca03d9c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/share.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/share.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 2172,
+    "checksum": "1c9859b510ac48f1c64e39dd54942eec",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/show-more.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/show-more.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 1208,
+    "checksum": "fa013d1fb1c796f27c6d200a192d0a96",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/sparkle.gif",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/sparkle.gif?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/gif",
+    "size": 179349,
+    "checksum": "7adcd48a3cc215a81fabd9dafb919507",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/square.svg",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/square.svg?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "image/svg+xml",
+    "size": 123,
+    "checksum": "4921912749635b38f9b2893de6a5c532",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/template-collection.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/template-collection.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1718,
+    "checksum": "d68ffa1086c5316741577db2a9560b89",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/template-giftcard.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/template-giftcard.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 6651,
+    "checksum": "fc2c4de3620147250fdfc2baa32a22dd",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/theme-editor.js",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/theme-editor.js?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/javascript",
+    "size": 2084,
+    "checksum": "83d2d36c4591be909f0d466b1cfd22ee",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "assets/video-section.css",
+    "public_url": "https://cdn.shopify.com/s/files/1/0864/9677/2409/t/8/assets/video-section.css?v=1767278315",
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "text/css",
+    "size": 1197,
+    "checksum": "1ab043c6e1434f706b82e4caff4e79f4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "blocks/ai_gen_block_e745f35.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 16872,
+    "checksum": "1ee16acf20d9f87b4151b0792ed42e5d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "config/settings_data.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-03-01T14:38:27+02:00",
+    "content_type": "application/json",
+    "size": 12603,
+    "checksum": "314b5ee921373027389320ed24199140",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "config/settings_schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 42486,
+    "checksum": "488cbfb34f00d65c637dd38a95c6bda9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "layout/password.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 14289,
+    "checksum": "15551ed39355ada6fd5a6f52c4a80ab2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "layout/theme.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-04-12T00:10:46+03:00",
+    "content_type": "application/x-liquid",
+    "size": 24980,
+    "checksum": "497f7f58aee9928d22900a60abd58c30",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/bg.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 27373,
+    "checksum": "bcee5b2868942b6546db18b685f064df",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/cs.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 22347,
+    "checksum": "0cfbd12d320dd73c8e8ee1a035953069",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/cs.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 92575,
+    "checksum": "99ca11fc1494e9efa665a463570f41fd",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/da.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 20110,
+    "checksum": "4665f3c590b65a1a4b5ecc82658cd181",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/da.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 90263,
+    "checksum": "ae31b567a127a263740ee5d52539e380",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/de.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 20968,
+    "checksum": "983baef1b357742c3b5c759780b864a2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/de.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 91196,
+    "checksum": "75c3a8834fd9526295ee3f5753f36563",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/el.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 29001,
+    "checksum": "d8b3ebee399f142ee1144235f2749b7d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/en.default.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 19398,
+    "checksum": "5a3153c60ed400e4f55162e7876a5de6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/en.default.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 88653,
+    "checksum": "abf5b03365d2167fed2e2004893b5f13",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/es.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21990,
+    "checksum": "8b2b6a4d450d1874909fe0c505eedd85",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/es.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 93467,
+    "checksum": "86364bc19f4a3047bb08fcd3632efd64",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/fi.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 20304,
+    "checksum": "4194f461680a5ca67658b2593d86529a",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/fi.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 90874,
+    "checksum": "272d84b0d1bdaaf4c9d690a399aacbcf",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/fr.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 22236,
+    "checksum": "21a1bcf45dd4a3522f01a34e98f5550f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/fr.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 93035,
+    "checksum": "b70bdb0d278c15412f4ded5e8946bef3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/he.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-04-11T20:32:42+03:00",
+    "content_type": "application/json",
+    "size": 20245,
+    "checksum": "677afded72507db3f11bb1eef54d0c3f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/hr.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21795,
+    "checksum": "d65e1de1b2a2fe7a8dcf6b43a57dbd73",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/hu.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21845,
+    "checksum": "7afe6b5047192fc4fc25f29d07e83aa7",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/id.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 19821,
+    "checksum": "4fc53ad10fa9e0329fb97e5e2ec06acb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/it.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21428,
+    "checksum": "ca3cd2ffe3ec4c997d8bc5984fa8632b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/it.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 92820,
+    "checksum": "58e7b6ecefd70c5e01992edac71ee0c2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/ja.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 23103,
+    "checksum": "ace0546765a47d77f204553e55b48442",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/ja.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 95329,
+    "checksum": "fe097a00e489184aec2fdd44d80b5fa2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/ko.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21080,
+    "checksum": "b0fe1ff62c670410527c52ba803ee9f6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/ko.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 92369,
+    "checksum": "14eb1cfeeefdd07b0d78193aa35f33e7",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/lt.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 22914,
+    "checksum": "86d96e484795d958f169b78a22880be6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/nb.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 19909,
+    "checksum": "0a02b8d28d4945842424bbcd3b4df8d2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/nb.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 90076,
+    "checksum": "71b5d91d9a386573611735b89766b61d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/nl.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 20756,
+    "checksum": "b508e8129ec6f81635fa9914cc877415",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/nl.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 91283,
+    "checksum": "471a288275750deca34e0b69066e3d85",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/pl.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21916,
+    "checksum": "8af679456dc52aaabb5c8eb8f639ef92",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/pl.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 92626,
+    "checksum": "0b9eba3c631ada5d7bb2f99345b1f8ca",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/pt-BR.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21280,
+    "checksum": "25453270a72e90afbfd23ac9d42707fc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/pt-BR.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 92627,
+    "checksum": "7c5120e50482cce53e5499b49f5287f9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/pt-PT.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21686,
+    "checksum": "fdeca3e6359b1230bbd5cb5f39629cca",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/pt-PT.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 93005,
+    "checksum": "089ec51c675793c81c5f5dfc94a2a1ad",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/ro.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 21888,
+    "checksum": "ea7f784bca651cf705827ca3733db7eb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/ru.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 28830,
+    "checksum": "1118b2c7619886c65a37a0f32d32687d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/sk.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 22410,
+    "checksum": "0a34cc9dba6ff48cc181f656388648b1",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/sl.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 22209,
+    "checksum": "3d29610ade591d8b3ebac9f19812270b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/sv.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 20336,
+    "checksum": "80c5acb85132ad284afc426d8ee1f04e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/sv.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 89955,
+    "checksum": "a3dd5a8c9544c83bc1c29421e9d12b01",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/th.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 32399,
+    "checksum": "3fae7cccf97a626e2dc38bfe6a51be9b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/th.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 117622,
+    "checksum": "2329f2a98d43ae9b5f2e9d31e09106c6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/tr.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 20905,
+    "checksum": "0716fa3354c3fbc7453b0e215c56a828",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/tr.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 91478,
+    "checksum": "9d85a1ad5b3bde248d7b7036a331a3a7",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/vi.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 22560,
+    "checksum": "9d02cf4c6a20916ba4ebefcc0c6b83e3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/zh-CN.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 19371,
+    "checksum": "d9f26b1c064504a04cd1b538ccb158ea",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/zh-CN.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 87767,
+    "checksum": "073c180564736a5cd04b97d94d610ef5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/zh-TW.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 19539,
+    "checksum": "2e594927054dd635606a50ded0f339e8",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "locales/zh-TW.schema.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 88444,
+    "checksum": "210f5cd3ee5de9e160f6660711c3ae73",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/announcement-bar.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 10280,
+    "checksum": "0a6a96adc377a1540bb0ed5d4913b497",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/apps.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 666,
+    "checksum": "2318940b1855d892f9b1a353ceb414e6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-birth-choice.liquid",
+    "public_url": null,
+    "created_at": "2026-02-04T17:06:47+02:00",
+    "updated_at": "2026-02-04T18:52:43+02:00",
+    "content_type": "application/x-liquid",
+    "size": 13277,
+    "checksum": "183ac8923bff0e20f5ebd24550ed6ee0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-blog-banner.liquid",
+    "public_url": null,
+    "created_at": "2026-03-15T11:57:31+02:00",
+    "updated_at": "2026-03-15T11:57:31+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1421,
+    "checksum": "633dcdeb321f39f721a2bf6218dc8e0d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-blog-tags.liquid",
+    "public_url": null,
+    "created_at": "2026-03-15T11:57:32+02:00",
+    "updated_at": "2026-03-15T11:57:32+02:00",
+    "content_type": "application/x-liquid",
+    "size": 2270,
+    "checksum": "39f9f62e43c94305b8acfbc489e80c31",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-bundle.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T19:21:09+02:00",
+    "updated_at": "2026-04-11T23:48:17+03:00",
+    "content_type": "application/x-liquid",
+    "size": 18257,
+    "checksum": "a6d3567fc07090c15fbb6a25fedbc20a",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-cta-timer.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T10:18:17+02:00",
+    "updated_at": "2026-04-11T23:48:15+03:00",
+    "content_type": "application/x-liquid",
+    "size": 10760,
+    "checksum": "c73778d5e01c6c707c5591835ea66d7b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-faq.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T12:44:11+02:00",
+    "updated_at": "2026-04-11T23:48:18+03:00",
+    "content_type": "application/x-liquid",
+    "size": 10874,
+    "checksum": "6d4aa619391e50f5522e945ce325c230",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-final-cta.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T12:13:48+02:00",
+    "updated_at": "2026-04-11T23:48:17+03:00",
+    "content_type": "application/x-liquid",
+    "size": 16486,
+    "checksum": "09f01e0361592feba96bb1b797007396",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-hero.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T11:47:11+02:00",
+    "updated_at": "2026-04-11T23:48:14+03:00",
+    "content_type": "application/x-liquid",
+    "size": 42958,
+    "checksum": "c20d394479b2c9f2701ae9f3a7d69354",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-objections.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T10:16:49+02:00",
+    "updated_at": "2026-04-11T23:48:15+03:00",
+    "content_type": "application/x-liquid",
+    "size": 6928,
+    "checksum": "7ef7662b435f7ef586de1f76d7b9e23b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-premium-categories.liquid",
+    "public_url": null,
+    "created_at": "2026-02-08T12:49:47+02:00",
+    "updated_at": "2026-02-08T13:08:40+02:00",
+    "content_type": "application/x-liquid",
+    "size": 7901,
+    "checksum": "5e0d76f516a65180f2fae0b46bafdbae",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-product-blog.liquid",
+    "public_url": null,
+    "created_at": "2026-04-13T08:45:28+03:00",
+    "updated_at": "2026-04-24T13:11:27+03:00",
+    "content_type": "application/x-liquid",
+    "size": 20159,
+    "checksum": "24277eec230d2ac836ca56e360fc5e7c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-shoes-accordion.liquid",
+    "public_url": null,
+    "created_at": "2026-03-18T18:07:50+02:00",
+    "updated_at": "2026-04-16T07:02:06+03:00",
+    "content_type": "application/x-liquid",
+    "size": 19849,
+    "checksum": "4294aa1210bf09052e2384797e542bd4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-shoes-benefits.liquid",
+    "public_url": null,
+    "created_at": "2026-03-18T18:07:46+02:00",
+    "updated_at": "2026-04-14T19:21:43+03:00",
+    "content_type": "application/x-liquid",
+    "size": 19459,
+    "checksum": "ad5541800c44e4dfdd1360a9ce776d0b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-shoes-size-guide.liquid",
+    "public_url": null,
+    "created_at": "2026-03-18T18:07:44+02:00",
+    "updated_at": "2026-04-11T23:48:23+03:00",
+    "content_type": "application/x-liquid",
+    "size": 16520,
+    "checksum": "f8822ff99dd85a8e0ba30d1960d297e4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-social-proof.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T10:21:26+02:00",
+    "updated_at": "2026-04-11T23:48:22+03:00",
+    "content_type": "application/x-liquid",
+    "size": 27578,
+    "checksum": "f956e35211b28424be563c4125079cc8",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-solution.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T12:09:38+02:00",
+    "updated_at": "2026-04-11T23:48:21+03:00",
+    "content_type": "application/x-liquid",
+    "size": 12271,
+    "checksum": "a2f24c141470ca401aa413767d03c1c7",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-statik.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T10:15:05+02:00",
+    "updated_at": "2026-04-11T23:48:20+03:00",
+    "content_type": "application/x-liquid",
+    "size": 8461,
+    "checksum": "770ba13e3b4a99f557c2804f501f8d10",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-sticky-bar.liquid",
+    "public_url": null,
+    "created_at": "2026-03-16T10:07:01+02:00",
+    "updated_at": "2026-05-10T22:04:02+03:00",
+    "content_type": "application/x-liquid",
+    "size": 6571,
+    "checksum": "dc820d869b90f0dba2416a62e38da118",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-banner.liquid",
+    "public_url": null,
+    "created_at": "2026-03-06T13:13:35+02:00",
+    "updated_at": "2026-03-17T11:21:02+02:00",
+    "content_type": "application/x-liquid",
+    "size": 11782,
+    "checksum": "39f91af8904807e80a49251cb744f37c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-benefits.liquid",
+    "public_url": null,
+    "created_at": "2026-03-06T13:13:36+02:00",
+    "updated_at": "2026-03-17T10:57:16+02:00",
+    "content_type": "application/x-liquid",
+    "size": 22596,
+    "checksum": "1e4cc68dbe77b6e1932b746a1bd5f66b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-care.liquid",
+    "public_url": null,
+    "created_at": "2026-03-06T13:13:38+02:00",
+    "updated_at": "2026-03-17T11:04:25+02:00",
+    "content_type": "application/x-liquid",
+    "size": 23242,
+    "checksum": "e490036d67dd65fad16437738da521ee",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-contact.liquid",
+    "public_url": null,
+    "created_at": "2026-03-06T13:13:39+02:00",
+    "updated_at": "2026-03-12T20:32:45+02:00",
+    "content_type": "application/x-liquid",
+    "size": 9074,
+    "checksum": "9bb1d10ee27f82444f0d61f03d81e2a6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-fabric.liquid",
+    "public_url": null,
+    "created_at": "2026-03-06T13:13:36+02:00",
+    "updated_at": "2026-04-16T07:02:34+03:00",
+    "content_type": "application/x-liquid",
+    "size": 9993,
+    "checksum": "5f74732a8919f5410e4693a8b9fd6b33",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-faq.liquid",
+    "public_url": null,
+    "created_at": "2026-03-06T13:13:38+02:00",
+    "updated_at": "2026-04-12T00:28:53+03:00",
+    "content_type": "application/x-liquid",
+    "size": 6615,
+    "checksum": "6afd42f455876a95db8ae9716666abec",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-features.liquid",
+    "public_url": null,
+    "created_at": "2026-03-15T00:35:09+02:00",
+    "updated_at": "2026-03-15T00:37:55+02:00",
+    "content_type": "application/x-liquid",
+    "size": 14428,
+    "checksum": "9945e96a914b7cf103a4aaec7ee43a24",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-hero.liquid",
+    "public_url": null,
+    "created_at": "2026-03-12T15:39:03+02:00",
+    "updated_at": "2026-03-17T10:51:02+02:00",
+    "content_type": "application/x-liquid",
+    "size": 11198,
+    "checksum": "9826bf9dd85224f80010226906d9faf5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-main-overrides.liquid",
+    "public_url": null,
+    "created_at": "2026-03-12T16:05:29+02:00",
+    "updated_at": "2026-03-17T10:40:51+02:00",
+    "content_type": "application/x-liquid",
+    "size": 9416,
+    "checksum": "2d7795ff6aaa1912630b381aae918d1e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-sizes.liquid",
+    "public_url": null,
+    "created_at": "2026-03-06T13:13:37+02:00",
+    "updated_at": "2026-03-08T21:54:08+02:00",
+    "content_type": "application/x-liquid",
+    "size": 7695,
+    "checksum": "5ff7fc4c9a2029092e02d5a9d8bb5798",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-urgency.liquid",
+    "public_url": null,
+    "created_at": "2026-03-06T13:13:39+02:00",
+    "updated_at": "2026-03-12T20:32:44+02:00",
+    "content_type": "application/x-liquid",
+    "size": 12690,
+    "checksum": "d70e356ab1603610eacbb164629ee477",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-store-whats-special.liquid",
+    "public_url": null,
+    "created_at": "2026-03-20T01:19:58+02:00",
+    "updated_at": "2026-03-22T21:00:13+02:00",
+    "content_type": "application/x-liquid",
+    "size": 10342,
+    "checksum": "ad5c0d2fb172ef176056d5228a713305",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-text-box.liquid",
+    "public_url": null,
+    "created_at": "2026-02-24T16:40:43+02:00",
+    "updated_at": "2026-04-11T23:48:24+03:00",
+    "content_type": "application/x-liquid",
+    "size": 9007,
+    "checksum": "41a5015516ce1269e070c7f9b0779863",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-trust-badges.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T10:06:17+02:00",
+    "updated_at": "2026-02-26T10:08:50+02:00",
+    "content_type": "application/x-liquid",
+    "size": 6452,
+    "checksum": "fb59c434259720ddb39819e9c185dd39",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-video-hero.liquid",
+    "public_url": null,
+    "created_at": "2026-01-28T16:06:00+02:00",
+    "updated_at": "2026-01-29T11:58:43+02:00",
+    "content_type": "application/x-liquid",
+    "size": 5739,
+    "checksum": "29f52e6bbd03f85495ebfdc7de43fa2c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bm-who-fits.liquid",
+    "public_url": null,
+    "created_at": "2026-02-26T10:22:59+02:00",
+    "updated_at": "2026-04-11T23:48:19+03:00",
+    "content_type": "application/x-liquid",
+    "size": 7456,
+    "checksum": "9684df9e76fe7dfb18e9fd50ca5d429d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/bulk-quick-order-list.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 383,
+    "checksum": "bbca56eb2fbe6f9cb643645ddae5d8f3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/cart-drawer.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 29,
+    "checksum": "57f717cf57a43e7d837571f79cb31905",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/cart-icon-bubble.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 583,
+    "checksum": "06e77f0309c409c3e95d0ea383e40cd0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/cart-live-region-text.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 92,
+    "checksum": "c498543150cfba8cb5a4a87b8feb8680",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/cart-notification-button.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 54,
+    "checksum": "cc1193d58642eb5d65fd556771b78a47",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/cart-notification-product.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 2107,
+    "checksum": "fad81b7d2da17e2fd2e28159f7a3cf08",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/collage.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 17332,
+    "checksum": "a2bb68a12cc64ce7686910006d3adcd5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/collapsible-content.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 19650,
+    "checksum": "8c6ea2a6fb5bddeb475f5292ae81f415",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/collection-list.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 10644,
+    "checksum": "7b6d8681dad4edce3d53e7e0678ad7f2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/contact-form.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 7401,
+    "checksum": "3da78c8810baf56fe7b3b9351528104b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/custom-liquid.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1698,
+    "checksum": "f59e0ab39564ad3ce9a75048a8bf342a",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/email-signup-banner.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 15701,
+    "checksum": "6155a003ee741efee690c99b03d889d8",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/featured-blog.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 12666,
+    "checksum": "be2cdb262d9dd2505deacd80e49d368e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/featured-collection.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 18977,
+    "checksum": "34bef7f52f05c63f4ce2e0d32858e40e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/featured-product.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 63860,
+    "checksum": "8a0b5c7bf889be923554a826e3f58f66",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/footer-group.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 992,
+    "checksum": "55e4d528058d705b0a2636bebd4d15ad",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/footer.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 20924,
+    "checksum": "f6fcbca4d192cb626f27d57d58cce66a",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/header-group.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-02-08T12:27:24+02:00",
+    "content_type": "application/json",
+    "size": 1007,
+    "checksum": "54a6eb904702695667a961cde95b0f5b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/header.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 22311,
+    "checksum": "e2b410892413b434c1a6ea66623ddeb3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/image-banner.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-29T15:34:58+02:00",
+    "content_type": "application/x-liquid",
+    "size": 19214,
+    "checksum": "891733b2c2bca1d0782606b9a342d213",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/image-with-text.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 17912,
+    "checksum": "da1cdef7d40be204e14bc51ae1c45583",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-404.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 494,
+    "checksum": "f265ea6610602b510eb90da1fd738dd1",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-account.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 6578,
+    "checksum": "9070ae1bed03527a502a892874fe6cbc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-activate-account.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4111,
+    "checksum": "4c87655f54bca6ccf30e5d392af49cfe",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-addresses.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 15883,
+    "checksum": "fe16f3bad2c92da9baf044fe869718d2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-article.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-05-03T17:53:07+03:00",
+    "content_type": "application/x-liquid",
+    "size": 15560,
+    "checksum": "6417590fa5d0980a96f1e603ab1415a5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-blog.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-03-16T13:21:22+02:00",
+    "content_type": "application/x-liquid",
+    "size": 5443,
+    "checksum": "f45c353bb056b283664b52bbeee162b6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-cart-footer.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 6942,
+    "checksum": "dd6b485b719043b48d785c73de4ad4fe",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-cart-items.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 24961,
+    "checksum": "181c9c2372845195b9ca1023b6a883fc",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-collection-banner.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-04-24T15:37:35+03:00",
+    "content_type": "application/x-liquid",
+    "size": 3419,
+    "checksum": "82b023d5122b5e59f6619545e5a41e4d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-collection-product-grid.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 15617,
+    "checksum": "98576deecaaa8b8815f6a41d12610b4d",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-list-collections.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4562,
+    "checksum": "840854149bbb515e9aafa4c195ac5b64",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-login.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 5802,
+    "checksum": "8cf81a6068765e0697fff147ed6d88fe",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-order.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 15218,
+    "checksum": "faf624ec097bbd8ffe95acf0d35d157a",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-page.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1565,
+    "checksum": "bb382039edef5851d3dcac867bb1014f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-password-footer.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4910,
+    "checksum": "c7db7d53e7308a4239c63fc0347bf466",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-password-header.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4561,
+    "checksum": "cb2be6fb3fe8520ed793aa3adb21b07e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-product.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 98979,
+    "checksum": "4522d2851280afe7a472fcf7265c06d3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-register.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4872,
+    "checksum": "59ab58075fc51683d7cb0a96471032f0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-reset-password.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4096,
+    "checksum": "55fe927a1a3bcb9d125d46645da868e8",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/main-search.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 19728,
+    "checksum": "f4f4266d083bf6c39608052c8e20c1f2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/multicolumn.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 16568,
+    "checksum": "9fde5a61bf9cf6b5e3d91ca8a089a7ad",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/multirow.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 14235,
+    "checksum": "39b16326c5ae1aecf887399fac99a228",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/newsletter.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 8463,
+    "checksum": "b13115c1bfdcc7618bc97f01a754f9da",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/offer_section.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4078,
+    "checksum": "d2ef96c3395c8365eee4e993dfe63a3f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/page.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 3189,
+    "checksum": "c2545bb29033007a8c9e5912e2a1d3c1",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/pickup-availability.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4212,
+    "checksum": "f78ec58ae0a67ec1fe80b3fd795494f2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/predictive-search.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 12348,
+    "checksum": "31e8acfd8781be367a6d379e0da0a061",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/quick-order-list.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 2449,
+    "checksum": "1fa352083da6afd0fc926132c29ac1aa",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/related-products.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 7698,
+    "checksum": "beb15fcef07546268259e45d71e5c1a4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/rich-text.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 12281,
+    "checksum": "e9c5f92d3fcae02e4abe00c6745c70d1",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/slideshow.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 22125,
+    "checksum": "03e05b125dfbe5473fd83ac51f8b8031",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "sections/video.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 8066,
+    "checksum": "8a924ea3e6a9d89fdc39e0f115de0db4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/article-card.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-03-10T15:29:53+02:00",
+    "content_type": "application/x-liquid",
+    "size": 8308,
+    "checksum": "254f67cac75213e37098f3669fb5dbd7",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/buy-buttons.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 5997,
+    "checksum": "11450e95b847566d2f2679b757794847",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/card-collection.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 7669,
+    "checksum": "9088e5f6ed7cb80c108577b54771ed3b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/card-product.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 34201,
+    "checksum": "6d89659cf62264bdb2aa59bffd19eb6e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/cart-drawer.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 29593,
+    "checksum": "e5d4a3fea98d3cf7b4f48e50d2a96c52",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/cart-notification.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 2131,
+    "checksum": "66c3f4cb31b21e56ee3706ce3cf985a4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/country-localization.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 5944,
+    "checksum": "06fadd06751e9c9d4734231f7bfed3db",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/custom_cart_drawer.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-04-12T00:10:48+03:00",
+    "content_type": "application/x-liquid",
+    "size": 54980,
+    "checksum": "0f7d7fc89f4d6436e48fd2baccadc3e4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/facets.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 48105,
+    "checksum": "9b41015600f25366c854c7afabd420c6",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/gift-card-recipient-form.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 7996,
+    "checksum": "be2640adc235ebabfd34bfb254d40bd2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/header-drawer.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 15482,
+    "checksum": "57ec6385564f8e56cf6cead6ded23f5b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/header-dropdown-menu.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4434,
+    "checksum": "3cfd8f45cc79deb39d1a39b41cf76be9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/header-mega-menu.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 3704,
+    "checksum": "25ec2a85651ccf1d597408b9da946577",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/header-search.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 4170,
+    "checksum": "f86fa5c358c6cdaea78b7a2072870b62",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/icon-accordion.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 194,
+    "checksum": "94e89225f4182228bc7fc8e78fa58e72",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/icon-with-text.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 3291,
+    "checksum": "cfb4ab0b47953c2b1c944bd114548875",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/language-localization.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1799,
+    "checksum": "0307757fe86cb46bc4c3b48121e8d518",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/loading-spinner.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 330,
+    "checksum": "5515470ebcbf51cf756e1fb3c4d9ce80",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/meta-tags.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1704,
+    "checksum": "94fe115faaf448a88815c92abdfe59eb",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/pagination.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 2769,
+    "checksum": "1f938b935eae13566cd3a358505958a9",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/price-facet.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1412,
+    "checksum": "aae000aade82361a39729886d01e5fc0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/price.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 5466,
+    "checksum": "188b4aef59b4164a01541e22539dd72f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/product-media-gallery.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 14715,
+    "checksum": "f118ad70d77306c0d3f2b745d3179cb2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/product-media-modal.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1949,
+    "checksum": "c3f78ac87f8ee80a00979decf4e4d4dd",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/product-media.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 5380,
+    "checksum": "dd57260e9c198332622ea16d3729294a",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/product-thumbnail.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 6713,
+    "checksum": "8cae0530bd0994606d9aff76c4fac507",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/product-variant-options.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 3373,
+    "checksum": "fa2fe4b1fa8facf5b97e4942ceb14572",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/product-variant-picker.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 3354,
+    "checksum": "4849bcad033b9c086c4aa0399325be7f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/progress-bar.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 132,
+    "checksum": "ee25ae6c279ca065815ca79c5121ad86",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/quantity-input.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1783,
+    "checksum": "eb5757434aecf7085034570aceeee056",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/quick-order-list-row.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 18730,
+    "checksum": "38dcfd3ac40c28d4f98607d5497ee779",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/quick-order-list.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 13002,
+    "checksum": "e91e95fb1362299706ab11f12f71ff35",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/quick-order-product-row.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1190,
+    "checksum": "1be6aee33a1ce1b0b867bd28b6bee4ed",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/share-button.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 2030,
+    "checksum": "b672bafb61bb8c3bbf014b94c8826149",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/social-icons.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 3932,
+    "checksum": "3a5534ab2c5769d9c339f1ddb43b79f1",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/swatch-input.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 1660,
+    "checksum": "728b63a7188d237c136a3296d65306b3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/swatch.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 994,
+    "checksum": "397b6bdb9ebbaad5586ed1c3f0798bd4",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "snippets/unit-price.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 869,
+    "checksum": "0cdacaf0a920cf3e3bd8663fabea89e3",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/404.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 72,
+    "checksum": "f14a0bd594f4fee47b13fc09543098ff",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/article.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 413,
+    "checksum": "2fceb4c3e270e8ea0e7f4ea683d4c303",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/blog.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-03-15T11:57:34+02:00",
+    "content_type": "application/json",
+    "size": 711,
+    "checksum": "9474efe7dc487dbd25048eb8046a55b0",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/cart.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 731,
+    "checksum": "e5576af67497daaa7a04f4767f270a71",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/collection.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 604,
+    "checksum": "1855eb9fce6a0f112197b463fc903385",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/customers/account.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 187,
+    "checksum": "0a1c3246dea561726ad49469d6267010",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/customers/activate_account.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 196,
+    "checksum": "32f4bf7860d2b29b721dc254a7651931",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/customers/addresses.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 189,
+    "checksum": "def5033c922346d00fe239651cf270ba",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/customers/login.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 229,
+    "checksum": "158aa830a27f9344c45e71c3bc528caf",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/customers/order.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 185,
+    "checksum": "6c6b170dc2e5147da3401579ea9d6a27",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/customers/register.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 188,
+    "checksum": "69a1d653cae7d01f307e42befa4543fd",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/customers/reset_password.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 194,
+    "checksum": "51f766157bb825bd1a1889816c5ebad2",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/gift_card.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 10302,
+    "checksum": "75a42576e88e40cab1410f7c03bf87aa",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/index.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-05-12T07:22:22+03:00",
+    "content_type": "application/json",
+    "size": 16266,
+    "checksum": "10801ca8e97dd172c48d462d2176bdc8",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/list-collections.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 297,
+    "checksum": "6a357c7e50c6097b98ecbb8759c3e24c",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/page.birth-package.json",
+    "public_url": null,
+    "created_at": "2026-02-04T15:42:06+02:00",
+    "updated_at": "2026-02-04T18:55:30+02:00",
+    "content_type": "application/json",
+    "size": 8638,
+    "checksum": "117865d5b7ee3398c2d3b89309b15adf",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/page.contact.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 256,
+    "checksum": "8a6141aba7cd7e8e2f28ea458798bf2f",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/page.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 184,
+    "checksum": "a138a211ad3a8d9af2463ed7563bc1a7",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/password.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 685,
+    "checksum": "4749b3d611b8e5c606c326b9c959bfc5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.accessories.json",
+    "public_url": null,
+    "created_at": "2026-03-17T19:33:12+02:00",
+    "updated_at": "2026-03-17T19:33:12+02:00",
+    "content_type": "application/json",
+    "size": 3609,
+    "checksum": "3b62892a712953f936341a7e4e2f8967",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.blank.liquid",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/x-liquid",
+    "size": 0,
+    "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.clothing.json",
+    "public_url": null,
+    "created_at": "2026-03-12T15:49:09+02:00",
+    "updated_at": "2026-04-26T11:10:54+03:00",
+    "content_type": "application/json",
+    "size": 8313,
+    "checksum": "46320adcb7eef40197407fa70dabe731",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.easy-sleep.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-03-16T11:15:14+02:00",
+    "content_type": "application/json",
+    "size": 29226,
+    "checksum": "af045022ee0b8b2dac0994cce847c971",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.json",
+    "public_url": null,
+    "created_at": "2026-03-13T09:14:37+02:00",
+    "updated_at": "2026-03-16T10:07:06+02:00",
+    "content_type": "application/json",
+    "size": 3605,
+    "checksum": "1de07ad8d0017a9c2646cf3957e739bf",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.reborn.json",
+    "public_url": null,
+    "created_at": "2026-03-15T00:16:58+02:00",
+    "updated_at": "2026-04-24T13:11:28+03:00",
+    "content_type": "application/json",
+    "size": 3543,
+    "checksum": "24da5a56e12f86b67d057fa9c957258b",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.shoes.json",
+    "public_url": null,
+    "created_at": "2026-03-13T08:59:57+02:00",
+    "updated_at": "2026-04-14T18:43:52+03:00",
+    "content_type": "application/json",
+    "size": 7361,
+    "checksum": "3bb2b7e7f091a33e2c21ae0a493a0926",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.tempio.json",
+    "public_url": null,
+    "created_at": "2026-01-18T17:23:51+02:00",
+    "updated_at": "2026-05-24T02:03:10+03:00",
+    "content_type": "application/json",
+    "size": 17765,
+    "checksum": "aec01c3f2d7c79c0dfdedf845f49bb33",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.test-template.json",
+    "public_url": null,
+    "created_at": "2026-03-23T18:27:28+02:00",
+    "updated_at": "2026-03-23T18:27:28+02:00",
+    "content_type": "application/json",
+    "size": 6217,
+    "checksum": "f00cd662b649b0892755e5e81615d022",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/product.test.json",
+    "public_url": null,
+    "created_at": "2026-03-11T22:38:01+02:00",
+    "updated_at": "2026-03-13T08:59:07+02:00",
+    "content_type": "application/json",
+    "size": 3381,
+    "checksum": "9dd0e6c890b85f4ebe4971ac1613f6c5",
+    "theme_id": 183668179257
+  },
+  {
+    "key": "templates/search.json",
+    "public_url": null,
+    "created_at": "2026-01-01T16:38:35+02:00",
+    "updated_at": "2026-01-01T16:38:35+02:00",
+    "content_type": "application/json",
+    "size": 588,
+    "checksum": "58e42b0fea9ccd9c039c1f5acb2640fc",
+    "theme_id": 183668179257
+  }
+]

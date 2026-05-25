@@ -1,0 +1,1078 @@
+[
+  {
+    "id": "9096636236089",
+    "title": "כפכף פרווה אוסטרלי עדידוש",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-set",
+      "baby-shower-gift",
+      "faux-fur-baby",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096635515193",
+    "title": "מגפון פרווה אוסטרלי- שירוש",
+    "expected_added": [
+      "shoes-boots"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-set",
+      "baby-shower-gift",
+      "faux-fur-baby",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-boots",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363625273",
+    "title": "מגפי חורף לילדות דגם לין",
+    "expected_added": [
+      "shoes-boots"
+    ],
+    "actual_tags": [
+      "baby-boots",
+      "baby-gift",
+      "girls-clothing",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "shoes-boots",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615669461305",
+    "title": "מגפי חורף נוצצים עם כוכבים",
+    "expected_added": [
+      "shoes-boots"
+    ],
+    "actual_tags": [
+      "baby-boots",
+      "baby-gift",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-boots",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615375794489",
+    "title": "מגפי חורף צעד ראשון",
+    "expected_added": [
+      "shoes-boots"
+    ],
+    "actual_tags": [
+      "baby-boots",
+      "baby-gift",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-boots",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096635941177",
+    "title": "מגפי פרמיום לבנות – חורף חם, נוח ואלגנטי דגם אלין",
+    "expected_added": [
+      "shoes-boots"
+    ],
+    "actual_tags": [
+      "baby-boots",
+      "baby-gift",
+      "elegant-baby",
+      "girls-clothing",
+      "newborn-clothing",
+      "shoes-boots",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607365132601",
+    "title": "נעל אולסטאר צעד ראשון לתינוק",
+    "expected_added": [
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-set",
+      "baby-shower-gift",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-first-step"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363756345",
+    "title": "נעל אופנתית אלגנטית לתינוק",
+    "expected_added": [
+      "shoes-occasion"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "elegant-baby",
+      "everyday-baby-wear",
+      "newborn-clothing",
+      "shoes-occasion"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615375565113",
+    "title": "נעל אלגנטית צעד ראשון לבנות",
+    "expected_added": [
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "elegant-baby",
+      "everyday-baby-wear",
+      "girls-clothing",
+      "newborn-clothing",
+      "shoes-first-step"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363232057",
+    "title": "נעל הלו קיטי עם אורות לילדות",
+    "expected_added": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "girls-clothing",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615376023865",
+    "title": "נעל חורף מחממת ואלגנטית צעד ראשון",
+    "expected_added": [
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "elegant-baby",
+      "newborn-clothing",
+      "shoes-first-step",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615376089401",
+    "title": "נעל חורף צעד ראשון אופנתיות",
+    "expected_added": [
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-first-step",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363658041",
+    "title": "נעל מעבר צעד ראשון לתינוק",
+    "expected_added": [
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "autumn-baby-wear",
+      "baby-gift",
+      "baby-shoes",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-first-step"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179143569721",
+    "title": "נעל סנדל צעד ראשון מונעת החלקה – גמישה בטוחה ונוחה לתינוק דגם רוני",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363461433",
+    "title": "נעל ספורט קז'ואל נוחה לתינוק",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "newborn-clothing",
+      "shoes-sneakers",
+      "sporty-baby"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615376417081",
+    "title": "נעל צעד ראשון אלגנטית לבנים",
+    "expected_added": [
+      "shoes-anti-slip",
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "boys-clothing",
+      "elegant-baby",
+      "everyday-baby-wear",
+      "newborn-clothing",
+      "shoes-anti-slip",
+      "shoes-first-step"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9606764462393",
+    "title": "נעל קז'ואל במיוחד לתינוקות",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9606764298553",
+    "title": "נעלי אופנה קז'ואל מונעות החלקה לתינוקות",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607365067065",
+    "title": "נעלי אורות דינוזאור לתינוק",
+    "expected_added": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9606764429625",
+    "title": "נעלי בובה חגיגיות לבנות",
+    "expected_added": [
+      "shoes-occasion"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "baby-shower-gift",
+      "everyday-baby-wear",
+      "girls-clothing",
+      "newborn-clothing",
+      "shoes-occasion",
+      "special-occasion-baby"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179135017273",
+    "title": "נעלי בובה נסיכותיות דגם פרפר, נגד החלקה - נויה",
+    "expected_added": [
+      "shoes-occasion"
+    ],
+    "actual_tags": [
+      "shoes-occasion"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363330361",
+    "title": "נעלי גומי כריש - דויד",
+    "expected_added": [
+      "shoes-water"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-water"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9794582708537",
+    "title": "נעלי דיסני אלזה עם מנורות לד – נעליים מוארות לבנות בעיצוב אלזה",
+    "expected_added": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "girls-clothing",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9888961462585",
+    "title": "נעלי חורף לילדים – חימום מושלם בכל צעד",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "boys-clothing",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "shoes-sneakers",
+      "winter-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9888961528121",
+    "title": "נעלי ילדים מונעות החלקה – סגירה חכמה ללא שרוכים",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9888961560889",
+    "title": "נעלי ילדים נסגרות בקלות דגם סתיו",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "autumn-baby-wear",
+      "baby-gift",
+      "baby-shoes",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363428665",
+    "title": "נעלי ילדים עם אורות פפיון",
+    "expected_added": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9888961429817",
+    "title": "נעלי ילדים עם סגירה חכמה",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9940845756729",
+    "title": "נעלי מים לילדים מונעות החלקה",
+    "expected_added": [
+      "shoes-water"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "boys-clothing",
+      "everyday-baby-wear",
+      "kids-clothing",
+      "neutral-baby-outfit",
+      "shoes-water"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9731768680761",
+    "title": "נעלי סניקרס כוכבים  מדליקות אורות דגם שירה",
+    "expected_added": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179140194617",
+    "title": "נעלי סניקרס נוחות - יוני",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615375827257",
+    "title": "נעלי סניקרס צעד ראשון",
+    "expected_added": [
+      "shoes-anti-slip",
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sneakers",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-anti-slip",
+      "shoes-first-step"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179139047737",
+    "title": "נעלי ספורט זוהרות בסגנון גרביים, רכות ונוחות בסטייל  - לידור",
+    "expected_added": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363395897",
+    "title": "נעלי ספורט מעוצבות",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "newborn-clothing",
+      "shoes-sneakers",
+      "sporty-baby"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9606764527929",
+    "title": "נעלי ספורט-אופנה לתינוקות",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "newborn-clothing",
+      "shoes-sneakers",
+      "sporty-baby"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9794582741305",
+    "title": "נעלי ספיידרמן עם אורות דגם ארז",
+    "expected_added": [
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-lights",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615378186553",
+    "title": "נעלי קרוקס לתינוק",
+    "expected_added": [
+      "shoes-water"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-water"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9606864765241",
+    "title": "נעליים מונעות החלקה ליילוד",
+    "expected_added": [
+      "shoes-anti-slip",
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn",
+      "shoes-anti-slip",
+      "shoes-first-step"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "10011382677817",
+    "title": "נעליים מונעות החלקה צעד ראשון דגם אליאב",
+    "expected_added": [
+      "shoes-anti-slip",
+      "shoes-first-step"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-shoes",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-anti-slip",
+      "shoes-first-step"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363723577",
+    "title": "סנדל אופנתי פפיון לתינוקת",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179175354681",
+    "title": "סנדל אלגנטי - מאיה",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179143995705",
+    "title": "סנדל בובה אלגנטי בשילוב פפיון - נועה ✨",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096634106169",
+    "title": "סנדל בוהו מעוצב- אוריוש",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096634499385",
+    "title": "סנדל גומי- איזי",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179132199225",
+    "title": "סנדל הליכה נוח - חיוכי",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179139342649",
+    "title": "סנדל מלא בסטייל מונע החלקה מתאים לחוף - גיאצ'ו",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179144651065",
+    "title": "סנדל נסיכותי בשילוב פנינים - ליאן",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096634695993",
+    "title": "סנדל פסטל מעוצב- מדריד",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-set",
+      "baby-shower-gift",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9892620861753",
+    "title": "סנדל פרחוני מעוצב דגם אלין",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "everyday-baby-wear",
+      "floral-baby",
+      "newborn-clothing",
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363690809",
+    "title": "סנדל פשוט לקיץ לתינוק",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals",
+      "summer-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179175813433",
+    "title": "סנדל קטיפתי - קורל",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096633221433",
+    "title": "סנדל רצועות נוח- מיכאלה",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096634597689",
+    "title": "סנדלי גלדיאטור- שרונה",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179149926713",
+    "title": "סנדלי פנינים יוקרתיות - סנדרה",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9179148779833",
+    "title": "סנדלי פפיון יוקרתיות בשילוב פנינים - לוראן",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363592505",
+    "title": "סנדלי קיץ וינטג'",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "newborn-clothing",
+      "shoes-sandals",
+      "summer-baby-wear",
+      "vintage-baby"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9892196483385",
+    "title": "סנדלי קיץ פירחוניות דגם שלו",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals",
+      "summer-baby-wear"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363559737",
+    "title": "סנדלים אופנתיים לתינוקות צעד ראשון",
+    "expected_added": [
+      "shoes-sandals"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sandals",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sandals"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9607363526969",
+    "title": "סניקרס ארנבים לתינוקת",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sneakers",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9615669100857",
+    "title": "סניקרס חלקות קלאסיות לבנות",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sneakers",
+      "everyday-baby-wear",
+      "girls-clothing",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9606764200249",
+    "title": "סניקרס לתינוקות מונעות החלקה מבית בייבי מניה",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sneakers",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9731753017657",
+    "title": "סניקרס מהממות לבנים דגם ישראל",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sneakers",
+      "boys-clothing",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096635089209",
+    "title": "סניקרס סטייל- גולדן",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-set",
+      "baby-shower-gift",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096634925369",
+    "title": "סניקרס קלאסיות- דיויד",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sneakers",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  },
+  {
+    "id": "9096633090361",
+    "title": "סניקרס- אנג׳לינו",
+    "expected_added": [
+      "shoes-sneakers"
+    ],
+    "actual_tags": [
+      "baby-gift",
+      "baby-sneakers",
+      "everyday-baby-wear",
+      "neutral-baby-outfit",
+      "newborn-clothing",
+      "shoes-sneakers"
+    ],
+    "missing": [],
+    "status": "PASS"
+  }
+]

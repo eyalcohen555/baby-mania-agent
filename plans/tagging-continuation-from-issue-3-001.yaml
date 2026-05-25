@@ -1,0 +1,427 @@
+plan_id: tagging-continuation-from-issue-3-001
+plan_name: "המשך עבודת תגים — Issue #3 Open Items"
+approval_tier: T1
+
+telegram_notify:
+  start: true
+  milestones: true
+  done: true
+  blocked: true
+  questions: true
+
+stages:
+  - id: STAGE-0
+    name: STATE READ
+    type: AUDIT
+    goal: "לאשר מצב אמיתי: Layer 6 foundation COMPLETE, tagging work NOT COMPLETE"
+    action: >
+      קרא docs/organic/מצב-הפרויקט-האורגני.md.
+      קרא BABYMANIA-MASTER-PROMPT.md.
+      קרא docs/organic/organic-journal.md (50 שורות אחרונות).
+      אשר ארבעה דברים:
+        1. LAYER_6_FOUNDATION=COMPLETE (218 מוצרים, 6 Smart Collections, navigation Phase 8F)
+        2. TAGGING_WORK=NOT_COMPLETE (~133 REVIEW_ONLY, ~65 נעליים, Tempio Copy, PID 9605887689017)
+        3. EASYSLEEP_TEMPIO=HOLD (אייל: "אל תיגע" — Comment 22 ב-Issue #3)
+        4. LAYER_7=BLOCKED (לא לפתוח)
+      ודא שה-branch נכון ושGitHub מסונכרן.
+    approval_tier: T0
+    files_allowed:
+      - docs/organic/מצב-הפרויקט-האורגני.md
+      - BABYMANIA-MASTER-PROMPT.md
+      - docs/organic/organic-journal.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+      - .env
+    expected_output: >
+      LAYER_6_FOUNDATION: COMPLETE
+      TAGGING_WORK: NOT_COMPLETE
+      EASYSLEEP_TEMPIO: HOLD
+      LAYER_7: BLOCKED
+      STAGE_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "LAYER_6_FOUNDATION: COMPLETE מאושר"
+      - "TAGGING_WORK: NOT_COMPLETE מאושר"
+      - "EASYSLEEP_TEMPIO: HOLD מאושר"
+      - "LAYER_7: BLOCKED מאושר"
+    fail_conditions:
+      - "state docs לא נמצאו"
+      - "מצב לא ניתן לקבוע"
+      - "ניסיון לפתוח Layer 7"
+    next_on_pass: STAGE-1
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-1
+    name: ISSUE 3 OPEN ITEMS NORMALIZATION
+    type: AUDIT
+    goal: "לסווג את כל הפריטים מ-Issue #3 לרשימת עבודה מסודרת"
+    action: >
+      על בסיס Issue #3 + 23 תגובות + state doc + journal:
+      צור טבלה: ITEM | STATUS | TIER | ACTION | BLOCKER
+      STATUS: FIXED/OPEN/READ_ONLY_DONE/REVIEW_ONLY/BLOCKED_T3/FUTURE
+      פריטים לסיווג: A1-A4 FIXED, A5 READ_ONLY_DONE, Phase B REVIEW_ONLY,
+      Tempio Copy READ_ONLY_DONE, קיץ 2026 FUTURE, EasySleep BLOCKED,
+      Navigation E2 BLOCKED_T3, ~133 REVIEW_ONLY, ~65 shoes REVIEW_ONLY.
+      שמור: output/tags/issue3-open-items-normalized.md
+    approval_tier: T0
+    files_allowed:
+      - docs/organic/מצב-הפרויקט-האורגני.md
+      - docs/organic/organic-journal.md
+      - output/tags/issue3-open-items-normalized.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+      - .env
+    expected_output: >
+      ITEMS_FIXED: 4
+      ITEMS_OPEN: N
+      ITEMS_REVIEW_ONLY: N
+      ITEMS_BLOCKED_T3: N
+      ITEMS_FUTURE: N
+      OUTPUT_FILE: output/tags/issue3-open-items-normalized.md
+      STAGE_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "כל פריטי Issue #3 מסווגים"
+      - "קובץ נשמר ב-output/tags/"
+    fail_conditions:
+      - "פריטים ללא סטטוס"
+      - "FIXED מסומן ללא commit reference"
+    next_on_pass: STAGE-2
+    next_on_fail: STOP
+    is_milestone: true
+
+  - id: STAGE-2
+    name: PRODUCT AUDIT PID 9605887689017
+    type: AUDIT
+    goal: "T0 read-only — לבדוק למה PID 9605887689017 לא נראה בחנות הציבורית"
+    action: >
+      הרץ Python script עם OAuth client_credentials (לא static token):
+        GET https://a2756c-c0.myshopify.com/admin/api/2024-10/products/9605887689017.json
+      חלץ: product_id, title, handle, status, published_at, template_suffix,
+      tags, variants, images count, body_html length.
+      בדוק storefront: GET https://www.babymania-il.com/products/<handle>
+      רשום HTTP status. לא לשנות שום שדה.
+      שמור: output/tags/pid-9605887689017-audit.json + .md
+    approval_tier: T0
+    files_allowed:
+      - scripts/
+      - output/tags/pid-9605887689017-audit.json
+      - output/tags/pid-9605887689017-audit.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+    expected_output: >
+      PID: 9605887689017
+      STATUS: active/draft/archived
+      PUBLISHED_AT: [date or null]
+      STOREFRONT_HTTP: [200/301/404]
+      STOREFRONT_VISIBLE: YES/NO
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "API GET בוצע"
+      - "10 שדות תועדו"
+      - "storefront HTTP נבדק"
+      - "JSON + MD נשמרו"
+    fail_conditions:
+      - "שינוי כלשהו בוצע"
+      - "כתיבה ל-Shopify"
+    next_on_pass: STAGE-3
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-3
+    name: TEMPIO OUT OF SCOPE CONFIRMATION
+    type: AUDIT
+    goal: "לתעד שTempio / Tempio Copy מוחרגים מהתוכנית לפי החלטת אייל — ללא בדיקה וללא קריאה"
+    action: >
+      תעד בלבד: Tempio ו-Tempio Copy מחוץ לסקופ לפי החלטת אייל (2026-05-11).
+      אייל יטפל בהם באופן ידני בעוד כמה ימים.
+      אסור לקרוא נתוני Tempio מ-Shopify API.
+      אסור לבדוק storefront של Tempio.
+      אסור לשנות, לתייג, להסתיר, או למחוק כל מוצר Tempio.
+      פלט: רשום TEMPIO_STATUS: OUT_OF_SCOPE ו-REASON: Ayal_decision_2026-05-11.
+    approval_tier: T0
+    files_allowed: []
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+      - .env
+    expected_output: >
+      TEMPIO_STATUS: OUT_OF_SCOPE
+      REASON: Ayal_decision_2026-05-11
+      SHOPIFY_READ_PERFORMED: NO
+      SHOPIFY_WRITE_PERFORMED: NO
+      STAGE_VERDICT: PASS
+    exit_conditions:
+      - "TEMPIO_STATUS: OUT_OF_SCOPE מתועד"
+      - "אפס קריאות Shopify על Tempio"
+    fail_conditions:
+      - "בוצעה קריאת Shopify על Tempio"
+      - "כתיבה ל-Shopify"
+    next_on_pass: STAGE-4
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-4
+    name: SHOES EXISTING CLASSIFICATION SEARCH
+    type: LOGIC
+    goal: "לחפש אם קיים taxonomy/spec נעליים לפני בניית חדש"
+    action: >
+      בדוק: output/tags/shoes-taxonomy-proposal.md,
+      output/tags/shoes-taxonomy-proposal.json,
+      output/tags/tag-taxonomy-expansion-audit.json,
+      docs/organic/tag-taxonomy-expansion-proposal.md.
+      לכל קובץ: קרא, בדוק: taxonomy מוגדר? מבוסס סוג/סגנון (לא מידות)? כולל REVIEW_ONLY?
+      אם מספיק → החזר FOUND_EXISTING_SHOES_CLASSIFICATION: YES
+      אם לא → החזר FOUND_EXISTING_SHOES_CLASSIFICATION: NO
+    approval_tier: T0
+    files_allowed:
+      - output/tags/shoes-taxonomy-proposal.md
+      - output/tags/shoes-taxonomy-proposal.json
+      - output/tags/tag-taxonomy-expansion-audit.json
+      - docs/organic/tag-taxonomy-expansion-proposal.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: "FOUND_EXISTING_SHOES_CLASSIFICATION: YES / NO"
+    exit_conditions:
+      - "כל נתיבי החיפוש נבדקו"
+      - "החלטה ברורה YES או NO"
+    fail_conditions:
+      - "לא ניתן לקבוע YES או NO"
+    next_on_pass: STAGE-6
+    next_on_fail: STAGE-5
+    is_milestone: false
+
+  - id: STAGE-5
+    name: SHOES TAXONOMY SPEC
+    type: FIX
+    goal: "לבנות taxonomy spec לנעליים לפי סוג/סגנון/שימוש — ללא מידות"
+    action: >
+      בנה spec עם 6 תגים:
+        shoes-sandals, shoes-sneakers, shoes-boots,
+        shoes-first-step, shoes-elegant, shoes-soft-sole.
+      לכל תג: tag_name, display_name_hebrew, when_to_use, when_not_to_use,
+      image_signals, examples_from_store, review_only_triggers, multi_tag_allowed.
+      כלל: אסור מידה/EU size/גיל. מותר ריבוי tags (עד 3).
+      שמור: output/tags/shoes-taxonomy-spec-v2.md. לא לתייג. לא לכתוב ל-Shopify.
+    approval_tier: T1
+    files_allowed:
+      - output/tags/shoes-taxonomy-spec-v2.md
+      - output/tags/shoes-taxonomy-proposal.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+      - .env
+    expected_output: >
+      SPEC_FILE: output/tags/shoes-taxonomy-spec-v2.md
+      TAGS_DEFINED: 6
+      EU_SIZE_EXCLUDED: YES
+      MULTI_TAG_ALLOWED: YES
+      SHOPIFY_WRITES: NONE
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "6 תגים מוגדרים"
+      - "EU size לא נכלל"
+      - "קובץ spec נשמר"
+    fail_conditions:
+      - "tag מבוסס EU size נוצר"
+      - "כתיבה ל-Shopify"
+      - "תיוג מוצרים"
+    next_on_pass: STAGE-6
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-6
+    name: SHOES IMAGE REVIEW REQUIREMENTS
+    type: AUDIT
+    goal: "לאשר או לבנות spec לimage review לנעליים"
+    action: >
+      בדוק: output/tags/shoes-image-review-spec.md.
+      אם קיים — בדוק 5 תנאים: input schema, output schema, confidence levels,
+      REVIEW_ONLY conditions, 6 taxonomy tags covered.
+      כל 5 PASS → דווח EXISTING_SPEC_SUFFICIENT: YES.
+      אחרת → צור spec-v2 עם: INPUT (product_id/title/handle/image_urls/current_tags),
+      OUTPUT (shoe_type/confidence/multi_tag/reason),
+      REVIEW_ONLY triggers (confidence<MEDIUM, תמונה לא ברורה, היברידי 3+, אביזר לא נעל).
+      שמור: output/tags/shoes-image-review-spec-v2.md אם נוצר.
+    approval_tier: T0
+    files_allowed:
+      - output/tags/shoes-image-review-spec.md
+      - output/tags/shoes-image-review-spec-v2.md
+      - output/tags/shoes-taxonomy-spec-v2.md
+      - output/tags/shoes-taxonomy-proposal.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      IMAGE_REVIEW_SPEC: EXISTING/NEW
+      EXISTING_SPEC_SUFFICIENT: YES/NO
+      AGENT_BUILD_READY: YES (דורש Ayal approval)
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "spec קיים (existing או new)"
+      - "input + output schema מוגדרים"
+      - "REVIEW_ONLY conditions מוגדרים"
+    fail_conditions:
+      - "spec חסר input schema"
+      - "agent build בלי Ayal approval"
+    next_on_pass: STAGE-7
+    next_on_fail: STOP
+    is_milestone: true
+
+  - id: STAGE-7
+    name: REVIEW ONLY POOL STRATEGY
+    type: AUDIT
+    goal: "להכין אסטרטגיית batch ל-~133 REVIEW_ONLY — ללא תיוג"
+    action: >
+      קרא: output/tags/review-only-triage-plan.md, output/tags/tag-taxonomy-expansion-audit.json.
+      הגדר: REVIEW_ONLY_TOTAL=~133, BATCH_SIZE=20,
+      TOOL=Shopify Admin ידני (לא API script),
+      קריטריוני batch 1: clothing בלבד, type tag בלבד, מלאי גבוה, כותרת ברורה.
+      שיטת בדיקה: admin→ title+images+variants→ type-set/romper/dress/bodysuit/occ-gift/SKIP.
+      T3_REQUIRED=YES, AYAL_APPROVAL=YES, FP_RISK=MEDIUM (75% Batch 10).
+      שמור: output/tags/review-only-batch-strategy.md. לא לתייג.
+    approval_tier: T0
+    files_allowed:
+      - output/tags/review-only-triage-plan.md
+      - output/tags/tag-taxonomy-expansion-audit.json
+      - output/tags/review-only-batch-strategy.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      REVIEW_ONLY_TOTAL: ~133
+      BATCH_1_SIZE: 20
+      T3_REQUIRED: YES
+      FALSE_POSITIVE_RISK: MEDIUM
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "מספר REVIEW_ONLY מאושר"
+      - "T3 requirement מתועד"
+      - "אסטרטגיה נשמרה"
+    fail_conditions:
+      - "תיוג live בוצע"
+      - "כתיבה ל-Shopify"
+    next_on_pass: STAGE-8
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-8
+    name: HOMEPAGE UX ITEMS ROUTING
+    type: AUDIT
+    goal: "להפריד בעיות UX מעבודת התגים ולנתב לתוכניות הנכונות"
+    action: >
+      סווג את פריטי UX הפתוחים:
+      Trust badges → UX plan T1-T2.
+      Hero headline → Theme T2.
+      Subscription English text → Admin manual only (API לא נגיש).
+      Navigation E2 → BLOCKED_T3.
+      "המיוחדים שלנו" → Ayal decision.
+      שמור: output/tags/homepage-ux-routing.md.
+    approval_tier: T0
+    files_allowed:
+      - docs/organic/מצב-הפרויקט-האורגני.md
+      - output/tags/homepage-ux-routing.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+      - .env
+    expected_output: >
+      ITEMS_IN_TAGGING_PLAN: 0
+      ITEMS_IN_UX_PLAN: 2
+      ITEMS_ADMIN_ONLY: 1
+      ITEMS_BLOCKED_T3: 1
+      ITEMS_AYAL_DECISION: 1
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "כל 5 בעיות UX מנותבות"
+      - "routing file נשמר"
+    fail_conditions:
+      - "שינוי theme בוצע"
+      - "כתיבה ל-Shopify"
+    next_on_pass: STAGE-9
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-9
+    name: DECISION REPORT FOR AYAL
+    type: AUDIT
+    goal: "דוח החלטה לאייל עם כל הממצאים"
+    action: >
+      צבור תוצאות STAGE-2 עד STAGE-8. צור: output/tags/issue3-decision-report.md.
+      5 סעיפים: WHAT WAS AUDITED / DECISIONS NEEDED FROM AYAL /
+      WHAT CAN PROCEED WITHOUT AYAL / CONFIRMED HOLD / NEXT RECOMMENDED PLAN.
+      AYAL_DECISIONS: PID 9605887689017 visibility, Tempio Copy,
+      המיוחדים שלנו naming, shoes image review agent,
+      REVIEW_ONLY batch 1 T3, Navigation E2 T3.
+      Next plans: tagging-shoes-live-001.yaml / tagging-review-only-batch1-001.yaml
+    approval_tier: T0
+    files_allowed:
+      - output/tags/
+      - docs/organic/organic-journal.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      REPORT_FILE: output/tags/issue3-decision-report.md
+      AYAL_DECISIONS_NEEDED: 6
+      ITEMS_READY_NO_APPROVAL: 4
+      HOLD_CONFIRMED: YES
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "דוח נשמר"
+      - "6 החלטות Ayal מפורטות"
+      - "hold items מאושרים"
+    fail_conditions:
+      - "דוח לא נשמר"
+      - "EasySleep/Tempio לא HOLD"
+    next_on_pass: STAGE-10
+    next_on_fail: STOP
+    is_milestone: true
+
+  - id: STAGE-10
+    name: FINAL OUTPUT
+    type: AUDIT
+    goal: "לסכם ולאשר שאפס writes לShopify בוצעו"
+    action: >
+      צור: output/tags/issue3-plan-summary.md. כלול:
+      PLAN_ID, DATE, STAGES_COMPLETED, FILES_CREATED,
+      SHOPIFY_WRITES=NONE, LIVE_TAGGING=NONE, LAYER_7_OPENED=NO,
+      EASYSLEEP_TEMPIO=HOLD_CONFIRMED, EU_SIZE_EXCLUDED=YES,
+      NEXT_RECOMMENDED_COMMAND: "המתן לאחת מהחלטות אייל לפי issue3-decision-report.md."
+    approval_tier: T0
+    files_allowed:
+      - output/tags/
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      SUMMARY_FILE: output/tags/issue3-plan-summary.md
+      SHOPIFY_WRITES: NONE
+      LIVE_TAGGING: NONE
+      LAYER_7_OPENED: NO
+      EASYSLEEP_TEMPIO: HOLD_CONFIRMED
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "סיכום נשמר"
+      - "SHOPIFY_WRITES: NONE מאושר"
+      - "LAYER_7_OPENED: NO מאושר"
+    fail_conditions:
+      - "כתיבה ל-Shopify בוצעה"
+      - "LAYER_7 נפתח"
+    next_on_pass: DONE
+    next_on_fail: STOP
+    is_milestone: true

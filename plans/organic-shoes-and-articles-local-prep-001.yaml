@@ -1,0 +1,437 @@
+plan_id: organic-shoes-and-articles-local-prep-001
+plan_name: "Organic — Shoes T3 Readiness + HUB-12 Local Production"
+approval_tier: T1
+created: 2026-05-17
+author: organic-team
+shopify_writes: NONE
+commits: NONE
+
+description: >
+  Two parallel workstreams:
+  1. Verify and finalize shoes T3 packet — blocked on Shopify API.
+  2. Produce HUB-12 article drafts locally — not blocked.
+  No Shopify writes. No publish. No commits. Local preparation only.
+
+blocked_until:
+  - shopify_api_status: 200
+  - ayal_approves_t3: "APPROVED T3 GO — נעליים"
+
+telegram_notify:
+  start: true
+  milestones: true
+  done: true
+  blocked: true
+  questions: false
+
+# ─── WORKSTREAM S — SHOES TAGGING ────────────────────────────────────────────
+
+stages:
+
+  - id: S1
+    name: "SHOES T3 PACKET VERIFICATION"
+    workstream: shoes
+    type: AUDIT
+    approval_tier: T0
+    goal: "לאשר שחבילת T3 נעליים קיימת, מכסה 65/65, אין REVIEW פתוח, פיזור תגים תקין"
+    action: >
+      קרא: output/tags/shoes-live-tagging-t3-approval-packet.md
+      קרא: output/tags/shoes-tagging-ready-for-review-v2.md
+      ספור מוצרים. אמת פיזור תגים:
+        shoes-sandals=21, shoes-sneakers=16, shoes-sneakers+shoes-lights=8,
+        shoes-first-step=5, shoes-first-step+shoes-anti-slip=4,
+        shoes-boots=5, shoes-occasion=3, shoes-water=3
+      אמת REVIEW_OPEN=0.
+    files_allowed:
+      - output/tags/shoes-live-tagging-t3-approval-packet.md
+      - output/tags/shoes-tagging-ready-for-review-v2.md
+    files_forbidden:
+      - .env
+      - scripts/t3_shoe_tagging.py
+      - bridge/
+    expected_output: |
+      PACKET_EXISTS: YES
+      PRODUCTS_COUNT: 65
+      REVIEW_OPEN: 0
+      TAG_DISTRIBUTION: PASS
+      S1_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "PRODUCTS_COUNT=65 מאושר"
+      - "REVIEW_OPEN=0 מאושר"
+      - "כל 8 קטגוריות תגים נספרו"
+    fail_conditions:
+      - "קובץ חסר"
+      - "PRODUCTS_COUNT != 65"
+      - "REVIEW_OPEN > 0"
+    next_on_pass: S4
+    next_on_fail: S2
+    is_milestone: false
+
+  - id: S2
+    name: "SHOES T3 PACKET REBUILD"
+    workstream: shoes
+    type: FIX
+    approval_tier: T1
+    goal: "שחזור חבילת T3 נעליים אם S1 נכשל"
+    action: >
+      קרא: output/tags/all-shoes-from-600-title-scan.json
+      הרץ classify() לכל מוצר active.
+      בנה טבלה: product_id | title | handle | tags_current | tags_target | reason | confidence
+      שמור: output/tags/shoes-live-tagging-t3-approval-packet-rebuilt.md
+      אסור לכתוב לShopify. אסור לבצע PUT/POST.
+    files_allowed:
+      - output/tags/all-shoes-from-600-title-scan.json
+      - output/tags/shoes-tagging-ready-for-review-v2.md
+      - output/tags/shoes-live-tagging-t3-approval-packet-rebuilt.md
+      - scripts/t3_shoe_tagging.py
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      PACKET_REBUILT: YES
+      PRODUCTS_IN_PACKET: 65
+      SHOPIFY_WRITES: NONE
+      S2_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "65 מוצרים בחבילה"
+      - "קובץ נשמר"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "פחות מ-65 מוצרים"
+      - "כתיבה לShopify"
+    next_on_pass: S4
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: S4
+    name: "LOCAL DRY-RUN SIMULATION"
+    workstream: shoes
+    type: LOGIC
+    approval_tier: T0
+    goal: "סימולציה מקומית של שינויי תגים — ללא שום Shopify write"
+    action: >
+      על בסיס classify() + merge_tags() מ-t3_shoe_tagging.py:
+      לכל 65 מוצר חשב: tags_before (ריק), tags_after, added[], removed[].
+      בדוק 6 כללי safety:
+        1. removed[] ריק תמיד
+        2. אין age-* בtags_after
+        3. אין EU-size בtags_after
+        4. אין כפילויות
+        5. אין type/gender conflicts
+        6. כל מוצר הוא active ונעל
+      שמור: output/tags/dry-run/shoes-dry-run-local-<timestamp>.json
+    files_allowed:
+      - output/tags/all-shoes-from-600-title-scan.json
+      - output/tags/dry-run/
+      - scripts/t3_shoe_tagging.py
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      DRY_RUN_PRODUCTS: 65
+      REMOVALS: 0
+      CONFLICTS: 0
+      AGE_TAGS: 0
+      EU_TAGS: 0
+      DUPLICATES: 0
+      DRY_RUN_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "65 מוצרים עובדו"
+      - "REMOVALS=0"
+      - "CONFLICTS=0"
+      - "קובץ dry-run נשמר"
+    fail_conditions:
+      - "REMOVALS > 0"
+      - "כתיבה לShopify"
+      - "AGE_TAGS > 0"
+    next_on_pass: S5-GATE
+    next_on_fail: STOP
+    is_milestone: true
+
+  - id: S5-GATE
+    name: "LIVE T3 GATE — BLOCKED"
+    workstream: shoes
+    type: GATE
+    approval_tier: T3
+    goal: "שמירת gate — live write חסום עד 4 תנאים"
+    action: >
+      BLOCKED. לא לבצע כלום.
+      Gate נפתח רק כש:
+        1. GET /shop.json מחזיר 200
+        2. backup קיים ב-output/tags/backup/
+        3. dry-run PASS
+        4. אייל שולח: "APPROVED T3 GO — נעליים"
+      פקודת הרצה (לאחר gate):
+        py scripts/t3_shoe_tagging.py
+    files_allowed: []
+    files_forbidden:
+      - scripts/t3_shoe_tagging.py
+      - .env
+    expected_output: |
+      GATE_STATUS: BLOCKED / OPEN
+      API_STATUS: 200 / 403
+      BACKUP_EXISTS: YES / NO
+      DRY_RUN_PASS: YES / NO
+      AYAL_APPROVED: YES / NO
+    exit_conditions:
+      - "כל 4 תנאים מתקיימים"
+    fail_conditions:
+      - "כתיבה לShopify ללא gate פתוח"
+    next_on_pass: S6
+    next_on_fail: HOLD
+    is_milestone: true
+
+  - id: S6
+    name: "POST-LIVE VERIFY"
+    workstream: shoes
+    type: AUDIT
+    approval_tier: T0
+    goal: "אימות 65/65 מוצרים לאחר live write"
+    action: >
+      GET כל 65 מוצרים מShopify.
+      בדוק שהתגים החדשים נמצאים.
+      Layer 7 QA Contract — 11 checks לכל מוצר.
+      שמור: output/tags/verify/shoes-verify-<timestamp>.json
+    files_allowed:
+      - output/tags/verify/
+      - scripts/t3_shoe_tagging.py
+    files_forbidden:
+      - .env
+    expected_output: |
+      PASS: 65/65
+      FAIL: 0
+      VERIFY_VERDICT: SUCCESS / PARTIAL / FAIL
+    exit_conditions:
+      - "65/65 PASS"
+    fail_conditions:
+      - "FAIL > 3"
+    next_on_pass: SHOES_DONE
+    next_on_fail: ROLLBACK
+    is_milestone: true
+
+  - id: ROLLBACK
+    name: "T3 ROLLBACK"
+    workstream: shoes
+    type: FIX
+    approval_tier: T2
+    goal: "שחזור תגים מקוריים אם verify נכשל"
+    action: >
+      py scripts/t3_rollback.py
+      משחזר tags_before מ-backup האחרון.
+    files_allowed:
+      - scripts/t3_rollback.py
+      - output/tags/backup/
+    files_forbidden:
+      - .env
+    expected_output: |
+      ROLLBACK_OK: N
+      ROLLBACK_ERR: 0
+    next_on_pass: STOP
+    next_on_fail: MANUAL_INTERVENTION
+    is_milestone: false
+
+# ─── WORKSTREAM A — ARTICLE PRODUCTION ───────────────────────────────────────
+
+  - id: A1
+    name: "ARTICLE BACKLOG AUDIT"
+    workstream: articles
+    type: AUDIT
+    approval_tier: T0
+    goal: "לזהות מה קיים ב-HUB-12, מה חסר, ולאשר החלטת נושא"
+    action: >
+      קרא: teams/organic/hub-registry.json
+      קרא: output/site-map/internal_content_map.json (50 שורות ראשונות)
+      בדוק: output/organic/hub12/ (קיים?)
+      זהה: הHUB האחרון שפורסם (HUB-11, 2026-04-29)
+      ספור ימים ללא פרסום.
+      רשום: DRAFTS_FOUND, DRAFTS_COUNT, HUB_TOPIC_DECIDED.
+    files_allowed:
+      - teams/organic/hub-registry.json
+      - output/site-map/internal_content_map.json
+      - output/organic/
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      LAST_HUB: HUB-11
+      DAYS_WITHOUT_PUBLISH: 18
+      DRAFTS_FOUND: YES / NO
+      DRAFTS_COUNT: N
+      HUB_12_TOPIC: בגדי שמחה לתינוק (לאשר)
+      A1_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "LAST_HUB מאושר"
+      - "DAYS_WITHOUT_PUBLISH חושב"
+      - "HUB_12 topic הוצע"
+    fail_conditions:
+      - "לא ניתן לקרוא hub-registry"
+    next_on_pass: A2
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: A2
+    name: "HUB-12 CONTENT DECISION"
+    workstream: articles
+    type: AUDIT
+    approval_tier: T1
+    goal: "אישור נושא HUB-12 ומבנה 7 מאמרים"
+    action: >
+      הצע לאייל:
+        נושא: בגדי שמחה לתינוק (Pillar + 6 Clusters)
+        P:  מדריך מלא לבגדי שמחה — ברית/בר מצוה/חתונה/ימי הולדת
+        C1: בגדי ברית לבנים
+        C2: שמלות שמחה לבנות
+        C3: בגדי שמחה לגיל שנה
+        C4: איך להלביש תינוק לחתונה
+        C5: שאלות נפוצות — בגדי שמחה
+        C6: סטים לאירועים לתינוקות
+      ממתין לאישור אייל לפני ייצור.
+    files_allowed:
+      - output/organic/hub12/
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      HUB_12_APPROVED: YES (by Ayal) / PENDING
+      ARTICLE_COUNT: 7
+      TOPIC: בגדי שמחה לתינוק
+    exit_conditions:
+      - "אייל אישר נושא"
+      - "7 מאמרים מוגדרים"
+    fail_conditions:
+      - "ייצור ללא אישור"
+    next_on_pass: A3
+    next_on_fail: HOLD
+    is_milestone: false
+
+  - id: A3
+    name: "HUB-12 LOCAL ARTICLE PRODUCTION"
+    workstream: articles
+    type: FIX
+    approval_tier: T1
+    goal: "ייצור 7 מאמרים מקומית — ללא publish, ללא Shopify write"
+    action: >
+      לכל מאמר (P, C1-C6) ייצר:
+        - seo_title (עד 60 תווים, עברית)
+        - meta_description (150-160 תווים)
+        - slug (kebab-case עברית/אנגלית)
+        - body_html (1200-2000 מילה, ללא inline styles)
+        - 2 תמונות מינימום (CDN Shopify)
+        - קישורי internal links
+        - product bridge טבעי
+        - FAQ (5-7 שאלות)
+        - article tags (HUB-12, נושא, עונה)
+      שמור: output/organic/hub12/<slug>.md
+      לא לפרסם. לא לכתוב לShopify.
+    files_allowed:
+      - output/organic/hub12/
+      - .claude/skills/babymania-organic-article-production/SKILL.md
+      - teams/organic/hub-registry.json
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_PRODUCED: 7
+      QA_READY: YES / NO
+      SHOPIFY_WRITES: NONE
+    exit_conditions:
+      - "7 קבצים .md נשמרו"
+      - "SHOPIFY_WRITES=NONE"
+    fail_conditions:
+      - "מאמר עם inline styles"
+      - "מאמר ללא FAQ"
+      - "פחות מ-2 תמונות"
+      - "publish לShopify"
+    next_on_pass: A4
+    next_on_fail: STOP
+    is_milestone: true
+
+  - id: A4
+    name: "ORGANIC QA"
+    workstream: articles
+    type: AUDIT
+    approval_tier: T0
+    goal: "QA מלא על כל 7 מאמרים — 8 checks לכל מאמר"
+    action: >
+      לכל מאמר (7):
+        1. אין inline styles (style=)
+        2. אין hero ב-body_html
+        3. אין video
+        4. מינימום 2 תמונות
+        5. קיימים internal links
+        6. קיים product bridge
+        7. עברית תקינה
+        8. FAQ קיים
+      שמור: output/organic/hub12/hub12-qa-report.md
+    files_allowed:
+      - output/organic/hub12/
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      ARTICLES_QA_PASS: N/7
+      ARTICLES_QA_FAIL: N
+      QA_VERDICT: PASS / FAIL
+    exit_conditions:
+      - "7/7 PASS"
+    fail_conditions:
+      - "כל check נכשל ב-1+ מאמרים"
+    next_on_pass: A5
+    next_on_fail: A3
+    is_milestone: false
+
+  - id: A5
+    name: "PUBLISH PACKET CREATION"
+    workstream: articles
+    type: AUDIT
+    approval_tier: T0
+    goal: "הכנת packet publish מוכן — ללא publish בפועל"
+    action: >
+      צור: output/organic/hub12/hub12-publish-packet.md
+      כלול:
+        - סדר publish: P → C1 → C2 → C3 → C4 → C5 → C6
+        - blog_id: 109164036409
+        - publish command (לאחר API פתוח)
+        - fallback: Shopify Admin ידני
+        - internal link map (from → to)
+        - GSC manual request checklist
+      לא לפרסם.
+    files_allowed:
+      - output/organic/hub12/
+    files_forbidden:
+      - .env
+      - bridge/
+    expected_output: |
+      PUBLISH_PACKET: output/organic/hub12/hub12-publish-packet.md
+      PUBLISH_ORDER_DEFINED: YES
+      FALLBACK_DEFINED: YES
+      SHOPIFY_WRITES: NONE
+    exit_conditions:
+      - "packet נשמר"
+      - "סדר publish מוגדר"
+    fail_conditions:
+      - "publish בוצע"
+    next_on_pass: ARTICLES_READY
+    next_on_fail: STOP
+    is_milestone: true
+
+# ─── FINAL STATES ─────────────────────────────────────────────────────────────
+
+  - id: SHOES_DONE
+    name: "SHOES TAGGING COMPLETE"
+    type: MILESTONE
+    goal: "65/65 נעליים תויגו, אומתו, Layer 7 QA PASS"
+    next_on_pass: NAVIGATION_UNLOCKED
+    is_milestone: true
+
+  - id: ARTICLES_READY
+    name: "HUB-12 LOCALLY READY"
+    type: MILESTONE
+    goal: "7 מאמרים מוכנים, QA PASS, publish packet מוכן — ממתין ל-API"
+    next_on_pass: PUBLISH_GATE
+    is_milestone: true
+
+  - id: NAVIGATION_UNLOCKED
+    name: "NAVIGATION WORK UNLOCKED"
+    type: GATE
+    goal: "ניתן לפתוח עבודת navigation רק לאחר SHOES_DONE"
+    is_milestone: true

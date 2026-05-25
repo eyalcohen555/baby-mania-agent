@@ -1,0 +1,639 @@
+plan_id: babymania-execution-tracks-001
+plan_name: "תוכנית ביצוע — תגים, דף בית, מאמרים, סקיל"
+approval_tier: T1
+
+telegram_notify:
+  start: true
+  milestones: true
+  done: true
+  blocked: true
+  questions: true
+
+stages:
+
+  # ─── TRACK 1: SHOES TAGGING ───────────────────────────────────────────────
+
+  - id: STAGE-1
+    name: SHOES TAXONOMY READ
+    type: AUDIT
+    goal: "לקרוא taxonomy נעליים קיים ולהעריך אם מספיק לסיווג 65 מוצרים"
+    action: >
+      קרא: output/tags/shoes-taxonomy-proposal.md,
+      output/tags/shoes-image-review-spec.md,
+      output/tags/tag-taxonomy-expansion-audit.json.
+      חלץ: רשימת תגי נעליים, האם מבוסס סוג/סגנון (לא מידות/EU size),
+      האם כולל REVIEW_ONLY triggers, כמה categories מוגדרות.
+      שמור ממצאים: output/tags/shoes-taxonomy-read-summary.md.
+    approval_tier: T0
+    files_allowed:
+      - output/tags/shoes-taxonomy-proposal.md
+      - output/tags/shoes-image-review-spec.md
+      - output/tags/tag-taxonomy-expansion-audit.json
+      - output/tags/shoes-taxonomy-read-summary.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+      - .env
+    expected_output: >
+      TAXONOMY_FILES_READ: N
+      TAGS_FOUND: [רשימה]
+      SIZE_BASED_TAGS: YES/NO
+      REVIEW_ONLY_TRIGGERS: PRESENT/MISSING
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "כל קבצי taxonomy נקראו"
+      - "תגים זוהו ותועדו"
+      - "summary נשמר ב-output/tags/"
+    fail_conditions:
+      - "אף קובץ taxonomy לא נמצא"
+    next_on_pass: STAGE-2
+    next_on_fail: STAGE-3
+    is_milestone: false
+
+  - id: STAGE-2
+    name: TAXONOMY SUFFICIENCY CHECK
+    type: LOGIC
+    goal: "להחליט אם taxonomy קיים מספיק לסיווג נעליים לפי סוג/סגנון"
+    action: >
+      על בסיס output/tags/shoes-taxonomy-read-summary.md — בדוק 3 תנאים:
+        1. קיים לפחות 5 תגי נעליים מבוססי סוג (לא מידה/גיל/EU size)
+        2. כולל REVIEW_ONLY triggers ברורים
+        3. מכסה: sandals, sneakers, boots, first-step, elegant
+      כל 3 PASS → החזר TAXONOMY_SUFFICIENT: YES
+      אחד או יותר נכשל → החזר TAXONOMY_SUFFICIENT: NO
+    approval_tier: T0
+    files_allowed:
+      - output/tags/shoes-taxonomy-read-summary.md
+      - output/tags/shoes-taxonomy-proposal.md
+    files_forbidden:
+      - bridge/next-task.md
+      - .env
+    expected_output: "TAXONOMY_SUFFICIENT: YES / NO"
+    exit_conditions:
+      - "3 תנאים נבדקו"
+      - "החלטה ברורה YES או NO"
+    fail_conditions:
+      - "לא ניתן לקבוע YES או NO"
+    next_on_pass: STAGE-4
+    next_on_fail: STAGE-3
+    is_milestone: false
+
+  - id: STAGE-3
+    name: SHOES TAXONOMY BUILD
+    type: FIX
+    goal: "לבנות taxonomy spec חדש לנעליים לפי סוג/סגנון/שימוש — ללא מידות"
+    action: >
+      בנה spec עם 6 תגים:
+        shoes-sandals, shoes-sneakers, shoes-boots,
+        shoes-first-step, shoes-elegant, shoes-soft-sole.
+      לכל תג: tag_name, display_name_hebrew, when_to_use, when_not_to_use,
+      image_signals, review_only_triggers, multi_tag_allowed (עד 3 תגים למוצר).
+      כלל קשיח: אסור מידה/EU size/גיל. מותר ריבוי tags.
+      שמור: output/tags/shoes-taxonomy-spec-v2.md.
+      לא לתייג. לא לכתוב ל-Shopify.
+    approval_tier: T1
+    files_allowed:
+      - output/tags/shoes-taxonomy-spec-v2.md
+      - output/tags/shoes-taxonomy-proposal.md
+      - output/tags/shoes-taxonomy-read-summary.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+      - .env
+    expected_output: >
+      SPEC_FILE: output/tags/shoes-taxonomy-spec-v2.md
+      TAGS_DEFINED: 6
+      EU_SIZE_EXCLUDED: YES
+      SHOPIFY_WRITES: NONE
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "6 תגים מוגדרים"
+      - "EU size לא נכלל"
+      - "spec נשמר"
+    fail_conditions:
+      - "tag מבוסס EU size נוצר"
+      - "כתיבה ל-Shopify"
+    next_on_pass: STAGE-4
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-4
+    name: SHOES PRODUCTS READ
+    type: AUDIT
+    goal: "לאתר מוצרי נעליים מהקטלוג — סינון מקומי לפי תגי נעליים ידועים"
+    action: >
+      אסטרטגיה: tag= ו-product_type= filters של Shopify API אינם פועלים בהקשר
+      זה. השתמש בסינון מקומי בלבד.
+
+      שלב א — בדוק אם output/tags/shoes-products-raw.json כבר קיים:
+        אם כן וה-JSON מכיל shoes_products_found >= 1 → דלג על API call וחזור PASS.
+        אל תריץ שוב את ה-API אם הקובץ תקין קיים.
+
+      שלב ב — אם הקובץ לא קיים, שלוף קטלוג מלא וסנן מקומית:
+        GET /admin/api/2024-10/products.json?limit=250 (pages עד לסוף)
+        לכל מוצר: בדוק tags[] לפי תגי נעליים ידועים:
+          baby-shoes, baby-sneakers, baby-sandals, baby-boots,
+          נעליים, shoes, נעל, sandal, sneaker, boot
+        מוצר עם לפחות תג אחד מהרשימה = נעל.
+        חלץ: product_id, title, handle, status, tags, images_count.
+        שמור: output/tags/shoes-products-raw.json עם shoes_products_found=N.
+        אין Shopify write. אין שינוי tags.
+    approval_tier: T0
+    files_allowed:
+      - scripts/
+      - output/tags/shoes-products-raw.json
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - templates/*.json
+      - .env
+    expected_output: >
+      SHOES_PRODUCTS_FOUND: N (חייב >= 1)
+      OUTPUT_FILE: output/tags/shoes-products-raw.json
+      FILTER_STRATEGY: local (לא product_type / לא tag API filter)
+      SHOPIFY_WRITES: NONE
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "output/tags/shoes-products-raw.json קיים"
+      - "shoes_products_found >= 1"
+      - "סינון מקומי בלבד (לא API tag filter)"
+      - "אפס שינויים ב-Shopify"
+    fail_conditions:
+      - "לא ניתן לקרוא קטלוג מ-Shopify"
+      - "shoes-products-raw.json לא נוצר"
+      - "shoes_products_found = 0"
+      - "כתיבה ל-Shopify"
+    next_on_pass: STAGE-5
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-5
+    name: SHOES CLASSIFICATION OUTPUT
+    type: FIX
+    goal: "לסווג כל מוצר נעליים לפי taxonomy ולהוציא קובץ מוכן לאישור אייל"
+    action: >
+      קרא: output/tags/shoes-products-raw.json.
+      קרא taxonomy: output/tags/shoes-taxonomy-spec-v2.md אם קיים (STAGE-3 רץ),
+        אחרת: output/tags/shoes-taxonomy-proposal.md (STAGE-3 דולג).
+      לכל מוצר: בדוק title + current_tags + images → קבע shoe_type.
+      פורמט לכל מוצר:
+        product_id | title | current_tags | proposed_tag | confidence | reason | review_only
+      REVIEW_ONLY = YES אם: confidence < MEDIUM, תמונה לא ברורה, היברידי 3+, אביזר לא נעל.
+      שמור: output/tags/shoes-tagging-ready-for-review.md.
+      לא לכתוב ל-Shopify. לא לתייג live. T3 נדרש לביצוע בפועל.
+    approval_tier: T1
+    files_allowed:
+      - output/tags/shoes-products-raw.json
+      - output/tags/shoes-taxonomy-spec-v2.md
+      - output/tags/shoes-taxonomy-proposal.md
+      - output/tags/shoes-tagging-ready-for-review.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      PRODUCTS_CLASSIFIED: N
+      REVIEW_ONLY_COUNT: N
+      OUTPUT_FILE: output/tags/shoes-tagging-ready-for-review.md
+      SHOPIFY_WRITES: NONE
+      T3_REQUIRED_FOR_LIVE: YES
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "כל מוצרי הנעליים מסווגים"
+      - "קובץ review נשמר"
+      - "REVIEW_ONLY מסומנים"
+      - "אפס כתיבות ל-Shopify"
+    fail_conditions:
+      - "כתיבה ל-Shopify"
+      - "EU size classification"
+    next_on_pass: STAGE-6
+    next_on_fail: STOP
+    is_milestone: true
+
+  # ─── TRACK 2: HOMEPAGE & NAVIGATION ──────────────────────────────────────
+
+  - id: STAGE-6
+    name: HOMEPAGE SECTIONS READ
+    type: AUDIT
+    goal: "לקרוא מבנה דף הבית ולאתר בעיות trust badges, hero, ו-CTA"
+    action: >
+      קרא: templates/index.json.
+      קרא: theme_assets/sections/bm-trust-badges.liquid (אם קיים).
+      קרא: theme_assets/sections/bm-store-hero.liquid (אם קיים).
+      תעד: רשימת sections, מיקום trust badges, hero message, CTA text + position.
+      בדוק: האם trust badges גלויים above the fold?
+             האם CTA ברור בתוך 3 שניות?
+             האם trust badges נראים טוב ולא "מכוערים"?
+      שמור ממצאים: output/homepage/homepage-audit.md.
+      לא לשנות. לא לגעת ב-EasySleep/Tempio.
+    approval_tier: T0
+    files_allowed:
+      - templates/index.json
+      - theme_assets/sections/bm-trust-badges.liquid
+      - theme_assets/sections/bm-store-hero.liquid
+      - sections/
+      - output/homepage/homepage-audit.md
+    files_forbidden:
+      - bridge/next-task.md
+      - product.easy-sleep.json
+      - product.tempio.json
+      - .env
+    expected_output: >
+      SECTIONS_COUNT: N
+      TRUST_BADGES_ABOVE_FOLD: YES/NO
+      TRUST_BADGES_VISUAL_OK: YES/NO
+      HERO_CTA_CLEAR: YES/NO
+      ISSUES_FOUND: N
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "index.json נקרא"
+      - "trust badges location תועד"
+      - "hero + CTA נבדקו"
+      - "audit נשמר"
+    fail_conditions:
+      - "שינוי ב-templates בוצע"
+      - "EasySleep/Tempio נגעו"
+    next_on_pass: STAGE-7
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-7
+    name: HOMEPAGE FIXES PLAN
+    type: FIX
+    goal: "להכין תוכנית תיקון דף הבית עם קוד מוצע — ללא live write"
+    action: >
+      על בסיס output/homepage/homepage-audit.md:
+      הכן: output/homepage/homepage-fixes-plan.md.
+      כלול 3 סעיפים:
+        TRUST BADGES FIX:
+          - מה לשנות (layout, style, position)
+          - קוד Liquid מוצע
+          - TIER_REQUIRED: T2, AYAL_APPROVAL: YES
+        HERO FIX:
+          - מסר חדש ברור בעברית
+          - CTA text + button style מוצע
+          - קוד Liquid מוצע
+          - TIER_REQUIRED: T2, AYAL_APPROVAL: YES
+        MOBILE CHECK:
+          - האם תיקונים עובדים ב-mobile
+          - כפתורים 44px לפחות, טקסט 16px לפחות
+      לא לכתוב ל-templates. לא לpush.
+    approval_tier: T1
+    files_allowed:
+      - output/homepage/homepage-audit.md
+      - output/homepage/homepage-fixes-plan.md
+    files_forbidden:
+      - bridge/next-task.md
+      - templates/index.json
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      PLAN_FILE: output/homepage/homepage-fixes-plan.md
+      TRUST_BADGES_FIX: READY
+      HERO_FIX: READY
+      MOBILE_CHECK: INCLUDED
+      LIVE_WRITES: NONE
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "plan נשמר"
+      - "3 סעיפים כלולים"
+      - "tier requirement תועד בכל סעיף"
+    fail_conditions:
+      - "כתיבה ל-templates בוצעה"
+      - "push בוצע"
+    next_on_pass: STAGE-8
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-8
+    name: NAVIGATION FIX PLAN
+    type: FIX
+    goal: "להכין תוכנית תפריט נקייה וברורה — ללא live write"
+    action: >
+      קרא navigation הנוכחי אם נגיש (locales/*.json, config/settings_data.json).
+      הכן: output/navigation/navigation-fix-plan.md.
+      כלול:
+        PROPOSED_STRUCTURE: קטגוריות ראשיות + תת-קטגוריות + URL slugs
+        ITEMS_TO_REMOVE: מה מיותר / מבלבל
+        ITEMS_TO_ADD: מה חסר
+        URL_CHANGES: slugs שמשתנים (בדוק קישורים קיימים לפני שינוי)
+        TIER_REQUIRED: T3
+        AYAL_APPROVAL: YES
+      לא לשנות navigation. לא לשנות theme.
+    approval_tier: T1
+    files_allowed:
+      - locales/
+      - config/settings_data.json
+      - output/navigation/navigation-fix-plan.md
+    files_forbidden:
+      - bridge/next-task.md
+      - templates/*.json
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      PLAN_FILE: output/navigation/navigation-fix-plan.md
+      PROPOSED_STRUCTURE: READY
+      URL_CHANGES_LISTED: YES
+      TIER_REQUIRED: T3
+      LIVE_WRITES: NONE
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "plan נשמר"
+      - "מבנה תפריט מוצע"
+      - "T3 requirement תועד"
+    fail_conditions:
+      - "שינוי navigation בוצע"
+      - "push בוצע"
+    next_on_pass: STAGE-9
+    next_on_fail: STOP
+    is_milestone: true
+
+  # ─── TRACK 3: ORGANIC ARTICLES ────────────────────────────────────────────
+
+  - id: STAGE-9
+    name: ORGANIC STATE READ
+    type: AUDIT
+    goal: "לקרוא מצב אורגני ולוודא שאנחנו בשכבה הנכונה לפני כתיבת מאמרים"
+    action: >
+      קרא docs/organic/מצב-הפרויקט-האורגני.md.
+      קרא docs/organic/organic-journal.md (30 שורות אחרונות).
+      זהה: CURRENT_LAYER, NEXT_OPEN_ITEM, HUBs ממתינים, GSC blockers.
+      ודא: לא מדלגים שכבה. לא פותחים HUB חדש לפני שהקודם הוגש ל-GSC.
+      שמור: output/organic/organic-state-snapshot.md.
+    approval_tier: T0
+    files_allowed:
+      - docs/organic/מצב-הפרויקט-האורגני.md
+      - docs/organic/organic-journal.md
+      - teams/organic/hub-registry.json
+      - output/organic/organic-state-snapshot.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      CURRENT_LAYER: N
+      NEXT_OPEN_ITEM: [תיאור]
+      LAYER_SKIP: NO
+      GSC_BLOCKER: YES/NO
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "state doc נקרא"
+      - "CURRENT_LAYER זוהה"
+      - "אין דילוג שכבה"
+      - "snapshot נשמר"
+    fail_conditions:
+      - "state doc לא נמצא"
+      - "ניסיון לדלג שכבה"
+    next_on_pass: STAGE-10
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-10
+    name: ARTICLE TOPICS PLAN
+    type: FIX
+    goal: "לבחור נושאי מאמרים לפי SEO וערך עסקי ולתכנן את הייצור"
+    action: >
+      על בסיס CURRENT_LAYER + NEXT_OPEN_ITEM מ-STAGE-9:
+      בחר 3-5 נושאי מאמרים. לכל נושא תעד:
+        title (עברית)
+        keyword_main (מילת מפתח ראשית)
+        keyword_secondary (2-3 נוספות)
+        target_product_handle (מוצר/קטגוריה מחוברים)
+        business_value (למה זה עוזר לחנות)
+        seo_rationale (למה זה עוזר לקידום אורגני)
+        internal_link_target (קישור פנימי מוצע)
+        estimated_word_count
+      שמור: output/organic/article-production-plan.md.
+    approval_tier: T1
+    files_allowed:
+      - output/organic/organic-state-snapshot.md
+      - output/organic/article-production-plan.md
+      - docs/organic/מצב-הפרויקט-האורגני.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      ARTICLES_PLANNED: N
+      PLAN_FILE: output/organic/article-production-plan.md
+      EACH_HAS_KEYWORD: YES
+      EACH_HAS_PRODUCT_LINK: YES
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "3-5 נושאים תוכננו"
+      - "כל נושא עם keyword + product link"
+      - "plan נשמר"
+    fail_conditions:
+      - "נושא בלי keyword_main"
+      - "נושא בלי target_product_handle"
+    next_on_pass: STAGE-11
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-11
+    name: ARTICLE DRAFTS WRITE
+    type: FIX
+    goal: "לכתוב טיוטות מאמרים בעברית טבעית עם SEO ו-product bridge"
+    action: >
+      עבור כל מאמר ב-output/organic/article-production-plan.md:
+      כתוב טיוטה מלאה בעברית. כלול:
+        H1 (כותרת ראשית עם keyword_main)
+        מבוא 100-150 מילים
+        3-5 סעיפים עם H2
+        CTA לקטגוריית המוצר (internal_link_target)
+        FAQ (2-3 שאלות אמיתיות) + FAQPage JSON-LD schema
+        alt text placeholder לכל תמונה (עברית)
+      עברית טבעית — לא תרגום מכונה. אין מילים לא תקינות.
+      שמור כל מאמר: output/organic/article-drafts/<slug>.md.
+      לא לפרסם. לא לגעת ב-Shopify.
+    approval_tier: T1
+    files_allowed:
+      - output/organic/article-production-plan.md
+      - output/organic/article-drafts/
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      DRAFTS_WRITTEN: N
+      OUTPUT_DIR: output/organic/article-drafts/
+      FAQ_SCHEMA_INCLUDED: YES
+      INTERNAL_LINKS_INCLUDED: YES
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "כל מאמר נכתב וניתן בתיקייה"
+      - "FAQ schema כלול בכל מאמר"
+      - "CTA + internal link כלול"
+    fail_conditions:
+      - "מאמר חסר H1 עם keyword"
+      - "מאמר חסר product link"
+      - "פרסום live בוצע"
+    next_on_pass: STAGE-12
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-12
+    name: ARTICLE IMAGE PROMPTS
+    type: FIX
+    goal: "ליצור פרומפטים לתמונות מותאמות לכל מאמר עם alt text עברית"
+    action: >
+      עבור כל מאמר ב-output/organic/article-drafts/:
+      צור 2-3 פרומפטים לתמונות. לכל תמונה:
+        article_slug
+        image_position (hero / inline / closing)
+        prompt_text (אנגלית — לChatGPT/Midjourney)
+        alt_text (עברית — לשימוש במאמר)
+        style_notes (סקנדינבי, רקע לבן, תינוק/הורה, אין צעצועים, לא מוגזם)
+      שמור: output/organic/article-image-prompts.md.
+    approval_tier: T1
+    files_allowed:
+      - output/organic/article-drafts/
+      - output/organic/article-image-prompts.md
+    files_forbidden:
+      - bridge/next-task.md
+      - .env
+    expected_output: >
+      PROMPTS_CREATED: N
+      OUTPUT_FILE: output/organic/article-image-prompts.md
+      ALT_TEXT_HEBREW_INCLUDED: YES
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "פרומפט לכל מאמר"
+      - "alt text עברית כלול לכל תמונה"
+      - "קובץ נשמר"
+    fail_conditions:
+      - "מאמר בלי prompt"
+      - "alt text חסר"
+    next_on_pass: STAGE-13
+    next_on_fail: STOP
+    is_milestone: false
+
+  - id: STAGE-13
+    name: ARTICLE QA
+    type: AUDIT
+    goal: "QA מלא לכל המאמרים — 8 תנאים לכל מאמר"
+    action: >
+      עבור כל מאמר ב-output/organic/article-drafts/:
+      בדוק 8 תנאים:
+        1. H1 כולל keyword_main
+        2. קישור פנימי למוצר/קטגוריה (internal_link_target)
+        3. FAQ + FAQPage JSON-LD schema קיים
+        4. alt text לכל תמונה placeholder
+        5. אין שגיאות כתיב בולטות
+        6. עברית טבעית (לא מכונה — בדוק משפטים מגושמים)
+        7. אין מילים לא תקינות
+        8. word count בטווח המתוכנן ב-article-production-plan.md
+      פלט לכל מאמר: PASS / WARN [פרטים] / FAIL [חייב תיקון].
+      שמור: output/organic/article-qa-report.md.
+    approval_tier: T0
+    files_allowed:
+      - output/organic/article-drafts/
+      - output/organic/article-production-plan.md
+      - output/organic/article-qa-report.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      ARTICLES_QA: N
+      PASS_COUNT: N
+      WARN_COUNT: N
+      FAIL_COUNT: N
+      QA_REPORT: output/organic/article-qa-report.md
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "כל מאמר נבדק ב-8 תנאים"
+      - "QA report נשמר"
+    fail_conditions:
+      - "מאמר עם FAIL לא מסומן"
+      - "QA report לא נשמר"
+    next_on_pass: STAGE-15
+    next_on_fail: STAGE-14
+    is_milestone: true
+
+  - id: STAGE-14
+    name: ARTICLE QA FIXES
+    type: FIX
+    goal: "לתקן כל בעיה שזוהתה ב-QA — ללא פרסום"
+    action: >
+      קרא: output/organic/article-qa-report.md.
+      עבור כל מאמר עם FAIL או WARN:
+        זהה את הבעיה הספציפית.
+        תקן: keyword חסר, link חסר, schema, כתיב, ניסוח מגושם.
+        עדכן: output/organic/article-drafts/<slug>.md.
+        סמן FIXED ב-QA report.
+      לאחר כל תיקונים: ודא שכל מאמר עובר PASS על 8 תנאי QA.
+      לא לפרסם. לא לגעת ב-Shopify.
+    approval_tier: T1
+    files_allowed:
+      - output/organic/article-drafts/
+      - output/organic/article-qa-report.md
+    files_forbidden:
+      - bridge/next-task.md
+      - sections/*.liquid
+      - .env
+    expected_output: >
+      FIXES_APPLIED: N
+      ALL_ARTICLES_PASS: YES/NO
+      REMAINING_FAILS: N
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "כל FAIL תוקן"
+      - "QA report עודכן עם FIXED"
+      - "אפס מאמרים עם FAIL"
+    fail_conditions:
+      - "FAIL נשאר ללא תיקון"
+      - "פרסום בוצע"
+    next_on_pass: STAGE-15
+    next_on_fail: STOP
+    is_milestone: false
+
+  # ─── TRACK 4: SKILL CREATION ──────────────────────────────────────────────
+
+  - id: STAGE-15
+    name: ORGANIC ARTICLE PRODUCTION SKILL
+    type: FIX
+    goal: "ליצור סקיל שמתעד זרימת ייצור מאמרים אורגניים מקצה לקצה"
+    action: >
+      כתוב Python script ב-scripts/create_skill_organic_article.py.
+      הרץ אותו (נתיב מלא: C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe).
+      הסקיל חייב לכלול frontmatter תקין:
+        name: babymania-organic-article-production
+        description: מנחה ייצור מאמרים אורגניים ב-BabyMania — תכנון, כתיבה, תמונות, QA, פרסום. טריגרים: "מאמר חדש", "article", "blog", "organic write", "תכנון תוכן", "כתיבת בלוג", "QA מאמר", "פרסום מאמר".
+        allowed-tools: Read, Grep, Glob
+      גוף הסקיל חייב לתעד זרימה מלאה:
+        1. תכנון: keyword_main, keyword_secondary, target_product_handle, business_value, seo_rationale.
+        2. כתיבה: H1+keyword, H2 sections, CTA, FAQ+FAQPage JSON-LD, alt text placeholders.
+        3. תמונות: prompt (אנגלית), alt_text (עברית), style_notes סקנדינבי.
+        4. QA: 8 תנאים (keyword, link, schema, alt, כתיב, עברית טבעית, מילים תקינות, word count).
+        5. אישור: Ayal sign-off לפני פרסום.
+        6. פרסום: pipeline 04→10.5→10→publish.
+        7. verify: HTTP 200 + content check.
+        8. GSC: manual Request Indexing דרך UI בלבד.
+      כלול: מתי להשתמש, מתי לא, פעולות אסורות, טעויות נפוצות.
+      שמור: .claude/skills/babymania-organic-article-production/SKILL.md
+    approval_tier: T1
+    files_allowed:
+      - scripts/create_skill_organic_article.py
+      - .claude/skills/babymania-organic-article-production/
+    files_forbidden:
+      - bridge/next-task.md
+      - .env
+    expected_output: >
+      SKILL_FILE: .claude/skills/babymania-organic-article-production/SKILL.md
+      FRONTMATTER_VALID: YES
+      FLOW_STEPS_COUNT: 8
+      STAGE_VERDICT: PASS/FAIL
+    exit_conditions:
+      - "SKILL.md נוצר"
+      - "frontmatter תקין (name, description, allowed-tools)"
+      - "8 שלבי זרימה מתועדים"
+    fail_conditions:
+      - "frontmatter חסר"
+      - "זרימה חסרה שלב"
+      - "python stub שגוי (לא נתיב מלא)"
+    next_on_pass: DONE
+    next_on_fail: STOP
+    is_milestone: true

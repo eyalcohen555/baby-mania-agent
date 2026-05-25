@@ -4,6 +4,167 @@
 
 ---
 
+## [2026-05-25] CSS Article Fix Verify — PASS
+Mode: READ-ONLY verify | No Shopify writes | No theme changes
+Action: בדיקת טעינת bm-blog-premium.css בדפי article חיים
+
+### תוצאה
+- bm-blog-premium.css נמצא נטען ב-main-article.liquid (שורה 2) — כבר קיים מראש
+- לא נדרש שינוי theme
+- backup נשמר: `theme_assets/sections/main-article.liquid.backup.2026-05-25`
+
+### מאמרים שנבדקו
+| Batch | מאמר | css_loaded | visual_sections |
+|-------|------|-----------|----------------|
+| Batch 1 | menorat-layla-letinok-ech-livhor | PASS | PASS |
+| Batch 2 | sakanot-babayit-letinok-asara-dugmaot | PASS | PASS |
+| Batch 3 | naalei-jelly-leyeladim-ma-ze-yitronot | PASS | PASS |
+
+### Sections שאומתו
+intro-box ✅ | article-body ✅ | faq/details ✅ | cta-banner ✅ | article-tags ✅
+
+---
+
+## [2026-05-24] Pipeline Lock + Batch 3 Dry-Run — COMPLETE
+Mode: PIPELINE HARDENING | No Shopify writes
+Action: נעילת pipeline פרסום, deprecation סקריפטים ישנים, dry-run Batch 3
+
+### Pipeline lock
+| פעולה | תוצאה |
+|-------|--------|
+| `scripts/publish_batch1.py` | DEPRECATED — hard-stop, sys.exit(1) |
+| `scripts/publish_batch2.py` | DEPRECATED — hard-stop, sys.exit(1) |
+| `scripts/organic/publish_organic_batch.py` | CANONICAL — requires bm_html_converter.py |
+| `bm_html_converter.py` fallback fix | תמיכה בקבצים ללא ## מבוא (HUB-12 format) |
+
+### Canonical script guards
+כל פרסום עתידי דרך `publish_organic_batch.py` בלבד.
+Hard blocks לפני כל Shopify write:
+- חסר: intro-box, article-body, faq/details, cta-banner, article-tags
+- קיים: ```json / <pre><code> / [IMG_ALT_ / alt-placeholder
+
+### Batch 3 dry-run
+6/6 PASS 13/13 checks — מוכן לפרסום.
+מחכה לאישור אייל לפני `--live`.
+
+### Batch JSON files
+- `output/organic/batches/batch3.json`
+
+---
+
+## [2026-05-24] Batch 1 BUG-3 Fix — RESOLVED
+Mode: IN-PLACE FIX | body_html update only | No new articles created
+Action: תיקון BUG-3 בכל 6 מאמרי Batch 1 — הוספת מבנה HTML מלא של BabyMania
+
+### תוצאה
+- 6/6 article IDs שמורים ללא שינוי
+- title, slug, published_at, tags, author — לא שונו
+- body_html עודכן בלבד לכל 6 מאמרים
+- 6/6 PASS deep live verify 17/17 checks
+
+### Article IDs ועדכונים
+| HUB | article_id | slug | live verify |
+|-----|------------|------|-------------|
+| HUB-1/C5 | 688897163577 | menorat-layla-letinok-ech-livhor | 17/17 PASS |
+| HUB-1/C6 | 688897196345 | reash-lavan-letinok-im-ze-batuah | 17/17 PASS |
+| HUB-2/C6 | 688897229113 | bgdei-tinokot-lefi-onot-ma-liknot | 17/17 PASS |
+| HUB-3/C5 | 688897261881 | temperatura-mayim-ambatya-tinok | 17/17 PASS |
+| HUB-3/C6 | 688897294649 | kama-peamim-lirhoz-tinok-beshavua | 17/17 PASS |
+| HUB-4/C5 | 688897327417 | pricha-bor-tinok-ma-gorim-ech-lehagib | 17/17 PASS |
+
+### קבצים שנוצרו
+- `output/organic/backups/batch1-live-before-bug3-fix-*.json`
+- `output/organic/rendered/batch1-fixed/*.html` + `*_qa.json`
+- `scripts/organic/batch1_fix_phase1_backup.py`
+- `scripts/organic/batch1_fix_phase2_render_qa.py`
+- `scripts/organic/batch1_fix_phase3_update.py`
+- `scripts/organic/batch1_fix_phase4_verify.py`
+
+---
+
+## [2026-05-24] INCIDENT FIX — Batch 2 Pipeline Bugs — RESOLVED
+Mode: INCIDENT FIX | 7 phases | Decision: אייל
+Action: תיקון 3 באגים ב-pipeline פרסום, re-publish מתוקן לכל 6 מאמרי Batch 2
+
+### גורם שורש
+3 באגים ב-`publish_batch2.py` שגרמו לפרסום פגום:
+1. **BUG-1**: ` ```json ... ``` ` code fences → רינדור כ-`<pre><code>` נראה כטקסט גולמי (JSON-LD גלוי)
+2. **BUG-2**: `[IMG_ALT_N: ...]` markers לא נוקו → גלויים כטקסט
+3. **BUG-3**: Markdown פשוט ללא wrappers BabyMania → אין intro-box, toc, article-body, cta-banner, faq
+
+### מה בוצע
+| שלב | פעולה | תוצאה |
+|-----|--------|--------|
+| Phase 1 | Backup (JSON) + Unpublish כל 6 מאמרי Batch 2 | ✅ 6/6 unpublished |
+| Phase 2 | בניית `scripts/organic/bm_html_converter.py` — converter מלא | ✅ תומך Format A (HUB-7/8) + Format B (HUB-16) |
+| Phase 3 | Render HTML מקומי + 13 QA checks per article | ✅ 6/6 PASS |
+| Phase 4 | Re-publish לאותם 6 article IDs (PUT, לא POST) | ✅ 6/6 UPDATED |
+| Phase 5 | Deep live verify מ-Shopify API — 14 checks per article | ✅ 6/6 PASS 14/14 |
+| Phase 6 | Audit read-only של Batch 1 לאותם באגים | ⚠️ 6/6 BUG-3 בלבד |
+| Phase 7 | עדכון תיעוד | ✅ |
+
+### ממצאי Batch 1 Audit
+- BUG-1: לא נמצא (קבצי HUB-1/2/3/4 משתמשים ב-`<script>` ישיר, לא code fence)
+- BUG-2: לא נמצא (לא משתמשים ב-`[IMG_ALT_N: ...]` format)
+- BUG-3: נמצא ב-6/6 — אין מבנה BabyMania HTML
+- Article IDs Batch 1: 688897163577, 688897196345, 688897229113, 688897261881, 688897294649, 688897327417
+
+### קבצים שנוצרו
+| קובץ | תפקיד |
+|------|--------|
+| `scripts/organic/bm_html_converter.py` | Markdown → BabyMania HTML, 2 formats, QA checks |
+| `scripts/organic/phase1_backup_unpublish_batch2.py` | backup + unpublish |
+| `scripts/organic/phase3_render_qa_batch2.py` | render + 13 QA checks |
+| `scripts/organic/phase4_republish_batch2.py` | re-publish לאותם IDs |
+| `scripts/organic/phase5_live_verify_batch2.py` | deep live verify |
+| `scripts/organic/phase6_audit_batch1.py` | audit read-only Batch 1 |
+| `output/organic/backups/batch2-live-damaged-before-fix-*.json` | backup מאמרים פגומים |
+| `output/organic/rendered/batch2-fixed/*.html` | HTML מתוקן |
+
+### המלצה הבאה
+תיקון Batch 1 (6 מאמרים) באמצעות אותו pipeline — `bm_html_converter.py` + republish לאותם IDs
+
+---
+
+## [2026-05-24] Image Agent Experiment — CLOSED / PAUSED
+Mode: EXPERIMENT CLOSURE | Decision: אייל
+Action: סגירה נקייה של ניסוי מערכת תמונות אורגניות
+
+### מה נבנה
+- `scripts/organic/generate_article_images.py` — prompt builder v2 עם CURATED_SCENES, modular layers, footwear rules, safety override עבור HUB8 crib
+- `docs/organic/article-image-agent-spec.md` — spec מלא: visual contract, safety, QA checklist
+- `output/organic/image-manifests/` — manifests per article
+
+### מה בוצע בפועל
+- HUB16_Pillar **hero**: נוצר ב-Stitch, אושר על ידי אייל, **Markdown עודכן** ✅
+  - קובץ: `output/organic/hub16-crocs/images/crocs-leyeladim-madrih-male-mida-dagamim-hero.jpg`
+  - backup: `HUB16_Pillar.md.backup-2026-05-24`
+- HUB16_Pillar **pool**: נוצר ב-Stitch, **לא אושר, לא עודכן ב-Markdown** ⏳
+- Batch 2 (5 מאמרים נוספים): **לא הורץ** — placeholders נשארים
+- glif MCP: נבדק בתיעוד בלבד, **לא הותקן**
+
+### החלטות
+| נושא | החלטה |
+|------|--------|
+| image agent | PAUSED — לא ממשיכים בסשן הנוכחי |
+| Stitch | לא מהימן מספיק ללא art-direction skill ייעודי ל-BabyMania |
+| glif MCP | NOT CONTINUED — נבדק, לא הותקן |
+| Perplexity MCP | נדחה לשלב מאוחר יותר (SEO research) |
+| image pipeline integration | BLOCKED — לא מחברים תמונות ל-pipeline publish עד שיש BabyMania image design skill ייעודי |
+| Batch 2 publish | ניתן לפרסם ללא תמונות (כמו Batch 1) — אינה חסימה טכנית |
+
+### מצב קבצי תמונה — Batch 2
+| מאמר | hero | pool/שנייה | Markdown |
+|------|------|------------|----------|
+| HUB16_Pillar | ✅ אושר + עודכן | ⏳ לא עודכן | 1/2 עודכן |
+| HUB7_C6 | לא נוצר | לא נוצר | 0/2 |
+| HUB8_C6 | לא נוצר | לא נוצר | 0/2 |
+| HUB16_C1 | לא נוצר | לא נוצר | 0/2 |
+| HUB16_C2 | לא נוצר | לא נוצר | 0/2 |
+| HUB16_C3 | לא נוצר | לא נוצר | 0/2 |
+
+---
+
 ## [2026-05-10] Phase E1c Post-Verify — PHASEE1C_STICKY_STANDARD_VERIFY_PASS
 Mode: READ-ONLY | T0
 Action: Verified sticky patch on 4 live products across clothing/shoes/accessories/reborn templates

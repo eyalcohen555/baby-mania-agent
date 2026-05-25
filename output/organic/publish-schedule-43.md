@@ -8,38 +8,41 @@
 ---
 
 ## BATCH 1 — רביעי 20.05.2026 | 6 מאמרים | Part-1 Extensions HUB-1,2,3,4
-| # | HUB | נושא | slug | קובץ | סטטוס |
-|---|-----|------|------|------|-------|
-| 1 | HUB-1/C5 | מנורת לילה לתינוק | `menorat-layla-letinok-ech-livhor` | hub1-extension/HUB1_C5.md | ⏳ PENDING |
-| 2 | HUB-1/C6 | רעש לבן לתינוק | `reash-lavan-letinok-im-ze-batuah` | hub1-extension/HUB1_C6.md | ⏳ PENDING |
-| 3 | HUB-2/C6 | בגדי תינוקות לפי עונות | `bgdei-tinokot-lefi-onot-ma-liknot` | hub2-extension/HUB2_C6.md | ⏳ PENDING |
-| 4 | HUB-3/C5 | טמפרטורת מים לאמבטיה | `temperatura-mayim-ambatya-tinok` | hub3-extension/HUB3_C5.md | ⏳ PENDING |
-| 5 | HUB-3/C6 | כמה פעמים לרחוץ תינוק | `kama-peamim-lirhoz-tinok-beshavua` | hub3-extension/HUB3_C6.md | ⏳ PENDING |
-| 6 | HUB-4/C5 | פריחה בעור התינוק | `pricha-bor-tinok-ma-gorim-ech-lehagib` | hub4-extension/HUB4_C5.md | ⏳ PENDING |
+**סטטוס:** LIVE FIXED — פורסמו ב-20.05.2026, תוקן BUG-3 ב-24.05.2026 | 17/17 checks PASS | article IDs שמורים
+| # | HUB | נושא | slug | article_id | סטטוס |
+|---|-----|------|------|------------|-------|
+| 1 | HUB-1/C5 | מנורת לילה לתינוק | `menorat-layla-letinok-ech-livhor` | 688897163577 | ✅ LIVE-FIXED |
+| 2 | HUB-1/C6 | רעש לבן לתינוק | `reash-lavan-letinok-im-ze-batuah` | 688897196345 | ✅ LIVE-FIXED |
+| 3 | HUB-2/C6 | בגדי תינוקות לפי עונות | `bgdei-tinokot-lefi-onot-ma-liknot` | 688897229113 | ✅ LIVE-FIXED |
+| 4 | HUB-3/C5 | טמפרטורת מים לאמבטיה | `temperatura-mayim-ambatya-tinok` | 688897261881 | ✅ LIVE-FIXED |
+| 5 | HUB-3/C6 | כמה פעמים לרחוץ תינוק | `kama-peamim-lirhoz-tinok-beshavua` | 688897294649 | ✅ LIVE-FIXED |
+| 6 | HUB-4/C5 | פריחה בעור התינוק | `pricha-bor-tinok-ma-gorim-ech-lehagib` | 688897327417 | ✅ LIVE-FIXED |
 
 ---
 
 ## BATCH 2 — ראשון 24.05.2026 | 6 מאמרים | Part-1 Extensions HUB-7,8 + HUB-16 Crocs
-| # | HUB | נושא | slug | קובץ | סטטוס |
-|---|-----|------|------|------|-------|
-| 7 | HUB-7/C6 | 10 סכנות בבית לתינוק | `sakanot-babayit-letinok-asara-dugmaot` | hub7-extension/HUB7_C6.md | ⏳ PENDING |
-| 8 | HUB-8/C6 | שגרת ערב לתינוק | `shgarat-erev-letinok-shlabim-leshina` | hub8-extension/HUB8_C6.md | ⏳ PENDING |
-| 9 | HUB-16/Pillar | קרוקס לילדים — המדריך המלא | `crocs-leyeladim-madrih-male-mida-dagamim` | hub16-crocs/HUB16_Pillar.md | ⏳ PENDING |
-| 10 | HUB-16/C1 | קרוקס לתינוק (מאיזה גיל) | `crocs-letinok-meize-gil-ma-livdok` | hub16-crocs/HUB16_C1.md | ⏳ PENDING |
-| 11 | HUB-16/C2 | סנדלים לפעוט | `sandalim-lapaut-mita-livhor` | hub16-crocs/HUB16_C2.md | ⏳ PENDING |
-| 12 | HUB-16/C3 | קרוקס לים ולבריכה | `crocs-layam-valabreykha-mah-livdok` | hub16-crocs/HUB16_C3.md | ⏳ PENDING |
+**סטטוס:** LIVE FIXED — פורסמו ב-24.05.2026, תוקנו באותו יום (INCIDENT FIX 7 שלבים) | 14/14 checks PASS
+| # | HUB | נושא | slug | article_id | סטטוס |
+|---|-----|------|------|------------|-------|
+| 7 | HUB-7/C6 | 10 סכנות בבית לתינוק | `sakanot-babayit-letinok-asara-dugmaot` | 689005199673 | ✅ LIVE-FIXED |
+| 8 | HUB-8/C6 | שגרת ערב לתינוק | `shgarat-erev-letinok-shlabim-leshina` | 689005232441 | ✅ LIVE-FIXED |
+| 9 | HUB-16/Pillar | קרוקס לילדים — המדריך המלא | `crocs-leyeladim-madrih-male-mida-dagamim` | 689005265209 | ✅ LIVE-FIXED |
+| 10 | HUB-16/C1 | קרוקס לתינוק (מאיזה גיל) | `crocs-letinok-meeize-gil-ma-livdok` | 689005297977 | ✅ LIVE-FIXED |
+| 11 | HUB-16/C2 | סנדלים לפעוט | `sandalim-lapaut-mita-livhor` | 689005330745 | ✅ LIVE-FIXED |
+| 12 | HUB-16/C3 | קרוקס לים ולבריכה | `crocs-layam-valabreykha-mah-livdok` | 689005363513 | ✅ LIVE-FIXED |
 
 ---
 
 ## BATCH 3 — רביעי 27.05.2026 | 6 מאמרים | HUB-16 Crocs (סיום) + HUB-12 LED Shoes (התחלה)
-| # | HUB | נושא | slug | קובץ | סטטוס |
-|---|-----|------|------|------|-------|
-| 13 | HUB-16/C4 | נעלי ג'לי לילדים | `naalei-jelly-leyeladim-ma-ze-yitronot` | hub16-crocs/HUB16_C4.md | ⏳ PENDING |
-| 14 | HUB-16/C5 | איך לנקות קרוקס | `ech-lenakot-crocs-yeladim-tip` | hub16-crocs/HUB16_C5.md | ⏳ PENDING |
-| 15 | HUB-16/C6 | קרוקס vs סנדלים קלאסיים | `crocs-vs-sandalim-klasiim-ma-matim` | hub16-crocs/HUB16_C6.md | ⏳ PENDING |
-| 16 | HUB-12/Pillar | נעלי אורות לילדים — המדריך המלא | `naalei-orot-leyeladim-madrih-male` | hub12-led-shoes/HUB12_Pillar.md | ⏳ PENDING |
-| 17 | HUB-12/C1 | נעלי אורות לגן | `naalei-orot-legan-ma-mutar-ma-amid` | hub12-led-shoes/HUB12_C1.md | ⏳ PENDING |
-| 18 | HUB-12/C2 | נעלי אורות לפעוטות (בטיחות+סוללה) | `naalei-orot-lepautot-betihut-solela` | hub12-led-shoes/HUB12_C2.md | ⏳ PENDING |
+**סטטוס:** LIVE — פורסמו ב-24.05.2026 דרך publish_organic_batch.py | 16/16 checks PASS
+| # | HUB | נושא | slug | article_id | סטטוס |
+|---|-----|------|------|------------|-------|
+| 13 | HUB-16/C4 | נעלי ג'לי לילדים | `naalei-jelly-leyeladim-ma-ze-yitronot` | 689005723961 | ✅ LIVE |
+| 14 | HUB-16/C5 | איך לנקות קרוקס | `ech-lenakot-crocs-yeladim-tip` | 689005756729 | ✅ LIVE |
+| 15 | HUB-16/C6 | קרוקס vs סנדלים קלאסיים | `crocs-vs-sandalim-klasiim-ma-matim` | 689005789497 | ✅ LIVE |
+| 16 | HUB-12/Pillar | נעלי אורות לילדים — המדריך המלא | `naalei-orot-leyeladim-madrih-male` | 689005822265 | ✅ LIVE |
+| 17 | HUB-12/C1 | נעלי אורות לגן | `naalei-orot-legan-ma-mutar-ma-amid` | 689005855033 | ✅ LIVE |
+| 18 | HUB-12/C2 | נעלי אורות לפעוטות (בטיחות+סוללה) | `naalei-orot-lepautot-betihut-solela` | 689005887801 | ✅ LIVE |
 
 ---
 

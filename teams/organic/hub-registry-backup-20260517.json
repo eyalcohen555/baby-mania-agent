@@ -1,0 +1,709 @@
+{
+  "description": "BabyMania Organic Team — רישום מרכזי של כל ה-HUBs",
+  "version": "2.0",
+  "last_updated": "2026-04-28",
+  "blog_id": 109164036409,
+  "blog_url": "https://babymania-il.com/blogs/news",
+  "topic_hubs_knowledge": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic צוות/docs/TOPIC-HUBS-KNOWLEDGE.md",
+  "last_published": "HUB-11 C6 LIVE 2026-04-29",
+  "next_hub": "HUB-11 — בגדי קיץ לתינוק (COMPLETE — כל 7 מאמרים LIVE 2026-04-29)",
+  "hub9_direction_override": "REBORN — החלפה רשמית של כיוון קודם 'רשימת קניות לתינוק' (2026-04-20)",
+  "hubs": [
+    {
+      "hub_id": "HUB-1",
+      "hub_name": "Baby Sleep",
+      "hub_name_he": "שינה לתינוק",
+      "status": "published",
+      "pillar_keyword": "how to help baby sleep through the night",
+      "pillar_keyword_he": "איך לעזור לתינוק לישון בלילה",
+      "articles_count": 7,
+      "articles": ["Pillar", "C1", "C2", "C3", "C4", "C5", "C6"],
+      "product_bridge": "BabySleep Pro — white noise + night light",
+      "files_location": "C:/Projects/baby-mania-agent/output/stage-outputs/",
+      "file_prefix": "10085913231673_blog_article",
+      "published_at": "2026-03-10",
+      "extension_files_location": "C:/Projects/baby-mania-agent/output/organic/hub1-extension/",
+      "extension_articles": [
+        {"id": "HUB-1-C5", "title": "מנורת לילה לתינוק — האם זה עוזר לשינה ואיך לבחור", "keyword": "מנורת לילה לתינוק", "slug": "menorat-layla-letinok-ech-livhor", "status": "draft", "file": "HUB1_C5.md", "written_at": "2026-05-17"},
+        {"id": "HUB-1-C6", "title": "רעש לבן לתינוק — האם זה בטוח ואיך משתמשים נכון", "keyword": "רעש לבן לתינוק", "slug": "reash-lavan-letinok-im-ze-batuah", "status": "draft", "file": "HUB1_C6.md", "written_at": "2026-05-17"}
+      ],
+      "notes": "פורסם — מאמרים ב-stage-outputs כ-blog_article_1.html עד blog_article_4.html. הרחבת HUB: C5+C6 נכתבו 2026-05-17 במסגרת conductor-plan organic-articles-43-batch-001 stage A2 (292 impressions ביקוש). דרושה פרסום ל-Shopify."
+    },
+    {
+      "hub_id": "HUB-2",
+      "hub_name": "Newborn Clothing",
+      "hub_name_he": "ביגוד לתינוק חדש",
+      "status": "published",
+      "pillar_keyword": "כמה בגדים תינוק חדש צריך",
+      "pillar_keyword_he": "כמה בגדים תינוק חדש צריך",
+      "articles_count": 6,
+      "articles": ["Pillar", "C1", "C2", "C3", "C4", "C5"],
+      "product_bridge": "baby outfits, bodysuits, baby sets",
+      "files_location": "C:/Projects/baby-mania-agent/output/stage-outputs/",
+      "file_prefix": "HUB2_",
+      "published_at": "2026-03-10",
+      "extension_files_location": "C:/Projects/baby-mania-agent/output/organic/hub2-extension/",
+      "extension_articles": [
+        {"id": "HUB-2-C6", "title": "בגדי תינוקות לפי עונות — מה לקנות ומתי", "keyword": "בגדי תינוקות לפי עונות", "slug": "bgdei-tinokot-lefi-onot-ma-liknot", "status": "draft", "file": "HUB2_C6.md", "written_at": "2026-05-17"}
+      ],
+      "notes": "פורסם — Pillar + C1-C5 ב-stage-outputs. הרחבת HUB: C6 נכתב 2026-05-17 במסגרת conductor-plan organic-articles-43-batch-001 stage A3. דרושה פרסום ל-Shopify."
+    },
+    {
+      "hub_id": "HUB-3",
+      "hub_name": "Baby Bath",
+      "hub_name_he": "אמבטיה לתינוק",
+      "status": "published_extended",
+      "pillar_keyword": "איך לרחוץ תינוק",
+      "pillar_keyword_he": "איך לרחוץ תינוק",
+      "articles_count": 7,
+      "articles": ["Pillar", "C1", "C2", "C3", "C4", "C5", "C6"],
+      "extension": {
+        "status": "drafted_pending_publish",
+        "drafted_at": "2026-05-17",
+        "reason": "HUB-3 had 994 impressions but CTR <1% — needed long-tail coverage",
+        "files": [
+          {"id": "HUB-3-C5", "slug": "temperatura-mayim-ambatya-tinok", "keyword": "טמפרטורת מים לאמבטיה לתינוק", "path": "output/organic/hub3-extension/HUB3_C5.md"},
+          {"id": "HUB-3-C6", "slug": "kama-peamim-lirhoz-tinok-beshavua", "keyword": "כמה פעמים לרחוץ תינוק", "path": "output/organic/hub3-extension/HUB3_C6.md"}
+        ]
+      },
+      "product_bridge": "אמבטיות תינוק, מד טמפרטורה, מושב אמבטיה",
+      "files_location": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic/hub3-baby-bath/",
+      "file_prefix": "HUB3_",
+      "published_at": "2026-03-11",
+      "notes": "פורסם — 5 מאמרים מלאים + 2 הרחבה (C5,C6) נכתבו 17/05/2026 וממתינים לפרסום. TOPIC-HUBS-KNOWLEDGE מגדיר HUB-3 כ-Baby Essentials — אמבטיה נבחרה בפועל על בסיס ביקוש"
+    },
+    {
+      "hub_id": "HUB-4",
+      "hub_name": "Sensitive Baby Skin",
+      "hub_name_he": "עור רגיש לתינוק",
+      "status": "published",
+      "pillar_keyword": "איך לטפל בעור רגיש של תינוק",
+      "pillar_keyword_he": "איך לטפל בעור רגיש של תינוק",
+      "articles_count": 5,
+      "articles": ["Pillar", "C1", "C2", "C3", "C4"],
+      "product_bridge": "כותנה, בגדי תינוק רכים, חליפות ניילון",
+      "files_location": "C:/Users/3024e/Downloads/קלוד קוד/teams/organic/hub4-sensitive-baby-skin/",
+      "file_prefix": "HUB4_",
+      "published_at": "2026-03-12",
+      "publish_results_file": "HUB4_PUBLISH_RESULTS.json",
+      "extension_files_location": "C:/Projects/baby-mania-agent/output/organic/hub4-extension/",
+      "extension_articles": [
+        {"id": "HUB-4-C5", "title": "פריחה בעור התינוק — מה גורם לה ואיך להגיב", "keyword": "פריחה בעור תינוק", "slug": "pricha-bor-tinok-ma-gorim-ech-lehagib", "status": "draft", "file": "HUB4_C5.md", "written_at": "2026-05-17"}
+      ],
+      "notes": "פורסם אחרון — 12/03/2026. הרחבת HUB: C5 נכתב 2026-05-17 במסגרת conductor-plan organic-articles-43-batch-001 stage A3. דרושה פרסום ל-Shopify."
+    },
+    {
+      "hub_id": "HUB-5",
+      "hub_name": "Baby Gifts",
+      "hub_name_he": "מתנות לתינוק",
+      "status": "published",
+      "pillar": {
+        "title": "מתנות לתינוק — המדריך המלא (בייבי שאוור, ברית, ביקור יולדת)",
+        "handle": "matanot-letinok-madrih-male",
+        "article_id": 681842737465,
+        "url": "https://babymania-il.com/blogs/news/matanot-letinok-madrih-male"
+      },
+      "pillar_keyword": "מתנות לתינוק",
+      "articles_count": 7,
+      "articles": [
+        {"id": "HUB-5-Pillar", "handle": "matanot-letinok-madrih-male", "article_id": 681842737465},
+        {"id": "HUB-5-C1", "handle": "matanot-baby-shower-reshima-nigmeret", "article_id": 681842770233},
+        {"id": "HUB-5-C2", "handle": "matanot-maasiot-tinok-horeh-chadash", "article_id": 681842803001},
+        {"id": "HUB-5-C3", "handle": "matanot-yokra-tinok-zechronot", "article_id": 681842835769},
+        {"id": "HUB-5-C4", "handle": "ma-ima-chadasha-tzricha-achrei-lida", "article_id": 681842868537},
+        {"id": "HUB-5-C5", "handle": "matanot-tinok-rishon-madrih", "article_id": 681842901305},
+        {"id": "HUB-5-C6", "handle": "set-matana-tinok-pitaron-nachon", "article_id": 681842934073}
+      ],
+      "product_bridge": "Lino™ set, LUMI™ romper",
+      "writing_angle": "הדוד/הדודה שלא יודע מה לקנות — 5 תרחישים ישראליים",
+      "files_location": "C:/Projects/baby-mania-agent/output/hub5-baby-gifts/",
+      "file_prefix": "HUB5_",
+      "published_at": "2026-03-15",
+      "publish_results_file": "HUB5_PUBLISH_RESULTS.json",
+      "notes": "פורסם 15/03/2026 — 7 מאמרים. זווית: הדוד/הדודה שלא יודע מה לקנות. 5 תרחישים ישראליים."
+    },
+    {
+      "hub_id": "HUB-6",
+      "hub_name": "Baby Shoes",
+      "hub_name_he": "נעלי תינוקות וילדים",
+      "status": "published",
+      "pillar_keyword": "איך לבחור נעלי תינוק",
+      "pillar_keyword_he": "איך לבחור נעלי תינוק",
+      "writing_angle": "הורים קונים ביטחון — לא נעל",
+      "research_pillars": [
+        "מידה נכונה — עצמות גדלות ישר",
+        "סוליה גמישה — ביטחון בגוף היום = ביטחון עצמי של מחר",
+        "קלות משקל — מוטוריקה, שינה, גן שמח",
+        "חומרים נושמים — בוקר בלי מריבות",
+        "סגירה מתכווננת — אני מסוגל",
+        "אנטי סליפ — חופש תנועה = ילדים לומדים על העולם",
+        "שלב התפתחותי — נעל נכונה לשלב הנכון",
+        "עמידות — קונים פעם אחת"
+      ],
+      "articles_count": 7,
+      "articles": [
+        {"id": "HUB-6-Pillar", "handle": "bchira-naale-tinok-madrih-male", "article_id": 682289987897, "url": "https://babymania-il.com/blogs/news/bchira-naale-tinok-madrih-male"},
+        {"id": "HUB-6-C1", "handle": "naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat", "article_id": 682290053433, "url": "https://babymania-il.com/blogs/news/naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat"},
+        {"id": "HUB-6-C2", "handle": "solya-gmisha-naale-yeladim-mah-hahevdel", "article_id": 682290151737, "url": "https://babymania-il.com/blogs/news/solya-gmisha-naale-yeladim-mah-hahevdel"},
+        {"id": "HUB-6-C3", "handle": "mida-nachon-naale-yeladim-kacha-memdim-babayit", "article_id": 682290217273, "url": "https://babymania-il.com/blogs/news/mida-nachon-naale-yeladim-kacha-memdim-babayit"},
+        {"id": "HUB-6-C4", "handle": "naale-gan-yeladim-mah-kday-ladaat", "article_id": 682290282809, "url": "https://babymania-il.com/blogs/news/naale-gan-yeladim-mah-kday-ladaat"},
+        {"id": "HUB-6-C5", "handle": "matay-lechahlif-naale-yeled-hassimanim", "article_id": 682290315577, "url": "https://babymania-il.com/blogs/news/matay-lechahlif-naale-yeled-hassimanim"},
+        {"id": "HUB-6-C6", "handle": "chomrim-noshmim-naale-tinoket-mah-levakesh", "article_id": 682290381113, "url": "https://babymania-il.com/blogs/news/chomrim-noshmim-naale-tinoket-mah-levakesh"}
+      ],
+      "approved_clusters": [
+        "C1: נעל לצעד ראשון — מה שהורים צריכים לדעת",
+        "C2: מידה נכונה לנעלי ילדים — כך תמדדו בבית",
+        "C3: נעלי מניעת החלקה לתינוקות — למה זה קריטי",
+        "C4: סוליה גמישה בנעלי ילדים — מה ההבדל",
+        "C5: חומרים נושמים בנעלי תינוקות — מה לחפש",
+        "C6: נעלי גן לילדים — מה כדאי לדעת"
+      ],
+      "writing_order": ["Pillar", "C1", "C3", "C2", "C4", "C5", "C6"],
+      "product_bridge": "נעלי צעד ראשון, נעלי מניעת החלקה, נעלי גן",
+      "product_handles": {
+        "first_step": "trendy-comfortable-sneakers-for-baby-girls-and-boys-lightweight-nonslip-shoes-for-indoor-outdoor-walking-all-seasons",
+        "anti_slip": "zapatillas-girl-shoe-spring-autumn-boy-white-shoe-casual-running-kid-shoe-anti-slip-soft-sole-sneaker-kid-tenis-hot-selling-item",
+        "first_step_alt": "meckior-baby-sandals-newborn-soft-comfortable-fluff-baby-shoes-anti-slip-cotton-sole-flat-new-baby-boys-gilrs-sandals",
+        "leather_first_step": "new-baby-shoes-leather-baby-boy-girl-shoes-rubber-sole-anti-slip-multicolor-toddler-first-walkers-newborn-crib-toddler-shoes"
+      },
+      "product_link_rule": "כל מאמר חייב לכלול קישור למוצרי נעליים מהחנות — במיוחד נעלי צעד ראשון + נעלי מונעת החלקה. השתמש ב-product-card-inline כפי שמוגדר ב-agent04.",
+      "files_location": "C:/Projects/baby-mania-agent/output/hub6-baby-shoes/",
+      "file_prefix": "HUB6_",
+      "published_at": "2026-03-19",
+      "publish_results_file": "HUB6_PUBLISH_RESULTS.json",
+      "gsc_indexing": "PENDING — ממתין לאישור משתמש אחרי בדיקת פילר בגלישה בסתר",
+      "last_updated": "next_hub",
+      "notes": "פורסם 19/03/2026 — 7 מאמרים. זווית: הורים קונים ביטחון — לא נעל. 8 נקודות מחקר + שרשרת יתרון-של-יתרון."
+    },
+    {
+      "hub_id": "HUB-7",
+      "hub_name": "Baby Safety",
+      "hub_name_he": "בטיחות תינוק",
+      "status": "published",
+      "approved_pillar": "How to Create a Safe Environment for Your Baby",
+      "approved_pillar_he": "איך ליצור סביבה בטוחה לתינוק",
+      "pillar_keyword": "בטיחות תינוק",
+      "pillar": {
+        "title": "איך ליצור סביבה בטוחה לתינוק — המדריך המלא",
+        "handle": "sviva-betua-letinok-madrih-male",
+        "article_id": 682836066617,
+        "url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male"
+      },
+      "articles_count": 6,
+      "articles": [
+        {"id": "HUB-7-Pillar", "handle": "sviva-betua-letinok-madrih-male", "article_id": 682836066617, "url": "https://babymania-il.com/blogs/news/sviva-betua-letinok-madrih-male"},
+        {"id": "HUB-7-C1", "handle": "klalei-shina-betua-letinok", "article_id": 682836099385, "url": "https://babymania-il.com/blogs/news/klalei-shina-betua-letinok"},
+        {"id": "HUB-7-C2", "handle": "tauyot-shina-betua-tinok", "article_id": 682836132153, "url": "https://babymania-il.com/blogs/news/tauyot-shina-betua-tinok"},
+        {"id": "HUB-7-C3", "handle": "minuat-hitchamamut-yeter-betinok", "article_id": 682836164921, "url": "https://babymania-il.com/blogs/news/minuat-hitchamamut-yeter-betinok"},
+        {"id": "HUB-7-C4", "handle": "bigud-batua-letinok-mah-levakesh", "article_id": 682836197689, "url": "https://babymania-il.com/blogs/news/bigud-batua-letinok-mah-levakesh"},
+        {"id": "HUB-7-C5", "handle": "betihut-layla-letinok-bdikot-lifney-shina", "article_id": 682836230457, "url": "https://babymania-il.com/blogs/news/betihut-layla-letinok-bdikot-lifney-shina"}
+      ],
+      "product_bridge": "sleep accessories, safe baby clothing",
+      "approved_clusters": [
+        "C1: כללי שינה בטוחה לתינוק",
+        "C2: טעויות נפוצות בשינה בטוחה לתינוק",
+        "C3: מניעת התחממות יתר בתינוק",
+        "C4: ביגוד בטוח לתינוק",
+        "C5: בטיחות לילה לתינוק"
+      ],
+      "files_location": "C:/Projects/baby-mania-agent/output/hub7/",
+      "file_prefix": "HUB7_",
+      "published_at": "2026-03-23",
+      "publish_results_file": "HUB7_PUBLISH_RESULTS.json",
+      "demand_validation_required": true,
+      "extension_files_location": "C:/Projects/baby-mania-agent/output/organic/hub7-extension/",
+      "extension_articles": [
+        {"id": "HUB-7-C6", "title": "10 סכנות בבית לתינוק שהורים לא מודעים אליהן", "keyword": "סכנות בבית לתינוק", "slug": "sakanot-babayit-letinok-asara-dugmaot", "status": "draft", "file": "HUB7_C6.md", "written_at": "2026-05-17"}
+      ],
+      "notes": "פורסם 23/03/2026 — 6 מאמרים. בניית סמכות ואמון. הרחבת HUB: C6 נכתב 2026-05-17 במסגרת conductor-plan organic-articles-43-batch-001 stage A3. דרושה פרסום ל-Shopify."
+    },
+    {
+      "hub_id": "HUB-8",
+      "hub_name": "Baby Routine",
+      "hub_name_he": "שגרה יומית לתינוק",
+      "status": "published",
+      "approved_pillar": "How to Build a Healthy Baby Routine",
+      "approved_pillar_he": "סדר יום לתינוק — המדריך המלא לבניית שגרה לפי גיל",
+      "pillar_keyword": "סדר יום לתינוק",
+      "pillar_keyword_he": "סדר יום לתינוק",
+      "pillar": {
+        "title": "סדר יום לתינוק — המדריך המלא לבניית שגרה לפי גיל",
+        "handle": "seder-yom-letinok-madrih-male"
+      },
+      "articles_count": 6,
+      "articles": [
+        {"id": "HUB-8-Pillar", "handle": "seder-yom-letinok-madrih-male", "article_id": 684587450681, "url": "https://babymania-il.com/blogs/news/seder-yom-letinok-madrih-male"},
+        {"id": "HUB-8-C3", "handle": "ech-lehargia-tinok-sheboche-8-shitatot", "article_id": 684587548985, "url": "https://babymania-il.com/blogs/news/ech-lehargia-tinok-sheboche-8-shitatot"},
+        {"id": "HUB-8-C5", "handle": "seder-yom-tinok-3-hodashim-dugma-maasit", "article_id": 684587614521, "url": "https://babymania-il.com/blogs/news/seder-yom-tinok-3-hodashim-dugma-maasit"},
+        {"id": "HUB-8-C1", "handle": "seder-yom-lenewborn-shavuot-rishonim", "article_id": 684587483449, "url": "https://babymania-il.com/blogs/news/seder-yom-lenewborn-shavuot-rishonim"},
+        {"id": "HUB-8-C2", "handle": "seder-achila-veshina-letinok-luach-zmanim", "article_id": 684587516217, "url": "https://babymania-il.com/blogs/news/seder-achila-veshina-letinok-luach-zmanim"},
+        {"id": "HUB-8-C4", "handle": "matay-tinok-matchil-shgara-simanim", "article_id": 684587581753, "url": "https://babymania-il.com/blogs/news/matay-tinok-matchil-shgara-simanim"}
+      ],
+      "product_bridge": "sleep accessories, comfortable baby clothing, cotton rompers",
+      "approved_clusters": [
+        "C1: סדר יום לניובורן — שגרה בשבועות הראשונים",
+        "C2: סדר האכלה ושינה לתינוק — לוח זמנים לפי גיל",
+        "C3: איך להרגיע תינוק שבוכה — 8 שיטות שעובדות",
+        "C4: מתי תינוק מתחיל שגרה — סימנים שהגיע הזמן",
+        "C5: סדר יום לתינוק בן 3 חודשים — דוגמה מעשית"
+      ],
+      "skipped_clusters": ["Sleep Routine for Babies — חפיפה עם HUB-1"],
+      "plan_file": "HUB8_plan.json",
+      "planned_at": "2026-04-05",
+      "files_location": "C:/Projects/baby-mania-agent/output/hub8/",
+      "file_prefix": "HUB8_",
+      "writing_order": ["Pillar", "C3", "C5", "C1", "C2", "C4"],
+      "published_at": "2026-04-09",
+      "publish_results_file": "HUB8_PUBLISH_RESULTS.json",
+      "gsc_status": "gsc_manual_requested",
+      "gsc_inspection_result": "unknown",
+      "gsc_note": "Inspection ran 2026-04-20 — URL unknown to Google. Manual Request Indexing completed via GSC UI 2026-04-20.",
+      "demand_validation_required": false,
+      "extension_files_location": "C:/Projects/baby-mania-agent/output/organic/hub8-extension/",
+      "extension_articles": [
+        {"id": "HUB-8-C6", "title": "שגרת ערב לתינוק — שלבים שמובילים לשינה רגועה", "keyword": "שגרת ערב לתינוק", "slug": "shgarat-erev-letinok-shlabim-leshina", "status": "draft", "file": "HUB8_C6.md", "written_at": "2026-05-17"}
+      ],
+      "notes": "פורסם 09/04/2026 — 6 מאמרים. Sleep Routine נדחה בגלל חפיפה עם HUB-1. מאמר C5 (3 חודשים) נוסף על בסיס ביקוש גבוה מאומת. state doc היה ready_to_publish — תוקן ל-published ב-13/04/2026. הרחבת HUB: C6 נכתב 2026-05-17 במסגרת conductor-plan organic-articles-43-batch-001 stage A3. דרושה פרסום ל-Shopify."
+    },
+    {
+      "hub_id": "HUB-9",
+      "hub_name": "Reborn Dolls",
+      "hub_name_he": "בובת ריבורן",
+      "status": "published",
+      "direction_override": "HUB-9 שונה מ'רשימת קניות לתינוק' ל-Reborn — החלטה ניהולית 2026-04-20",
+      "approved_pillar": "בובת ריבורן — המדריך המלא: מה זה, איך לבחור ולמי זה מתאים",
+      "pillar_keyword": "בובת ריבורן",
+      "pillar_keyword_he": "בובת ריבורן",
+      "gsc_signal": "pos 2.7 — store top GSC performer",
+      "writing_angle": "הורים, מתנות פרמיום, אספנים — מה הריבורן הנכון לכל מטרה",
+      "approved_clusters": [
+        "C1: איך לבחור בובת ריבורן — מדריך לרוכש הראשון",
+        "C2: בגדי ריבורן — מה לובשים ואיפה מוצאים [PRIORITY — pos 1.5 keyword]",
+        "C3: בובת ריבורן כמתנה — מי זה מתאים לו ומה לבקש",
+        "C4: איך לטפל בבובת ריבורן — שמירה, ניקוי, אחסון",
+        "C5: ריבורן לילדים vs. ריבורן לאספנים — מה ההבדל",
+        "C6: השוואת בובות ריבורן — מידות, חומרים, מחירים"
+      ],
+      "cluster_priority": "C2 — 'בגדי ריבורן' pos 1.5, highest GSC signal after pillar keyword",
+      "articles_count": 7,
+      "product_bridge": {
+        "reborn_pids": [
+          "9689589383481",
+          "9690182385977",
+          "9690182418745",
+          "9690182451513",
+          "9690247627065",
+          "9690247659833"
+        ],
+        "clothing_bridge": "C2 → clothing products (baby-sized garments that fit Reborn dolls)",
+        "gift_bridge": "C3 → HUB-5 cross-link (Reborn as premium gift)"
+      },
+      "internal_linking": {
+        "pillar_to_clusters": "bidirectional — all 6 clusters",
+        "C2_to": "HUB-2 pillar (Newborn Clothing) + clothing product pages",
+        "C3_to": "HUB-5 pillar (Baby Gifts)",
+        "HUB5_C3_to": "HUB-9 Pillar (Reborn as premium gift — cross-link)"
+      },
+      "protect_winners_note": "כלל 'Protect reborn winners' = לא לגעת בדפי מוצר/דפי דירוג קיימים. HUB-9 יוצר דפים חדשים בלבד — לא מגע בדפים קיימים.",
+      "plan_file": "output/hub9-reborn/HUB9_plan.json",
+      "pillar_file": "output/hub9-reborn/HUB9_Pillar_blog_article.html",
+      "pillar_status": "PUBLISHED",
+      "pillar": {
+        "title": "בובת ריבורן — המדריך המלא: מה זה, איך לבחור ולמי זה מתאים",
+        "handle": "bobat-reborn-madrih-male-ma-ze-ech-livhor",
+        "article_id": 685558825273,
+        "url": "https://babymania-il.com/blogs/news/bobat-reborn-madrih-male-ma-ze-ech-livhor",
+        "published_at": "2026-04-20"
+      },
+      "clusters": [
+        {
+          "cluster_id": "C1",
+          "title": "איך לבחור בובת ריבורן — מדריך לרוכש הראשון",
+          "handle": "eich-livhor-bobat-reborn-madrih-larokhesh-harishon",
+          "article_id": 686018756921,
+          "url": "https://babymania-il.com/blogs/news/eich-livhor-bobat-reborn-madrih-larokhesh-harishon",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C2",
+          "title": "בגדי ריבורן — מה לובשים, איזה מידה מתאימה ואיפה מוצאים",
+          "handle": "bigdei-reborn-ma-hilobshot-eizeh-midah-matima",
+          "article_id": 686018724153,
+          "url": "https://babymania-il.com/blogs/news/bigdei-reborn-ma-hilobshot-eizeh-midah-matima",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C3",
+          "title": "בובת ריבורן כמתנה — מי זה מתאים לו ומה לבקש",
+          "handle": "bobat-reborn-kematana-mi-matim-mah-levakesh",
+          "article_id": 686018789689,
+          "url": "https://babymania-il.com/blogs/news/bobat-reborn-kematana-mi-matim-mah-levakesh",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C4",
+          "title": "איך לטפל בבובת ריבורן — שמירה, ניקוי ואחסון",
+          "handle": "eich-letapel-bobat-reborn-shmirah-nikuy-achsun",
+          "article_id": 686018822457,
+          "url": "https://babymania-il.com/blogs/news/eich-letapel-bobat-reborn-shmirah-nikuy-achsun",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C5",
+          "title": "ריבורן לילדים vs. ריבורן לאספנים — מה ההבדל ואיזה מתאים לכם",
+          "handle": "reborn-leyeladim-vs-reborn-leasefanim-mah-hahedel",
+          "article_id": 686018855225,
+          "url": "https://babymania-il.com/blogs/news/reborn-leyeladim-vs-reborn-leasefanim-mah-hahedel",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        },
+        {
+          "cluster_id": "C6",
+          "title": "השוואת בובות ריבורן — מידות, חומרים ותכונות: כל הדגמים במקום אחד",
+          "handle": "hashvahat-bobot-reborn-midot-khomrim-tekhunyot",
+          "article_id": 686018887993,
+          "url": "https://babymania-il.com/blogs/news/hashvahat-bobot-reborn-midot-khomrim-tekhunyot",
+          "published_at": "2026-04-23",
+          "gsc_status": "gsc_pending_manual_request"
+        }
+      ],
+      "cluster_status": "ALL LIVE",
+      "planned_at": "2026-04-20",
+      "published_at": "2026-04-20",
+      "clusters_published_at": "2026-04-23",
+      "gsc_status": "gsc_manual_requested",
+      "gsc_inspection_result": "unknown",
+      "gsc_note": "Inspection ran 2026-04-20 — URL unknown to Google. Manual Request Indexing completed via GSC UI 2026-04-20.",
+      "clusters_gsc_note": "C1-C6 inspected 2026-04-23 — all unknown/new. Manual Request Indexing required via GSC UI.",
+      "previous_direction_rejected": "רשימת קניות לתינוק — pos 36, deferred to HUB-10",
+      "notes": "נושא נבחר על בסיס GSC winners: בובת ריבורן pos 2.7, בגדי ריבורן pos 1.5 — הקטגוריה החזקה ביותר בחנות ללא HUB תומך. 6 מוצרי Reborn קיימים ב-Shopify עם SEO Layer 3 מלא."
+    },
+    {
+      "hub_id": "HUB-10",
+      "hub_name": "Reborn Emotional Benefits",
+      "hub_name_he": "יתרונות בובת הריבורן לילדים",
+      "status": "published",
+      "cluster_status": "ALL LIVE",
+      "direction_decision": "HUB-10 שונה מ'רשימת קניות לתינוק' ל-Reborn Benefits — החלטה ניהולית 2026-04-28. סיבה: החנות לא מוכרת ציוד כללי. הרחבת topical authority על ריבורן = אסטרטגיה נכונה.",
+      "approved_pillar": "בובת ריבורן לילדים — יתרונות רגשיים, חברתיים והתפתחותיים",
+      "pillar_keyword": "יתרונות בובת ריבורן לילדים",
+      "pillar_keyword_he": "יתרונות בובת ריבורן לילדים",
+      "writing_angle": "הורה שמהסס — האם הריבורן ילמד משהו טוב לילד שלי?",
+      "articles_count": 7,
+      "pillar_status": "PUBLISHED",
+      "pillar": {
+        "title": "בובת ריבורן לילדים — יתרונות רגשיים, חברתיים והתפתחותיים",
+        "handle": "yitronot-bobat-reborn-leyladim-regshiyim-chevratiyim-histapdutiyim",
+        "article_id": 686621098297,
+        "url": "https://babymania-il.com/blogs/news/yitronot-bobat-reborn-leyladim-regshiyim-chevratiyim-histapdutiyim",
+        "published_at": "2026-04-28"
+      },
+      "clusters": [
+        {
+          "cluster_id": "C1",
+          "title": "בובת ריבורן ואינטליגנציה רגשית — מה פסיכולוגים אומרים",
+          "handle": "bobat-reborn-intelignatzia-regshit-mishak",
+          "article_id": 686651507001,
+          "url": "https://babymania-il.com/blogs/news/bobat-reborn-intelignatzia-regshit-mishak",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C2",
+          "title": "ריבורן וביטחון חברתי — איך הבובה עוזרת לילדים מהוססים",
+          "handle": "reborn-bitachon-chevrati-yeladim-mehussim",
+          "article_id": 686673527097,
+          "url": "https://babymania-il.com/blogs/news/reborn-bitachon-chevrati-yeladim-mehussim",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C3",
+          "title": "מאיזה גיל בובת ריבורן מתאימה — מדריך לפי שלב התפתחותי",
+          "handle": "gil-matim-lebobat-reborn",
+          "article_id": 686676443449,
+          "url": "https://babymania-il.com/blogs/news/gil-matim-lebobat-reborn",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C4",
+          "title": "בובת ריבורן ואמפתיה — ילדים שלומדים לדאוג לאחרים",
+          "handle": "bobat-reborn-empathia-yeladim",
+          "article_id": 686676541753,
+          "url": "https://babymania-il.com/blogs/news/bobat-reborn-empathia-yeladim",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C5",
+          "title": "בובת ריבורן לילד רגיש — למה זה עובד",
+          "handle": "bobat-reborn-yeled-ragish",
+          "article_id": 686678147385,
+          "url": "https://babymania-il.com/blogs/news/bobat-reborn-yeled-ragish",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        },
+        {
+          "cluster_id": "C6",
+          "title": "ריבורן ואחריות — מה הבובה מלמדת ילדים",
+          "handle": "reborn-achrayut-yeladim",
+          "article_id": 686682571065,
+          "url": "https://babymania-il.com/blogs/news/reborn-achrayut-yeladim",
+          "published_at": "2026-04-28",
+          "gsc_status": "pending_manual_request"
+        }
+      ],
+      "product_bridge": {
+        "reborn_pids": [
+          "9689589383481",
+          "9690182385977",
+          "9690182418745",
+          "9690182451513",
+          "9690247627065",
+          "9690247659833"
+        ],
+        "cta_url": "/search?q=ריבורן",
+        "note": "אין collection ייעודי לריבורן — CTA מפנה ל-search"
+      },
+      "previous_direction_rejected": "רשימת קניות לתינוק — לא רלוונטי לחנות שלא מוכרת ציוד כללי",
+      "planned_at": "2026-04-28",
+      "published_at": "2026-04-28",
+      "clusters_published_at": "2026-04-28",
+      "files_location": "C:/Projects/baby-mania-agent/output/hub10-reborn-benefits/",
+      "file_prefix": "HUB10_",
+      "internal_content_map_version": "5.7",
+      "total_articles_after": 61,
+      "gsc_status": "pending_manual_request",
+      "gsc_note": "HUB-10 ALL LIVE 2026-04-28. Manual Request Indexing required via GSC UI for all 7 URLs.",
+      "notes": "הרחבת topical authority על ריבורן. ממשיך מ-HUB-9 לעומק — זווית פסיכולוגית/התפתחותית. 7 מאמרים ALL LIVE 2026-04-28. internal_content_map v5.7."
+    },
+    {
+      "hub_id": "HUB-11",
+      "hub_name": "Baby Summer Clothing",
+      "hub_name_he": "בגדי קיץ לתינוק",
+      "status": "complete",
+      "priority": "HIGH",
+      "layer": 5,
+      "business_reason": "Covers high-value summer clothing, swimwear, hats, and seasonal orphan products. 17+ orphan products gain content support.",
+      "seasonality": "April–September",
+      "approved_pillar": "בגדי קיץ לתינוק — המדריך המלא: מה ללבוש, מה לקחת לים ואיך לבחור נכון",
+      "pillar_keyword": "בגדי קיץ לתינוק",
+      "pillar_keyword_he": "בגדי קיץ לתינוק",
+      "writing_angle": "הורה שמכין את התינוק לקיץ ישראלי — מה לקנות, מה לבחור, ואיך להגן",
+      "articles_count": 7,
+      "articles": [
+        {
+          "id": "HUB-11-Pillar",
+          "title": "בגדי קיץ לתינוק — המדריך המלא: מה ללבוש, מה לקחת לים ואיך לבחור נכון",
+          "target_keyword": "בגדי קיץ לתינוק",
+          "role": "pillar",
+          "intent": "informational",
+          "status": "live",
+          "article_id": 686702362937,
+          "live_url": "https://www.babymania-il.com/blogs/news/bgdey-kayts-letinok-madrikh-male-ma-lilbosh-ma-lakakhat-layam",
+          "published_at": "2026-04-28",
+          "connected_products": ["9605887590713", "10025300853049", "9179162083641", "9606864666937"]
+        },
+        {
+          "id": "HUB-11-C1",
+          "title": "איך להלביש תינוק בקיץ — המדריך לפי גיל, חום ושעות היום",
+          "target_keyword": "איך להלביש תינוק בקיץ",
+          "role": "cluster",
+          "intent": "practical",
+          "status": "live",
+          "article_id": 686705443129,
+          "live_url": "https://www.babymania-il.com/blogs/news/eikh-lhalbisht-tinok-bakayts-madrikh-lfi-gil-khom-ushaot",
+          "published_at": "2026-04-29",
+          "connected_products": ["9605887689017", "9179159888185", "9605887820089"]
+        },
+        {
+          "id": "HUB-11-C2",
+          "title": "בגד ים לתינוקת — איך לבחור, מה לבדוק ואיזה קרם הגנה להשתמש",
+          "target_keyword": "בגד ים לתינוקת",
+          "role": "cluster",
+          "intent": "commercial",
+          "status": "live",
+          "article_id": 686727070009,
+          "live_url": "https://www.babymania-il.com/blogs/news/bgad-yam-letineket-eikh-livkhor-ma-livdok-ukrem-haganah",
+          "published_at": "2026-04-29",
+          "connected_products": ["9179162083641", "9179162804537", "9179164344633"]
+        },
+        {
+          "id": "HUB-11-C3",
+          "title": "כובע שמש לתינוק — למה זה חובה וכיצד לבחור נכון",
+          "target_keyword": "כובע שמש לתינוק",
+          "role": "cluster",
+          "intent": "informational_commercial",
+          "status": "live",
+          "article_id": 686727528761,
+          "live_url": "https://www.babymania-il.com/blogs/news/kovah-shemesh-letinok-lama-zeh-hova-vekheytsad-livkhor-nakhon",
+          "published_at": "2026-04-29",
+          "connected_products": ["9606864666937"]
+        },
+        {
+          "id": "HUB-11-C4",
+          "title": "שמלות קיץ לתינוקת — הדגמים הכי נוחים לחום הישראלי",
+          "target_keyword": "שמלת קיץ לתינוקת",
+          "role": "cluster",
+          "intent": "commercial_educational",
+          "status": "live",
+          "article_id": 686727790905,
+          "live_url": "https://www.babymania-il.com/blogs/news/smlot-kayts-letineket-hadgamim-yoter-nonhim-lahom-hayisraeli",
+          "published_at": "2026-04-29",
+          "connected_products": ["9605887590713", "9605887721785", "9179162444089", "9179150516537"]
+        },
+        {
+          "id": "HUB-11-C5",
+          "title": "חליפת פשתן לתינוק — היתרונות, איך לבחור ומתי ללבוש",
+          "target_keyword": "חליפת פשתן לתינוק",
+          "role": "cluster",
+          "intent": "educational_commercial",
+          "status": "live",
+          "article_id": 686728216889,
+          "live_url": "https://www.babymania-il.com/blogs/news/khalifat-pishtan-letinok-hayitronot-eikh-livkhor-umatay-lilbosh",
+          "published_at": "2026-04-29",
+          "connected_products": ["9605887754553", "9179158479161", "9179170144569"]
+        },
+        {
+          "id": "HUB-11-C6",
+          "title": "בריכה עם תינוק — בטיחות, ציוד ושעות מומלצות",
+          "target_keyword": "בריכה עם תינוק",
+          "role": "cluster",
+          "intent": "informational",
+          "status": "live",
+          "article_id": 686728479033,
+          "live_url": "https://www.babymania-il.com/blogs/news/brekha-im-tinok-bitakhon-tsiyud-ushahot-hamumlatsot",
+          "published_at": "2026-04-29",
+          "connected_products": ["9838580662585", "9179162083641", "9179162804537", "9606864666937"]
+        }
+      ],
+      "product_bridge": {
+        "summer_clothing": ["9605887590713", "10025300853049", "9179159888185", "9605887689017", "9605887820089", "9605887754553", "9179158479161", "9179170144569", "9179162444089", "9179150516537", "9605887721785"],
+        "swimwear": ["9179162083641", "9179162804537", "9179164344633"],
+        "swimming_accessories": ["9838580662585"],
+        "hats": ["9606864666937"]
+      },
+      "internal_links_planned": {
+        "to_existing_hubs": [
+          "HUB-7-C3 (מניעת התחממות יתר) — from C1",
+          "HUB-2-C1 (best fabric for baby skin) — from C5",
+          "HUB-4-Pillar (sensitive skin) — from C3",
+          "HUB-3-Pillar (Baby Bath) — from C6",
+          "HUB-5-Pillar (Baby Gifts) — from Pillar"
+        ],
+        "from_existing_hubs": [
+          "HUB-2-C1 → HUB-11-C5",
+          "HUB-4-Pillar → HUB-11-C3",
+          "HUB-7-C3 → HUB-11-C1"
+        ]
+      },
+      "files_location": "C:/Projects/baby-mania-agent/output/hub11-summer-clothing/",
+      "file_prefix": "HUB11_",
+      "planned_at": "2026-04-28",
+      "gsc_status": "pending_indexing_request",
+      "notes": "HUB-11 — בגדי קיץ לתינוק. COMPLETE 2026-04-29. כל 7 מאמרים LIVE (Pillar + C1-C6). 17+ מוצרים orphan מקבלים תמיכה. GSC Manual Indexing Request נדרש לכל 5 URLs החדשים (C2-C6) — פעולת אייל."
+    },
+    {
+      "hub_id": "HUB-13",
+      "hub_name": "Water Shoes & Swimwear",
+      "hub_name_he": "נעלי מים ובגדי ים",
+      "status": "drafted_pending_publish",
+      "priority": "HIGH",
+      "seasonality": "May-September (peak summer)",
+      "pillar_keyword": "נעלי מים לילדים",
+      "pillar_keyword_he": "נעלי מים לילדים",
+      "writing_angle": "הורה ישראלי שמכין את הילד לקיץ — בריכה, ים, חוף סלעי",
+      "articles_count": 7,
+      "articles": [
+        {"id": "HUB-13-Pillar", "title": "נעלי מים לילדים — המדריך המלא: בריכה, ים וחוף", "slug": "naalei-mayim-leyeladim-madrih-male-brekha-yam", "keyword": "נעלי מים לילדים", "file": "HUB13_Pillar.md", "status": "draft", "intent": "commercial_informational"},
+        {"id": "HUB-13-C1", "title": "נעלי מים לתינוק — מאיזה גיל ומה לבדוק", "slug": "naalei-mayim-letinok-me'eize-gil", "keyword": "נעלי מים לתינוק", "file": "HUB13_C1.md", "status": "draft", "intent": "informational_commercial"},
+        {"id": "HUB-13-C2", "title": "כפכפים לפעוטות לים ולבריכה — איך לבחור ומה לבדוק", "slug": "kafkafim-lapautot-layam-velabreykha", "keyword": "כפכפים לפעוטות", "file": "HUB13_C2.md", "status": "draft", "intent": "commercial"},
+        {"id": "HUB-13-C3", "title": "נעלי ים אנטי החלקה לילדים — איך לבחור ומה באמת עובד", "slug": "naalei-yam-anti-hahlaka-leyeladim", "keyword": "נעלי ים אנטי החלקה לילדים", "file": "HUB13_C3.md", "status": "draft", "intent": "informational_commercial"},
+        {"id": "HUB-13-C4", "title": "בגד ים לבנות תינוקות — UPF50 ובחירה נכונה", "slug": "bgad-yam-livanot-tinokot-upf50-bchira", "keyword": "בגד ים לבנות תינוקות", "file": "HUB13_C4.md", "status": "draft", "intent": "commercial_educational"},
+        {"id": "HUB-13-C5", "title": "בגד ים לבנים תינוקות — בגדי ים vs. בגד ים: מה עמיד יותר", "slug": "bgad-yam-livanim-tinokot-mah-amid-yoter", "keyword": "בגד ים לבנים תינוקות", "file": "HUB13_C5.md", "status": "draft", "intent": "commercial"},
+        {"id": "HUB-13-C6", "title": "ציוד חוף לתינוק — הרשימה המלאה: מה באמת צריך לקחת לים", "slug": "tsiyud-hof-letinok-reshima-mele'a", "keyword": "ציוד חוף לתינוק", "file": "HUB13_C6.md", "status": "draft", "intent": "informational_commercial"}
+      ],
+      "product_bridge": "נעלי מים, נעלי חוף, בגדי ים, ציוד חוף",
+      "internal_links_planned": {
+        "to_existing_hubs": [
+          "HUB-6-Pillar (בחירת נעלי תינוק) — from Pillar, C1, C3",
+          "HUB-6-C1 (צעד ראשון) — from C1",
+          "HUB-6-C3 (מידה נכונה) — from Pillar, C3",
+          "HUB-11-C2 (בגד ים לתינוקת) — from C4 (link back, no duplication)",
+          "HUB-11-C6 (בריכה עם תינוק) — from Pillar, C6",
+          "HUB-11-Pillar — from C5",
+          "HUB-16-Pillar (קרוקס לילדים) — from Pillar, C2",
+          "HUB-16-C3 (קרוקס לים) — from Pillar",
+          "HUB-5-Pillar (מתנות לתינוק) — from C6"
+        ]
+      },
+      "files_location": "C:/Projects/baby-mania-agent/output/organic/hub13-water-shoes/",
+      "file_prefix": "HUB13_",
+      "drafted_at": "2026-05-17",
+      "conductor_plan": "organic-articles-43-batch-001",
+      "conductor_stage": "B3",
+      "gsc_status": "not_published_yet",
+      "notes": "HUB-13 — נעלי מים ובגדי ים. עונת שיא קיץ. כל 7 מאמרים נכתבו 2026-05-17 במסגרת conductor-plan organic-articles-43-batch-001 stage B3. Pillar היה כתוב מראש, C1-C6 נכתבו בסבב הנוכחי. דרושה פרסום ל-Shopify ו-GSC manual indexing."
+    },
+    {
+      "hub_id": "HUB-14",
+      "hub_name": "Baby Carrier",
+      "hub_name_he": "מנשא לתינוק",
+      "status": "drafted_pending_publish",
+      "priority": "HIGH",
+      "seasonality": "year-round",
+      "pillar_keyword": "מנשא לתינוק",
+      "pillar_keyword_he": "מנשא לתינוק",
+      "writing_angle": "הורה ישראלי מתלבט בין דגמים, חושש מבטיחות, רוצה ידיים פנויות בלי לוותר על קירבה",
+      "articles_count": 7,
+      "articles": [
+        {"id": "HUB-14-Pillar", "title": "מנשא לתינוק — המדריך המלא: בטיחות, שיטות ואיך קושרים", "slug": "manasa-letinok-madrih-male-betihut-shitatot", "keyword": "מנשא לתינוק", "file": "HUB14_Pillar.md", "status": "draft", "intent": "informational_commercial"},
+        {"id": "HUB-14-C1", "title": "מנשא בד vs. מנשא מובנה — מה ההבדל ומה מתאים לכם", "slug": "manasa-bad-vs-manasa-muvne-mah-hahedel", "keyword": "מנשא בד לתינוק", "file": "HUB14_C1.md", "status": "draft", "intent": "informational_commercial"},
+        {"id": "HUB-14-C2", "title": "איך קושרים מנשא בד — שלב אחר שלב עם תמונות", "slug": "ech-koshrim-manasa-bad-shalav-ahar-shalav", "keyword": "איך קושרים מנשא בד", "file": "HUB14_C2.md", "status": "draft", "intent": "how_to"},
+        {"id": "HUB-14-C3", "title": "בטיחות במנשא לתינוק — כללי TICKS שכל הורה חייב להכיר", "slug": "betihut-bamanasa-klalei-ticks", "keyword": "בטיחות מנשא תינוק", "file": "HUB14_C3.md", "status": "draft", "intent": "informational"},
+        {"id": "HUB-14-C4", "title": "יתרונות מנשא לתינוק — קשר רגשי, שינה רגועה והורות שפויה", "slug": "yitronot-manasa-letinok-kesher-shina", "keyword": "יתרונות מנשא לתינוק", "file": "HUB14_C4.md", "status": "draft", "intent": "informational"},
+        {"id": "HUB-14-C5", "title": "מנשא לנסיעה עם תינוק — טיסה, ים, קניות וטיולים בעיר", "slug": "manasa-lenesia-im-tinok-tisa-yam", "keyword": "מנשא לנסיעה עם תינוק", "file": "HUB14_C5.md", "status": "draft", "intent": "informational_commercial"},
+        {"id": "HUB-14-C6", "title": "מנשא לאבא — כן, זה עובד, וככה מתחילים", "slug": "manasa-leaba-ken-ze-oved-ech-matihlim", "keyword": "מנשא לאבא", "file": "HUB14_C6.md", "status": "draft", "intent": "informational_commercial"}
+      ],
+      "product_bridge": {
+        "carrier_pids": [
+          "9615227158841",
+          "9615227027769",
+          "9615227093305",
+          "9615226929465",
+          "9615227060537"
+        ],
+        "primary_handles": [
+          "baby-carrier-sling-versatile-for-all-seasons-multifunctional-shoulder-baby-carrier-four-carrying-methods-front-and-back",
+          "baby-carrier-ergonomic-infant-multifunctional-waist-stool-newborn-to-toddler-multi-use-before-and-after-kangaroo-bag-accessories",
+          "baby-carrier-ergonomic-hipseat-carrier-front-facing-kangaroo-baby-wrap-carrier-infant-sling-infant-hipseat-waist-baby-gear",
+          "1pc-baby-carrier-double-shoulders-easy-cross-hug-lightweight-universal",
+          "four-seasons-universal-baby-carrying-bag-waist-stool-strap"
+        ],
+        "search_evidence": "output/organic/hub14-baby-carrier/_carrier-products.json"
+      },
+      "internal_links_planned": {
+        "to_existing_hubs": [
+          "HUB-7-Pillar (סביבה בטוחה לתינוק) — from Pillar, C3",
+          "HUB-8-Pillar (סדר יום לתינוק) — from Pillar, C4, C5",
+          "HUB-1-Pillar (שינה לתינוק) — from Pillar, C4",
+          "HUB-10-Pillar (יתרונות ריבורן) — cross-authority from C4",
+          "HUB-11 (בגדי קיץ) — from C5",
+          "HUB-13 (נעלי מים) — from C5"
+        ]
+      },
+      "files_location": "C:/Projects/baby-mania-agent/output/organic/hub14-baby-carrier/",
+      "file_prefix": "HUB14_",
+      "drafted_at": "2026-05-17",
+      "conductor_plan": "organic-articles-43-batch-001",
+      "conductor_stage": "B4",
+      "gsc_status": "not_published_yet",
+      "notes": "HUB-14 — מנשא לתינוק. PRODUCT_BRIDGE_FOUND: YES — 5 מנשאים אמיתיים בחנות (Shopify search 'מנשא' + 'carrier' + 'wrap'). כל 7 מאמרים נכתבו 2026-05-17 במסגרת conductor-plan organic-articles-43-batch-001 stage B4. כל מאמר עומד ב-article_production_standard (1100-1700 מילים, FAQ + JSON-LD, ≥2 internal links, product bridge). דרושה פרסום ל-Shopify ו-GSC manual indexing."
+    }
+  ]
+}

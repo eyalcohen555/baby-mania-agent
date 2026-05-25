@@ -1,4 +1,6 @@
 .env
+*.env
+**/.env
 
 # Python
 __pycache__/
@@ -42,3 +44,11 @@ bridge/bridge.lock
 # Conductor / Codex runtime state — regenerated on every run, must not be committed
 bridge/codex-decision.md
 bridge/conductor-notify.md
+
+# Heavy binary/generated files — never commit
+assets/
+.claude/worktrees/
+reborn-audit/screenshots-final-qa/
+output/organic/rendered/
+theme_assets/**/*.backup.*
+*.backup.*
