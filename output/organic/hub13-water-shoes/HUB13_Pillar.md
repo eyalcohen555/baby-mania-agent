@@ -3,7 +3,7 @@ slug: naalei-mayim-leyeladim-madrih-male-brekha-yam
 title: נעלי מים לילדים — המדריך המלא: בריכה, ים וחוף
 keyword_main: נעלי מים לילדים
 keyword_secondary: נעלי ים לילדים, נעלי בריכה לילדים, נעלי חוף לתינוק, נעלי מים אקווה, נעלי מים אנטי החלקה, סנדלי מים לפעוט
-target_product_handle: /products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-
+target_product_handle: /products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1
 article_type: pillar
 hub: HUB-13
 parent: null
@@ -146,7 +146,7 @@ intent: commercial_informational
 
 ## CTA
 
-בחנות שלנו תמצאו את [נעלי הים המאווררות שלנו](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-) — סוליית גומי עם תבליטי אחיזה, רשת mesh נושמת שמתייבשת מהר, סגירת סקוץ' מתכווננת, מידות 18–30. גם [סנדלי EVA קלילים בסגנון קרוקס](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-) לבריכה ביתית ולחצר, ו[סנדלי קיץ קלילים לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-) ליציאות מעורבות. משלוח חינם מעל 199 ש"ח, החזרה חינם תוך 30 יום.
+בחנות שלנו תמצאו את [נעלי הים המאווררות שלנו](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1) — סוליית גומי עם תבליטי אחיזה, רשת mesh נושמת שמתייבשת מהר, סגירת סקוץ' מתכווננת, מידות 18–30. גם [סנדלי EVA קלילים בסגנון קרוקס](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes) לבריכה ביתית ולחצר, ו[סנדלי קיץ קלילים לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor) ליציאות מעורבות. משלוח חינם מעל 199 ש"ח, החזרה חינם תוך 30 יום.
 
 ## שאלות נפוצות
 
@@ -250,6 +250,6 @@ intent: commercial_informational
 - HUB-13-C1 → [נעלי מים לתינוק — מאיזה גיל](/blogs/news/naalei-mayim-letinok-me'eize-gil)
 - HUB-13-C2 → [כפכפים לפעוטות לים](/blogs/news/kafkafim-lapautot-layam-velabreykha)
 - HUB-13-C3 → [נעלי ים אנטי החלקה לילדים](/blogs/news/naalei-yam-anti-hahlaka-leyeladim)
-- Product → [נעלי ים מאווררות לתינוק ופעוט](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-)
-- Product → [סנדלי EVA קלילים בסגנון קרוקס](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-)
-- Product → [סנדלי קיץ קלילים לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-)
+- Product → [נעלי ים מאווררות לתינוק ופעוט](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1)
+- Product → [סנדלי EVA קלילים בסגנון קרוקס](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes)
+- Product → [סנדלי קיץ קלילים לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor)

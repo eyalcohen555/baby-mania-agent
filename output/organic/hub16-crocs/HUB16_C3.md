@@ -3,7 +3,7 @@ slug: crocs-layam-valabreykha-mah-livdok
 title: קרוקס לים ולבריכה — נעלי מים לילדים שמחזיקות
 keyword_main: נעלי ים לילדים
 keyword_secondary: קרוקס לים, נעלי מים לתינוק, נעלי בריכה לילדים, נעלי חוף לפעוט
-target_product_handle: /products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-
+target_product_handle: /products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1
 article_type: cluster
 hub: HUB-16
 parent: crocs-leyeladim-madrih-male-mida-dagamim
@@ -100,7 +100,7 @@ intent: informational_commercial
 
 ## CTA
 
-[הזמינו את נעלי הים המאווררות שלנו לתינוקות ופעוטות](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-) — דגם 1–4T עם רשת mesh נושמת, סוליית גומי אנטי-החלקה, סגירת סקוץ' מתכווננת ומשקל זעיר של 130 גרם לזוג. מתאים לים, בריכה וגינה רטובה — צבעים פסטליים ומידות 19–25. למשפחה שמעדיפה את הסגנון הקרוקסי הקלאסי, יש גם [סנדלי קרוקס לתינוק בחומר EVA קל](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-) שמשלימים את הסט. משלוח חינם מ-199 ש"ח, החזרה חינם תוך 30 יום.
+[הזמינו את נעלי הים המאווררות שלנו לתינוקות ופעוטות](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1) — דגם 1–4T עם רשת mesh נושמת, סוליית גומי אנטי-החלקה, סגירת סקוץ' מתכווננת ומשקל זעיר של 130 גרם לזוג. מתאים לים, בריכה וגינה רטובה — צבעים פסטליים ומידות 19–25. למשפחה שמעדיפה את הסגנון הקרוקסי הקלאסי, יש גם [סנדלי קרוקס לתינוק בחומר EVA קל](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes) שמשלימים את הסט. משלוח חינם מ-199 ש"ח, החזרה חינם תוך 30 יום.
 
 ## שאלות נפוצות
 
@@ -188,5 +188,5 @@ intent: informational_commercial
 - HUB-11-C6 → [בריכה עם תינוק — בטיחות וציוד](/blogs/news/brekha-im-tinok-bitakhon-tsiyud-ushahot-hamumlatsot)
 - HUB-11-C2 → [בגד ים לתינוקת — איך לבחור](/blogs/news/bgad-yam-letineket-eikh-livkhor-ma-livdok-ukrem-haganah)
 - HUB-6-Pillar → [המדריך המלא לבחירת נעלי תינוק](/blogs/news/bchira-naale-tinok-madrih-male)
-- Product → [נעלי ים מאווררות](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-)
-- Product → [סנדלי קרוקס לתינוק](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-)
+- Product → [נעלי ים מאווררות](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1)
+- Product → [סנדלי קרוקס לתינוק](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes)

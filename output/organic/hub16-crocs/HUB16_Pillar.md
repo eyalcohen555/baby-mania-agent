@@ -3,7 +3,7 @@ slug: crocs-leyeladim-madrih-male-mida-dagamim
 title: קרוקס לילדים — המדריך המלא: מידה, דגמים ומה נוח באמת
 keyword_main: קרוקס לילדים
 keyword_secondary: קרוקס לתינוק, סנדלים לילדים, נעלי גומי לילדים, מידות קרוקס ילדים, קרוקס מקורי, נעלי ים לילדים
-target_product_handle: /products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-
+target_product_handle: /products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes
 article_type: pillar
 hub: HUB-16
 parent: null
@@ -32,7 +32,7 @@ intent: commercial_informational
 - **סגירה אחורית**: רצועה שניתן להעביר לתנוחת "ספורט" (סגורה על העקב) או "סליפ-און" (משוחררת לאחור).
 - **אנטי החלקה**: סוליה עם תבליטים שעובדת טוב על אריחים רטובים, דשא וחול.
 
-הקרוקס המקורי מיוצר באיכות גבוהה והוא יחזיק שנה-שנתיים של שימוש יומיומי. בשוק הישראלי קיימים גם חיקויים סבירים ב-50–100 ש"ח, וגם דגמים ייעודיים לילדים שמשלבים עיצובים מצוירים, אורות ותווי פנים. בחנות שלנו תמצאו [סנדלים קלים לתינוק בסגנון קרוקס](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-) שעומדים בסטנדרטים האלה ביחס מחיר-איכות הוגן.
+הקרוקס המקורי מיוצר באיכות גבוהה והוא יחזיק שנה-שנתיים של שימוש יומיומי. בשוק הישראלי קיימים גם חיקויים סבירים ב-50–100 ש"ח, וגם דגמים ייעודיים לילדים שמשלבים עיצובים מצוירים, אורות ותווי פנים. בחנות שלנו תמצאו [סנדלים קלים לתינוק בסגנון קרוקס](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes) שעומדים בסטנדרטים האלה ביחס מחיר-איכות הוגן.
 
 ## מידה נכונה לקרוקס ילדים — איך מודדים בבית
 
@@ -137,7 +137,7 @@ intent: commercial_informational
 
 ## CTA
 
-[הכירו את הקולקציה של הסנדלים הקלילים שלנו](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-) — סגנון קרוקס באיכות מובחנת, חומר EVA קל ועמיד, מידות 18–30, צבעים פסטליים ומונע החלקה. גם [סנדלי קיץ קלים לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-) ו[נעלי ים מאווררות](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-) — משלוח חינם בהזמנה מעל 199 ש"ח, החזרה חינם תוך 30 יום.
+[הכירו את הקולקציה של הסנדלים הקלילים שלנו](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes) — סגנון קרוקס באיכות מובחנת, חומר EVA קל ועמיד, מידות 18–30, צבעים פסטליים ומונע החלקה. גם [סנדלי קיץ קלים לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor) ו[נעלי ים מאווררות](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1) — משלוח חינם בהזמנה מעל 199 ש"ח, החזרה חינם תוך 30 יום.
 
 ## שאלות נפוצות
 
@@ -239,6 +239,6 @@ intent: commercial_informational
 - HUB-16-C4 → [נעלי ג'לי לילדים](/blogs/news/naalei-jelly-leyeladim-ma-ze-yitronot)
 - HUB-16-C5 → [איך לנקות קרוקס](/blogs/news/ech-lenakot-crocs-yeladim-tip)
 - HUB-16-C6 → [קרוקס vs סנדלים קלאסיים](/blogs/news/crocs-vs-sandalim-klasiim-ma-matim)
-- Product → [קולקציית סנדלי קרוקס לתינוק](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-)
-- Product → [סנדלי קיץ קלים לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-)
-- Product → [נעלי ים מאווררות](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-)
+- Product → [קולקציית סנדלי קרוקס לתינוק](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes)
+- Product → [סנדלי קיץ קלים לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor)
+- Product → [נעלי ים מאווררות](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1)

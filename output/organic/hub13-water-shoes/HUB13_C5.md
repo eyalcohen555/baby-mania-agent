@@ -3,7 +3,7 @@ slug: bgad-yam-livanim-tinokot-mah-amid-yoter
 title: בגד ים לבנים תינוקות — בגדי ים vs. בגד ים שלם: מה עמיד יותר
 keyword_main: בגד ים לבנים תינוקות
 keyword_secondary: בגד ים לתינוק, בגד ים שלם לבנים, מכנסי ים לתינוק, חולצת ים לבנים
-target_product_handle: /products/baby-boy-swim-set
+target_product_handle: MANUAL_NO_PRODUCT_AVAILABLE
 article_type: cluster
 hub: HUB-13
 parent: HUB-13-Pillar
@@ -95,7 +95,7 @@ intent: commercial
 
 ## CTA
 
-ב-BabyMania תמצאו [סט בגד ים לבנים תינוקות](/products/baby-boy-swim-set) — חולצת ים עם הגנת UV ומכנסיים תואמים, בד שמתייבש מהר ועמיד בכלור. עיצובים שלא תמצאו בחנויות בארץ, במחיר הוגן. למבחר בגדי קיץ נוספים לתינוק — [המדריך המלא לבגדי קיץ לתינוק](/blogs/news/bgdey-kayts-letinok-madrikh-male-ma-lilbosh-ma-lakakhat-layam).
+למבחר בגדי קיץ נוספים לתינוק — [המדריך המלא לבגדי קיץ לתינוק](/blogs/news/bgdey-kayts-letinok-madrikh-male-ma-lilbosh-ma-lakakhat-layam).
 
 ## שאלות נפוצות
 
@@ -181,4 +181,3 @@ intent: commercial
 **Internal links:**
 - HUB-13-Pillar → [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam)
 - HUB-11-Pillar → [המדריך המלא לבגדי קיץ לתינוק](/blogs/news/bgdey-kayts-letinok-madrikh-male-ma-lilbosh-ma-lakakhat-layam)
-- Product → [סט בגד ים לבנים תינוקות](/products/baby-boy-swim-set)

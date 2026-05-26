@@ -41,7 +41,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 # Hard import — if this fails, the whole script fails loudly
-from scripts.organic.bm_html_converter import convert, qa_checks
+from scripts.organic.bm_html_converter import convert, qa_checks, validate_product_handles
 from shopify_client import _headers, BASE_URL
 
 BLOG_ID   = 109164036409
@@ -125,6 +125,19 @@ def phase_render_qa(articles, out_dir, batch_name):
 
         html   = convert(fm, body_md)
         checks = qa_checks(html, source_had_json_ld=source_has_json)
+
+        # ── Product handle hard gate ─────────────────────────────────────
+        link_failures = validate_product_handles(html)
+        if link_failures:
+            print(f'    [PRODUCT-LINK-GATE] {len(link_failures)} broken handle(s):')
+            for lf in link_failures:
+                sc = lf.get('status_code', 'n/a')
+                print(f'      → {lf["url"]}  [{lf["reason"]} / HTTP {sc}]')
+        for lf in link_failures:
+            chk_name   = f'product-link-{lf["reason"].lower().replace("_", "-")}'
+            chk_detail = f'{lf["url"]} [{lf["reason"]}]'
+            checks.append((chk_name, False, chk_detail))
+
         fails  = [(n, d) for n, p, d in checks if not p]
 
         slug  = fm.get('slug', filepath.stem)

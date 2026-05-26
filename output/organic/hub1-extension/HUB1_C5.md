@@ -3,7 +3,7 @@ slug: menorat-layla-letinok-ech-livhor
 title: מנורת לילה לתינוק — האם זה עוזר לשינה ואיך לבחור
 keyword_main: מנורת לילה לתינוק
 keyword_secondary: מנורת לילה תינוק, אור אדום לתינוק, מנורת לילה עם רעש לבן, איך לבחור מנורת לילה לתינוק
-target_product_handle: /products/babysleep-pro
+target_product_handle: /products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine
 article_type: cluster
 hub: HUB-1
 parent: eikh-laazor-letinok-lishon-balayla
@@ -154,7 +154,7 @@ intent: informational_commercial
 
 ## CTA
 
-[הכירו את BabySleep Pro — מנורת לילה משולבת ברעש לבן](/products/babysleep-pro) — אור אדום עמום (10–50 לוקס), 12 צלילים, טיימר אוטומטי, פעולה שקטה. נבחנת ב-200+ הורים ישראלים, משלוח חינם מעל 199 ש"ח. כל מנורה שאנחנו מוכרים נבחרה לעמוד בסטנדרטים המומלצים במדריך הזה.
+[הכירו את BabySleep Pro — מנורת לילה משולבת ברעש לבן](/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine) — אור אדום עמום (10–50 לוקס), 12 צלילים, טיימר אוטומטי, פעולה שקטה. נבחנת ב-200+ הורים ישראלים, משלוח חינם מעל 199 ש"ח. כל מנורה שאנחנו מוכרים נבחרה לעמוד בסטנדרטים המומלצים במדריך הזה.
 
 ## שאלות נפוצות
 
@@ -241,4 +241,4 @@ intent: informational_commercial
 - Pillar → [איך לעזור לתינוק לישון בלילה — המדריך המלא](/blogs/news/eikh-laazor-letinok-lishon-balayla)
 - HUB-7 → [כללי שינה בטוחה לתינוק](/blogs/news/klalei-shena-betuha-letinok)
 - HUB-1 C6 → [רעש לבן לתינוק — האם זה בטוח](/blogs/news/reash-lavan-letinok-im-ze-batuah)
-- Product → [BabySleep Pro — מנורת לילה ורעש לבן משולבים](/products/babysleep-pro)
+- Product → [BabySleep Pro — מנורת לילה ורעש לבן משולבים](/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine)

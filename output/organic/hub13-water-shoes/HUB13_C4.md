@@ -3,7 +3,7 @@ slug: bgad-yam-livanot-tinokot-upf50-bchira
 title: בגד ים לבנות תינוקות — UPF50 ובחירה נכונה
 keyword_main: בגד ים לבנות תינוקות
 keyword_secondary: בגד ים UPF50 לתינוקת, בגד ים שלם לתינוקת, בגד ים עם הגנת UV, חולצת ים לבנות
-target_product_handle: /products/baby-swimsuit
+target_product_handle: /products/patpat-valentines-day-hyper-tactile-cute-bow-baby-girl-swimsuit-set
 article_type: cluster
 hub: HUB-13
 parent: HUB-13-Pillar
@@ -97,7 +97,7 @@ UPF ו-SPF הם שני מדדים שונים לחלוטין, ואי אפשר ל�
 
 ## בגד ים UPF50 לתינוקת — הבחירה שלנו
 
-בחנות שלנו תמצאו [בגדי ים לתינוקות](/products/baby-swimsuit) עם כיסוי מלא ובד UPF50 — עיצובים ייחודיים שלא תמצאו בחנויות בארץ, במחיר הוגן. בד צפוף ונושם שמתייבש מהר, רוכסן מלא להחלפת חיתול קלה, וצבעים שלא דוהים אחרי כביסות. לנעליים שמשלימות את ההגנה בחוף ובבריכה — [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam) עוזר לבחור את הזוג הנכון.
+בחנות שלנו תמצאו [בגדי ים לתינוקות](/products/patpat-valentines-day-hyper-tactile-cute-bow-baby-girl-swimsuit-set) עם כיסוי מלא ובד UPF50 — עיצובים ייחודיים שלא תמצאו בחנויות בארץ, במחיר הוגן. בד צפוף ונושם שמתייבש מהר, רוכסן מלא להחלפת חיתול קלה, וצבעים שלא דוהים אחרי כביסות. לנעליים שמשלימות את ההגנה בחוף ובבריכה — [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam) עוזר לבחור את הזוג הנכון.
 
 ## שאלות נפוצות
 
@@ -183,4 +183,4 @@ UPF50 חוסם 98% מקרני UV. UPF50+ חוסם מעל 98% — למעשה מע
 **Internal links:**
 - HUB-13-Pillar → [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam)
 - HUB-11-C2 → [בגד ים לתינוקת — מדריך הבחירה](/blogs/news/bgad-yam-letineket-eikh-livkhor-ma-livdok-ukrem-haganah)
-- Product → [בגדי ים לתינוקות](/products/baby-swimsuit)
+- Product → [בגדי ים לתינוקות](/products/patpat-valentines-day-hyper-tactile-cute-bow-baby-girl-swimsuit-set)

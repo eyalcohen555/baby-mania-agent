@@ -19,6 +19,7 @@ Format B (HUB-16):
 """
 
 import re
+import requests
 import markdown as _md
 
 
@@ -266,3 +267,146 @@ def qa_checks(html, source_had_json_ld=True):
     chk('min-length',       len(html) >= 3000, f'{len(html):,} chars')
 
     return checks
+
+
+# ── Product handle live validation (pre-publish hard gate) ───────────────────
+
+_handle_cache: dict = {}  # handle → (status_code, reason_or_empty_string)
+
+
+def validate_product_handles(html: str) -> list:
+    """
+    Extracts /products/{handle} hrefs from rendered HTML and validates each is live.
+    Returns list of failure dicts. Empty list = all handles OK.
+    Fails closed: REQUEST_FAILED blocks publish.
+    """
+    pattern = re.compile(
+        r'href=["\'](?:https://babymania-il\.com)?/products/([^"\'/?#\s]+)["\']',
+        re.IGNORECASE,
+    )
+    seen = set()
+    failures = []
+
+    for m in pattern.finditer(html):
+        handle = m.group(1)
+        if handle in seen:
+            continue
+        seen.add(handle)
+
+        url = f'https://babymania-il.com/products/{handle}'
+
+        # ── Format checks (no HTTP needed) ───────────────────────────────
+        if not handle:
+            failures.append({'handle': handle, 'url': url,
+                             'reason': 'INVALID_HANDLE_FORMAT', 'status_code': None})
+            continue
+
+        if handle.endswith('-'):
+            failures.append({'handle': handle, 'url': url,
+                             'reason': 'TRAILING_DASH', 'status_code': None})
+            continue
+
+        if not re.fullmatch(r'[a-z0-9\-]+', handle):
+            failures.append({'handle': handle, 'url': url,
+                             'reason': 'INVALID_HANDLE_FORMAT', 'status_code': None})
+            continue
+
+        # ── Cache check ───────────────────────────────────────────────────
+        if handle in _handle_cache:
+            cached_code, cached_reason = _handle_cache[handle]
+            if cached_reason:
+                failures.append({'handle': handle, 'url': url,
+                                 'reason': cached_reason, 'status_code': cached_code})
+            continue
+
+        # ── Live HTTP check ───────────────────────────────────────────────
+        try:
+            r = requests.get(url, timeout=10, allow_redirects=True,
+                             headers={'User-Agent': 'BabyMania-PipelineQA/1.0'})
+            if r.status_code == 200:
+                _handle_cache[handle] = (200, '')
+            elif r.status_code == 404:
+                _handle_cache[handle] = (404, 'HTTP_404')
+                failures.append({'handle': handle, 'url': url,
+                                 'reason': 'HTTP_404', 'status_code': 404})
+            else:
+                _handle_cache[handle] = (r.status_code, 'HTTP_NON_200')
+                failures.append({'handle': handle, 'url': url,
+                                 'reason': 'HTTP_NON_200', 'status_code': r.status_code})
+        except requests.exceptions.RequestException as exc:
+            _handle_cache[handle] = (None, 'REQUEST_FAILED')
+            failures.append({'handle': handle, 'url': url, 'reason': 'REQUEST_FAILED',
+                             'status_code': None, 'error': str(exc)})
+
+    return failures
+
+
+# ── Regression test ──────────────────────────────────────────────────────────
+
+if __name__ == '__main__':
+    import sys
+
+    print('=== BM PRODUCT LINK GATE — REGRESSION TEST ===\n')
+
+    KNOWN_BAD = [
+        'babysleep-pro',
+        'baby-swimsuit',
+        'baby-boy-swim-set',
+        'baby-beach-essentials',
+    ]
+    TRAILING_DASH_HANDLES = [
+        'childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-',
+    ]
+    KNOWN_GOOD = [
+        'baby-bear-cozy-set',
+    ]
+
+    def _html(handles):
+        return ''.join(f'<a href="/products/{h}">link</a>' for h in handles)
+
+    overall = True
+
+    # ── Bad handles ───────────────────────────────────────────────────────
+    print('--- BAD HANDLES (expect: FAIL / HTTP_404) ---')
+    bad_failures = validate_product_handles(_html(KNOWN_BAD))
+    bad_blocked = {f['handle'] for f in bad_failures}
+    for f in bad_failures:
+        sc = f.get('status_code', 'n/a')
+        print(f'  BLOCKED: {f["handle"]}  [{f["reason"]} / HTTP {sc}]')
+    missed = [h for h in KNOWN_BAD if h not in bad_blocked]
+    if missed:
+        print(f'  NOT BLOCKED: {missed}')
+        overall = False
+    res = 'PASS' if not missed else 'FAIL'
+    print(f'  => {res}  ({len(bad_blocked)}/{len(KNOWN_BAD)} blocked)\n')
+
+    # ── Trailing dash ─────────────────────────────────────────────────────
+    print('--- TRAILING DASH (expect: TRAILING_DASH, no HTTP call) ---')
+    dash_failures = validate_product_handles(_html(TRAILING_DASH_HANDLES))
+    for f in dash_failures:
+        print(f'  BLOCKED: {f["handle"][:55]}...  [{f["reason"]}]')
+    dash_ok = (
+        len(dash_failures) == len(TRAILING_DASH_HANDLES)
+        and all(f['reason'] == 'TRAILING_DASH' for f in dash_failures)
+    )
+    res = 'PASS' if dash_ok else 'FAIL'
+    if not dash_ok:
+        overall = False
+    print(f'  => {res}\n')
+
+    # ── Good handles ──────────────────────────────────────────────────────
+    print('--- GOOD HANDLES (expect: PASS / HTTP 200) ---')
+    good_failures = validate_product_handles(_html(KNOWN_GOOD))
+    if not good_failures:
+        print(f'  PASS: {KNOWN_GOOD} -> HTTP 200')
+        res = 'PASS'
+    else:
+        for f in good_failures:
+            sc = f.get('status_code', 'n/a')
+            print(f'  BROKEN: {f["handle"]}  [{f["reason"]} / HTTP {sc}]')
+        res = 'FAIL — known-good handle also broken, check Shopify catalog'
+        overall = False
+    print(f'  => {res}\n')
+
+    print('=== OVERALL:', 'PASS' if overall else 'FAIL', '===')
+    sys.exit(0 if overall else 1)

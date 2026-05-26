@@ -37,7 +37,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
   - `menorat-layla-letinok-ech-livhor` → `eikh-laazor-letinok-lishon-balayla` (parent, HUB-1 Pillar)
   - `menorat-layla-letinok-ech-livhor` → `reash-lavan-letinok-im-ze-batuah` (sibling HUB-1 C6)
   - `menorat-layla-letinok-ech-livhor` → `sviva-betuha-letinok` (cross-link HUB-7)
-- **product_handles[]:** `/products/babysleep-pro`
+- **product_handles[]:** `/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine`
 - **gsc_manual_request:** YES
 
 ### [2] HUB-1 / C6 — רעש לבן לתינוק
@@ -49,7 +49,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
   - → `eikh-laazor-letinok-lishon-balayla` (parent)
   - → `menorat-layla-letinok-ech-livhor` (sibling HUB-1 C5)
   - → `seder-yom-letinok` (cross-link HUB-8)
-- **product_handles[]:** `/products/babysleep-pro`
+- **product_handles[]:** `/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine`
 - **gsc_manual_request:** YES
 
 ### [3] HUB-2 / C6 — בגדי תינוקות לפי עונות
@@ -117,7 +117,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **internal_link_map:**
   - → `seder-yom-letinok` (parent HUB-8 Pillar)
   - → `eikh-laazor-letinok-lishon-balayla` (cross-link HUB-1)
-- **product_handles[]:** `/products/babysleep-pro`
+- **product_handles[]:** `/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine`
 - **gsc_manual_request:** YES
 
 ---
@@ -133,7 +133,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** Pillar links → all 6 cluster slugs (C1–C6 below); cross-links → HUB-6, HUB-11
-- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-`
+- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes`
 - **gsc_manual_request:** YES
 
 ### [10] HUB-16 / C1 — קרוקס לתינוק (מאיזה גיל)
@@ -142,7 +142,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `crocs-leyeladim-madrih-male-mida-dagamim` (parent); → HUB-6 first-shoes
-- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-`
+- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes`
 - **gsc_manual_request:** YES
 
 ### [11] HUB-16 / C2 — סנדלים לפעוט
@@ -151,7 +151,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `crocs-leyeladim-madrih-male-mida-dagamim` (parent); → HUB-6
-- **product_handles[]:** `/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-`
+- **product_handles[]:** `/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor`
 - **gsc_manual_request:** YES
 
 ### [12] HUB-16 / C3 — קרוקס לים ולבריכה
@@ -160,7 +160,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `crocs-leyeladim-madrih-male-mida-dagamim` (parent); → HUB-11 (swim/beach); → HUB-13 water shoes
-- **product_handles[]:** `/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-`
+- **product_handles[]:** `/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1`
 - **gsc_manual_request:** YES
 
 ### [13] HUB-16 / C4 — נעלי ג'לי לילדים
@@ -169,7 +169,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `crocs-leyeladim-madrih-male-mida-dagamim` (parent); → HUB-16 siblings
-- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-`
+- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes`
 - **gsc_manual_request:** YES
 
 ### [14] HUB-16 / C5 — איך לנקות קרוקס
@@ -178,7 +178,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `crocs-leyeladim-madrih-male-mida-dagamim` (parent); → HUB-16 C1, C3
-- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-`
+- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes`
 - **gsc_manual_request:** YES
 
 ### [15] HUB-16 / C6 — קרוקס vs סנדלים קלאסיים
@@ -187,7 +187,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `crocs-leyeladim-madrih-male-mida-dagamim` (parent); → `sandalim-lapaut-mita-livhor` (sibling C2)
-- **product_handles[]:** `/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-`
+- **product_handles[]:** `/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor`
 - **gsc_manual_request:** YES
 
 ---
@@ -269,7 +269,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** Pillar → all 6 HUB-13 clusters; cross-link → HUB-6, HUB-11, HUB-16
-- **product_handles[]:** `/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-`
+- **product_handles[]:** `/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1`
 - **gsc_manual_request:** YES
 
 ### [24] HUB-13 / C1 — נעלי מים לתינוק (מאיזה גיל)
@@ -278,7 +278,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `naalei-mayim-leyeladim-madrih-male-brekha-yam` (parent); → HUB-6, HUB-11
-- **product_handles[]:** `/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-`
+- **product_handles[]:** `/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1`
 - **gsc_manual_request:** YES
 
 ### [25] HUB-13 / C2 — כפכפים לפעוטות
@@ -287,7 +287,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `naalei-mayim-leyeladim-madrih-male-brekha-yam` (parent); → HUB-16
-- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-`
+- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes`
 - **gsc_manual_request:** YES
 
 ### [26] HUB-13 / C3 — נעלי ים אנטי החלקה
@@ -296,7 +296,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `naalei-mayim-leyeladim-madrih-male-brekha-yam` (parent); → HUB-6
-- **product_handles[]:** `/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-`
+- **product_handles[]:** `/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1`
 - **gsc_manual_request:** YES
 
 ### [27] HUB-13 / C4 — בגד ים לבנות תינוקות UPF50
@@ -305,7 +305,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `naalei-mayim-leyeladim-madrih-male-brekha-yam` (parent); → HUB-11
-- **product_handles[]:** `/products/baby-swimsuit`
+- **product_handles[]:** `/products/patpat-valentines-day-hyper-tactile-cute-bow-baby-girl-swimsuit-set`
 - **gsc_manual_request:** YES
 
 ### [28] HUB-13 / C5 — בגד ים לבנים תינוקות
@@ -314,7 +314,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `naalei-mayim-leyeladim-madrih-male-brekha-yam` (parent); → HUB-11
-- **product_handles[]:** `/products/baby-boy-swim-set`
+- **product_handles[]:** `MANUAL_NO_PRODUCT_AVAILABLE`
 - **gsc_manual_request:** YES
 
 ### [29] HUB-13 / C6 — ציוד חוף לתינוק (רשימה)
@@ -323,7 +323,7 @@ After all 43 are live, submit **manual GSC indexing request** for each slug.
 - **blog_id:** 109164036409
 - **status:** READY_TO_PUBLISH
 - **internal_link_map:** → `naalei-mayim-leyeladim-madrih-male-brekha-yam` (parent); → HUB-11, HUB-5
-- **product_handles[]:** `/products/baby-beach-essentials`
+- **product_handles[]:** `/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes`
 - **gsc_manual_request:** YES
 
 ---

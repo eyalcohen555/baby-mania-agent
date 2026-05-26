@@ -3,7 +3,7 @@ slug: kafkafim-lapautot-layam-velabreykha
 title: כפכפים לפעוטות לים ולבריכה — איך לבחור ומה לבדוק
 keyword_main: כפכפים לפעוטות
 keyword_secondary: כפכפי גומי לתינוק, כפכפים לים לפעוטות, סנדלי בריכה לפעוטות, כפכפי EVA לפעוט
-target_product_handle: /products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-
+target_product_handle: /products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes
 article_type: cluster
 hub: HUB-13
 parent: HUB-13-Pillar
@@ -66,7 +66,7 @@ EVA הוא החומר המועדף — קל, לא סופג מים, מתייבש 
 
 ## כפכפי EVA לפעוט — הבחירה שלנו
 
-אחרי שבדקנו עשרות דגמים, הכפכפים שעומדים בכל חמשת הקריטריונים הם [סנדלי EVA קלילים לפעוטות](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-) — חזית סגורה שמגנה על הבהונות, רצועת עקב מתכווננת, סוליה עם תבליטי אחיזה, משקל קליל של 70 גרם בלבד, ומגוון צבעים. מתאימים לגילאי שנה עד ארבע, לבריכה, לים ולחצר.
+אחרי שבדקנו עשרות דגמים, הכפכפים שעומדים בכל חמשת הקריטריונים הם [סנדלי EVA קלילים לפעוטות](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes) — חזית סגורה שמגנה על הבהונות, רצועת עקב מתכווננת, סוליה עם תבליטי אחיזה, משקל קליל של 70 גרם בלבד, ומגוון צבעים. מתאימים לגילאי שנה עד ארבע, לבריכה, לים ולחצר.
 
 משלוח חינם מעל 199 ש"ח. החזרה חינם תוך 30 יום.
 
@@ -154,4 +154,4 @@ EVA הוא החומר המועדף — קל, לא סופג מים, מתייבש 
 **Internal links:**
 - HUB-13-Pillar → [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam)
 - HUB-16-Pillar → [המדריך המלא לקרוקס לילדים](/blogs/news/crocs-leyeladim-madrih-male-mida-dagamim)
-- Product → [סנדלי EVA קלילים לפעוטות](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-)
+- Product → [סנדלי EVA קלילים לפעוטות](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes)

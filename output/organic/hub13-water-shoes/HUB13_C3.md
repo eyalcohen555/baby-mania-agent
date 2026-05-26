@@ -3,7 +3,7 @@ slug: naalei-yam-anti-hahlaka-leyeladim
 title: נעלי ים אנטי החלקה לילדים — איך לבחור ומה באמת עובד
 keyword_main: נעלי ים אנטי החלקה לילדים
 keyword_secondary: נעלי ים אנטי סליפ, נעלי בריכה אנטי החלקה, נעלי מים לסלעים, סוליית גומי לים
-target_product_handle: /products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-
+target_product_handle: /products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1
 article_type: cluster
 hub: HUB-13
 parent: HUB-13-Pillar
@@ -85,7 +85,7 @@ intent: informational_commercial
 
 ## נעלי ים אנטי החלקה — הבחירה שלנו
 
-[הנעליים המאווררות שלנו](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-) עם סוליית גומי TPR ותבליטים רב-כיווניים, רשת mesh שמנקזת מים תוך דקות, סגירת סקוץ' מתכווננת שמחזיקה את הרגל במקום גם כשרטובה. מידות 18–30, משקל זוג קל שלא מכביד על פעוט. לפרטים מלאים על כל סוגי נעלי המים — [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam) מכסה הכול מבריכה ועד חוף סלעי.
+[הנעליים המאווררות שלנו](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1) עם סוליית גומי TPR ותבליטים רב-כיווניים, רשת mesh שמנקזת מים תוך דקות, סגירת סקוץ' מתכווננת שמחזיקה את הרגל במקום גם כשרטובה. מידות 18–30, משקל זוג קל שלא מכביד על פעוט. לפרטים מלאים על כל סוגי נעלי המים — [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam) מכסה הכול מבריכה ועד חוף סלעי.
 
 ## שאלות נפוצות
 
@@ -171,4 +171,4 @@ intent: informational_commercial
 **Internal links:**
 - HUB-13-Pillar → [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam)
 - HUB-6-C3 → [מדידת מידה נכונה לנעלי ילדים](/blogs/news/mida-nachon-naale-yeladim-kacha-memdim-babayit)
-- Product → [נעלי ים מאווררות אנטי החלקה לפעוט](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-)
+- Product → [נעלי ים מאווררות אנטי החלקה לפעוט](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1)

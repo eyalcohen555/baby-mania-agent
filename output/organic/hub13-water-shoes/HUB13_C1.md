@@ -3,7 +3,7 @@ slug: naalei-mayim-letinok-me'eize-gil
 title: נעלי מים לתינוק — מאיזה גיל ומה לבדוק
 keyword_main: נעלי מים לתינוק
 keyword_secondary: נעלי מים לתינוק מאיזה גיל, גרבי שחייה לתינוק, נעלי בריכה לתינוק, נעלי ים מ-6 חודשים
-target_product_handle: /products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-
+target_product_handle: /products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1
 article_type: cluster
 hub: HUB-13
 parent: HUB-13-Pillar
@@ -70,7 +70,7 @@ intent: informational_commercial
 
 ## CTA
 
-מחפשים נעלי מים לתינוק שיחזיקו את הקיץ הראשון ועוד? ב-BabyMania תמצאו [נעלי מים מאווררות עם סוליית אנטי-החלקה](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-) — סגירת סקוץ' מתכווננת, רשת mesh שמתייבשת מהר, מידות 18–30. משלוח חינם מעל 199 ש"ח.
+מחפשים נעלי מים לתינוק שיחזיקו את הקיץ הראשון ועוד? ב-BabyMania תמצאו [נעלי מים מאווררות עם סוליית אנטי-החלקה](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1) — סגירת סקוץ' מתכווננת, רשת mesh שמתייבשת מהר, מידות 18–30. משלוח חינם מעל 199 ש"ח.
 
 ## שאלות נפוצות
 
@@ -149,4 +149,4 @@ intent: informational_commercial
 - HUB-13-Pillar → [המדריך המלא לנעלי מים לילדים](/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam)
 - HUB-6-C1 → [נעל לצעד ראשון — מה הורים צריכים לדעת](/blogs/news/naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat)
 - HUB-11-C6 → [בריכה עם תינוק — בטיחות וציוד](/blogs/news/brekha-im-tinok-bitakhon-tsiyud-ushahot-hamumlatsot)
-- Product → [נעלי מים מאווררות לתינוק ופעוט](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-)
+- Product → [נעלי מים מאווררות לתינוק ופעוט](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1)

@@ -3,7 +3,7 @@ slug: sandalim-lapaut-mita-livhor
 title: סנדלים לפעוט — איך לבחור, מידות וטעויות נפוצות
 keyword_main: סנדלים לפעוט
 keyword_secondary: סנדלי קיץ לפעוט, סנדלים לתינוק בן שנה, איך לבחור סנדל לפעוט, מידות סנדלים לפעוט
-target_product_handle: /products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-
+target_product_handle: /products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor
 article_type: cluster
 hub: HUB-16
 parent: crocs-leyeladim-madrih-male-mida-dagamim
@@ -98,7 +98,7 @@ intent: commercial
 
 ## CTA
 
-[הכירו את סנדלי הקיץ הקלילים שלנו לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-) — חומר EVA קל ועמיד במשקל כ-110 גרם לזוג, רצועות ולקרו מתכווננות בשתי נקודות, סוליה אנטי-החלקה ובהונות עם מגן רך. מידות 18–30 בצבעי בז', פסטל וכחול בהיר, מתאימים לגן, חוף וגינה. משלוח חינם בהזמנה מעל 199 ש"ח, החזרה חינם תוך 30 יום. למי שמחפש בסגנון קרוקס — גם [סנדלי קרוקס לתינוק וקטנים](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-) במלאי.
+[הכירו את סנדלי הקיץ הקלילים שלנו לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor) — חומר EVA קל ועמיד במשקל כ-110 גרם לזוג, רצועות ולקרו מתכווננות בשתי נקודות, סוליה אנטי-החלקה ובהונות עם מגן רך. מידות 18–30 בצבעי בז', פסטל וכחול בהיר, מתאימים לגן, חוף וגינה. משלוח חינם בהזמנה מעל 199 ש"ח, החזרה חינם תוך 30 יום. למי שמחפש בסגנון קרוקס — גם [סנדלי קרוקס לתינוק וקטנים](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes) במלאי.
 
 ## שאלות נפוצות
 
@@ -186,5 +186,5 @@ intent: commercial
 - HUB-6-C3 → [מדידת מידה נכונה לנעלי ילדים](/blogs/news/mida-nachon-naale-yeladim-kacha-memdim-babayit)
 - HUB-6-Pillar → [המדריך המלא לבחירת נעלי תינוק](/blogs/news/bchira-naale-tinok-madrih-male)
 - HUB-11-C1 → [איך להלביש תינוק בקיץ](/blogs/news/eikh-lhalbisht-tinok-bakayts-madrikh-lfi-gil-khom-ushaot)
-- Product → [סנדלי קיץ לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-)
-- Product → [סנדלי קרוקס לתינוק](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-)
+- Product → [סנדלי קיץ לפעוט](/products/boys-sandals-summer-kids-shoes-fashion-light-soft-flats-toddler-baby-girls-sandals-infant-casual-beach-children-shoes-outdoor)
+- Product → [סנדלי קרוקס לתינוק](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes)

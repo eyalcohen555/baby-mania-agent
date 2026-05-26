@@ -3,7 +3,7 @@ slug: reash-lavan-letinok-im-ze-batuah
 title: רעש לבן לתינוק — האם זה בטוח ואיך משתמשים נכון
 keyword_main: רעש לבן לתינוק
 keyword_secondary: רעש לבן תינוק, האם רעש לבן בטוח, מכשיר רעש לבן לתינוק, איך להפסיק רעש לבן
-target_product_handle: /products/babysleep-pro
+target_product_handle: /products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine
 article_type: cluster
 hub: HUB-1
 parent: eikh-laazor-letinok-lishon-balayla
@@ -162,7 +162,7 @@ intent: informational
 
 ## CTA
 
-[הכירו את BabySleep Pro — מכשיר רעש לבן + מנורת לילה משולב](/products/babysleep-pro). 12 צלילים מקצועיים (רעש לבן, רעש ורוד, גשם, פעימות לב, רחם), טיימר אוטומטי 15/30/60 דקות, עוצמה מתכווננת, בטוח לפי הנחיות AAP. נבחר ב-500+ משפחות ישראליות. משלוח חינם מעל 199 ש"ח.
+[הכירו את BabySleep Pro — מכשיר רעש לבן + מנורת לילה משולב](/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine). 12 צלילים מקצועיים (רעש לבן, רעש ורוד, גשם, פעימות לב, רחם), טיימר אוטומטי 15/30/60 דקות, עוצמה מתכווננת, בטוח לפי הנחיות AAP. נבחר ב-500+ משפחות ישראליות. משלוח חינם מעל 199 ש"ח.
 
 ## שאלות נפוצות
 
@@ -238,4 +238,4 @@ intent: informational
 - Pillar → [איך לעזור לתינוק לישון בלילה — המדריך המלא](/blogs/news/eikh-laazor-letinok-lishon-balayla)
 - HUB-1 C5 → [מנורת לילה לתינוק — איך לבחור](/blogs/news/menorat-layla-letinok-ech-livhor)
 - HUB-8 → [שגרה יומית לתינוק](/blogs/news/shigra-yomit-letinok)
-- Product → [BabySleep Pro — מכשיר רעש לבן ומנורת לילה](/products/babysleep-pro)
+- Product → [BabySleep Pro — מכשיר רעש לבן ומנורת לילה](/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine)

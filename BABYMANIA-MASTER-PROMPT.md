@@ -852,6 +852,76 @@ SHOPIFY_API_VERSION=2024-10
 
 ---
 
+## 🔌 Shopify API Connection Protocol — Official Method
+
+> **חובה לקרוא בכל סשן Claude Code שעובד עם Shopify**
+
+**בכל סשן חדש שעובד עם Shopify, קודם לפתוח Claude Code מתוך:**
+```
+C:\Projects\baby-mania-agent
+```
+אם Claude Code נפתח מתיקייה אחרת (לדוגמה VS Code working dir) — Python scripts לא יפעלו נכון ובדיקות connection יכשלו.
+
+**שיטת החיבור הרשמית:**
+API דרך קוד הפרויקט — `shopify_client.py`
+
+**שיטת האימות הרשמית:**
+OAuth `client_credentials` flow — **לא** static token
+
+**יצירת token — תבנית רשמית:**
+```python
+# _fetch_oauth_token() — reference: scripts/phase7c_live_batch9.py
+POST https://{SHOPIFY_SHOP_URL}/admin/oauth/access_token
+  grant_type=client_credentials
+  client_id={SHOPIFY_CLIENT_ID}
+  client_secret={SHOPIFY_CLIENT_SECRET}
+→ מקבלים: access_token (~24 שעות תוקף)
+→ משתמשים: X-Shopify-Access-Token: <token>
+```
+
+**חוקים קריטיים:**
+- ❌ לא משתמשים ב-`SHOPIFY_ACCESS_TOKEN` הישן — legacy / expired
+- ❌ לא משתמשים ב-`mcp__shopify-admin__` — מחובר לחנות אחרת (מחזיר 401)
+- ❌ לא משתמשים ב-`mcp__claude_ai_Shopify__` — לא אמין לפרויקט זה, אלא אם אייל אישר מפורשות
+- ❌ אסור להדפיס secrets / tokens / ערכי .env
+- ✅ רק OAuth client_credentials דרך `shopify_client.py`
+- ✅ לפני כל audit — בדיקת read-only קטנה, רק אחרי PASS ממשיכים
+
+### SHOPIFY API SESSION CHECKLIST
+
+```
+1. פתח Claude Code מתוך: C:\Projects\baby-mania-agent
+
+2. Python רשמי בלבד:
+   C:\Users\3024e\AppData\Local\Python\pythoncore-3.14-64\python.exe
+
+3. טעינת env דרך קוד הפרויקט בלבד (config/settings.py אוkload_env)
+   env sources:
+     C:\Projects\baby-mania-agent\.env          ← primary
+     C:\Users\3024e\Desktop\shopify-token\.env  ← override (credentials)
+
+4. אמת שקיימים ללא הדפסת ערכים:
+   SHOPIFY_SHOP_URL / SHOPIFY_CLIENT_ID / SHOPIFY_CLIENT_SECRET
+
+5. יצירת token דרך OAuth client_credentials — shopify_client.py
+
+6. בדיקת read-only:
+   python -c "
+   import sys; sys.path.insert(0,'.')
+   from shopify_client import get_products
+   p = get_products(limit=1)
+   print('SHOPIFY_CONNECTION: PASS —', len(p), 'product(s) fetched')
+   "
+   → חייב להחזיר SHOPIFY_CONNECTION: PASS
+
+7. המשך רק אחרי PASS
+
+8. לא להשתמש ב-Shopify MCP לפרויקט BabyMania
+   אלא אם אייל אישר מפורשות שחיבור MCP תקין לחנות הנכונה
+```
+
+---
+
 ## 🔄 חוק עדכון הקובץ הזה
 
 **מתי לעדכן master:** סגירת blocker | agent חדש | HUB חדש | החלטה ארכיטקטונית | כל 3 שינויים | לפני handoff

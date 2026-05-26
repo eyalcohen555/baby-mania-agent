@@ -3,7 +3,7 @@ slug: tsiyud-hof-letinok-reshima-mele'a
 title: ציוד חוף לתינוק — הרשימה המלאה: מה באמת צריך לקחת לים
 keyword_main: ציוד חוף לתינוק
 keyword_secondary: רשימת ציוד לים עם תינוק, מה לקחת לים עם תינוק, אביזרי חוף לתינוק, ציוד בריכה לתינוק
-target_product_handle: /products/baby-beach-essentials
+target_product_handle: /products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes
 article_type: cluster
 hub: HUB-13
 parent: HUB-13-Pillar
@@ -77,7 +77,7 @@ intent: informational_commercial
 
 ## הציוד שלנו ליום ים מושלם עם תינוק
 
-אם אתם מחפשים פריטים שישלימו את רשימת ציוד החוף — [ערכת חוף לתינוק](/products/baby-beach-essentials) שלנו כוללת את הבסיס ליום ים בטוח ונוח. ולנעלי מים שמגנות מחול לוהט וצדפים — [נעלי הים המאווררות שלנו](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-) מתאימות לתינוקות ופעוטות עם סוליית אחיזה וסגירת סקוץ'.
+אם אתם מחפשים פריטים שישלימו את רשימת ציוד החוף — [ערכת חוף לתינוק](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes) שלנו כוללת את הבסיס ליום ים בטוח ונוח. ולנעלי מים שמגנות מחול לוהט וצדפים — [נעלי הים המאווררות שלנו](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1) מתאימות לתינוקות ופעוטות עם סוליית אחיזה וסגירת סקוץ'.
 
 מחפשים רעיון למתנה להורים טריים לפני הקיץ? ערכת ציוד חוף לתינוק היא [מתנה מעשית ומקורית](/blogs/news/matanot-letinok-madrih-male) שכל הורה ישמח לקבל.
 
@@ -167,5 +167,5 @@ intent: informational_commercial
 - HUB-11-C6 → [בריכה עם תינוק — בטיחות וציוד](/blogs/news/brekha-im-tinok-bitakhon-tsiyud-ushahot-hamumlatsot)
 - HUB-5-Pillar → [המדריך המלא למתנות לתינוק](/blogs/news/matanot-letinok-madrih-male)
 - HUB-11-C3 → [המדריך לכובע שמש לתינוק](/blogs/news/kovah-shemesh-letinok-lama-zeh-hova-vekheytsad-livkhor-nakhon)
-- Product → [ערכת חוף לתינוק](/products/baby-beach-essentials)
-- Product → [נעלי ים מאווררות לתינוק ופעוט](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-)
+- Product → [ערכת חוף לתינוק](/products/childrens-sandals-summer-casual-eva-lightweight-outdoor-handmade-diy-baby-shoes-anti-slip-thick-sole-beach-slides-garden-shoes)
+- Product → [נעלי ים מאווררות לתינוק ופעוט](/products/1-4t-baby-sandals-summer-breathable-air-mesh-unisex-kids-casual-shoes-anti-slip-soft-sole-first-walkers-infant-lightweight-shoes-1)

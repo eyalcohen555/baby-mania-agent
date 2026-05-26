@@ -3,7 +3,7 @@ slug: shgarat-erev-letinok-shlabim-leshina
 title: שגרת ערב לתינוק — שלבים שמובילים לשינה רגועה
 keyword_main: שגרת ערב לתינוק
 keyword_secondary: שלבים שגרת ערב תינוק, שגרת לילה לתינוק, איך להרגיע תינוק לפני שינה, סדר פעולות לפני שינה תינוק, שגרת רחצה ושינה לתינוק
-target_product_handle: /products/babysleep-pro
+target_product_handle: /products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine
 article_type: cluster
 hub: HUB-8
 parent: seder-yom-letinok
@@ -76,7 +76,7 @@ meta_description: שגרת ערב לתינוק שעובדת — 5 שלבים פ�
 הצעד האחרון — להניח את התינוק במיטה כשהוא **רגוע אבל ער**. זה אחד הטיפים החשובים ביותר ולא הקל ביותר. למה זה חשוב? כי אם תמיד מרדימים את התינוק בידיים ואז מניחים אותו — הוא לומד ש"הירדמות" = "להיות בידיים". כשהוא יתעורר באמצע הלילה, הוא יחפש את הידיים.
 
 טיפים:
-- **רעש לבן** — אופציה טובה ל-45-60 הדקות הראשונות של השינה. מתאים ל[BabySleep Pro](/products/babysleep-pro) או למאוורר רחוק.
+- **רעש לבן** — אופציה טובה ל-45-60 הדקות הראשונות של השינה. מתאים ל[BabySleep Pro](/products/baby-white-noise-machine-kids-sleep-sound-player-night-light-timer-noise-player-rechargeable-timed-shutdown-usb-sleep-machine) או למאוורר רחוק.
 - **תנועה רכה** — לא חזקה. נדנוד עדין שני שניים-שלוש, אחר כך עוצרים.
 - **משפט קבוע** — "לילה טוב, שינה רגועה" — באותה אינטונציה כל ערב. התינוק לומד שזה האות.
 

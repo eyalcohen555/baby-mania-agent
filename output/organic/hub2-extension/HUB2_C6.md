@@ -144,7 +144,7 @@ intent: informational_commercial
 
 ## CTA
 
-[הכירו את סט Baby Bear Cozy](/products/baby-bear-cozy-set) — סט 3 חלקים מכותנה רכה לעונות הקור, מידות 3-12 חודשים, נושם וקל לכביסה. או [בדקו את כל סטי הבגדים לתינוק](/products/toddler-baby-boys-clothes) במגוון עונות, מידות וצבעים. כל הפריטים נבדקו לעמידות, נוחות, ובד נושם לקיץ ישראלי. משלוח חינם מעל 199 ש"ח.
+[הכירו את סט Baby Bear Cozy](/products/baby-bear-cozy-set) — סט 3 חלקים מכותנה רכה לעונות הקור, מידות 3-12 חודשים, נושם וקל לכביסה. או [בדקו את כל סטי הבגדים לתינוק](/products/toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes) במגוון עונות, מידות וצבעים. כל הפריטים נבדקו לעמידות, נוחות, ובד נושם לקיץ ישראלי. משלוח חינם מעל 199 ש"ח.
 
 ## שאלות נפוצות
 
@@ -231,4 +231,4 @@ intent: informational_commercial
 - HUB-2 Pillar → [כמה בגדים תינוק חדש צריך — המדריך המלא](/blogs/news/kama-bgadim-tinok-chadash-tzarich)
 - HUB-11 Pillar → [בגדי קיץ לתינוק — מה ללבוש ומה לקחת לים](/blogs/news/bgdey-kayts-letinok-madrikh-male-ma-lilbosh-ma-lakakhat-layam)
 - Product → [Baby Bear Cozy Set](/products/baby-bear-cozy-set)
-- Product → [סטי בגדים לתינוקות בנים](/products/toddler-baby-boys-clothes)
+- Product → [סטי בגדים לתינוקות בנים](/products/toddler-baby-boys-clothes-fall-outfit-striped-crew-neck-long-sleeve-sweatshirt-pants-2pcs-set-for-1-3y-casual-daily-clothes)
