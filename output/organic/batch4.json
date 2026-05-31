@@ -1,0 +1,11 @@
+{
+  "name": "batch4",
+  "articles": [
+    {"file": "hub12-led-shoes/HUB12_C3.md", "hub": "HUB-12/C3", "article_id": null},
+    {"file": "hub12-led-shoes/HUB12_C4.md", "hub": "HUB-12/C4", "article_id": null},
+    {"file": "hub12-led-shoes/HUB12_C5.md", "hub": "HUB-12/C5", "article_id": null},
+    {"file": "hub12-led-shoes/HUB12_C6.md", "hub": "HUB-12/C6", "article_id": null},
+    {"file": "hub13-water-shoes/HUB13_Pillar.md", "hub": "HUB-13/Pillar", "article_id": null},
+    {"file": "hub13-water-shoes/HUB13_C1.md", "hub": "HUB-13/C1", "article_id": null}
+  ]
+}

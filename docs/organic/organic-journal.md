@@ -4,6 +4,394 @@
 
 ---
 
+## [2026-05-31] Batch 4 SEO Meta Backfill — 6/6 PASS
+Mode: SAFE_SEO_META_ONLY | No body/product/collection/theme/navigation changes
+
+### בעיה
+מאמרי Batch 4 פורסמו ללא seo_title/seo_description ב-frontmatter וללא global.title_tag/global.description_tag ב-Shopify.
+
+### תוצאות
+
+| HUB | ID | seo_title | desc chars | status |
+|-----|-----|-----------|------------|--------|
+| HUB-12/C3 | 689094983993 | נעלי אורות לבנות — הדגמים הכי מבוקשים 2026 | 133 | ✅ PASS |
+| HUB-12/C4 | 689095541049 | נעלי אורות לבנים — מה הילדים אוהבים ב-2026 | 126 | ✅ PASS |
+| HUB-12/C5 | 689095573817 | נעלי אורות סוללה כמה זמן מחזיקה — כל התשובות | 127 | ✅ PASS |
+| HUB-12/C6 | 689095606585 | נעלי אורות לעומת נעלי ספורט ילדים — מה עדיף | 128 | ✅ PASS |
+| HUB-13/Pillar | 689095639353 | נעלי מים לילדים — מדריך מלא לבריכה, ים וחוף | 131 | ✅ PASS |
+| HUB-13/C1 | 689095672121 | נעלי מים לתינוק — מאיזה גיל ומה חשוב לבדוק | 128 | ✅ PASS |
+
+### אימות
+- Dry-run: 6/6 PASS (13/13 checks כל מאמר, SEO gate included)
+- Shopify metafields: global.title_tag + global.description_tag ✅ כל 6
+- body_html: UNCHANGED לכל 6 מאמרים
+- backup: `output/organic/backups/seo-backfill-20260531_190444-*.json`
+- script: `scripts/batch4_seo_meta_backfill.py`
+
+### סטטוס סופי
+BATCH4_SEO_META_BACKFILL_STATUS: PASS | ARTICLES_UPDATED: 6/6 | GIT_COMMIT: NO
+
+---
+
+## [2026-05-31] Batch 4 Hero Images — All 6 Articles COMPLETE
+Mode: CONTROLLED_REMAINING_BATCH4_HERO_IMAGE_REPAIR | No product/collection/theme/navigation changes
+
+### בעיה
+6 מאמרי Batch 4 פורסמו ללא תמונות. לאחר שהcanary (HUB-12/C3) עבר, הוחל הtopfix על שאר 5 המאמרים.
+
+### תוצאות — 5 מאמרים נוספים
+
+| HUB | ID | handle | תמונה (מוצר) | QA local | QA live |
+|-----|----|--------|-------------|---------|---------|
+| HUB-12/C4 | 689095541049 | naalei-orot-livanim-ma-yeladim-ohavim | ספיידרמן LED (disney-childrens-led...) | 13/13 | 13/13 |
+| HUB-12/C5 | 689095573817 | naalei-orot-solela-kama-zman-mehzika | LED luminous (children-luminous...) | 13/13 | 13/13 |
+| HUB-12/C6 | 689095606585 | naalei-orot-vs-naalei-sport-matay-livhor | LED luminous (children-luminous...) | 13/13 | 13/13 |
+| HUB-13/Pillar | 689095639353 | naalei-mayim-leyeladim-madrih-male-brekha-yam | סנדלי מים 1-4T | 13/13 | 13/13 |
+| HUB-13/C1 | 689095672121 | naalei-mayim-letinok-meize-gil | סנדלי מים 1-4T | 13/13 | 13/13 |
+
+All: len ratio 1.00 | img live ✅ | no regression
+Backups: `output/organic/backups/hero-batch4-before-*.json`
+
+---
+
+## [2026-05-31] Batch 4 Hero Image Canary — HUB-12/C3 PASS
+Mode: SINGLE_ARTICLE_HERO_IMAGE_CANARY | No product/collection/theme/navigation/global-CSS changes
+
+### בעיה
+6 מאמרי Batch 4 פורסמו ללא תמונות (placeholder images נמחקו ע"י converter). QW דיווח: אין תמונות, מאמר כבד בטקסט.
+
+### תיקון — canary HUB-12/C3
+- קובץ מקור: `output/organic/hub12-led-shoes/HUB12_C3.md`
+- נוסף `<img>` tag בתחילת section ראשון (אחרי H2 "למה נעלי אורות לבנות")
+- מקור תמונה: מוצר Shopify `disney-girls-casual-shoes-led-lights-mesh-...` (ID: 9794582708537)
+- CDN URL: `https://cdn.shopify.com/s/files/1/0864/9677/2409/files/Se8e4186d72c04b3ba3956df0707b96a1q.webp?v=1740330790`
+- alt: `נעלי דיסני אלזה עם אורות LED לבנות — עיצוב ורוד-סגול, מידות 22–35`
+
+### QA
+Local: 13/13 PASS | img present ✅ | alt-placeholder gone ✅
+Live: 13/13 PASS | len ratio 1.00 OK | img live ✅ | intro-box/toc/faq/json-ld/cta all intact
+Backup: `output/organic/backups/canary-c3-before-689094983993.json`
+
+### Article
+- id: 689094983993
+- slug: naalei-orot-livanot-dagamim-yafim
+- URL: https://babymania-il.com/blogs/news/naalei-orot-livanot-dagamim-yafim
+
+---
+
+## [2026-05-31] HUB-13/C1 Inline Links Fix COMPLETE
+Mode: SINGLE_ARTICLE_INLINE_LINK_FIX | fix_c1_update.py | No product/collection/theme/navigation changes
+
+### בעיה
+כל 3 הקישורים הפנימיים ב-HUB13_C1.md היו רק ב-`**Internal links:**` editorial footer (שורות 148–151) שה-converter מוחק אוטומטית. המאמר פורסם עם 0 inline internal links.
+
+### תיקון
+3 קישורים inline הוספו לגוף הטקסט של `hub13-water-shoes/HUB13_C1.md`:
+
+| מיקום בגוף | קישור | anchor |
+|-----------|-------|--------|
+| סוף פסקת מבוא | `/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam` | המדריך המלא לנעלי מים לילדים |
+| סוף פסקת 12–18 חודשים | `/blogs/news/naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat` | נעל לצעד ראשון |
+| סוף פסקת "מתי לא צריך" | `/blogs/news/brekha-im-tinok-bitakhon-tsiyud-ushahot-hamumlatsot` | בריכה עם תינוק |
+
+### QA
+`scripts/organic/fix_c1_update.py`
+Pre-update: 13/13 PASS | inline links 3/3 PRESENT
+Backup: `output/organic/backups/fix-c1-before-689095672121.json`
+Post-update: 13/13 PASS | len ratio 1.00 OK | inline links live 3/3 PRESENT
+
+### Article
+- id: 689095672121
+- slug: naalei-mayim-letinok-meize-gil
+- action: UPDATE body_html only
+- GIT_COMMIT: NO
+
+---
+
+## [2026-05-31] Batch 4 — 6 מאמרים LIVE (HUB-12 C3–C6 + HUB-13 Pillar+C1)
+Mode: ORGANIC_BATCH_PUBLISH | pipeline QA → canary → full batch → manual verify | No product/collection/theme/navigation changes
+
+### מה בוצע
+| HUB | article_id | slug | סטטוס |
+|-----|-----------|------|--------|
+| HUB-12/C3 | 689094983993 | naalei-orot-livanot-dagamim-yafim | ✅ CREATED |
+| HUB-12/C4 | 689095541049 | naalei-orot-livanim-ma-yeladim-ohavim | ✅ CREATED |
+| HUB-12/C5 | 689095573817 | naalei-orot-solela-kama-zman-mehzika | ✅ CREATED |
+| HUB-12/C6 | 689095606585 | naalei-orot-vs-naalei-sport-matay-livhor | ✅ CREATED |
+| HUB-13/Pillar | 689095639353 | naalei-mayim-leyeladim-madrih-male-brekha-yam | ✅ CREATED |
+| HUB-13/C1 | 689095672121 | naalei-mayim-letinok-meize-gil | ✅ CREATED → inline links תוקנו |
+
+### תיקונים שבוצעו לפני פרסום
+- `HUB12_C5.md` + `HUB12_C6.md` — נוסף FAQPage JSON-LD שהיה חסר (pipeline חסם)
+- `HUB13_C1.md` — slug תוקן: `me'eize-gil` → `meize-gil` (apostrophe מנע Shopify handle תקין)
+
+### QA
+canary (HUB-12/C3): 16/16 PASS → remaining 5: 16/16 PASS → manual verify: 19/19 PASS
+NO_PRODUCT_CHANGES: YES | NO_COLLECTION_CHANGES: YES | NO_THEME_CHANGES: YES
+batch files: `output/organic/batch4.json`, `output/organic/batch4-canary.json`
+GIT_COMMIT: NO
+
+### GSC Indexing — PENDING MANUAL (submit_gsc.py חסום — Cloud billing terminated)
+פעולת אייל: GSC → URL Inspection → Request Indexing לכל URL
+
+```
+https://babymania-il.com/blogs/news/naalei-orot-livanot-dagamim-yafim
+https://babymania-il.com/blogs/news/naalei-orot-livanim-ma-yeladim-ohavim
+https://babymania-il.com/blogs/news/naalei-orot-solela-kama-zman-mehzika
+https://babymania-il.com/blogs/news/naalei-orot-vs-naalei-sport-matay-livhor
+https://babymania-il.com/blogs/news/naalei-mayim-leyeladim-madrih-male-brekha-yam
+https://babymania-il.com/blogs/news/naalei-mayim-letinok-meize-gil
+```
+
+### Open Issues
+- [x] HUB-13/C1 inline links — תוקן 2026-05-31 (ראה entry למעלה)
+- [ ] GSC indexing Batch 4 — 6 URLs (פעולת אייל)
+- [ ] Batch 5 — 03.06.2026 (HUB-13 C2–C6 + HUB-14 Pillar) — dry-run לפני אישור
+
+---
+
+## [2026-05-29] P1 Onesies CTR Patch — how-many-onesies-does-a-newborn-need COMPLETE (T1 approved by Ayal)
+Mode: SINGLE_ARTICLE_SEO_META_PATCH | T1 approved | No body/product/collection/theme/navigation changes
+
+### מה בוצע
+- `how-many-onesies-does-a-newborn-need` (HUB-2-C4, ID 681363439929)
+- title_tag: "כמה בגדי גוף צריך לתינוק חדש? המספרים המדויקים | BabyMania"
+- description_tag: "6–10 בגדי גוף לתינוק חדש — 4–5 קצרים ו-4–5 ארוכים. כמויות מדויקות לפי עונה, ומה להכין לפני הלידה כדי לא להיתפס לא מוכן."
+- body_html: ללא שינוי | VERIFY: PASS | BACKUP: `output/organic/backups/p1-non-reborn-ctr-batch/`
+- GIT_COMMIT: NO
+
+### ✅ P1 Quick Wins — COMPLETE (כל היעדים המיידיים)
+| מאמר | סטטוס | תאריך |
+|------|--------|-------|
+| HUB-9 Reborn Pillar/C1/C2/C3/C5/C6 | ✅ COMPLETE | 2026-05-28/29 |
+| baby-bath-water-temperature | ✅ COMPLETE | 2026-05-29 |
+| white-noise-for-babies | ✅ COMPLETE | 2026-05-29 |
+| how-many-onesies-does-a-newborn-need | ✅ COMPLETE | 2026-05-29 |
+
+### Open Issues
+- [ ] P6 product-link bridge: HUB-9 C1/C3/C5/C6 — local product links ready, pending T1 approval
+- [ ] P6 article→product paths: מתנות, נעלי צעד ראשון, קרוקס, ביגוד יילוד, רעש לבן
+- [ ] Batch 4 organic publish — 31.05.2026
+- [ ] P0 Brand SERP / Google visibility verify
+- [ ] P4 technical 404 / crawl blockers
+
+---
+
+## [2026-05-29] P1 Non-Reborn CTR Batch — Bath + White Noise COMPLETE (T1 approved by Ayal)
+Mode: MULTI_ARTICLE_SEO_META_PATCH | T1 approved | No body/product/collection/theme/navigation changes
+
+### מה בוצע
+| מאמר | ID | title_tag | description_tag | body | Verify |
+|------|-----|-----------|-----------------|------|--------|
+| baby-bath-water-temperature | 681476522297 | עודכן | עודכן | ללא שינוי | PASS |
+| white-noise-for-babies | 681272115513 | עודכן | עודכן | ללא שינוי | PASS |
+
+### ערכי SEO שנכתבו
+**bath** title: "טמפרטורת מים לאמבטיה לתינוק: כמה מעלות ואיך בודקים | BabyMania"
+**bath** desc: "מה הטמפרטורה הנכונה לאמבטיה לתינוק, איך בודקים שהמים לא חמים מדי, ומה חשוב לשים לב אליו לפני שמרטיבים — מדריך בטיחות קצר."
+**white-noise** title: "רעש לבן לתינוקות: מתי זה עוזר ואיך משתמשים נכון | BabyMania"
+**white-noise** desc: "רעש לבן יכול לעזור לתינוק להירדם ולישון טוב יותר. מתי כדאי להשתמש, איזה עוצמה מומלצת, ומה חשוב לא להגזים — כל התשובות."
+
+### QA
+BATCH_STATUS: PASS | ARTICLES_COMPLETED: 2/2
+BODY_CHANGED: NO | PRODUCT_LINKS_ADDED: NO
+NO_PRODUCT_CHANGES: YES | NO_COLLECTION_CHANGES: YES | NO_THEME_CHANGES: YES | NO_NAVIGATION_CHANGES: YES
+BACKUP_DIR: `output/organic/backups/p1-non-reborn-ctr-batch/`
+GIT_COMMIT: NO
+
+### Open Issues
+- [ ] P1 non-Reborn — how-many-onesies-does-a-newborn-need (script prepared, not yet run)
+
+---
+
+## [2026-05-29] HUB-9 Reborn P1 SEO/Snippet Mini-Batch — C6 + Pillar + C5 + C3 COMPLETE (T1 approved by Ayal)
+Mode: MULTI_ARTICLE_SEO_META_PATCH | T1 approved | No product/collection/theme/navigation changes
+
+### מה בוצע
+| מאמר | ID | Patch | JSON-LD | Verify |
+|------|-----|-------|---------|--------|
+| C6 | 686018887993 | title_tag + description_tag | כבר קיים — skipped | PASS |
+| Pillar | 685558825273 | title_tag + description_tag | לא — body protected (pos 2.7) | PASS |
+| C5 | 686018855225 | title_tag + description_tag | כבר קיים — skipped | PASS |
+| C3 | 686018789689 | title_tag + description_tag | כבר קיים — skipped | PASS |
+
+### ערכי SEO שנכתבו
+**C6** title: "השוואת בובות ריבורן — 6 דגמים לפי מידה וחומר | BabyMania"
+**C6** desc: "6 דגמי ריבורן זה לצד זה: ויניל, סיליקון, גוף בד; 48–60 ס"מ. כל הנתונים במקום אחד — לפני ההחלטה."
+**Pillar** title: "בובת ריבורן — המדריך המלא: מה זה, איך לבחור | BabyMania"
+**Pillar** desc: "מדריך מלא לבובת ריבורן: מה זה, ויניל מול סיליקון, מאיזה גיל ואיך לבחור את הדגם הנכון."
+**C5** title: "ריבורן לילדים vs. ריבורן לאספנים — מה ההבדל | BabyMania"
+**C5** desc: "ריבורן לילד שמשחק לא זהה לריבורן לאספן. מדריך קצר שעוזר להבין מה מתאים למי לפני שבוחרים."
+**C3** title: "בובת ריבורן כמתנה — לאיזה גיל ואיזה דגם לבקש | BabyMania"
+**C3** desc: "קונים בובת ריבורן כמתנה? מדריך לפי גיל, אירוע ודגם מומלץ, עם טיפים חשובים לפני הקנייה."
+
+### QA
+BATCH_STATUS: PASS | ARTICLES_COMPLETED: 4/4
+C6: PASS | Pillar: PASS | C5: PASS | C3: PASS
+NO_PRODUCT_CHANGES: YES | NO_COLLECTION_CHANGES: YES | NO_THEME_CHANGES: YES | NO_NAVIGATION_CHANGES: YES
+BACKUP_DIR: `output/organic/backups/reborn-hub9-p1-batch/` (timestamp 20260529_132542)
+
+### לא בוצע
+- לא נוספו product links (משימה נפרדת עתידית)
+- לא שונה body_html של Pillar (דף מדורג pos 2.7)
+- לא בוצע git commit
+
+### סטטוס HUB-9 Reborn P1 אחרי batch זה
+| מאמר | SEO title/meta | FAQ JSON-LD | Product links |
+|------|---------------|-------------|---------------|
+| Pillar | ✅ COMPLETE | — (body protected) | future task |
+| C1 | ✅ COMPLETE | ✅ COMPLETE | future task |
+| C2 | ✅ COMPLETE | — (ranking pos 1.5) | future task |
+| C3 | ✅ COMPLETE | ✅ (already present) | future task |
+| C4 | optional/low-priority | — | future task |
+| C5 | ✅ COMPLETE | ✅ (already present) | future task |
+| C6 | ✅ COMPLETE | ✅ (already present) | future task |
+
+### Open Issues
+- [ ] HUB-9 C4: low-priority supporting article — not scheduled
+- [ ] HUB-9 product-link bridge (C1/C3/C5/C6) — separate future P6 task
+- [ ] P1 non-Reborn: white-noise-for-babies / baby-bath-water-temperature / how-many-onesies
+
+---
+
+## [2026-05-28] HUB-9 C1 — SEO Title + Meta Description + FAQ JSON-LD COMPLETE (T1 approved by Ayal)
+Mode: SINGLE_ARTICLE_SEO_SNIPPET_PATCH | T1 approved | No product/collection/theme/navigation changes
+
+### מה בוצע
+- **global.title_tag** (metafield): "איך לבחור בובת ריבורן — מדריך לרוכש הראשון | BabyMania"
+- **global.description_tag** (metafield): "מחפשים בובת ריבורן ראשונה? 3 שאלות + המלצה לפי גיל, שימוש וחומר — השוואה בין הדגמים ב-BabyMania."
+- **FAQPage JSON-LD** הוספה ל-body_html (4 שאלות — לא הומצאו תוכן חדש, נלקח מה-FAQ שכבר היה בגוף)
+- /collections/reborn נשאר קיים בגוף
+- backup: `output/organic/backups/reborn-c1-seo-backup-20260528_193708.json`
+
+### Article
+- id: 686018756921
+- slug: eich-livhor-bobat-reborn-madrih-larokhesh-harishon
+- title: איך לבחור בובת ריבורן — מדריך לרוכש הראשון
+
+### QA
+TITLE_TAG_SET: PASS | DESC_TAG_SET: PASS | JSONLD_LIVE: PASS | REBORN_LINK_PRESENT: PASS
+NO_PRODUCT_CHANGES: PASS | NO_COLLECTION_CHANGES: PASS | NO_THEME_CHANGES: PASS | BACKUP_SAVED: PASS
+PATCH_STATUS: PASS
+
+### לא בוצע
+- לא נוספו product links (משימה נפרדת עתידית)
+- לא שונו מוצרים / קולקציות / theme / navigation
+- לא בוצע git commit
+
+### Open Issues
+- [ ] HUB-9 C1/C3/C5 (LANDING_PLUS_PRODUCT) + C6 (PRODUCT_PLUS_LANDING) — product links — separate future task
+- [ ] HUB-9 Pillar: SEO title + meta (meta-only — NO body changes — pos 2.7)
+- [ ] HUB-9 C6: SEO title + meta + JSON-LD + 2 missing cluster links (C2, C4)
+- [ ] HUB-9 C5, C3: SEO title + meta + JSON-LD
+- [ ] Non-Reborn CTR wins: white-noise-for-babies / baby-bath-water-temperature
+
+---
+
+## [2026-05-28] Reborn C2 — גוף + SEO description + SEO title COMPLETE (T1 approved by Ayal)
+Mode: SINGLE_ARTICLE_SHOPIFY_PUBLISH | T1 approved | No product/collection/theme/navigation changes
+
+### מה בוצע
+- **body_html עודכן ב-Shopify live** (article_id 686018724153):
+  - CTA ישן: /collections/frontpage + /search?q=גופיית+תינוק + /search?q=חליפת+תינוק → הוחלף ב-/collections/reborn
+  - 2 קישורים פנימיים in-body נוספו: C1 (eich-livhor-bobat-reborn) + C6 (hashvahat-bobot-reborn)
+  - cluster-nav הושלם: C5 + C6 נוספו
+  - 0 /search?q= CTAs נותרו בגוף
+- **SEO description** (metafield global.description_tag): "מדריך קצר לבגדי ריבורן: איזו מידה מתאימה, איך לבחור בגדים לבובת ריבורן, ומה חשוב לבדוק לפני שקונים."
+- **SEO title** (metafield global.title_tag): "בגדי ריבורן: איזו מידה מתאימה? | BabyMania"
+- backup: `output/organic/backups/reborn-c2-live-backup-*.json`
+
+### Article
+- id: 686018724153
+- slug: bigdei-reborn-ma-hilobshot-eizeh-midah-matima
+- title: בגדי ריבורן — מה לובשים, איזה מידה מתאימה ואיפה מוצאים
+
+### Verify
+SEO_TITLE_FIX_STATUS: PASS | BODY_UNCHANGED: YES | DESCRIPTION_STILL_OK: YES | C2_FULLY_COMPLETE: YES
+
+### קבצים שנוצרו/עודכנו
+- `output/hub9-reborn/HUB9_C2_blog_article.html` (PATCHED_LOCAL_2026-05-28)
+- `scripts/reborn_c2_publish.py` (new)
+- `scripts/reborn_c2_seo_fix.py` (new)
+- `scripts/reborn_c2_seo_title_fix.py` (new)
+- `output/organic/backups/reborn-c2-live-backup-*.json` (new)
+- `output/audit/REBORN-ARTICLE-LANDING-MAPPING-2026-05-28.md` (new — mapping 14 מאמרי ריבורן)
+- `output/audit/REBORN-LANDING-LINK-MAP-2026-05-28.md` (new — audit קישורי landing)
+- `output/audit/P1-REBORN-CTR-SNIPPET-AUDIT-2026-05-28.md` (new — CTR + snippet audit)
+
+### החלטה חשובה
+/collections/reborn = **דף נחיתה/conversion מאושר לפאנל ריבורן** (אייל אישר 2026-05-28).
+אין להוסיף מוצרים ל-/collections/reborn. אין לשנות את תוכן הדף. אין לבדוק לפי מספר מוצרים.
+הפאנל הנכון: מאמר ריבורן → /collections/reborn → מוצרי ריבורן.
+
+### Open Issues
+- HUB-10 Batch B: C3 + C5 — ממתינים להחלטת אסטרטגיה (landing-only / landing+product / defer)
+- HUB-9 C1, C3, C5, C6: product links — ממתינים להחלטה
+
+---
+
+## [2026-05-28] HUB-10 Batch A — 5 מאמרים frontpage→reborn COMPLETE (T1 approved by Ayal)
+Mode: MULTI_ARTICLE_BODY_PATCH | T1 approved | No product/collection/theme/navigation changes
+
+### מה בוצע
+5 מאמרי HUB-10 עודכנו ב-Shopify live: `href="/search?q=%D7%A8%D7%99%D7%91%D7%95%D7%A8%D7%9F"` → `href="/collections/reborn"`
+
+| מאמר | ID | Handle | Verify |
+|------|-----|--------|--------|
+| Pillar | 686621098297 | yitronot-bobat-reborn-leyladim-regshiyim-chevratiyim-histapdutiyim | PASS |
+| C1 | 686651507001 | bobat-reborn-intelignatzia-regshit-mishak | PASS |
+| C2 | 686673527097 | reborn-bitachon-chevrati-yeladim-mehussim | PASS |
+| C4 | 686676541753 | bobat-reborn-empathia-yeladim | PASS |
+| C6 | 686682571065 | reborn-achrayut-yeladim | PASS |
+
+QA: 5/5 PUT HTTP 200 | 5/5 re-fetch PASS | /search?q=ריבורן after: 0 | /collections/reborn after: 1
+
+### לא נגע (HUB-10 Batch B — WAITING_DECISION)
+- C3 (686676443449) — gil-matim-lebobat-reborn — עשוי לדרוש product-link strategy
+- C5 (686678147385) — bobat-reborn-yeled-ragish — עשוי לדרוש product-link strategy
+
+### קבצים
+- `output/backups/hub10-batch-a/*.json` (backups pre-update)
+
+### System Impact
+- HUB-10 Batch A: 5/7 מאמרים מפנים כעת ל-/collections/reborn במקום /search?q=ריבורן
+- קונסיסטנציה: HUB-9 C2 + HUB-10 Pillar/C1/C2/C4/C6 — כולם → /collections/reborn
+
+### Open Issues
+- [x] ~~HUB-10 Batch B (C3, C5)~~ → RESOLVED — ראה entry הבא
+- [ ] HUB-9 C1, C3, C5 (LANDING_PLUS_PRODUCT): product links — pending decision
+- [ ] HUB-9 C6 (PRODUCT_PLUS_LANDING): product links — pending decision
+
+---
+
+## [2026-05-28] HUB-10 Batch B — C3 + C5 verified already correct — COMPLETE
+Mode: T1 script ran — SKIP_NOT_FOUND (no writes needed) | verification only
+
+### תוצאה
+| מאמר | ID | body | search?q=ריבורן | /collections/reborn | סטטוס |
+|------|-----|------|----------------|---------------------|-------|
+| C3 | 686676443449 | 11284 chars | 0 | 1 | SKIP_NOT_FOUND ✅ |
+| C5 | 686678147385 | 11447 chars | 0 | 1 | SKIP_NOT_FOUND ✅ |
+
+שני המאמרים כבר היו במצב תקין — /collections/reborn קיים, /search?q=ריבורן נעדר.
+לא בוצעו כתיבות ל-Shopify.
+
+### **HUB-10 landing-link cleanup: COMPLETE 7/7** ✅
+- Batch A (Pillar, C1, C2, C4, C6): patched from /search?q=ריבורן → /collections/reborn
+- Batch B (C3, C5): already correct — verified by script re-fetch
+- כל 7 מאמרי HUB-10 מפנים כעת ל-/collections/reborn
+
+### לא בוצע
+- לא נוספו product links (משימה נפרדת עתידית)
+- לא שונו מוצרים / קולקציות / theme / navigation
+- לא בוצע git commit
+
+### Open Issues
+- [ ] HUB-9 C1/C3/C5 (LANDING_PLUS_PRODUCT) + C6 (PRODUCT_PLUS_LANDING) — product links — separate future task
+- [ ] הצעד הבא לפאנל ריבורן: Reborn product-link bridge / Reborn snippet improvements / P0-P1 non-Reborn CTR wins
+
+---
+
 ## [2026-05-25] CSS Article Fix Verify — PASS
 Mode: READ-ONLY verify | No Shopify writes | No theme changes
 Action: בדיקת טעינת bm-blog-premium.css בדפי article חיים

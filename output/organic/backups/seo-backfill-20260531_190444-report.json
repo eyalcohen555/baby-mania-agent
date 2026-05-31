@@ -1,0 +1,79 @@
+{
+  "results": [
+    {
+      "hub": "HUB-12/C3",
+      "article_id": 689094983993,
+      "handle": "naalei-orot-livanot-dagamim-yafim",
+      "seo_title": "נעלי אורות לבנות — הדגמים הכי מבוקשים 2026",
+      "seo_description": "חיפשתם נעלי אורות לבנות עם עיצוב נסיכות ואלזה? כאן תמצאו השוואת הדגמים הכי מבוקשים — ורוד, כסף ודיסני, עם טיפים לבחירה לפי גיל ומידה.",
+      "title_ok": true,
+      "desc_ok": true,
+      "body_unchanged": true,
+      "backup": "seo-backfill-20260531_190444-689094983993.json",
+      "status": "PASS"
+    },
+    {
+      "hub": "HUB-12/C4",
+      "article_id": 689095541049,
+      "handle": "naalei-orot-livanim-ma-yeladim-ohavim",
+      "seo_title": "נעלי אורות לבנים — מה הילדים אוהבים ב-2026",
+      "seo_description": "נעלי אורות לבנים — ספיידרמן, דינוזאורים וגיבורי על: הדגמים שילדים הכי מבקשים, מה לבדוק לפני הקנייה ואיך לבחור נעל שתחזיק מעמד.",
+      "title_ok": true,
+      "desc_ok": true,
+      "body_unchanged": true,
+      "backup": "seo-backfill-20260531_190444-689095541049.json",
+      "status": "PASS"
+    },
+    {
+      "hub": "HUB-12/C5",
+      "article_id": 689095573817,
+      "handle": "naalei-orot-solela-kama-zman-mehzika",
+      "seo_title": "נעלי אורות סוללה כמה זמן מחזיקה — כל התשובות",
+      "seo_description": "כמה זמן מחזיקה סוללת נעלי אורות? ההבדל בין סוללה חד-פעמית לנטענת USB, כמה מחזורי טעינה לצפות ומה עושים כשהאורות מפסיקים להידלק.",
+      "title_ok": true,
+      "desc_ok": true,
+      "body_unchanged": true,
+      "backup": "seo-backfill-20260531_190444-689095573817.json",
+      "status": "PASS"
+    },
+    {
+      "hub": "HUB-12/C6",
+      "article_id": 689095606585,
+      "handle": "naalei-orot-vs-naalei-sport-matay-livhor",
+      "seo_title": "נעלי אורות לעומת נעלי ספורט ילדים — מה עדיף",
+      "seo_description": "נעלי אורות לעומת נעלי ספורט ילדים — השוואה ישירה לפי עמידות, מחיר ושימוש. מתי כדאי להשקיע בנעלי LED ומתי נעל ספורט קלאסית עדיפה.",
+      "title_ok": true,
+      "desc_ok": true,
+      "body_unchanged": true,
+      "backup": "seo-backfill-20260531_190444-689095606585.json",
+      "status": "PASS"
+    },
+    {
+      "hub": "HUB-13/Pillar",
+      "article_id": 689095639353,
+      "handle": "naalei-mayim-leyeladim-madrih-male-brekha-yam",
+      "seo_title": "נעלי מים לילדים — מדריך מלא לבריכה, ים וחוף",
+      "seo_description": "נעלי מים לילדים לבריכה, ים וחוף — המדריך המלא. ההבדל בין סוגים, איך מודדים מידה לרגל רטובה, מה לבדוק לפני הקנייה ואיזה דגמים שווים.",
+      "title_ok": true,
+      "desc_ok": true,
+      "body_unchanged": true,
+      "backup": "seo-backfill-20260531_190444-689095639353.json",
+      "status": "PASS"
+    },
+    {
+      "hub": "HUB-13/C1",
+      "article_id": 689095672121,
+      "handle": "naalei-mayim-letinok-meize-gil",
+      "seo_title": "נעלי מים לתינוק — מאיזה גיל ומה חשוב לבדוק",
+      "seo_description": "נעלי מים לתינוק מאיזה גיל? מדריך לפי שלבי התפתחות — מזחילה ועד הליכה. מה לבדוק בנעל, מה מתאים לים ובריכה, ומתי בכלל לא צריך נעל.",
+      "title_ok": true,
+      "desc_ok": true,
+      "body_unchanged": true,
+      "backup": "seo-backfill-20260531_190444-689095672121.json",
+      "status": "PASS"
+    }
+  ],
+  "pass": 6,
+  "total": 6,
+  "status": "PASS"
+}
