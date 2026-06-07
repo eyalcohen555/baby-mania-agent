@@ -1,21 +1,24 @@
 # bm-organic Template Track — מצב ואופן עבודה
 **נוצר:** 2026-06-06
 **מסלול:** נפרד מ-43-article batch pipeline
-**עדכון אחרון:** 2026-06-06
+**עדכון אחרון:** 2026-06-07
+**סטטוס:** LIVE QA PASS + GSC submitted for 3 renewed articles
 
 ---
 
 ## 1. מהו bm-organic
 
-`templates/article.bm-organic.json` — Shopify OS2.0 JSON article template.
-כל מאמר עם `template_suffix = bm-organic` מציג 7 sections בסדר קבוע:
+`bm-organic` הוא מסלול Shopify OS2.0 למאמרים אורגניים שמטרתם לא רק להביא תנועה מגוגל, אלא להמיר למוצר.
 
-```
+כל מאמר במסלול מציג 7 sections בסדר קבוע:
+
+```text
 hero → trust-strip → quick-answer → article-body → product-card → cta-banner → faq
 ```
 
-הגדרות ה-sections (hero image, product URL, מחיר, FAQ וכו') נכתבות ב-template JSON.
-body_html של המאמר מכיל רק את תוכן המדריך הנקי — ללא CTAs, FAQ, TOC כפולים.
+הלקח המרכזי: אין להשתמש ב-template JSON אחד משותף לכמה מאמרים, כי שינוי בתוכן ה-section דורס את כל המאמרים שמצביעים לאותו template.
+
+הפתרון שבוצע: template suffix ייחודי לכל מאמר.
 
 ---
 
@@ -23,142 +26,127 @@ body_html של המאמר מכיל רק את תוכן המדריך הנקי — 
 
 | Role | ID | שם | אזהרה |
 |------|----|----|-------|
-| TEST (עבודה) | **187183563065** | Working/001 | עבודה כאן בלבד |
-| LIVE (ייצור) | **183668179257** | ORGINAL Dawn new | ❌ לא לגעת ללא אישור |
+| TEST (עבודה) | `187183563065` | Working/001 | עבודה ובדיקות |
+| LIVE (ייצור) | `183668179257` | ORGINAL Dawn new | לגעת רק עם אישור מפורש |
 
 BLOG_ID: `109164036409`
 
 ---
 
-## 3. מאמרים שהושלמו בטסט — QA PASS
+## 3. Template JSON Files
 
-| # | handle | article_id | HUB | מוצר | מחיר | QA | hero CDN | backup |
-|---|--------|------------|-----|------|------|-----|----------|--------|
-| 1 | naalei-mayim-letinok-meize-gil | 689095672121 | HUB-13/C1 | נעלי מים לתינוק | — | PASS | אייל סיפק | ✅ |
-| 2 | naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat | 682290053433 | HUB-6/C1 | סנייקרס צעד ראשון | ₪111 | 43/43 PASS | `pishtan_c1_hero_naale_tsaad_rishon.png` | ✅ |
-| 3 | khalifat-pishtan-letinok-hayitronot-eikh-livkhor-umatay-lilbosh | 686728216889 | standalone | חליפת פשתן לתינוק | ₪151 | 44/44 PASS | `pishtan_c1_hero_khalifat_pishtan_letinok.png` | ✅ |
-
-**LIVE:** ❌ שלושת המאמרים טרם הועלו ל-LIVE. מוכנים לבדיקת preview ואישור Live פרטני של אייל.
+| קובץ | טסט | לייב | hero | מוצר | מחיר | sticky | FAQ |
+|------|-----|------|------|------|------|--------|-----|
+| `article.bm-organic-water.json` | PASS | PASS | PASS | PASS | ₪95 PASS | ₪95 PASS | PASS |
+| `article.bm-organic-sneaker.json` | PASS | PASS | PASS | PASS | ₪111 PASS | ₪111 PASS | PASS |
+| `article.bm-organic-pishtan.json` | PASS | PASS | PASS | PASS | ₪151 PASS | ₪151 PASS | PASS |
 
 ---
 
-## 4. Scripts שנוצרו
+## 4. מאמרים חיים
 
-| script | תפקיד |
-|--------|--------|
-| `scripts/organic/_hub6_step1_upload_hero.py` | העלאת hero ל-CDN (staged upload + poll) |
-| `scripts/organic/_hub6_step2_execute.py` | cleanup body + template push + article update |
-| `scripts/organic/_hub6_step3_qa.py` | QA מלא HUB-6/C1 |
-| `scripts/organic/_pishtan_execute.py` | cleanup + template + update — חליפת פשתן |
-| `scripts/organic/_pishtan_qa.py` | QA מלא חליפת פשתן |
-| `scripts/organic/_candidate_check.py` | בדיקת מועמדים לשכפול בm-organic |
-| `scripts/organic/_qa_bm_organic_final.py` | QA כללי bm-organic |
+| article_id | suffix לפני | suffix עכשיו | handle | body len |
+|------------|-------------|--------------|--------|----------|
+| `689095672121` | `bm-organic` | `bm-organic-water` | `naalei-mayim-letinok-meize-gil` | 4,004 |
+| `682290053433` | `bm-organic` | `bm-organic-sneaker` | `naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat` | 4,774 |
+| `686728216889` | `bm-organic` | `bm-organic-pishtan` | `khalifat-pishtan-letinok-hayitronot-eikh-livkhor-umatay-lilbosh` | 4,729 |
 
-Template JSONs מקומיים:
-- `scripts/organic/_article_bm_organic_hub6_c1.json`
-- `scripts/organic/_article_bm_organic_pishtan_c1.json`
+Live URLs:
 
-Hero refs:
-- `scripts/organic/_hub6_hero_ref.json`
-- `scripts/organic/_pishtan_hero_ref.json`
-
-Backups:
-- `output/organic/backups/bm-organic-hub6c1-body-before-cleanup-682290053433.json`
-- `output/organic/backups/bm-organic-pishtan-body-before-cleanup-686728216889.json`
-
----
-
-## 5. Hero Image Protocol
-
-**כלל:** אסור לקלוד ליצור תמונות ב-AI / DALL-E / Stitch. תמונות ידניות שאייל יוצר ומספק מותרות.
-
-### דרישות hero image לבדיקה:
-| בדיקה | דרישה |
-|--------|--------|
-| יחס | לנדסקייפ — 16:9 או 3:2 לפחות |
-| גודל | ≥ 1200 × 675 px |
-| נושא | תינוק/פעוט לובש את המוצר הספציפי |
-| רקע | נקי / טבעי / קיצי — אין watermark, לוגו, טקסט |
-| איכות | editorial — לא catalog-only shot |
-| Shopify | מועלה דרך staged upload → fileCreate → poll READY |
-| Ref | `shopify://shop_images/{filename}` |
-
-### תהליך אם אין hero מתאים בתמונות המוצר:
-1. **עצור** — אל תשנה body_html, אל תשייך template
-2. **החזר דוח** — טבלת 11 תמונות + הערכת כל אחת
-3. **שלח brief לאייל** — כולל יחס, נושא, רקע, גודל מינימלי
-
----
-
-## 6. Safety Checklist לפני כל שכפול
-
+```text
+https://babymania-il.com/blogs/news/naalei-mayim-letinok-meize-gil
+https://babymania-il.com/blogs/news/naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat
+https://babymania-il.com/blogs/news/khalifat-pishtan-letinok-hayitronot-eikh-livkhor-umatay-lilbosh
 ```
-□ עובדים על test theme 187183563065 בלבד
-□ live theme 183668179257 — אסור לגעת
-□ backup body_html נשמר לפני כל שינוי
-□ תמונת Hero אושרה — ידנית מאייל בלבד
-□ product קיים ב-Shopify + status = active
+
+---
+
+## 5. QA Summary
+
+| בדיקה | water | sneaker | pishtan |
+|-------|-------|---------|---------|
+| suffix_correct | PASS | PASS | PASS |
+| tpl_on_live | PASS | PASS | PASS |
+| hero_matches | PASS | PASS | PASS |
+| product_matches | PASS | PASS | PASS |
+| price_correct | PASS | PASS | PASS |
+| sticky_cta_ok | PASS | PASS | PASS |
+| faq_present | PASS | PASS | PASS |
+| no_placeholder | PASS | PASS | PASS |
+| body_no_jsonld | PASS | PASS | PASS |
+| body_no_faq_sec | PASS | PASS | PASS |
+| body_no_cta_div | PASS | PASS | PASS |
+| sections_live (7/7) | PASS | PASS | PASS |
+| no_old_suffix | PASS | PASS | PASS |
+| סה"כ | 13/13 | 13/13 | 13/13 |
+
+OVERALL QA: PASS
+
+---
+
+## 6. Risk Closure
+
+| בדיקה | תוצאה |
+|-------|--------|
+| `article.bm-organic.json` קיים בלייב | EXISTS, ללא שימוש |
+| מאמרים עם suffix ישן `bm-organic` | 0 |
+| Section files בלייב | ALL 7 PRESENT |
+| סיכון cross-contamination | NONE |
+
+---
+
+## 7. GSC Submission
+
+כל 3 המאמרים הוגשו ידנית ל-GSC בתאריך 2026-06-07.
+
+| # | handle | סטטוס לפני | פעולה |
+|---|--------|------------|--------|
+| 1 | `naal-tsaad-rishon-ma-kol-horeh-tzarich-ladaat` | ב-Google | הוגש לסריקה מחודשת |
+| 2 | `khalifat-pishtan-letinok-hayitronot-eikh-livkhor-umatay-lilbosh` | לא ב-Google עדיין | הוגש לאינדקס ראשון |
+| 3 | `naalei-mayim-letinok-meize-gil` | ב-Google | הוגש לסריקה מחודשת |
+
+כל ה-3 קיבלו אישור GSC: `Indexing request received`.
+
+Follow-up: לבדוק בעוד 3-7 ימים אם `khalifat-pishtan` נכנס לאינדקס.
+
+Reference: `output/organic/bm-organic-gsc-submission-2026-06-07.md`
+
+---
+
+## 8. פריט פתוח קטן
+
+במאמר `naalei-mayim-letinok-meize-gil` נשאר `intro-box` בגוף המאמר.
+
+סטטוס: WARN בלבד, pre-existing, לא blocker.
+
+כלל פעולה: לא לתקן עכשיו בלי backup, תוכנית ואישור, כי זה שינוי `body_html`.
+
+---
+
+## 9. Safety Checklist לפני שכפול למאמרים 4-6
+
+```text
+□ עובדים קודם ב-test theme
+□ live theme רק עם אישור מפורש
+□ backup body_html לפני כל שינוי
+□ Hero מאושר ידנית מאייל בלבד
+□ product קיים ב-Shopify + status active
 □ מחיר נכון לפי variants בפועל
-□ ≥ 2 internal /blogs/news/ links בגוף — קיימים וקיים מאמר עם handle זה
-□ אין placeholders (alt="", TODO, SLOT_, YOUR_)
-□ כל 7 sections + כל fields required מוגדרים
-□ לא לשנות title / handle / author / SEO
+□ אין placeholders
+□ כל 7 sections מוגדרים
+□ template suffix ייחודי לכל מאמר
 □ QA PASS לפני דיווח על השלמה
+□ GSC ידני אחרי Live QA
 ```
 
 ---
 
-## 7. body_html Cleanup — מה מוסרים
+## 10. השלב הבא
 
-| אלמנט | Class/Selector | פעולה |
-|-------|----------------|--------|
-| תיבת מבוא | `div.intro-box` | להסיר |
-| תשובה קצרה | `div.quick-answer` | להסיר (עובר ל-section) |
-| תוכן עניינים | `nav.toc` | להסיר |
-| CTA | `div.cta-banner` | להסיר (עובר ל-section) |
-| FAQ | `section#faq` | להסיר (עובר ל-section) |
-| JSON-LD | `script[type="application/ld+json"]` | להסיר |
-| תגיות מאמר | `div.article-tags` | להסיר |
-| כרטיס מוצר inline | `div.product-mention` | להסיר |
-| כרטיס מוצר inline | `div.product-card-inline` | להסיר אם קיים |
+המסלול הראשון של 3 מאמרי bm-organic סגור תפעולית: live templates נפרדים, QA PASS, GSC submitted.
 
-**לשמור:** `div.article-body`, `figure.article-image`, `figcaption`, `blockquote`, `div.tip-box`, `div.warning-box`, `table`, קישורים פנימיים.
+השלב הבא הוא audit ותכנון לפני ביצוע:
 
-**קישורים:** להמיר absolute URLs של babymania-il.com לקישורים יחסיים (`/blogs/news/...`).
-
----
-
-## 8. Admin Preview
-
-```
-https://babymania-il.com/blogs/news/{handle}?preview_theme_id=187183563065
-```
-
-**הערה חשובה:** דרוש Shopify admin session בדפדפן לפני פתיחת הקישור.
-URL עם `?preview_theme_id=` לא עובד ללא authentication — ה-`www.` redirect מוריד את ה-query params.
-
-**דרך עבודה:**
-1. היכנס ל-Shopify Admin בדפדפן
-2. עבור Themes → Working/001 → Preview
-3. נווט ידנית אל /blogs/news/{handle}
-
----
-
-## 9. תנאים לפני Push ל-LIVE
-
-```
-□ Preview נצפה עם Shopify admin session — נראה תקין
-□ אישור מפורש של אייל לכל מאמר בנפרד
-□ QA מלא ב-test theme — PASS
-□ לא מאמר שנמצא בלוח ה-Batch הרגיל
-□ live theme push מבוצע דרך REST API themes/{LIVE_ID}/assets.json
-□ לאחר push ל-live — QA נוסף על live theme
-□ GSC Request Indexing ידני אחרי אימות live
-```
-
----
-
-## 10. שלב עתידי (לא מאושר)
-
-אחרי אישור אייל: push של 3 המאמרים ל-LIVE theme + GSC.
-מסלול זה נפרד לחלוטין מ-43-article batch pipeline.
+1. לבחור 5 מאמרים הבאים לפי פוטנציאל מכירה.
+2. לבצע audit לשדות המטא של 3 משפחות מוצרים חזקות: בובת ריבורן, נעלי צעד ראשון, מנורת לילה / מנורת ארנב לילה.
+3. לא לבצע כתיבה ל-Shopify לפני אישור.
