@@ -140,7 +140,7 @@ body { font-family: 'Heebo', sans-serif; }
 .hero-img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:32px; display:block; }
 
 /* ── S2 BUNDLE ── */
-.bundle-sec { position:relative; background:url('./assets/s2-bg.png') center/cover no-repeat; padding:80px 0; }
+.bundle-sec { position:relative; background:url('{{ IMG_S2_BUNDLE }}') center/cover no-repeat; padding:80px 0; }
 .bundle-sec::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.6); pointer-events:none; z-index:0; }
 .bundle-sec > .sc { position:relative; z-index:1; }
 .bundle-sec h2 { font-size:clamp(22px,3vw,34px); font-weight:900; color:var(--heading); text-align:right; margin-bottom:12px; }
@@ -220,11 +220,11 @@ body { font-family: 'Heebo', sans-serif; }
 .bm-reborn-benefits-hero-img { width:100%; height:100%; object-fit:cover; border-radius:43% 57% 65% 35% / 46% 62% 38% 54%; -webkit-mask-image:radial-gradient(circle at 40% 40%,black 55%,transparent 100%); mask-image:radial-gradient(circle at 40% 40%,black 55%,transparent 100%); }
 @keyframes bm-reborn-blob-anim { 0%{border-radius:43% 57% 65% 35% / 46% 62% 38% 54%} 50%{border-radius:53% 47% 45% 55% / 56% 42% 58% 44%} 100%{border-radius:43% 57% 65% 35% / 46% 62% 38% 54%} }
 [data-section="10"].bm-reborn-benefits-section {
-  background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url('./assets/s2-bg.png');
+  background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url('{{ IMG_S2_BUNDLE }}');
 }
 @media(min-width:768px){
   .bm-reborn-benefits-section { padding:6rem 3rem 8rem; background-image:linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)),url('./assets/s6-bg-desktop.png'); background-size:cover; background-position:center center; }
-  [data-section="10"].bm-reborn-benefits-section { background-image:linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)),url('./assets/s2-bg.png'); }
+  [data-section="10"].bm-reborn-benefits-section { background-image:linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)),url('{{ IMG_S2_BUNDLE }}'); }
   .bm-reborn-benefits-header { margin-bottom:6rem; }
   .bm-reborn-benefits-title { font-size:4.5rem; }
   .bm-reborn-benefits-grid { grid-template-columns:1fr 260px 1fr; gap:2rem; }
@@ -299,7 +299,7 @@ body { font-family: 'Heebo', sans-serif; }
 }
 .s3-mobile-bg {
   position: relative;
-  background-image: url('./assets/s3-bg-mobile.png');
+  background-image: url('{{ IMG_S3_TRUST }}');
   background-size: cover;
   background-position: center;
 }
@@ -499,8 +499,8 @@ body { font-family: 'Heebo', sans-serif; }
         <div class="sec-lbl">S1 — HERO</div>
         <div class="hero-tag">אהובה על לקוחות Baby Mania</div>
         <div class="hero-prod-name">{{ bm_model }}{% if bm_size %} {{ bm_size }}{% endif %}</div>
-        <h1 class="hero-h1">הרגע שבו היא מחזיקה אותה בפעם הראשונה —<br/>ומתחילה לטפל כמו אמא קטנה</h1>
-        <p class="hero-sub">{{ bm_subtitle }}</p>
+        <h1 class="hero-h1">{{ HERO_TITLE }}</h1>
+        <p class="hero-sub">{{ HERO_SUBTITLE }}</p>
         <div class="hero-stars">
           <span class="stars-ico">★★★★★</span>
           <span class="hero-rating">4.9</span>
@@ -702,7 +702,7 @@ body { font-family: 'Heebo', sans-serif; }
 </section>
 <!-- DESKTOP S3 -->
 <section class="s3-desktop-section relative w-full overflow-hidden py-12" data-section="3"><div class="absolute inset-0 z-0 overflow-hidden">
-  <img src="./assets/s3-bg-desktop.png" alt="" class="w-full h-full object-cover opacity-45">
+  <img src="{{ IMG_S3_TRUST }}" alt="" class="w-full h-full object-cover opacity-45">
   <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/20"></div>
 </div>
 <div class="relative z-10 container mx-auto px-4 lg:px-8">
@@ -754,13 +754,7 @@ body { font-family: 'Heebo', sans-serif; }
       <div class="md:col-span-7 text-right order-2 md:order-1">
         <div class="section-label">S4 — בעיה: מסכים</div>
         <span class="inline-block py-1 px-3 rounded-full bg-primary-container/10 text-primary-container font-bold text-sm mb-6 border border-primary-container/20">התמודדות עם מסכים</span>
-        <h2 class="text-headline-xl-mobile md:text-headline-xl text-on-surface mb-stack-lg leading-tight">
-          את לא מחפשת עוד צעצוע.<br/>
-          <span class="text-primary-container relative inline-block">
-            את מחפשת את הרגע
-            <span class="absolute bottom-1 left-0 w-full h-3 bg-primary-container/20 -z-10"></span>
-          </span> שבו היא שוכחת מהמסך.
-        </h2>
+        <h2 class="text-headline-xl-mobile md:text-headline-xl text-on-surface mb-stack-lg leading-tight">{{ PROBLEM_HOOK }}</h2>
         <p class="text-body-lg text-on-surface-variant leading-relaxed mb-stack-lg max-w-2xl ml-auto">
           בעידן שבו מסכים שואבים את תשומת הלב, קשה למצוא משחק שמציע חיבור אמיתי ועמוק. משחק של טיפול ואכפתיות מפתח אמפתיה, אחריות ורוגע פנימי ששום אפליקציה לא יכולה לספק.
         </p>
@@ -768,7 +762,7 @@ body { font-family: 'Heebo', sans-serif; }
       <div class="md:col-span-5 order-1 md:order-2">
         <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-soft">
           <video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
-            <source src="./assets/videos/s4-video.mp4" type="video/mp4"/>
+            <source src="{{ VID_PROBLEM }}" type="video/mp4"/>
           </video>
         </div>
       </div>
@@ -817,20 +811,14 @@ body { font-family: 'Heebo', sans-serif; }
 
       <!-- תמונה — ימין (ב-RTL: ראשון = ימין) -->
       <div class="bm-reborn-problem__image-wrap" style="order:1;">
-        <img src="./assets/s5-girl.png" alt="ילדה יושבת מוקפת צעצועים" class="bm-reborn-problem__image"/>
+        <img src="{{ IMG_S6_PROBLEM }}" alt="ילדה יושבת מוקפת צעצועים" class="bm-reborn-problem__image"/>
       </div>
 
       <!-- טקסט — שמאל -->
       <div class="bm-reborn-problem__text" style="order:2;">
         <div class="bm-reborn-problem__eyebrow">S5 — הגברת</div>
 
-        <h2 class="bm-reborn-problem__headline">
-          הורים קונים עוד ועוד צעצועים<br>
-          אבל רובם<br>
-          <span class="bm-reborn-problem__headline-gold">לא יוצרים משחק עמוק</span><br>
-          קשר רגשי או זמן<br>
-          איכות אמיתי.
-        </h2>
+        <h2 class="bm-reborn-problem__headline">{{ PROBLEM_AGITATION }}</h2>
 
         <div class="bm-reborn-problem__chips">
           <div class="bm-reborn-problem__chip">
@@ -854,8 +842,6 @@ body { font-family: 'Heebo', sans-serif; }
         </div>
 
         <p class="bm-reborn-problem__body">
-          עוד צעצוע שנפתח בהתלהבות ונשכח אחרי כמה ימים —<br>
-          זה לא שאת שוכחת לבחור בצורה נכונה.
         </p>
 
         <div class="bm-reborn-problem__callout">
@@ -863,12 +849,28 @@ body { font-family: 'Heebo', sans-serif; }
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8956A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
           <p class="bm-reborn-problem__callout-text">
-            בובת ריבורן זה לא עוד צעצוע <span style="color:#B8956A;">זו דרך לפתח רגש,</span> שפה וביטחון
           </p>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S6 — בעיית תמונה
+════════════════════════════════════════ -->
+<section class="problem-img-sec" data-section="6">
+  <div class="sc"><img src="{{ IMG_S6_PROBLEM }}" alt="{{ PRODUCT_NAME }}" loading="lazy">
+  <p class="img-caption">{{ PROBLEM_IMG_CAPTION }}</p></div>
+</section>
+
+<!-- ════════════════════════════════════════
+     S11b — MID CTA
+════════════════════════════════════════ -->
+<section class="midcta-sec" data-section="11b">
+  <div class="sc"><div class="sec-lbl">S11b — MID CTA</div>
+  <h2>{{ MIDCTA_TITLE }}</h2><p>{{ MIDCTA_TEXT }}</p>
+  <a href="#bm-bundle-form" class="btn-cta">{{ MIDCTA_BUTTON }}</a></div>
 </section>
 
 <!-- ════════════════════════════════════════
@@ -883,88 +885,31 @@ body { font-family: 'Heebo', sans-serif; }
       <div class="bm-reborn-research__eyebrow-line"></div>
     </div>
 
-    <h2 class="bm-reborn-research__headline">
-      זה נראה כמו משחק.<br>
-      אבל מחקרים מראים שקורה כאן הרבה יותר.
-    </h2>
+    <h2 class="bm-reborn-research__headline">{{ RESEARCH_1 }}</h2>
 
     <p class="bm-reborn-research__intro">
-      משחק בבובות ודמיון נחקר בהקשרים של אמפתיה, שפה רגשית, משחק תפקידים והתפתחות חברתית.
     </p>
 
     <div class="bm-reborn-research__panel">
 
       <div class="bm-reborn-research__panel-header">
         <svg class="bm-reborn-research__panel-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B8956A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span class="bm-reborn-research__panel-title">מה אומרים המחקרים על זה?</span>
+        <span class="bm-reborn-research__panel-title">{{ RESEARCH_1 }}</span>
       </div>
 
       <div class="bm-reborn-research__source-block">
         <div class="bm-reborn-research__source-num">01</div>
-        <div class="bm-reborn-research__source-content">
-          <div class="bm-reborn-research__source-header">
-            <span class="bm-reborn-research__source-name">אוניברסיטת קארדיף</span>
-            <span class="bm-reborn-research__source-year">2020</span>
-          </div>
-          <p class="bm-reborn-research__source-finding">
-            מחקר מוחי שבדק ילדים בגילאי 4 עד 8 מצא שמשחק בבובות מפעיל אזורים במוח הקשורים ל<strong>אמפתיה ולעיבוד חברתי</strong>, גם כשהילדה משחקת לבד.
-          </p>
-          <p class="bm-reborn-research__source-finding">
-            באותו מחקר נמצא שכאשר ילדים שיחקו לבד עם טאבלט, <strong>אזור האמפתיה כמעט לא הופעל</strong>.
-          </p>
-          <p class="bm-reborn-research__source-pub">Hashmi et al., Frontiers in Human Neuroscience, 2020</p>
-        </div>
+        <div class="bm-reborn-research__source-content">{{ RESEARCH_1 }}</div>
       </div>
 
       <div class="bm-reborn-research__source-block">
         <div class="bm-reborn-research__source-num">02</div>
-        <div class="bm-reborn-research__source-content">
-          <div class="bm-reborn-research__source-header">
-            <span class="bm-reborn-research__source-name">האקדמיה האמריקאית לרפואת ילדים</span>
-            <span class="bm-reborn-research__source-year">2018</span>
-          </div>
-          <p class="bm-reborn-research__source-finding">
-            ה-AAP מתארת משחק תפקידים, כולל האכלה, הרגעה ושיחה עם בובה, כחלק חשוב ב<strong>התפתחות קוגניטיבית, רגשית וחברתית</strong>.
-          </p>
-          <p class="bm-reborn-research__source-finding">
-            המאמר מציין שמשחק חופשי יכול לחזק קשר הורה וילד ולתמוך ב<strong>כישורי ויסות רגשי</strong>.
-          </p>
-          <p class="bm-reborn-research__source-pub">American Academy of Pediatrics, Pediatrics Journal, 2018</p>
-        </div>
+        <div class="bm-reborn-research__source-content">{{ RESEARCH_2 }}</div>
       </div>
 
       <div class="bm-reborn-research__source-block">
         <div class="bm-reborn-research__source-num">03</div>
-        <div class="bm-reborn-research__source-content">
-          <div class="bm-reborn-research__source-header">
-            <span class="bm-reborn-research__source-name">יוניצ״ף + LEGO Foundation</span>
-            <span class="bm-reborn-research__source-year">2018</span>
-          </div>
-          <p class="bm-reborn-research__source-finding">
-            דוח בינלאומי על למידה דרך משחק מציין שמשחק דמיוני וטיפולי, כמו להלביש, להאכיל ולהרדים, תורם ל<strong>אמפתיה, יצירתיות ומיומנויות חברתיות</strong>.
-          </p>
-          <p class="bm-reborn-research__source-finding">
-            הדוח מדגיש שמשחק חופשי ומשמעותי מסייע לילדים לפתח <strong>כישורי חשיבה, פתרון בעיות ושיתוף פעולה</strong>.
-          </p>
-          <p class="bm-reborn-research__source-pub">UNICEF & LEGO Foundation, Learning Through Play Report, 2018</p>
-        </div>
-      </div>
-
-      <div class="bm-reborn-research__source-block">
-        <div class="bm-reborn-research__source-num">04</div>
-        <div class="bm-reborn-research__source-content">
-          <div class="bm-reborn-research__source-header">
-            <span class="bm-reborn-research__source-name">אוניברסיטת קיאו, יפן</span>
-            <span class="bm-reborn-research__source-year">2019</span>
-          </div>
-          <p class="bm-reborn-research__source-finding">
-            מחקר מאוניברסיטת קיאו בדק משחק בבובות אצל ילדים צעירים, ומצא שילדים שנחשפו יותר למשחק כזה <strong>פיתחו מהר יותר יכולת להבין רגשות וצרכים של אחרים</strong>.
-          </p>
-          <p class="bm-reborn-research__source-finding">
-            המחקר מציין שגם כשהורה משתתף במשחק ואומר משפטים כמו &#8220;הבובה עייפה&#8221; או &#8220;אולי היא צריכה חיבוק&#8221;, <strong>הילדה מתרגלת להסתכל על העולם דרך רגשות של מישהו אחר</strong>.
-          </p>
-          <p class="bm-reborn-research__source-pub">Keio University, CogSci 2019</p>
-        </div>
+        <div class="bm-reborn-research__source-content">{{ RESEARCH_3 }}</div>
       </div>
 
     </div>
@@ -986,11 +931,11 @@ body { font-family: 'Heebo', sans-serif; }
       <span class="bm-reborn-video-transition__eyebrow-text">S7.5 &#8212; רגע אמיתי</span>
       <div class="bm-reborn-video-transition__eyebrow-line"></div>
     </div>
-    <h2 class="bm-reborn-video-transition__headline">ככה זה נראה כשהמשחק מקבל משמעות.</h2>
-    <p class="bm-reborn-video-transition__sub">היא לא רק מחזיקה בובה &#8212; היא מטפלת, מדמיינת, מדברת ובונה קשר.</p>
+    <h2 class="bm-reborn-video-transition__headline">{{ SOLUTION_TRANSITION }}</h2>
+    <p class="bm-reborn-video-transition__sub"></p>
     <div class="bm-reborn-video-transition__wrap">
       <video class="bm-reborn-video-transition__video" autoplay muted loop playsinline preload="none">
-        <source src="./assets/s7-video.mp4" type="video/mp4">
+        <source src="{{ VID_DEMO }}" type="video/mp4">
       </video>
     </div>
     <p class="bm-reborn-video-transition__caption">ומכאן בדיוק מגיעים היתרונות האמיתיים.</p>
@@ -1012,53 +957,12 @@ body { font-family: 'Heebo', sans-serif; }
 S8 &#8212; מה זה בונה בילדה
 <svg fill="currentColor" height="14" viewBox="0 0 24 24" width="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
 </div>
-<h2 class="bm-reborn-benefits-title" id="bm-reborn-benefits-main-title">מה המשחק הזה באמת בונה אצל הילדה?</h2>
+<h2 class="bm-reborn-benefits-title" id="bm-reborn-benefits-main-title">{{ BENEFIT_HEADING_1 }}</h2>
 <svg class="bm-reborn-benefits-title-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-<p class="bm-reborn-benefits-intro">אחרי שמבינים מה המחקרים מצאו, קל לראות למה בובת ריבורן היא לא עוד צעצוע &#8212; אלא משחק שמתרגל רגש, קשר, אחריות וביטחון.</p>
+<p class="bm-reborn-benefits-intro">{{ SOLUTION_TITLE }}</p>
 </header>
 <div class="bm-reborn-benefits-grid">
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">אינטליגנציה רגשית</h3>
-<p class="bm-reborn-benefits-card-text">כשילדה מטפלת בבובה, היא מתרגלת זיהוי רגשות &#8212; שלה ושל האחרים. היא שואלת &#8220;מה הבובה מרגישה?&#8221; ובלי לשים לב, מפתחת שפה רגשית שתשמש אותה לכל החיים.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">מחקרים מראים שמשחק טיפולי בבובות מפעיל אזורי אמפתיה במוח &#8212; אותם אזורים שאחראים על קשרים בריאים, הבנה חברתית ויכולת לפתור קונפליקטים בבגרות.</p>
-</div>
-</article>
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">ביטחון עצמי</h3>
-<p class="bm-reborn-benefits-card-text">כשילדה מחזיקה בובה ומנהיגה סיטואציה, היא מגלה שהיא מסוגלת &#8212; לטפל, להחליט, לפתור. תחושת המסוגלות הזו בונה בסיס אמין לביטחון עצמי שלא תלוי באישור של אחרים.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">הבובה לא שופטת. היא מקבלת. סביבה בטוחה כזו מאפשרת לילדה להתנסות, לטעות, לנסות שוב &#8212; ולגלות את הכוח שקיים בה מהרגע הראשון.</p>
-</div>
-</article>
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">יכולת חברתית</h3>
-<p class="bm-reborn-benefits-card-text">משחק תפקידים עם בובה הוא חיקוי של קשרים אנושיים. הילדה מתרגלת דיאלוג, מנהיגות, טיפול ותשומת לב &#8212; הבסיס לכל מערכת יחסים בריאה בחייה.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">מחקרי AAP מצאו שמשחק דמיוני מפתח שפה חברתית &#8212; היכולת לקרוא רגשות, לתקשר בבהירות, להגיב בהתאמה. ילדה שמשחקת עם בובה מתרגלת בדיוק את זה.</p>
-</div>
-</article>
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">תחושת אחריות</h3>
-<p class="bm-reborn-benefits-card-text">להאכיל, לגנן, לישן יחד &#8212; כל מחווה טיפולית קטנה שהילדה עושה לבובה מלמדת אותה מה זה לדאוג לאחר. תחושת האחריות הזו אינה מלאכותית &#8212; היא מורגשת, אמיתית ומשמעותית.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">הילדה שמגינה על הבובה שלה לומדת לשים גבולות, להיות נוכחת, לא לוותר כשמישהו זקוק לה. שיעורים שאף ספר לא יכול ללמד אותה טוב כמו המשחק עצמו.</p>
-</div>
-</article>
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">ויסות רגשי</h3>
-<p class="bm-reborn-benefits-card-text">בובה רכה בלילה, חיבוק שקט בזמן חרדה &#8212; הריבורן הופכת לעוגן רגשי. ילדה שלמדה לנחם את עצמה דרך הבובה רוכשת כלי ויסות שישמש אותה גם כשתגדל.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">מחקרי UNICEF הראו קשר בין משחק חופשי לירידה ברמות קורטיזול. הבובה לא רק מרגיעה ברגע &#8212; היא מלמדת את הגוף לחזור לשיווי משקל.</p>
-</div>
-</article>
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">יוזמה ומשחק עצמאי</h3>
-<p class="bm-reborn-benefits-card-text">ילדה עם בובה לא זקוקה לבדר &#8212; היא יוצרת, מדמיינת, בונה עולם שלם מהראש שלה. זה השריר של היצירתיות, שאין לו תחליף בשום אפליקציה או מסך.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">משחק בלתי מובנה הוא שבו הכי הרבה קורה: תכנון, גמישות מחשבתית, פתרון בעיות עצמאי. הריבורן מזמינה אותה להיות הבמאית של הסיפור שלה.</p>
-</div>
-</article>
+{{ BENEFITS }}
 </div>
 </div>
 </section>
@@ -1069,8 +973,8 @@ S8 &#8212; מה זה בונה בילדה
 ════════════════════════════════════════ -->
 <section class="bm-reborn-s9" data-section="9">
   <picture>
-    <source media="(max-width:767px)" srcset="./assets/s9-mobile.png">
-    <img class="bm-reborn-s9__img" src="./assets/s9-desktop.png" alt="לפני ואחרי — ריבורן">
+    <source media="(max-width:767px)" srcset="{{ IMG_S8_BEFORE_AFTER }}">
+    <img class="bm-reborn-s9__img" src="{{ IMG_S8_BEFORE_AFTER }}" alt="לפני ואחרי">
   </picture>
 </section>
 
@@ -1084,38 +988,11 @@ S8 &#8212; מה זה בונה בילדה
 <div class="bm-reborn-benefits-container">
 <header class="bm-reborn-benefits-header">
 <div class="bm-reborn-benefits-subtitle">S10 — התוצאה בבית</div>
-<h2 class="bm-reborn-benefits-title" id="bm-reborn-benefits-s10-title">אז מה היא מקבלת מזה באמת?</h2>
-<p class="bm-reborn-benefits-intro">לא עוד צעצוע שמעסיק לרגע — אלא משחק שיכול להכניס הביתה יותר שקט, יותר דמיון ויותר זמן איכות.</p>
+<h2 class="bm-reborn-benefits-title" id="bm-reborn-benefits-s10-title">{{ BENEFIT_HEADING_2 }}</h2>
+<p class="bm-reborn-benefits-intro"></p>
 </header>
 <div class="bm-reborn-benefits-grid">
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">פחות &#8220;אמא משעמם לי&#8221;</h3>
-<p class="bm-reborn-benefits-card-text">במקום לחפש כל כמה דקות גירוי חדש, היא נכנסת למשחק שיש בו דמות, תפקיד וסיפור משלה.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">זה יכול לתת לה עניין שחוזר שוב ושוב — ולך פחות רגעים של &#8220;מה אני עושה עכשיו?&#8221;</p>
-</div>
-</article>
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">יותר שקט בלי מסך</h3>
-<p class="bm-reborn-benefits-card-text">המסך יכול להעסיק אותה, אבל לא תמיד מפעיל אותה באמת.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">בובת ריבורן נותנת לה משחק חי: לדבר, לטפל, לדמיין ולהוביל את הסיפור בעצמה — ואת מקבלת שקט בלי תחושת אשמה.</p>
-</div>
-</article>
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">יותר הבנה בין האחים</h3>
-<p class="bm-reborn-benefits-card-text">כשהיא מתרגלת לדאוג, להרגיע ולשים לב למה &#8220;מישהו אחר&#8221; צריך — קל לה יותר להבין גם את האחים הקטנים שלה.</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">וזה יכול להפוך רגעים של קנאה, בכי או מריבה קטנה לפחות התפרצויות, יותר הבנה ויותר שקט בבית.</p>
-</div>
-</article>
-<article class="bm-reborn-benefits-card">
-<div class="bm-reborn-benefits-card-content">
-<h3 class="bm-reborn-benefits-card-title">יותר זמן איכות</h3>
-<p class="bm-reborn-benefits-card-text">המשחק עם הבובה פותח שיחות קטנות: &#8220;מה היא מרגישה?&#8221;, &#8220;מה נעשה כדי להרגיע אותה?&#8221;, &#8220;איך נקרא לה?&#8221;</p>
-<p class="bm-reborn-benefits-card-text bm-reborn-benefit__outcome">זה נותן לך דרך פשוטה להיכנס לעולם של הילדה — דרך משחק, דמיון וקשר, בלי עוד מסך באמצע.</p>
-</div>
-</article>
+{{ BENEFITS }}
 </div>
 </div>
 </section>
@@ -1133,7 +1010,7 @@ S8 &#8212; מה זה בונה בילדה
   </div>
 
   <!-- Headline -->
-  <h2 class="headline">אמהות כבר בחרו ב{{ product.metafields.reborn_doll.hebrew_name.value | default: product.title }}</h2><!-- TODO: replace with real review count once collected -->
+  <h2 class="headline">אמהות כבר בחרו ב{{ PRODUCT_NAME }}</h2><!-- TODO: replace with real review count once collected -->
 
   <!-- Heart Divider -->
   <div aria-hidden="true" class="divider-container">
@@ -1145,10 +1022,7 @@ S8 &#8212; מה זה בונה בילדה
   </div>
 
   <!-- Description -->
-  <p class="description">
-    אם גם את מחפשת מתנה שלא נשכחת אחרי יומיים —<br/>
-    זו יכולה להיות הבובה שתיכנס לה ללב.
-  </p>
+  <p class="description">{{ REVIEWS }}</p>
 
   <!-- Rating -->
   <div class="rating-section">
@@ -1226,6 +1100,18 @@ S8 &#8212; מה זה בונה בילדה
 </section>
 
 <!-- ════════════════════════════════════════
+     S12 — STATS
+════════════════════════════════════════ -->
+<section class="stats-sec" data-section="12">
+  <div class="sc"><div class="sec-lbl">S12 — STATS</div>
+  <div class="stats-grid">
+    <div class="stat"><span class="stat-num">{{ STAT_1_NUM }}</span><span class="stat-label">{{ STAT_1_LABEL }}</span></div>
+    <div class="stat"><span class="stat-num">{{ STAT_2_NUM }}</span><span class="stat-label">{{ STAT_2_LABEL }}</span></div>
+    <div class="stat"><span class="stat-num">{{ STAT_3_NUM }}</span><span class="stat-label">{{ STAT_3_LABEL }}</span></div>
+  </div></div>
+</section>
+
+<!-- ════════════════════════════════════════
      S13+14 — נתונים + למי מתאים
 ════════════════════════════════════════ -->
 <section class="whofor-section" data-section="13" id="section-whofor">
@@ -1251,71 +1137,15 @@ S8 &#8212; מה זה בונה בילדה
         למי זה מתאים?
         <span style="width:32px;height:1px;background:rgba(184,149,106,0.5);display:inline-block;"></span>
       </p>
-      <h2 style="font-size:clamp(1.75rem,4vw,3rem);font-weight:700;margin-bottom:16px;color:var(--heading);line-height:1.2;font-family:'Heebo',sans-serif;">מתאימה לכל ילד ולכל רגע של התפתחות</h2>
-      <p style="color:var(--text);font-size:18px;max-width:680px;margin:0 auto;line-height:1.6;">בובת ריבורן שמלווה אהבה, דמיון ורכות בכל גיל</p>
+      <h2 style="font-size:clamp(1.75rem,4vw,3rem);font-weight:700;margin-bottom:16px;color:var(--heading);line-height:1.2;font-family:'Heebo',sans-serif;">{{ WHOFOR_CARDS }}</h2>
+      <p style="color:var(--text);font-size:18px;max-width:680px;margin:0 auto;line-height:1.6;"></p>
     </div>
 
     <!-- Cards: carousel (desktop) / 2×2 grid (mobile) -->
     <div class="whofor-cards-outer">
       <div class="whofor-cards-container">
         <div id="whofor-cards">
-
-          <article>
-            <div class="whofor-card-img">
-              <img alt="פעוטה משחקת עם בובה" src="assets/s14-card-1-toddler.jpg"/>
-              <span class="whofor-age-badge">2–4</span>
-            </div>
-            <div class="whofor-card-body">
-              <h3 class="whofor-card-title">פעוטות</h3>
-              <p class="whofor-card-desc">לומדת לאהוב דרך חיבוק</p>
-            </div>
-          </article>
-
-          <article>
-            <div class="whofor-card-img">
-              <img alt="ילדה צעירה מחבקת בובה" src="assets/s14-card-2-young.jpg"/>
-              <span class="whofor-age-badge">5–7</span>
-            </div>
-            <div class="whofor-card-body">
-              <h3 class="whofor-card-title">ילדות צעירות</h3>
-              <p class="whofor-card-desc">מטפלת, מדמיינת, גדלה</p>
-            </div>
-          </article>
-
-          <article>
-            <div class="whofor-card-img">
-              <img alt="ילדה גדולה עם בובה" src="assets/s14-card-3-older.jpg"/>
-              <span class="whofor-age-badge">8–12</span>
-            </div>
-            <div class="whofor-card-body">
-              <h3 class="whofor-card-title">ילדות גדולות</h3>
-              <p class="whofor-card-desc">חברה שתמיד שם בשבילה</p>
-            </div>
-          </article>
-
-          <article>
-            <div class="whofor-card-img">
-              <img alt="מתבגרת עם בובה" src="assets/s14-card-4-teen.jpg"/>
-              <span class="whofor-age-badge">13+</span>
-            </div>
-            <div class="whofor-card-body">
-              <h3 class="whofor-card-title">מתבגרות</h3>
-              <p class="whofor-card-desc">רוגע בתוך עולם רועש</p>
-            </div>
-          </article>
-
-          <!-- כרטיס 5 — מוסתר במובייל -->
-          <article>
-            <div class="whofor-card-img">
-              <img alt="מבוגרת עם בובה" src="assets/s14-card-5-adult.jpg"/>
-              <span class="whofor-age-badge">לכל גיל</span>
-            </div>
-            <div class="whofor-card-body">
-              <h3 class="whofor-card-title">מבוגרים</h3>
-              <p class="whofor-card-desc">נוסטלגיה ורגעים של נחת</p>
-            </div>
-          </article>
-
+          {{ WHOFOR_CARDS }}
         </div>
       </div>
 
@@ -1348,32 +1178,30 @@ S8 &#8212; מה זה בונה בילדה
   <div class="absolute inset-0 bg-surface/90 z-0"></div>
   <div class="max-w-3xl mx-auto px-gutter text-center relative z-10">
     <div class="section-label" style="justify-content:center;">S15 — השוואת מחיר</div>
-    <h2 class="text-headline-lg-mobile md:text-[48px] font-black text-on-surface mb-12 leading-tight">
-      האם לשלם <span class="text-primary-container">299 ₪</span> לבובת ריבורן זה יקר?
-    </h2>
+    <h2 class="text-headline-lg-mobile md:text-[48px] font-black text-on-surface mb-12 leading-tight">{{ OBJECTIONS }}</h2>
     <div class="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 text-right shadow-soft border border-primary-container/20 relative">
       <div class="absolute -top-6 right-12 bg-primary-container text-white px-6 py-2 rounded-full font-bold shadow-md text-sm">בואו נדבר מתמטיקה.</div>
       <ul class="space-y-6 mb-10 text-lg text-on-surface-variant mt-4">
         <li class="flex justify-between items-center flex-row-reverse border-b border-surface-dim/30 pb-4">
-          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> חוג דרמה — 250 ₪/חודש</span>
-          <span class="text-on-surface font-bold text-xl">כ-3,000 ₪/שנה</span>
+          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span></span>
+          <span class="text-on-surface font-bold text-xl"></span>
         </li>
         <li class="flex justify-between items-center flex-row-reverse border-b border-surface-dim/30 pb-4">
-          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> טיפול רגשי — 300 ₪/פגישה</span>
-          <span class="text-on-surface font-bold text-xl">כ-3,600 ₪/שנה</span>
+          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span></span>
+          <span class="text-on-surface font-bold text-xl"></span>
         </li>
         <li class="flex justify-between items-center flex-row-reverse pb-2">
-          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> ספרי טיפול וויסות — 130 ₪/ספר</span>
-          <span class="text-on-surface font-bold text-xl">כ-1,560 ₪/שנה</span>
+          <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline-variant"></span></span>
+          <span class="text-on-surface font-bold text-xl"></span>
         </li>
       </ul>
       <div class="bg-gradient-to-br from-primary-container to-primary text-on-primary rounded-[2rem] p-8 text-center shadow-lg relative overflow-hidden">
         <div class="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-        <p class="font-bold text-sm mb-3 opacity-90 uppercase tracking-widest relative z-10">בובת ריבורן. תשלום חד פעמי.</p>
-        <div class="text-6xl font-black mb-3 relative z-10">299 ₪</div>
-        <p class="text-base font-medium opacity-90 relative z-10">פחות מ-₪1 ליום. נשארת איתה שנים.</p>
+        <p class="font-bold text-sm mb-3 opacity-90 uppercase tracking-widest relative z-10"></p>
+        <div class="text-6xl font-black mb-3 relative z-10"></div>
+        <p class="text-base font-medium opacity-90 relative z-10"></p>
       </div>
-      <p class="text-center text-on-surface-variant mt-6 text-base">זה לא יקר. זאת ההשקעה הכי משתלמת שעשית.</p>
+      <p class="text-center text-on-surface-variant mt-6 text-base"></p>
     </div>
   </div>
 </section>
@@ -1421,50 +1249,7 @@ S8 &#8212; מה זה בונה בילדה
       <p class="faq-sub">כל מה שחשוב לדעת לפני הרכישה</p>
     </div>
 
-    <details class="faq-item" open>
-      <summary>
-        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0zM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
-        <span class="faq-q">מאיזה גיל מתאים המוצר?</span>
-        <span class="faq-plus">+</span>
-      </summary>
-      <div class="faq-answer"><div class="faq-answer-inner">בובת לוי מתאימה מגיל 3 ומעלה. היא מורכבת מחומרים בטוחים ועמידים, ללא חלקים קטנים. לילדות מגיל 3–12 היא מספקת חוויית משחק עשירה ומפתחת.</div></div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
-        <span class="faq-q">איך בוחרים את הבובה הנכונה?</span>
-        <span class="faq-plus">+</span>
-      </summary>
-      <div class="faq-answer"><div class="faq-answer-inner">בובת לוי היא הבחירה המושלמת לילדה שאוהבת לטפל ולדמיין. הגודל הריאליסטי (48 ס"מ) והמגע הרך שלה יוצרים חוויה אמיתית. היא מגיעה עם בקבוק ומוצץ — הכל כלול.</div></div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
-        <span class="faq-q">האם המוצר בטוח לשימוש יומיומי?</span>
-        <span class="faq-plus">+</span>
-      </summary>
-      <div class="faq-answer"><div class="faq-answer-inner">כן. הבובה עוברת בדיקות בטיחות קפדניות ועומדת בתקנים האירופאים. החומרים רכים, ללא BPA, ומתאימים למשחק יומיומי ממושך.</div></div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg></div>
-        <span class="faq-q">איך מכבסים ושומרים על המוצר?</span>
-        <span class="faq-plus">+</span>
-      </summary>
-      <div class="faq-answer"><div class="faq-answer-inner">ניתן לנגב את הבובה במטלית לחה. לניקוי עמוק מומלץ לנגב בעדינות בסבון עדין ומים פושרים. אין להכניס למכונת כביסה. אחסן במקום יבש, מחוץ לאור שמש ישיר.</div></div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <div class="faq-ico"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9.75h4.875a2.625 2.625 0 0 1 0 5.25H12M8.25 9.75 10.5 7.5M8.25 9.75 10.5 12m9-7.243V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185z"/></svg></div>
-        <span class="faq-q">מהי מדיניות ההחזרה?</span>
-        <span class="faq-plus">+</span>
-      </summary>
-      <div class="faq-answer"><div class="faq-answer-inner">אנו מציעים החזרה תוך 14 יום מיום הקבלה, ללא שאלות. המוצר צריך להיות באריזתו המקורית ובמצב תקין. החזר כספי מלא יינתן תוך 5–7 ימי עסקים.</div></div>
-    </details>
+    {{ FAQ_ITEMS }}
 
     <!-- Closing block -->
     <div class="faq-closing">
@@ -1490,8 +1275,8 @@ S8 &#8212; מה זה בונה בילדה
 <section class="finalcta-sec" data-section="17">
   <div class="sc">
     <div class="sec-lbl center" style="color:rgba(184,149,106,0.4);">S17 — CTA סופי</div>
-    <h2>תני לה מתנה שהיא לא רק תפתח — היא תטפל בה</h2>
-    <p class="finalcta-txt">רכה. ריאליסטית. מוכנה לחיבוק הראשון.</p>
+    <h2>{{ FINAL_CTA }}</h2>
+    <p class="finalcta-txt"></p>
     <div class="finalcta-price-row">
       <span class="finalcta-price-now">{{ bm17_variant.price | money_without_trailing_zeros }}</span>
       {%- if bm17_variant.compare_at_price > bm17_variant.price -%}
@@ -1518,7 +1303,7 @@ S8 &#8212; מה זה בונה בילדה
     {%- form 'product', product, id: 'bm-product-form-s17' -%}
       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"/>
       <div class="finalcta-btns">
-        <button type="submit" name="add" class="btn-cta btn-cta--glow">כן, אני רוצה את {{ product.metafields.reborn_doll.model_label.value | default: product.title }}</button>
+        <button type="submit" name="add" class="btn-cta btn-cta--glow">{{ FINAL_CTA }}</button>
         <!-- TODO Stage 8: secondary CTA — buy-now JS redirect -->
         <button type="button" class="btn-outline-white">הוסיפי לעגלה</button>
       </div>
