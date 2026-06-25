@@ -1,7 +1,6 @@
 {% comment %}
-bm-reborn-product-page.liquid
-Terminal 6 — BabyMania | ריבורן | test only
-DO NOT PUSH TO LIVE — testing template for levi (PID 9689589383481)
+dropship-product-page-template.liquid
+BabyMania | Dropship Template — fill {{PLACEHOLDER}} tokens from brief before pushing
 {% endcomment %}
 
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet"/>
@@ -483,9 +482,8 @@ body { font-family: 'Heebo', sans-serif; }
      S1 — HERO (Liquid)
 ════════════════════════════════════════ -->
 {%- assign bm_variant  = product.selected_or_first_available_variant -%}
-{%- assign bm_model    = product.metafields.reborn_doll.model_label.value | default: product.title -%}
-{%- assign bm_size     = product.metafields.reborn_specs.size_cm.value -%}
-{%- assign bm_subtitle = product.metafields.reborn_copy.hero_subtitle.value | default: product.description -%}
+{%- assign bm_model    = product.title -%}
+{%- assign bm_size     = product.metafields.dropship.size_label.value -%}
 {%- assign bm_price    = bm_variant.price -%}
 {%- assign bm_compare  = bm_variant.compare_at_price -%}
 {%- if bm_compare > bm_price -%}
@@ -1121,7 +1119,7 @@ S8 &#8212; מה זה בונה בילדה
     <!-- נתוני מפתח (מS13) -->
     <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:48px;">
       <div class="stat-blk">
-        <span class="stat-num">{{ product.metafields.reborn_specs.size_cm.value | default: '46 ס״מ' }}</span>
+        <span class="stat-num">{{ PRODUCT_SIZE }}</span>
         <div class="stat-lbl">גודל ריאליסטי</div>
       </div>
       <div class="stat-blk">
@@ -1380,13 +1378,13 @@ S8 &#8212; מה זה בונה בילדה
 
 {% schema %}
 {
-  "name": "Reborn Product Page",
+  "name": "Dropship Product Page",
   "tag": "div",
   "class": "bm-reborn-page",
   "settings": [],
   "presets": [
     {
-      "name": "Reborn Product Page"
+      "name": "Dropship Product Page"
     }
   ]
 }
