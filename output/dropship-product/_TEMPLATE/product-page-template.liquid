@@ -590,53 +590,53 @@ body { font-family: 'Heebo', sans-serif; }
 <!-- ════════════════════════════════════════
      S2 — BUNDLE
 ════════════════════════════════════════ -->
+{%- assign bm_v1 = product.variants[0] -%}
+{%- assign bm_v2 = product.variants[1] -%}
+{%- assign bm_v3 = product.variants[2] -%}
 <section class="bundle-sec" data-section="2">
   <div class="sc">
     <div class="sec-lbl">S2 — BUNDLE</div>
-    <h2>אם יש יותר מילדה אחת במשפחה — את כבר יודעת איך זה נגמר</h2>
-    <p class="bundle-sub">כשילדה אחת מקבלת בובת ריבורן, הילדה השנייה לא רק מסתכלת.</p>
-    <div class="bundle-opts">
-      <!-- option 1 -->
-      <label class="bundle-card">
-        <input name="bundle" type="radio" value="1"/>
-        <div class="bc-info">
-          <div class="bc-title">יחידה אחת</div>
-          <div><span class="bc-price">₪299</span></div>
-          <div class="bc-perks">🎁 כולל מגבת מתנה</div>
-        </div>
-      </label>
-      <!-- option 2 -->
-      <label class="bundle-card selected">
-        <input checked name="bundle" type="radio" value="2"/>
-        <div class="bc-info">
-          <div class="bc-title">2 בובות</div>
-          <div>
-            <span class="bc-price">₪549</span>
-            <span class="bc-old">₪598</span>
-            <span class="bc-pct">8% הנחה</span>
-          </div>
-          <div class="bc-perks">🚚 משלוח חינם | 🎁 מגבת מתנה לכל בובה</div>
-        </div>
-        <span class="bc-tag hot">🔥 הכי פופולרי</span>
-      </label>
-      <!-- option 3 -->
-      <label class="bundle-card">
-        <input name="bundle" type="radio" value="3"/>
-        <div class="bc-info">
-          <div class="bc-title">3 בובות</div>
-          <div>
-            <span class="bc-price">₪779</span>
-            <span class="bc-old">₪897</span>
-            <span class="bc-pct">13% הנחה</span>
-          </div>
-          <div class="bc-perks">🚚 משלוח חינם | 🎁 מגבת + שמיכה מתנה</div>
-        </div>
-        <span class="bc-tag best">💰 הכי משתלם</span>
-      </label>
-    </div>
-    <div class="bundle-cta-wrap">
-      <button class="btn-cta">הוסיפי לעגלה 🛒</button>
-    </div>
+    <h2>{{ BUNDLE_TITLE }}</h2>
+    <p class="bundle-sub">{{ BUNDLE_SUB }}</p>
+    <form method="post" action="/cart/add" id="bm-bundle-form">
+      <div class="bundle-opts">
+        {%- if bm_v1 -%}
+        <label class="bc-info">
+          <input type="radio" name="id" value="{{ bm_v1.id }}" checked>
+          <span class="bc-title">{{ bm_v1.title }}</span>
+          <span class="bc-price">{{ bm_v1.price | money }}</span>
+          {%- if bm_v1.compare_at_price > bm_v1.price -%}
+          <span class="bc-old">{{ bm_v1.compare_at_price | money }}</span>
+          {%- endif -%}
+        </label>
+        {%- endif -%}
+        {%- if bm_v2 -%}
+        <label class="bc-info">
+          <input type="radio" name="id" value="{{ bm_v2.id }}">
+          <span class="bc-tag hot">🔥 הכי פופולרי</span>
+          <span class="bc-title">{{ bm_v2.title }}</span>
+          <span class="bc-price">{{ bm_v2.price | money }}</span>
+          {%- if bm_v2.compare_at_price > bm_v2.price -%}
+          <span class="bc-old">{{ bm_v2.compare_at_price | money }}</span>
+          {%- endif -%}
+        </label>
+        {%- endif -%}
+        {%- if bm_v3 -%}
+        <label class="bc-info">
+          <input type="radio" name="id" value="{{ bm_v3.id }}">
+          <span class="bc-tag best">💰 הכי משתלם</span>
+          <span class="bc-title">{{ bm_v3.title }}</span>
+          <span class="bc-price">{{ bm_v3.price | money }}</span>
+          {%- if bm_v3.compare_at_price > bm_v3.price -%}
+          <span class="bc-old">{{ bm_v3.compare_at_price | money }}</span>
+          {%- endif -%}
+        </label>
+        {%- endif -%}
+      </div>
+      <div class="bundle-cta-wrap">
+        <button type="submit" class="btn-cta">הוסיפי לעגלה 🛒</button>
+      </div>
+    </form>
   </div>
 </section>
 
