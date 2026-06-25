@@ -1,0 +1,156 @@
+{% schema %}
+{
+  "name": "Threshold Offers",
+  "blocks": [
+    {
+      "type": "offer_block",
+      "name": "Offer Block",
+      "settings": [
+        {
+          "type": "number",
+          "id": "threshold",
+          "label": "Threshold Amount"
+        },
+        {
+          "type": "product_list",
+          "id": "products",
+          "label": "Products to Add"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+
+<input type="hidden" class="next_message" value="{{ settings.all_products_gift_message_before }}">
+<input type="hidden" class="congrats_message" value="{{ settings.all_products_gift_message_after }}">
+
+<script>
+
+$(document).ready(function() {
+  // Declare the global syncThresholdProducts function
+  window.syncThresholdProducts = function(cart) {
+    // Re-entrancy guard — prevent loops from nested getCartHtml → sync → getCartHtml
+    if (window._bmSyncInProgress) return;
+    window._bmSyncInProgress = true;
+
+    const thresholdBlocks = [
+      {% for block in section.blocks %}
+        {
+          threshold: {{ block.settings.threshold }},
+          products: [{% for p in block.settings.products %}"{{ p.first_available_variant.id }}"{% unless forloop.last %},{% endunless %}{% endfor %}]
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+
+    const sortedBlocks = thresholdBlocks.sort((a, b) => a.threshold - b.threshold);
+
+    // Use subtotal of NON-gift items only so a free gift never inflates the threshold check.
+    // Detect gifts by _threshold_offer property (new name) OR legacy threshold_offer.
+    const cartTotal = cart.items
+      .filter(function(item) {
+        return !(item.properties && (
+          item.properties['_threshold_offer'] !== undefined ||
+          item.properties['threshold_offer'] !== undefined
+        ));
+      })
+      .reduce(function(sum, item) { return sum + item.line_price / 100; }, 0);
+
+    let applicableBlock = null;
+
+    // Determine highest applicable threshold
+    for (var i = 0; i < sortedBlocks.length; i++) {
+      if (cartTotal >= sortedBlocks[i].threshold) applicableBlock = sortedBlocks[i];
+    }
+
+    // Find all existing threshold-gift items (support both old and new property name)
+    const thresholdItems = cart.items.filter(function(item) {
+      return item.properties && (
+        item.properties['_threshold_offer'] !== undefined ||
+        item.properties['threshold_offer'] !== undefined
+      );
+    });
+    const itemsToRemove = {};
+
+    // Mark outdated threshold items for removal
+    thresholdItems.forEach(function(item) {
+      if (!applicableBlock || !applicableBlock.products.includes(item.variant_id.toString())) {
+        itemsToRemove[item.key] = 0;
+      }
+    });
+
+    // Prepare new items to add (using _threshold_offer so Dawn's cart hides the property)
+    const itemsToAdd = [];
+    if (applicableBlock) {
+      applicableBlock.products.forEach(function(id) {
+        const inCart = cart.items.some(function(item) { return item.variant_id == parseInt(id); });
+        if (!inCart) {
+          itemsToAdd.push({
+            id: parseInt(id),
+            quantity: 1,
+            properties: { '_threshold_offer': applicableBlock.threshold }
+          });
+        }
+      });
+    }
+
+    // Only update if needed
+    const needsUpdate = Object.keys(itemsToRemove).length > 0 || itemsToAdd.length > 0;
+    if (!needsUpdate) {
+      window._bmSyncInProgress = false;
+      return;
+    }
+
+    function afterSync() {
+      window._bmSyncInProgress = false;
+      if (typeof getCartHtml === 'function') getCartHtml();
+    }
+
+    function doRemove(cb) {
+      if (Object.keys(itemsToRemove).length === 0) { cb(); return; }
+      $.ajax({
+        type: "POST",
+        url: '/cart/update.js',
+        data: JSON.stringify({ updates: itemsToRemove }),
+        contentType: 'application/json',
+        dataType: 'json',
+        success: cb,
+        error: function() {
+          window._bmSyncInProgress = false;
+          console.error('BM: Error removing threshold items');
+        }
+      });
+    }
+
+    // Perform updates
+    if (itemsToAdd.length > 0) {
+      // Allow gift through the gift-guard for this one batched add request
+      if (typeof window.BabyManiaAllowGiftAdd === 'function') window.BabyManiaAllowGiftAdd();
+      $.ajax({
+        type: "POST",
+        url: '/cart/add.js',
+        data: JSON.stringify({ items: itemsToAdd }),
+        contentType: 'application/json',
+        dataType: 'json',
+        success: function() { doRemove(afterSync); },
+        error: function() {
+          // Add failed (gift-guard or stock); still attempt removal of stale gifts
+          doRemove(afterSync);
+          console.error('BM: Error adding threshold products');
+        }
+      });
+    } else {
+      doRemove(afterSync);
+    }
+  };
+
+  // Initial sync on page load
+  $.getJSON('/cart.js', function(cart) {
+    syncThresholdProducts(cart);
+  });
+});
+
+
+</script>

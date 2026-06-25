@@ -1,0 +1,61 @@
+{% comment %}
+  BabyMania — Cart TOS Hint
+  File: snippets/bm-cart-tos-hint.liquid
+  Purpose: Show inline "יש לאשר את התקנון כדי להמשיך" near the /cart checkout
+           button when the terms checkbox is unchecked. Mirrors the drawer message.
+  Usage:   {% render 'bm-cart-tos-hint' %} inside layout/theme.liquid (before </body>)
+           The snippet self-limits to the /cart page via JS path check.
+{% endcomment %}
+
+<style>
+  #bm-tos-cart-hint {
+    display: none;
+    color: #c0392b;
+    font-size: 13px;
+    font-family: 'Heebo', sans-serif;
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  #bm-tos-cart-hint.bm-tos-visible {
+    display: block;
+  }
+</style>
+
+<script>
+(function () {
+  if (window.location.pathname !== '/cart') return;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Support id="bm-tos-cart" or fallback selectors used by TOS apps
+    var checkbox = document.getElementById('bm-tos-cart') ||
+                   document.querySelector('[name="bm-tos-cart"]') ||
+                   document.querySelector('.bm-tos-checkbox input[type="checkbox"]');
+
+    if (!checkbox) return;
+
+    // Find the nearest checkout button
+    var checkoutBtn = document.querySelector('[name="checkout"], [href="/checkout"], [href*="/cart/checkout"], .cart__checkout-button, #checkout');
+
+    if (!checkoutBtn) return;
+
+    // Insert hint element after the checkbox (or after checkout button)
+    var hint = document.createElement('p');
+    hint.id = 'bm-tos-cart-hint';
+    hint.textContent = 'יש לאשר את התקנון כדי להמשיך';
+    checkoutBtn.parentNode.insertBefore(hint, checkoutBtn.nextSibling);
+
+    function syncHint() {
+      if (checkbox.checked) {
+        hint.classList.remove('bm-tos-visible');
+      } else {
+        hint.classList.add('bm-tos-visible');
+      }
+    }
+
+    checkbox.addEventListener('change', syncHint);
+    // Set initial state
+    syncHint();
+  });
+})();
+</script>
