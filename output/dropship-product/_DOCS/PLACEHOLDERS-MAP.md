@@ -6,6 +6,8 @@
 |---|---|---|
 | {{HERO_TITLE}} | S1 Hero | Product main headline (hook) |
 | {{HERO_SUBTITLE}} | S1 Hero | 1-2 line benefit sub-headline |
+| {{HERO_TRUST_LINE}} | S1 Hero | שורת ביטחון מתחת לכותרת — עובדות מוצר (מחליף כוכבים מזויפים) |
+| {{PRICE_PER_DAY}} | S1 Hero | "כ-₪X ליום" — מחושב לפי מחיר / תוחלת שימוש שנה אחת |
 | {{PROBLEM_HOOK}} | S4 | One sharp pain statement |
 | {{PROBLEM_AGITATION}} | S5 | Agitation paragraph — why existing toys/solutions fail |
 | {{PROBLEM_IMG_CAPTION}} | S6 | Caption for problem image |
@@ -18,6 +20,7 @@
 | {{BENEFIT_HEADING_2}} | S10 | Outcome section main heading |
 | {{BENEFITS}} | S8/S10 | Benefit cards HTML (fill full grid) |
 | {{REVIEWS}} | S11 | Review quotes / social proof block |
+| {{TRUST_CTA}} | S11 | כפתור CTA — עובדה / קריאה לפעולה (ללא ביקורות מזויפות) |
 | {{PRODUCT_NAME}} | S11/S9 | Product display name in Hebrew |
 | {{MIDCTA_TITLE}} | S11b | Mid-page CTA heading |
 | {{MIDCTA_TEXT}} | S11b | Mid-page CTA supporting text |

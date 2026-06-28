@@ -17,7 +17,9 @@ category:               # קטגוריה (שינה / בטיחות / טיפוח /
 price_sale:             # ⚠️ מחיר מכירה (₪)
 price_compare:          # ⚠️ מחיר לפני (₪) — מה יחצה קו
 discount_pct:           # אחוז חיסכון (מחושב אוטומטית, אבל אפשר לדרוס)
-price_per_day:          # "פחות מ-₪X ליום" — מחשב לפי כמה שנים שימוש
+price_per_day:          # "כ-₪X ליום" — מחשב לפי מחיר / תוחלת שימוש שנה אחת
+hero_trust_line:        # שורת ביטחון מתחת ל-Hero title — עובדות מוצר בלבד (מחליף כוכבים מזויפים)
+trust_cta:              # טקסט כפתור CTA בסקשן S11 — עובדה / קריאה לפעולה
 reviews_count:          # ⚠️ כמה ביקורות להציג (מספר — לא "הרבה")
 reviews_stars:          # דירוג (4.8 / 4.9 / 5.0)
 families_count:         # "X+ משפחות" — לתגית ב-Hero
@@ -27,12 +29,19 @@ families_count:         # "X+ משפחות" — לתגית ב-Hero
 
 ## חלק ב׳ — Bundle (3 חבילות — חובה לכולן)
 
+> **Placeholders בתבנית:** `{{BUNDLE_TITLE}}` `{{BUNDLE_SUB}}`
+> המחירים נמשכים אוטומטית מ-Shopify variants לפי סדר: variant[0]=יחידה, variant[1]=זוג, variant[2]=שלישייה.
+
 ```yaml
+bundle_title:     # ⚠️ כותרת סקשן ה-Bundle ({{BUNDLE_TITLE}})
+bundle_sub:       # תת-כותרת הסקשן ({{BUNDLE_SUB}})
+
+# Shopify variant order rule: 1=יחידה, 2=זוג, 3=שלישייה (אסור לשנות סדר!)
 bundle_1:
   name:           # ⚠️ שם החבילה (דוגמה: "יחידה אחת")
   qty:            # כמות
-  price:          # ⚠️ מחיר
-  compare:        # מחיר לפני
+  BUNDLE_1_PRICE:   # ⚠️ מחיר מכירה (₪)
+  BUNDLE_1_COMPARE: # מחיר לפני (₪)
   gift:           # מה כלול (דוגמה: "מתנה: ספר שינה")
   variant_id:     # Shopify variant ID (ימולא אחרי יצירת המוצר)
   tag:            # תגית (ריק / "הכי פופולרי" / "הכי משתלם")
@@ -40,8 +49,8 @@ bundle_1:
 bundle_2:
   name:           # ⚠️ (דוגמה: "זוג — חיסכון 20%")
   qty:
-  price:          # ⚠️
-  compare:
+  BUNDLE_2_PRICE:   # ⚠️
+  BUNDLE_2_COMPARE:
   gift:
   variant_id:
   tag:            # ⚠️ "הכי פופולרי" — על החבילה האמצעית תמיד
@@ -49,8 +58,8 @@ bundle_2:
 bundle_3:
   name:           # ⚠️ (דוגמה: "שלישייה — חיסכון 30%")
   qty:
-  price:          # ⚠️
-  compare:
+  BUNDLE_3_PRICE:   # ⚠️
+  BUNDLE_3_COMPARE:
   gift:           # ⚠️ מתנה פיזית — הכי חשוב כאן
   variant_id:
   tag:            # "הכי משתלם"
@@ -138,25 +147,38 @@ pain_image_caption: # משפט italic מתחת לתמונה
 > אם יש מחקרים אמיתיים — פרט כאן ↓
 
 ```yaml
+# Placeholders בתבנית:
+# {{RESEARCH_HEADLINE}}      — כותרת h2 של הסקשן כולו
+# {{RESEARCH_INTRO}}         — משפט מבוא מתחת לכותרת
+# {{RESEARCH_PANEL_TITLE}}   — כותרת הפאנל ("מה אומרים המחקרים על זה?")
+# {{RESEARCH_1}}             — כרטיס מחקר 1 (HTML מלא: org, year, findings)
+# {{RESEARCH_2}}             — כרטיס מחקר 2
+# {{RESEARCH_3}}             — כרטיס מחקר 3
+
+research_headline:  # ⚠️ כותרת הסקשן — משפט שמעורר סקרנות
+                    # דוגמה: "זה נראה כמו מוצר. אבל מחקרים מראים שקורה כאן הרבה יותר."
+research_intro:     # משפט מבוא קצר — מה נחקר
+research_panel_title: # "מה אומרים המחקרים על זה?" — או גרסה מותאמת
+
 research_1:
   org:            # שם ארגון/אוניברסיטה בעברית
   year:           # שנה
-  title:          # שם המחקר בעברית
-  summary:        # 2-3 משפטים בשפה פשוטה
-  source:         # שם כתב העת (בעברית)
+  finding_1:      # ⚠️ ממצא ראשון — משפט אחד, עם bold על המילה הכי חשובה
+  finding_2:      # ממצא שני (אופציונלי)
+  source:         # שם כתב העת
 
 research_2:
   org:
   year:
-  title:
-  summary:
+  finding_1:
+  finding_2:
   source:
 
 research_3:
   org:
   year:
-  title:
-  summary:
+  finding_1:
+  finding_2:
   source:
 
 research_summary:   # משפט אחד שמחבר את 3 המחקרים למוצר
@@ -305,7 +327,14 @@ stats:
 
 > 💡 נגזר אוטומטית מהאווטארים בחלק ד׳. אם רוצה לשנות — כתוב כאן.
 
-```
+```yaml
+# Placeholders בתבנית:
+# {{WHOFOR_TITLE}}   — כותרת h2 של סקשן "למי מתאים"
+# {{WHOFOR_CARDS}}   — HTML של כרטיסי הקהלים (5 article cards)
+
+whofor_title:   # ⚠️ כותרת הסקשן
+                # דוגמה: "מתאים לכל הורה שרוצה שקט נפשי"
+
 who_override:   # השאר ריק אם האווטארים מספיקים / כתוב הנחיה ספציפית אם יש
 ```
 
